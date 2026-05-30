@@ -18,8 +18,8 @@ export default function Contact() {
   return (
     <main>
       <SEO
-        title="ติดต่อ Saralak Search | Discovery Audit และ SEO Support"
-        description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Discovery Audit, SEO services, Agency Partner support หรือ recruiter conversations"
+        title="ติดต่อ Saralak Search | Brand Visibility Audit และ Agency Support"
+        description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Brand Visibility Audit, Increase Brand Visibility, Agency Partner support หรือ recruiter conversations"
         path="/contact"
         jsonLd={{
           '@context': 'https://schema.org',
@@ -34,7 +34,7 @@ export default function Contact() {
             คุยเรื่อง Search Visibility ของเว็บไซต์คุณ
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ติดต่อเพื่อขอ Discovery Audit, SEO support, Agency Partner conversation
+            ติดต่อเพื่อขอ Brand Visibility Audit, Increase Brand Visibility, Agency Partner conversation
             หรือ recruiter conversation ได้จากหน้านี้
           </p>
           <p className="thai-readable mt-4 max-w-3xl text-base text-neutral-700">

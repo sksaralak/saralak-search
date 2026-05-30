@@ -9,51 +9,51 @@ import SectionHeader from '../components/SectionHeader'
 import { discoveryAuditFaqs, faqJsonLd } from '../content/faqs'
 
 const problems = [
-  'เว็บไซต์ไม่ติด Google ในคำค้นที่ควรเจอ',
-  'คอนเทนต์ยังไม่ถูก AI Overview หรือ AI Search ดึงไปใช้',
-  'ไม่รู้ว่างานไหนควรแก้ก่อนเพื่อให้คุ้มงบ',
-  'Google Maps หรือ Local Visibility ยังไม่สร้างลูกค้าเท่าที่ควร',
+  'Customers cannot discover your brand easily',
+  'Competitors are more visible in Google and AI Search',
+  'Google and AI platforms may not understand your business clearly',
+  'Growth priorities are unclear before investing long term',
 ]
 
 const deliverables = [
-  'รายงาน Google Doc หรือ PDF',
-  'Priority Matrix สำหรับสิ่งที่ควรแก้ก่อน',
-  'ตัวอย่างปัญหาพร้อม screenshots',
-  'Action Plan ที่นำไปใช้ต่อได้',
-  'Present ผล Audit และคำแนะนำสำคัญ',
+  'Visibility summary for Google and AI Search',
+  'Competitor visibility comparison',
+  'Prioritized growth roadmap',
+  'Key opportunities and blockers',
+  'Strategic consultation',
 ]
 
 const workflow = [
-  ['01', 'ส่ง URL และปัญหาที่พบ', 'แชร์เว็บไซต์ เป้าหมายธุรกิจ และสิ่งที่อยากให้ตรวจเป็นพิเศษ'],
-  ['02', 'วิเคราะห์ SEO และ AI Visibility', 'ดูการมองเห็นบน Google, AI Search และ Google Maps เท่าที่เกี่ยวข้อง'],
-  ['03', 'จัดทำรายงานพร้อม Priority Matrix', 'แยกปัญหาตามผลกระทบ ความเร่งด่วน และความคุ้มค่าในการแก้'],
-  ['04', 'Present ผล Audit', 'สรุปสิ่งที่พบ เหตุผล และทิศทางที่ควรตัดสินใจต่อ'],
-  ['05', 'ส่ง Action Plan', 'ส่งลำดับงานที่ทีมสามารถนำไปทำต่อได้จริง'],
+  ['01', 'Share context', 'Share your website, business goals and visibility concerns.'],
+  ['02', 'Review visibility', 'Review how your brand appears across Google, AI Search and local search.'],
+  ['03', 'Compare competitors', 'Identify where competitors are easier to find, understand or trust.'],
+  ['04', 'Prioritize growth', 'Clarify the opportunities that should be addressed first.'],
+  ['05', 'Discuss next steps', 'Review the roadmap and decide the right level of support.'],
 ]
 
 const checks = [
-  'Technical SEO และ indexation',
-  'Content gaps และ search intent',
-  'Internal linking และ site structure',
-  'AI Overview / AEO readiness',
-  'GEO และ AI Search visibility',
-  'Google Maps และ Local SEO ถ้าเกี่ยวข้อง',
-  'Quick wins และ priority actions',
+  'Customer discovery potential',
+  'Competitor visibility',
+  'Google Search visibility',
+  'AI Search understanding',
+  'Local visibility when relevant',
+  'Brand authority and trust signals',
+  'Growth priorities',
 ]
 
 export default function DiscoveryAudit() {
   return (
     <main>
       <SEO
-        title="Discovery Audit สำหรับ SEO, GEO และ AI Search | Saralak Search"
-        description="Discovery Audit ช่วยค้นหาปัญหาที่ทำให้เว็บไซต์ไม่ติด Google ไม่ถูก AI แนะนำ และเสียโอกาสทางธุรกิจ พร้อม Priority Matrix และ Action Plan"
+        title="Brand Visibility Audit for Google and AI Search | Saralak Search"
+        description="Understand what is limiting your visibility on Google and AI Search before investing in long-term growth."
         path="/discovery-audit"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'Service',
-              name: 'Discovery Audit',
+              name: 'Brand Visibility Audit',
               provider: { '@type': 'ProfessionalService', name: 'Saralak Search' },
               areaServed: 'Thailand',
               offers: { '@type': 'AggregateOffer', lowPrice: '5000', priceCurrency: 'THB' },
@@ -65,7 +65,9 @@ export default function DiscoveryAudit() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="max-w-4xl">
-          <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Discovery Audit</p>
+          <p className="mb-5 text-sm font-semibold uppercase text-teal-800">
+            Brand Visibility Audit
+          </p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
             เว็บไซต์กำลังเสียโอกาสตรงไหน?
           </h1>
@@ -73,11 +75,12 @@ export default function DiscoveryAudit() {
             ค้นหาปัญหาที่ทำให้เว็บไซต์ไม่ติด Google ไม่ถูก AI แนะนำ และพลาดโอกาสทางธุรกิจ ก่อนตัดสินใจลงทุนเพิ่ม
           </p>
           <p className="thai-readable mt-4 max-w-3xl leading-7 text-neutral-700">
-            เหมาะสำหรับธุรกิจที่ต้องการตัดสินใจจากข้อมูลจริง ก่อนลงทุนกับ SEO, Google Maps
-            หรือ AI Search ในระยะยาว
+            เหมาะสำหรับธุรกิจที่ต้องการเข้าใจ visibility gaps, โอกาสการเติบโต,
+            คู่แข่ง และความเข้าใจของ Google หรือ AI Search ก่อนเปลี่ยนเป็น action plan
+            เพื่อเพิ่ม Brand Visibility ในระยะยาว
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/contact">ขอรับ Discovery Audit</CTAButton>
+            <CTAButton to="/contact">ขอรับ Brand Visibility Audit</CTAButton>
             <CTAButton to="/case-studies" variant="secondary">
               ดูตัวอย่างผลงาน
             </CTAButton>
@@ -105,7 +108,7 @@ export default function DiscoveryAudit() {
         <div>
           <SectionHeader
             eyebrow="สิ่งที่ตรวจ"
-            title="เน้นสิ่งที่มีผลต่อการเติบโตและการตัดสินใจ"
+            title="เน้นสิ่งที่ชี้ว่าควรเพิ่ม Brand Visibility จากจุดไหนก่อน"
           />
           <div className="mt-8 grid gap-3">
             {checks.map((check) => (
@@ -116,7 +119,10 @@ export default function DiscoveryAudit() {
           </div>
         </div>
         <div>
-          <SectionHeader eyebrow="สิ่งที่จะได้รับ" title="รายงานที่ใช้ตัดสินใจได้จริง" />
+          <SectionHeader
+            eyebrow="สิ่งที่จะได้รับ"
+            title="Action plan สำหรับเพิ่ม Brand Visibility"
+          />
           <div className="mt-8 grid gap-3">
             {deliverables.map((deliverable) => (
               <div key={deliverable} className="rounded-md border border-teal-100 bg-white p-4">
@@ -141,25 +147,42 @@ export default function DiscoveryAudit() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="ราคา"
-          title="เริ่มจาก Audit ก่อน แล้วค่อยตัดสินใจเรื่องการทำต่อ"
-          description="แต่ละแพ็กเกจปรับตามขนาดเว็บไซต์ ความซับซ้อน และจำนวนพื้นที่ที่ต้องวิเคราะห์"
+          title="Brand Visibility Audit"
+          description="Understand what is limiting your visibility on Google and AI Search before investing in long-term growth."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <PricingCard
-            title="Discovery Audit"
+            title="Starter"
             price="5,000 THB"
-            detail="เหมาะกับเว็บไซต์ขนาดเล็ก local business หรือ service website ที่ต้องการรู้จุดเริ่มต้น"
+            detail="For businesses that want to understand their current visibility on Google and AI Search."
           />
           <PricingCard
-            title="Growth Audit"
+            title="Growth"
             price="12,000 THB"
-            detail="เหมาะกับ SME, content site หรือ lead-generation website ที่ต้องการ roadmap ชัดเจน"
+            badge="Most Popular"
+            detail="For businesses that need a prioritized growth roadmap and competitor analysis."
           />
           <PricingCard
-            title="Enterprise Audit"
-            price="from 18,000 THB"
-            detail="เหมาะกับ e-commerce, เว็บไซต์ขนาดใหญ่ หรือธุรกิจที่มีหลายหมวดหมู่และหลายตลาด"
+            title="Enterprise"
+            price="Custom Pricing"
+            detail="For large websites, multi-location businesses or international brands."
           />
+        </div>
+        <div className="mt-10 rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
+          <h2 className="text-xl font-semibold text-neutral-950">Questions we help answer</h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            {[
+              'How easily can customers discover your brand?',
+              'How visible are you compared to competitors?',
+              'How well do Google and AI platforms understand your business?',
+              'What is limiting your growth potential?',
+              'What should be prioritized first?',
+            ].map((question) => (
+              <p key={question} className="leading-7 text-neutral-700">
+                {question}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 

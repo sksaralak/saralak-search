@@ -146,7 +146,7 @@ export default function CaseStudies() {
           SEO • GEO • AEO • Google Maps
         </p>
         <div className="mt-8 flex justify-center">
-          <CTAButton to="/discovery-audit">Request a Discovery Audit</CTAButton>
+          <CTAButton to="/discovery-audit">Request a Brand Visibility Audit</CTAButton>
         </div>
       </section>
     </main>

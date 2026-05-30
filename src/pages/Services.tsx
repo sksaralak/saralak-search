@@ -10,66 +10,66 @@ import { faqJsonLd, servicesFaqs } from '../content/faqs'
 import { brand, packages } from '../content/site'
 
 const searchChannels = [
-  ['SEO', 'ติด Google Search'],
-  ['AEO', 'ติด AI Overview'],
-  ['GEO', 'ให้ ChatGPT, Gemini และ AI Search พูดถึงแบรนด์'],
-  ['Google Maps', 'ให้ลูกค้าเจอธุรกิจจากการค้นหาในพื้นที่'],
+  ['Google Search', 'Increase brand discovery when customers search'],
+  ['AI Overview', 'Become clearer in AI-powered answers'],
+  ['AI Search', 'Build visibility across ChatGPT, Gemini and Perplexity'],
+  ['Google Maps', 'Grow local brand visibility for nearby customers'],
 ]
 
 const serviceCards = [
   {
-    title: 'อยากติด Google มากขึ้น',
+    title: 'Increase visibility on Google',
     description:
-      'ปรับเว็บไซต์และคอนเทนต์ให้ลูกค้าค้นเจอธุรกิจมากขึ้นบน Google Search โดยเน้นคำค้นที่มีผลต่อยอดขายและลูกค้าใหม่',
+      'Help customers discover your brand more easily when they search for services, products or solutions like yours.',
   },
   {
-    title: 'อยากติด AI Overview',
+    title: 'Increase visibility in AI Search',
     description:
-      'จัดโครงสร้างคำตอบ คำถาม และเนื้อหาให้ชัดเจนขึ้น เพื่อเพิ่มโอกาสถูกนำไปแสดงใน AI Overview และ Answer Engines',
+      'Improve how AI Overview, ChatGPT, Gemini, Perplexity and other AI Search platforms understand your business.',
   },
   {
-    title: 'อยากให้ ChatGPT พูดถึงแบรนด์',
+    title: 'Make your brand easier to understand',
     description:
-      'ทำให้ข้อมูลธุรกิจ สินค้า บริการ และความเชี่ยวชาญชัดเจนขึ้น เพื่อเพิ่มโอกาสถูกเข้าใจและอ้างอิงใน AI Search',
+      'Clarify your positioning, service expertise and proof signals so search engines and AI systems can evaluate your brand with more confidence.',
   },
   {
-    title: 'อยากให้ลูกค้าเจอบน Google Maps',
+    title: 'Grow local brand visibility',
     description:
-      'ปรับ Google Business Profile และ Local Visibility เพื่อช่วยให้ลูกค้าในพื้นที่ค้นเจอ โทร ขอเส้นทาง และติดต่อธุรกิจได้ง่ายขึ้น',
+      'Increase visibility on Google Maps and local search so nearby customers can call, request directions and visit more easily.',
   },
   {
-    title: 'ต้องการ SEO Support สำหรับ Agency',
+    title: 'Support agency teams',
     description:
-      'สนับสนุน Agency และทีมการตลาดด้วย SEO Audit, strategy, content direction, technical review และ Thailand search insight',
+      'Provide white-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
   },
   {
-    title: 'ยังไม่แน่ใจว่าควรเริ่มจากอะไร',
+    title: 'Clarify what to prioritize first',
     description:
-      'เริ่มจาก Discovery Audit เพื่อดูว่าเว็บไซต์ควรลงทุนกับ Google Search, Google Maps หรือ AI Search ในส่วนใดก่อน',
+      'Start with a Brand Visibility Audit to understand what is limiting visibility before investing in long-term growth.',
   },
 ]
 
 const resultHighlights = [
-  '#5 → #1 Ranking',
-  'ติด AI Overview',
-  'ถูก ChatGPT แนะนำ',
-  'Organic Visibility เติบโต',
+  'More brand discovery',
+  'More AI Search visibility',
+  'More qualified customer reach',
+  'Stronger brand authority',
 ]
 
 const process = [
-  ['01', 'Audit', 'ตรวจเว็บไซต์ ตลาด เนื้อหา และจุดที่ขวางการเติบโตจาก Search'],
-  ['02', 'Prioritize', 'จัดลำดับงานที่ควรทำก่อนให้เหลือเป็น action list ที่ชัดเจน'],
-  ['03', 'Execute', 'ช่วยทำหรือ guide งาน SEO, content, AI Search และ Local Search ตามเป้าหมาย'],
-  ['04', 'Report', 'รายงานผลแบบอ่านง่าย พร้อม next actions ที่ทีมใช้ต่อได้'],
-  ['05', 'Improve', 'ปรับแผนจากข้อมูล ranking, traffic, lead และบริบทธุรกิจจริง'],
+  ['01', 'Understand', 'Review your current visibility across Google, AI Search and local search.'],
+  ['02', 'Prioritize', 'Identify the growth opportunities that matter most to the business.'],
+  ['03', 'Improve', 'Strengthen the content, authority and brand signals that support visibility.'],
+  ['04', 'Review', 'Monitor performance and explain what changed in business language.'],
+  ['05', 'Grow', 'Adjust the strategy as the market, competitors and AI Search behavior change.'],
 ]
 
 export default function Services() {
   return (
     <main>
       <SEO
-        title="บริการ SEO, Google Maps และ AI Search | Saralak Search"
-        description="บริการเพิ่มการมองเห็น ลูกค้าใหม่ และยอดขายจาก Google, Google Maps และ AI Search สำหรับธุรกิจไทยและ Agency Partner"
+        title="Brand Visibility Services for Google and AI Search | Saralak Search"
+        description="Increase brand visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity, Google Maps and other AI Search platforms."
         path="/services"
         jsonLd={{
           '@context': 'https://schema.org',
@@ -93,12 +93,11 @@ export default function Services() {
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Services</p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-            เปลี่ยน Search ให้เป็นลูกค้าและยอดขาย
+            Increase Brand Visibility across Google and AI Search
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ช่วยให้ธุรกิจถูกค้นพบมากขึ้นบน Google, Google Maps และ AI Search
-            พร้อมวางแผนการเติบโตจากข้อมูลการค้นหาจริง
-            เพื่อเปลี่ยนการค้นหาให้เป็นลูกค้าและยอดขายที่วัดผลได้
+            Saralak Search helps businesses become easier to discover, understand and trust
+            across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and local search.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/discovery-audit">{brand.primaryCta}</CTAButton>
@@ -117,7 +116,7 @@ export default function Services() {
                 <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
                   {label}
                 </p>
-                <p className="thai-readable mt-2 font-semibold leading-7 text-neutral-950">
+                <p className="thai-readable mt-2 break-words font-semibold leading-7 text-neutral-950">
                   {text}
                 </p>
               </article>
@@ -129,11 +128,11 @@ export default function Services() {
       <AnswerBlock title="เหมาะกับใคร">
         <ul className="grid gap-3 sm:grid-cols-2">
           {[
-            'ธุรกิจที่ต้องการลูกค้าใหม่จาก Google',
-            'ธุรกิจที่ต้องการเพิ่มยอดขายจาก Search',
-            'ธุรกิจที่ต้องการเริ่ม AI Search Visibility',
-            'Agency ที่ต้องการ SEO Support เพิ่มเติม',
-            'ธุรกิจที่ต้องการเพิ่มการมองเห็นบน Google Maps',
+            'Businesses that want more visibility on Google and AI Search',
+            'Brands that need more qualified discovery from potential customers',
+            'Teams that want Google and AI platforms to understand their business more clearly',
+            'Agencies that need senior SEO, GEO and AI Search support',
+            'Local businesses that need more nearby customers from Google Maps',
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="mt-0.5 font-semibold text-teal-700">✓</span>
@@ -148,7 +147,7 @@ export default function Services() {
           <SectionHeader
             eyebrow="บริการ"
             title="คุณต้องการผลลัพธ์แบบไหน?"
-            description="เริ่มจากสิ่งที่ธุรกิจอยากเห็น ไม่ใช่จากศัพท์เทคนิค"
+            description="Start from the business outcome, not a technical SEO checklist."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {serviceCards.map((service) => (
@@ -159,7 +158,7 @@ export default function Services() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="ผลลัพธ์" title="ตัวอย่างผลลัพธ์" />
+          <SectionHeader eyebrow="ผลลัพธ์" title="Business outcomes we help improve" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {resultHighlights.map((item) => (
             <article key={item} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -176,15 +175,16 @@ export default function Services() {
 
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="แพ็กเกจ" title="รูปแบบการทำงาน" />
+          <SectionHeader eyebrow="แพ็กเกจ" title="Brand Visibility services" />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {packages.map((item) => (
               <PricingCard key={item.title} {...item} />
             ))}
           </div>
           <p className="thai-readable mt-6 max-w-3xl text-sm leading-7 text-neutral-600">
-            ราคาข้างต้นเป็นเพียงแนวทางเบื้องต้น แต่ละธุรกิจมีเป้าหมาย การแข่งขัน
-            และขอบเขตงานที่แตกต่างกัน สามารถปรึกษาเพื่อออกแบบแนวทางและงบประมาณให้เหมาะสมกับธุรกิจได้
+            Pricing is an initial guide. Each business has different goals, competition and
+            growth potential. We can scope the right level of support after reviewing your current
+            visibility.
           </p>
         </div>
       </section>
@@ -205,12 +205,12 @@ export default function Services() {
               Agency Partner
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-neutral-950">
-              SEO Support สำหรับ Agency และทีมการตลาด
+              Agency Partner Support
             </h2>
             <p className="thai-readable mt-4 max-w-3xl leading-7 text-neutral-700">
-              สำหรับ Agency, PR team, web team, content team หรือทีมการตลาดที่ต้องการคนช่วยดู
-              SEO Audit, strategy, technical review, content direction และ Thailand search insight
-              โดยไม่ต้องสร้างทีม SEO เพิ่มเอง
+              White-label SEO, GEO and AI Search support for agencies, marketing teams and
+              international organizations that need Thailand market expertise and senior strategic
+              consultation.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <CTAButton to="/contact">คุยเรื่อง Agency Support</CTAButton>
@@ -229,11 +229,11 @@ export default function Services() {
 
       <section className="bg-teal-950 px-4 py-16 text-center text-white sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          ไม่แน่ใจว่าธุรกิจควรเริ่มจาก SEO, Google Maps หรือ AI Search?
+          Not sure what is limiting your brand visibility?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-teal-50">
-          เริ่มจาก Discovery Audit เพื่อดูว่าธุรกิจควรลงทุนกับ SEO, Google Maps หรือ AI Search
-          ในส่วนใดก่อน
+          Start with a Brand Visibility Audit to understand what Google and AI Search understand
+          about your business, competitors and growth opportunities.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <CTAButton to="/contact" variant="secondary">

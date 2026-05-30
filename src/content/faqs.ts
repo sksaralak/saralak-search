@@ -27,7 +27,7 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: 'ต้องเริ่มจากบริการไหนก่อน?',
     answer:
-      'ถ้ายังไม่แน่ใจว่าปัญหาหลักอยู่ตรงไหน ควรเริ่มจาก Discovery Audit เพื่อดูว่าควรลงทุนกับ SEO, Google Maps หรือ AI Search ในส่วนใดก่อน',
+      'ถ้ายังไม่แน่ใจว่าปัญหาหลักอยู่ตรงไหน ควรเริ่มจาก Brand Visibility Audit เพื่อดูว่าควรลงทุนกับ Google Search, Google Maps หรือ AI Search ในส่วนใดก่อน',
   },
   {
     question: 'รับงานกับ Agency Partner ไหม?',
@@ -48,12 +48,12 @@ export const homepageFaqs: FAQItem[] = [
 
 export const discoveryAuditFaqs: FAQItem[] = [
   {
-    question: 'Discovery Audit ต่างจาก SEO Audit อย่างไร?',
+    question: 'Brand Visibility Audit ต่างจาก SEO Audit อย่างไร?',
     answer:
-      'Discovery Audit ไม่ได้ดูแค่ปัญหา SEO เชิงเทคนิค แต่ดูภาพรวมของโอกาสการเติบโต ทั้ง Google Search, AI Search, Google Maps, คอนเทนต์ และลำดับงานที่ควรลงทุนก่อน',
+      'Brand Visibility Audit ไม่ได้ดูแค่ปัญหา SEO เชิงเทคนิค แต่ดูภาพรวมของโอกาสการเติบโต ทั้ง Google Search, AI Search, Google Maps, ความเข้าใจของแบรนด์ และลำดับงานที่ควรลงทุนก่อน',
   },
   {
-    question: 'Audit แล้วต้องซื้อ Retainer ต่อหรือไม่?',
+    question: 'Audit แล้วต้องทำงานต่อเนื่องต่อหรือไม่?',
     answer:
       'ไม่จำเป็น Audit ถูกออกแบบให้ใช้ตัดสินใจได้ด้วยตัวเอง หากต้องการให้ช่วยลงมือทำต่อค่อยคุยเรื่อง retainer หรือ project scope ภายหลัง',
   },
@@ -86,9 +86,9 @@ export const discoveryAuditFaqs: FAQItem[] = [
 
 export const servicesFaqs: FAQItem[] = [
   {
-    question: 'ควรเลือกบริการ SEO แบบไหน?',
+    question: 'ควรเลือกบริการ Brand Visibility แบบไหน?',
     answer:
-      'ถ้ายังไม่รู้ปัญหาหลักให้เริ่มจาก Discovery Audit ถ้ามีแผนชัดแล้วค่อยเลือก SEO execution, AI Search Visibility, Google Maps Optimization หรือ Agency Support ตามเป้าหมาย',
+      'ถ้ายังไม่รู้ปัญหาหลักให้เริ่มจาก Brand Visibility Audit ถ้ามีแผนชัดแล้วค่อยเลือก Increase Brand Visibility, Local Brand Visibility หรือ Agency Partner Support ตามเป้าหมาย',
   },
   {
     question: 'SEO, AEO และ GEO ต่างกันอย่างไร?',
@@ -96,14 +96,14 @@ export const servicesFaqs: FAQItem[] = [
       'SEO ช่วยให้เว็บไซต์ติดอันดับใน Search Engine ส่วน AEO ช่วยให้เนื้อหาถูกนำไปตอบคำถามบน AI Overview และ GEO ช่วยเพิ่มโอกาสให้แบรนด์ถูกอ้างอิงใน ChatGPT, Gemini และ Search AI รุ่นใหม่',
   },
   {
-    question: 'Discovery Audit ได้อะไรบ้าง?',
+    question: 'Brand Visibility Audit ได้อะไรบ้าง?',
     answer:
       'ประกอบด้วยการวิเคราะห์เว็บไซต์ การมองเห็นบน Search, AI Search, Google Maps รวมถึงโอกาสในการเติบโตและลำดับความสำคัญของงานที่ควรทำก่อน',
   },
   {
     question: 'ใช้เวลานานเท่าไรจึงเริ่มเห็นผล?',
     answer:
-      'ขึ้นอยู่กับการแข่งขันและสถานะปัจจุบันของเว็บไซต์ โดยทั่วไป SEO มักเริ่มเห็นสัญญาณในช่วง 3–6 เดือน ส่วนบางงานด้าน Local SEO และ AI Search Visibility อาจเห็นผลได้เร็วกว่านั้น',
+      'ขึ้นอยู่กับการแข่งขันและสถานะปัจจุบันของเว็บไซต์ โดยทั่วไปงานเพิ่ม Brand Visibility มักเริ่มเห็นสัญญาณในช่วง 3–6 เดือน ส่วนบางงานด้าน Local Brand Visibility อาจเห็นผลได้เร็วกว่านั้น',
   },
   {
     question: 'ถ้ามีทีม Marketing อยู่แล้ว สามารถทำงานร่วมกันได้หรือไม่?',
@@ -111,17 +111,17 @@ export const servicesFaqs: FAQItem[] = [
       'ได้ สามารถทำงานร่วมกับทีม Marketing, Content, Performance หรือทีมพัฒนาเว็บไซต์ เพื่อช่วยวางกลยุทธ์และให้คำแนะนำด้าน Search',
   },
   {
-    question: 'AI Search Visibility วัดผลอย่างไร?',
+    question: 'AI Search Visibility วัดผลอย่างไรในบริการ Increase Brand Visibility?',
     answer:
       'วัดจากการปรากฏใน AI Overview, ChatGPT, Gemini, Perplexity รวมถึงการเปลี่ยนแปลงของการมองเห็น การเข้าถึง และคุณภาพของการค้นหา',
   },
   {
-    question: 'Local SEO ต่างจาก SEO ทั่วไปอย่างไร?',
+    question: 'Local Brand Visibility ต่างจากงาน Visibility ทั่วไปอย่างไร?',
     answer:
-      'Local SEO เน้นการเพิ่มการมองเห็นในพื้นที่เฉพาะผ่าน Google Maps และผลการค้นหาในท้องถิ่น ส่วน SEO ทั่วไปเน้นการติดอันดับในระดับประเทศหรือกว้างกว่า',
+      'Local Brand Visibility เน้นการเพิ่มการมองเห็นในพื้นที่เฉพาะผ่าน Google Maps และผลการค้นหาในท้องถิ่น ส่วนงาน Visibility ทั่วไปเน้นการมองเห็นใน Google Search และ AI Search ที่กว้างกว่า',
   },
   {
-    question: 'ธุรกิจแบบไหนเหมาะกับ AI Search Visibility?',
+    question: 'ธุรกิจแบบไหนเหมาะกับ Increase Brand Visibility?',
     answer:
       'เหมาะกับธุรกิจที่ลูกค้ามักค้นหา เปรียบเทียบ หรือขอคำแนะนำก่อนซื้อ เช่น คลินิก โรงแรม ท่องเที่ยว สินค้า beauty, retail, financial services และธุรกิจบริการ',
   },
@@ -131,7 +131,7 @@ export const servicesFaqs: FAQItem[] = [
       'ควรมีพื้นฐาน SEO ที่ดีควบคู่ไปกับ GEO เพราะ AI Search ต้องอาศัยข้อมูลเว็บไซต์ที่ชัดเจน น่าเชื่อถือ และค้นพบได้จากแหล่งที่เกี่ยวข้อง',
   },
   {
-    question: 'Google Maps Optimization เหมาะกับธุรกิจประเภทใด?',
+    question: 'Local Brand Visibility เหมาะกับธุรกิจประเภทใด?',
     answer:
       'เหมาะกับธุรกิจที่มีหน้าร้าน พื้นที่ให้บริการ หรือหลายสาขา เช่น คลินิก ร้านอาหาร โรงแรม ร้านค้า โรงเรียน สปา และบริการท้องถิ่น',
   },
@@ -202,9 +202,9 @@ export const caseStudiesFaqs: FAQItem[] = [
       'Local SEO ช่วยให้ธุรกิจปรากฏต่อผู้ค้นหาในพื้นที่ใกล้เคียงผ่าน Google Search และ Google Maps ซึ่งมีผลโดยตรงต่อการโทร การขอเส้นทาง และการติดต่อจากลูกค้า',
   },
   {
-    question: 'Discovery Audit คืออะไร?',
+    question: 'Brand Visibility Audit คืออะไร?',
     answer:
-      'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อค้นหาโอกาสในการเติบโต ปัญหาทางเทคนิค จุดอ่อนด้านคอนเทนต์ และแนวทางในการเพิ่มการมองเห็นบน Search และ AI Search',
+      'Brand Visibility Audit คือการวิเคราะห์เว็บไซต์เพื่อค้นหาโอกาสในการเติบโต ความเข้าใจของ Google และ AI Search ต่อธุรกิจ และแนวทางในการเพิ่มการมองเห็นบน Search และ AI Search',
   },
   {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
@@ -237,7 +237,7 @@ export const contactFaqs: FAQItem[] = [
   {
     question: 'รับงานโปรเจกต์เล็กไหม?',
     answer:
-      'รับเป็นบางกรณี โดยเฉพาะ Discovery Audit, Google Maps Optimization, SEO review หรือ support เฉพาะจุดที่มี scope ชัดเจน',
+      'รับเป็นบางกรณี โดยเฉพาะ Brand Visibility Audit, Local Brand Visibility หรือ support เฉพาะจุดที่มี scope ชัดเจน',
   },
   {
     question: 'สามารถส่งเว็บไซต์ให้ประเมินเบื้องต้นก่อนได้ไหม?',

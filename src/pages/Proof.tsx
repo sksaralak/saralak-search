@@ -20,7 +20,7 @@ export default function Proof() {
   return (
     <main>
       <SEO
-        title="ตัวอย่างงาน SEO และ AI Search Visibility | Saralak Search"
+        title="ตัวอย่างงาน Brand Visibility และ AI Search | Saralak Search"
         description="รวมตัวอย่างหลักฐานจากงานจริง เช่น การเติบโตของ Organic Traffic, อันดับคีย์เวิร์ด, การปรากฏใน AI Overview และการถูกแนะนำใน ChatGPT โดยปกปิดข้อมูลลูกค้าที่อ่อนไหวแล้ว"
         path="/proof"
         jsonLd={{
@@ -33,7 +33,7 @@ export default function Proof() {
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Proof</p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-            ตัวอย่างงาน SEO และ AI Search Visibility
+            ตัวอย่างงาน Brand Visibility และ AI Search
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
             รวมตัวอย่างหลักฐานจากงานจริง เช่น การเติบโตของ Organic Traffic, อันดับคีย์เวิร์ด,
@@ -106,7 +106,7 @@ export default function Proof() {
           อยากรู้ว่าเว็บไซต์ของคุณมีโอกาสแบบไหน?
         </h2>
         <p className="mt-4 text-lg leading-8 text-neutral-700">
-          เริ่มจาก Discovery Audit เพื่อดูปัญหาหลัก โอกาสที่ควรโฟกัส และแผน SEO ที่ทำต่อได้จริง
+          เริ่มจาก Brand Visibility Audit เพื่อดูปัญหาหลัก โอกาสที่ควรโฟกัส และแผนเพิ่มการมองเห็นที่ทำต่อได้จริง
         </p>
         <div className="mt-8">
           <CTAButton to="/discovery-audit">{brand.primaryCta}</CTAButton>

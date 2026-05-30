@@ -9,73 +9,122 @@ export const brand = {
   linkedIn: 'linkedin.com/in/saralakkaewkum',
   primaryCta: 'เพิ่มการมองเห็น',
   positioning:
-    'SEO, AEO, GEO และ AI Search Visibility สำหรับธุรกิจไทยและ Agency Partner',
+    'Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and AI Search platforms',
   plainMessage:
-    'ช่วยให้ธุรกิจถูกค้นพบบน Google, AI Overview, ChatGPT, Perplexity และ Google Maps ด้วยแผน SEO ที่ใช้ข้อมูลจริงและลงมือทำได้',
+    'We help businesses increase Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and local search with a strategy focused on business outcomes.',
 }
 
 export const services = [
   {
-    title: 'เพิ่มการมองเห็นและลูกค้าใหม่',
+    title: 'Brand Visibility Audit',
     description:
-      'วางแผนให้ธุรกิจถูกค้นพบมากขึ้นในจุดที่มีผลต่อการได้ลูกค้าใหม่และยอดขาย',
+      'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
   },
   {
-    title: 'ปรับเว็บไซต์ให้ติดอันดับและสร้างยอดขาย',
+    title: 'Increase Brand Visibility',
     description:
-      'ปรับหน้าเว็บไซต์และคอนเทนต์ให้รองรับการค้นหาของลูกค้า และช่วยให้การเข้าชมมีโอกาสกลายเป็นยอดขายมากขึ้น',
+      'Increase your brand visibility across Google Search, AI Overview, ChatGPT, Gemini and other AI Search platforms.',
   },
   {
-    title: 'เพิ่มโอกาสถูกค้นพบใน AI Search',
+    title: 'Local Brand Visibility',
     description:
-      'ทำให้ข้อมูลธุรกิจ สินค้า และบริการชัดเจนขึ้นสำหรับ AI Overview, ChatGPT, Gemini และ Perplexity',
+      'Increase visibility on Google Maps and local search to attract more nearby customers.',
   },
   {
-    title: 'เพิ่มลูกค้าในพื้นที่ด้วย Google Maps',
+    title: 'Agency Partner Support',
     description:
-      'ช่วยธุรกิจหน้าร้านและหลายสาขาเพิ่มโอกาสถูกพบเมื่อมีลูกค้าค้นหาบริการใกล้พื้นที่',
-  },
-  {
-    title: 'SEO Support สำหรับ Agency',
-    description:
-      'ช่วย Agency และทีมการตลาดด้าน strategy, audit, content direction และการวิเคราะห์ตลาดค้นหาในไทย',
-  },
-  {
-    title: 'วิเคราะห์โอกาสการเติบโตจาก Search',
-    description:
-      'ช่วยระบุว่าธุรกิจควรเริ่มจาก SEO, Google Maps หรือ AI Search ก่อน เพื่อใช้ทรัพยากรและงบประมาณได้อย่างคุ้มค่าที่สุด',
+      'White-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
   },
 ]
 
 export const packages = [
   {
-    title: 'Discovery Audit',
-    price: '5,000-18,000 THB',
+    title: 'Brand Visibility Audit',
+    price: 'Starting from 5,000 THB',
     detail:
-      'ตรวจเว็บไซต์เพื่อหาปัญหาที่ขวางการมองเห็น ลูกค้าใหม่ และ AI Search presence ก่อนเริ่มงานระยะยาว',
+      'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
+    sections: [
+      {
+        title: 'Questions we help answer',
+        items: [
+          'How easily can customers discover your brand?',
+          'How visible are you compared to competitors?',
+          'How well do Google and AI platforms understand your business?',
+          'What is limiting your growth potential?',
+          'What should be prioritized first?',
+        ],
+      },
+    ],
   },
   {
-    title: 'Growth SEO Retainer',
-    price: 'from 25,000 THB/month',
+    title: 'Increase Brand Visibility',
+    price: 'Starting from 25,000 THB/month',
+    supportingText: 'Typical investment: 25,000–60,000 THB/month',
     detail:
-      'งานต่อเนื่องสำหรับธุรกิจที่ต้องการเพิ่มการมองเห็น ลูกค้าใหม่ และโอกาสการขายจาก Search',
-  },
-  {
-    title: 'AI Search Visibility',
-    price: 'from 40,000 THB/month',
-    detail:
-      'ปรับข้อมูล คอนเทนต์ และ entity ให้ธุรกิจพร้อมต่อ AI Overview, ChatGPT และ Perplexity',
+      'Increase your brand visibility across Google Search, AI Overview, ChatGPT, Gemini and other AI Search platforms.',
+    sections: [
+      {
+        title: 'What we help improve',
+        items: [
+          'SEO, AEO & GEO Strategy',
+          'Google Search Visibility',
+          'AI Search & Brand Mention Visibility',
+          'Content & Authority Development',
+          'Technical SEO & Internal Linking',
+          'Measurement & Strategic Consultation',
+        ],
+      },
+      {
+        title: 'Goals of the service',
+        items: [
+          'Increase visibility on Google',
+          'Increase visibility on AI Search',
+          'Reach more potential customers',
+          'Strengthen brand authority',
+          'Build long-term organic growth',
+        ],
+      },
+    ],
   },
   {
     title: 'Agency Partner Support',
-    price: 'from 40,000-50,000 THB/month',
-    detail: 'White-label SEO และ Thailand-market support สำหรับเอเจนซี่',
+    price: 'Custom Pricing',
+    detail:
+      'White-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
+    sections: [
+      {
+        title: 'What we help support',
+        items: [
+          'White-label SEO Support',
+          'Technical SEO Consultation',
+          'SEO, AEO & GEO Strategy',
+          'Content Review & Recommendations',
+          'Thailand Market Expertise',
+          'Strategic Consultation',
+        ],
+      },
+    ],
   },
   {
-    title: 'Local Growth SEO',
-    price: 'from 6,000 THB/location/month',
+    title: 'Local Brand Visibility',
+    price: 'Starting from 6,000 THB/location/month',
     detail:
-      'Google Maps Optimization และ Local Search สำหรับธุรกิจที่มีหน้าร้านหรือหลายสาขา',
+      'Increase visibility on Google Maps and local search to attract more nearby customers.',
+    sections: [
+      {
+        title: 'What we help improve',
+        items: [
+          'Google Business Profile',
+          'Local Search Visibility',
+          'Review & Reputation Development',
+          'Local Performance Review',
+        ],
+      },
+      {
+        title: 'Goals of the service',
+        items: ['More calls', 'More direction requests', 'More store visits', 'More local visibility'],
+      },
+    ],
   },
 ]
 

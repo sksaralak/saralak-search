@@ -105,7 +105,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
               <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
-                    Discovery Audit
+                    Brand Visibility Audit
                   </p>
                   <h2 className="mt-2 text-3xl font-semibold leading-tight text-neutral-950">
                     {post.cta.headline}
@@ -138,7 +138,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <CTAButton to="/services">View Services</CTAButton>
                   <CTAButton to="/discovery-audit" variant="secondary">
-                    Start with Discovery Audit
+                    Start with Brand Visibility Audit
                   </CTAButton>
                 </div>
               </div>

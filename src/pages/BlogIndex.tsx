@@ -53,7 +53,7 @@ export default function BlogIndex() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/services">View Services</CTAButton>
             <CTAButton to="/discovery-audit" variant="secondary">
-              Start with Discovery Audit
+              Start with Brand Visibility Audit
             </CTAButton>
           </div>
         </div>
@@ -74,7 +74,11 @@ export default function BlogIndex() {
           {[
             ['About', '/about', 'Read about Saralak Search and the founder profile.'],
             ['Services', '/services', 'See how SEO, AEO and GEO services are structured.'],
-            ['Discovery Audit', '/discovery-audit', 'Start with a clear view of search opportunities.'],
+            [
+              'Brand Visibility Audit',
+              '/discovery-audit',
+              'Start with a clear view of visibility opportunities.',
+            ],
           ].map(([title, href, description]) => (
             <article key={href} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h2 className="text-lg font-semibold text-neutral-950">{title}</h2>

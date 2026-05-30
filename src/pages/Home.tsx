@@ -76,8 +76,8 @@ export default function Home() {
               knowsAbout: [
                 'Search Visibility Strategy',
                 'SEO',
-                'Google Maps Optimization',
-                'AI Search Visibility',
+                'Local Brand Visibility',
+                'Brand Visibility',
                 'AEO',
                 'Demand capture',
                 'Lead generation',
@@ -86,12 +86,12 @@ export default function Home() {
             {
               '@type': 'Service',
               '@id': `${baseUrl}/#search-visibility-consulting`,
-              name: 'Search Visibility Consulting',
-              serviceType: 'SEO and AI Search Visibility Consulting',
+              name: 'Brand Visibility Consulting',
+              serviceType: 'Google and AI Search Brand Visibility Consulting',
               provider: { '@id': `${baseUrl}/#organization` },
               areaServed: 'Thailand',
               description:
-                'Business-focused search visibility consulting for Google, Google Maps and AI Search.',
+                'Business-focused Brand Visibility consulting for Google Search, Google Maps and AI Search.',
             },
             {
               '@type': 'WebSite',
@@ -249,8 +249,8 @@ export default function Home() {
         <div>
           <SectionHeader
             eyebrow="Methodology"
-            title="Discovery Audit ยังอยู่ แต่ไม่ใช่ปลายทางหลัก"
-            description="Discovery Audit เป็นวิธีประเมินว่าธุรกิจควรแก้อะไรก่อน เหมาะสำหรับคนที่ต้องการเข้าใจ methodology ก่อนเริ่มงาน แต่เป้าหมายหลักคือเพิ่มการมองเห็น lead และรายได้"
+            title="Brand Visibility Audit helps clarify where to start"
+            description="Brand Visibility Audit is a way to understand what should be prioritized first. The long-term goal is to increase visibility, demand and revenue opportunities across Google and AI Search."
           />
         </div>
         <div className="grid gap-4 sm:grid-cols-3">

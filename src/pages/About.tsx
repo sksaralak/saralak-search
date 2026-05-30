@@ -30,7 +30,7 @@ const capabilities = [
     description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีพื้นที่ให้บริการ',
   },
   {
-    title: 'Google Maps Optimization',
+    title: 'Local Brand Visibility',
     description: 'เพิ่มประสิทธิภาพ Google Business Profile และ Local Visibility',
   },
 ]
@@ -83,7 +83,7 @@ const selectedResults = [
 
 const process = [
   {
-    title: 'Discovery Audit',
+    title: 'Brand Visibility Audit',
     description: 'วิเคราะห์เว็บไซต์และโอกาสการเติบโต',
   },
   {
@@ -126,9 +126,9 @@ const aboutFaqs: FAQItem[] = [
       'Google Search แบบเดิมแสดงรายการผลลัพธ์ให้ผู้ใช้เลือก ส่วน AI Search มักสรุปคำตอบหรือแนะนำตัวเลือกโดยดึงข้อมูลจากหลายแหล่ง เว็บไซต์จึงต้องมีข้อมูลที่ชัดเจนและน่าเชื่อถือมากขึ้น',
   },
   {
-    question: 'Discovery Audit คืออะไร?',
+    question: 'Brand Visibility Audit คืออะไร?',
     answer:
-      'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อดูปัญหา โอกาสการเติบโต และลำดับความสำคัญของงาน SEO, AEO, GEO, AI Search และ Google Maps ที่ควรทำก่อน',
+      'Brand Visibility Audit คือการวิเคราะห์เว็บไซต์เพื่อดูปัญหา โอกาสการเติบโต และลำดับความสำคัญของงาน SEO, AEO, GEO, AI Search และ Google Maps ที่ควรทำก่อน',
   },
   {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
@@ -172,8 +172,8 @@ export default function About() {
                 'GEO',
                 'Technical SEO',
                 'Content SEO',
-                'Google Maps Optimization',
-                'AI Search Visibility',
+                'Local Brand Visibility',
+                'Increase Brand Visibility',
                 'Local SEO',
               ],
             },
@@ -356,11 +356,11 @@ export default function About() {
           อยากเพิ่มการมองเห็นบน Search?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-2xl text-lg leading-8 text-neutral-700">
-          เริ่มต้นด้วย Discovery Audit เพื่อดูว่าเว็บไซต์มีโอกาสเติบโตตรงไหน
+          เริ่มต้นด้วย Brand Visibility Audit เพื่อดูว่าเว็บไซต์มีโอกาสเติบโตตรงไหน
           และควรเริ่มปรับจากอะไร
         </p>
         <div className="mt-8 flex justify-center">
-          <CTAButton to="/discovery-audit">ขอรับ Discovery Audit</CTAButton>
+          <CTAButton to="/discovery-audit">ขอรับ Brand Visibility Audit</CTAButton>
         </div>
       </section>
     </main>

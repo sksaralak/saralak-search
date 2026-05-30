@@ -101,8 +101,8 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'เว็บไซต์ของคุณมีโอกาสถูก AI พูดถึงหรือยัง?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่า Google และ AI Search เข้าใจธุรกิจของคุณอย่างไร พร้อมระบุโอกาสในการเพิ่มการมองเห็นบน Search และ AI Search อย่างเป็นระบบ',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+        'Brand Visibility Audit ช่วยตรวจสอบว่า Google และ AI Search เข้าใจธุรกิจของคุณอย่างไร พร้อมระบุโอกาสในการเพิ่มการมองเห็นบน Search และ AI Search อย่างเป็นระบบ',
+      buttonText: 'เริ่มต้นด้วย Brand Visibility Audit',
       href: '/discovery-audit',
     },
   },

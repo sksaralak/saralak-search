@@ -11,13 +11,13 @@ const navItems = [
   { label: 'Proof', to: '/proof' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
-  { label: 'Discovery Audit', to: '/discovery-audit' },
+  { label: 'Brand Visibility Audit', to: '/discovery-audit' },
 ]
 
 const footerNavItems = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
-  { label: 'Discovery Audit', to: '/discovery-audit' },
+  { label: 'Brand Visibility Audit', to: '/discovery-audit' },
   { label: 'Case Studies', to: '/case-studies' },
   { label: 'Proof', to: '/proof' },
   { label: 'Blog', to: '/blog' },
@@ -89,7 +89,8 @@ export default function Layout() {
           <div>
             <p className="text-lg font-semibold text-teal-950">{brand.name}</p>
             <p className="mt-3 max-w-2xl leading-7 text-neutral-700">
-              SEO, GEO, AEO and AI Search Visibility for Thai businesses and agency partners.
+              Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and
+              AI Search platforms for Thai businesses and agency partners.
             </p>
           </div>
           <nav aria-label="Footer navigation">
