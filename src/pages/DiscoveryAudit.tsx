@@ -1,3 +1,4 @@
+import ContactActions from '../components/ContactActions'
 import ContactForm from '../components/ContactForm'
 import CTAButton from '../components/CTAButton'
 import FAQSection from '../components/FAQSection'
@@ -171,6 +172,7 @@ export default function DiscoveryAudit() {
           title="ส่งเว็บไซต์หรือปัญหาที่อยากให้ตรวจมาได้เลย"
           description="หากต้องการคำตอบเร็ว แนะนำให้ติดต่อผ่าน LINE หรืออีเมลก่อน หรือใช้ฟอร์มด้านล่างได้"
         />
+        <ContactActions align="center" className="mt-8" />
         <div className="mt-8">
           <ContactForm />
         </div>

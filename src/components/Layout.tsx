@@ -117,6 +117,12 @@ export default function Layout() {
               >
                 LINE
               </a>
+              <a
+                href={brand.phoneUrl}
+                className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+              >
+                โทรปรึกษา
+              </a>
               <Link
                 to="/contact"
                 className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"

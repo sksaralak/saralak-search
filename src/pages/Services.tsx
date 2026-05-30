@@ -212,8 +212,14 @@ export default function Services() {
               SEO Audit, strategy, technical review, content direction และ Thailand search insight
               โดยไม่ต้องสร้างทีม SEO เพิ่มเอง
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <CTAButton to="/contact">คุยเรื่อง Agency Support</CTAButton>
+              <a
+                href={brand.phoneUrl}
+                className="inline-flex min-h-11 items-center justify-center rounded-md border border-teal-200 bg-white px-5 py-2.5 text-center text-sm font-semibold leading-6 text-teal-950 shadow-sm shadow-teal-950/5 transition hover:bg-teal-50"
+              >
+                โทรปรึกษา
+              </a>
             </div>
           </article>
         </div>
@@ -229,10 +235,16 @@ export default function Services() {
           เริ่มจาก Discovery Audit เพื่อดูว่าธุรกิจควรลงทุนกับ SEO, Google Maps หรือ AI Search
           ในส่วนใดก่อน
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <CTAButton to="/contact" variant="secondary">
             ปรึกษา Saralak
           </CTAButton>
+          <a
+            href={brand.phoneUrl}
+            className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 bg-transparent px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white transition hover:bg-white/10"
+          >
+            โทรปรึกษา
+          </a>
         </div>
       </section>
     </main>

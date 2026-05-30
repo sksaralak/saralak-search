@@ -1,4 +1,5 @@
 import AnswerBlock from '../components/AnswerBlock'
+import ContactActions from '../components/ContactActions'
 import ContactForm from '../components/ContactForm'
 import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
@@ -8,6 +9,7 @@ import { brand } from '../content/site'
 
 const contactOptions = [
   ['LINE', brand.line, brand.lineUrl],
+  ['Phone', brand.phone, brand.phoneUrl],
   ['Email', brand.email, `mailto:${brand.email}`],
   ['LinkedIn', brand.linkedIn, `https://${brand.linkedIn}`],
 ]
@@ -56,8 +58,8 @@ export default function Contact() {
                   <h2 className="text-lg font-semibold text-neutral-950">{label}</h2>
                   <a
                     href={href}
-                    target={label === 'Email' ? undefined : '_blank'}
-                    rel={label === 'Email' ? undefined : 'noreferrer'}
+                    target={label === 'Email' || label === 'Phone' ? undefined : '_blank'}
+                    rel={label === 'Email' || label === 'Phone' ? undefined : 'noreferrer'}
                     className="mt-2 inline-block break-words text-teal-900 hover:text-teal-700"
                   >
                     {value}
@@ -88,16 +90,7 @@ export default function Contact() {
         <p className="mt-4 text-lg leading-8 text-neutral-700">
           ส่ง URL เว็บไซต์หรือปัญหา SEO ที่เจอผ่าน LINE เพื่อเริ่มดูโอกาสในการเพิ่มการมองเห็นเว็บไซต์
         </p>
-        <div className="mt-8">
-          <a
-            href={brand.lineUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-md border border-teal-900 bg-teal-900 px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white shadow-sm shadow-teal-950/10 transition hover:bg-teal-800"
-          >
-            {brand.primaryCta}
-          </a>
-        </div>
+        <ContactActions align="center" className="mt-8" />
       </section>
     </main>
   )

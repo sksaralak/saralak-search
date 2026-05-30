@@ -3,7 +3,9 @@ export const brand = {
   domain: 'saralak-search.com',
   email: 'sk.saralak@gmail.com',
   line: 'LINE: @sariahihi',
-  lineUrl: 'https://line.me/R/ti/p/@sariahihi',
+  lineUrl: 'https://line.me/ti/p/~sariahihi',
+  phone: '0622944999',
+  phoneUrl: 'tel:+66622944999',
   linkedIn: 'linkedin.com/in/saralakkaewkum',
   primaryCta: 'เพิ่มการมองเห็น',
   positioning:
