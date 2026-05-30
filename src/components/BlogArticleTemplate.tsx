@@ -158,7 +158,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
                     Chat on LINE
                   </a>
                   <a
-                    href={brand.phoneUrl}
+                    href="tel:+66622944999"
                     className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 bg-white px-5 py-2.5 text-center text-sm font-semibold leading-6 text-teal-950 transition hover:bg-teal-50"
                   >
                     โทรปรึกษา
