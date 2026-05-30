@@ -7,6 +7,7 @@ import CaseStudies from './pages/CaseStudies'
 import Contact from './pages/Contact'
 import DiscoveryAudit from './pages/DiscoveryAudit'
 import Home from './pages/Home'
+import Privacy from './pages/Privacy'
 import Proof from './pages/Proof'
 import Services from './pages/Services'
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="blog" element={<BlogIndex />} />
         <Route path="blog/:slug" element={<BlogArticle />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

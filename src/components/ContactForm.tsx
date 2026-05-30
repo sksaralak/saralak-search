@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { brand } from '../content/site'
+import { trackContactFormSubmission } from './Analytics'
 
 const interests = [
   'Discovery Audit',
@@ -128,6 +129,11 @@ export default function ContactForm() {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
         body: body.toString(),
+      })
+
+      trackContactFormSubmission({
+        interest: form.interest,
+        budget: form.budget,
       })
 
       setStatus('success')

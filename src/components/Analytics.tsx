@@ -18,6 +18,22 @@ let analyticsInitialized = false
 let lastTrackedPath = ''
 let clarityInitialized = false
 
+export function trackContactFormSubmission(params: { interest: string; budget: string }) {
+  if (typeof window === 'undefined') return
+
+  window.gtag?.('event', 'generate_lead', {
+    event_category: 'engagement',
+    event_label: 'contact_form',
+    form_name: 'contact_form',
+    interest: params.interest,
+    budget: params.budget,
+    page_path: `${window.location.pathname}${window.location.search}${window.location.hash}`,
+    page_location: window.location.href,
+  })
+
+  window.clarity?.('event', 'contact_form_submit')
+}
+
 export default function Analytics() {
   const location = useLocation()
 

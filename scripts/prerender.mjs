@@ -5,6 +5,13 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
 
+const blogSlugs = [
+  'what-is-geo',
+  'aeo-vs-seo',
+  'get-mentioned-in-ai-search-results',
+  'modern-search-strategy',
+]
+
 const routes = [
   '/',
   '/about',
@@ -12,7 +19,10 @@ const routes = [
   '/discovery-audit',
   '/case-studies',
   '/proof',
+  '/blog',
+  ...blogSlugs.map(slug => `/blog/${slug}`),
   '/contact',
+  '/privacy',
 ]
 
 /**
@@ -112,10 +122,16 @@ async function main() {
     mkdirSync(outDir, { recursive: true })
     writeFileSync(resolve(outDir, 'index.html'), pageHtml)
 
+    if (route !== '/') {
+      const cleanUrlPath = resolve(root, `dist/client${route}.html`)
+      mkdirSync(dirname(cleanUrlPath), { recursive: true })
+      writeFileSync(cleanUrlPath, pageHtml)
+    }
+
     console.log(`  ✓ ${route}`)
   }
 
-  console.log('\n✓ Prerender complete — 7 static routes')
+  console.log(`\n✓ Prerender complete — ${routes.length} static routes`)
 }
 
 main().catch(err => {

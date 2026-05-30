@@ -8,9 +8,22 @@ import FloatingLineButton from './FloatingLineButton'
 const navItems = [
   { label: 'Services', to: '/services' },
   { label: 'Case Studies', to: '/case-studies' },
+  { label: 'Proof', to: '/proof' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
   { label: 'Discovery Audit', to: '/discovery-audit' },
+]
+
+const footerNavItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Services', to: '/services' },
+  { label: 'Discovery Audit', to: '/discovery-audit' },
+  { label: 'Case Studies', to: '/case-studies' },
+  { label: 'Proof', to: '/proof' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+  { label: 'Privacy Policy', to: '/privacy' },
 ]
 
 function navClass({ isActive }: { isActive: boolean }) {
@@ -72,12 +85,53 @@ export default function Layout() {
       <Analytics />
       <Outlet />
       <footer className="border-t border-neutral-200 bg-white pb-16 sm:pb-10">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
           <div>
             <p className="text-lg font-semibold text-teal-950">{brand.name}</p>
             <p className="mt-3 max-w-2xl leading-7 text-neutral-700">
-              SEO, GEO และ AI Search Visibility สำหรับธุรกิจไทยและ Agency Partner
+              SEO, GEO, AEO and AI Search Visibility for Thai businesses and agency partners.
             </p>
+          </div>
+          <nav aria-label="Footer navigation">
+            <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Navigation</p>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              {footerNavItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Contact</p>
+            <div className="mt-4 grid gap-2">
+              <a
+                href={brand.lineUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+              >
+                LINE
+              </a>
+              <Link
+                to="/contact"
+                className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+              >
+                Contact page
+              </Link>
+              <a
+                href={`https://${brand.linkedIn}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </footer>
