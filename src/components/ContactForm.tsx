@@ -24,6 +24,7 @@ type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 type FormState = {
   name: string
+  email: string
   company: string
   website: string
   interest: string
@@ -33,6 +34,7 @@ type FormState = {
 
 const initialState: FormState = {
   name: '',
+  email: '',
   company: '',
   website: '',
   interest: interests[0],
@@ -77,6 +79,12 @@ export default function ContactForm() {
       return
     }
 
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setStatus('error')
+      setFeedback('กรุณากรอกอีเมลที่ถูกต้อง')
+      return
+    }
+
     if (!form.company.trim()) {
       setStatus('error')
       setFeedback('กรุณากรอกชื่อบริษัทหรือธุรกิจ')
@@ -101,6 +109,7 @@ export default function ContactForm() {
     const body = new URLSearchParams({
       timestamp: new Date().toISOString(),
       name: form.name.trim(),
+      email: form.email.trim(),
       company: form.company.trim(),
       website: normalizeWebsite(form.website),
       interest: form.interest,
@@ -143,6 +152,17 @@ export default function ContactForm() {
             onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
             className="rounded-md border border-neutral-300 px-4 py-3 text-neutral-950 outline-teal-800"
             autoComplete="name"
+            required
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-neutral-900">
+          อีเมล
+          <input
+            value={form.email}
+            onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
+            className="rounded-md border border-neutral-300 px-4 py-3 text-neutral-950 outline-teal-800"
+            type="email"
+            autoComplete="email"
             required
           />
         </label>

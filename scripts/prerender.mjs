@@ -16,21 +16,66 @@ const routes = [
 ]
 
 /**
- * Helmet renders <title>, <meta>, <link>, <script> tags inline into the appHtml
- * string before the first <div> (the Layout root). Split there so we can move
- * them to <head> where crawlers expect them.
+ * Strip any Helmet-managed tags and prerendered body content left over from a
+ * previous run. Makes the script idempotent when re-run without a fresh
+ * `vite build` first.
  */
-function splitAppHtml(appHtml) {
+function sanitizeTemplate(raw) {
+  let html = raw
+    // Remove all title tags (incl. injected ones from previous runs)
+    .replace(/<title>[^<]*<\/title>/g, '')
+    // Remove Helmet-managed per-page meta / link tags
+    .replace(/<meta\s+name="description"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+name="robots"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+name="author"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+name="publisher"[^>]*\/?>/ig, '')
+    .replace(/<link\s+rel="canonical"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+property="og:title"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+property="og:description"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+property="og:url"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+name="twitter:title"[^>]*\/?>/ig, '')
+    .replace(/<meta\s+name="twitter:description"[^>]*\/?>/ig, '')
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
+
+  // Reset root div — replaces everything from <div id="root"> onward
+  const rootStart = html.indexOf('<div id="root">')
+  if (rootStart !== -1) {
+    html = `${html.slice(0, rootStart)}<div id="root"></div>\n  </body>\n</html>`
+  }
+
+  return html
+}
+
+/**
+ * react-helmet-async with prioritizeSeoTags:true hoists <title>, <meta>, and
+ * <link rel="canonical"> to the START of the rendered string (before the first
+ * <div>). However, <script type="application/ld+json"> renders inline at the
+ * JSX position of the <SEO> component (inside <main>).
+ *
+ * This function separates head-level tags from body content and pulls out
+ * any ld+json scripts so everything lands in <head>.
+ */
+function extractHeadContent(appHtml) {
+  // Everything before the first <div is hoisted head tags from Helmet
   const firstDiv = appHtml.indexOf('<div')
-  if (firstDiv <= 0) return { headTags: '', bodyContent: appHtml }
+  const hoisted = firstDiv > 0 ? appHtml.slice(0, firstDiv) : ''
+  let bodyContent = firstDiv > 0 ? appHtml.slice(firstDiv) : appHtml
+
+  // Pull ld+json scripts from body and add them to the head section
+  const ldScripts = []
+  bodyContent = bodyContent.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+    match => { ldScripts.push(match); return '' },
+  )
+
   return {
-    headTags: appHtml.slice(0, firstDiv),
-    bodyContent: appHtml.slice(firstDiv),
+    headTags: hoisted + (ldScripts.length ? '\n    ' + ldScripts.join('\n    ') : ''),
+    bodyContent,
   }
 }
 
 function buildPageHtml(template, appHtml) {
-  const { headTags, bodyContent } = splitAppHtml(appHtml)
+  const { headTags, bodyContent } = extractHeadContent(appHtml)
 
   let html = template.replace(
     '<div id="root"></div>',
@@ -49,7 +94,9 @@ async function main() {
   const templatePath = resolve(root, 'dist/client/index.html')
 
   const { render } = await import(serverEntry)
-  const template = readFileSync(templatePath, 'utf-8')
+
+  // Sanitize the template before use — removes stale tags from any previous run
+  const template = sanitizeTemplate(readFileSync(templatePath, 'utf-8'))
 
   console.log('Prerendering routes...')
 
