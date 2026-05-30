@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">AI เลือกพูดถึงแบรนด์ได้อย่างไร</title>
+  <desc id="desc">แผนภาพแสดงลำดับการประเมินก่อนที่ AI จะเลือกพูดถึงแบรนด์ในคำตอบ</desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FBFAF6"/>
+    </linearGradient>
+    <linearGradient id="mention" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#064E45"/>
+      <stop offset="1" stop-color="#0B6B60"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#064E45" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#69BDB2"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="860" fill="url(#page)"/>
+  <rect x="54" y="54" width="1172" height="752" rx="34" fill="#FFFFFF" stroke="#E4F0ED"/>
+
+  <text x="100" y="126" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#064E45">AI เลือกพูดถึงแบรนด์ได้อย่างไร</text>
+  <text x="100" y="168" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#526B66">ก่อนที่แบรนด์จะถูกพูดถึง AI จะประเมินหลายปัจจัย</text>
+
+  <g font-family="Noto Sans Thai, Arial, Helvetica, sans-serif">
+    <rect x="112" y="250" width="284" height="112" rx="26" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+    <text x="254" y="298" text-anchor="middle" font-size="23" font-weight="600" fill="#064E45">คำถามจากผู้ใช้</text>
+    <text x="254" y="330" text-anchor="middle" font-size="17" font-weight="500" fill="#647873">ต้องการคำแนะนำ</text>
+
+    <path d="M408 306 L458 306" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <g transform="translate(470 210)">
+      <rect width="340" height="72" rx="22" fill="#F2FBF9" stroke="#D7ECE8"/>
+      <text x="170" y="46" text-anchor="middle" font-size="21" font-weight="600" fill="#064E45">เกี่ยวข้องกับคำถามหรือไม่</text>
+      <path d="M170 84 L170 118" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <rect y="130" width="340" height="72" rx="22" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="170" y="176" text-anchor="middle" font-size="21" font-weight="600" fill="#064E45">เนื้อหาชัดเจนหรือไม่</text>
+      <path d="M170 214 L170 248" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <rect y="260" width="340" height="72" rx="22" fill="#F2FBF9" stroke="#D7ECE8"/>
+      <text x="170" y="306" text-anchor="middle" font-size="21" font-weight="600" fill="#064E45">น่าเชื่อถือหรือไม่</text>
+      <path d="M170 344 L170 378" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <rect y="390" width="340" height="72" rx="22" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="170" y="436" text-anchor="middle" font-size="21" font-weight="600" fill="#064E45">มีหลักฐานรองรับหรือไม่</text>
+    </g>
+
+    <path d="M822 636 C862 636 866 574 902 574" stroke="#69BDB2" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="888" y="492" width="300" height="156" rx="34" fill="url(#mention)" filter="url(#softShadow)"/>
+    <text x="1038" y="548" text-anchor="middle" font-size="32" font-weight="700" fill="#FFFFFF">Brand Mention</text>
+    <text x="1038" y="590" text-anchor="middle" font-size="20" font-weight="500" fill="#D8F5F0">แบรนด์ถูกพูดถึง</text>
+    <text x="1038" y="620" text-anchor="middle" font-size="20" font-weight="500" fill="#D8F5F0">ในคำตอบของ AI</text>
+
+    <g fill="#FBFAF6" stroke="#E4F0ED">
+      <rect x="112" y="448" width="284" height="58" rx="18"/>
+      <rect x="112" y="520" width="284" height="58" rx="18"/>
+      <rect x="112" y="592" width="284" height="58" rx="18"/>
+    </g>
+    <g fill="#526B66" font-size="18" font-weight="500">
+      <text x="254" y="484" text-anchor="middle">โครงสร้างคำตอบที่ดี</text>
+      <text x="254" y="556" text-anchor="middle">ตัวอย่างที่ชัดเจน</text>
+      <text x="254" y="628" text-anchor="middle">สัญญาณแบรนด์ที่สอดคล้องกัน</text>
+    </g>
+    <path d="M396 477 C430 477 430 376 458 376" stroke="#C9EEE8" stroke-width="1.8" fill="none"/>
+    <path d="M396 549 C430 549 430 506 458 506" stroke="#C9EEE8" stroke-width="1.8" fill="none"/>
+    <path d="M396 621 C430 621 430 636 458 636" stroke="#C9EEE8" stroke-width="1.8" fill="none"/>
+
+    <rect x="902" y="236" width="270" height="126" rx="26" fill="#FBFAF6" stroke="#E4F0ED"/>
+    <text x="1037" y="280" text-anchor="middle" font-size="20" font-weight="600" fill="#064E45">หากสัญญาณอ่อนเกินไป</text>
+    <text x="1037" y="314" text-anchor="middle" font-size="18" font-weight="500" fill="#647873">AI อาจตอบโดย</text>
+    <text x="1037" y="340" text-anchor="middle" font-size="18" font-weight="500" fill="#647873">ไม่พูดถึงแบรนด์</text>
+    <path d="M822 376 C858 376 858 300 890 300" stroke="#C9EEE8" stroke-width="1.8" fill="none" stroke-dasharray="8 8"/>
+  </g>
+</svg>

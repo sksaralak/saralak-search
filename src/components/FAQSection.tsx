@@ -3,13 +3,15 @@ import SectionHeader from './SectionHeader'
 
 type FAQSectionProps = {
   faqs: FAQItem[]
+  eyebrow?: string
+  title?: string
 }
 
-export default function FAQSection({ faqs }: FAQSectionProps) {
+export default function FAQSection({ faqs, eyebrow = 'FAQ', title = 'คำถามที่พบบ่อย' }: FAQSectionProps) {
   return (
     <section className="border-y border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="FAQ" title="คำถามที่พบบ่อย" />
+        <SectionHeader eyebrow={eyebrow} title={title} />
         <div className="mt-8 grid gap-3 md:grid-cols-2">
           {faqs.map((item) => (
             <details
