@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { brand } from '../content/site'
+import Analytics from './Analytics'
 import CTAButton from './CTAButton'
 import FloatingLineButton from './FloatingLineButton'
 
@@ -8,7 +9,7 @@ const navItems = [
   { label: 'Services', to: '/services' },
   { label: 'Case Studies', to: '/case-studies' },
   { label: 'About', to: '/about' },
-  { label: 'Blog', to: '/#blog' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Discovery Audit', to: '/discovery-audit' },
 ]
 
@@ -68,6 +69,7 @@ export default function Layout() {
           </div>
         ) : null}
       </header>
+      <Analytics />
       <Outlet />
       <footer className="border-t border-neutral-200 bg-white pb-16 sm:pb-10">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">

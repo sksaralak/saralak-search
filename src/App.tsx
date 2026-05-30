@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import About from './pages/About'
+import BlogArticle from './pages/BlogArticle'
+import BlogIndex from './pages/BlogIndex'
 import CaseStudies from './pages/CaseStudies'
 import Contact from './pages/Contact'
 import DiscoveryAudit from './pages/DiscoveryAudit'
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="proof" element={<Proof />} />
         <Route path="case-studies" element={<CaseStudies />} />
         <Route path="about" element={<About />} />
+        <Route path="blog" element={<BlogIndex />} />
+        <Route path="blog/:slug" element={<BlogArticle />} />
         <Route path="contact" element={<Contact />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

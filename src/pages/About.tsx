@@ -1,7 +1,9 @@
 import CTAButton from '../components/CTAButton'
+import BlogCard from '../components/BlogCard'
 import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
+import { getLatestBlogPosts } from '../content/blog'
 import { type FAQItem, faqJsonLd } from '../content/faqs'
 
 const trustBadges = ['9+ ปี SEO Experience', 'Google Search', 'Google Maps', 'AI Search']
@@ -314,6 +316,19 @@ export default function About() {
               ดู Case Studies ทั้งหมด
             </CTAButton>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Latest Insights"
+          title="Latest SEO, AEO & GEO Insights"
+          description="บทความล่าสุดจาก Saralak Search สำหรับอัปเดตมุมมองเรื่อง Google Search, AI Overviews, ChatGPT visibility และ search strategy"
+        />
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {getLatestBlogPosts(3).map((post) => (
+            <BlogCard key={post.slug} post={post} compact />
+          ))}
         </div>
       </section>
 

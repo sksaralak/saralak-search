@@ -1,10 +1,12 @@
 import CTAButton from '../components/CTAButton'
+import BlogCard from '../components/BlogCard'
 import FAQSection from '../components/FAQSection'
 import PricingCard from '../components/PricingCard'
 import ProofCard from '../components/ProofCard'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
+import { getLatestBlogPosts } from '../content/blog'
 import { faqJsonLd, homepageFaqs } from '../content/faqs'
 import { brand, packages, proofItems, services } from '../content/site'
 
@@ -287,23 +289,20 @@ export default function Home() {
 
       <section id="blog" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Blog direction"
-          title="หัวข้อความรู้ที่ช่วยให้ธุรกิจตัดสินใจเรื่อง Search ได้ดีขึ้น"
-          description="บทความช่วงแรกควรช่วยให้เจ้าของธุรกิจเข้าใจว่า Search ส่งผลต่อ visibility, demand และยอดขายอย่างไร"
+          eyebrow="Blog"
+          title="SEO, AEO & GEO Insights"
+          description="Practical insights on Google Search, AI Overviews, ChatGPT visibility, and modern search strategy."
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {[
-            'AI Search เปลี่ยนวิธีที่ลูกค้าเจอธุรกิจอย่างไร',
-            'ทำไมการมองเห็นบน Google Maps ถึงมีผลต่อ lead ของธุรกิจ local',
-            'Search Visibility Strategy ต่างจากการทำ SEO แบบดูอันดับอย่างเดียวอย่างไร',
-          ].map((topic) => (
-            <article key={topic} className="rounded-lg border border-neutral-200 bg-white p-5">
-              <h3 className="font-semibold text-neutral-950">{topic}</h3>
-              <p className="mt-2 text-sm leading-6 text-neutral-700">
-                ใช้เป็นหัวข้อสนับสนุนการขาย ความน่าเชื่อถือ และ AI Search entity building
-              </p>
-            </article>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {getLatestBlogPosts(4).map((post) => (
+            <BlogCard key={post.slug} post={post} />
           ))}
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <CTAButton to="/blog">View Blog</CTAButton>
+          <CTAButton to="/about" variant="secondary">
+            About Saralak
+          </CTAButton>
         </div>
       </section>
 
