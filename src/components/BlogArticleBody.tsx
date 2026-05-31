@@ -272,7 +272,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           GEO สำคัญเพราะเส้นทางการค้นหาของผู้ใช้ไม่ได้จบที่หน้า Google แบบเดิมอีกต่อไป หลายคนเริ่มใช้ AI เพื่อขอคำแนะนำ เปรียบเทียบตัวเลือก สรุปข้อมูล หาวิธีแก้ปัญหา หรือถามคำถามเชิงลึกก่อนตัดสินใจซื้อสินค้าและบริการ
         </P>
         <P>
-          ตัวอย่างเช่น ผู้ใช้ที่ต้องการหาบริการ SEO อาจไม่ได้ค้นแค่ “บริษัทรับทำ SEO” แต่ถาม AI ว่า “ควรเลือกเอเจนซี่ SEO แบบไหนดี”, <Link to=”/blog/seo-geo-aeo” className=”font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700”>”SEO, AEO, GEO ต่างกันยังไง”</Link>, “ถ้าอยากให้ ChatGPT แนะนำเว็บไซต์ ต้องทำอะไรบ้าง” หรือ “ธุรกิจไทยควรเริ่มทำ GEO ยังไง”
+          ตัวอย่างเช่น ผู้ใช้ที่ต้องการหาบริการ SEO อาจไม่ได้ค้นแค่ “บริษัทรับทำ SEO” แต่ถาม AI ว่า “ควรเลือกเอเจนซี่ SEO แบบไหนดี”, “SEO, AEO, GEO ต่างกันยังไง”, “ถ้าอยากให้ ChatGPT แนะนำเว็บไซต์ ต้องทำอะไรบ้าง” หรือ “ธุรกิจไทยควรเริ่มทำ GEO ยังไง”
         </P>
         <P>
           ถ้าเว็บไซต์ของเรามีเนื้อหาที่ตอบคำถามเหล่านี้อย่างชัดเจน มีโครงสร้างข้อมูลที่ AI เข้าใจง่าย และมีความน่าเชื่อถือเพียงพอ ก็จะมีโอกาสปรากฏในคำตอบของ AI มากขึ้น แม้ผู้ใช้ยังไม่ได้คลิกเข้าเว็บไซต์ตั้งแต่แรกก็ตาม
@@ -427,7 +427,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           การวัดผล GEO ยังไม่มีมาตรฐานเดียวเหมือน SEO แต่สามารถติดตามได้จากหลายสัญญาณร่วมกัน เช่น การที่แบรนด์ถูกกล่าวถึงใน ChatGPT, Gemini, Perplexity หรือ Google AI Overview จำนวนครั้งที่เว็บไซต์ถูกอ้างอิงในคำตอบ AI การเพิ่มขึ้นของ Branded Search การเพิ่มขึ้นของ Direct Traffic และ Referral Traffic จาก AI Platform
         </P>
         <P>
-          นอกจากนี้ยังสามารถทำ Manual AI Visibility Tracking โดยกำหนดชุดคำถามสำคัญของธุรกิจ แล้วทดสอบถาม AI เป็นระยะ เช่น “GEO คืออะไร”, <Link to=”/blog/geo-agency-thailand” className=”font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700”>”บริษัทรับทำ GEO ในไทยมีใครบ้าง”</Link>, “ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์”, “SEO Agency ที่ทำ AEO ได้ควรมีอะไรบ้าง” จากนั้นบันทึกว่า AI กล่าวถึงแบรนด์หรือไม่ อ้างอิงเว็บไซต์หรือไม่ และคำตอบมีความแม่นยำแค่ไหน
+          นอกจากนี้ยังสามารถทำ Manual AI Visibility Tracking โดยกำหนดชุดคำถามสำคัญของธุรกิจ แล้วทดสอบถาม AI เป็นระยะ เช่น “GEO คืออะไร”, “บริษัทรับทำ GEO ในไทยมีใครบ้าง”, “ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์”, “SEO Agency ที่ทำ AEO ได้ควรมีอะไรบ้าง” จากนั้นบันทึกว่า AI กล่าวถึงแบรนด์หรือไม่ อ้างอิงเว็บไซต์หรือไม่ และคำตอบมีความแม่นยำแค่ไหน
         </P>
         <P>
           ในระยะยาว GEO ควรถูกวัดร่วมกับ SEO ไม่ใช่แยกขาดจากกัน เพราะอันดับบน Google, Organic Traffic, Keyword Visibility, Brand Mention และ AI Citation ล้วนเป็นสัญญาณที่ช่วยเสริมกัน
@@ -651,7 +651,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           นอกจากนี้ ผู้ใช้เริ่มใช้ AI เป็นผู้ช่วยในการตัดสินใจมากขึ้น
-          เช่น ถามว่า "บริษัทรับทำ SEO ที่ไหนดี", <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">"GEO คืออะไร"</Link>,
+          เช่น ถามว่า "บริษัทรับทำ SEO ที่ไหนดี", <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>,
           "ธุรกิจเล็กควรเริ่มทำ SEO อย่างไร"
           หรือ "เปรียบเทียบวิธีเพิ่มลูกค้าจาก Google กับ AI Search"
           คำตอบที่ AI เลือกแสดงอาจมีอิทธิพลต่อความเชื่อมั่นของผู้ใช้
