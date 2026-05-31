@@ -976,6 +976,20 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           <P>Cotactic เหมาะกับเว็บไซต์ที่มีปัญหาเชิงเทคนิค เช่น Crawl, Index, Site Structure, Schema หรือเว็บไซต์ที่ต้องการปรับพื้นฐานให้ Search Engine และ AI อ่านข้อมูลได้ง่ายขึ้น จุดแข็งคือการอธิบายเรื่อง SEO และ GEO ในมุมเทคนิคค่อนข้างชัด</P>
         </ArticleSubSection>
 
+        <aside className="rounded-lg border border-teal-200 bg-teal-950 p-6 text-white">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal-300">Saralak Search</p>
+          <h3 className="mt-2 text-xl font-semibold text-white">
+            ต้องการทำ GEO แบบเชื่อม SEO, AEO และ AI Visibility เข้าด้วยกัน?
+          </h3>
+          <p className="thai-readable mt-3 text-teal-50">
+            Saralak Search ช่วยวางกลยุทธ์ Search ครบทั้งระบบ ตั้งแต่ Technical SEO, Content Strategy, Entity SEO
+            ไปจนถึง AI Visibility สำหรับธุรกิจที่ต้องการเริ่มทำ GEO อย่างจริงจัง
+          </p>
+          <div className="mt-5">
+            <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+          </div>
+        </aside>
+
         <ArticleSubSection title="4. ANGA">
           <P>ANGA เป็นเอเจนซี่ที่แข็งแรงด้าน Performance Marketing, SEO และ Digital Strategy โดยมีจุดเด่นคือการเชื่อม SEO เข้ากับเป้าหมายทางธุรกิจ เช่น Lead, Conversion และยอดขาย</P>
           <P>ANGA เหมาะกับธุรกิจที่ต้องการทำ SEO ควบคู่กับ Paid Media, Conversion Optimization หรือแคมเปญการตลาดแบบครบวงจร จุดแข็งคือการมอง SEO ในบริบทของ Performance และผลลัพธ์ทางการตลาด</P>
