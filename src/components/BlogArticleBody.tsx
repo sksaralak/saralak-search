@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import type { BlogPost } from '../content/blog'
-import FAQSection from './FAQSection'
 
 type BlogArticleBodyProps = {
   post: BlogPost
@@ -14,7 +13,7 @@ type SectionProps = {
 function ArticleSection({ title, children }: SectionProps) {
   return (
     <section>
-      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl">
+      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
         {title}
       </h2>
       <div className="mt-4 grid gap-5">{children}</div>
@@ -25,8 +24,8 @@ function ArticleSection({ title, children }: SectionProps) {
 function P({ children }: { children: ReactNode }) {
   return (
     <p
-      className="thai-readable text-lg leading-8 text-neutral-700"
-      style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
+      className="thai-readable text-base text-neutral-700 sm:text-lg"
+      style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
     >
       {children}
     </p>
@@ -35,7 +34,7 @@ function P({ children }: { children: ReactNode }) {
 
 function AISummary({ items }: { items: string[] }) {
   return (
-    <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
+    <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
       <h2 className="text-xl font-semibold text-neutral-950">AI Summary</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
@@ -43,7 +42,7 @@ function AISummary({ items }: { items: string[] }) {
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
             <span
               className="min-w-0"
-              style={{ overflowWrap: 'anywhere', wordBreak: 'break-all' }}
+              style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
             >
               {item}
             </span>
@@ -66,7 +65,7 @@ function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]' }: Article
     <figure className={`overflow-hidden rounded-lg border border-neutral-200 ${className}`}>
       <img src={src} alt={alt} loading="lazy" className="h-auto w-full" />
       {caption ? (
-        <figcaption className="thai-readable border-t border-neutral-200 bg-white px-5 py-4 text-sm leading-6 text-neutral-600">
+        <figcaption className="thai-readable border-t border-neutral-200 bg-white px-3 py-3 text-sm leading-6 text-neutral-600 sm:px-5 sm:py-4">
           {caption}
         </figcaption>
       ) : null}
@@ -75,6 +74,7 @@ function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]' }: Article
 }
 
 function ComparisonTable() {
+  const headings = ['หัวข้อ', 'SEO', 'AEO', 'GEO']
   const rows = [
     [
       'เป้าหมายหลัก',
@@ -116,14 +116,31 @@ function ComparisonTable() {
 
   return (
     <section>
-      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl">
+      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
         ตารางเปรียบเทียบ SEO, AEO และ GEO
       </h2>
-      <div className="mt-5 overflow-x-auto rounded-lg border border-neutral-200">
+      <div className="mt-5 grid gap-3 lg:hidden">
+        {rows.map((row) => (
+        <article key={row[0]} className="rounded-lg border border-neutral-200 bg-white p-3">
+            <h3 className="thai-readable font-semibold leading-7 text-neutral-950">{row[0]}</h3>
+            <div className="mt-3 grid gap-3">
+              {row.slice(1).map((cell, index) => (
+                <div key={`${row[0]}-${headings[index + 1]}`}>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
+                    {headings[index + 1]}
+                  </p>
+                  <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{cell}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="mt-5 hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
         <table className="min-w-[760px] divide-y divide-neutral-200 bg-white text-left text-sm">
           <thead className="bg-[#fbfaf6] text-neutral-950">
             <tr>
-              {['หัวข้อ', 'SEO', 'AEO', 'GEO'].map((heading) => (
+              {headings.map((heading) => (
                 <th key={heading} scope="col" className="px-4 py-3 font-semibold">
                   {heading}
                 </th>
@@ -147,6 +164,44 @@ function ComparisonTable() {
             ))}
           </tbody>
         </table>
+      </div>
+    </section>
+  )
+}
+
+function ArticleFAQ({ post }: { post: BlogPost }) {
+  if (!post.faqs) {
+    return null
+  }
+
+  return (
+    <section>
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">FAQ</p>
+      <h2 className="mt-2 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+        FAQ: GEO คืออะไร
+      </h2>
+      <div className="mt-5 grid gap-3">
+        {post.faqs.map((item) => (
+          <details
+            key={item.question}
+            className="group rounded-lg border border-neutral-200 bg-[#fbfaf6] p-3 sm:p-5"
+          >
+            <summary className="cursor-pointer list-none font-semibold text-neutral-950">
+              <span className="flex min-w-0 items-start justify-between gap-4">
+                <span className="min-w-0 break-words">{item.question}</span>
+                <span className="shrink-0 text-xl leading-none text-teal-800 group-open:rotate-45">
+                  +
+                </span>
+              </span>
+            </summary>
+            <p
+              className="thai-readable mt-3 text-base text-neutral-700"
+              style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
+            >
+              {item.answer}
+            </p>
+          </details>
+        ))}
       </div>
     </section>
   )
@@ -365,7 +420,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      {post.faqs ? <FAQSection faqs={post.faqs} title="FAQ: GEO คืออะไร" /> : null}
+      <ArticleFAQ post={post} />
     </article>
   )
 }

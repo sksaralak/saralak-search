@@ -10,6 +10,7 @@ export default function BlogIndex() {
         title="SEO, AEO & GEO Insights | Saralak Search"
         description="Practical insights from Saralak Search on Google Search, AI Overviews, ChatGPT visibility, AEO, GEO and modern search strategy."
         path="/blog"
+        image="/image/og/saralak-search-blog-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -53,7 +54,7 @@ export default function BlogIndex() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/services">View Services</CTAButton>
             <CTAButton to="/discovery-audit" variant="secondary">
-              Start with Brand Visibility Audit
+              เริ่มต้นด้วย Discovery Audit
             </CTAButton>
           </div>
         </div>
@@ -75,7 +76,7 @@ export default function BlogIndex() {
             ['About', '/about', 'Read about Saralak Search and the founder profile.'],
             ['Services', '/services', 'See how SEO, AEO and GEO services are structured.'],
             [
-              'Brand Visibility Audit',
+              'Discovery Audit',
               '/discovery-audit',
               'Start with a clear view of visibility opportunities.',
             ],

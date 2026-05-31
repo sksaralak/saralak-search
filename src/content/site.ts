@@ -16,22 +16,22 @@ export const brand = {
 
 export const services = [
   {
-    title: 'Brand Visibility Audit',
+    title: 'Discovery Audit',
     description:
       'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
   },
   {
-    title: 'Increase Brand Visibility',
+    title: 'Increase Visibility on Google & AI Search',
     description:
       'Increase your brand visibility across Google Search, AI Overview, ChatGPT, Gemini and other AI Search platforms.',
   },
   {
-    title: 'Local Brand Visibility',
+    title: 'Increase Visibility on Google Maps',
     description:
       'Increase visibility on Google Maps and local search to attract more nearby customers.',
   },
   {
-    title: 'Agency Partner Support',
+    title: 'Monthly SEO Advisor',
     description:
       'White-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
   },
@@ -39,7 +39,7 @@ export const services = [
 
 export const packages = [
   {
-    title: 'Brand Visibility Audit',
+    title: 'Discovery Audit',
     price: 'Starting from 5,000 THB',
     detail:
       'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
@@ -57,7 +57,7 @@ export const packages = [
     ],
   },
   {
-    title: 'Increase Brand Visibility',
+    title: 'Increase Visibility on Google & AI Search',
     price: 'Starting from 25,000 THB/month',
     supportingText: 'Typical investment: 25,000–60,000 THB/month',
     detail:
@@ -87,7 +87,7 @@ export const packages = [
     ],
   },
   {
-    title: 'Agency Partner Support',
+    title: 'Monthly SEO Advisor',
     price: 'Custom Pricing',
     detail:
       'White-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
@@ -106,7 +106,7 @@ export const packages = [
     ],
   },
   {
-    title: 'Local Brand Visibility',
+    title: 'Increase Visibility on Google Maps',
     price: 'Starting from 6,000 THB/location/month',
     detail:
       'Increase visibility on Google Maps and local search to attract more nearby customers.',

@@ -1,4 +1,5 @@
 import AnswerBlock from '../components/AnswerBlock'
+import { trackLineClick } from '../components/Analytics'
 import ContactActions from '../components/ContactActions'
 import ContactForm from '../components/ContactForm'
 import FAQSection from '../components/FAQSection'
@@ -18,9 +19,10 @@ export default function Contact() {
   return (
     <main>
       <SEO
-        title="ติดต่อ Saralak Search | Brand Visibility Audit และ Agency Support"
-        description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Brand Visibility Audit, Increase Brand Visibility, Agency Partner support หรือ recruiter conversations"
+        title="ติดต่อ Saralak Search | Discovery Audit และ SEO Consulting"
+        description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Discovery Audit, Increase Visibility on Google & AI Search, Monthly SEO Advisor หรือ recruiter conversations"
         path="/contact"
+        image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [faqJsonLd(contactFaqs)],
@@ -34,7 +36,7 @@ export default function Contact() {
             คุยเรื่อง Search Visibility ของเว็บไซต์คุณ
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ติดต่อเพื่อขอ Brand Visibility Audit, Increase Brand Visibility, Agency Partner conversation
+            ติดต่อเพื่อขอ Discovery Audit, Increase Visibility on Google & AI Search, Monthly SEO Advisor
             หรือ recruiter conversation ได้จากหน้านี้
           </p>
           <p className="thai-readable mt-4 max-w-3xl text-base text-neutral-700">
@@ -60,6 +62,7 @@ export default function Contact() {
                     href={href}
                     target={label === 'Email' || label === 'Phone' ? undefined : '_blank'}
                     rel={label === 'Email' || label === 'Phone' ? undefined : 'noreferrer'}
+                    onClick={label === 'LINE' ? () => trackLineClick('contact_section') : undefined}
                     className="mt-2 inline-block break-words text-teal-900 hover:text-teal-700"
                   >
                     {value}
@@ -90,7 +93,7 @@ export default function Contact() {
         <p className="mt-4 text-lg leading-8 text-neutral-700">
           ส่ง URL เว็บไซต์หรือปัญหา SEO ที่เจอผ่าน LINE เพื่อเริ่มดูโอกาสในการเพิ่มการมองเห็นเว็บไซต์
         </p>
-        <ContactActions align="center" className="mt-8" />
+        <ContactActions align="center" className="mt-8" lineSource="contact_section" />
       </section>
     </main>
   )

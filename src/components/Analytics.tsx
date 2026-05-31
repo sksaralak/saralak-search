@@ -18,6 +18,36 @@ let analyticsInitialized = false
 let lastTrackedPath = ''
 let clarityInitialized = false
 
+function getPageType(pathname: string): string {
+  if (pathname === '/') return 'home'
+  if (pathname.startsWith('/blog')) return 'blog'
+  if (pathname === '/services') return 'services'
+  if (pathname === '/case-studies') return 'case_studies'
+  if (pathname === '/discovery-audit') return 'discovery_audit'
+  if (pathname === '/contact') return 'contact'
+  if (pathname === '/about') return 'about'
+  if (pathname === '/proof') return 'case_studies'
+  return 'other'
+}
+
+export function trackLineClick(source: string) {
+  if (typeof window === 'undefined') return
+
+  const pagePath = `${window.location.pathname}${window.location.search}${window.location.hash}`
+
+  try {
+    window.gtag?.('event', 'line_click', {
+      event_category: 'engagement',
+      page_path: pagePath,
+      page_type: getPageType(window.location.pathname),
+      source,
+    })
+    window.clarity?.('event', 'line_click')
+  } catch {
+    // tracking must never block navigation
+  }
+}
+
 export function trackContactFormSubmission(params: { interest: string; budget: string }) {
   if (typeof window === 'undefined') return
 

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">การค้นหาแบบเดิม vs AI Search</title>
+  <desc id="desc">แผนภาพเปรียบเทียบเส้นทางผู้ใช้ระหว่างการค้นหาแบบเดิมและ AI Search</desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FBFAF6"/>
+    </linearGradient>
+    <linearGradient id="answer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#064E45"/>
+      <stop offset="1" stop-color="#0B6B60"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#064E45" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#69BDB2"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="860" fill="url(#page)"/>
+  <rect x="54" y="54" width="1172" height="752" rx="34" fill="#FFFFFF" stroke="#E4F0ED"/>
+
+  <text x="100" y="126" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#064E45">การค้นหาแบบเดิม vs AI Search</text>
+  <text x="100" y="168" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#526B66">จากการเลือกเว็บไซต์ สู่การได้รับคำตอบจาก AI</text>
+
+  <g font-family="Noto Sans Thai, Arial, Helvetica, sans-serif">
+    <text x="150" y="232" font-size="24" font-weight="600" fill="#064E45">การค้นหาแบบเดิม</text>
+    <text x="725" y="232" font-size="24" font-weight="600" fill="#064E45">AI Search</text>
+
+    <g transform="translate(100 270)">
+      <rect width="470" height="430" rx="28" fill="#FBFAF6" stroke="#E4F0ED"/>
+      <rect x="38" y="42" width="394" height="66" rx="20" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="235" y="82" text-anchor="middle" font-size="22" font-weight="600" fill="#064E45">ผู้ใช้ค้นหาด้วยคีย์เวิร์ด</text>
+
+      <path d="M235 138 L235 182" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="38" y="194" width="394" height="122" rx="20" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+      <text x="235" y="231" text-anchor="middle" font-size="22" font-weight="600" fill="#064E45">ผลการค้นหา</text>
+      <rect x="78" y="252" width="314" height="12" rx="6" fill="#C9EEE8"/>
+      <rect x="78" y="277" width="250" height="12" rx="6" fill="#E2F5F1"/>
+      <rect x="78" y="302" width="288" height="12" rx="6" fill="#E2F5F1"/>
+
+      <path d="M235 340 L235 376" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="30" y="390" width="410" height="78" rx="24" fill="#FFFFFF" stroke="#9AD6CD" stroke-width="2" filter="url(#softShadow)"/>
+      <text x="235" y="438" text-anchor="middle" font-size="27" font-weight="700" fill="#064E45">คลิกเข้าเว็บไซต์</text>
+    </g>
+
+    <g transform="translate(710 270)">
+      <rect width="470" height="430" rx="28" fill="#F2FBF9" stroke="#E4F0ED"/>
+      <rect x="38" y="42" width="394" height="66" rx="20" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="235" y="82" text-anchor="middle" font-size="22" font-weight="600" fill="#064E45">ผู้ใช้ถามเป็นประโยค</text>
+
+      <path d="M235 138 L235 182" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="38" y="194" width="394" height="122" rx="20" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+      <text x="235" y="231" text-anchor="middle" font-size="22" font-weight="600" fill="#064E45">AI วิเคราะห์หลายแหล่งข้อมูล</text>
+      <g fill="none" stroke="#C9EEE8" stroke-width="1.8">
+        <path d="M92 268 C136 230 178 230 220 268"/>
+        <path d="M164 288 C208 250 250 250 292 288"/>
+        <path d="M236 268 C280 230 322 230 364 268"/>
+      </g>
+      <circle cx="92" cy="268" r="8" fill="#0F766E"/>
+      <circle cx="220" cy="268" r="8" fill="#0F766E"/>
+      <circle cx="164" cy="288" r="8" fill="#69BDB2"/>
+      <circle cx="292" cy="288" r="8" fill="#69BDB2"/>
+      <circle cx="364" cy="268" r="8" fill="#0F766E"/>
+
+      <path d="M235 340 L235 376" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="24" y="382" width="422" height="96" rx="28" fill="url(#answer)" filter="url(#softShadow)"/>
+      <text x="235" y="422" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">AI สร้างคำตอบ</text>
+      <text x="235" y="454" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">และพูดถึงแบรนด์</text>
+    </g>
+  </g>
+
+  <g font-family="Noto Sans Thai, Arial, Helvetica, sans-serif">
+    <rect x="364" y="728" width="552" height="50" rx="25" fill="#E2F5F1"/>
+    <text x="640" y="760" text-anchor="middle" font-size="19" font-weight="500" fill="#064E45">GEO ช่วยให้ AI เข้าใจแบรนด์ก่อนสร้างคำตอบ</text>
+  </g>
+</svg>

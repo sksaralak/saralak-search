@@ -1,4 +1,7 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/proof", "destination": "/case-studies", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

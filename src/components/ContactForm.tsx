@@ -4,10 +4,10 @@ import { brand } from '../content/site'
 import { trackContactFormSubmission } from './Analytics'
 
 const interests = [
-  'Brand Visibility Audit',
-  'Increase Brand Visibility',
-  'Local Brand Visibility',
-  'Agency Partner Support',
+  'Discovery Audit',
+  'Increase Visibility on Google & AI Search',
+  'Increase Visibility on Google Maps',
+  'Monthly SEO Advisor',
   'Recruiter / Contract Role',
 ]
 

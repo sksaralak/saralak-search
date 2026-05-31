@@ -30,7 +30,7 @@ export default function BlogArticle() {
         title={post.metaTitle}
         description={post.metaDescription}
         path={`/blog/${post.slug}`}
-        image={post.ogImage}
+        image={post.ogImage ?? '/image/og/saralak-search-blog-og.png'}
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [

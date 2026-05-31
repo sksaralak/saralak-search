@@ -30,7 +30,7 @@ const capabilities = [
     description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีพื้นที่ให้บริการ',
   },
   {
-    title: 'Local Brand Visibility',
+    title: 'Increase Visibility on Google Maps',
     description: 'เพิ่มประสิทธิภาพ Google Business Profile และ Local Visibility',
   },
 ]
@@ -57,7 +57,7 @@ const industries = [
     description: 'Google Maps และ Location Visibility',
   },
   {
-    title: 'Agency Partner Support',
+    title: 'Monthly SEO Advisor',
     description: 'SEO Audit, Strategy และ Consulting Support',
   },
 ]
@@ -83,7 +83,7 @@ const selectedResults = [
 
 const process = [
   {
-    title: 'Brand Visibility Audit',
+    title: 'Discovery Audit',
     description: 'วิเคราะห์เว็บไซต์และโอกาสการเติบโต',
   },
   {
@@ -154,6 +154,7 @@ export default function About() {
         title="เกี่ยวกับ Saralak Search | SEO, GEO และ AI Search Consultancy"
         description="Saralak Search คือที่ปรึกษาด้าน SEO, GEO และ AI Search ที่ช่วยธุรกิจเพิ่มการมองเห็นบน Google Search, Google Maps และ AI Search ก่อตั้งและดูแลโดย Saralak Kaewkum"
         path="/about"
+        image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -172,8 +173,8 @@ export default function About() {
                 'GEO',
                 'Technical SEO',
                 'Content SEO',
-                'Local Brand Visibility',
-                'Increase Brand Visibility',
+                'Google Maps Visibility',
+                'Search Visibility Growth',
                 'Local SEO',
               ],
             },
@@ -356,11 +357,11 @@ export default function About() {
           อยากเพิ่มการมองเห็นบน Search?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-2xl text-lg leading-8 text-neutral-700">
-          เริ่มต้นด้วย Brand Visibility Audit เพื่อดูว่าเว็บไซต์มีโอกาสเติบโตตรงไหน
+          เริ่มต้นด้วย Discovery Audit เพื่อดูว่าเว็บไซต์มีโอกาสเติบโตตรงไหน
           และควรเริ่มปรับจากอะไร
         </p>
         <div className="mt-8 flex justify-center">
-          <CTAButton to="/discovery-audit">ขอรับ Brand Visibility Audit</CTAButton>
+          <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
         </div>
       </section>
     </main>

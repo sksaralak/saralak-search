@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">SEO vs AEO vs GEO</title>
+  <desc id="desc">แผนภาพเปรียบเทียบผลลัพธ์ของ SEO AEO และ GEO</desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FBFAF6"/>
+    </linearGradient>
+    <linearGradient id="geoWin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#064E45"/>
+      <stop offset="1" stop-color="#0B6B60"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#064E45" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#69BDB2"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="860" fill="url(#page)"/>
+  <rect x="54" y="54" width="1172" height="752" rx="34" fill="#FFFFFF" stroke="#E4F0ED"/>
+
+  <text x="100" y="126" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#064E45">SEO vs AEO vs GEO</text>
+  <text x="100" y="168" font-family="Noto Sans Thai, Arial, Helvetica, sans-serif" font-size="20" font-weight="500" fill="#526B66">แต่ละแนวทางมีเป้าหมายต่างกัน</text>
+
+  <g font-family="Noto Sans Thai, Arial, Helvetica, sans-serif">
+    <g transform="translate(100 238)">
+      <rect width="330" height="470" rx="28" fill="#FBFAF6" stroke="#E4F0ED"/>
+      <text x="165" y="54" text-anchor="middle" font-size="32" font-weight="700" fill="#064E45">SEO</text>
+      <text x="165" y="88" text-anchor="middle" font-size="18" font-weight="500" fill="#647873">ทราฟฟิกเว็บไซต์</text>
+
+      <rect x="42" y="126" width="246" height="58" rx="18" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="165" y="162" text-anchor="middle" font-size="19" font-weight="600" fill="#064E45">คีย์เวิร์ด</text>
+      <path d="M165 198 L165 236" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="42" y="250" width="246" height="88" rx="18" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+      <text x="165" y="286" text-anchor="middle" font-size="19" font-weight="600" fill="#064E45">ผลการค้นหา</text>
+      <rect x="78" y="306" width="174" height="10" rx="5" fill="#C9EEE8"/>
+      <path d="M165 354 L165 392" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="32" y="398" width="266" height="76" rx="24" fill="#E2F5F1" stroke="#9AD6CD" stroke-width="2" filter="url(#softShadow)"/>
+      <text x="165" y="446" text-anchor="middle" font-size="24" font-weight="700" fill="#064E45">Traffic</text>
+      <text x="165" y="470" text-anchor="middle" font-size="15" font-weight="500" fill="#526B66">ทราฟฟิกเว็บไซต์</text>
+    </g>
+
+    <g transform="translate(475 238)">
+      <rect width="330" height="470" rx="28" fill="#F2FBF9" stroke="#E4F0ED"/>
+      <text x="165" y="54" text-anchor="middle" font-size="32" font-weight="700" fill="#064E45">AEO</text>
+      <text x="165" y="88" text-anchor="middle" font-size="18" font-weight="500" fill="#647873">การมองเห็นในคำตอบ</text>
+
+      <rect x="42" y="126" width="246" height="58" rx="18" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="165" y="162" text-anchor="middle" font-size="19" font-weight="600" fill="#064E45">คำถามของผู้ใช้</text>
+      <path d="M165 198 L165 236" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="42" y="250" width="246" height="88" rx="18" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+      <text x="165" y="286" text-anchor="middle" font-size="19" font-weight="600" fill="#064E45">กล่องคำตอบ</text>
+      <rect x="78" y="306" width="174" height="10" rx="5" fill="#C9EEE8"/>
+      <path d="M165 354 L165 392" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="32" y="398" width="266" height="76" rx="24" fill="#E2F5F1" stroke="#9AD6CD" stroke-width="2" filter="url(#softShadow)"/>
+      <text x="165" y="433" text-anchor="middle" font-size="23" font-weight="700" fill="#064E45">Answer</text>
+      <text x="165" y="460" text-anchor="middle" font-size="23" font-weight="700" fill="#064E45">Visibility</text>
+    </g>
+
+    <g transform="translate(850 238)">
+      <rect width="330" height="470" rx="28" fill="#FFFFFF" stroke="#E4F0ED"/>
+      <text x="165" y="54" text-anchor="middle" font-size="32" font-weight="700" fill="#064E45">GEO</text>
+      <text x="165" y="88" text-anchor="middle" font-size="18" font-weight="500" fill="#647873">การถูกพูดถึง</text>
+
+      <rect x="42" y="126" width="246" height="58" rx="18" fill="#FFFFFF" stroke="#D7ECE8"/>
+      <text x="165" y="162" text-anchor="middle" font-size="19" font-weight="600" fill="#064E45">คำถามที่ซับซ้อน</text>
+      <path d="M165 198 L165 236" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="42" y="246" width="246" height="96" rx="18" fill="#FFFFFF" stroke="#D7ECE8" filter="url(#softShadow)"/>
+      <text x="165" y="280" text-anchor="middle" font-size="18" font-weight="600" fill="#064E45">AI ประเมิน</text>
+      <text x="165" y="309" text-anchor="middle" font-size="15" font-weight="500" fill="#647873">แบรนด์ • ความน่าเชื่อถือ</text>
+      <text x="165" y="331" text-anchor="middle" font-size="15" font-weight="500" fill="#647873">หลักฐาน</text>
+      <path d="M165 354 L165 392" stroke="#69BDB2" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+      <rect x="28" y="394" width="274" height="84" rx="26" fill="url(#geoWin)" filter="url(#softShadow)"/>
+      <text x="165" y="432" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">Brand</text>
+      <text x="165" y="463" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">Mention</text>
+    </g>
+  </g>
+
+  <g font-family="Noto Sans Thai, Arial, Helvetica, sans-serif">
+    <rect x="340" y="744" width="600" height="50" rx="25" fill="#E2F5F1"/>
+    <text x="640" y="776" text-anchor="middle" font-size="20" font-weight="500" fill="#064E45">SEO ได้คลิก  ·  AEO ได้คำตอบ  ·  GEO ได้การถูกพูดถึง</text>
+  </g>
+</svg>

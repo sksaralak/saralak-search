@@ -45,15 +45,16 @@ export default function DiscoveryAudit() {
   return (
     <main>
       <SEO
-        title="Brand Visibility Audit for Google and AI Search | Saralak Search"
-        description="Understand what is limiting your visibility on Google and AI Search before investing in long-term growth."
+        title="Discovery Audit: ค้นหาโอกาสเติบโตบน Google และ AI Search | Saralak Search"
+        description="Discovery Audit ช่วยวิเคราะห์ว่าเว็บไซต์กำลังพลาดโอกาสตรงไหน บน Google Search, AI Overview และ Google Maps พร้อม Roadmap และ Quick Wins ที่นำไปใช้ได้จริง"
         path="/discovery-audit"
+        image="/image/og/saralak-search-discovery-audit-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'Service',
-              name: 'Brand Visibility Audit',
+              name: 'Discovery Audit',
               provider: { '@type': 'ProfessionalService', name: 'Saralak Search' },
               areaServed: 'Thailand',
               offers: { '@type': 'AggregateOffer', lowPrice: '5000', priceCurrency: 'THB' },
@@ -66,7 +67,7 @@ export default function DiscoveryAudit() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-semibold uppercase text-teal-800">
-            Brand Visibility Audit
+            Discovery Audit
           </p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
             เว็บไซต์กำลังเสียโอกาสตรงไหน?
@@ -80,7 +81,7 @@ export default function DiscoveryAudit() {
             เพื่อเพิ่ม Brand Visibility ในระยะยาว
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/contact">ขอรับ Brand Visibility Audit</CTAButton>
+            <CTAButton to="/contact">เริ่มต้นด้วย Discovery Audit</CTAButton>
             <CTAButton to="/case-studies" variant="secondary">
               ดูตัวอย่างผลงาน
             </CTAButton>
@@ -147,8 +148,8 @@ export default function DiscoveryAudit() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="ราคา"
-          title="Brand Visibility Audit"
-          description="Understand what is limiting your visibility on Google and AI Search before investing in long-term growth."
+          title="Discovery Audit"
+          description="ค้นหาโอกาสในการเติบโตบน Google Search, AI Search และ Google Maps ก่อนตัดสินใจลงทุนระยะยาว"
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <PricingCard
@@ -195,7 +196,7 @@ export default function DiscoveryAudit() {
           title="ส่งเว็บไซต์หรือปัญหาที่อยากให้ตรวจมาได้เลย"
           description="หากต้องการคำตอบเร็ว แนะนำให้ติดต่อผ่าน LINE หรืออีเมลก่อน หรือใช้ฟอร์มด้านล่างได้"
         />
-        <ContactActions align="center" className="mt-8" />
+        <ContactActions align="center" className="mt-8" lineSource="discovery_cta" />
         <div className="mt-8">
           <ContactForm />
         </div>

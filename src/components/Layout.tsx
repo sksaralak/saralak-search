@@ -1,25 +1,23 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { brand } from '../content/site'
-import Analytics from './Analytics'
+import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
 import FloatingLineButton from './FloatingLineButton'
 
 const navItems = [
   { label: 'Services', to: '/services' },
   { label: 'Case Studies', to: '/case-studies' },
-  { label: 'Proof', to: '/proof' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
-  { label: 'Brand Visibility Audit', to: '/discovery-audit' },
+  { label: 'Discovery Audit', to: '/discovery-audit' },
 ]
 
 const footerNavItems = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
-  { label: 'Brand Visibility Audit', to: '/discovery-audit' },
+  { label: 'Discovery Audit', to: '/discovery-audit' },
   { label: 'Case Studies', to: '/case-studies' },
-  { label: 'Proof', to: '/proof' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
@@ -114,6 +112,7 @@ export default function Layout() {
                 href={brand.lineUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackLineClick('footer_line')}
                 className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
               >
                 LINE

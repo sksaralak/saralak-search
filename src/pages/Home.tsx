@@ -49,6 +49,7 @@ export default function Home() {
       <SEO
         title="Saralak Search | Business-focused SEO and AI Search Consultancy"
         description="Saralak Search ช่วยธุรกิจเพิ่มโอกาสให้ลูกค้าค้นเจอ ติดต่อ และซื้อ ผ่าน Google, Google Maps และ AI Search ด้วยแผนที่เชื่อมกับการเติบโตของธุรกิจ"
+        image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -223,7 +224,7 @@ export default function Home() {
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Proof"
+            eyebrow="Case Studies"
             title="ตัวอย่างผลงานจากงานจริง"
             description="ภาพตัวอย่างผลลัพธ์จากงาน Search, Google visibility และ AI Search โดยข้อมูลลูกค้าที่อ่อนไหวถูกปกปิดแล้ว"
           />
@@ -249,8 +250,8 @@ export default function Home() {
         <div>
           <SectionHeader
             eyebrow="Methodology"
-            title="Brand Visibility Audit helps clarify where to start"
-            description="Brand Visibility Audit is a way to understand what should be prioritized first. The long-term goal is to increase visibility, demand and revenue opportunities across Google and AI Search."
+            title="Discovery Audit ช่วยให้เห็นว่าควรเริ่มจากตรงไหน"
+            description="Discovery Audit ช่วยค้นหาปัจจัยที่อาจขวางการเติบโตของเว็บไซต์ เพื่อให้รู้ว่าควรเริ่มจากจุดไหนก่อนบน Google และ AI Search"
           />
         </div>
         <div className="grid gap-4 sm:grid-cols-3">

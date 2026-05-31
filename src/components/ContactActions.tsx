@@ -1,11 +1,17 @@
+import { trackLineClick } from './Analytics'
 import { brand } from '../content/site'
 
 type ContactActionsProps = {
   align?: 'left' | 'center'
   className?: string
+  lineSource?: string
 }
 
-export default function ContactActions({ align = 'left', className = '' }: ContactActionsProps) {
+export default function ContactActions({
+  align = 'left',
+  className = '',
+  lineSource = 'contact_actions',
+}: ContactActionsProps) {
   return (
     <div
       className={`flex flex-col gap-3 sm:flex-row ${
@@ -16,6 +22,7 @@ export default function ContactActions({ align = 'left', className = '' }: Conta
         href={brand.lineUrl}
         target="_blank"
         rel="noreferrer"
+        onClick={() => trackLineClick(lineSource)}
         className="inline-flex min-h-11 items-center justify-center rounded-md border border-teal-900 bg-teal-900 px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white shadow-sm shadow-teal-950/10 transition hover:bg-teal-800"
       >
         {brand.primaryCta}
