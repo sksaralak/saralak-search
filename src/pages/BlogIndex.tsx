@@ -8,7 +8,7 @@ export default function BlogIndex() {
     <main>
       <SEO
         title="บทความความรู้ SEO, GEO และ AI Search | Saralak Search"
-        description="Practical insights from Saralak Search on Google Search, AI Overviews, ChatGPT visibility, AEO, GEO and modern search strategy."
+        description="บทความความรู้จาก Saralak Search เรื่อง SEO, AEO, GEO, Google Search, AI Overview และ ChatGPT Visibility สำหรับธุรกิจที่ต้องการเพิ่มการมองเห็นบน Search ยุคใหม่"
         path="/blog"
         image="/image/og/saralak-search-blog-og.png"
         jsonLd={{
@@ -48,11 +48,10 @@ export default function BlogIndex() {
             SEO, AEO &amp; GEO Insights
           </h1>
           <p className="thai-readable mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            Saralak Search shares practical insights on Google Search, AI Overviews, ChatGPT visibility,
-            and modern search strategy for businesses, recruiters, and agency partners.
+            บทความความรู้จาก Saralak Search เรื่อง Google Search, AI Overview, ChatGPT Visibility, AEO, GEO และกลยุทธ์ Search ยุคใหม่ สำหรับธุรกิจที่ต้องการเพิ่มการมองเห็นอย่างยั่งยืน
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/services">View Services</CTAButton>
+            <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
             <CTAButton to="/discovery-audit" variant="secondary">
               เริ่มต้นด้วย Discovery Audit
             </CTAButton>
@@ -73,20 +72,16 @@ export default function BlogIndex() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            ['About', '/about', 'Read about Saralak Search and the founder profile.'],
-            ['Services', '/services', 'See how SEO, AEO and GEO services are structured.'],
-            [
-              'Discovery Audit',
-              '/discovery-audit',
-              'Start with a clear view of visibility opportunities.',
-            ],
+            ['เกี่ยวกับ Saralak Search', '/about', 'รู้จักผู้เชี่ยวชาญด้าน SEO, AEO และ GEO เบื้องหลัง Saralak Search'],
+            ['บริการ', '/services', 'ดูว่า SEO, AEO และ GEO Service มีโครงสร้างอย่างไร'],
+            ['Discovery Audit', '/discovery-audit', 'เริ่มต้นด้วยการค้นหาโอกาสเพิ่มการมองเห็น'],
           ].map(([title, href, description]) => (
             <article key={href} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h2 className="text-lg font-semibold text-neutral-950">{title}</h2>
-              <p className="mt-2 text-sm leading-6 text-neutral-700">{description}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{description}</p>
               <div className="mt-4">
                 <CTAButton to={href as string} variant="secondary">
-                  Explore
+                  ดูเพิ่มเติม
                 </CTAButton>
               </div>
             </article>

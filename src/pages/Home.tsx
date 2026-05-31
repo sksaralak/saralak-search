@@ -368,7 +368,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Blog"
           title="SEO, AEO & GEO Insights"
-          description="Practical insights on Google Search, AI Overviews, ChatGPT visibility, and modern search strategy."
+          description="บทความความรู้เรื่อง Google Search, AI Overview, ChatGPT Visibility, AEO และ GEO สำหรับธุรกิจที่ต้องการเพิ่มการมองเห็นจาก Search"
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {getLatestBlogPosts(4).map((post) => (
@@ -376,9 +376,9 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <CTAButton to="/blog">View Blog</CTAButton>
+          <CTAButton to="/blog">ดูบทความทั้งหมด</CTAButton>
           <CTAButton to="/about" variant="secondary">
-            About Saralak
+            เกี่ยวกับ Saralak Search
           </CTAButton>
         </div>
       </section>

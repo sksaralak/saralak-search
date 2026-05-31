@@ -9,36 +9,36 @@ import SectionHeader from '../components/SectionHeader'
 import { discoveryAuditFaqs, faqJsonLd } from '../content/faqs'
 
 const problems = [
-  'Customers cannot discover your brand easily',
-  'Competitors are more visible in Google and AI Search',
-  'Google and AI platforms may not understand your business clearly',
-  'Growth priorities are unclear before investing long term',
+  'ลูกค้าค้นหาแบรนด์ไม่เจอ หรือเจอได้ยาก',
+  'คู่แข่งมีการมองเห็นบน Google และ AI Search มากกว่า',
+  'Google และ AI อาจไม่เข้าใจธุรกิจของคุณอย่างถูกต้อง',
+  'ไม่รู้ว่าควรเริ่มแก้จุดไหนก่อนเพื่อให้คุ้มค่าที่สุด',
 ]
 
 const deliverables = [
-  'Visibility summary for Google and AI Search',
-  'Competitor visibility comparison',
-  'Prioritized growth roadmap',
-  'Key opportunities and blockers',
-  'Strategic consultation',
+  'สรุปการมองเห็นบน Google และ AI Search',
+  'เปรียบเทียบการมองเห็นกับคู่แข่ง',
+  'Roadmap ที่เรียงลำดับความสำคัญแล้ว',
+  'โอกาสสำคัญและสิ่งที่ขวางการเติบโต',
+  'ประชุมเพื่อวางแผนขั้นตอนต่อไป',
 ]
 
 const workflow = [
-  ['01', 'Share context', 'Share your website, business goals and visibility concerns.'],
-  ['02', 'Review visibility', 'Review how your brand appears across Google, AI Search and local search.'],
-  ['03', 'Compare competitors', 'Identify where competitors are easier to find, understand or trust.'],
-  ['04', 'Prioritize growth', 'Clarify the opportunities that should be addressed first.'],
-  ['05', 'Discuss next steps', 'Review the roadmap and decide the right level of support.'],
+  ['01', 'แชร์ข้อมูลเบื้องต้น', 'ส่ง URL เว็บไซต์ เป้าหมายธุรกิจ และปัญหาการมองเห็นที่พบอยู่'],
+  ['02', 'วิเคราะห์การมองเห็น', 'ตรวจว่าแบรนด์ปรากฏอย่างไรบน Google, AI Search และ Local Search'],
+  ['03', 'เปรียบเทียบคู่แข่ง', 'หาจุดที่คู่แข่งได้เปรียบด้านการค้นพบ ความเข้าใจ และความน่าเชื่อถือ'],
+  ['04', 'จัดลำดับโอกาสเติบโต', 'ระบุสิ่งที่ควรแก้ก่อนเพื่อให้เกิดผลลัพธ์ชัดเจนที่สุด'],
+  ['05', 'ประชุมวางแผนต่อ', 'รีวิว Roadmap และตัดสินใจระดับการสนับสนุนที่เหมาะสม'],
 ]
 
 const checks = [
-  'Customer discovery potential',
-  'Competitor visibility',
-  'Google Search visibility',
-  'AI Search understanding',
-  'Local visibility when relevant',
-  'Brand authority and trust signals',
-  'Growth priorities',
+  'โอกาสที่ลูกค้าจะค้นพบแบรนด์',
+  'การมองเห็นเทียบกับคู่แข่ง',
+  'การมองเห็นบน Google Search',
+  'ความเข้าใจของ AI Search ต่อแบรนด์',
+  'การมองเห็นในพื้นที่ (ถ้าเกี่ยวข้อง)',
+  'ความน่าเชื่อถือและ Brand Authority',
+  'ลำดับความสำคัญในการเติบโต',
 ]
 
 export default function DiscoveryAudit() {
@@ -155,31 +155,31 @@ export default function DiscoveryAudit() {
           <PricingCard
             title="Starter"
             price="5,000 THB"
-            detail="For businesses that want to understand their current visibility on Google and AI Search."
+            detail="เหมาะกับธุรกิจที่ต้องการเข้าใจการมองเห็นปัจจุบันบน Google และ AI Search"
           />
           <PricingCard
             title="Growth"
             price="12,000 THB"
-            badge="Most Popular"
-            detail="For businesses that need a prioritized growth roadmap and competitor analysis."
+            badge="ยอดนิยม"
+            detail="เหมาะกับธุรกิจที่ต้องการ Roadmap เรียงลำดับความสำคัญและวิเคราะห์คู่แข่ง"
           />
           <PricingCard
             title="Enterprise"
             price="Custom Pricing"
-            detail="For large websites, multi-location businesses or international brands."
+            detail="เหมาะกับเว็บไซต์ขนาดใหญ่ ธุรกิจหลายสาขา หรือแบรนด์ระดับองค์กร"
           />
         </div>
         <div className="mt-10 rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
-          <h2 className="text-xl font-semibold text-neutral-950">Questions we help answer</h2>
+          <h2 className="text-xl font-semibold text-neutral-950">คำถามที่ Audit ช่วยตอบ</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             {[
-              'How easily can customers discover your brand?',
-              'How visible are you compared to competitors?',
-              'How well do Google and AI platforms understand your business?',
-              'What is limiting your growth potential?',
-              'What should be prioritized first?',
+              'ลูกค้าค้นพบแบรนด์ได้ง่ายแค่ไหน?',
+              'เราถูกมองเห็นได้มากแค่ไหนเมื่อเทียบกับคู่แข่ง?',
+              'Google และ AI เข้าใจธุรกิจของเราดีแค่ไหน?',
+              'อะไรกำลังขวางการเติบโตของเว็บไซต์?',
+              'ควรเริ่มแก้จากจุดไหนก่อนเพื่อให้ได้ผลลัพธ์เร็วที่สุด?',
             ].map((question) => (
-              <p key={question} className="leading-7 text-neutral-700">
+              <p key={question} className="thai-readable leading-7 text-neutral-700">
                 {question}
               </p>
             ))}

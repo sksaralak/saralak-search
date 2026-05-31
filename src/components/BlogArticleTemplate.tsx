@@ -14,15 +14,15 @@ type BlogArticleTemplateProps = {
 export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleTemplateProps) {
   return (
     <main className="overflow-x-clip">
-      <section className="mx-auto max-w-4xl px-2.5 py-10 sm:px-6 md:py-24 lg:px-8">
+      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-24 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500">
             <li>
-              <Link to="/" className="hover:text-teal-800">Home</Link>
+              <Link to="/" className="hover:text-teal-800">หน้าแรก</Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link to="/blog" className="hover:text-teal-800">Blog</Link>
+              <Link to="/blog" className="hover:text-teal-800">บทความ</Link>
             </li>
             <li aria-hidden="true">/</li>
             <li className="font-medium text-neutral-950">{post.title}</li>
@@ -46,19 +46,19 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
         <dl className="mt-8 grid gap-4 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-700 sm:grid-cols-3 sm:p-5">
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
-              Published
+              เผยแพร่
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">{post.publishedDate}</dd>
           </div>
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
-              Reading time
+              เวลาอ่าน
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">{post.readingTime}</dd>
           </div>
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
-              Author
+              ผู้เขียน
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">
               <Link to={post.authorUrl} className="text-teal-900 hover:text-teal-700">
@@ -70,7 +70,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
       </section>
 
       {post.heroImageDesktop ? (
-        <section className="mx-auto max-w-6xl px-2.5 pb-10 sm:px-6 md:pb-16 lg:px-8">
+        <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 md:pb-16 lg:px-8">
           <picture className="block overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm shadow-neutral-950/5">
             {post.heroImageMobile ? (
               <source media="(max-width: 767px)" srcSet={post.heroImageMobile} />
@@ -88,12 +88,12 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
       ) : null}
 
       <section className="border-y border-neutral-200 bg-white">
-        <div className="mx-auto max-w-4xl px-2.5 py-10 sm:px-6 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           <BlogArticleBody post={post} />
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-2.5 py-10 sm:px-6 md:py-16 lg:px-8">
+      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
         <div className="grid gap-5 rounded-lg border border-neutral-200 bg-white p-3 shadow-sm shadow-neutral-950/5 sm:p-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
           <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">About the author</p>
@@ -105,14 +105,14 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
           </div>
           <div>
             <CTAButton to={post.authorUrl} variant="secondary" className="w-full sm:w-auto">
-              View About Page
+              เกี่ยวกับผู้เขียน
             </CTAButton>
           </div>
         </div>
       </section>
 
       <section className="border-y border-neutral-200 bg-white">
-        <div className="mx-auto max-w-7xl px-2.5 py-10 sm:px-6 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           {post.cta ? (
             <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 shadow-sm shadow-neutral-950/5 sm:p-6 md:p-8">
               <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
@@ -149,15 +149,15 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
           ) : (
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
               <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
-                <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Need help</p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">ต้องการความช่วยเหลือ?</p>
                 <h2 className="mt-2 text-3xl font-semibold text-neutral-950">
-                  Need help improving your visibility on Google and AI Search?
+                  อยากเพิ่มการมองเห็นบน Google และ AI Search?
                 </h2>
                 <p className="thai-readable mt-4 max-w-2xl text-lg leading-8 text-neutral-700">
-                  Explore SEO, AEO &amp; GEO services with Saralak Search.
+                  Saralak Search ช่วยวางกลยุทธ์ SEO, AEO และ GEO สำหรับธุรกิจที่ต้องการเติบโตจาก Search
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <CTAButton to="/services">View Services</CTAButton>
+                  <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
                   <CTAButton to="/discovery-audit" variant="secondary">
                     เริ่มต้นด้วย Discovery Audit
                   </CTAButton>
@@ -165,9 +165,9 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
               </div>
               <div className="rounded-lg border border-teal-100 bg-teal-950 p-6 text-white shadow-sm shadow-neutral-950/10">
                 <p className="text-sm font-semibold uppercase tracking-wide text-teal-200">LINE</p>
-                <h2 className="mt-2 text-2xl font-semibold">Chat on LINE</h2>
-                <p className="mt-3 max-w-sm text-teal-50">
-                  Ask a question or send the website URL directly before booking a call.
+                <h2 className="mt-2 text-2xl font-semibold">คุยผ่าน LINE</h2>
+                <p className="thai-readable mt-3 max-w-sm text-teal-50">
+                  ส่งคำถามหรือ URL เว็บไซต์มาก่อนได้เลย ไม่ต้องรอนัด
                 </p>
                 <div className="mt-5 grid gap-3">
                   <a
@@ -193,16 +193,16 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
       </section>
 
       {relatedPosts.length ? (
-        <section className="mx-auto max-w-7xl px-2.5 py-10 sm:px-6 md:py-16 lg:px-8">
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
-                Related articles
+                บทความที่เกี่ยวข้อง
               </p>
-              <h2 className="mt-2 text-3xl font-semibold text-neutral-950">Continue reading</h2>
+              <h2 className="mt-2 text-3xl font-semibold text-neutral-950">อ่านต่อ</h2>
             </div>
             <Link to="/blog" className="text-sm font-semibold text-teal-900 hover:text-teal-700">
-              Back to Blog
+              กลับไปหน้าบทความ
             </Link>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
