@@ -7,7 +7,7 @@ const root = resolve(__dirname, '..')
 
 const blogSlugs = [
   'what-is-geo',
-  'aeo-vs-seo',
+  'seo-geo-aeo',
   'get-mentioned-in-ai-search-results',
   'modern-search-strategy',
 ]

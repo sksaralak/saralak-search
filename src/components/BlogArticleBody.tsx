@@ -169,7 +169,34 @@ function ComparisonTable() {
   )
 }
 
-function ArticleFAQ({ post }: { post: BlogPost }) {
+function ArticleSubSection({ title, children }: SectionProps) {
+  return (
+    <div>
+      <h3 className="break-words text-xl font-semibold text-neutral-950">{title}</h3>
+      <div className="mt-3 grid gap-4">{children}</div>
+    </div>
+  )
+}
+
+function CheckList({ items }: { items: string[] }) {
+  return (
+    <ul className="grid gap-2">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
+          <span
+            className="thai-readable text-base text-neutral-700 sm:text-lg"
+            style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
+          >
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร' }: { post: BlogPost; heading?: string }) {
   if (!post.faqs) {
     return null
   }
@@ -178,7 +205,7 @@ function ArticleFAQ({ post }: { post: BlogPost }) {
     <section>
       <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">FAQ</p>
       <h2 className="mt-2 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
-        FAQ: GEO คืออะไร
+        {heading}
       </h2>
       <div className="mt-5 grid gap-3">
         {post.faqs.map((item) => (
@@ -425,9 +452,333 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
+  const seoChecklistItems = [
+    'ตรวจสอบว่าเว็บไซต์ index ได้ถูกต้อง',
+    'มี sitemap และ robots.txt ที่เหมาะสม',
+    'ปรับ meta title และ meta description ให้ตรง search intent',
+    'ใช้ heading structure ชัดเจน',
+    'ทำ keyword research ก่อนเขียนเนื้อหา',
+    'สร้าง internal link ระหว่างหน้าที่เกี่ยวข้อง',
+    'ปรับความเร็วเว็บไซต์และ mobile experience',
+    'สร้าง backlink จากเว็บไซต์คุณภาพ',
+  ]
+
+  const aeoChecklistItems = [
+    'มี answer-first paragraph ในหน้าสำคัญ',
+    'ใช้หัวข้อแบบคำถามที่ตรงกับสิ่งที่ผู้ใช้ค้นหา',
+    'เพิ่ม FAQ ในบทความและหน้า service',
+    'ตอบคำถามให้กระชับ ชัด และนำไปใช้ต่อได้',
+    'ใช้ structured data ที่เหมาะสม',
+    'เพิ่มตารางเปรียบเทียบ checklist และ step-by-step guide',
+    'เขียนให้ทั้งคนและ AI เข้าใจง่าย',
+  ]
+
+  const geoChecklistItems = [
+    'มีหน้า About, Service, Contact และ Case Study ที่ชัดเจน',
+    'อธิบายว่าแบรนด์เชี่ยวชาญเรื่องอะไร',
+    'สร้าง content cluster รอบหัวข้อหลักของธุรกิจ',
+    'ทำให้ชื่อแบรนด์ ข้อมูลธุรกิจ และบริการสอดคล้องกันทุกช่องทาง',
+    'เพิ่ม brand mention จากเว็บไซต์ภายนอก',
+    'ทำ Digital PR หรือ guest content',
+    'สร้าง citation signal จากแหล่งข้อมูลที่น่าเชื่อถือ',
+    'ติดตามว่าแบรนด์ถูกพูดถึงใน AI Search หรือไม่',
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <section className="grid gap-5">
+        <P>
+          ในอดีต การทำ SEO อาจหมายถึงการทำให้เว็บไซต์ติดหน้าแรก Google เป็นหลัก
+          แต่ปัจจุบันพฤติกรรมการค้นหาของผู้ใช้เปลี่ยนไปมาก
+          ผู้คนไม่ได้ค้นหาเฉพาะบน Google แบบเดิมเท่านั้น
+          แต่ยังถามคำถามผ่าน AI Search, อ่านคำตอบจาก AI Overview,
+          ใช้ ChatGPT เปรียบเทียบสินค้าและบริการ
+          หรือให้ Gemini ช่วยสรุปข้อมูลก่อนตัดสินใจซื้อ
+        </P>
+        <P>
+          นั่นหมายความว่า ธุรกิจที่ต้องการเพิ่มการมองเห็นในวันนี้
+          ไม่ควรถามแค่ว่า "ทำอย่างไรให้ติด Google" แต่ควรถามเพิ่มว่า
+          "ทำอย่างไรให้ Google เข้าใจเรา",
+          "ทำอย่างไรให้ AI เลือกข้อมูลของเราไปตอบ"
+          และ "ทำอย่างไรให้แบรนด์ของเราถูกพูดถึงในระบบค้นหารูปแบบใหม่"
+        </P>
+      </section>
+
+      <ArticleSection title="SEO, AEO และ GEO คืออะไรในยุค AI Search">
+        <P>
+          SEO, AEO และ GEO ไม่ใช่สิ่งที่แยกขาดจากกัน
+          แต่เป็น 3 ชั้นของการเพิ่มการมองเห็นบนโลก Search ยุคใหม่
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            'SEO ช่วยให้เว็บไซต์ถูกค้นพบ',
+            'AEO ช่วยให้เนื้อหาถูกเลือกไปตอบคำถาม',
+            'GEO ช่วยให้แบรนด์ถูก AI นำไปอ้างอิง',
+          ].map((item) => (
+            <div key={item} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-4">
+              <p className="thai-readable font-medium text-neutral-950">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้าทำทั้ง 3 ส่วนร่วมกันอย่างถูกต้อง ธุรกิจจะไม่ได้มีโอกาสแค่ติดอันดับบน Google
+          แต่ยังมีโอกาสปรากฏในคำตอบของ AI Search
+          และถูกจดจำในฐานะแหล่งข้อมูลที่น่าเชื่อถือมากขึ้น
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="SEO คืออะไร">
+        <P>
+          SEO หรือ Search Engine Optimization คือกระบวนการปรับปรุงเว็บไซต์ให้ Search Engine
+          อย่าง Google เข้าใจ จัดเก็บ และจัดอันดับเนื้อหาได้ดีขึ้น
+          เป้าหมายหลักของ SEO คือทำให้เว็บไซต์ปรากฏในผลการค้นหา
+          เมื่อผู้ใช้ค้นหาด้วยคีย์เวิร์ดที่เกี่ยวข้องกับธุรกิจ
+        </P>
+        <P>
+          การทำ SEO ที่ดีไม่ได้มีแค่การใส่คีย์เวิร์ดในบทความ
+          แต่รวมถึงหลายองค์ประกอบ เช่น โครงสร้างเว็บไซต์
+          ความเร็วในการโหลดหน้าเว็บ การทำ Internal Link
+          คุณภาพของเนื้อหา ความน่าเชื่อถือของเว็บไซต์
+          ประสบการณ์ผู้ใช้ และ Backlink จากแหล่งข้อมูลภายนอก
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="AEO คืออะไร">
+        <P>
+          AEO หรือ Answer Engine Optimization คือการปรับเนื้อหาให้เหมาะกับระบบที่ต้องการ
+          "คำตอบ" ไม่ใช่แค่ "รายชื่อเว็บไซต์" เช่น Google AI Overview, Featured Snippet,
+          People Also Ask, Voice Search และระบบถามตอบของ AI
+        </P>
+        <P>
+          หัวใจของ AEO คือการทำให้เนื้อหาตอบคำถามได้ชัดเจน กระชับ และเข้าใจง่าย
+          โดยเฉพาะในช่วงต้นของเนื้อหา เช่น การมี Answer-first paragraph
+          ที่ตอบคำถามหลักใน 40–80 คำ การใช้หัวข้อแบบคำถาม การทำ FAQ
+          และการจัดโครงสร้างคำตอบให้ AI สามารถดึงไปใช้ได้ง่าย
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="GEO คืออะไร">
+        <P>
+          GEO หรือ Generative Engine Optimization คือการปรับกลยุทธ์เนื้อหาและแบรนด์
+          ให้มีโอกาสถูกระบบ Generative AI เช่น ChatGPT, Gemini, Claude และ Perplexity
+          นำไปใช้ อ้างอิง หรือพูดถึงเมื่อผู้ใช้ถามคำถามที่เกี่ยวข้องกับสินค้า
+          บริการ หรืออุตสาหกรรมของเรา
+        </P>
+        <P>
+          GEO ไม่ได้ดูแค่หน้าเว็บไซต์เพียงหน้าเดียว
+          แต่ดูภาพรวมของความน่าเชื่อถือของแบรนด์บนโลกออนไลน์ เช่น
+          เว็บไซต์หลัก บทความคุณภาพ การถูกกล่าวถึงจากเว็บไซต์อื่น
+          โปรไฟล์ธุรกิจ รีวิว ข้อมูลองค์กร
+          ความสม่ำเสมอของชื่อแบรนด์ และความเชี่ยวชาญเฉพาะด้าน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="SEO GEO AEO ต่างกันอย่างไร">
+        <P>
+          SEO, AEO และ GEO มีเป้าหมายร่วมกันคือเพิ่มการมองเห็นของธุรกิจบนโลก Search
+          แต่แต่ละแนวทางมีจุดเน้นต่างกัน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Google Search',
+            'AEO เน้นการทำให้เนื้อหาถูกเลือกไปตอบคำถามโดยตรง',
+            'GEO เน้นการทำให้แบรนด์ถูก AI Search พูดถึงหรืออ้างอิง',
+          ].map((item) => (
+            <div key={item} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+              <p className="thai-readable font-medium text-neutral-950">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          เมื่อมองเป็นภาพรวม SEO คือฐานของเว็บไซต์
+          AEO คือการจัดคำตอบให้ชัด
+          และ GEO คือการสร้างความน่าเชื่อถือของแบรนด์ในโลก AI Search
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไมธุรกิจไม่ควรทำแค่ SEO อย่างเดียวอีกต่อไป">
+        <P>
+          การทำ SEO ยังสำคัญ แต่การทำแค่ SEO แบบเดิมอาจไม่เพียงพออีกต่อไป
+          เพราะหน้าผลการค้นหาของ Google เปลี่ยนไปมาก
+          ผู้ใช้จำนวนมากเห็นคำตอบจาก AI Overview, Featured Snippet
+          หรือ People Also Ask ก่อนที่จะคลิกเข้าเว็บไซต์
+        </P>
+        <P>
+          นอกจากนี้ ผู้ใช้เริ่มใช้ AI เป็นผู้ช่วยในการตัดสินใจมากขึ้น
+          เช่น ถามว่า "บริษัทรับทำ SEO ที่ไหนดี", "GEO คืออะไร",
+          "ธุรกิจเล็กควรเริ่มทำ SEO อย่างไร"
+          หรือ "เปรียบเทียบวิธีเพิ่มลูกค้าจาก Google กับ AI Search"
+          คำตอบที่ AI เลือกแสดงอาจมีอิทธิพลต่อความเชื่อมั่นของผู้ใช้
+          ก่อนที่เขาจะเห็นเว็บไซต์จริงด้วยซ้ำ
+        </P>
+        <P>
+          ดังนั้น ธุรกิจที่ต้องการเติบโตจาก Search ในระยะยาว
+          ต้องคิดมากกว่าการติดอันดับ
+          ต้องคิดถึงการถูกเข้าใจ ถูกเลือกไปตอบ
+          และถูกอ้างอิงในระบบค้นหาหลายรูปแบบ
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีทำ SEO ให้พร้อมสำหรับ AEO และ GEO">
+        <P>
+          การทำ SEO, AEO และ GEO ไม่จำเป็นต้องเริ่มแยกเป็น 3 โปรเจกต์เสมอไป
+          ธุรกิจสามารถเริ่มจากการทำ SEO ให้แข็งแรง
+          แล้วค่อยออกแบบเนื้อหาและสัญญาณแบรนด์ให้รองรับ AI Search ไปพร้อมกัน
+        </P>
+        <ArticleSubSection title="เริ่มจาก Technical SEO ที่แข็งแรง">
+          <P>
+            Technical SEO คือฐานของทุกอย่าง
+            เว็บไซต์ควรมีโครงสร้างที่ Google และ AI crawler เข้าใจได้ง่าย
+            เช่น หน้าเว็บต้อง index ได้ โหลดเร็ว ใช้งานบนมือถือได้ดี
+            มี sitemap ที่ถูกต้อง ไม่มี canonical ผิดพลาด
+            ไม่มีหน้าซ้ำจำนวนมาก และมีโครงสร้าง heading ที่ชัดเจน
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="สร้างเนื้อหาแบบ Answer-first">
+          <P>
+            Answer-first คือการตอบคำถามหลักของผู้ใช้ตั้งแต่ช่วงต้นของบทความหรือหน้าเว็บ
+            วิธีนี้ช่วยทั้งผู้อ่านและระบบ AI
+            เพราะทำให้เข้าใจได้ทันทีว่าหน้านี้เกี่ยวกับอะไร และให้คำตอบเรื่องใด
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="วาง Content Cluster และ Topical Authority">
+          <P>
+            Topical Authority คือการทำให้เว็บไซต์มีความเชี่ยวชาญในหัวข้อหนึ่งอย่างชัดเจน
+            ไม่ใช่มีบทความเดี่ยวเพียงบทความเดียว
+            แต่มีเนื้อหาหลายหน้าที่เชื่อมโยงกันเป็นระบบ เช่น
+            SEO คืออะไร, Technical SEO คืออะไร, AEO คืออะไร, GEO คืออะไร,
+            AI Overview คืออะไร และวิธีทำให้ AI แนะนำเว็บไซต์
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="เพิ่ม FAQ และ Structured Data">
+          <P>
+            FAQ เป็นส่วนสำคัญของ AEO เพราะช่วยตอบคำถามเฉพาะที่ผู้ใช้อาจค้นหาจริง
+            เช่น "SEO กับ GEO ต่างกันอย่างไร" หรือ "ธุรกิจเล็กควรเริ่มจากอะไร"
+            คำถามเหล่านี้มักเป็นคำถามที่พบใน People Also Ask
+            และเหมาะกับการนำไปใช้ใน AI Answer
+          </P>
+          <P>
+            นอกจาก FAQ แล้ว เว็บไซต์ควรใช้ Structured Data หรือ Schema Markup ที่เหมาะสม
+            เช่น Organization, LocalBusiness, BreadcrumbList, Article, FAQPage หรือ Service
+            เพื่อช่วยให้ Search Engine เข้าใจข้อมูลสำคัญของหน้าเว็บได้ชัดเจนขึ้น
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="สร้าง Brand Entity และ Citation Signal">
+          <P>
+            สำหรับ GEO การทำให้ AI เข้าใจแบรนด์เป็นเรื่องสำคัญมาก
+            ธุรกิจควรมีข้อมูลแบรนด์ที่ชัดเจนและสอดคล้องกันในหลายช่องทาง เช่น
+            เว็บไซต์หลัก Google Business Profile Social Media
+            Directory เว็บไซต์พาร์ตเนอร์ รีวิว และบทความที่กล่าวถึงแบรนด์
+          </P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างการทำ SEO, AEO และ GEO ในธุรกิจจริง">
+        <P>
+          สำหรับธุรกิจบริการ เช่น เอเจนซี่ SEO บริษัทที่ปรึกษา หรือธุรกิจ B2B
+          ควรเริ่มจากหน้า Service ที่อธิบายบริการชัดเจน
+          พร้อมบทความให้ความรู้ที่ตอบคำถามของลูกค้า
+          เช่น SEO คืออะไร ทำไมธุรกิจต้องทำ SEO
+          ค่าใช้จ่ายขึ้นอยู่กับอะไร และเลือกบริษัทรับทำ SEO อย่างไร
+        </P>
+        <P>
+          สำหรับ Ecommerce ควรทำ SEO ในหน้าหมวดหมู่สินค้า
+          ทำบทความแนะนำการเลือกซื้อ เพิ่ม FAQ ในหน้าสินค้า
+          และสร้างเนื้อหาที่ช่วยให้ AI เข้าใจว่าสินค้าเหมาะกับใคร
+          ใช้แก้ปัญหาอะไร และแตกต่างจากตัวเลือกอื่นอย่างไร
+        </P>
+        <P>
+          สำหรับ Local Business เช่น คลินิก ร้านอาหาร โรงแรม หรือร้านค้าในพื้นที่
+          ควรทำทั้ง SEO และ Google Map Optimization
+          โดยให้ข้อมูลชื่อ ที่อยู่ เบอร์โทร เวลาเปิดทำการ
+          รีวิว รูปภาพ และบริการให้ครบถ้วน
+          พร้อมสร้างเนื้อหาที่เกี่ยวข้องกับพื้นที่
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ธุรกิจควรเริ่มจาก SEO, AEO หรือ GEO ก่อน">
+        <P>
+          ถ้าเป็นเว็บไซต์ใหม่ ควรเริ่มจาก SEO ก่อน
+          เพราะต้องทำให้เว็บไซต์ถูกค้นพบและถูก index อย่างถูกต้องก่อน
+          จากนั้นค่อยออกแบบเนื้อหาให้รองรับ AEO
+          และวางโครงสร้างแบรนด์ให้รองรับ GEO
+        </P>
+        <P>
+          ถ้าเป็นเว็บไซต์ที่มี traffic แล้ว ควรเริ่มเพิ่ม AEO
+          โดยปรับบทความเดิมให้มี Answer-first, FAQ, heading ที่ชัดเจน
+          และ structured data
+          เพื่อเพิ่มโอกาสถูกเลือกไปแสดงใน AI Overview หรือ Featured Snippet
+        </P>
+        <P>
+          ถ้าเป็นแบรนด์ที่มีความน่าเชื่อถืออยู่แล้ว
+          ควรเริ่มทำ GEO อย่างจริงจัง เช่น เพิ่ม case study,
+          digital PR, brand mention, citation
+          และเนื้อหาเชิงลึกที่ AI สามารถใช้เป็นแหล่งข้อมูลได้
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="SEO GEO AEO Checklist สำหรับธุรกิจ">
+        <ArticleSubSection title="SEO Checklist">
+          <CheckList items={seoChecklistItems} />
+        </ArticleSubSection>
+        <ArticleSubSection title="AEO Checklist">
+          <CheckList items={aeoChecklistItems} />
+        </ArticleSubSection>
+        <ArticleSubSection title="GEO Checklist">
+          <CheckList items={geoChecklistItems} />
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="Saralak Search ช่วยธุรกิจทำ SEO GEO AEO ได้อย่างไร">
+        <P>
+          Saralak Search ช่วยธุรกิจวางกลยุทธ์ Search Marketing
+          สำหรับยุคที่ผู้ใช้ค้นหาผ่านทั้ง Google และ AI Search
+          โดยไม่ได้มอง SEO เป็นแค่การเพิ่มอันดับ
+          แต่เชื่อมโยงการค้นหาเข้ากับลูกค้า ความน่าเชื่อถือ และรายได้ของธุรกิจ
+        </P>
+        <P>
+          บริการของเราครอบคลุมตั้งแต่ SEO Strategy, Technical SEO Audit,
+          Keyword Research, Content Optimization, AEO Optimization,
+          GEO Strategy, Internal Linking, Google Business Profile Optimization,
+          Google Map Optimization ไปจนถึงการทำรายงานผลลัพธ์ที่อ่านเข้าใจง่าย
+          และนำไปตัดสินใจต่อได้จริง
+        </P>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
+
+      <ArticleSection title="สรุป">
+        <P>
+          SEO, AEO และ GEO คือ 3 แนวทางที่ธุรกิจควรมองร่วมกันในยุค AI Search
+          เพราะผู้ใช้ไม่ได้ค้นหาข้อมูลจาก Google แบบเดิมเท่านั้น
+          แต่ยังรับคำตอบจาก AI Overview, ChatGPT, Gemini, Claude
+          และแพลตฟอร์ม AI อื่น ๆ มากขึ้น
+        </P>
+        <P>
+          ธุรกิจที่เริ่มก่อนจะได้เปรียบ
+          เพราะสามารถสร้างฐาน SEO ให้แข็งแรง
+          วางโครงสร้างเนื้อหาให้ตอบคำถามชัดเจน
+          และสร้าง brand entity ให้ AI เข้าใจได้ตั้งแต่วันนี้
+        </P>
+        <P>
+          หากต้องการให้เว็บไซต์ของธุรกิจพร้อมสำหรับทั้ง Google Search และ AI Search,
+          Saralak Search ช่วยวางกลยุทธ์ SEO, AEO, GEO และ Google Map Optimization
+          เพื่อเปลี่ยนการค้นหาให้เป็นลูกค้าและยอดขายได้อย่างเป็นระบบ.
+        </P>
+      </ArticleSection>
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
+  }
+  if (post.bodyVariant === 'seo-geo-aeo') {
+    return <SeoGeoAeoArticle post={post} />
   }
 
   return (
