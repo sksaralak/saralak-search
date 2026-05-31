@@ -162,7 +162,11 @@ export const blogPosts: BlogPost[] = [
     authorUrl: '/about',
     metaTitle: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร | Saralak Search',
     metaDescription:
-      'GEO คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้ AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview เข้าใจ อ้างอิง และแนะนำธุรกิจของเราได้มากขึ้น',
+      'SEO, AEO และ GEO คือ 3 แนวทางหลักของ Search Marketing ยุคใหม่ เรียนรู้ความแตกต่าง และวิธีเริ่มต้นให้ธุรกิจมองเห็นได้ทั้งบน Google และ AI Search',
+    heroImageDesktop: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.png',
+    heroImageMobile: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-mweb.png',
+    heroImageAlt: 'SEO GEO AEO คืออะไร ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไร',
+    ogImage: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.png',
     aiSummary: [
       'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่',
       'SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search',

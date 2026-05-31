@@ -7,7 +7,7 @@ export default function BlogIndex() {
   return (
     <main>
       <SEO
-        title="SEO, AEO & GEO Insights | Saralak Search"
+        title="บทความความรู้ SEO, GEO และ AI Search | Saralak Search"
         description="Practical insights from Saralak Search on Google Search, AI Overviews, ChatGPT visibility, AEO, GEO and modern search strategy."
         path="/blog"
         image="/image/og/saralak-search-blog-og.png"

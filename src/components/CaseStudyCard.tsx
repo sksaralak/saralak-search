@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import type { CaseStudy } from '../content/caseStudies'
+
+const serviceBlogLinks: Record<string, string> = {
+  GEO: '/blog/what-is-geo',
+  AEO: '/blog/seo-geo-aeo',
+}
 
 type CaseStudyCardProps = {
   study: CaseStudy
@@ -104,9 +110,18 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
 
             {/* Service + Duration */}
             <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-neutral-200 pt-4 text-xs text-neutral-500">
-              <span className="rounded bg-neutral-100 px-2 py-0.5 font-medium">
-                {study.service}
-              </span>
+              {serviceBlogLinks[study.service] ? (
+                <Link
+                  to={serviceBlogLinks[study.service]}
+                  className="rounded bg-neutral-100 px-2 py-0.5 font-medium hover:bg-teal-50 hover:text-teal-800"
+                >
+                  {study.service}
+                </Link>
+              ) : (
+                <span className="rounded bg-neutral-100 px-2 py-0.5 font-medium">
+                  {study.service}
+                </span>
+              )}
               <span aria-hidden="true">·</span>
               <span>{study.duration}</span>
             </div>

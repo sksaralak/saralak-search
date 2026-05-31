@@ -158,7 +158,7 @@ const proofCards = [
       'ปรับปรุงเนื้อหาและ Search Visibility เพื่อให้ AI เข้าใจเว็บไซต์และนำข้อมูลไปใช้อ้างอิงได้ง่ายขึ้น',
     metric: 'AI Overview Visibility',
     image: '/proof/google-ai-overview-visibility.png',
-    cta: { label: 'ดูแนวทาง AEO', to: '/blog/aeo-vs-seo' },
+    cta: { label: 'SEO, AEO และ GEO ต่างกันอย่างไร', to: '/blog/seo-geo-aeo' },
   },
   {
     title: 'ผลักดันคีย์เวิร์ดการแข่งขันสูงขึ้นหน้าแรก',

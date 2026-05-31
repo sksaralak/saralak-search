@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
 
@@ -575,6 +576,12 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           โปรไฟล์ธุรกิจ รีวิว ข้อมูลองค์กร
           ความสม่ำเสมอของชื่อแบรนด์ และความเชี่ยวชาญเฉพาะด้าน
         </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
+          </Link>
+        </p>
       </ArticleSection>
 
       <ArticleSection title="SEO GEO AEO ต่างกันอย่างไร">
@@ -600,6 +607,11 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleImage
+        src="/image/blog/seo-aeo-geo/seo-aeo-geo-compare.png"
+        alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร"
+      />
+
       <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
         <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
         <h3 className="mt-2 break-words text-xl font-semibold text-neutral-950">
@@ -615,6 +627,10 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
       </aside>
 
       <ArticleSection title="ทำไมธุรกิจไม่ควรทำแค่ SEO อย่างเดียวอีกต่อไป">
+        <ArticleImage
+          src="/image/blog/seo-aeo-geo/seo-aeo-geo-why-geo.png"
+          alt="ทำไมธุรกิจต้องการมากกว่า SEO ในยุค AI Search"
+        />
         <P>
           การทำ SEO ยังสำคัญ แต่การทำแค่ SEO แบบเดิมอาจไม่เพียงพออีกต่อไป
           เพราะหน้าผลการค้นหาของ Google เปลี่ยนไปมาก
@@ -715,6 +731,10 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="ธุรกิจควรเริ่มจาก SEO, AEO หรือ GEO ก่อน">
+        <ArticleImage
+          src="/image/blog/seo-aeo-geo/seo-aeo-geo-transform.png"
+          alt="เส้นทางการเติบโตจาก SEO สู่ AEO และ GEO"
+        />
         <P>
           ถ้าเป็นเว็บไซต์ใหม่ ควรเริ่มจาก SEO ก่อน
           เพราะต้องทำให้เว็บไซต์ถูกค้นพบและถูก index อย่างถูกต้องก่อน
