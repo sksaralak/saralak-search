@@ -100,7 +100,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
             <h2 className="mt-2 text-2xl font-semibold text-neutral-950">{post.authorName}</h2>
             <p className="mt-2 text-neutral-700">{post.authorRole}</p>
             <p className="thai-readable mt-3 text-neutral-700">
-              ทำงานด้าน SEO มากกว่า 9 ปี และกำลังขยายไปสู่ AEO และ GEO เพราะเชื่อว่าแบรนด์ต้องมีการมองเห็นได้จากทุกช่องทาง ไม่ใช่แค่ Google อีกต่อไป AI Search กำลังพัฒนาเร็วมาก ธุรกิจที่เข้าใจและเริ่มก่อนจะได้เปรียบก่อน
+              ทำงานด้าน Search มากกว่า 9 ปี วันนี้โฟกัสที่ AEO และ GEO เพราะ AI Search เปลี่ยนวิธีที่ลูกค้าค้นหาและตัดสินใจซื้อไปแล้ว แบรนด์ที่เข้าใจเรื่องนี้และเริ่มก่อน มีโอกาสได้เปรียบคู่แข่งในช่วงที่คนยังไม่แน่นหน้า
             </p>
           </div>
           <div>
