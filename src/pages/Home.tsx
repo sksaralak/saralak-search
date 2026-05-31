@@ -1,14 +1,13 @@
 import CTAButton from '../components/CTAButton'
 import BlogCard from '../components/BlogCard'
 import FAQSection from '../components/FAQSection'
-import PricingCard from '../components/PricingCard'
 import ProofCard from '../components/ProofCard'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import { getLatestBlogPosts } from '../content/blog'
 import { faqJsonLd, homepageFaqs } from '../content/faqs'
-import { brand, packages, proofItems, services } from '../content/site'
+import { brand, proofItems, services } from '../content/site'
 
 const baseUrl = 'https://saralak-search.com'
 
@@ -41,6 +40,37 @@ const proofCaptions = [
   'Search Ranking Improvement',
   'AI Overview Visibility',
   'ChatGPT Visibility',
+]
+
+const homeServiceCards = [
+  {
+    title: 'Discovery Audit',
+    price: 'Starting from 5,000 THB',
+    description: 'ค้นหาสิ่งที่อาจขวางการเติบโตบน Google และ AI Search',
+    outcomes: ['Audit Report', 'Prioritized Roadmap', 'Quick Wins'],
+    cta: 'เริ่มต้นด้วย Discovery Audit',
+  },
+  {
+    title: 'Increase Visibility on Google & AI Search',
+    price: 'Starting from 25,000 THB/month',
+    description: 'เพิ่มการมองเห็นบน Google, AI Overview และ ChatGPT',
+    outcomes: ['Google Visibility', 'AI Visibility', 'Brand Mentions', 'Search Growth'],
+    cta: 'ขอแผนเพิ่มการมองเห็น',
+  },
+  {
+    title: 'Increase Visibility on Google Maps',
+    price: 'Starting from 6,000 THB/location/month',
+    description: 'เพิ่มการมองเห็นใน Google Maps และ Local Search',
+    outcomes: ['Local Visibility', 'Maps Discovery', 'Review Optimization'],
+    cta: 'ขอแผน Local Growth',
+  },
+  {
+    title: 'Monthly SEO Advisor',
+    price: 'Custom Pricing',
+    description: 'ที่ปรึกษา SEO, GEO และ AI Search สำหรับทีมการตลาด',
+    outcomes: ['Strategic Guidance', 'Technical Consultation', 'Team Support'],
+    cta: 'นัดพูดคุยเบื้องต้น',
+  },
 ]
 
 export default function Home() {
@@ -281,8 +311,28 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Engagement options" title="วิธีทำงานที่เลือกได้ตามเป้าหมายธุรกิจ" />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {packages.map((item) => (
-              <PricingCard key={item.title} {...item} />
+            {homeServiceCards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-lg border border-teal-100 bg-white p-6 shadow-sm shadow-neutral-950/5"
+              >
+                <h3 className="break-words text-lg font-semibold text-neutral-950">{card.title}</h3>
+                <p className="mt-3 break-words text-xl font-semibold text-teal-900 sm:text-2xl">{card.price}</p>
+                <p className="mt-3 break-words leading-7 text-neutral-700">{card.description}</p>
+                <div className="mt-5 border-t border-neutral-200 pt-5">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สิ่งที่ได้รับ</p>
+                  <div className="mt-3 grid gap-2">
+                    {card.outcomes.map((outcome) => (
+                      <p key={outcome} className="break-words text-sm leading-6 text-neutral-700">
+                        {outcome}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <CTAButton to="/contact">{card.cta}</CTAButton>
+                </div>
+              </article>
             ))}
           </div>
         </div>
