@@ -100,8 +100,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
             <h2 className="mt-2 text-2xl font-semibold text-neutral-950">{post.authorName}</h2>
             <p className="mt-2 text-neutral-700">{post.authorRole}</p>
             <p className="thai-readable mt-3 text-neutral-700">
-              Helps brands improve visibility across Google Search, AI Overviews, ChatGPT, and other AI
-              search platforms.
+              ที่ปรึกษาด้าน SEO, AEO และ GEO ที่มีประสบการณ์มากกว่า 9 ปี ช่วยธุรกิจเพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT และ AI Search Platform อื่น ๆ
             </p>
           </div>
           <div>
