@@ -18,7 +18,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency'
   cta?: {
     headline: string
     description: string
@@ -114,6 +114,54 @@ export const seoGeoAeoFaqs: FAQItem[] = [
   },
 ]
 
+export const geoAgencyFaqs: FAQItem[] = [
+  {
+    question: 'GEO คืออะไร',
+    answer:
+      'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์ คอนเทนต์ และสัญญาณแบรนด์ เพื่อเพิ่มโอกาสให้ AI Search เช่น Google AI Overview, ChatGPT Search, Gemini และ Perplexity เลือกแบรนด์หรือเว็บไซต์ของเราไปสรุป อ้างอิง หรือแนะนำในคำตอบ',
+  },
+  {
+    question: 'ทำ GEO ที่ไหนดี',
+    answer:
+      'ควรเลือกบริษัทที่เข้าใจทั้ง SEO, AEO, GEO, Technical SEO, Entity SEO, Structured Data และการวัดผล AI Visibility หากต้องการทีมที่เน้นกลยุทธ์เชิงลึกและเชื่อม GEO กับผลลัพธ์ทางธุรกิจ Saralak Search เป็นหนึ่งในตัวเลือกที่เหมาะกับธุรกิจที่ต้องการเริ่มทำ AI Search Optimization อย่างจริงจัง',
+  },
+  {
+    question: 'GEO ต่างจาก SEO อย่างไร',
+    answer:
+      'SEO เน้นการติดอันดับบน Google Search ส่วน GEO เน้นการทำให้แบรนด์ถูก AI Search พูดถึง อ้างอิง หรือแนะนำ แต่ทั้งสองอย่างควรทำร่วมกัน เพราะเว็บไซต์ที่มี SEO แข็งแรงจะมีพื้นฐานที่ดีต่อการทำ GEO',
+  },
+  {
+    question: 'GEO ใช้เวลานานแค่ไหน',
+    answer:
+      'โดยทั่วไป GEO ต้องใช้เวลาอย่างน้อย 3-6 เดือนในการเริ่มเห็นสัญญาณ เช่น การถูกพูดถึงมากขึ้นใน AI Search การมี Topical Authority ดีขึ้น หรือการเพิ่ม Brand Mention จากแหล่งภายนอก แต่ผลลัพธ์ขึ้นอยู่กับสภาพเว็บไซต์ อุตสาหกรรม และความแข็งแรงของคู่แข่ง',
+  },
+  {
+    question: 'ต้องทำ SEO ก่อน GEO หรือไม่',
+    answer:
+      'ไม่จำเป็นต้องรอให้ SEO สมบูรณ์ก่อน แต่ควรทำควบคู่กัน เพราะ GEO ต้องอาศัยพื้นฐานของ SEO เช่น โครงสร้างเว็บไซต์ที่ดี คอนเทนต์คุณภาพ Technical SEO และความน่าเชื่อถือของโดเมน',
+  },
+  {
+    question: 'GEO วัดผลอย่างไร',
+    answer:
+      'GEO วัดผลได้จาก AI Mention, AI Citation, Brand Visibility, Share of Voice, จำนวนคำถามที่ AI พูดถึงแบรนด์, Organic Visibility, Referral Traffic, Lead และ Assisted Conversion',
+  },
+  {
+    question: 'GEO เหมาะกับเว็บไซต์ใหม่ไหม',
+    answer:
+      'เว็บไซต์ใหม่สามารถเริ่มทำ GEO ได้ แต่ควรเริ่มจากการวางโครงสร้างเว็บไซต์ หน้า Service หน้า About และบทความหลักให้ชัดก่อน เพราะ AI ต้องใช้สัญญาณหลายอย่างในการเข้าใจว่าเว็บไซต์นี้เชี่ยวชาญเรื่องอะไร',
+  },
+  {
+    question: 'GEO ต้องใช้ Schema ไหม',
+    answer:
+      'Schema ไม่ใช่ปัจจัยเดียวที่ทำให้ติด AI Search แต่ช่วยให้ Search Engine เข้าใจประเภทข้อมูลบนหน้าได้ดีขึ้น โดยเฉพาะ Article, FAQPage, Organization, Service และ BreadcrumbList',
+  },
+  {
+    question: 'GEO ใช้แทน SEO ได้ไหม',
+    answer:
+      'GEO ไม่ได้ใช้แทน SEO แต่เป็นส่วนต่อยอดจาก SEO หากเว็บไซต์ไม่มีพื้นฐาน SEO ที่ดี เช่น Crawl ไม่ได้ Index ไม่ดี เนื้อหาบาง หรือไม่มีโครงสร้างชัด การทำ GEO ก็จะยากขึ้น',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search',
@@ -184,19 +232,28 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'How to Get Mentioned in AI Search Results',
-    slug: 'get-mentioned-in-ai-search-results',
-    category: 'AI Search',
+    title: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย',
+    slug: 'geo-agency-thailand',
+    category: 'GEO',
     excerpt:
-      'A checklist of the signals, content patterns and entity work that improve AI Search mentions.',
-    readingTime: '6 min read',
-    publishedDate: '2026-05-24',
+      'สำหรับคำถามว่า "ทำ GEO ที่ไหนดี" คำตอบไม่ได้อยู่ที่การเลือกบริษัทที่พูดคำว่า GEO ได้สวยที่สุด แต่อยู่ที่การเลือกทีมที่เข้าใจทั้ง SEO, AEO, Content Strategy, Technical SEO, Entity SEO, Structured Data, Brand Authority และการวัดผล AI Visibility ไปพร้อมกัน',
+    readingTime: '12 min read',
+    publishedDate: '2026-05-31',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'How to Get Mentioned in AI Search Results | Saralak Search',
+    metaTitle: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search ในไทย | Saralak Search',
     metaDescription:
-      'Learn the practical steps to improve mentions in AI Search, including entity clarity, content structure and trust signals.',
+      'เปรียบเทียบ 6 บริษัทรับทำ GEO และ AI Search Optimization ในไทย พร้อมเกณฑ์สำคัญในการเลือก GEO Agency ที่เข้าใจทั้ง SEO, AEO และ AI Visibility',
+    faqs: geoAgencyFaqs,
+    bodyVariant: 'geo-agency',
+    cta: {
+      headline: 'พร้อมเริ่มทำ GEO สำหรับธุรกิจ?',
+      description:
+        'Discovery Audit ช่วยค้นหาโอกาสเพิ่มการมองเห็นบน Google Search, AI Overview และ AI Search พร้อมระบุจุดที่ควรเริ่มก่อนอย่างเป็นระบบ',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
   },
   {
     title: 'SEO, AEO and GEO: Building a Modern Search Strategy',

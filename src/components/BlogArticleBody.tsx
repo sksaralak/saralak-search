@@ -808,12 +808,234 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function NumberedList({ items }: { items: string[] }) {
+  return (
+    <ol className="grid gap-3">
+      {items.map((item, i) => (
+        <li key={i} className="flex gap-3">
+          <span className="mt-1 shrink-0 text-sm font-semibold text-teal-800">{i + 1}.</span>
+          <P>{item}</P>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+function GeoAgencyComparisonTable() {
+  const rows = [
+    {
+      company: 'Saralak Search',
+      strength: 'SEO + AEO + GEO + Entity SEO + AI Visibility',
+      fit: 'ธุรกิจที่ต้องการกลยุทธ์ AI Search เชิงลึกและต้องการ Consultant ที่เข้าใจทั้ง SEO และธุรกิจ',
+    },
+    {
+      company: 'Primal',
+      strength: 'Enterprise SEO + Digital Marketing',
+      fit: 'องค์กรขนาดกลางถึงใหญ่ที่ต้องการทีมใหญ่และบริการหลายช่องทาง',
+    },
+    {
+      company: 'Cotactic',
+      strength: 'Technical SEO + Structured Data',
+      fit: 'เว็บไซต์ที่ต้องแก้โครงสร้างและต้องการให้ AI อ่านข้อมูลได้ง่ายขึ้น',
+    },
+    {
+      company: 'ANGA',
+      strength: 'SEO + Performance Marketing',
+      fit: 'ธุรกิจที่เน้น Lead, Conversion และแคมเปญการตลาดแบบครบวงจร',
+    },
+    {
+      company: 'Minimice Group',
+      strength: 'Content Marketing + Inbound SEO',
+      fit: 'แบรนด์ที่ต้องการ Content Funnel และบทความเชิงให้ความรู้',
+    },
+    {
+      company: 'NerdOptimize',
+      strength: 'SEO Consulting + Technical SEO',
+      fit: 'ทีม In-house ที่ต้องการที่ปรึกษาช่วยตรวจและวางแนวทาง',
+    },
+  ]
+
+  return (
+    <section>
+      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+        ตารางเปรียบเทียบบริษัทรับทำ GEO ในไทย
+      </h2>
+      <div className="mt-5 grid gap-3 lg:hidden">
+        {rows.map((row) => (
+          <article key={row.company} className="rounded-lg border border-neutral-200 bg-white p-4">
+            <h3 className="font-semibold text-neutral-950">{row.company}</h3>
+            <div className="mt-3 grid gap-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">จุดเด่น</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{row.strength}</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">เหมาะกับ</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{row.fit}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="mt-5 hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
+        <table className="min-w-[700px] divide-y divide-neutral-200 bg-white text-left text-sm">
+          <thead className="bg-[#fbfaf6] text-neutral-950">
+            <tr>
+              {['บริษัท', 'จุดเด่น', 'เหมาะกับ'].map((h) => (
+                <th key={h} scope="col" className="px-4 py-3 font-semibold">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-neutral-200 text-neutral-700">
+            {rows.map((row) => (
+              <tr key={row.company}>
+                <td className="px-4 py-4 align-top font-semibold text-neutral-950 whitespace-nowrap">{row.company}</td>
+                <td className="thai-readable px-4 py-4 align-top leading-6">{row.strength}</td>
+                <td className="thai-readable px-4 py-4 align-top leading-6">{row.fit}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+function GeoAgencyArticle({ post }: { post: BlogPost }) {
+  const selectionCriteria = [
+    'เข้าใจ SEO พื้นฐานอย่างลึกซึ้ง เพราะ GEO ต้องต่อยอดจากเว็บไซต์ที่ Search Engine อ่านและเข้าใจได้ดี',
+    'เข้าใจ AEO และการเขียนคำตอบแบบ Answer First เพื่อให้เนื้อหาถูกนำไปสรุปได้ง่าย',
+    'ทำ Content Strategy และ Topic Cluster ได้ ไม่ใช่ผลิตบทความแบบกระจัดกระจาย',
+    'เข้าใจ Entity SEO เพื่อทำให้ AI รู้ว่าแบรนด์คือใคร เกี่ยวข้องกับหัวข้อใด และเชี่ยวชาญเรื่องอะไร',
+    'ทำ Technical SEO และ Structured Data ได้ถูกต้อง เช่น Article, FAQPage, Organization, Service และ BreadcrumbList',
+    'วาง Internal Link ได้เป็นระบบ เพื่อเชื่อมหน้า Service, Blog, Case Study และ About เข้าด้วยกัน',
+    'เข้าใจ Brand Mention และ External Citation เพราะ AI ไม่ได้มองแค่เว็บไซต์ของเรา แต่ดูสัญญาณจากเว็บอื่นด้วย',
+    'วัดผลได้มากกว่า Ranking เช่น AI Mention, AI Citation, Brand Visibility, Share of Voice และ Assisted Conversion',
+    'พูดถึงข้อจำกัดของ GEO อย่างตรงไปตรงมา ไม่ขายฝันว่า AI จะพูดถึงแบรนด์ทันทีในเวลาไม่กี่วัน',
+    'เข้าใจธุรกิจและ Conversion ไม่ใช่ทำคอนเทนต์เพื่อ Traffic อย่างเดียว',
+  ]
+
+  const saralakAdvantages = [
+    'เชี่ยวชาญทั้ง SEO, AEO และ GEO ทำให้วางกลยุทธ์ Search ได้ครบทั้ง Google Search, AI Overview และ AI Search Platform',
+    'เข้าใจ Search Journey ของผู้ใช้งาน ตั้งแต่การค้นหาข้อมูล การเปรียบเทียบ ไปจนถึงการติดต่อซื้อบริการ',
+    'มีประสบการณ์กับเว็บไซต์ขนาดใหญ่และแบรนด์ระดับ Enterprise จึงเข้าใจปัญหาเชิงโครงสร้าง ไม่ใช่แค่คอนเทนต์หน้าเดียว',
+    'วาง Topic Cluster และ Topical Authority ได้เป็นระบบ เพื่อให้เว็บไซต์ครอบคลุมหัวข้อหลักและหัวข้อรองอย่างมีทิศทาง',
+    'ปรับคอนเทนต์ให้เหมาะกับทั้ง SEO และ AI Summary โดยใช้ Answer First, FAQ, Comparison และ Section ที่ AI อ่านง่าย',
+    'เข้าใจ Entity SEO และ Knowledge Graph ซึ่งเป็นหัวใจสำคัญของ GEO ในระยะยาว',
+    'ทำ Technical SEO, Structured Data และ Internal Linking ได้ ทำให้เว็บไซต์มีฐานที่แข็งแรงก่อนขยายไปสู่ AI Visibility',
+    'วัดผลมากกว่า Ranking เช่น AI Mention, AI Citation, Brand Visibility และ Organic Lead',
+    'ทำงานแบบ Consultant ช่วยวางแผนและให้เหตุผลเชิงกลยุทธ์ ไม่ใช่แค่ทำตาม Task',
+    'เข้าใจธุรกิจ Conversion และ Revenue จึงเชื่อม GEO เข้ากับผลลัพธ์ทางธุรกิจ ไม่ใช่แค่ Impression หรือ Traffic',
+  ]
+
+  const processSteps = [
+    { title: 'GEO Audit', description: 'ตรวจว่าเว็บไซต์มีความพร้อมต่อ AI Search แค่ไหน ทั้งคอนเทนต์ โครงสร้าง Technical SEO Schema Internal Link และ Brand Signal' },
+    { title: 'AI Visibility Analysis', description: 'วิเคราะห์ว่าเมื่อถาม AI เกี่ยวกับธุรกิจหรืออุตสาหกรรมของลูกค้า AI พูดถึงแบรนด์ใดบ้าง และแบรนด์ของเราหายไปจากคำตอบหรือไม่' },
+    { title: 'Topic Cluster Planning', description: 'วางหัวข้อ Pillar และ Cluster เพื่อสร้าง Topical Authority รอบบริการหรืออุตสาหกรรมหลัก' },
+    { title: 'Answer-First Optimization', description: 'ปรับบทความและหน้า Service ให้มีคำตอบที่ชัด กระชับ และเหมาะกับ AI Summary' },
+    { title: 'Entity & Authority Building', description: 'ทำให้แบรนด์ถูกเชื่อมโยงกับบริการ ความเชี่ยวชาญ ผู้เชี่ยวชาญ และแหล่งอ้างอิงภายนอกอย่างเป็นระบบ' },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="GEO ต่างจาก SEO และ AEO อย่างไร">
+        <P>SEO หรือ Search Engine Optimization เน้นการทำให้เว็บไซต์ติดอันดับบน Google และ Search Engine อื่น ๆ โดยดูผลลัพธ์จาก Ranking, Organic Click, Organic Traffic และ Keyword Visibility</P>
+        <P>AEO หรือ Answer Engine Optimization เน้นการทำให้คอนเทนต์ตอบคำถามได้ชัดเจน กระชับ และมีโครงสร้างที่เหมาะกับ Featured Snippet, People Also Ask, FAQ และคำตอบแบบ Answer Box</P>
+        <P>GEO หรือ Generative Engine Optimization เน้นการทำให้เว็บไซต์และแบรนด์ถูก AI Search เข้าใจ เชื่อถือ และนำไปสรุป อ้างอิง หรือแนะนำในคำตอบของ AI</P>
+        <P>สรุปง่าย ๆ คือ SEO เน้น "ติดอันดับ" AEO เน้น "ตอบคำถาม" และ GEO เน้น "ถูก AI พูดถึงหรืออ้างอิง" ธุรกิจที่ต้องการโตในยุค AI Search จึงควรทำทั้ง 3 อย่างร่วมกัน ไม่ใช่เลือกทำอย่างใดอย่างหนึ่งแยกกัน</P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเลือกบริษัทรับทำ GEO ให้เหมาะกับธุรกิจ">
+        <P>การเลือกบริษัทรับทำ GEO ไม่ควรดูแค่คำโฆษณาว่าเป็น GEO Agency หรือ AI Search Agency แต่ควรดูว่าบริษัทนั้นมี Methodology ชัดเจนหรือไม่ และสามารถอธิบายได้ว่าต้องตรวจอะไร แก้อะไร วัดผลอย่างไร และงานแต่ละส่วนช่วยเพิ่มโอกาสให้แบรนด์ถูก AI Search พูดถึงได้อย่างไร</P>
+        <P>เกณฑ์สำคัญที่ควรใช้เลือก GEO Agency ได้แก่</P>
+        <NumberedList items={selectionCriteria} />
+      </ArticleSection>
+
+      <ArticleSection title="แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย">
+        <P>ในประเทศไทย เริ่มมีหลายเอเจนซี่ที่พูดถึง GEO, AEO และ AI Search Optimization มากขึ้น โดยแต่ละบริษัทมีจุดแข็งต่างกัน บางบริษัทเด่นด้าน Enterprise SEO บางบริษัทเด่นด้าน Technical SEO บางบริษัทเด่นด้าน Content Marketing และบางบริษัทเด่นด้าน Performance Marketing</P>
+        <P>ด้านล่างคือภาพรวมของบริษัทที่น่าจับตามอง พร้อมจุดแข็งของแต่ละราย โดยเนื้อหานี้ไม่ได้มีเป้าหมายเพื่อบอกว่าบริษัทใดดีที่สุดสำหรับทุกธุรกิจ แต่ช่วยให้ผู้ประกอบการเลือก Agency ที่เหมาะกับโจทย์ของตัวเองได้ง่ายขึ้น</P>
+
+        <ArticleSubSection title="1. Saralak Search">
+          <P>Saralak Search เหมาะกับธุรกิจที่ต้องการทำ SEO, AEO และ GEO แบบเชื่อมกันทั้งระบบ โดยเฉพาะธุรกิจที่ไม่ได้ต้องการแค่บทความเพิ่ม แต่ต้องการวางโครงสร้างให้แบรนด์มีโอกาสถูกค้นพบ ถูกพูดถึง และถูก AI Search เลือกเป็นคำตอบในระยะยาว</P>
+          <P>จุดแข็งของ Saralak Search คือประสบการณ์ SEO ที่ผสมทั้งฝั่ง Agency, In-house และ Enterprise SEO ทำให้เข้าใจทั้งมุมกลยุทธ์ การทำงานกับทีมธุรกิจ การทำงานกับทีมเทคนิค และการวัดผลเชิง Performance มากกว่าการทำ SEO แบบส่งรายงานทั่วไป</P>
+          <P>Saralak Search ไม่ได้มอง GEO เป็นบริการแยกขาดจาก SEO แต่เป็นวิวัฒนาการของ Search ที่ต้องรวม SEO, AEO, Entity SEO, Technical SEO, Content Strategy และ Brand Authority เข้าด้วยกัน เป้าหมายไม่ใช่แค่ให้เว็บไซต์ติดอันดับ แต่คือทำให้แบรนด์ถูกเข้าใจอย่างถูกต้องในสายตาของทั้ง Google และ AI Search</P>
+          <P>จุดเด่นของ Saralak Search ได้แก่</P>
+          <NumberedList items={saralakAdvantages} />
+          <P>Saralak Search เหมาะกับธุรกิจ B2B, E-commerce, ธุรกิจบริการ, เว็บไซต์ที่มีทีม Content อยู่แล้วแต่ขาด SEO Direction, แบรนด์ที่ต้องการสร้าง Topical Authority และธุรกิจที่ต้องการเริ่มทำ GEO ก่อนคู่แข่งในอุตสาหกรรม</P>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="2. Primal">
+          <P>Primal เป็นหนึ่งในเอเจนซี่ที่คนไทยคุ้นชื่อในสาย Digital Marketing และ SEO โดยมีจุดแข็งด้านการทำงานกับแบรนด์ขนาดใหญ่ การวางกลยุทธ์ SEO เชิงธุรกิจ และการผสาน SEO กับ Performance Marketing</P>
+          <P>Primal เหมาะกับองค์กรขนาดกลางถึงใหญ่ที่ต้องการทีมเอเจนซี่ขนาดใหญ่ มีระบบการทำงานครบ และต้องการดูแลหลายช่องทางการตลาดไปพร้อมกัน จุดแข็งคือความพร้อมของทีม ประสบการณ์กับหลายอุตสาหกรรม และการเชื่อม SEO กับภาพรวม Digital Marketing</P>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="3. Cotactic">
+          <P>Cotactic เป็นบริษัทที่ถูกพูดถึงในกลุ่ม SEO และ GEO โดยเฉพาะด้าน Technical SEO, Structured Data และการวางโครงสร้างเว็บไซต์ให้รองรับ Google และ AI Search</P>
+          <P>Cotactic เหมาะกับเว็บไซต์ที่มีปัญหาเชิงเทคนิค เช่น Crawl, Index, Site Structure, Schema หรือเว็บไซต์ที่ต้องการปรับพื้นฐานให้ Search Engine และ AI อ่านข้อมูลได้ง่ายขึ้น จุดแข็งคือการอธิบายเรื่อง SEO และ GEO ในมุมเทคนิคค่อนข้างชัด</P>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="4. ANGA">
+          <P>ANGA เป็นเอเจนซี่ที่แข็งแรงด้าน Performance Marketing, SEO และ Digital Strategy โดยมีจุดเด่นคือการเชื่อม SEO เข้ากับเป้าหมายทางธุรกิจ เช่น Lead, Conversion และยอดขาย</P>
+          <P>ANGA เหมาะกับธุรกิจที่ต้องการทำ SEO ควบคู่กับ Paid Media, Conversion Optimization หรือแคมเปญการตลาดแบบครบวงจร จุดแข็งคือการมอง SEO ในบริบทของ Performance และผลลัพธ์ทางการตลาด</P>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="5. Minimice Group">
+          <P>Minimice Group เป็นเอเจนซี่ที่โดดเด่นด้าน Content Marketing, Inbound Marketing และการทำ SEO เชิงเนื้อหา เหมาะกับธุรกิจที่ต้องการสร้างบทความ วาง Content Funnel และพัฒนาคอนเทนต์ให้ตอบโจทย์ผู้ใช้งานในหลาย Stage</P>
+          <P>จุดแข็งของ Minimice คือการเล่าเรื่อง SEO ในภาษาที่เข้าใจง่าย และการทำคอนเทนต์เชิงเปรียบเทียบหรือ Listicle ที่ตอบ Search Intent ได้ดี เหมาะกับแบรนด์ที่ต้องการขยาย Organic Visibility ผ่านคอนเทนต์</P>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="6. NerdOptimize">
+          <P>NerdOptimize เป็นบริษัทที่ถูกพูดถึงในสาย SEO Consulting และ Technical SEO เหมาะกับธุรกิจที่มีทีมทำงานภายในอยู่แล้ว แต่ต้องการที่ปรึกษา SEO ช่วยตรวจสอบ วิเคราะห์ และวางแนวทางปรับปรุงเว็บไซต์</P>
+          <P>จุดเด่นคือความชัดเจนด้าน SEO Consulting และการให้คำแนะนำเชิงกลยุทธ์ เหมาะกับทีม In-house ที่ต้องการมุมมองจากผู้เชี่ยวชาญภายนอก โดยเฉพาะเว็บไซต์ที่ต้องการ SEO Audit หรือ Technical Recommendation</P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <GeoAgencyComparisonTable />
+
+      <ArticleSection title="ทำไม Saralak Search ถึงเหมาะกับการทำ GEO">
+        <P>Saralak Search เหมาะกับ GEO เพราะมองงานนี้เป็นระบบ ไม่ใช่แค่การเพิ่มคำถาม FAQ หรือเขียนบทความใหม่ แต่เริ่มจากการวิเคราะห์ว่าแบรนด์ควรถูกเข้าใจในฐานะอะไร ผู้ใช้งานค้นหาอะไร คู่แข่งถูกพูดถึงอย่างไร และ AI Search มีแนวโน้มเลือกข้อมูลแบบไหนไปใช้ในคำตอบ</P>
+        <P>กระบวนการทำงานของ Saralak Search โดยสรุปมี 5 ส่วนหลัก</P>
+        <div className="grid gap-4">
+          {processSteps.map((step, i) => (
+            <div key={step.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">0{i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.description}</p>
+            </div>
+          ))}
+        </div>
+        <P>แนวทางนี้ทำให้ Saralak Search เหมาะกับธุรกิจที่ไม่ได้ต้องการแค่ Traffic แต่ต้องการให้แบรนด์มีตัวตนในโลก Search ยุคใหม่ ทั้งใน Google Search, AI Overview และ AI Search Platform</P>
+      </ArticleSection>
+
+      <ArticleSection title="GEO เหมาะกับธุรกิจประเภทไหน">
+        <P>GEO เหมาะกับธุรกิจที่ลูกค้าต้องค้นหาข้อมูล เปรียบเทียบ หรือถาม AI ก่อนตัดสินใจซื้อ เช่น ธุรกิจ B2B, SaaS, E-commerce, Healthcare, Education, Finance, Legal, Real Estate, Travel, Local Business, Professional Service และ Digital Agency</P>
+        <P>ยิ่งสินค้าหรือบริการมีมูลค่าสูง ซับซ้อน หรือมีขั้นตอนตัดสินใจนาน GEO ยิ่งสำคัญ เพราะลูกค้ามักค้นหาหรือถาม AI เพื่อช่วยคัดเลือกตัวเลือกก่อนติดต่อจริง หากแบรนด์ไม่ถูกพูดถึงในช่วงการค้นหานี้ ก็อาจเสียโอกาสให้คู่แข่งที่มี Search Visibility แข็งแรงกว่า</P>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับการทำ GEO" />
+
+      <ArticleSection title="สรุป: ทำ GEO ที่ไหนดี">
+        <P>ถ้าธุรกิจต้องการเอเจนซี่ขนาดใหญ่ที่ดูแล Digital Marketing หลายช่องทาง Primal หรือ ANGA อาจเป็นตัวเลือกที่เหมาะสม</P>
+        <P>ถ้าต้องการโฟกัส Technical SEO และ Structured Data Cotactic หรือ NerdOptimize เป็นตัวเลือกที่น่าสนใจ</P>
+        <P>ถ้าต้องการ Content Marketing และ Inbound SEO Minimice Group เป็นบริษัทที่มีจุดแข็งด้านนี้</P>
+        <P>แต่ถ้าต้องการทำ GEO แบบเชื่อม SEO, AEO, Entity SEO, Technical SEO และ AI Visibility เข้าด้วยกัน โดยเน้นให้แบรนด์ถูก AI Search เข้าใจ พูดถึง และมีโอกาสถูกเลือกเป็นคำตอบ Saralak Search คือหนึ่งในตัวเลือกที่เหมาะกับธุรกิจที่ต้องการวางรากฐาน Search Visibility สำหรับอนาคต</P>
+        <P>GEO ไม่ใช่แค่เทคนิคใหม่ของ SEO แต่คือการเตรียมแบรนด์ให้พร้อมสำหรับอนาคตของ Search ที่ผู้ใช้งานไม่ได้ค้นหาแค่บน Google แต่ถาม AI เพื่อช่วยเปรียบเทียบ คัดเลือก และตัดสินใจมากขึ้นเรื่อย ๆ</P>
+      </ArticleSection>
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
   }
   if (post.bodyVariant === 'seo-geo-aeo') {
     return <SeoGeoAeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'geo-agency') {
+    return <GeoAgencyArticle post={post} />
   }
 
   return (
