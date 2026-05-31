@@ -36,38 +36,38 @@ const audiences = [
 ]
 
 const proofCaptions = [
-  'Google Search Performance',
-  'Search Ranking Improvement',
-  'AI Overview Visibility',
-  'ChatGPT Visibility',
+  'Organic โตต่อเนื่อง',
+  'อันดับ #5 → #1',
+  'ติด AI Overview',
+  'ถูก ChatGPT แนะนำ',
 ]
 
 const homeServiceCards = [
   {
     title: 'Discovery Audit',
     price: 'Starting from 5,000 THB',
-    description: 'ค้นหาสิ่งที่อาจขวางการเติบโตบน Google และ AI Search',
+    description: 'ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์',
     outcomes: ['Audit Report', 'Prioritized Roadmap', 'Quick Wins'],
     cta: 'เริ่มต้นด้วย Discovery Audit',
   },
   {
     title: 'Increase Visibility on Google & AI Search',
     price: 'Starting from 25,000 THB/month',
-    description: 'เพิ่มการมองเห็นบน Google, AI Overview และ ChatGPT',
+    description: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
     outcomes: ['Google Visibility', 'AI Visibility', 'Brand Mentions', 'Search Growth'],
     cta: 'ขอแผนเพิ่มการมองเห็น',
   },
   {
     title: 'Increase Visibility on Google Maps',
     price: 'Starting from 6,000 THB/location/month',
-    description: 'เพิ่มการมองเห็นใน Google Maps และ Local Search',
+    description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีหน้าร้าน',
     outcomes: ['Local Visibility', 'Maps Discovery', 'Review Optimization'],
     cta: 'ขอแผน Local Growth',
   },
   {
     title: 'Monthly SEO Advisor',
     price: 'Custom Pricing',
-    description: 'ที่ปรึกษา SEO, GEO และ AI Search สำหรับทีมการตลาด',
+    description: 'ที่ปรึกษา SEO สำหรับทีมการตลาดและผู้บริหาร',
     outcomes: ['Strategic Guidance', 'Technical Consultation', 'Team Support'],
     cta: 'นัดพูดคุยเบื้องต้น',
   },

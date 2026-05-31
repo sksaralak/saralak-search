@@ -17,23 +17,19 @@ export const brand = {
 export const services = [
   {
     title: 'Discovery Audit',
-    description:
-      'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
+    description: 'ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์',
   },
   {
     title: 'Increase Visibility on Google & AI Search',
-    description:
-      'Increase your brand visibility across Google Search, AI Overview, ChatGPT, Gemini and other AI Search platforms.',
+    description: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
   },
   {
     title: 'Increase Visibility on Google Maps',
-    description:
-      'Increase visibility on Google Maps and local search to attract more nearby customers.',
+    description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีหน้าร้าน',
   },
   {
     title: 'Monthly SEO Advisor',
-    description:
-      'White-label SEO, GEO and AI Search support for agencies, marketing teams and international organizations.',
+    description: 'ที่ปรึกษา SEO สำหรับทีมการตลาดและผู้บริหาร',
   },
 ]
 
