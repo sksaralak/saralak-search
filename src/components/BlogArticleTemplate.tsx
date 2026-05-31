@@ -15,6 +15,19 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
   return (
     <main className="overflow-x-clip">
       <section className="mx-auto max-w-4xl px-2.5 py-10 sm:px-6 md:py-24 lg:px-8">
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500">
+            <li>
+              <Link to="/" className="hover:text-teal-800">Home</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link to="/blog" className="hover:text-teal-800">Blog</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="font-medium text-neutral-950">{post.title}</li>
+          </ol>
+        </nav>
         <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-teal-800">
           {post.category}
         </p>
