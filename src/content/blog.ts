@@ -245,6 +245,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search ในไทย | Saralak Search',
     metaDescription:
       'เปรียบเทียบ 6 บริษัทรับทำ GEO และ AI Search Optimization ในไทย พร้อมเกณฑ์สำคัญในการเลือก GEO Agency ที่เข้าใจทั้ง SEO, AEO และ AI Visibility',
+    heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.png',
+    heroImageMobile: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-mweb.png',
+    heroImageAlt: 'ทำ GEO ที่ไหนดี แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย',
+    ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.png',
     faqs: geoAgencyFaqs,
     bodyVariant: 'geo-agency',
     cta: {

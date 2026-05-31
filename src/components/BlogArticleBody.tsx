@@ -307,6 +307,12 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         src="/image/blog/what-is-geo/what-is-geo-seo-vs-aeo-vs-geo.svg"
         alt="แผนภาพเปรียบเทียบ SEO AEO และ GEO"
       />
+      <p className="thai-readable text-sm text-neutral-500">
+        อ่านเพิ่มเติม:{' '}
+        <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+          SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
+        </Link>
+      </p>
 
       <ArticleSection title="ทำยังไงให้ติด AI Search?">
         <P>
@@ -447,6 +453,12 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           สำหรับธุรกิจที่เริ่มก่อนในช่วงที่การแข่งขันยังไม่สูง มีโอกาสสร้างความได้เปรียบด้าน AI Visibility ได้เร็วกว่า เพราะเมื่อ AI เริ่มจดจำแบรนด์ในฐานะแหล่งข้อมูลของหัวข้อนั้น การต่อยอดไปสู่การถูกอ้างอิงและแนะนำในคำตอบก็มีโอกาสมากขึ้น
         </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
+          </Link>
+        </p>
       </ArticleSection>
 
       <ArticleFAQ post={post} />
@@ -781,6 +793,12 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           Google Map Optimization ไปจนถึงการทำรายงานผลลัพธ์ที่อ่านเข้าใจง่าย
           และนำไปตัดสินใจต่อได้จริง
         </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
+          </Link>
+        </p>
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
@@ -945,12 +963,30 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>AEO หรือ Answer Engine Optimization เน้นการทำให้คอนเทนต์ตอบคำถามได้ชัดเจน กระชับ และมีโครงสร้างที่เหมาะกับ Featured Snippet, People Also Ask, FAQ และคำตอบแบบ Answer Box</P>
         <P>GEO หรือ Generative Engine Optimization เน้นการทำให้เว็บไซต์และแบรนด์ถูก AI Search เข้าใจ เชื่อถือ และนำไปสรุป อ้างอิง หรือแนะนำในคำตอบของ AI</P>
         <P>สรุปง่าย ๆ คือ SEO เน้น "ติดอันดับ" AEO เน้น "ตอบคำถาม" และ GEO เน้น "ถูก AI พูดถึงหรืออ้างอิง" ธุรกิจที่ต้องการโตในยุค AI Search จึงควรทำทั้ง 3 อย่างร่วมกัน ไม่ใช่เลือกทำอย่างใดอย่างหนึ่งแยกกัน</P>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">
+            อ่านเพิ่มเติม:{' '}
+            <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+              GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
+            </Link>
+          </p>
+          <p className="thai-readable text-sm text-neutral-500">
+            อ่านเพิ่มเติม:{' '}
+            <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+              SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
+            </Link>
+          </p>
+        </div>
       </ArticleSection>
 
       <ArticleSection title="วิธีเลือกบริษัทรับทำ GEO ให้เหมาะกับธุรกิจ">
         <P>การเลือกบริษัทรับทำ GEO ไม่ควรดูแค่คำโฆษณาว่าเป็น GEO Agency หรือ AI Search Agency แต่ควรดูว่าบริษัทนั้นมี Methodology ชัดเจนหรือไม่ และสามารถอธิบายได้ว่าต้องตรวจอะไร แก้อะไร วัดผลอย่างไร และงานแต่ละส่วนช่วยเพิ่มโอกาสให้แบรนด์ถูก AI Search พูดถึงได้อย่างไร</P>
         <P>เกณฑ์สำคัญที่ควรใช้เลือก GEO Agency ได้แก่</P>
         <NumberedList items={selectionCriteria} />
+        <ArticleImage
+          src="/image/blog/geo-agency-thailand/how-to-choose-geo-agency-thailand.png"
+          alt="วิธีเลือกบริษัทรับทำ GEO ที่เหมาะกับธุรกิจไทย"
+        />
       </ArticleSection>
 
       <ArticleSection title="แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย">
@@ -1024,6 +1060,10 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="GEO เหมาะกับธุรกิจประเภทไหน">
+        <ArticleImage
+          src="/image/blog/geo-agency-thailand/why-ai-mention-brand.png"
+          alt="ทำไม AI Mention ถึงสำคัญสำหรับแบรนด์"
+        />
         <P>GEO เหมาะกับธุรกิจที่ลูกค้าต้องค้นหาข้อมูล เปรียบเทียบ หรือถาม AI ก่อนตัดสินใจซื้อ เช่น ธุรกิจ B2B, SaaS, E-commerce, Healthcare, Education, Finance, Legal, Real Estate, Travel, Local Business, Professional Service และ Digital Agency</P>
         <P>ยิ่งสินค้าหรือบริการมีมูลค่าสูง ซับซ้อน หรือมีขั้นตอนตัดสินใจนาน GEO ยิ่งสำคัญ เพราะลูกค้ามักค้นหาหรือถาม AI เพื่อช่วยคัดเลือกตัวเลือกก่อนติดต่อจริง หากแบรนด์ไม่ถูกพูดถึงในช่วงการค้นหานี้ ก็อาจเสียโอกาสให้คู่แข่งที่มี Search Visibility แข็งแรงกว่า</P>
       </ArticleSection>
