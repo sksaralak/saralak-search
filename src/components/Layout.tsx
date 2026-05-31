@@ -86,9 +86,8 @@ export default function Layout() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
           <div>
             <p className="text-lg font-semibold text-teal-950">{brand.name}</p>
-            <p className="mt-3 max-w-2xl leading-7 text-neutral-700">
-              Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and
-              AI Search platforms for Thai businesses and agency partners.
+            <p className="thai-readable mt-3 max-w-2xl leading-7 text-neutral-700">
+              ช่วยธุรกิจไทยและ Agency Partner เพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT, Gemini และ Perplexity
             </p>
           </div>
           <nav aria-label="Footer navigation">
