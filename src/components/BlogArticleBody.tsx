@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
 
 type BlogArticleBodyProps = {
@@ -598,6 +599,20 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           และ GEO คือการสร้างความน่าเชื่อถือของแบรนด์ในโลก AI Search
         </P>
       </ArticleSection>
+
+      <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
+        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
+        <h3 className="mt-2 break-words text-xl font-semibold text-neutral-950">
+          ไม่แน่ใจว่าเว็บไซต์ควรเริ่มจาก SEO, AEO หรือ GEO ก่อน?
+        </h3>
+        <p className="thai-readable mt-3 text-neutral-700">
+          Discovery Audit ช่วยค้นหาสิ่งที่อาจขวางการเติบโตบน Google และ AI Search
+          พร้อมระบุโอกาสและ Quick Wins ที่เหมาะกับธุรกิจ
+        </p>
+        <div className="mt-5">
+          <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+        </div>
+      </aside>
 
       <ArticleSection title="ทำไมธุรกิจไม่ควรทำแค่ SEO อย่างเดียวอีกต่อไป">
         <P>

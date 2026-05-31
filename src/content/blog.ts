@@ -162,7 +162,7 @@ export const blogPosts: BlogPost[] = [
     authorUrl: '/about',
     metaTitle: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร | Saralak Search',
     metaDescription:
-      'Learn how SEO, AEO and GEO work together — and where to start when building a search visibility strategy for Google, AI Overview, ChatGPT and AI Search.',
+      'GEO คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้ AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview เข้าใจ อ้างอิง และแนะนำธุรกิจของเราได้มากขึ้น',
     aiSummary: [
       'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่',
       'SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search',
