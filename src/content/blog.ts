@@ -18,7 +18,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo'
   cta?: {
     headline: string
     description: string
@@ -215,7 +215,79 @@ export const howToDoGeoFaqs: FAQItem[] = [
   },
 ]
 
+export const whatIsSeoFaqs: FAQItem[] = [
+  {
+    question: 'ทำ SEO ใช้เวลากี่เดือนถึงจะเห็นผล?',
+    answer:
+      'โดยทั่วไป SEO มักเริ่มเห็นสัญญาณภายใน 3-6 เดือน ขึ้นอยู่กับการแข่งขันของคีย์เวิร์ด คุณภาพเว็บไซต์ อายุโดเมน ความแข็งแรงของเนื้อหา และความต่อเนื่องในการปรับปรุง',
+  },
+  {
+    question: 'ธุรกิจเล็กควรทำ SEO ไหม?',
+    answer:
+      'ควรทำ โดยเฉพาะธุรกิจที่ลูกค้ามักค้นหาข้อมูลก่อนตัดสินใจ เช่น คลินิก โรงแรม ร้านอาหาร บริษัทบริการ ธุรกิจ B2B โรงเรียน คอร์สเรียน หรือร้านค้าออนไลน์ SEO ช่วยให้ธุรกิจเล็กแข่งขันในคีย์เวิร์ดที่เฉพาะเจาะจงได้',
+  },
+  {
+    question: 'ทำ SEO เองได้ไหม?',
+    answer:
+      'ทำเองได้ในระดับพื้นฐาน เช่น การเขียนบทความ ปรับ Title, Meta Description, Internal Link และดูข้อมูลจาก Google Search Console แต่ถ้าเว็บไซต์มีการแข่งขันสูงหรือมีปัญหา Technical SEO การทำงานกับผู้เชี่ยวชาญจะช่วยลดเวลาลองผิดลองถูก',
+  },
+  {
+    question: 'SEO ยังจำเป็นไหมในยุค AI Search?',
+    answer:
+      'ยังจำเป็น เพราะ AI Search ต้องอาศัยข้อมูลจากเว็บไซต์ แหล่งอ้างอิง รีวิว บทความ และสัญญาณความน่าเชื่อถือ เว็บไซต์ที่มี SEO ดี เนื้อหาชัด และโครงสร้างดีจะมีโอกาสถูก AI นำไปอ้างอิงได้ดีกว่า',
+  },
+  {
+    question: 'SEO ต่างจาก AEO และ GEO อย่างไร?',
+    answer:
+      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Google ส่วน AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบใน AI Overview หรือ Featured Snippet และ GEO เน้นการทำให้แบรนด์มีโอกาสถูก AI พูดถึงหรือแนะนำ ทั้ง 3 อย่างเชื่อมโยงกัน โดย SEO เป็นพื้นฐานที่ช่วยต่อยอดไปสู่ AEO และ GEO',
+  },
+  {
+    question: 'SEO กับ SEM ต่างกันอย่างไร?',
+    answer:
+      'SEO คือการทำให้เว็บไซต์ติดอันดับในผลการค้นหาธรรมชาติโดยไม่ต้องจ่ายต่อคลิก ส่วน SEM คือการลงโฆษณาผ่าน Google Ads ให้เว็บไซต์แสดงผลทันที เห็นผลเร็วแต่ต้องใช้งบประมาณ และหยุดจ่ายก็หยุดแสดง',
+  },
+  {
+    question: 'ทำไมทำ SEO แล้วไม่เห็นผล?',
+    answer:
+      'สาเหตุที่พบบ่อยได้แก่ เลือกคีย์เวิร์ดกว้างเกินไป เนื้อหาไม่ตรง Search Intent เว็บไซต์โหลดช้า ไม่มี Internal Link ไม่มี Schema Markup ไม่มี Backlink หรือ Brand Mention ไม่ได้วัดผลจาก Search Console และทำครั้งเดียวไม่อัปเดต',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    slug: 'what-is-seo',
+    category: 'SEO',
+    excerpt:
+      'SEO คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือ เพื่อให้ Google เข้าใจว่าเว็บไซต์ของคุณเกี่ยวกับอะไร และแสดงผลให้ผู้ใช้งานเจอในเวลาที่กำลังมองหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องกับธุรกิจของคุณจริง ๆ',
+    readingTime: '18 min read',
+    publishedDate: '2026-06-01',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    metaDescription:
+      'SEO คือการปรับเว็บไซต์ให้ถูกค้นเจอบน Google แบบไม่ต้องจ่ายค่าโฆษณาต่อคลิก เรียนรู้ความหมายของ SEO ประเภทของ SEO วิธีเริ่มต้นทำ SEO และความต่างระหว่าง SEO, AEO และ GEO แบบเข้าใจง่าย',
+    heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.png',
+    heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.png',
+    heroImageAlt: 'SEO คืออะไร เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.png',
+    aiSummary: [
+      'SEO คือการปรับเว็บไซต์ให้ Google เข้าใจและแสดงผลเมื่อลูกค้ากำลังค้นหาสินค้าหรือบริการที่เกี่ยวข้อง',
+      'SEO ทำงานผ่าน 3 กระบวนการหลัก ได้แก่ Crawling, Indexing และ Ranking',
+      'SEO มี 4 ประเภทหลัก ได้แก่ On-page SEO, Off-page SEO, Technical SEO และ Local SEO',
+      'SEO เป็นพื้นฐานสำคัญที่ต่อยอดไปสู่ AEO และ GEO เพื่อรองรับยุค AI Search',
+    ],
+    faqs: whatIsSeoFaqs,
+    bodyVariant: 'what-is-seo',
+    cta: {
+      headline: 'ไม่แน่ใจว่าเว็บไซต์มีพื้นฐาน SEO ดีพอหรือยัง?',
+      description:
+        'Discovery Audit ช่วยตรวจภาพรวมเว็บไซต์ คีย์เวิร์ด โครงสร้างเนื้อหา Technical SEO และโอกาสในการเพิ่ม Organic Visibility เพื่อให้เห็นว่าควรปรับจุดไหนก่อน',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search',
     slug: 'what-is-geo',

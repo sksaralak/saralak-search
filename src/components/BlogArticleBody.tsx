@@ -1081,6 +1081,215 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function WhatIsSeoArticle({ post }: { post: BlogPost }) {
+  const seoTypes = [
+    {
+      type: 'On-page SEO',
+      desc: 'การปรับองค์ประกอบภายในหน้าเว็บไซต์ เพื่อให้ Google และผู้ใช้งานเข้าใจเนื้อหาได้ง่ายขึ้น On-page SEO ที่ดีควรช่วยให้ทั้ง Google และคนอ่านเข้าใจว่า หน้านี้พูดเรื่องอะไร เหมาะกับใคร และควรทำอะไรต่อหลังอ่านจบ',
+      items: ['การเลือกคีย์เวิร์ดให้ตรงกับ Search Intent', 'การเขียน Title Tag และ Meta Description', 'การใช้ H1, H2, H3 อย่างเป็นระบบ', 'การเขียนเนื้อหาที่ตอบคำถามผู้ใช้งาน', 'การใส่ Internal Link ไปยังหน้าที่เกี่ยวข้อง', 'การใส่ Alt Text ให้รูปภาพ', 'การทำ CTA ให้เหมาะกับเป้าหมายของหน้า'],
+    },
+    {
+      type: 'Off-page SEO',
+      desc: 'การสร้างความน่าเชื่อถือจากภายนอกเว็บไซต์ Google ไม่ได้ดูแค่ว่าคุณพูดถึงตัวเองอย่างไร แต่ยังดูว่าเว็บไซต์อื่นพูดถึงคุณอย่างไร',
+      items: ['Backlink จากเว็บไซต์คุณภาพ', 'การถูกกล่าวถึงในบทความหรือสื่อออนไลน์', 'รีวิวจากลูกค้า', 'Case Study', 'โปรไฟล์ธุรกิจที่น่าเชื่อถือ', 'การมีตัวตนของแบรนด์ในหลายแพลตฟอร์ม'],
+    },
+    {
+      type: 'Technical SEO',
+      desc: 'การปรับโครงสร้างเว็บไซต์ให้ Google Bot อ่านและเก็บข้อมูลได้ง่าย เป็นเหมือนรากฐานของบ้าน หากรากฐานไม่ดี ต่อให้เนื้อหาดีแค่ไหนก็ทำอันดับได้ยาก',
+      items: ['เว็บไซต์โหลดเร็ว', 'รองรับมือถือ', 'ใช้ HTTPS', 'Sitemap ถูกต้อง', 'Robots.txt ไม่บล็อกหน้าสำคัญ', 'ไม่มีปัญหา Duplicate Content', 'ใช้ Canonical ถูกต้อง', 'มี Schema Markup ที่เหมาะสม', 'Core Web Vitals อยู่ในระดับดี'],
+    },
+    {
+      type: 'Local SEO',
+      desc: 'การทำให้ธุรกิจที่มีพื้นที่ให้บริการถูกค้นเจอในคำค้นเชิงพื้นที่ เช่น "ร้านอาหารใกล้ฉัน" หรือ "คลินิกทำฟันลาดพร้าว" เหมาะกับร้านค้า คลินิก โรงแรม ร้านอาหาร โรงเรียน และธุรกิจบริการที่ต้องการลูกค้าในพื้นที่',
+      items: ['Google Business Profile', 'ชื่อ ที่อยู่ เบอร์โทร ที่ตรงกันในทุกแพลตฟอร์ม', 'รีวิวจากลูกค้า', 'รูปภาพสถานที่', 'เวลาเปิด-ปิด', 'คีย์เวิร์ดที่เกี่ยวข้องกับพื้นที่', 'หน้าเว็บไซต์ที่รองรับพื้นที่ให้บริการ'],
+    },
+  ]
+
+  const compareRows = [
+    ['ชื่อเต็ม', 'Search Engine Optimization', 'Answer Engine Optimization', 'Generative Engine Optimization'],
+    ['ความหมาย', 'การปรับเว็บไซต์ให้ติดอันดับบน Google', 'การทำให้เนื้อหาถูกดึงไปตอบคำถามโดยตรง', 'การทำให้แบรนด์มีโอกาสถูก AI พูดถึงหรือแนะนำ'],
+    ['เป้าหมายหลัก', 'ให้คนค้นหาแล้วเจอเว็บไซต์', 'ให้คำตอบของเราถูกแสดงใน AI Overview หรือ Featured Snippet', 'ให้ AI เข้าใจว่าแบรนด์น่าเชื่อถือและเกี่ยวข้องกับคำถามนั้น'],
+    ['เห็นผลที่ไหน', 'Google Search', 'AI Overview, Featured Snippet, People Also Ask', 'ChatGPT, Gemini, Perplexity และ AI Search อื่น ๆ'],
+    ['ต้องทำอะไรบ้าง', 'คีย์เวิร์ด เนื้อหา โครงสร้างเว็บ ความเร็ว และลิงก์', 'เขียนคำตอบให้ชัด กระชับ มี FAQ และโครงสร้างเนื้อหาที่ดี', 'สร้างความน่าเชื่อถือของแบรนด์ เช่น Case Study, Review, Brand Mention'],
+    ['ตัวอย่าง', 'เว็บไซต์ติดอันดับคำว่า "SEO คืออะไร"', 'บทความถูกดึงไปตอบคำถามว่า "SEO คืออะไร"', 'AI แนะนำแบรนด์เมื่อมีคนถามว่า "บริษัททำ SEO ที่ไหนดี"'],
+    ['เหมาะกับใคร', 'ทุกธุรกิจที่อยากให้ลูกค้าค้นเจอบน Google', 'ธุรกิจที่อยากให้เนื้อหาถูกเลือกเป็นคำตอบ', 'ธุรกิจที่อยากให้ AI Search รู้จักและแนะนำแบรนด์'],
+  ]
+
+  const compareHeadings = ['หัวข้อ', 'SEO', 'AEO', 'GEO']
+
+  const seoSteps = [
+    { num: '01', title: 'ตั้งเป้าหมายให้ชัดเจน', body: 'ก่อนเริ่มทำ SEO ต้องตอบให้ได้ว่าเว็บไซต์ต้องการอะไร เช่น ต้องการเพิ่มยอดขาย เพิ่มคนเข้าเว็บ เพิ่ม Lead จากหน้าบริการ หรือให้คนรู้จักแบรนด์ SEO ที่ดีไม่ใช่แค่ทำให้คนเข้าเว็บมากขึ้น แต่ต้องพาคนที่มีโอกาสเป็นลูกค้าเข้ามาในหน้าที่ถูกต้อง' },
+    { num: '02', title: 'วิจัยคีย์เวิร์ดให้ตรง Search Intent', body: 'การเลือกคีย์เวิร์ดไม่ควรดูแค่จำนวนการค้นหา แต่ต้องดูเจตนาของผู้ค้นหาด้วย Search Intent แบ่งเป็น Informational (ต้องการข้อมูล), Commercial (กำลังเปรียบเทียบ), Transactional (พร้อมซื้อ) และ Navigational (หาแบรนด์ที่รู้จักอยู่แล้ว) หากเลือกคีย์เวิร์ดผิด ต่อให้มี Traffic ก็อาจไม่เกิดยอดขาย' },
+    { num: '03', title: 'เขียนเนื้อหาที่ตอบคำถามจริง', body: 'Google ให้ความสำคัญกับเนื้อหาที่ตอบคำถามผู้ใช้งานได้จริง ไม่ใช่แค่เนื้อหาที่ยาวหรือใส่คีย์เวิร์ดเยอะ ต้องเขียนให้คนอ่านรู้สึกว่าหน้านี้ช่วยตอบสิ่งที่กำลังสงสัยได้จริง' },
+    { num: '04', title: 'ปรับโครงสร้างเว็บไซต์ให้ Google อ่านง่าย', body: 'ตรวจว่าเว็บไซต์ไม่มีปัญหาทางเทคนิคที่ขัดขวางการเก็บข้อมูลของ Google เช่น หน้าเว็บถูก Index หรือไม่ Sitemap ส่งเข้า Google Search Console แล้วหรือยัง หน้าเว็บโหลดเร็วหรือไม่ มี Broken Link หรือไม่ และ Schema ถูกต้องหรือไม่' },
+    { num: '05', title: 'สร้าง Internal Link อย่างเป็นระบบ', body: 'Internal Link คือการลิงก์จากหน้าหนึ่งไปอีกหน้าหนึ่งภายในเว็บไซต์เดียวกัน ช่วยให้ Google เข้าใจโครงสร้างเว็บไซต์ ผู้ใช้งานอ่านต่อได้ง่าย หน้าสำคัญได้รับน้ำหนักมากขึ้น และเพิ่มโอกาสเกิด Conversion' },
+    { num: '06', title: 'วัดผลและปรับปรุงต่อเนื่อง', body: 'SEO ไม่ใช่งานที่ทำครั้งเดียวแล้วจบ ต้องวัดผลจาก Google Search Console, Google Analytics 4, Ahrefs, SEMrush และ PageSpeed Insights ติดตาม Organic Clicks, CTR, Average Position, Conversion, Leads และคีย์เวิร์ดที่อันดับดีขึ้นหรือลดลง' },
+  ]
+
+  const notWorkingReasons = ['เลือกคีย์เวิร์ดกว้างเกินไป', 'เขียนบทความเยอะ แต่ไม่มีหน้าบริการหรือ Landing Page รองรับ', 'เนื้อหาไม่ตรง Search Intent', 'เว็บไซต์โหลดช้า', 'ใช้งานบนมือถือไม่ดี', 'ไม่มี Internal Link', 'ไม่มี Schema Markup', 'ไม่มี Backlink หรือ Brand Mention', 'ไม่ได้วัดผลจาก Google Search Console', 'ทำ SEO ครั้งเดียวแล้วไม่อัปเดต', 'เนื้อหาคล้ายคู่แข่งเกินไป ไม่มีมุมมองเฉพาะ']
+
+  const seoChecklist = ['ตรวจว่าเว็บไซต์ถูก Index บน Google แล้วหรือยัง', 'ตั้งค่า Google Search Console', 'ตั้งค่า Google Analytics 4', 'เลือกคีย์เวิร์ดหลักของแต่ละหน้า', 'เขียน Title และ Meta Description ให้ครบ', 'ใช้ H1, H2, H3 อย่างเป็นระบบ', 'เขียนเนื้อหาที่ตอบ Search Intent', 'เพิ่ม Internal Link ไปยังหน้าสำคัญ', 'ใส่ Alt Text ให้รูปภาพ', 'ตรวจความเร็วเว็บไซต์', 'ตรวจ Mobile-Friendly', 'เพิ่ม Schema Markup ที่เหมาะสม', 'สร้างหน้า Service Page ให้รองรับคีย์เวิร์ดเชิงซื้อ', 'อัปเดตบทความเก่าทุก 6 เดือน', 'วัดผลและปรับปรุงต่อเนื่อง']
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <section className="grid gap-5">
+        <P>เคยรู้สึกไหมว่าเว็บไซต์ของธุรกิจเหมือนร้านค้าที่ตั้งอยู่บนถนนเปลี่ยว ไม่มีคนเดินผ่าน ไม่มีลูกค้าแวะ ทั้งที่ลงทุนทำเว็บไซต์อย่างดี ดีไซน์สวย ข้อมูลครบ ดูน่าเชื่อถือ แต่กลับไม่มีคนค้นเจอบน Google</P>
+        <P>SEO คือวิธีที่ช่วยให้เว็บไซต์ของคุณถูกค้นเจอในเวลาที่ลูกค้ากำลังมองหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องกับธุรกิจของคุณจริง ๆ พูดง่าย ๆ คือ SEO ช่วยพาเว็บไซต์จาก "ซอยลึกที่ไม่มีคนเห็น" ไปอยู่บน "ถนนหลัก" ที่มีคนค้นหาอยู่ทุกวัน</P>
+        <P>หากเว็บไซต์ไม่มี SEO ต่อให้สินค้าดี บริการดี หรือแบรนด์น่าเชื่อถือแค่ไหน ลูกค้าก็อาจไม่เคยรู้ว่าคุณมีอยู่ แต่ถ้าวางพื้นฐาน SEO ได้ดี เว็บไซต์จะกลายเป็นช่องทางสำคัญที่ช่วยดึงคนเข้าเว็บ สร้างความน่าเชื่อถือ และเพิ่มโอกาสในการขายได้ในระยะยาว</P>
+      </section>
+
+      <ArticleSection title="SEO คืออะไร?">
+        <P>SEO ย่อมาจาก Search Engine Optimization คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือของเว็บไซต์ เพื่อให้ Search Engine อย่าง Google เข้าใจว่าเว็บไซต์ของคุณเกี่ยวกับอะไร เหมาะกับคำค้นใด และควรแสดงผลให้ผู้ใช้งานเห็นในตำแหน่งไหน</P>
+        <P>พูดให้เข้าใจง่ายขึ้น SEO คือการทำให้เว็บไซต์มีโอกาสติดอันดับในผลการค้นหาธรรมชาติของ Google โดยไม่ต้องจ่ายเงินซื้อโฆษณาทุกครั้งที่มีคนคลิก</P>
+        <P>ตัวอย่างเช่น หากคุณทำธุรกิจคลินิกทันตกรรม และมีคนค้นหาคำว่า "จัดฟันใส ราคา" หรือ "คลินิกทำฟันใกล้ฉัน" เว็บไซต์ของคุณควรถูกแสดงในจังหวะนั้น เพราะคนที่ค้นหาคำเหล่านี้มีแนวโน้มสนใจบริการจริง ดังนั้น SEO ไม่ใช่แค่เรื่องของอันดับ แต่เป็นเรื่องของการทำให้ธุรกิจปรากฏต่อหน้าลูกค้าในช่วงเวลาที่เหมาะสม</P>
+      </ArticleSection>
+
+      <ArticleSection title="SEO ทำงานอย่างไร?">
+        <ArticleImage src="/image/blog/what-is-seo/seo-process.png" alt="กระบวนการทำงานของ SEO — Crawling, Indexing และ Ranking" />
+        <P>Google ไม่ได้สุ่มเลือกเว็บไซต์ขึ้นมาแสดงในหน้าแรก แต่ใช้ระบบจัดอันดับเพื่อประเมินว่าเว็บไซต์ใดเกี่ยวข้อง มีคุณภาพ และตอบโจทย์ผู้ใช้งานมากที่สุด โดยพื้นฐานแล้ว SEO เกี่ยวข้องกับ 3 กระบวนการสำคัญ</P>
+        {[
+          { num: '1', title: 'Crawling', body: 'Google Bot เข้ามาเก็บข้อมูลจากเว็บไซต์ เช่น หน้าแรก หน้าบริการ บทความ รูปภาพ ลิงก์ภายใน และโครงสร้างของเว็บ หากเว็บไซต์โหลดช้า มีลิงก์เสีย หรือมีการตั้งค่าที่บล็อก Google Bot ไว้ Google อาจเก็บข้อมูลได้ไม่ครบ ส่งผลให้บางหน้าไม่มีโอกาสแสดงผลบน Google' },
+          { num: '2', title: 'Indexing', body: 'หลังจาก Google เก็บข้อมูลแล้ว ระบบจะนำหน้าเว็บไซต์ไปจัดเก็บไว้ในฐานข้อมูลของ Google หรือที่เรียกว่า Index หากหน้าเว็บไซต์ไม่ได้ถูก Index ต่อให้เนื้อหาดีแค่ไหน ก็แทบไม่มีโอกาสปรากฏในผลการค้นหา' },
+          { num: '3', title: 'Ranking', body: 'Google จัดลำดับว่าเมื่อมีคนค้นหาคำใดคำหนึ่ง เว็บไซต์ไหนควรขึ้นก่อนหรือหลัง โดยพิจารณาจากหลายปัจจัย เช่น ความเกี่ยวข้องของเนื้อหา คุณภาพ ความเร็ว การรองรับมือถือ ความน่าเชื่อถือ และ Backlink เป้าหมายของ Google คือแสดงผลลัพธ์ที่ดีที่สุดให้ผู้ใช้งาน ไม่ใช่แค่เว็บไซต์ที่ใส่คีย์เวิร์ดเยอะที่สุด' },
+        ].map((item) => (
+          <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ขั้นตอนที่ {item.num}</p>
+            <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+          </div>
+        ))}
+      </ArticleSection>
+
+      <ArticleSection title="ทำไม SEO สำคัญต่อธุรกิจ?">
+        <P>หลายธุรกิจลงทุนทำเว็บไซต์แล้วคาดหวังว่าจะมีลูกค้าเข้ามาเอง แต่เว็บไซต์ที่ไม่มี SEO ก็เหมือนหน้าร้านที่ไม่มีป้าย ไม่มีแผนที่ และไม่มีทางให้คนเดินเข้ามาเจอ</P>
+        <div className="grid gap-4">
+          {[
+            { title: 'SEO ช่วยให้ลูกค้าค้นเจอธุรกิจบน Google', body: 'ลูกค้าจำนวนมากเริ่มต้นจากการค้นหาข้อมูลก่อนตัดสินใจซื้อ ไม่ว่าจะเป็นการค้นหาราคา รีวิว วิธีเลือกสินค้า เปรียบเทียบบริการ หรือหาผู้ให้บริการใกล้ตัว หากเว็บไซต์ของคุณติดอันดับในคำค้นที่เกี่ยวข้อง ก็มีโอกาสถูกเห็นก่อนคู่แข่ง' },
+            { title: 'SEO สร้าง Traffic โดยไม่ต้องจ่ายต่อคลิก', body: 'การทำโฆษณาแบบ Google Ads ช่วยให้เห็นผลเร็ว แต่ต้องจ่ายเงินทุกครั้งที่มีคนคลิก และเมื่อหยุดจ่าย โฆษณาก็หยุดแสดงทันที แต่ SEO เป็นการสร้าง Organic Traffic ที่ดึงคนเข้าเว็บได้ต่อเนื่องโดยไม่ต้องจ่ายค่าโฆษณาต่อคลิกทุกครั้ง' },
+            { title: 'SEO ช่วยสร้างความน่าเชื่อถือ', body: 'ผู้ใช้งานมักเชื่อถือเว็บไซต์ที่ติดอันดับต้น ๆ บน Google มากกว่า เพราะรู้สึกว่าเว็บไซต์เหล่านั้นมีความเกี่ยวข้องและน่าเชื่อถือ SEO ไม่ได้ช่วยแค่เพิ่มจำนวนคนเข้าเว็บไซต์ แต่ยังช่วยสร้างภาพลักษณ์ของแบรนด์' },
+            { title: 'SEO เป็นการลงทุนระยะยาว', body: 'บทความหนึ่งชิ้นหรือหน้าบริการหนึ่งหน้าที่ติดอันดับ อาจสร้างคนเข้าเว็บไซต์และ Lead ให้ธุรกิจได้ต่อเนื่องหลายเดือนหรือหลายปี หากมีการอัปเดตและดูแลอย่างสม่ำเสมอ' },
+            { title: 'SEO เป็นพื้นฐานของการค้นหาในยุคใหม่', body: 'แม้พฤติกรรมผู้ใช้งานจะเริ่มเปลี่ยนไป มี AI Overview, ChatGPT, Gemini หรือ Perplexity เข้ามาช่วยตอบคำถามมากขึ้น แต่พื้นฐานของการถูกค้นเจอยังต้องอาศัยเว็บไซต์ เนื้อหา โครงสร้างข้อมูล และความน่าเชื่อถือของแบรนด์' },
+          ].map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ประเภทของ SEO ที่ควรรู้">
+        <P>SEO ไม่ได้มีแค่การเขียนบทความหรือใส่คีย์เวิร์ดในหน้าเว็บเท่านั้น แต่ประกอบด้วยหลายส่วนที่ทำงานร่วมกัน</P>
+        <div className="grid gap-5">
+          {seoTypes.map((t) => (
+            <ArticleSubSection key={t.type} title={t.type}>
+              <P>{t.desc}</P>
+              <CheckList items={t.items} />
+            </ArticleSubSection>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?">
+        <ArticleImage src="/image/blog/what-is-seo/what-seo-compare.png" alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร" />
+        <P>สำหรับคนที่เพิ่งเริ่มต้น ให้เข้าใจก่อนว่า SEO ยังคือพื้นฐานสำคัญที่สุด ส่วน AEO และ GEO คือการต่อยอดจาก SEO เพื่อให้เนื้อหาและแบรนด์มีโอกาสถูกมองเห็นในรูปแบบคำตอบและ AI Search มากขึ้น</P>
+        <div className="grid gap-3 lg:hidden">
+          {compareRows.map((row) => (
+            <article key={row[0]} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <h3 className="thai-readable font-semibold leading-7 text-neutral-950">{row[0]}</h3>
+              <div className="mt-3 grid gap-3">
+                {row.slice(1).map((cell, i) => (
+                  <div key={`${row[0]}-${compareHeadings[i + 1]}`}>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{compareHeadings[i + 1]}</p>
+                    <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{cell}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
+          <table className="min-w-[760px] divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6] text-neutral-950">
+              <tr>{compareHeadings.map((h) => <th key={h} scope="col" className="px-4 py-3 font-semibold">{h}</th>)}</tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200 text-neutral-700">
+              {compareRows.map((row) => (
+                <tr key={row[0]}>
+                  {row.map((cell, i) => (
+                    <td key={cell} className={`thai-readable px-4 py-4 align-top leading-6 ${i === 0 ? 'font-semibold text-neutral-950' : ''}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุปง่าย ๆ คือ SEO คือจุดเริ่มต้นของการถูกค้นเจอบน Google ส่วน AEO และ GEO คือการต่อยอดจาก SEO เพื่อให้เนื้อหาหรือแบรนด์มีโอกาสถูกมองเห็นในระบบคำตอบและ AI Search มากขึ้น</P>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเริ่มต้นทำ SEO เบื้องต้น">
+        <P>การเริ่มทำ SEO ไม่จำเป็นต้องเริ่มจากเทคนิคที่ซับซ้อนที่สุด แต่ควรเริ่มจากการวางรากฐานให้ถูกต้อง</P>
+        <div className="grid gap-4">
+          {seoSteps.map((step) => (
+            <div key={step.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="SEO vs SEM ต่างกันอย่างไร?">
+        <P>SEO และ SEM ต่างเป็นวิธีที่ทำให้ธุรกิจปรากฏบน Google แต่ต่างกันที่วิธีการและรูปแบบการลงทุน</P>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { label: 'SEO', desc: 'เหมาะกับการสร้างการเติบโตระยะยาว ไม่ต้องจ่ายต่อคลิก แต่ใช้เวลาในการเห็นผล' },
+            { label: 'SEM', desc: 'เหมาะกับการเร่งยอดระยะสั้น เห็นผลเร็ว แต่ต้องใช้งบประมาณ และหยุดจ่ายก็หยุดแสดง' },
+            { label: 'SEO + SEM', desc: 'เหมาะกับธุรกิจที่ต้องการทั้งยอดขายระยะสั้นและฐานลูกค้าระยะยาวพร้อมกัน' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-teal-900">{item.label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>ธุรกิจไม่จำเป็นต้องเลือกอย่างใดอย่างหนึ่งเสมอไป วิธีที่ดีที่สุดคือใช้ SEM เพื่อเก็บความต้องการระยะสั้น และใช้ SEO เพื่อสร้าง Organic Visibility ระยะยาว</P>
+      </ArticleSection>
+
+      <ArticleSection title="ทำ SEO แล้วไม่เห็นผล มักเกิดจากอะไร?">
+        <P>หลายธุรกิจเริ่มทำ SEO แล้วรู้สึกว่าไม่เห็นผล ทั้งที่ลงบทความไปหลายชิ้นหรือปรับเว็บไซต์ไปแล้วบางส่วน สาเหตุที่พบบ่อย ได้แก่</P>
+        <CheckList items={notWorkingReasons} />
+        <P>SEO ที่ดีจึงไม่ใช่แค่การเขียนบทความ แต่ต้องดูทั้งกลยุทธ์ โครงสร้างเว็บไซต์ คุณภาพเนื้อหา ความน่าเชื่อถือ และการวัดผลร่วมกัน</P>
+      </ArticleSection>
+
+      <ArticleSection title="Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ">
+        <ArticleImage src="/image/blog/what-is-seo/seo-checklist.png" alt="SEO Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ" />
+        <P>หากต้องการเริ่มต้นทำ SEO ให้เว็บไซต์มีพื้นฐานที่ดี สามารถเริ่มจาก Checklist นี้ได้</P>
+        <CheckList items={seoChecklist} />
+        <P>Checklist นี้เป็นเพียงจุดเริ่มต้น แต่ช่วยให้เห็นภาพว่า SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความแล้วรออันดับขึ้น</P>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: SEO คือรากฐานของการถูกค้นเจอบน Google">
+        <P>SEO คือการทำให้เว็บไซต์ของคุณถูกค้นเจอในเวลาที่ลูกค้ากำลังต้องการ ไม่ว่าจะเป็นการค้นหาข้อมูล เปรียบเทียบบริการ อ่านรีวิว หรือมองหาผู้ให้บริการที่น่าเชื่อถือ</P>
+        <P>การทำ SEO ที่ดีไม่ใช่แค่การใส่คีย์เวิร์ดลงในบทความ แต่ต้องเข้าใจลูกค้า เข้าใจ Search Intent วางโครงสร้างเว็บไซต์ให้ดี เขียนเนื้อหาที่มีคุณภาพ ปรับ Technical SEO และวัดผลอย่างต่อเนื่อง</P>
+        <P>SEO คือจุดเริ่มต้นที่จะทำให้เว็บไซต์ไม่เป็นบ้านร้างบนโลกออนไลน์ แต่กลายเป็นช่องทางที่ช่วยให้ธุรกิจถูกค้นพบ สร้างความน่าเชื่อถือ และเพิ่มโอกาสเติบโตได้อย่างยั่งยืน</P>
+        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย</Link></p>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO" />
+    </article>
+  )
+}
+
 function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   const factorItems = [
     {
@@ -1562,6 +1771,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'how-to-do-geo') {
     return <HowToDoGeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'what-is-seo') {
+    return <WhatIsSeoArticle post={post} />
   }
 
   return (
