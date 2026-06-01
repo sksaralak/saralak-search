@@ -198,6 +198,52 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-neutral-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
+            วิธีที่ Search ทำงานในยุค AI
+          </p>
+          <h2 className="mt-3 max-w-2xl text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+            ทำไม SEO, AEO และ GEO ต้องทำงานร่วมกัน?
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                label: 'SEO',
+                headline: 'ช่วยให้คุณติดอันดับ',
+                body: 'ทำให้เว็บไซต์ถูกค้นพบบน Google Search และ Search Engine อื่น ๆ',
+              },
+              {
+                label: 'AEO',
+                headline: 'ช่วยให้คุณเป็นคำตอบ',
+                body: 'ทำให้เนื้อหาของคุณถูกเลือกไปตอบคำถามใน AI Overview, Featured Snippet และ People Also Ask',
+              },
+              {
+                label: 'GEO',
+                headline: 'ช่วยให้คุณเป็นคำแนะนำ',
+                body: 'ทำให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ เชื่อถือ และแนะนำแบรนด์ของคุณในคำตอบ',
+              },
+            ].map((item) => (
+              <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
+                  {item.label}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-neutral-950">{item.headline}</h3>
+                <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-lg border border-teal-200 bg-teal-50 px-6 py-5">
+            <p className="thai-readable text-sm leading-7 text-teal-900">
+              เมื่อทั้ง 3 ทำงานร่วมกัน ธุรกิจของคุณจะมีโอกาสถูกค้นพบมากขึ้นทั้งบน Google, AI Overview, ChatGPT, Gemini และแพลตฟอร์ม AI อื่น ๆ
+            </p>
+            <p className="thai-readable mt-2 font-semibold text-teal-950">
+              ไม่ใช่แค่ถูกค้นหา แต่ต้องถูกเลือกและถูกแนะนำด้วย
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="industry-experience" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeader
