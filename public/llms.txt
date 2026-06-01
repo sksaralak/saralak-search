@@ -23,6 +23,9 @@
 - [GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search](https://saralak-search.com/blog/what-is-geo): อธิบาย GEO หรือ Generative Engine Optimization คืออะไร ทำงานอย่างไร ต่างจาก SEO และ AEO อย่างไร และธุรกิจควรเริ่มทำอย่างไร
 - [SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search](https://saralak-search.com/blog/seo-geo-aeo): เปรียบเทียบ SEO, AEO และ GEO พร้อม Checklist และแนวทางสำหรับธุรกิจที่ต้องการเพิ่มการมองเห็นทั้งบน Google และ AI Search
 - [ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย](https://saralak-search.com/blog/geo-agency-thailand): เปรียบเทียบ 6 บริษัทรับทำ GEO ในไทย พร้อมเกณฑ์สำคัญในการเลือก GEO Agency ที่เหมาะกับธุรกิจ
+- [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]](https://saralak-search.com/blog/how-to-do-geo): คู่มือปฏิบัติการทำ GEO ตั้งแต่การเตรียมเนื้อหา โครงสร้างเว็บไซต์ และสัญญาณความน่าเชื่อถือ เพื่อให้ ChatGPT, Gemini และ AI Search อ้างอิงแบรนด์
+- [AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search](https://saralak-search.com/blog/what-is-aeo): อธิบาย AEO หรือ Answer Engine Optimization คืออะไร ทำงานอย่างไร และวิธีทำให้เว็บไซต์ปรากฏใน Google AI Overview, Featured Snippet และ AI Search
+- [SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google](https://saralak-search.com/blog/what-is-seo): อธิบายพื้นฐาน SEO ครบถ้วน ตั้งแต่ความหมาย หลักการทำงาน On-page, Off-page, Technical SEO และความสัมพันธ์กับ AEO และ GEO ในยุค AI Search
 
 ## ข้อมูลองค์กร
 
@@ -31,4 +34,4 @@
 - ความเชี่ยวชาญ: SEO, AEO, GEO, Technical SEO, Content Strategy, Entity SEO, AI Search Optimization, Google Maps Optimization
 - พื้นที่ให้บริการ: ประเทศไทย และ Agency Partner ต่างประเทศ
 - ภาษา: ไทย และ อังกฤษ
-- ติดต่อ: sk.saralak@gmail.com
+- ติดต่อ: hello@saralak-search.com

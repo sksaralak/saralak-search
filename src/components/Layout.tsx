@@ -5,6 +5,7 @@ import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
 import CookieConsent from './CookieConsent'
 import FloatingLineButton from './FloatingLineButton'
+import FontLoader from './FontLoader'
 
 const navItems = [
   { label: 'Services', to: '/services' },
@@ -83,6 +84,7 @@ export default function Layout() {
         ) : null}
       </header>
       <Analytics />
+      <FontLoader />
       <Outlet />
       <footer className="border-t border-neutral-200 bg-white pb-16 sm:pb-10">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">

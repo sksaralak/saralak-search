@@ -30,6 +30,7 @@ type FormState = {
   interest: string
   budget: string
   message: string
+  _hp: string
 }
 
 const initialState: FormState = {
@@ -40,6 +41,7 @@ const initialState: FormState = {
   interest: interests[0],
   budget: budgets[0],
   message: '',
+  _hp: '',
 }
 
 function isValidUrl(value: string) {
@@ -94,6 +96,13 @@ export default function ContactForm() {
     if (!isValidUrl(form.website)) {
       setStatus('error')
       setFeedback('กรุณากรอก URL เว็บไซต์ที่ถูกต้อง')
+      return
+    }
+
+    if (form._hp) {
+      setStatus('success')
+      setFeedback('ส่งข้อมูลเรียบร้อยแล้ว จะติดต่อกลับผ่าน LINE หรืออีเมลโดยเร็ว')
+      setForm(initialState)
       return
     }
 
@@ -235,6 +244,17 @@ export default function ContactForm() {
           />
         </label>
       </div>
+
+      <input
+        type="text"
+        name="_hp"
+        value={form._hp}
+        onChange={(event) => setForm((current) => ({ ...current, _hp: event.target.value }))}
+        aria-hidden="true"
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+      />
 
       <button
         type="submit"

@@ -23,6 +23,8 @@ export default function BlogArticle() {
   const imageUrl = post.ogImage
     ? `https://saralak-search.com${post.ogImage}`
     : undefined
+  const readingMinutes = parseInt(post.readingTime)
+  const timeRequired = !isNaN(readingMinutes) ? `PT${readingMinutes}M` : undefined
 
   return (
     <>
@@ -31,6 +33,9 @@ export default function BlogArticle() {
         description={post.metaDescription}
         path={`/blog/${post.slug}`}
         image={post.ogImage ?? '/image/og/saralak-search-blog-og.png'}
+        ogType="article"
+        ogImageWidth={1200}
+        ogImageHeight={675}
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -50,7 +55,8 @@ export default function BlogArticle() {
                 url: 'https://saralak-search.com/',
               },
               datePublished: post.publishedDate,
-              dateModified: post.publishedDate,
+              dateModified: post.lastModifiedDate ?? post.publishedDate,
+              ...(timeRequired != null && { timeRequired }),
               mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id': pageUrl,

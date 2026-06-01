@@ -60,12 +60,14 @@ type ArticleImageProps = {
   alt: string
   caption?: string
   className?: string
+  width?: number
+  height?: number
 }
 
-function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]' }: ArticleImageProps) {
+function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]', width = 900, height = 507 }: ArticleImageProps) {
   return (
     <figure className={`overflow-hidden rounded-lg border border-neutral-200 ${className}`}>
-      <img src={src} alt={alt} loading="lazy" className="h-auto w-full" />
+      <img src={src} alt={alt} loading="lazy" width={width} height={height} className="h-auto w-full" />
       {caption ? (
         <figcaption className="thai-readable border-t border-neutral-200 bg-white px-3 py-3 text-sm leading-6 text-neutral-600 sm:px-5 sm:py-4">
           {caption}
@@ -264,6 +266,8 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           src="/image/blog/what-is-geo/what-is-geo-chatgpt-brand-mention.webp"
           alt="ตัวอย่าง ChatGPT พูดถึงแบรนด์ในการสร้างคำตอบ"
           caption="ตัวอย่างการที่ AI ประเมินข้อมูลจากหลายสัญญาณก่อนสร้างคำตอบและพูดถึงแบรนด์"
+          width={900}
+          height={1736}
         />
       </ArticleSection>
 
@@ -650,8 +654,9 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleImage
-        src="/image/blog/seo-aeo-geo/seo-aeo-geo-compare.png"
+        src="/image/blog/seo-aeo-geo/seo-aeo-geo-compare.webp"
         alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร"
+        height={600}
       />
 
       <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
@@ -670,7 +675,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="ทำไมธุรกิจไม่ควรทำแค่ SEO อย่างเดียวอีกต่อไป">
         <ArticleImage
-          src="/image/blog/seo-aeo-geo/seo-aeo-geo-why-geo.png"
+          src="/image/blog/seo-aeo-geo/seo-aeo-geo-why-geo.webp"
           alt="ทำไมธุรกิจต้องการมากกว่า SEO ในยุค AI Search"
         />
         <P>
@@ -774,7 +779,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="ธุรกิจควรเริ่มจาก SEO, AEO หรือ GEO ก่อน">
         <ArticleImage
-          src="/image/blog/seo-aeo-geo/seo-aeo-geo-transform.png"
+          src="/image/blog/seo-aeo-geo/seo-aeo-geo-transform.webp"
           alt="เส้นทางการเติบโตจาก SEO สู่ AEO และ GEO"
         />
         <P>
@@ -1032,8 +1037,9 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>เกณฑ์สำคัญที่ควรใช้เลือก GEO Agency ได้แก่</P>
         <NumberedList items={selectionCriteria} />
         <ArticleImage
-          src="/image/blog/geo-agency-thailand/how-to-choose-geo-agency-thailand.png"
+          src="/image/blog/geo-agency-thailand/how-to-choose-geo-agency-thailand.webp"
           alt="วิธีเลือกบริษัทรับทำ GEO ที่เหมาะกับธุรกิจไทย"
+          height={600}
         />
       </ArticleSection>
 
@@ -1115,8 +1121,9 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="GEO เหมาะกับธุรกิจประเภทไหน">
         <ArticleImage
-          src="/image/blog/geo-agency-thailand/why-ai-mention-brand.png"
+          src="/image/blog/geo-agency-thailand/why-ai-mention-brand.webp"
           alt="ทำไม AI Mention ถึงสำคัญสำหรับแบรนด์"
+          height={600}
         />
         <P>GEO เหมาะกับธุรกิจที่ลูกค้าต้องค้นหาข้อมูล เปรียบเทียบ หรือถาม AI ก่อนตัดสินใจซื้อ เช่น ธุรกิจ B2B, SaaS, E-commerce, Healthcare, Education, Finance, Legal, Real Estate, Travel, Local Business, Professional Service และ Digital Agency</P>
         <P>ยิ่งสินค้าหรือบริการมีมูลค่าสูง ซับซ้อน หรือมีขั้นตอนตัดสินใจนาน GEO ยิ่งสำคัญ เพราะลูกค้ามักค้นหาหรือถาม AI เพื่อช่วยคัดเลือกตัวเลือกก่อนติดต่อจริง หากแบรนด์ไม่ถูกพูดถึงในช่วงการค้นหานี้ ก็อาจเสียโอกาสให้คู่แข่งที่มี Search Visibility แข็งแรงกว่า</P>
@@ -1238,7 +1245,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="AEO ทำงานอย่างไร?">
-        <ArticleImage src="/image/blog/what-is-aeo/how-aeo-work.png" alt="AEO ทำงานอย่างไร — 5 ขั้นตอน" />
+        <ArticleImage src="/image/blog/what-is-aeo/how-aeo-work.webp" alt="AEO ทำงานอย่างไร — 5 ขั้นตอน" height={600} />
         <P>การทำงานของ AEO สามารถอธิบายแบบง่าย ๆ ได้เป็น 5 ขั้นตอน</P>
         {[
           { num: '1', title: 'ผู้ใช้งานถามคำถาม', body: 'ผู้ใช้งานค้นหาด้วยคีย์เวิร์ดแบบคำถาม เช่น "AEO คืออะไร", "ทำไงให้ติด AEO", "SEO กับ AEO ต่างกันยังไง" หรือ "ทำยังไงให้ติด Google AI Overview"' },
@@ -1323,7 +1330,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="ทำไงให้ติด AEO?">
-        <ArticleImage src="/image/blog/what-is-aeo/how-to-do-aeo.png" alt="วิธีทำ AEO ให้ติด Google AI Overview และ Featured Snippet" />
+        <ArticleImage src="/image/blog/what-is-aeo/how-to-do-aeo.webp" alt="วิธีทำ AEO ให้ติด Google AI Overview และ Featured Snippet" />
         <P>การทำให้เว็บไซต์มีโอกาสติด AEO ไม่ใช่แค่การใส่คีย์เวิร์ดซ้ำ ๆ แต่ต้องทำให้เนื้อหาตอบคำถามได้ดี มีโครงสร้างชัด และมีความน่าเชื่อถือ</P>
         <div className="grid gap-4">
           {howToSteps.map((step) => (
@@ -1337,7 +1344,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="AEO Content Structure ที่แนะนำ">
-        <ArticleImage src="/image/blog/what-is-aeo/content-for-aeo.png" alt="โครงสร้างเนื้อหาที่เหมาะกับ AEO" />
+        <ArticleImage src="/image/blog/what-is-aeo/content-for-aeo.webp" alt="โครงสร้างเนื้อหาที่เหมาะกับ AEO" height={600} />
         <P>โครงสร้างบทความที่เหมาะกับคีย์เวิร์ด "AEO คือ" ควรครอบคลุมหัวข้อเหล่านี้</P>
         <CheckList items={[
           'AEO คืออะไร?',
@@ -1508,7 +1515,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="SEO ทำงานอย่างไร?">
-        <ArticleImage src="/image/blog/what-is-seo/seo-process.png" alt="กระบวนการทำงานของ SEO — Crawling, Indexing และ Ranking" />
+        <ArticleImage src="/image/blog/what-is-seo/seo-process.webp" alt="กระบวนการทำงานของ SEO — Crawling, Indexing และ Ranking" />
         <P>Google ไม่ได้สุ่มเลือกเว็บไซต์ขึ้นมาแสดงในหน้าแรก แต่ใช้ระบบจัดอันดับเพื่อประเมินว่าเว็บไซต์ใดเกี่ยวข้อง มีคุณภาพ และตอบโจทย์ผู้ใช้งานมากที่สุด โดยพื้นฐานแล้ว SEO เกี่ยวข้องกับ 3 กระบวนการสำคัญ</P>
         {[
           { num: '1', title: 'Crawling', body: 'Google Bot เข้ามาเก็บข้อมูลจากเว็บไซต์ เช่น หน้าแรก หน้าบริการ บทความ รูปภาพ ลิงก์ภายใน และโครงสร้างของเว็บ หากเว็บไซต์โหลดช้า มีลิงก์เสีย หรือมีการตั้งค่าที่บล็อก Google Bot ไว้ Google อาจเก็บข้อมูลได้ไม่ครบ ส่งผลให้บางหน้าไม่มีโอกาสแสดงผลบน Google' },
@@ -1555,7 +1562,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?">
-        <ArticleImage src="/image/blog/what-is-seo/what-seo-compare.png" alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร" />
+        <ArticleImage src="/image/blog/what-is-seo/what-seo-compare.webp" alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร" />
         <P>สำหรับคนที่เพิ่งเริ่มต้น ให้เข้าใจก่อนว่า SEO ยังคือพื้นฐานสำคัญที่สุด ส่วน AEO และ GEO คือการต่อยอดจาก SEO เพื่อให้เนื้อหาและแบรนด์มีโอกาสถูกมองเห็นในรูปแบบคำตอบและ AI Search มากขึ้น</P>
         <div className="grid gap-3 lg:hidden">
           {compareRows.map((row) => (
@@ -1634,7 +1641,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ">
-        <ArticleImage src="/image/blog/what-is-seo/seo-checklist.png" alt="SEO Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ" />
+        <ArticleImage src="/image/blog/what-is-seo/seo-checklist.webp" alt="SEO Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ" height={600} />
         <P>หากต้องการเริ่มต้นทำ SEO ให้เว็บไซต์มีพื้นฐานที่ดี สามารถเริ่มจาก Checklist นี้ได้</P>
         <CheckList items={seoChecklist} />
         <P>Checklist นี้เป็นเพียงจุดเริ่มต้น แต่ช่วยให้เห็นภาพว่า SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความแล้วรออันดับขึ้น</P>
@@ -1841,7 +1848,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="GEO ต่างจาก SEO และ AEO อย่างไร">
         <ArticleImage
-          src="/image/blog/how-to-do-geo/seo-aeo-geo.png"
+          src="/image/blog/how-to-do-geo/seo-aeo-geo.webp"
           alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร"
         />
         <div className="grid gap-3 sm:grid-cols-3">
@@ -1900,7 +1907,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="ChatGPT เลือกข้อมูลจากเว็บไซต์อย่างไร">
         <ArticleImage
-          src="/image/blog/how-to-do-geo/how-ai-choose-website.png"
+          src="/image/blog/how-to-do-geo/how-ai-choose-website.webp"
           alt="ChatGPT และ AI Search เลือกข้อมูลจากเว็บไซต์อย่างไร"
         />
         <P>
@@ -1939,7 +1946,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์แบบ Step by Step">
         <ArticleImage
-          src="/image/blog/how-to-do-geo/how-to-do-geo.png"
+          src="/image/blog/how-to-do-geo/how-to-do-geo.webp"
           alt="วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์แบบ Step by Step"
         />
         <div className="grid gap-4">

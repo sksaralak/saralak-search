@@ -1,7 +1,7 @@
 export const brand = {
   name: 'Saralak Search',
   domain: 'saralak-search.com',
-  email: 'sk.saralak@gmail.com',
+  email: 'hello@saralak-search.com',
   line: 'LINE: @sariahihi',
   lineUrl: 'https://line.me/ti/p/~sariahihi',
   phone: '0622944999',

@@ -9,7 +9,9 @@ const blogSlugs = [
   'what-is-geo',
   'seo-geo-aeo',
   'geo-agency-thailand',
-  'modern-search-strategy',
+  'how-to-do-geo',
+  'what-is-aeo',
+  'what-is-seo',
 ]
 
 const routes = [
@@ -29,23 +31,26 @@ const routes = [
  * Strip any Helmet-managed tags and prerendered body content left over from a
  * previous run. Makes the script idempotent when re-run without a fresh
  * `vite build` first.
+ *
+ * Regexes intentionally match attributes in any order so they catch tags that
+ * have data-rh="true" inserted by a previous prerender run.
  */
 function sanitizeTemplate(raw) {
   let html = raw
     // Remove all title tags (incl. injected ones from previous runs)
-    .replace(/<title>[^<]*<\/title>/g, '')
-    // Remove Helmet-managed per-page meta / link tags
-    .replace(/<meta\s+name="description"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+name="robots"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+name="author"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+name="publisher"[^>]*\/?>/ig, '')
-    .replace(/<link\s+rel="canonical"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+property="og:title"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+property="og:description"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+property="og:url"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+name="twitter:title"[^>]*\/?>/ig, '')
-    .replace(/<meta\s+name="twitter:description"[^>]*\/?>/ig, '')
-    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
+    .replace(/<title[^>]*>[^<]*<\/title>/g, '')
+    // Remove Helmet-managed per-page meta / link tags (attr-order-agnostic)
+    .replace(/<meta[^>]+name="description"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+name="robots"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+name="author"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+name="publisher"[^>]*\/?>/ig, '')
+    .replace(/<link[^>]+rel="canonical"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+property="og:title"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+property="og:description"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+property="og:url"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+name="twitter:title"[^>]*\/?>/ig, '')
+    .replace(/<meta[^>]+name="twitter:description"[^>]*\/?>/ig, '')
+    .replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g, '')
 
   // Reset root div — replaces everything from <div id="root"> onward
   const rootStart = html.indexOf('<div id="root">')
@@ -64,18 +69,32 @@ function sanitizeTemplate(raw) {
  *
  * This function separates head-level tags from body content and pulls out
  * any ld+json scripts so everything lands in <head>.
+ *
+ * All injected tags get data-rh="true" so react-helmet-async recognises them
+ * as already-managed on client hydration and removes them before re-adding,
+ * preventing duplicate <script type="application/ld+json"> blocks which
+ * Google parses as separate structured-data items (GSC "duplicate FAQPage").
  */
 function extractHeadContent(appHtml) {
   // Everything before the first <div is hoisted head tags from Helmet
   const firstDiv = appHtml.indexOf('<div')
-  const hoisted = firstDiv > 0 ? appHtml.slice(0, firstDiv) : ''
+  let hoisted = firstDiv > 0 ? appHtml.slice(0, firstDiv) : ''
   let bodyContent = firstDiv > 0 ? appHtml.slice(firstDiv) : appHtml
 
-  // Pull ld+json scripts from body and add them to the head section
+  // Stamp data-rh="true" on hoisted meta/link/title so Helmet owns them on hydration
+  hoisted = hoisted
+    .replace(/<title>/g, '<title data-rh="true">')
+    .replace(/<meta /g, '<meta data-rh="true" ')
+    .replace(/<link /g, '<link data-rh="true" ')
+
+  // Pull ld+json scripts from body, stamp data-rh, move to head
   const ldScripts = []
   bodyContent = bodyContent.replace(
-    /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
-    match => { ldScripts.push(match); return '' },
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+    (_, content) => {
+      ldScripts.push(`<script data-rh="true" type="application/ld+json">${content}</script>`)
+      return ''
+    },
   )
 
   return {

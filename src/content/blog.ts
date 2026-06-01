@@ -7,6 +7,7 @@ export type BlogPost = {
   excerpt: string
   readingTime: string
   publishedDate: string
+  lastModifiedDate?: string
   authorName: string
   authorRole: string
   authorUrl: string
@@ -326,10 +327,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
     metaDescription:
       'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบ เรียนรู้วิธีทำ AEO ให้ติด Google AI Overview, Featured Snippet และ AI Assistant',
-    heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner.png',
-    heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.png',
+    heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
+    heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.webp',
     heroImageAlt: 'AEO คืออะไร ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
-    ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner.png',
+    ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
     aiSummary: [
       'AEO คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบใน AI Overview, Featured Snippet, Voice Search และ AI Assistant',
       'AEO สำคัญเพราะพฤติกรรมการค้นหาเปลี่ยนไป ผู้ใช้งานต้องการคำตอบทันทีบนหน้าผลการค้นหา ไม่ใช่แค่รายการลิงก์',
@@ -360,10 +361,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
     metaDescription:
       'SEO คือการปรับเว็บไซต์ให้ถูกค้นเจอบน Google แบบไม่ต้องจ่ายค่าโฆษณาต่อคลิก เรียนรู้ความหมายของ SEO ประเภทของ SEO วิธีเริ่มต้นทำ SEO และความต่างระหว่าง SEO, AEO และ GEO แบบเข้าใจง่าย',
-    heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.png',
-    heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.png',
+    heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
+    heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.webp',
     heroImageAlt: 'SEO คืออะไร เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
-    ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.png',
+    ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
     aiSummary: [
       'SEO คือการปรับเว็บไซต์ให้ Google เข้าใจและแสดงผลเมื่อลูกค้ากำลังค้นหาสินค้าหรือบริการที่เกี่ยวข้อง',
       'SEO ทำงานผ่าน 3 กระบวนการหลัก ได้แก่ Crawling, Indexing และ Ranking',
@@ -428,10 +429,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร | Saralak Search',
     metaDescription:
       'SEO, AEO และ GEO คือ 3 แนวทางหลักของ Search Marketing ยุคใหม่ เรียนรู้ความแตกต่าง และวิธีเริ่มต้นให้ธุรกิจมองเห็นได้ทั้งบน Google และ AI Search',
-    heroImageDesktop: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.png',
-    heroImageMobile: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-mweb.png',
+    heroImageDesktop: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
+    heroImageMobile: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-mweb.webp',
     heroImageAlt: 'SEO GEO AEO คืออะไร ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไร',
-    ogImage: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.png',
+    ogImage: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
     aiSummary: [
       'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่',
       'SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search',
@@ -462,10 +463,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search ในไทย | Saralak Search',
     metaDescription:
       'เปรียบเทียบ 6 บริษัทรับทำ GEO และ AI Search Optimization ในไทย พร้อมเกณฑ์สำคัญในการเลือก GEO Agency ที่เข้าใจทั้ง SEO, AEO และ AI Visibility',
-    heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.png',
-    heroImageMobile: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-mweb.png',
+    heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
+    heroImageMobile: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-mweb.webp',
     heroImageAlt: 'ทำ GEO ที่ไหนดี แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย',
-    ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.png',
+    ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
     faqs: geoAgencyFaqs,
     bodyVariant: 'geo-agency',
     cta: {
@@ -490,10 +491,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]',
     metaDescription:
       'คู่มือครบจบวิธีทำ GEO ให้ ChatGPT และ AI Search อ้างอิงเว็บไซต์ ครอบคลุมตั้งแต่ Content Strategy, Schema, Entity SEO, Brand Mention ไปจนถึงการวัดผล',
-    heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.png',
-    heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.png',
+    heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
+    heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.webp',
     heroImageAlt: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ คู่มือ AI SEO สำหรับธุรกิจ',
-    ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.png',
+    ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     aiSummary: [
       'GEO คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือให้ AI Search เข้าใจ อ้างอิง และแนะนำธุรกิจในคำตอบ',
       'ChatGPT เลือกข้อมูลจากเว็บไซต์ที่ตอบคำถามชัดเจน มีโครงสร้างดี มี E-E-A-T และมีสัญญาณภายนอกสนับสนุน',
