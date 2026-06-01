@@ -272,7 +272,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           GEO สำคัญเพราะเส้นทางการค้นหาของผู้ใช้ไม่ได้จบที่หน้า Google แบบเดิมอีกต่อไป หลายคนเริ่มใช้ AI เพื่อขอคำแนะนำ เปรียบเทียบตัวเลือก สรุปข้อมูล หาวิธีแก้ปัญหา หรือถามคำถามเชิงลึกก่อนตัดสินใจซื้อสินค้าและบริการ
         </P>
         <P>
-          ตัวอย่างเช่น ผู้ใช้ที่ต้องการหาบริการ SEO อาจไม่ได้ค้นแค่ “บริษัทรับทำ SEO” แต่ถาม AI ว่า “ควรเลือกเอเจนซี่ SEO แบบไหนดี”, “SEO, AEO, GEO ต่างกันยังไง”, “ถ้าอยากให้ ChatGPT แนะนำเว็บไซต์ ต้องทำอะไรบ้าง” หรือ “ธุรกิจไทยควรเริ่มทำ GEO ยังไง”
+          ตัวอย่างเช่น ผู้ใช้ที่ต้องการหาบริการ SEO อาจไม่ได้ค้นแค่ "บริษัทรับทำ SEO" แต่ถาม AI ว่า "ควรเลือกเอเจนซี่ SEO แบบไหนดี", <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">"SEO, AEO, GEO ต่างกันยังไง"</Link>, "ถ้าอยากให้ ChatGPT แนะนำเว็บไซต์ ต้องทำอะไรบ้าง" หรือ "ธุรกิจไทยควรเริ่มทำ GEO ยังไง"
         </P>
         <P>
           ถ้าเว็บไซต์ของเรามีเนื้อหาที่ตอบคำถามเหล่านี้อย่างชัดเจน มีโครงสร้างข้อมูลที่ AI เข้าใจง่าย และมีความน่าเชื่อถือเพียงพอ ก็จะมีโอกาสปรากฏในคำตอบของ AI มากขึ้น แม้ผู้ใช้ยังไม่ได้คลิกเข้าเว็บไซต์ตั้งแต่แรกก็ตาม
@@ -427,7 +427,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           การวัดผล GEO ยังไม่มีมาตรฐานเดียวเหมือน SEO แต่สามารถติดตามได้จากหลายสัญญาณร่วมกัน เช่น การที่แบรนด์ถูกกล่าวถึงใน ChatGPT, Gemini, Perplexity หรือ Google AI Overview จำนวนครั้งที่เว็บไซต์ถูกอ้างอิงในคำตอบ AI การเพิ่มขึ้นของ Branded Search การเพิ่มขึ้นของ Direct Traffic และ Referral Traffic จาก AI Platform
         </P>
         <P>
-          นอกจากนี้ยังสามารถทำ Manual AI Visibility Tracking โดยกำหนดชุดคำถามสำคัญของธุรกิจ แล้วทดสอบถาม AI เป็นระยะ เช่น “GEO คืออะไร”, “บริษัทรับทำ GEO ในไทยมีใครบ้าง”, “ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์”, “SEO Agency ที่ทำ AEO ได้ควรมีอะไรบ้าง” จากนั้นบันทึกว่า AI กล่าวถึงแบรนด์หรือไม่ อ้างอิงเว็บไซต์หรือไม่ และคำตอบมีความแม่นยำแค่ไหน
+          นอกจากนี้ยังสามารถทำ Manual AI Visibility Tracking โดยกำหนดชุดคำถามสำคัญของธุรกิจ แล้วทดสอบถาม AI เป็นระยะ เช่น "GEO คืออะไร", <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">"บริษัทรับทำ GEO ในไทยมีใครบ้าง"</Link>, "ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์", "SEO Agency ที่ทำ AEO ได้ควรมีอะไรบ้าง" จากนั้นบันทึกว่า AI กล่าวถึงแบรนด์หรือไม่ อ้างอิงเว็บไซต์หรือไม่ และคำตอบมีความแม่นยำแค่ไหน
         </P>
         <P>
           ในระยะยาว GEO ควรถูกวัดร่วมกับ SEO ไม่ใช่แยกขาดจากกัน เพราะอันดับบน Google, Organic Traffic, Keyword Visibility, Brand Mention และ AI Citation ล้วนเป็นสัญญาณที่ช่วยเสริมกัน
@@ -1081,6 +1081,475 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function HowToDoGeoArticle({ post }: { post: BlogPost }) {
+  const factorItems = [
+    {
+      title: 'เนื้อหาต้องตอบ Search Intent ชัดเจน',
+      body: 'บทความที่ดีสำหรับ GEO ต้องเข้าใจว่าผู้ค้นหาต้องการอะไรจริง ๆ เช่น คำว่า "วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์" ไม่ได้ต้องการคำตอบแค่ "GEO คืออะไร" แต่ต้องการรู้ว่าทำอย่างไร ต้องแก้อะไรบนเว็บไซต์ ต้องเขียนเนื้อหาแบบไหน ต้องใช้ Schema อะไร และจะวัดผลอย่างไร ถ้าบทความตอบแค่ความหมาย แต่ไม่ให้วิธีทำ โอกาสที่ AI จะเลือกใช้เป็นคำตอบเชิงลึกจะน้อยลง',
+    },
+    {
+      title: 'เนื้อหาต้องมี Answer First',
+      body: 'Answer First คือการให้คำตอบหลักตั้งแต่ช่วงต้นของบทความ ก่อนขยายรายละเอียดภายหลัง เทคนิคนี้สำคัญมากสำหรับ AEO และ GEO เพราะ AI ต้องการเข้าใจใจความสำคัญของหน้าเว็บอย่างรวดเร็ว ตัวอย่างเช่น "การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ คือการปรับเนื้อหา โครงสร้างเว็บไซต์ Schema ความน่าเชื่อถือของแบรนด์ และสัญญาณภายนอก เพื่อให้ AI เข้าใจว่าเว็บไซต์ของคุณเป็นแหล่งข้อมูลที่เกี่ยวข้อง ชัดเจน และน่าเชื่อถือพอที่จะนำไปใช้ในคำตอบ"',
+    },
+    {
+      title: 'โครงสร้างหัวข้อต้องอ่านง่าย',
+      body: 'AI เข้าใจเนื้อหาได้ดีขึ้นเมื่อบทความมี H1, H2 และ H3 ที่จัดลำดับชัดเจน หัวข้อควรสะท้อนคำถามจริงของผู้ใช้ เช่น "GEO คืออะไร", "GEO ต่างจาก SEO อย่างไร", "ChatGPT ดึงข้อมูลจากไหน", "Schema ช่วย GEO หรือไม่" หัวข้อแบบคำถามช่วยทั้งผู้อ่านและ AI เพราะทำให้เข้าใจได้ทันทีว่าแต่ละส่วนตอบเรื่องอะไร',
+    },
+    {
+      title: 'เนื้อหาต้องลึกกว่าคู่แข่ง',
+      body: 'บทความทั่วไปมักอธิบาย GEO แบบผิวเผิน แต่บทความที่มีโอกาสชนะควรมีหัวข้อที่ลึกกว่า เช่น Entity SEO, Brand Mention, Topical Authority, AI Citation Optimization Framework, GEO Audit Checklist และ GEO KPI เนื้อหาที่ลึกกว่าไม่ได้หมายถึงยาวอย่างเดียว แต่ต้องมีมุมมองที่ใช้ได้จริง',
+    },
+    {
+      title: 'เว็บไซต์ต้องมี E-E-A-T',
+      body: 'E-E-A-T คือ Experience, Expertise, Authoritativeness และ Trustworthiness เป็นสัญญาณสำคัญที่ทำให้ทั้งผู้ใช้ Search Engine และ AI มองว่าเนื้อหาน่าเชื่อถือ ในบทความ GEO ควรแสดงให้เห็นว่าเนื้อหามาจากผู้มีประสบการณ์จริง มีความเชี่ยวชาญใน SEO หรือ Digital Marketing มีตัวอย่าง มีวิธีตรวจสอบ และมีเหตุผลรองรับ',
+    },
+    {
+      title: 'ต้องมี Structured Data',
+      body: 'Structured Data หรือ Schema Markup ช่วยให้ระบบเข้าใจว่าเนื้อหาหน้านั้นคืออะไร เป็นบทความ เป็น FAQ เป็นองค์กร เป็นผู้เขียน หรือเป็นขั้นตอนการทำงาน Schema ไม่ได้การันตีว่า AI จะอ้างอิงเว็บไซต์ทันที แต่เป็นส่วนสำคัญที่ช่วยให้ข้อมูลของหน้าเว็บอ่านง่ายและตีความได้แม่นยำขึ้น',
+    },
+    {
+      title: 'ต้องมี Brand Mention และ Backlink',
+      body: 'AI ไม่ได้ดูเฉพาะเนื้อหาในเว็บไซต์ของเรา แต่ยังดูว่าสัญญาณภายนอกพูดถึงแบรนด์อย่างไร ถ้าแบรนด์ถูกกล่าวถึงบนเว็บไซต์ที่เกี่ยวข้อง มีบทความอ้างอิง มีรีวิว มีข่าว หรือมีพาร์ตเนอร์พูดถึงซ้ำ ๆ AI จะเข้าใจตัวตนของแบรนด์ได้ดีขึ้น',
+    },
+  ]
+
+  const steps = [
+    {
+      num: '01',
+      title: 'เลือก Topic ที่แบรนด์ต้องการเป็นเจ้าของ',
+      body: 'ก่อนเขียนบทความ ต้องตอบให้ได้ว่าแบรนด์อยากให้ AI จดจำว่าเชี่ยวชาญเรื่องอะไร เช่น SEO Agency อาจต้องการเป็นที่รู้จักเรื่อง SEO, GEO, AEO, Technical SEO, Content Optimization และ AI Search การเลือก Topic ที่ชัดช่วยให้เว็บไซต์สร้าง Topical Authority ได้ง่ายกว่าเขียนหลายเรื่องแบบกระจัดกระจาย',
+    },
+    {
+      num: '02',
+      title: 'สร้าง Pillar Content',
+      body: 'Pillar Content คือบทความหลักที่ครอบคลุมหัวข้อใหญ่แบบลึกและเป็นระบบ บทความนี้ควรตอบครบตั้งแต่ความหมาย วิธีทำ Checklist เครื่องมือ ไปจนถึงการวัดผล Pillar Content ที่ดีควรมีโครงสร้างชัด มีคำตอบสั้น มีรายละเอียดลึก มี FAQ และมี Internal Link ไปยังบทความรอง',
+    },
+    {
+      num: '03',
+      title: 'สร้าง Supporting Content',
+      body: 'หลังจากมี Pillar Content ควรสร้างบทความย่อยเพื่อสนับสนุน เช่น GEO คืออะไร, GEO ต่างจาก SEO อย่างไร, AEO คืออะไร, วิธีทำ FAQ ให้ติด AI Overview, Entity SEO คืออะไร, Brand Mention สำคัญต่อ AI Search อย่างไร และ Schema ที่ควรใช้สำหรับบทความ SEO บทความย่อยช่วยให้ AI เข้าใจว่าเว็บไซต์มีความเชี่ยวชาญครอบคลุมทั้งหัวข้อ',
+    },
+    {
+      num: '04',
+      title: 'ทำ Internal Link แบบมีบริบท',
+      body: 'Internal Link ไม่ควรแปะลิงก์แบบสุ่ม แต่ควรเชื่อมเนื้อหาตามความสัมพันธ์ของหัวข้อ Anchor Text ควรอธิบายหัวข้อปลายทางชัดเจน เช่น "วิธีทำ AEO", "Structured Data สำหรับ SEO", "Content Cluster คืออะไร" แทนการใช้คำว่า "คลิกที่นี่"',
+    },
+    {
+      num: '05',
+      title: 'เพิ่ม Schema Markup',
+      body: 'สำหรับบทความ GEO ควรใช้ Schema อย่างน้อย 4 ประเภท ได้แก่ Article Schema, FAQPage Schema, BreadcrumbList Schema และ Organization Schema หากมีผู้เขียนชัดเจนควรเพิ่ม Person Schema หรือ Author Markup ด้วย Schema ช่วยให้ระบบเข้าใจหน้าเว็บในระดับโครงสร้าง ไม่ใช่แค่อ่านข้อความ',
+    },
+    {
+      num: '06',
+      title: 'สร้าง Entity ของแบรนด์',
+      body: 'Entity SEO คือการทำให้ระบบเข้าใจว่าแบรนด์คือใคร ทำอะไร อยู่ในหมวดหมู่ไหน เชี่ยวชาญเรื่องใด เว็บไซต์ควรมีหน้า About ที่ชัดเจน หน้า Service ที่อธิบายบริการจริง หน้า Case Study ที่แสดงผลงาน และข้อมูลแบรนด์ที่สอดคล้องกันในทุกช่องทาง',
+    },
+    {
+      num: '07',
+      title: 'สร้าง Brand Mention',
+      body: 'Brand Mention คือการที่ชื่อแบรนด์ถูกกล่าวถึงบนเว็บไซต์อื่น แม้ไม่มีลิงก์ก็ยังช่วยสร้างสัญญาณให้ AI เข้าใจว่าแบรนด์เกี่ยวข้องกับหัวข้อนั้น ตัวอย่างแหล่งที่ควรสร้าง Mention ได้แก่ เว็บไซต์ข่าว เว็บไซต์อุตสาหกรรม บทความ Guest Post พาร์ตเนอร์ ลูกค้า และ Social Platform ที่เกี่ยวข้อง',
+    },
+    {
+      num: '08',
+      title: 'วัดผลและปรับปรุงต่อเนื่อง',
+      body: 'GEO ไม่ใช่งานที่ทำครั้งเดียวจบ ต้องวัดผลจากหลายสัญญาณ เช่น เว็บไซต์ถูก AI อ้างอิงหรือไม่ Brand Search เพิ่มขึ้นหรือไม่ บทความติดอันดับคำถามสำคัญหรือไม่ มี Referral จาก AI Platform หรือไม่ และ AI ตอบถึงแบรนด์เมื่อถามคำถามในหมวดเดียวกันหรือไม่',
+    },
+  ]
+
+  const frameworkSteps = [
+    { label: '01', title: 'Define Entity', body: 'กำหนดให้ชัดว่าแบรนด์คือใคร เชี่ยวชาญเรื่องอะไร ให้บริการใคร และอยากให้ AI จดจำในหัวข้อใด' },
+    { label: '02', title: 'Build Answer Assets', body: 'สร้างเนื้อหาที่เป็นคำตอบ เช่น บทความ Pillar, FAQ, Glossary, Checklist, How-to Guide, Comparison Page และ Case Study' },
+    { label: '03', title: 'Structure for Machines', body: 'จัดโครงสร้างหน้าเว็บให้ AI อ่านง่าย ใช้ Heading ชัดเจน Schema ถูกต้อง Internal Link เป็นระบบ และข้อมูลสำคัญอยู่ในตำแหน่งที่อ่านง่าย' },
+    { label: '04', title: 'Earn External Signals', body: 'สร้างสัญญาณภายนอกผ่าน Backlink, Brand Mention, Digital PR, Partner Mention และ Social Proof' },
+    { label: '05', title: 'Measure and Refresh', body: 'ตรวจสอบผลลัพธ์เป็นรายเดือน อัปเดตเนื้อหา เพิ่ม FAQ ใหม่ ปรับคำตอบตามคำถามจริง และทดสอบว่า AI เริ่มกล่าวถึงแบรนด์หรือเว็บไซต์หรือไม่' },
+  ]
+
+  const schemaItems = [
+    { type: 'Article Schema', desc: 'ใช้บอกว่าเนื้อหานี้เป็นบทความ มีหัวข้อ ผู้เขียน วันที่เผยแพร่ วันที่อัปเดต และองค์กรเจ้าของเนื้อหา' },
+    { type: 'FAQPage Schema', desc: 'ใช้สำหรับชุดคำถามคำตอบ ช่วยให้ Search Engine เข้าใจว่าเนื้อหาส่วนนี้เป็น FAQ และช่วยรองรับ AEO' },
+    { type: 'Organization Schema', desc: 'ใช้ยืนยันตัวตนของแบรนด์ เช่น ชื่อบริษัท URL โลโก้ ช่องทาง Social Profile และข้อมูลติดต่อ' },
+    { type: 'Person Schema', desc: 'ใช้ในกรณีที่บทความมีผู้เขียนหรือผู้เชี่ยวชาญชัดเจน ช่วยเสริม E-E-A-T' },
+    { type: 'BreadcrumbList Schema', desc: 'ช่วยให้ Search Engine เข้าใจลำดับโครงสร้างเว็บไซต์และหมวดหมู่ของหน้า' },
+    { type: 'HowTo Schema', desc: 'เหมาะกับเนื้อหาที่เป็นขั้นตอน เช่น วิธีทำ GEO, วิธีเพิ่ม Schema หรือวิธีตรวจสอบ AI Citation' },
+  ]
+
+  const contentChecklist = [
+    'บทความมี Answer First หรือไม่',
+    'หัวข้อ H2/H3 ตอบคำถามจริงหรือไม่',
+    'เนื้อหาตอบ Search Intent ครบหรือไม่',
+    'มี FAQ หรือไม่',
+    'มีข้อมูลเชิงลึกกว่าคู่แข่งหรือไม่',
+    'มีตัวอย่างหรือ Framework หรือไม่',
+    'มีการอัปเดตเนื้อหาอย่างต่อเนื่องหรือไม่',
+  ]
+
+  const onPageChecklist = [
+    'Title มี Main Keyword หรือไม่',
+    'H1 ชัดเจนหรือไม่',
+    'Heading Structure เป็นระบบหรือไม่',
+    'URL อ่านง่ายหรือไม่',
+    'Meta Description สื่อประโยชน์ชัดหรือไม่',
+    'Alt Text อธิบายภาพดีหรือไม่',
+    'Internal Link เชื่อมโยงหัวข้อที่เกี่ยวข้องหรือไม่',
+  ]
+
+  const eeatChecklist = [
+    'มีชื่อผู้เขียนหรือทีมผู้เชี่ยวชาญหรือไม่',
+    'มีหน้า About หรือไม่',
+    'มี Case Study หรือหลักฐานประสบการณ์หรือไม่',
+    'มีข้อมูลติดต่อที่ตรวจสอบได้หรือไม่',
+    'มีแหล่งอ้างอิงที่น่าเชื่อถือหรือไม่',
+    'เนื้อหาแสดงมุมมองจากประสบการณ์จริงหรือไม่',
+  ]
+
+  const entityChecklist = [
+    'แบรนด์อธิบายตัวเองชัดหรือไม่',
+    'ชื่อแบรนด์ใช้สอดคล้องกันทุกช่องทางหรือไม่',
+    'มี Organization Schema หรือไม่',
+    'มี Social Profile เชื่อมโยงหรือไม่',
+    'มีบริการหลักแยกหน้าอย่างชัดเจนหรือไม่',
+    'มีการถูกกล่าวถึงจากเว็บไซต์ภายนอกหรือไม่',
+  ]
+
+  const technicalChecklist = [
+    'หน้าเว็บ Index ได้หรือไม่',
+    'Sitemap ถูกต้องหรือไม่',
+    'Robots.txt ไม่บล็อกหน้าสำคัญหรือไม่',
+    'Schema ไม่มี error หรือไม่',
+    'เว็บไซต์โหลดเร็วหรือไม่',
+    'Mobile ใช้งานดีหรือไม่',
+    'ไม่มี Duplicate หรือ Canonical ผิดหรือไม่',
+  ]
+
+  const measureItems = [
+    { title: 'AI Citation Tracking', body: 'ทดสอบคำถามสำคัญใน ChatGPT, Gemini, Perplexity และ AI Search ว่าเว็บไซต์หรือแบรนด์ถูกกล่าวถึงหรือถูกอ้างอิงหรือไม่' },
+    { title: 'Brand Search', body: 'ดูใน Google Search Console ว่ามีคนค้นชื่อแบรนด์ร่วมกับบริการมากขึ้นหรือไม่ เช่น "ชื่อแบรนด์ GEO", "ชื่อแบรนด์ SEO", "ชื่อแบรนด์ AI SEO"' },
+    { title: 'Referral Traffic', body: 'ตรวจสอบใน GA4 ว่ามี Traffic จาก AI Platform หรือเว็บไซต์ที่เกี่ยวข้องเพิ่มขึ้นหรือไม่' },
+    { title: 'Organic Visibility', body: 'ติดตามอันดับของคำถามสำคัญ เช่น GEO คืออะไร, วิธีทำ GEO, วิธีให้ ChatGPT อ้างอิงเว็บไซต์, AI SEO คืออะไร' },
+    { title: 'Mention Tracking', body: 'ตรวจสอบว่าแบรนด์ถูกพูดถึงบนเว็บไซต์อื่นมากขึ้นหรือไม่ และบริบทที่ถูกพูดถึงเกี่ยวข้องกับหัวข้อที่ต้องการหรือไม่' },
+    { title: 'Prompt Testing', body: 'สร้างชุดคำถามทดสอบ เช่น "แนะนำเว็บไซต์ที่อธิบาย GEO ภาษาไทย", "บริษัทไหนเชี่ยวชาญ GEO ในไทย" แล้วติดตามว่า AI ตอบถึงแบรนด์หรือไม่' },
+  ]
+
+  const misconceptions = [
+    { title: 'GEO ไม่ใช่การทำ SEO แบบเปลี่ยนชื่อ', body: 'GEO ต้องอาศัย SEO เป็นพื้นฐาน แต่เพิ่มมิติของ AI Search, Entity, Citation และ Brand Authority เข้ามา' },
+    { title: 'GEO ไม่ใช่แค่การใส่ Schema', body: 'Schema ช่วยให้ระบบเข้าใจเนื้อหา แต่ถ้าเนื้อหาไม่มีคุณภาพ ไม่มี Authority และไม่มีสัญญาณภายนอก Schema อย่างเดียวไม่พอ' },
+    { title: 'GEO ไม่ได้แทนที่ SEO', body: 'SEO ยังเป็นฐานสำคัญ เพราะ AI Search จำนวนมากยังอาศัยข้อมูลจากเว็บที่ถูกค้นพบและจัดอันดับได้ดี' },
+    { title: 'GEO ไม่ได้เห็นผลทันที', body: 'การทำให้ AI จดจำและเชื่อถือแบรนด์ต้องใช้เวลา ต้องสร้างเนื้อหาอย่างต่อเนื่อง สร้าง Mention และปรับปรุงข้อมูลเป็นระยะ' },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <section className="grid gap-5">
+        <P>
+          การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ ไม่ใช่การใส่คีย์เวิร์ดเพิ่มลงไปในบทความ แต่คือการทำให้ AI เข้าใจว่าเว็บไซต์ของเราเป็นแหล่งข้อมูลที่น่าเชื่อถือ ชัดเจน และเกี่ยวข้องกับคำถามของผู้ใช้มากพอที่จะถูกนำไปใช้เป็นคำตอบหรือแหล่งอ้างอิงใน AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview
+        </P>
+        <P>
+          ในอดีต การทำ SEO มักมุ่งไปที่การทำอันดับบน Google เป็นหลัก แต่พฤติกรรมการค้นหากำลังเปลี่ยนไป ผู้ใช้จำนวนมากเริ่มถามคำถามกับ AI โดยตรง เช่น "บริษัททำ SEO ที่ไหนดี", "GEO คืออะไร", "ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์" หรือ "ธุรกิจควรเริ่มทำ AI SEO จากตรงไหน" คำตอบที่ AI แสดงมักไม่ได้เป็นเพียงลิสต์เว็บไซต์ แต่เป็นคำตอบที่ถูกสรุปจากหลายแหล่ง ดังนั้นเว็บไซต์ที่อยากเติบโตในยุคนี้ต้องคิดมากกว่าอันดับ ต้องทำให้เนื้อหาของตัวเองกลายเป็นข้อมูลที่ AI เข้าใจ เชื่อถือ และเลือกใช้
+        </P>
+      </section>
+
+      <ArticleSection title="GEO คืออะไร">
+        <P>
+          GEO หรือ Generative Engine Optimization คือกระบวนการปรับเว็บไซต์ เนื้อหา โครงสร้างข้อมูล และความน่าเชื่อถือของแบรนด์ เพื่อเพิ่มโอกาสให้ Generative AI และ AI Search เลือกข้อมูลจากเว็บไซต์ของเราไปใช้ในการตอบคำถาม สรุปข้อมูล หรืออ้างอิงเป็นแหล่งข้อมูล
+        </P>
+        <P>
+          ถ้า SEO คือการทำให้เว็บไซต์ติดอันดับบน Search Engine แบบเดิม GEO คือการทำให้เว็บไซต์มีโอกาสถูกเลือกเป็น "คำตอบ" ในระบบค้นหาแบบ AI ซึ่งต่างจาก SERP ทั่วไป เพราะ AI ไม่ได้แสดงผลเป็นลิงก์อย่างเดียว แต่สรุปคำตอบให้ผู้ใช้ทันที
+        </P>
+        <P>
+          ตัวอย่างเช่น ถ้าผู้ใช้ค้นว่า "วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์" Google อาจแสดงบทความหลายอันดับ แต่ถ้าผู้ใช้ถาม ChatGPT หรือ AI Search ระบบจะพยายามสรุปคำตอบให้ทันทีว่า GEO คืออะไร ต้องทำอะไรบ้าง และเว็บไซต์แบบไหนมีโอกาสถูกอ้างอิง ดังนั้นเว็บไซต์ที่มีโครงสร้างคำตอบชัดเจน มีข้อมูลลึก และมีสัญญาณความน่าเชื่อถือสูง จะมีโอกาสถูก AI นำไปใช้มากกว่าเว็บไซต์ที่เขียนกว้าง ๆ หรือเนื้อหาไม่ชัดเจน
+        </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
+          </Link>
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="GEO ต่างจาก SEO และ AEO อย่างไร">
+        <ArticleImage
+          src="/image/blog/how-to-do-geo/seo-aeo-geo.png"
+          alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร"
+        />
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            'SEO ทำให้เว็บถูกค้นเจอบน Search Engine',
+            'AEO ทำให้คำตอบของเว็บถูกหยิบไปแสดง',
+            'GEO ทำให้ AI เข้าใจว่าเว็บน่าใช้เป็นแหล่งข้อมูลในคำตอบเชิงสรุป',
+          ].map((item) => (
+            <div key={item} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-4">
+              <p className="thai-readable font-medium text-neutral-950">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          SEO หรือ Search Engine Optimization คือการปรับเว็บไซต์ให้ติดอันดับใน Search Engine เช่น Google โดยเน้นเรื่องคีย์เวิร์ด โครงสร้างเว็บไซต์ Technical SEO Backlink Content Quality และ User Experience
+        </P>
+        <P>
+          AEO หรือ Answer Engine Optimization คือการทำให้เนื้อหาตอบคำถามได้ชัดเจน เพื่อเพิ่มโอกาสติด Featured Snippet, People Also Ask, FAQ Result และคำตอบสั้น ๆ บน Search Engine
+        </P>
+        <P>
+          GEO หรือ Generative Engine Optimization คือการปรับเนื้อหาและสัญญาณความน่าเชื่อถือให้ AI Search และ Generative AI เข้าใจ เลือกสรุป และอ้างอิงข้อมูลจากเว็บไซต์ของเรา
+        </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
+          </Link>
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไม GEO สำคัญในยุค AI Search">
+        <P>
+          GEO สำคัญเพราะพฤติกรรมการค้นหากำลังเปลี่ยนจากการคลิกลิงก์หลายเว็บ ไปสู่การถาม AI แล้วอ่านคำตอบทันที ผู้ใช้จำนวนมากไม่ได้ต้องการเปิด 10 เว็บไซต์เพื่อหาข้อมูล แต่ต้องการคำตอบที่สรุปแล้ว เข้าใจง่าย และเชื่อถือได้
+        </P>
+        <P>
+          สิ่งนี้ทำให้การแข่งขันไม่ได้อยู่แค่ว่าเว็บไซต์ใครติดอันดับ 1 แต่รวมถึงว่า AI รู้จักเว็บไซต์ของเราหรือไม่ เข้าใจว่าเราเชี่ยวชาญเรื่องอะไรหรือไม่ และมองว่าเราน่าเชื่อถือพอที่จะนำข้อมูลไปใช้หรือไม่
+        </P>
+        <P>
+          สำหรับธุรกิจ GEO จึงช่วยเพิ่มโอกาสในหลายด้าน ได้แก่ การเพิ่มการมองเห็นใน AI Search การสร้างความน่าเชื่อถือของแบรนด์ การเพิ่มโอกาสถูกกล่าวถึงในคำตอบ AI การสนับสนุน SEO เดิม และการสร้าง Authority ระยะยาวในหัวข้อที่ธุรกิจต้องการเป็นเจ้าของ
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ChatGPT เลือกข้อมูลจากเว็บไซต์อย่างไร">
+        <ArticleImage
+          src="/image/blog/how-to-do-geo/how-ai-choose-website.png"
+          alt="ChatGPT และ AI Search เลือกข้อมูลจากเว็บไซต์อย่างไร"
+        />
+        <P>
+          ChatGPT และ AI Search ไม่ได้เลือกข้อมูลจากเว็บไซต์แบบเดียวกับ Google Search 100% ระบบ AI จะพิจารณาหลายปัจจัยร่วมกัน เช่น ความชัดเจนของเนื้อหา ความน่าเชื่อถือของแหล่งข้อมูล ความเกี่ยวข้องกับคำถาม ความสอดคล้องของข้อมูลจากหลายแหล่ง และโครงสร้างของข้อมูลที่อ่านเข้าใจง่าย
+        </P>
+        <P>เว็บไซต์ที่มีโอกาสถูก AI อ้างอิงมักมีลักษณะสำคัญ 6 อย่าง</P>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {[
+            'ตอบคำถามตรงประเด็นตั้งแต่ต้น',
+            'มีโครงสร้างหัวข้อที่ชัดเจน',
+            'มีข้อมูลลึกกว่าบทความทั่วไป',
+            'มีผู้เขียนหรือแบรนด์ที่น่าเชื่อถือ',
+            'มีการเชื่อมโยงกับแหล่งข้อมูลอื่น',
+            'มีสัญญาณภายนอก เช่น Backlink และ Brand Mention',
+          ].map((item) => (
+            <div key={item} className="flex gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
+              <p className="thai-readable text-base text-neutral-700 sm:text-lg">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>ดังนั้น GEO ไม่ใช่การหลอก AI แต่คือการจัดระบบความรู้ของเว็บไซต์ให้ AI เข้าใจง่ายขึ้น</P>
+      </ArticleSection>
+
+      <ArticleSection title="ปัจจัยสำคัญที่ทำให้ ChatGPT อ้างอิงเว็บไซต์">
+        <div className="grid gap-4">
+          {factorItems.map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ปัจจัยที่ {i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์แบบ Step by Step">
+        <ArticleImage
+          src="/image/blog/how-to-do-geo/how-to-do-geo.png"
+          alt="วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์แบบ Step by Step"
+        />
+        <div className="grid gap-4">
+          {steps.map((step) => (
+            <div key={step.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI Citation Optimization Framework">
+        <P>ถ้าต้องการยกระดับ GEO ให้เป็นระบบ ควรใช้ Framework 5 ขั้นตอนนี้</P>
+        <div className="grid gap-4">
+          {frameworkSteps.map((step) => (
+            <div key={step.title} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.label}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema ที่ควรใช้สำหรับ GEO">
+        <div className="grid gap-3">
+          {schemaItems.map((item) => (
+            <div key={item.type} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <h3 className="font-semibold text-neutral-950">{item.type}</h3>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Topical Authority คือหัวใจของ GEO">
+        <P>
+          Topical Authority คือความน่าเชื่อถือของเว็บไซต์ในหัวข้อใดหัวข้อหนึ่ง ถ้าเว็บไซต์มีบทความเกี่ยวกับ GEO เพียงหน้าเดียว AI อาจยังไม่มั่นใจว่าแบรนด์เชี่ยวชาญจริง แต่ถ้าเว็บไซต์มีเนื้อหาครอบคลุมทั้ง GEO, AEO, SEO, AI Search, Schema, Entity SEO, Technical SEO และ Content Strategy ความเชื่อมโยงจะชัดขึ้น
+        </P>
+        <ArticleSubSection title="ตัวอย่าง Content Cluster สำหรับ GEO">
+          <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Pillar Page</p>
+            <p className="thai-readable mt-1 font-medium text-neutral-950">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์</p>
+            <div className="mt-3 grid gap-1">
+              {[
+                'Supporting Page 1: GEO คืออะไร',
+                'Supporting Page 2: GEO ต่างจาก SEO และ AEO อย่างไร',
+                'Supporting Page 3: วิธีทำ AEO ให้ติด AI Overview',
+                'Supporting Page 4: Entity SEO คืออะไร',
+                'Supporting Page 5: Schema Markup สำหรับ SEO และ GEO',
+                'Supporting Page 6: วิธีสร้าง Brand Mention สำหรับ AI Search',
+                'Supporting Page 7: GEO Checklist สำหรับเว็บไซต์ธุรกิจ',
+                'Supporting Page 8: วิธีวัดผล AI Citation',
+              ].map((page) => (
+                <p key={page} className="thai-readable text-sm text-neutral-700">{page}</p>
+              ))}
+            </div>
+          </div>
+          <P>เมื่อทุกหน้าเชื่อมโยงกันด้วย Internal Link ที่ดี เว็บไซต์จะมีโครงสร้างความรู้ที่แข็งแรงขึ้น และ AI จะเข้าใจว่าธุรกิจนี้มีความเกี่ยวข้องกับหัวข้อ GEO จริง</P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="Entity SEO สำหรับ GEO">
+        <P>
+          Entity SEO เป็นหนึ่งในหัวข้อที่สำคัญมากสำหรับ GEO เพราะ AI ต้องเข้าใจตัวตนของแบรนด์ก่อนจะเชื่อมโยงแบรนด์กับคำตอบ ถ้าเว็บไซต์มีเนื้อหาชัดเจนว่าแบรนด์เชี่ยวชาญด้าน SEO, GEO, AEO, Technical SEO, Content Optimization และ AI Search Optimization พร้อมมี Case Study และเนื้อหาสนับสนุน AI จะเข้าใจ Entity ของแบรนด์ได้ดีกว่า
+        </P>
+        <ArticleSubSection title="สิ่งที่ควรทำเพื่อสร้าง Entity">
+          <CheckList items={[
+            'มีหน้า About ที่อธิบายตัวตนและความเชี่ยวชาญ',
+            'มีหน้า Service แยกตามบริการสำคัญ',
+            'มีหน้า Case Study ที่อธิบายปัญหา วิธีทำ และผลลัพธ์',
+            'ใช้ Organization Schema',
+            'ใช้ข้อมูลชื่อแบรนด์ ที่อยู่ และช่องทางติดต่อให้สอดคล้องกัน',
+            'สร้าง Mention จากเว็บไซต์ภายนอกในหัวข้อเดียวกัน',
+          ]} />
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="Brand Mention และ Digital PR">
+        <P>
+          Brand Mention คือการที่ชื่อแบรนด์ถูกกล่าวถึงบนเว็บไซต์หรือแพลตฟอร์มอื่น ไม่ว่าจะมีลิงก์กลับมาหรือไม่ก็ตาม ในมุม GEO การถูกพูดถึงซ้ำ ๆ ในบริบทที่ถูกต้องช่วยให้ AI เชื่อมโยงแบรนด์กับหัวข้อที่ต้องการได้ดีขึ้น
+        </P>
+        <P>
+          ตัวอย่างเช่น ถ้าแบรนด์ต้องการให้ AI เข้าใจว่าเป็นผู้เชี่ยวชาญด้าน GEO แบรนด์ควรถูกกล่าวถึงในบริบทของ SEO, AI Search, Content Optimization, Technical SEO และ Digital Marketing ไม่ใช่ถูกกล่าวถึงแบบกว้าง ๆ โดยไม่มีความเกี่ยวข้อง
+        </P>
+        <P>
+          Digital PR ที่ดีสำหรับ GEO ไม่ใช่แค่การหาลิงก์ แต่คือการสร้างหลักฐานภายนอกว่าแบรนด์มีตัวตนจริง มีความเชี่ยวชาญจริง และถูกพูดถึงในวงการจริง
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="Technical SEO ที่จำเป็นต่อ GEO">
+        <P>
+          แม้ GEO จะเน้น AI Search แต่ Technical SEO ยังสำคัญมาก เพราะถ้าเว็บไซต์ Crawl ยาก Index ไม่ครบ โหลดช้า หรือมีปัญหาโครงสร้าง AI และ Search Engine ก็เข้าใจข้อมูลได้ยาก
+        </P>
+        <ArticleSubSection title="Technical SEO Checklist สำหรับ GEO">
+          <CheckList items={[
+            'ตรวจสอบว่าเว็บไซต์ถูก Crawl และ Index ได้',
+            'ส่ง Sitemap ให้ถูกต้อง',
+            'ตั้งค่า Robots.txt ไม่บล็อกหน้าสำคัญ',
+            'ใช้ Canonical ให้ถูกต้อง',
+            'ลด Duplicate Content',
+            'ปรับ Page Speed และ Core Web Vitals',
+            'ใช้ HTTPS',
+            'ทำ URL ให้สั้น อ่านง่าย และสื่อความหมาย',
+            'ตรวจสอบว่า JavaScript ไม่ทำให้เนื้อหาหลักอ่านไม่ออก',
+            'เพิ่ม Structured Data และทดสอบความถูกต้อง',
+          ]} />
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="GEO Audit Checklist">
+        <ArticleSubSection title="Content Checklist">
+          <CheckList items={contentChecklist} />
+        </ArticleSubSection>
+        <ArticleSubSection title="On-page Checklist">
+          <CheckList items={onPageChecklist} />
+        </ArticleSubSection>
+        <ArticleSubSection title="E-E-A-T Checklist">
+          <CheckList items={eeatChecklist} />
+        </ArticleSubSection>
+        <ArticleSubSection title="Entity Checklist">
+          <CheckList items={entityChecklist} />
+        </ArticleSubSection>
+        <ArticleSubSection title="Technical Checklist">
+          <CheckList items={technicalChecklist} />
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีวัดผล GEO">
+        <P>GEO วัดผลยากกว่า SEO เพราะ AI Search ยังไม่มีเครื่องมือมาตรฐานเหมือน Google Search Console แต่สามารถติดตามได้จากหลายสัญญาณ</P>
+        <div className="grid gap-4">
+          {measureItems.map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างการทำ GEO สำหรับ Digital Agency">
+        <P>ถ้าเป็นเว็บไซต์ Digital Agency ที่ต้องการให้ AI เข้าใจว่าเชี่ยวชาญด้าน SEO, GEO และ AEO ควรวางโครงสร้างเว็บไซต์ดังนี้</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { label: 'หน้า Service หลัก', items: 'SEO Services, GEO Services, AEO Services, Technical SEO, Content Optimization' },
+            { label: 'หน้า Blog หลัก', items: 'GEO คืออะไร, AEO คืออะไร, วิธีทำ AI SEO, วิธีทำ Schema, วิธีวัดผล SEO' },
+            { label: 'หน้า Case Study', items: 'เคสเพิ่ม Organic Traffic, เคสแก้ Technical SEO, เคส Content Refresh, เคสเพิ่มการมองเห็นใน AI Search' },
+            { label: 'หน้า Proof', items: 'About, Client Experience, Methodology, Framework, FAQ' },
+          ].map((col) => (
+            <div key={col.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{col.label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{col.items}</p>
+            </div>
+          ))}
+        </div>
+        <P>เมื่อเว็บไซต์มีทั้งบริการ บทความ Case Study และ Framework AI จะเข้าใจได้ดีขึ้นว่าแบรนด์ไม่ได้แค่พูดเรื่อง GEO แต่มีระบบการทำงานจริง</P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
+          </Link>
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="ความเข้าใจผิดเกี่ยวกับ GEO">
+        <div className="grid gap-4">
+          {misconceptions.map((item) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="สรุปวิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์">
+        <P>
+          การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ต้องเริ่มจากการทำให้เนื้อหาตอบคำถามได้ชัดเจน มีโครงสร้างอ่านง่าย มี Answer First มี FAQ มี Schema และมีข้อมูลเชิงลึกกว่าคู่แข่ง จากนั้นต้องสร้างความน่าเชื่อถือผ่าน E-E-A-T, Entity SEO, Topical Authority, Brand Mention และ Technical SEO ที่แข็งแรง
+        </P>
+        <P>
+          เว็บไซต์ที่มีโอกาสถูก AI อ้างอิงไม่ใช่เว็บไซต์ที่พูดเยอะที่สุด แต่เป็นเว็บไซต์ที่ AI เข้าใจง่ายที่สุด เชื่อถือได้มากที่สุด และเกี่ยวข้องกับคำถามของผู้ใช้มากที่สุด
+        </P>
+        <P>
+          ถ้าธุรกิจต้องการเติบโตในยุค AI Search สิ่งที่ควรทำตั้งแต่วันนี้คือ เลือกหัวข้อที่ต้องการเป็นเจ้าของ สร้าง Pillar Content เขียน Supporting Content เชื่อม Internal Link เพิ่ม Schema สร้าง Brand Mention และวัดผล AI Citation อย่างต่อเนื่อง
+        </P>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับการทำ GEO" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -1090,6 +1559,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'geo-agency') {
     return <GeoAgencyArticle post={post} />
+  }
+  if (post.bodyVariant === 'how-to-do-geo') {
+    return <HowToDoGeoArticle post={post} />
   }
 
   return (

@@ -18,7 +18,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo'
   cta?: {
     headline: string
     description: string
@@ -162,6 +162,59 @@ export const geoAgencyFaqs: FAQItem[] = [
   },
 ]
 
+export const howToDoGeoFaqs: FAQItem[] = [
+  {
+    question: 'GEO คืออะไร',
+    answer:
+      'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้เหมาะกับ AI Search เพื่อเพิ่มโอกาสให้ AI เข้าใจ เลือกสรุป และอ้างอิงข้อมูลจากเว็บไซต์ของเราในคำตอบ',
+  },
+  {
+    question: 'GEO ต่างจาก SEO อย่างไร',
+    answer:
+      'SEO เน้นเพิ่มอันดับและการมองเห็นบน Search Engine ส่วน GEO เน้นเพิ่มโอกาสให้ AI Search นำข้อมูลจากเว็บไซต์ไปใช้ตอบคำถามหรืออ้างอิง ทั้งสองอย่างควรทำร่วมกัน',
+  },
+  {
+    question: 'GEO ต่างจาก AEO อย่างไร',
+    answer:
+      'AEO เน้นการทำคำตอบให้ชัดเพื่อรองรับ Featured Snippet, People Also Ask และคำตอบสั้น ส่วน GEO ขยายไปถึงการทำให้ Generative AI เข้าใจและเลือกเว็บไซต์เป็นแหล่งข้อมูล',
+  },
+  {
+    question: 'ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์',
+    answer:
+      'ควรสร้างเนื้อหาที่ตอบคำถามชัดเจน มีโครงสร้างหัวข้อดี ใช้ Schema Markup เพิ่ม E-E-A-T สร้าง Topical Authority และทำให้แบรนด์ถูกกล่าวถึงจากแหล่งข้อมูลภายนอกที่น่าเชื่อถือ',
+  },
+  {
+    question: 'Schema ช่วยให้ ChatGPT อ้างอิงเว็บไซต์หรือไม่',
+    answer:
+      'Schema ช่วยให้ระบบเข้าใจประเภทและบริบทของเนื้อหาได้ดีขึ้น แต่ไม่ใช่ปัจจัยเดียว ต้องทำร่วมกับคุณภาพเนื้อหา ความน่าเชื่อถือ และ Authority ของแบรนด์',
+  },
+  {
+    question: 'Backlink ยังสำคัญกับ GEO หรือไม่',
+    answer:
+      'Backlink ยังสำคัญ เพราะเป็นสัญญาณความน่าเชื่อถือจากเว็บไซต์อื่น แต่ GEO ยังต้องให้ความสำคัญกับ Brand Mention, Entity, Content Quality และความชัดเจนของคำตอบด้วย',
+  },
+  {
+    question: 'เว็บไซต์เล็กทำ GEO ได้หรือไม่',
+    answer:
+      'เว็บไซต์เล็กทำ GEO ได้ โดยควรเริ่มจากหัวข้อเฉพาะทางที่แบรนด์เชี่ยวชาญจริง สร้าง Content Cluster ให้ลึกกว่าเว็บใหญ่ และเพิ่มความน่าเชื่อถือผ่านประสบการณ์จริงหรือข้อมูลเฉพาะ',
+  },
+  {
+    question: 'GEO ใช้เวลานานแค่ไหนถึงเห็นผล',
+    answer:
+      'GEO ไม่มีระยะเวลาตายตัว เพราะขึ้นอยู่กับคุณภาพเว็บไซต์ ความแข็งแรงของแบรนด์ การถูกกล่าวถึง และความสามารถในการ Crawl หรือ Index ของเนื้อหา โดยทั่วไปควรทำต่อเนื่องและวัดผลเป็นรายเดือน',
+  },
+  {
+    question: 'ต้องทำ Blog ถึงจะทำ GEO ได้ไหม',
+    answer:
+      'Blog ช่วยสร้าง Topical Authority ได้ดี แต่ไม่ใช่วิธีเดียว หน้า Service, Product, Category, FAQ, Case Study และ About Page ก็สามารถปรับให้รองรับ GEO ได้เช่นกัน',
+  },
+  {
+    question: 'GEO เหมาะกับธุรกิจประเภทไหน',
+    answer:
+      'GEO เหมาะกับธุรกิจที่ต้องการให้แบรนด์ถูกค้นพบในยุค AI Search เช่น Digital Agency, SaaS, E-commerce, โรงแรม, การศึกษา, สุขภาพ, การเงิน, B2B และ Local Business',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search',
@@ -260,19 +313,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'SEO, AEO and GEO: Building a Modern Search Strategy',
-    slug: 'modern-search-strategy',
-    category: 'Strategy',
+    title: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]',
+    slug: 'how-to-do-geo',
+    category: 'GEO',
     excerpt:
-      'A simple framework for combining SEO, AEO and GEO into one practical search strategy.',
-    readingTime: '5 min read',
-    publishedDate: '2026-05-20',
+      'การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ ไม่ใช่การใส่คีย์เวิร์ดเพิ่มลงไปในบทความ แต่คือการทำให้ AI เข้าใจว่าเว็บไซต์ของเราเป็นแหล่งข้อมูลที่น่าเชื่อถือ ชัดเจน และเกี่ยวข้องกับคำถามของผู้ใช้มากพอที่จะถูกนำไปใช้เป็นคำตอบหรือแหล่งอ้างอิงใน AI Search',
+    readingTime: '20 min read',
+    publishedDate: '2026-06-01',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'SEO, AEO and GEO: Building a Modern Search Strategy | Saralak Search',
+    metaTitle: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]',
     metaDescription:
-      'See how SEO, AEO and GEO fit together in a modern search strategy for visibility, leads and AI readability.',
+      'คู่มือครบจบวิธีทำ GEO ให้ ChatGPT และ AI Search อ้างอิงเว็บไซต์ ครอบคลุมตั้งแต่ Content Strategy, Schema, Entity SEO, Brand Mention ไปจนถึงการวัดผล',
+    heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.png',
+    heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.png',
+    heroImageAlt: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ คู่มือ AI SEO สำหรับธุรกิจ',
+    ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.png',
+    aiSummary: [
+      'GEO คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือให้ AI Search เข้าใจ อ้างอิง และแนะนำธุรกิจในคำตอบ',
+      'ChatGPT เลือกข้อมูลจากเว็บไซต์ที่ตอบคำถามชัดเจน มีโครงสร้างดี มี E-E-A-T และมีสัญญาณภายนอกสนับสนุน',
+      'วิธีทำ GEO มี 8 ขั้นตอนหลัก ตั้งแต่เลือก Topic สร้าง Pillar Content ทำ Internal Link เพิ่ม Schema ไปจนถึงสร้าง Brand Mention',
+      'Topical Authority, Entity SEO และ Brand Mention คือหัวใจสำคัญที่ทำให้ AI จดจำและเลือกแบรนด์เป็นแหล่งข้อมูล',
+    ],
+    faqs: howToDoGeoFaqs,
+    bodyVariant: 'how-to-do-geo',
+    cta: {
+      headline: 'ต้องการให้ ChatGPT อ้างอิงเว็บไซต์ของธุรกิจคุณ?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน พร้อมระบุโอกาสและขั้นตอนที่ควรเริ่มก่อนอย่างเป็นระบบ',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
   },
 ]
 
