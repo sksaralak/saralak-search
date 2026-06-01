@@ -351,6 +351,12 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           พูดให้เข้าใจง่าย SEO คือการทำให้เว็บติดอันดับ AEO คือการทำให้เนื้อหาตอบคำถามได้ดี ส่วน GEO คือการทำให้ AI เข้าใจ เชื่อถือ และเลือกแบรนด์ของเราไปแนะนำในคำตอบ
         </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
+          </Link>
+        </p>
       </ArticleSection>
 
       <ArticleSection title="ใครควรเริ่มทำ GEO?">
@@ -590,6 +596,12 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           ที่ตอบคำถามหลักใน 40–80 คำ การใช้หัวข้อแบบคำถาม การทำ FAQ
           และการจัดโครงสร้างคำตอบให้ AI สามารถดึงไปใช้ได้ง่าย
         </P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
+          </Link>
+        </p>
       </ArticleSection>
 
       <ArticleSection title="GEO คืออะไร">
@@ -1006,6 +1018,12 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
               SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
             </Link>
           </p>
+          <p className="thai-readable text-sm text-neutral-500">
+            อ่านเพิ่มเติม:{' '}
+            <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+              AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
+            </Link>
+          </p>
         </div>
       </ArticleSection>
 
@@ -1113,6 +1131,313 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>แต่ถ้าต้องการทำ GEO แบบเชื่อม SEO, AEO, Entity SEO, Technical SEO และ AI Visibility เข้าด้วยกัน โดยเน้นให้แบรนด์ถูก AI Search เข้าใจ พูดถึง และมีโอกาสถูกเลือกเป็นคำตอบ Saralak Search คือหนึ่งในตัวเลือกที่เหมาะกับธุรกิจที่ต้องการวางรากฐาน Search Visibility สำหรับอนาคต</P>
         <P>GEO ไม่ใช่แค่เทคนิคใหม่ของ SEO แต่คือการเตรียมแบรนด์ให้พร้อมสำหรับอนาคตของ Search ที่ผู้ใช้งานไม่ได้ค้นหาแค่บน Google แต่ถาม AI เพื่อช่วยเปรียบเทียบ คัดเลือก และตัดสินใจมากขึ้นเรื่อย ๆ</P>
       </ArticleSection>
+    </article>
+  )
+}
+
+function WhatIsAeoArticle({ post }: { post: BlogPost }) {
+  const compareRows = [
+    ['ชื่อเต็ม', 'Search Engine Optimization', 'Answer Engine Optimization', 'Generative Engine Optimization'],
+    ['เป้าหมายหลัก', 'ทำให้เว็บไซต์ติดอันดับบน Google', 'ทำให้เนื้อหาถูกเลือกเป็นคำตอบ', 'ทำให้แบรนด์ถูก AI แนะนำหรืออ้างอิง'],
+    ['โฟกัสหลัก', 'Keyword, Ranking, Traffic', 'Question, Answer, Structured Content', 'Brand Entity, Authority, Mentions, Citations'],
+    ['ช่องทางที่เกี่ยวข้อง', 'Google Search, Bing Search', 'Google AI Overview, Featured Snippet, People Also Ask, Voice Search', 'ChatGPT, Gemini, Perplexity, AI Search Tools'],
+    ['รูปแบบการแสดงผล', 'ลิงก์เว็บไซต์บนหน้าผลการค้นหา', 'กล่องคำตอบหรือคำตอบที่ AI สรุป', 'คำแนะนำ คำอ้างอิง หรือการพูดถึงแบรนด์โดย AI'],
+    ['ตัวอย่าง KPI', 'Ranking, Organic Traffic, CTR, Clicks', 'Featured Snippet, AI Overview Visibility, Answer Visibility', 'AI Mention, AI Citation, Brand Recommendation'],
+    ['เนื้อหาที่เหมาะ', 'บทความ SEO, Landing Page, Category Page', 'FAQ, How-to, Definition, Comparison, Checklist', 'Brand Page, Expert Content, Case Study, Digital PR'],
+    ['เหมาะกับใคร', 'ทุกเว็บไซต์ที่ต้องการ Organic Traffic', 'เว็บไซต์ที่ต้องการเป็นคำตอบของคำถามสำคัญ', 'แบรนด์ที่ต้องการถูก AI พูดถึงหรือแนะนำ'],
+  ]
+  const compareHeadings = ['หัวข้อ', 'SEO', 'AEO', 'GEO']
+
+  const howToSteps = [
+    { num: '01', title: 'เริ่มจากหา Question Keywords', body: 'Question Keywords คือคีย์เวิร์ดที่อยู่ในรูปแบบคำถาม เช่น "AEO คืออะไร", "ทำไงให้ติด AI Overview" วิธีหาได้จาก People Also Ask บน Google, Search Console, Ahrefs, SEMrush, คำถามจากลูกค้าจริง, Social Media และ Community หลักสำคัญคือต้องคิดจากคำถามจริงที่ลูกค้าอยากรู้ ไม่ใช่แค่มุมของเจ้าของเว็บไซต์' },
+    { num: '02', title: 'ตอบคำถามให้ชัดในช่วงต้นของเนื้อหา', body: 'ถ้าหัวข้อคือ "AEO คืออะไร" คำตอบควรอยู่ในช่วงต้นของบทความ ไม่ควรเกริ่นยาวเกินไปจน AI หรือผู้อ่านหาคำตอบไม่เจอ คำตอบที่ดีคือสั้น ชัด และตอบตรงคำถามทันที เช่น "AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI เข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งาน"' },
+    { num: '03', title: 'ใช้หัวข้อ H2 และ H3 เป็นคำถาม', body: 'โครงสร้างหัวข้อมีผลมากต่อการทำ AEO เพราะช่วยให้ Search Engine เข้าใจว่าแต่ละส่วนของบทความกำลังตอบคำถามอะไร เช่น "AEO คืออะไร?", "AEO ต่างจาก SEO อย่างไร?", "ทำไงให้ติด AEO?" หัวข้อแบบคำถามทำให้เนื้อหาเหมาะกับ Featured Snippet, People Also Ask และ AI Overview มากขึ้น' },
+    { num: '04', title: 'เขียนคำตอบแบบสั้นก่อน แล้วค่อยขยายความ', body: 'รูปแบบที่เหมาะกับ AEO คือ "ตอบสั้นก่อน อธิบายต่อทีหลัง" โดยย่อหน้าแรกตอบคำถามแบบตรงประเด็น ย่อหน้าถัดไปอธิบายเพิ่มเติม จากนั้นใช้ Bullet สรุปประเด็นสำคัญ และเพิ่มตัวอย่างเพื่อให้เข้าใจง่ายขึ้น' },
+    { num: '05', title: 'ใช้ตารางเปรียบเทียบ', body: 'ตารางช่วยให้ผู้ใช้งานเข้าใจข้อมูลซับซ้อนได้เร็ว และช่วยให้ AI เข้าใจความสัมพันธ์ของข้อมูลได้ดีขึ้น เหมาะกับหัวข้อ เช่น SEO vs AEO vs GEO, AEO Checklist, ประเภทคอนเทนต์ที่เหมาะกับ AEO และ KPI สำหรับวัดผล AEO' },
+    { num: '06', title: 'เพิ่ม FAQ Section', body: 'FAQ เป็นส่วนสำคัญมากสำหรับ AEO เพราะตรงกับพฤติกรรมการค้นหาของผู้ใช้งานที่มักถามเป็นคำถาม FAQ ที่ดีต้องมีคำถามชัดเจน คำตอบไม่ยาวเกินไป ตอบตรงประเด็น และมีคีย์เวิร์ดอย่างเป็นธรรมชาติ' },
+    { num: '07', title: 'ใช้ Schema Markup', body: 'Schema Markup คือโค้ดที่ช่วยบอก Search Engine ว่าเนื้อหาบนหน้าเว็บคืออะไร Schema ที่เหมาะกับ AEO ได้แก่ Article, FAQ, HowTo, Organization, LocalBusiness, Product, Review และ Breadcrumb Schema ไม่ได้การันตีว่าจะติด AEO ทันที แต่ช่วยเพิ่มความเข้าใจของ Search Engine' },
+    { num: '08', title: 'ทำ Internal Link ให้เป็นระบบ', body: 'Internal Link ช่วยให้ Search Engine เข้าใจความสัมพันธ์ระหว่างหัวข้อต่าง ๆ ในเว็บไซต์ บทความ "AEO คืออะไร" ควรลิงก์ไปยังหน้า SEO คืออะไร, GEO คืออะไร, บริการ SEO, บริการ AEO และ Content Strategy เพื่อให้ Google เข้าใจว่าเว็บไซต์มีความเชี่ยวชาญจริง' },
+    { num: '09', title: 'เพิ่ม E-E-A-T ให้เนื้อหา', body: 'E-E-A-T คือ Experience, Expertise, Authoritativeness และ Trustworthiness ควรมีชื่อผู้เขียนหรือทีมผู้เชี่ยวชาญ ประสบการณ์จริง ตัวอย่างจากงานจริง Case Study วันที่อัปเดตเนื้อหา แหล่งอ้างอิงที่น่าเชื่อถือ และข้อมูลบริษัทหรือช่องทางติดต่อที่ชัดเจน' },
+    { num: '10', title: 'ทำให้เนื้อหาอ่านง่ายทั้งคนและ AI', body: 'เนื้อหาที่ดีสำหรับ AEO ไม่ควรเขียนเป็นก้อนยาวติดกัน ควรใช้ย่อหน้าสั้น Bullet Point Numbered List ตาราง มีสรุปท้ายหัวข้อ ใช้คำง่าย และตอบคำถามให้ตรงก่อนขยายความ' },
+  ]
+
+  const mistakes = [
+    { title: 'เกริ่นนานเกินไปก่อนตอบคำถาม', body: 'ถ้าผู้ใช้งานค้นหา "AEO คืออะไร" แต่บทความใช้เวลาหลายย่อหน้ากว่าจะตอบ ระบบอาจมองว่าเนื้อหาไม่ตรงพอ' },
+    { title: 'ใช้ภาษากว้างและไม่ชัด', body: 'คำตอบที่ดีต้องชัดเจน ไม่ควรใช้คำทั่วไปมากเกินไป เช่น "AEO คือกลยุทธ์ที่ช่วยเพิ่มประสิทธิภาพในการทำการตลาดออนไลน์" เพราะยังไม่อธิบายว่า AEO ทำอะไรจริง ๆ' },
+    { title: 'ไม่มีโครงสร้างหัวข้อ', body: 'บทความที่ไม่มี H2, H3, Bullet หรือ FAQ จะทำให้ทั้งคนอ่านและ Search Engine เข้าใจยาก' },
+    { title: 'ไม่มีความน่าเชื่อถือ', body: 'ถ้าเนื้อหาไม่มีผู้เขียน ไม่มีแหล่งอ้างอิง ไม่มีประสบการณ์จริง หรือไม่มีข้อมูลบริษัท อาจทำให้ระบบประเมินความน่าเชื่อถือต่ำลง' },
+    { title: 'เขียนเพื่อใส่คีย์เวิร์ดมากกว่าตอบคำถาม', body: 'การใส่คีย์เวิร์ดเยอะไม่ได้แปลว่าจะติด AEO ถ้าเนื้อหาไม่ตอบคำถามจริง' },
+    { title: 'ไม่อัปเดตเนื้อหา', body: 'หัวข้อที่เกี่ยวกับ AI Search เปลี่ยนเร็วมาก หากบทความไม่อัปเดต อาจเสียโอกาสให้เว็บไซต์ที่ให้ข้อมูลใหม่กว่า' },
+  ]
+
+  const measureItems = [
+    'จำนวนคีย์เวิร์ดที่ติด Featured Snippet',
+    'จำนวนหน้าที่ปรากฏใน AI Overview',
+    'Impression จาก Google Search Console',
+    'CTR ของคำถามสำคัญ',
+    'Ranking ของ Question Keywords',
+    'Organic Traffic จากบทความเชิงคำถาม',
+    'Brand Search Volume',
+    'Conversion จาก Organic Search',
+    'การถูกอ้างอิงหรือพูดถึงโดย AI Search Tools',
+  ]
+
+  const aeoChecklist = [
+    { item: 'มีคำตอบชัดใน 100 คำแรก', detail: 'ตอบคำถามหลักตั้งแต่ต้นบทความ' },
+    { item: 'ใช้ H2/H3 เป็นคำถาม', detail: 'ช่วยให้ Search Engine เข้าใจ Intent' },
+    { item: 'มี FAQ Section', detail: 'รองรับ People Also Ask และ AI Answer' },
+    { item: 'มี Schema Markup', detail: 'ช่วยให้ Search Engine เข้าใจโครงสร้างข้อมูล' },
+    { item: 'มี Internal Link', detail: 'เชื่อมโยงบทความกับหน้าอื่นในเว็บไซต์' },
+    { item: 'มี Author หรือ Expert Signal', detail: 'เพิ่มความน่าเชื่อถือ' },
+    { item: 'มีข้อมูลอัปเดต', detail: 'แสดงว่าเนื้อหาไม่เก่า' },
+    { item: 'มีตารางหรือ Bullet', detail: 'ทำให้ข้อมูลอ่านง่ายและสรุปง่าย' },
+    { item: 'ตอบ Search Intent ครบ', detail: 'ครอบคลุมคำถามที่ผู้ใช้งานต้องการรู้' },
+    { item: 'ใช้ภาษาง่าย', detail: 'ช่วยให้ทั้งคนและ AI เข้าใจเร็ว' },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="AEO คืออะไร?">
+        <P>AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และระบบ AI สามารถเข้าใจข้อมูลของเราได้ง่าย และมีโอกาสเลือกข้อมูลจากเว็บไซต์ของเราไปใช้เป็นคำตอบให้กับผู้ใช้งาน</P>
+        <P>พูดให้ง่ายที่สุด AEO คือการทำให้เว็บไซต์ของเรา "ตอบคำถามได้ดีที่สุด" จน Google, AI Overview, Featured Snippet, Voice Search หรือ AI Assistant มีโอกาสนำข้อมูลของเราไปแสดงเป็นคำตอบ</P>
+        <P>ในอดีต การทำ SEO มักโฟกัสที่การทำให้เว็บไซต์ติดอันดับบนหน้า Google แต่พฤติกรรมการค้นหาในปัจจุบันเปลี่ยนไปมาก ผู้ใช้งานไม่ได้ต้องการแค่ลิงก์เว็บไซต์ แต่ต้องการคำตอบที่เร็ว ชัด และเข้าใจง่าย เว็บไซต์ที่ตอบคำถามได้ดี มีโครงสร้างชัดเจน และน่าเชื่อถือ จึงมีโอกาสถูก Search Engine และ AI เลือกไปแสดงมากกว่า</P>
+        <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] px-6 py-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สรุปแบบเข้าใจง่าย</p>
+          <p className="thai-readable mt-2 font-medium text-neutral-950">AEO คือการทำให้เนื้อหาบนเว็บไซต์กลายเป็นคำตอบที่ Search Engine และ AI เข้าใจง่าย เชื่อถือได้ และเลือกนำไปแสดงให้ผู้ใช้งาน</p>
+        </div>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+            SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
+          </Link>
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไม AEO ถึงสำคัญ?">
+        <P>AEO สำคัญเพราะวิธีที่ผู้คนค้นหาข้อมูลกำลังเปลี่ยนไป จากเดิมที่ผู้ใช้งานค้นหาใน Google แล้วเลือกคลิกเว็บไซต์เอง ตอนนี้ Search Engine และ AI เริ่มสรุปคำตอบให้ผู้ใช้งานทันทีบนหน้าผลการค้นหา</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {['Google AI Overview', 'Featured Snippet', 'People Also Ask', 'Knowledge Panel', 'Voice Search Answer', 'AI Assistant Answer'].map((item) => (
+            <div key={item} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+              <p className="font-medium text-neutral-950">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>เมื่อคำตอบถูกแสดงอยู่บนหน้าผลการค้นหา ผู้ใช้งานอาจไม่จำเป็นต้องคลิกเข้าเว็บไซต์เหมือนเดิม เว็บไซต์ที่ไม่ได้ถูกเลือกเป็นแหล่งข้อมูลจึงอาจเสียโอกาสในการมองเห็น ในทางกลับกัน เว็บไซต์ที่ทำ AEO ได้ดีจะมีโอกาสถูกนำไปใช้เป็นคำตอบก่อนที่ผู้ใช้งานจะตัดสินใจคลิกเว็บไซต์อื่น</P>
+        <ArticleSubSection title="ประโยชน์ของ AEO ต่อธุรกิจ">
+          <CheckList items={[
+            'เพิ่มโอกาสให้แบรนด์ถูกมองเห็นใน AI Overview และ Featured Snippet',
+            'ช่วยให้เว็บไซต์ดูน่าเชื่อถือมากขึ้น เพราะถูกเลือกเป็นคำตอบ',
+            'เพิ่มโอกาสให้ผู้ใช้งานจดจำแบรนด์ตั้งแต่ช่วงค้นหาข้อมูล',
+            'ช่วยให้เนื้อหาเข้าใจง่ายทั้งสำหรับคนอ่านและ Search Engine',
+            'รองรับพฤติกรรมการค้นหาด้วยเสียงและ AI Assistant',
+            'ช่วยต่อยอดการทำ SEO, AEO และ GEO ให้ทำงานร่วมกันได้ดีขึ้น',
+          ]} />
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="AEO ทำงานอย่างไร?">
+        <ArticleImage src="/image/blog/what-is-aeo/how-aeo-work.png" alt="AEO ทำงานอย่างไร — 5 ขั้นตอน" />
+        <P>การทำงานของ AEO สามารถอธิบายแบบง่าย ๆ ได้เป็น 5 ขั้นตอน</P>
+        {[
+          { num: '1', title: 'ผู้ใช้งานถามคำถาม', body: 'ผู้ใช้งานค้นหาด้วยคีย์เวิร์ดแบบคำถาม เช่น "AEO คืออะไร", "ทำไงให้ติด AEO", "SEO กับ AEO ต่างกันยังไง" หรือ "ทำยังไงให้ติด Google AI Overview"' },
+          { num: '2', title: 'Search Engine หรือ AI วิเคราะห์ความหมายของคำถาม', body: 'ระบบไม่ได้ดูแค่คำที่พิมพ์ แต่พยายามเข้าใจความต้องการจริงของผู้ใช้งาน หรือที่เรียกว่า Search Intent เช่น คนที่ค้นหา "AEO คือ" อาจต้องการรู้ความหมายแบบสั้น ๆ ส่วนคนที่ค้นหา "ทำไงให้ติด AEO" ต้องการวิธีทำแบบเป็นขั้นตอน' },
+          { num: '3', title: 'ระบบค้นหาแหล่งข้อมูลที่เกี่ยวข้อง', body: 'Google หรือ AI จะประเมินว่าเว็บไซต์ไหนมีข้อมูลที่เกี่ยวข้อง ชัดเจน และน่าเชื่อถือพอจะนำไปใช้ตอบคำถาม' },
+          { num: '4', title: 'ระบบเลือกคำตอบที่เข้าใจง่ายที่สุด', body: 'เนื้อหาที่มีโครงสร้างดี มีคำตอบชัด มีหัวข้อย่อย มี FAQ และมีข้อมูลที่ตรงกับคำถาม จะมีโอกาสถูกเลือกมากขึ้น' },
+          { num: '5', title: 'คำตอบถูกแสดงให้ผู้ใช้งาน', body: 'คำตอบอาจแสดงในหลายรูปแบบ เช่น AI Overview, Featured Snippet, Answer Box หรือคำตอบจาก AI Assistant' },
+        ].map((item) => (
+          <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ขั้นตอนที่ {item.num}</p>
+            <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+          </div>
+        ))}
+      </ArticleSection>
+
+      <ArticleSection title="AEO ต่างจาก SEO อย่างไร?">
+        <P>SEO และ AEO มีความเกี่ยวข้องกัน แต่ไม่ได้เหมือนกันทั้งหมด ถ้า SEO คือการทำให้เว็บไซต์ "ถูกค้นเจอ" AEO คือการทำให้เนื้อหา "ถูกหยิบไปตอบ"</P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {['SEO ทำให้เว็บถูกค้นเจอบน Search Engine', 'AEO ทำให้เนื้อหาถูกเลือกเป็นคำตอบ', 'GEO ทำให้แบรนด์ถูก AI แนะนำและอ้างอิง'].map((item) => (
+            <div key={item} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-4">
+              <p className="thai-readable font-medium text-neutral-950">{item}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-3 lg:hidden">
+          {compareRows.map((row) => (
+            <article key={row[0]} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <h3 className="thai-readable font-semibold leading-7 text-neutral-950">{row[0]}</h3>
+              <div className="mt-3 grid gap-3">
+                {row.slice(1).map((cell, i) => (
+                  <div key={`${row[0]}-${compareHeadings[i + 1]}`}>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{compareHeadings[i + 1]}</p>
+                    <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{cell}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
+          <table className="min-w-[800px] divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6] text-neutral-950">
+              <tr>{compareHeadings.map((h) => <th key={h} scope="col" className="px-4 py-3 font-semibold">{h}</th>)}</tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200 text-neutral-700">
+              {compareRows.map((row) => (
+                <tr key={row[0]}>
+                  {row.map((cell, i) => (
+                    <td key={cell} className={`thai-readable px-4 py-4 align-top leading-6 ${i === 0 ? 'font-semibold text-neutral-950' : ''}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AEO เหมาะกับเว็บไซต์แบบไหน?">
+        <P>AEO เหมาะกับเว็บไซต์ที่มีข้อมูลที่ผู้ใช้งานมักค้นหาในรูปแบบคำถาม โดยเฉพาะธุรกิจที่ต้องให้ความรู้ก่อนขายสินค้า หรือธุรกิจที่ผู้ใช้งานต้องเปรียบเทียบก่อนตัดสินใจ</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            'เว็บไซต์บริการ เช่น เอเจนซี่ SEO, คลินิก, บริษัทกฎหมาย, ที่ปรึกษาธุรกิจ',
+            'เว็บไซต์ท่องเที่ยว เช่น โรงแรม เที่ยวบิน กิจกรรม ร้านอาหาร',
+            'เว็บไซต์สุขภาพและความงาม',
+            'เว็บไซต์การเงิน ประกัน สินเชื่อ ภาษี',
+            'เว็บไซต์การศึกษา คอร์สเรียน หรือบทความให้ความรู้',
+            'เว็บไซต์ SaaS หรือซอฟต์แวร์',
+            'เว็บไซต์ eCommerce ที่มีสินค้าให้เปรียบเทียบ',
+            'เว็บไซต์ Local Business ที่ลูกค้ามักถามคำถามก่อนติดต่อ',
+          ].map((item) => (
+            <div key={item} className="flex gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
+              <p className="thai-readable text-base text-neutral-700 sm:text-lg">{item}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไงให้ติด AEO?">
+        <ArticleImage src="/image/blog/what-is-aeo/how-to-do-aeo.png" alt="วิธีทำ AEO ให้ติด Google AI Overview และ Featured Snippet" />
+        <P>การทำให้เว็บไซต์มีโอกาสติด AEO ไม่ใช่แค่การใส่คีย์เวิร์ดซ้ำ ๆ แต่ต้องทำให้เนื้อหาตอบคำถามได้ดี มีโครงสร้างชัด และมีความน่าเชื่อถือ</P>
+        <div className="grid gap-4">
+          {howToSteps.map((step) => (
+            <div key={step.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AEO Content Structure ที่แนะนำ">
+        <ArticleImage src="/image/blog/what-is-aeo/content-for-aeo.png" alt="โครงสร้างเนื้อหาที่เหมาะกับ AEO" />
+        <P>โครงสร้างบทความที่เหมาะกับคีย์เวิร์ด "AEO คือ" ควรครอบคลุมหัวข้อเหล่านี้</P>
+        <CheckList items={[
+          'AEO คืออะไร?',
+          'AEO ย่อมาจากอะไร?',
+          'ทำไม AEO ถึงสำคัญ?',
+          'AEO ทำงานอย่างไร?',
+          'AEO ต่างจาก SEO อย่างไร?',
+          'AEO ต่างจาก GEO อย่างไร?',
+          'SEO, AEO และ GEO ควรทำร่วมกันอย่างไร?',
+          'ทำไงให้ติด AEO?',
+          'AEO Checklist',
+          'ตัวอย่างคอนเทนต์ที่เหมาะกับ AEO',
+          'ข้อผิดพลาดที่ทำให้ไม่ติด AEO',
+          'วิธีวัดผล AEO',
+          'FAQ',
+          'สรุปและ CTA',
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="AEO Checklist สำหรับเว็บไซต์">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[600px] divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['รายการตรวจสอบ', 'รายละเอียด'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {aeoChecklist.map((row) => (
+                <tr key={row.item}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{row.item}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{row.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อผิดพลาดที่ทำให้เว็บไซต์ไม่ติด AEO">
+        <div className="grid gap-4">
+          {mistakes.map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีวัดผล AEO">
+        <P>การวัดผล AEO อาจไม่ตรงไปตรงมาเหมือน SEO แบบเดิม เพราะบางครั้งผู้ใช้งานเห็นคำตอบแล้วอาจไม่คลิก แต่ยังจดจำแบรนด์หรือใช้ข้อมูลของเราในการตัดสินใจ ตัวชี้วัดที่ควรดู ได้แก่</P>
+        <CheckList items={measureItems} />
+        <P>สำหรับ AEO ไม่ควรวัดแค่ Traffic อย่างเดียว แต่ควรวัด Visibility และ Brand Influence ด้วย</P>
+      </ArticleSection>
+
+      <ArticleSection title="SEO, AEO และ GEO ต้องทำงานร่วมกันอย่างไร?">
+        <P>การทำ SEO, AEO และ GEO ควรเป็นระบบเดียวกัน ไม่ใช่แยกกันทำคนละทาง</P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            { label: 'SEO', desc: 'ทำให้เว็บไซต์มีพื้นฐานแข็งแรง Technical SEO, Indexing, Content Quality และ Internal Link' },
+            { label: 'AEO', desc: 'เปลี่ยนเนื้อหาให้กลายเป็นคำตอบ โดยจัดโครงสร้างเป็นคำถาม คำตอบ FAQ ตาราง และ Schema' },
+            { label: 'GEO', desc: 'ทำให้แบรนด์มีความน่าเชื่อถือมากพอที่ AI จะจดจำ อ้างอิง และแนะนำ เช่น Brand Mention, Case Study และ Digital PR' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-teal-900">{item.label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>ถ้าทำแค่ SEO เว็บไซต์อาจติดอันดับ แต่ไม่ถูก AI หยิบไปตอบ ถ้าทำแค่ AEO แต่พื้นฐาน SEO ไม่ดี เนื้อหาอาจไม่ถูกค้นพบ ถ้าทำ GEO โดยไม่มีข้อมูลและความน่าเชื่อถือพอ AI ก็อาจไม่แนะนำแบรนด์</P>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AEO กับ Google AI Overview, Featured Snippet และ Voice Search">
+        <ArticleSubSection title="AEO กับ Google AI Overview">
+          <P>Google AI Overview คือฟีเจอร์ที่ Google ใช้ AI ช่วยสรุปคำตอบให้ผู้ใช้งานโดยตรงบนหน้าผลการค้นหา การติด Google AI Overview ไม่ได้ขึ้นอยู่กับการเขียนบทความยาวอย่างเดียว แต่ขึ้นอยู่กับว่าเนื้อหาตอบคำถามตรงหรือไม่ เว็บไซต์น่าเชื่อถือหรือไม่ โครงสร้างข้อมูลชัดเจนหรือไม่ และมีแหล่งข้อมูลสนับสนุนหรือไม่</P>
+        </ArticleSubSection>
+        <ArticleSubSection title="AEO กับ Featured Snippet">
+          <P>Featured Snippet คือกล่องคำตอบที่ Google ดึงข้อมูลจากเว็บไซต์มาแสดงเหนือผลลัพธ์ปกติ รูปแบบที่พบบ่อย ได้แก่ Paragraph Snippet, List Snippet, Table Snippet และ Video Snippet การทำ AEO ช่วยเพิ่มโอกาสให้เนื้อหาถูกเลือกไปแสดงใน Featured Snippet เพราะหลักการคล้ายกัน คือเนื้อหาต้องตอบคำถามชัดเจน มีโครงสร้างดี และตรงกับ Search Intent</P>
+        </ArticleSubSection>
+        <ArticleSubSection title="AEO กับ Voice Search และ AI Assistant">
+          <P>Voice Search คือการค้นหาด้วยเสียง คำตอบของ Voice Search มักเลือกจากข้อมูลที่สั้น ชัด และน่าเชื่อถือ ส่วน AI Assistant เช่น ChatGPT, Gemini หรือ Perplexity ทำหน้าที่ตอบคำถามแบบสรุป การมีเนื้อหาที่ชัดเจน น่าเชื่อถือ และเป็นระบบ จะช่วยเพิ่มโอกาสให้ข้อมูลของแบรนด์ถูกเข้าใจและนำไปเชื่อมโยงในระบบ AI Search ได้ดีขึ้น หากต้องการให้แบรนด์ถูก AI แนะนำมากขึ้น ควรทำ GEO ควบคู่กับ AEO ด้วย</P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: AEO คือก้าวสำคัญของ SEO ยุค AI Search">
+        <P>AEO คือการทำให้เว็บไซต์และเนื้อหาพร้อมสำหรับยุคที่ Search Engine และ AI ไม่ได้แค่แสดงลิงก์ แต่เริ่มทำหน้าที่ตอบคำถามแทนผู้ใช้งาน การทำ AEO ที่ดีไม่ได้หมายถึงการเขียนคีย์เวิร์ดเยอะที่สุด แต่หมายถึงการตอบคำถามให้ชัดที่สุด เข้าใจง่ายที่สุด และน่าเชื่อถือที่สุด</P>
+        <P>เว็บไซต์ที่ต้องการเติบโตในยุค AI Search ควรให้ความสำคัญกับ SEO เพื่อให้เว็บไซต์ถูกค้นพบ AEO เพื่อให้เนื้อหาถูกเลือกเป็นคำตอบ และ GEO เพื่อให้แบรนด์ถูก AI แนะนำและอ้างอิง เมื่อทั้ง 3 ส่วนทำงานร่วมกัน เว็บไซต์จะไม่ได้แค่มีอันดับบน Google แต่มีโอกาสถูกมองเห็นในหลายพื้นที่ของการค้นหา</P>
+        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ AEO" />
     </article>
   )
 }
@@ -1268,6 +1593,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
           <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
           <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
         </div>
       </ArticleSection>
 
@@ -1551,6 +1877,12 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
               SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
             </Link>
           </p>
+          <p className="thai-readable text-sm text-neutral-500">
+            อ่านเพิ่มเติม:{' '}
+            <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
+              AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
+            </Link>
+          </p>
         </div>
       </ArticleSection>
 
@@ -1815,6 +2147,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'how-to-do-geo') {
     return <HowToDoGeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'what-is-aeo') {
+    return <WhatIsAeoArticle post={post} />
   }
   if (post.bodyVariant === 'what-is-seo') {
     return <WhatIsSeoArticle post={post} />

@@ -18,7 +18,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo'
   cta?: {
     headline: string
     description: string
@@ -253,7 +253,99 @@ export const whatIsSeoFaqs: FAQItem[] = [
   },
 ]
 
+export const whatIsAeoFaqs: FAQItem[] = [
+  {
+    question: 'AEO คืออะไร?',
+    answer:
+      'AEO คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI สามารถเข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งานใน Google AI Overview, Featured Snippet, Voice Search และ AI Assistant',
+  },
+  {
+    question: 'AEO ย่อมาจากอะไร?',
+    answer:
+      'AEO ย่อมาจาก Answer Engine Optimization หมายถึงการทำให้เนื้อหาพร้อมสำหรับระบบที่ตอบคำถามโดยตรง เช่น AI Overview, Featured Snippet และ Voice Search',
+  },
+  {
+    question: 'AEO ต่างจาก SEO อย่างไร?',
+    answer:
+      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Search Engine ส่วน AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบใน Search Engine และ AI ทั้งสองควรทำร่วมกัน เพราะ SEO เป็นพื้นฐานที่ช่วยให้เนื้อหา AEO ถูกค้นพบได้',
+  },
+  {
+    question: 'AEO ต่างจาก GEO อย่างไร?',
+    answer:
+      'AEO เน้นการทำให้เนื้อหาถูกใช้เป็นคำตอบใน Search Engine และ AI Overview ส่วน GEO เน้นการทำให้แบรนด์ถูก Generative AI เช่น ChatGPT, Gemini และ Perplexity แนะนำ อ้างอิง หรือพูดถึงในคำตอบ',
+  },
+  {
+    question: 'ทำ AEO แล้วยังต้องทำ SEO ไหม?',
+    answer:
+      'ยังต้องทำ SEO เพราะ SEO เป็นพื้นฐานสำคัญที่ช่วยให้เว็บไซต์ถูกค้นพบ ถูกจัดทำดัชนี และมีโครงสร้างที่ Search Engine เข้าใจ หาก SEO พื้นฐานไม่ดี การทำ AEO จะยากขึ้น',
+  },
+  {
+    question: 'AEO ช่วยเพิ่ม Traffic ไหม?',
+    answer:
+      'AEO อาจช่วยเพิ่ม Traffic ได้เมื่อเว็บไซต์ถูกแสดงใน Featured Snippet หรือ AI Overview แต่บางครั้งผู้ใช้งานอาจเห็นคำตอบแล้วไม่คลิก ดังนั้นควรวัดผลทั้ง Traffic, Impression, Visibility และ Brand Search ร่วมกัน',
+  },
+  {
+    question: 'ทำยังไงให้ติด AEO?',
+    answer:
+      'เริ่มจากการหา Question Keywords เขียนคำตอบให้ชัดในช่วงต้น ใช้หัวข้อแบบคำถาม เพิ่ม FAQ ใช้ Schema Markup ทำ Internal Link และเพิ่มความน่าเชื่อถือให้เนื้อหาด้วย E-E-A-T',
+  },
+  {
+    question: 'AEO ต้องใช้ Schema ไหม?',
+    answer:
+      'ควรใช้ Schema เพราะช่วยให้ Search Engine เข้าใจโครงสร้างข้อมูลได้ดีขึ้น Schema ที่เหมาะกับ AEO ได้แก่ FAQ, Article, HowTo, Organization และ LocalBusiness',
+  },
+  {
+    question: 'AEO เหมาะกับธุรกิจขนาดเล็กไหม?',
+    answer:
+      'เหมาะมาก เพราะธุรกิจขนาดเล็กสามารถใช้ AEO แข่งขันในคำถามเฉพาะทางหรือ Local Search ได้ โดยเฉพาะคำถามที่ลูกค้าต้องการคำตอบก่อนตัดสินใจซื้อหรือติดต่อ',
+  },
+  {
+    question: 'AEO ใช้เวลานานไหมกว่าจะเห็นผล?',
+    answer:
+      'ระยะเวลาขึ้นอยู่กับคุณภาพเว็บไซต์ ความยากของคีย์เวิร์ด และการแข่งขันในตลาด บางหน้าอาจเริ่มเห็นสัญญาณจาก Impression หรือ Ranking ภายในไม่กี่สัปดาห์ แต่ผลลัพธ์ที่มั่นคงต้องใช้เวลาและการปรับปรุงต่อเนื่อง',
+  },
+  {
+    question: 'AEO สำคัญกับธุรกิจไทยไหม?',
+    answer:
+      'สำคัญ เพราะผู้ใช้งานไทยเริ่มคุ้นเคยกับการค้นหาข้อมูลแบบคำถามมากขึ้น และ AI Search กำลังเข้ามามีบทบาทในการช่วยสรุปข้อมูล เปรียบเทียบตัวเลือก และแนะนำแบรนด์',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    slug: 'what-is-aeo',
+    category: 'AEO',
+    excerpt:
+      'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI สามารถเข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งานใน Google AI Overview, Featured Snippet, Voice Search และ AI Assistant',
+    readingTime: '20 min read',
+    publishedDate: '2026-06-01',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    metaDescription:
+      'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบ เรียนรู้วิธีทำ AEO ให้ติด Google AI Overview, Featured Snippet และ AI Assistant',
+    heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner.png',
+    heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.png',
+    heroImageAlt: 'AEO คืออะไร ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner.png',
+    aiSummary: [
+      'AEO คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบใน AI Overview, Featured Snippet, Voice Search และ AI Assistant',
+      'AEO สำคัญเพราะพฤติกรรมการค้นหาเปลี่ยนไป ผู้ใช้งานต้องการคำตอบทันทีบนหน้าผลการค้นหา ไม่ใช่แค่รายการลิงก์',
+      'วิธีทำ AEO มี 10 ขั้นตอน ตั้งแต่หา Question Keywords ตอบคำถามในช่วงต้น ใช้ FAQ Schema และ Internal Link ไปจนถึงเพิ่ม E-E-A-T',
+      'SEO, AEO และ GEO ควรทำร่วมกัน โดย SEO เป็นพื้นฐาน AEO ทำให้ถูกเลือกเป็นคำตอบ และ GEO ทำให้ AI แนะนำแบรนด์',
+    ],
+    faqs: whatIsAeoFaqs,
+    bodyVariant: 'what-is-aeo',
+    cta: {
+      headline: 'เว็บไซต์ของคุณมีโอกาสถูก AI เลือกเป็นคำตอบหรือยัง?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ SEO, AEO และ GEO แค่ไหน พร้อมค้นหาโอกาสในการเพิ่ม Brand Visibility บน Google Search และ AI Search',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
     slug: 'what-is-seo',
