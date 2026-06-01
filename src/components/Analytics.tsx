@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { getCookieConsent } from './CookieConsent'
 
 const GA_MEASUREMENT_ID = 'G-J7W349SBP7'
 const CLARITY_PROJECT_ID = 'wz10zywese'
@@ -64,55 +65,68 @@ export function trackContactFormSubmission(params: { interest: string; budget: s
   window.clarity?.('event', 'contact_form_submit')
 }
 
+function initGA4() {
+  if (analyticsInitialized) return
+
+  window.dataLayer = window.dataLayer ?? []
+  window.gtag =
+    window.gtag ||
+    function gtag(...args: any[]) {
+      window.dataLayer?.push(args)
+    }
+
+  window.gtag('js', new Date())
+  window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: false })
+
+  const scriptId = 'ga4-gtag-script'
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script')
+    script.id = scriptId
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    document.head.appendChild(script)
+  }
+
+  analyticsInitialized = true
+}
+
+function initClarity() {
+  if (clarityInitialized) return
+
+  window.clarity =
+    window.clarity ||
+    function clarity(...args: any[]) {
+      window.clarity?.q?.push(args)
+    }
+  window.clarity.q = window.clarity.q ?? []
+
+  if (!document.getElementById('clarity-script')) {
+    const script = document.createElement('script')
+    script.id = 'clarity-script'
+    script.async = true
+    script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`
+    document.head.appendChild(script)
+  }
+
+  clarityInitialized = true
+}
+
 export default function Analytics() {
   const location = useLocation()
 
   useEffect(() => {
-    if (analyticsInitialized) return
-
-    window.dataLayer = window.dataLayer ?? []
-    window.gtag =
-      window.gtag ||
-      function gtag(...args: any[]) {
-        window.dataLayer?.push(args)
-      }
-
-    window.gtag('js', new Date())
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      send_page_view: false,
-    })
-
-    const scriptId = 'ga4-gtag-script'
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script')
-      script.id = scriptId
-      script.async = true
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-      document.head.appendChild(script)
+    if (getCookieConsent() === 'accepted') {
+      initGA4()
+      initClarity()
     }
 
-    analyticsInitialized = true
-  }, [])
-
-  useEffect(() => {
-    if (clarityInitialized) return
-
-    window.clarity =
-      window.clarity ||
-      function clarity(...args: any[]) {
-        window.clarity?.q?.push(args)
-      }
-    window.clarity.q = window.clarity.q ?? []
-
-    if (!document.getElementById('clarity-script')) {
-      const script = document.createElement('script')
-      script.id = 'clarity-script'
-      script.async = true
-      script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`
-      document.head.appendChild(script)
+    function handleConsent() {
+      initGA4()
+      initClarity()
     }
 
-    clarityInitialized = true
+    window.addEventListener('cookie_consent_accepted', handleConsent)
+    return () => window.removeEventListener('cookie_consent_accepted', handleConsent)
   }, [])
 
   useEffect(() => {

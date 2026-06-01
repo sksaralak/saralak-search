@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 import { brand } from '../content/site'
 import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
+import CookieConsent from './CookieConsent'
 import FloatingLineButton from './FloatingLineButton'
 
 const navItems = [
@@ -22,6 +23,7 @@ const footerNavItems = [
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
   { label: 'Privacy Policy', to: '/privacy' },
+  { label: 'Cookie Policy', to: '/privacy#cookies' },
 ]
 
 function navClass({ isActive }: { isActive: boolean }) {
@@ -141,6 +143,7 @@ export default function Layout() {
         </div>
       </footer>
       <FloatingLineButton />
+      <CookieConsent />
       <div className="fixed bottom-4 left-4 right-28 z-50 lg:hidden">
         <Link
           to="/contact"

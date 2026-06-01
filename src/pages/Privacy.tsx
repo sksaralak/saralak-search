@@ -69,6 +69,44 @@ export default function Privacy() {
             </p>
           </article>
 
+          <article id="cookies">
+            <h2 className="text-2xl font-semibold text-neutral-950">Cookie policy</h2>
+            <p className="mt-4 leading-7 text-neutral-700">
+              This website uses cookies and similar tracking technologies. Cookies are small text
+              files stored on your device that help us understand how visitors use the site.
+            </p>
+            <div className="mt-6 overflow-x-auto rounded-lg border border-neutral-200">
+              <table className="min-w-[560px] divide-y divide-neutral-200 bg-white text-left text-sm">
+                <thead className="bg-neutral-50">
+                  <tr>
+                    {['Cookie / Tool', 'Purpose', 'Type', 'Retention'].map((h) => (
+                      <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 text-neutral-700">
+                  {[
+                    ['Google Analytics (GA4)', 'Page views, traffic source, user behaviour', 'Analytics', 'Up to 14 months'],
+                    ['Microsoft Clarity', 'Session recordings, heatmaps, page interaction', 'Analytics', 'Up to 12 months'],
+                    ['saralak_cookie_consent', 'Stores your cookie preference (accept/decline)', 'Functional', 'Until browser data is cleared'],
+                  ].map(([name, purpose, type, retention]) => (
+                    <tr key={name}>
+                      <td className="px-4 py-3 font-medium text-neutral-950">{name}</td>
+                      <td className="px-4 py-3">{purpose}</td>
+                      <td className="px-4 py-3">{type}</td>
+                      <td className="px-4 py-3 whitespace-nowrap">{retention}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 leading-7 text-neutral-700">
+              Google Analytics and Microsoft Clarity are only loaded after you accept cookies via the
+              banner shown on your first visit. You may change your preference at any time by clearing
+              your browser's local storage for this site, which will re-display the consent banner.
+            </p>
+          </article>
+
           <article>
             <h2 className="text-2xl font-semibold text-neutral-950">Your rights under Thai PDPA</h2>
             <p className="mt-4 leading-7 text-neutral-700">
