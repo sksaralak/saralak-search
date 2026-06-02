@@ -2,7 +2,6 @@ import { Navigate, useParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 import BlogArticleTemplate from '../components/BlogArticleTemplate'
 import { getBlogPostBySlug, getRelatedPosts } from '../content/blog'
-import { faqJsonLd } from '../content/faqs'
 import { brand } from '../content/site'
 
 export default function BlogArticle() {
@@ -85,7 +84,6 @@ export default function BlogArticle() {
                 },
               ],
             },
-            ...(post.faqs ? [faqJsonLd(post.faqs)] : []),
           ],
         }}
       />

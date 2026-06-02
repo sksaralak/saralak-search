@@ -6,7 +6,7 @@ import PricingCard from '../components/PricingCard'
 import ProcessStep from '../components/ProcessStep'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
-import { discoveryAuditFaqs, faqJsonLd } from '../content/faqs'
+import { discoveryAuditFaqs } from '../content/faqs'
 
 const problems = [
   'ลูกค้าค้นหาแบรนด์ไม่เจอ หรือเจอได้ยาก',
@@ -59,7 +59,6 @@ export default function DiscoveryAudit() {
               areaServed: 'Thailand',
               offers: { '@type': 'AggregateOffer', lowPrice: '5000', priceCurrency: 'THB' },
             },
-            faqJsonLd(discoveryAuditFaqs),
           ],
         }}
       />

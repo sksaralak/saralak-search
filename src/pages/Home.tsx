@@ -6,7 +6,7 @@ import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import { getLatestBlogPosts } from '../content/blog'
-import { faqJsonLd, homepageFaqs } from '../content/faqs'
+import { homepageFaqs } from '../content/faqs'
 import { brand, proofItems, services } from '../content/site'
 
 const baseUrl = 'https://saralak-search.com'
@@ -143,7 +143,6 @@ export default function Home() {
                 },
               ],
             },
-            faqJsonLd(homepageFaqs),
           ],
         }}
       />

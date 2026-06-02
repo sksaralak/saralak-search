@@ -5,7 +5,7 @@ import FAQSection from '../components/FAQSection'
 import ProofCard from '../components/ProofCard'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
-import { faqJsonLd, servicesFaqs } from '../content/faqs'
+import { servicesFaqs } from '../content/faqs'
 
 const commonProblems = [
   { setup: 'เว็บไซต์ติดอันดับแล้ว', pain: 'แต่ลูกค้าไม่ติดต่อ' },
@@ -191,7 +191,6 @@ export default function Services() {
                 description: service.tagline,
               })),
             },
-            faqJsonLd(servicesFaqs),
           ],
         }}
       />

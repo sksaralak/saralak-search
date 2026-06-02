@@ -4,7 +4,7 @@ import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import { getLatestBlogPosts } from '../content/blog'
-import { type FAQItem, faqJsonLd } from '../content/faqs'
+import type { FAQItem } from '../content/faqs'
 
 const trustBadges = ['9+ ปี SEO Experience', 'Google Search', 'Google Maps', 'AI Search']
 
@@ -202,7 +202,6 @@ export default function About() {
                 },
               ],
             },
-            faqJsonLd(aboutFaqs),
           ],
         }}
       />

@@ -5,7 +5,7 @@ import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import { caseStudies } from '../content/caseStudies'
-import { caseStudiesFaqs, faqJsonLd } from '../content/faqs'
+import { caseStudiesFaqs } from '../content/faqs'
 
 const trustSignals = [
   'ประสบการณ์ SEO ตั้งแต่ปี 2016',
@@ -83,7 +83,6 @@ export default function CaseStudies() {
                 },
               })),
             },
-            faqJsonLd(caseStudiesFaqs),
           ],
         }}
       />
