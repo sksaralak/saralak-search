@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import CTAButton from '../components/CTAButton'
 import BlogCard from '../components/BlogCard'
 import FAQSection from '../components/FAQSection'
@@ -262,6 +263,10 @@ export default function About() {
             <p>
               Search ไม่ใช่เพียงช่องทางสร้างทราฟฟิก แต่เป็นหนึ่งในช่องทางสำคัญในการสร้าง
               Business Visibility บน Google Search, Google Maps และ AI Search
+            </p>
+            <p className="text-base text-neutral-500">
+              อ่านเพิ่มเติม:{' '}
+              <Link to="/blog/seo-geo-aeo" className="text-teal-700 hover:underline">SEO, AEO และ GEO ต่างกันอย่างไร</Link>
             </p>
           </div>
         </div>

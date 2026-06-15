@@ -213,6 +213,14 @@ export default function Services() {
             Saralak Search ช่วยให้ธุรกิจเข้าใจสถานะการมองเห็นของแบรนด์ ค้นหาโอกาสในการเติบโต
             และเพิ่มการค้นพบจาก Google และ AI Search อย่างเป็นระบบ
           </p>
+          <p className="thai-readable mt-4 max-w-3xl text-sm leading-7 text-neutral-500">
+            อ่านเพิ่มเติม:{' '}
+            <Link to="/blog/what-is-seo" className="text-teal-700 hover:underline">SEO คืออะไร</Link>
+            {' · '}
+            <Link to="/blog/what-is-aeo" className="text-teal-700 hover:underline">AEO คืออะไร</Link>
+            {' · '}
+            <Link to="/blog/what-is-geo" className="text-teal-700 hover:underline">GEO คืออะไร</Link>
+          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
             <CTAButton to="/case-studies" variant="secondary">

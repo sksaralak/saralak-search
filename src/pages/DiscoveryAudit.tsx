@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import ContactActions from '../components/ContactActions'
 import ContactForm from '../components/ContactForm'
 import CTAButton from '../components/CTAButton'
@@ -85,6 +86,12 @@ export default function DiscoveryAudit() {
             เหมาะสำหรับธุรกิจที่ต้องการเข้าใจ visibility gaps, โอกาสการเติบโต,
             คู่แข่ง และความเข้าใจของ Google หรือ AI Search ก่อนเปลี่ยนเป็น action plan
             เพื่อเพิ่ม Brand Visibility ในระยะยาว
+          </p>
+          <p className="thai-readable mt-4 max-w-3xl text-sm leading-7 text-neutral-500">
+            ยังไม่แน่ใจว่า{' '}
+            <Link to="/blog/what-is-seo" className="text-teal-700 hover:underline">เริ่มต้นทำ SEO</Link>
+            {' '}ควรเริ่มจากอะไร?{' '}
+            <Link to="/blog/seo-geo-aeo" className="text-teal-700 hover:underline">SEO, AEO และ GEO ต่างกันอย่างไร</Link>
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/contact">เริ่มต้นด้วย Discovery Audit</CTAButton>
