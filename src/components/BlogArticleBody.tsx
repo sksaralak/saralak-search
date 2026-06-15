@@ -2650,6 +2650,170 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
+  const missingItems = [
+    {
+      title: 'Google ยังไม่รู้ว่าเว็บมีอยู่',
+      body: 'Claude ไม่ได้ submit เว็บไซต์ให้ Google Search Console โดยอัตโนมัติ Google จะไม่รู้ว่าเว็บของคุณมีอยู่จนกว่า Googlebot จะ Crawl เจอจากลิงก์อื่น ซึ่งอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน หากไม่ได้ submit เอง',
+    },
+    {
+      title: 'เนื้อหาไม่ตรงกับสิ่งที่คนค้นหา',
+      body: 'Claude เขียนเนื้อหาตามที่คุณบอก แต่ไม่รู้ว่าลูกค้าจริง ๆ ค้นหาคำไหน ด้วย Search Intent แบบไหน เนื้อหาที่สวยแต่ไม่ตรง Search Intent จะไม่ติด Google ต่อให้ Technical SEO ดีแค่ไหน',
+    },
+    {
+      title: 'ขาด Technical SEO ที่จำเป็น',
+      body: 'เว็บที่สร้างด้วย AI อาจขาด sitemap.xml ที่ถูกต้อง, Schema Markup, canonical tag, Open Graph และ meta description ที่เหมาะสม สิ่งเหล่านี้ Google ใช้ตัดสินใจว่าจะ Index และ Rank หน้าไหน',
+    },
+    {
+      title: 'ไม่มี Authority หรือ Backlink',
+      body: 'เว็บใหม่ที่ไม่มีลิงก์จากเว็บอื่นเลย Google จะให้ความไว้วางใจต่ำมาก แม้เนื้อหาดีแค่ไหน คู่แข่งที่มีเว็บเก่ากว่าและมี Backlink มักจะชนะในคำค้นทั่วไปเสมอในช่วงแรก',
+    },
+    {
+      title: 'Core Web Vitals อาจไม่ผ่าน',
+      body: 'เว็บที่สร้างด้วย AI อาจมี JavaScript หนัก รูปภาพไม่ถูก Optimize หรือ Layout Shift ที่ทำให้ Core Web Vitals ต่ำ ซึ่งเป็นสัญญาณที่ Google ใช้วัดประสบการณ์ผู้ใช้',
+    },
+  ]
+
+  const afterAiChecklist = [
+    { step: '01', title: 'Submit ไป Google Search Console', body: 'เพิ่มเว็บไซต์ใน Google Search Console และ Submit sitemap.xml เพื่อให้ Google รู้ว่าเว็บมีอยู่และมีหน้าอะไรบ้าง ขั้นตอนนี้ทำเสร็จได้ภายใน 10 นาที แต่คนส่วนใหญ่ข้ามไป' },
+    { step: '02', title: 'ทำ Keyword Research จริง', body: 'ใช้ Google Keyword Planner หรือ Google Search Console เพื่อดูว่าลูกค้าของคุณค้นหาคำไหนจริง ๆ อย่าพึ่ง AI เดาคีย์เวิร์ด เพราะ AI ไม่มีข้อมูล Search Volume จริงจาก Google' },
+    { step: '03', title: 'เพิ่ม Meta Title และ Meta Description ให้ทุกหน้า', body: 'ทุกหน้าสำคัญต้องมี Meta Title ที่มีคีย์เวิร์ดหลักและ Meta Description ที่ดึงดูดให้คนคลิก สิ่งนี้มีผลต่อทั้งอันดับและ CTR' },
+    { step: '04', title: 'ใส่ Schema Markup', body: 'Organization Schema บอก Google ว่าธุรกิจคืออะไร Article Schema ช่วยให้บทความถูก Index ได้ดีขึ้น FAQ Schema เพิ่มโอกาสติด Featured Snippet สิ่งเหล่านี้ Claude ไม่ได้ทำให้โดยอัตโนมัติ' },
+    { step: '05', title: 'ตรวจ Core Web Vitals', body: 'ใช้ PageSpeed Insights เพื่อดูคะแนน Core Web Vitals ทั้งบน Mobile และ Desktop หากคะแนนต่ำ ต้อง Optimize รูปภาพ ลด JavaScript ที่ไม่จำเป็น และแก้ Layout Shift' },
+    { step: '06', title: 'วางแผน Content ที่ตรง Search Intent', body: 'เขียนบทความหรือหน้า Service ที่ตอบคำถามที่ลูกค้าค้นหาจริง ไม่ใช่แค่อธิบายสินค้า บทความที่ตอบ "ทำไม" และ "อย่างไร" ได้ดีกว่าคู่แข่งมักจะค่อย ๆ ขึ้นอันดับได้แม้เว็บยังใหม่' },
+    { step: '07', title: 'สร้าง Internal Link', body: 'เชื่อมทุกหน้าสำคัญเข้าหากัน Google ใช้ Internal Link เพื่อเข้าใจโครงสร้างเว็บและแจกน้ำหนัก Page Authority ไปยังหน้าที่สำคัญ' },
+    { step: '08', title: 'เริ่มสร้าง Backlink และ Brand Mention', body: 'ลงข้อมูลใน Google Business Profile ขอ Review จากลูกค้า เขียน Guest Post หรือให้สื่อไทยพูดถึงแบรนด์ สัญญาณภายนอกเหล่านี้สำคัญมากสำหรับเว็บใหม่' },
+  ]
+
+  const canDo = [
+    'สร้าง Code และโครงสร้างเว็บไซต์ได้รวดเร็ว',
+    'เขียนเนื้อหาเบื้องต้นได้ตามที่บอก',
+    'สร้าง Component และ Layout ที่สวยงาม',
+    'เพิ่ม Meta Tag หรือ Schema ตามที่สั่ง',
+    'ช่วยแนะนำคีย์เวิร์ดเบื้องต้นได้',
+  ]
+
+  const cannotDo = [
+    'ไม่รู้ว่าลูกค้าจริงค้นหาคำไหนบน Google',
+    'ไม่มีข้อมูล Search Volume หรือ Keyword Difficulty จริง',
+    'ไม่ได้ Submit เว็บให้ Google Search Console โดยอัตโนมัติ',
+    'ไม่ได้สร้าง Backlink หรือ Brand Mention ให้',
+    'ไม่รู้ Search Intent เฉพาะของธุรกิจและตลาดนั้น ๆ',
+    'ไม่สามารถวางกลยุทธ์ Content ระยะยาวได้',
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <section className="grid gap-5">
+        <P>Claude, ChatGPT, Gemini และ AI ต่าง ๆ ช่วยสร้างเว็บไซต์ได้รวดเร็วกว่าที่เคย หลายธุรกิจที่ไม่เคยมีเว็บ สามารถมีหน้าเว็บที่ดูดีได้ภายในไม่กี่ชั่วโมง แต่หลังจากนั้น สิ่งที่พบบ่อยที่สุดคือ: รอนานแล้ว ทำไม Google ยังไม่เจอเว็บเลย?</P>
+        <P>คำตอบสั้น ๆ คือ การสร้างเว็บและการทำให้ Google เจอเว็บเป็นคนละเรื่องกันโดยสิ้นเชิง Claude ทำอย่างแรกได้ดีมาก แต่อย่างที่สองต้องการกลยุทธ์ SEO ที่แยกต่างหาก</P>
+      </section>
+
+      <ArticleSection title="Claude ทำอะไรได้และทำอะไรไม่ได้">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Claude ทำได้</p>
+            <ul className="mt-3 grid gap-2">
+              {canDo.map((item) => (
+                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg border border-red-100 bg-red-50 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-red-700">Claude ทำไม่ได้</p>
+            <ul className="mt-3 grid gap-2">
+              {cannotDo.map((item) => (
+                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <P>พูดง่าย ๆ คือ Claude เป็น "ช่างก่อสร้าง" ที่สร้างบ้านให้ได้เร็ว แต่การทำให้คนรู้จักว่าบ้านอยู่ที่ไหน ต้องการป้าย แผนที่ และการบอกต่อ นั่นคืองานของ SEO</P>
+      </ArticleSection>
+
+      <ArticleSection title="5 สาเหตุหลักที่ Google ยังไม่เจอเว็บ">
+        <div className="grid gap-4">
+          {missingItems.map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สาเหตุที่ {i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="เว็บ AI ติด Google ได้ไหม?">
+        <P>ได้ เพราะ Google ไม่ได้สนว่าเว็บสร้างด้วยอะไร Google สนเพียงอย่างเดียวคือ เว็บนั้นตอบคำถามของผู้ใช้ได้ดีแค่ไหน ถ้าเว็บที่สร้างด้วย Claude มีเนื้อหาที่ตรง Search Intent มีโครงสร้างที่ดี มี Technical SEO ที่ถูกต้อง และค่อย ๆ สร้าง Authority ขึ้นมา ก็ติด Google ได้เหมือนกัน</P>
+        <P>ปัญหาไม่ได้อยู่ที่ว่าใครสร้างเว็บ แต่อยู่ที่ว่าหลังสร้างเสร็จแล้วทำอะไรต่อ</P>
+        <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+          <p className="thai-readable text-sm leading-7 text-neutral-700">
+            <span className="font-semibold text-neutral-950">เว็บที่ Google ชอบ</span> ไม่ใช่เว็บที่สวยที่สุด แต่คือเว็บที่{' '}
+            <span className="font-medium text-teal-800">ตอบคำถามผู้ใช้ได้ดีที่สุด</span> ในแต่ละคำค้น
+            พร้อมกับ Technical SEO ที่ถูกต้อง และสัญญาณความน่าเชื่อถือจากภายนอก
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="8 สิ่งที่ต้องทำหลังสร้างเว็บด้วย AI">
+        <div className="grid gap-4">
+          {afterAiChecklist.map((item) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{item.step}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ใช้เวลานานแค่ไหนถึงจะเห็นผล?">
+        <P>เว็บใหม่โดยทั่วไปต้องการเวลา 3-6 เดือนก่อนจะเริ่มติดอันดับในคำค้นที่มีการแข่งขัน แต่สำหรับ Long-tail Keywords ที่เฉพาะเจาะจงและคู่แข่งน้อย อาจเริ่มเห็นผลเร็วกว่านั้น</P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            { time: '1–4 สัปดาห์', label: 'Google Index', desc: 'หลัง Submit Google Search Console และ Sitemap' },
+            { time: '1–3 เดือน', label: 'เริ่มเห็นสัญญาณ', desc: 'Impression เพิ่มขึ้น เริ่มติด Long-tail Keywords' },
+            { time: '3–6 เดือน', label: 'เริ่มเห็น Traffic', desc: 'หน้าสำคัญเริ่มติดอันดับถ้าเนื้อหาและ SEO ดี' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 text-center">
+              <p className="text-lg font-bold text-teal-800">{item.time}</p>
+              <p className="mt-1 font-semibold text-neutral-950">{item.label}</p>
+              <p className="thai-readable mt-1 text-xs leading-5 text-neutral-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>ตัวแปรที่ส่งผลมากที่สุดคือ คุณภาพเนื้อหา ความเฉพาะเจาะจงของคีย์เวิร์ด และความต่อเนื่องในการทำ SEO หลังสร้างเว็บเสร็จ</P>
+      </ArticleSection>
+
+      <ArticleSection title="GEO: ขั้นต่อไปหลังจาก SEO">
+        <P>ถ้าต้องการให้ไม่แค่ Google แต่ AI อย่าง ChatGPT, Gemini และ Perplexity รู้จักธุรกิจของคุณด้วย ต้องทำ GEO หรือ Generative Engine Optimization ควบคู่ไปด้วย</P>
+        <P>GEO เป็นการต่อยอดจาก SEO โดยมุ่งเน้นที่การสร้างสัญญาณที่ AI ใช้ตัดสินใจว่าแบรนด์ไหนน่าเชื่อถือและควรแนะนำในคำตอบ ได้แก่ Topical Authority, Entity SEO, Brand Mention และ llms.txt</P>
+        <p className="thai-readable text-sm text-neutral-500">
+          อ่านเพิ่มเติม:{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600">
+            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
+          </Link>
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: Claude สร้างเว็บได้ SEO ต้องวางกลยุทธ์เอง">
+        <P>Claude และ AI เป็นเครื่องมือที่ยอดเยี่ยมสำหรับการสร้างเว็บไซต์ให้เร็วและประหยัด แต่หลังจากสร้างเสร็จ งานที่สำคัญกว่าคือการทำให้ Google และ AI Search รู้จักเว็บนั้น</P>
+        <P>ขั้นตอนที่ต้องทำมีทั้ง Technical SEO, Keyword Strategy, Content ที่ตรง Search Intent, Internal Linking, Schema Markup, Core Web Vitals และการสร้าง Authority อย่างต่อเนื่อง สิ่งเหล่านี้ไม่มีทางลัด แต่ถ้าทำถูกตั้งแต่ต้น ผลลัพธ์จะคุ้มค่ากว่ามาก</P>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับเว็บ AI และ SEO" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -2674,6 +2838,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'llms-txt') {
     return <LlmsTxtArticle post={post} />
+  }
+  if (post.bodyVariant === 'ai-website-seo') {
+    return <AiWebsiteSeoArticle post={post} />
   }
 
   return (

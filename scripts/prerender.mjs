@@ -6,6 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
 
 const blogSlugs = [
+  'ai-website-seo',
   'llms-txt-thailand',
   'geo-checklist-thailand',
   'what-is-geo',

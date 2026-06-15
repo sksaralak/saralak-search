@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo'
   cta?: {
     headline: string
     description: string
@@ -398,7 +398,80 @@ export const geoChecklistFaqs: FAQItem[] = [
   },
 ]
 
+export const aiWebsiteSeoFaqs: FAQItem[] = [
+  {
+    question: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ?',
+    answer:
+      'เพราะการสร้างเว็บกับการทำให้ Google เจอเว็บเป็นคนละเรื่องกัน Claude ช่วยสร้างโค้ดและหน้าเว็บได้ แต่ Google ยังไม่รู้ว่าเว็บนั้นมีอยู่ จนกว่าจะ Submit ไปที่ Google Search Console เพิ่ม Sitemap และรอให้ Googlebot Crawl และ Index เนื้อหา',
+  },
+  {
+    question: 'หลังสร้างเว็บด้วย AI ต้องทำอะไรก่อนให้ Google เจอ?',
+    answer:
+      'ต้องทำ 3 อย่างก่อน ได้แก่ 1) ส่ง URL ไปยัง Google Search Console และ Submit Sitemap 2) เพิ่มเนื้อหาที่ตรงกับสิ่งที่ลูกค้าค้นหาจริง ๆ พร้อม Meta Title และ Meta Description ที่ชัดเจน 3) ตรวจสอบ Technical SEO เช่น Core Web Vitals, Schema, robots.txt และ Crawlability',
+  },
+  {
+    question: 'AI สร้างเว็บแล้วทำ SEO ให้ด้วยได้ไหม?',
+    answer:
+      'AI ช่วยเขียนเนื้อหาหรือแนะนำโครงสร้าง SEO เบื้องต้นได้ แต่ไม่สามารถแทนกลยุทธ์ SEO ที่ดีได้ เพราะ SEO ต้องอาศัยการวิเคราะห์ตลาด คู่แข่ง พฤติกรรมลูกค้า และ Search Intent ของธุรกิจนั้น ๆ โดยเฉพาะ ซึ่งต้องการความเข้าใจเชิงธุรกิจจริง',
+  },
+  {
+    question: 'Google ใช้เวลานานแค่ไหนถึงจะ Index เว็บใหม่?',
+    answer:
+      'โดยทั่วไป Google ใช้เวลา 1-4 สัปดาห์ในการ Crawl และ Index เว็บไซต์ใหม่ แต่อาจนานกว่านั้นหากเว็บไม่มีเนื้อหาเพียงพอ ไม่มี Backlink หรือมีปัญหา Technical SEO ที่ขัดขวางการ Crawl',
+  },
+  {
+    question: 'เว็บที่สร้างด้วย AI ติด Google ได้ไหม?',
+    answer:
+      'ติดได้ เพราะ Google ไม่ได้ตัดสินว่าเว็บสร้างด้วย AI หรือมนุษย์ แต่ตัดสินจากคุณภาพเนื้อหา ความน่าเชื่อถือ ความเกี่ยวข้องกับคำค้นหา และ Technical SEO Google จะ Rank เว็บที่ตอบคำถามลูกค้าได้ดีที่สุด ไม่ใช่เว็บที่สวยที่สุด',
+  },
+  {
+    question: 'เว็บใหม่ต้องมี Backlink ถึงจะติด Google ไหม?',
+    answer:
+      'Backlink ช่วยให้เว็บน่าเชื่อถือขึ้นและ Rank ได้เร็วขึ้น แต่ไม่ใช่ปัจจัยเดียว เว็บใหม่ที่มีเนื้อหาคุณภาพสูง ตอบคำถามเฉพาะทาง และ Technical SEO ดี ก็สามารถเริ่มติดอันดับได้โดยไม่ต้องรอ Backlink จำนวนมาก โดยเฉพาะ Long-tail Keywords ที่คู่แข่งน้อย',
+  },
+  {
+    question: 'ต้องจ้าง SEO ไหมหลังสร้างเว็บด้วย AI?',
+    answer:
+      'ขึ้นอยู่กับเป้าหมาย หากต้องการ Traffic และ Lead จาก Google อย่างจริงจัง การวางกลยุทธ์ SEO ตั้งแต่ต้นจะช่วยลดเวลาและค่าใช้จ่ายในระยะยาว Discovery Audit เป็นจุดเริ่มต้นที่ดีเพราะช่วยให้รู้ว่าเว็บไซต์มีปัญหาอะไร และควรเริ่มทำอะไรก่อน',
+  },
+  {
+    question: 'Claude หรือ ChatGPT ช่วยทำ Keyword Research ให้ได้ไหม?',
+    answer:
+      'AI ช่วยเสนอ Keyword ได้ แต่ไม่มีข้อมูล Search Volume จริงจาก Google ดังนั้น Keyword ที่ AI แนะนำอาจไม่ตรงกับสิ่งที่ลูกค้าของธุรกิจนั้นค้นหาจริง การทำ Keyword Research ที่ดีต้องใช้ข้อมูลจาก Google Search Console, Ahrefs, SEMrush หรือ Google Keyword Planner ร่วมด้วย',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ?',
+    slug: 'ai-website-seo',
+    category: 'SEO',
+    excerpt:
+      'Claude สร้างเว็บให้ได้ภายในชั่วโมง แต่ Google ยังไม่เจอเว็บนั้น เพราะการสร้างเว็บกับการทำให้ Google เจอเว็บเป็นคนละเรื่องกันโดยสิ้นเชิง บทความนี้อธิบายว่าทำไมถึงเกิดขึ้น และต้องทำอะไรบ้างหลังจากสร้างเว็บด้วย AI เสร็จแล้ว',
+    readingTime: '12 min read',
+    publishedDate: '2026-06-15',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ? | Saralak Search',
+    metaDescription:
+      'Claude สร้างเว็บได้แต่ Google ยังไม่เจอ? เข้าใจสาเหตุและสิ่งที่ต้องทำหลังสร้างเว็บด้วย AI เพื่อให้ Google Index และ Rank เว็บไซต์ของคุณ',
+    aiSummary: [
+      'การสร้างเว็บด้วย Claude หรือ AI เป็นแค่ขั้นตอนแรก Google จะไม่รู้ว่าเว็บมีอยู่จนกว่าจะ Submit ผ่าน Google Search Console และรอ Crawl',
+      'เว็บที่สร้างด้วย AI มักขาด Keyword Strategy เนื้อหาที่ตรง Search Intent และ Technical SEO ที่จำเป็นสำหรับการ Rank',
+      'Google ไม่ตัดสินว่าเว็บสร้างด้วย AI หรือมนุษย์ แต่ตัดสินจากคุณภาพเนื้อหา ความน่าเชื่อถือ และ Technical SEO',
+      'สิ่งที่ต้องทำหลังสร้างเว็บด้วย AI ได้แก่ Google Search Console, Sitemap, Keyword Content, Schema, Core Web Vitals และ Backlink',
+    ],
+    faqs: aiWebsiteSeoFaqs,
+    bodyVariant: 'ai-website-seo',
+    cta: {
+      headline: 'รู้แล้วว่าเว็บต้องการอะไร แต่ไม่รู้จะเริ่มจากไหน?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์ขาดอะไร มีปัญหา Technical SEO อะไรบ้าง และควรเริ่มทำอะไรก่อนเพื่อให้ Google เจอเว็บและ Rank ได้จริง',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ',
     slug: 'llms-txt-thailand',
