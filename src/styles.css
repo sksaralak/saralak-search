@@ -4,8 +4,8 @@
   color: #18221f;
   background: #fbfaf6;
   font-family:
-    Inter, "Sarabun", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Noto Sans Thai", "Noto Sans", Arial, sans-serif;
+    "Anuphan", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +36,7 @@ select {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Inter, "Prompt", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Anuphan", ui-sans-serif, system-ui, sans-serif;
 }
 
 .thai-readable {
