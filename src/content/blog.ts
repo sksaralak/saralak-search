@@ -400,74 +400,69 @@ export const geoChecklistFaqs: FAQItem[] = [
 
 export const aiWebsiteSeoFaqs: FAQItem[] = [
   {
-    question: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ?',
+    question: 'Claude ทำ SEO ให้อัตโนมัติได้จริงไหม?',
     answer:
-      'เพราะการสร้างเว็บกับการทำให้ Google เจอเว็บเป็นคนละเรื่องกัน Claude ช่วยสร้างโค้ดและหน้าเว็บได้ แต่ Google ยังไม่รู้ว่าเว็บนั้นมีอยู่ จนกว่าจะ Submit ไปที่ Google Search Console เพิ่ม Sitemap และรอให้ Googlebot Crawl และ Index เนื้อหา',
+      'Claude implement SEO ได้จริงถ้าคุณรู้ว่าต้องสั่งอะไร dev ที่ทำสำเร็จใน 48 ชั่วโมงคือคนที่รู้แล้วว่าเว็บต้องการ sitemap, JSON-LD, canonical, hreflang และ metadata แยกตาม route เขาใช้ Claude เป็น coding assistant implement สิ่งที่วางแผนไว้แล้ว ไม่ใช่แค่บอกว่า "ทำ SEO ให้หน่อย"',
   },
   {
-    question: 'หลังสร้างเว็บด้วย AI ต้องทำอะไรก่อนให้ Google เจอ?',
+    question: 'ทำไม dev คนนั้นทำสำเร็จแต่ฉันทำตามแล้วไม่ได้ผล?',
     answer:
-      'ต้องทำ 3 อย่างก่อน ได้แก่ 1) ส่ง URL ไปยัง Google Search Console และ Submit Sitemap 2) เพิ่มเนื้อหาที่ตรงกับสิ่งที่ลูกค้าค้นหาจริง ๆ พร้อม Meta Title และ Meta Description ที่ชัดเจน 3) ตรวจสอบ Technical SEO เช่น Core Web Vitals, Schema, robots.txt และ Crawlability',
+      'เพราะ dev คนนั้นรู้ก่อนว่าจะสั่ง Claude ว่าอะไร เขามีความรู้ SEO อยู่แล้วและใช้ Claude เป็น tool execute ถ้าไม่รู้ว่า schema ประเภทไหนเหมาะกับธุรกิจตัวเอง หรือไม่รู้ว่าจะ verify ว่า Claude ทำถูกไหม ผลลัพธ์ก็จะต่างกันมาก',
   },
   {
-    question: 'AI สร้างเว็บแล้วทำ SEO ให้ด้วยได้ไหม?',
+    question: 'ถ้าไม่รู้เรื่อง SEO จะสั่ง Claude ว่าอะไร?',
     answer:
-      'AI ช่วยเขียนเนื้อหาหรือแนะนำโครงสร้าง SEO เบื้องต้นได้ แต่ไม่สามารถแทนกลยุทธ์ SEO ที่ดีได้ เพราะ SEO ต้องอาศัยการวิเคราะห์ตลาด คู่แข่ง พฤติกรรมลูกค้า และ Search Intent ของธุรกิจนั้น ๆ โดยเฉพาะ ซึ่งต้องการความเข้าใจเชิงธุรกิจจริง',
+      'นั่นคือปัญหาจริง Claude ทำตามที่สั่ง แต่ถ้าสั่งว่า "ทำ SEO ให้หน่อย" Claude จะทำตามความเข้าใจทั่วไป ไม่ใช่ตาม context ของธุรกิจคุณ ไม่รู้ว่าลูกค้าของคุณค้นหาคำไหนจริง หน้าไหนควร index และ schema ประเภทไหนที่เหมาะกับธุรกิจนั้นโดยเฉพาะ',
   },
   {
-    question: 'Google ใช้เวลานานแค่ไหนถึงจะ Index เว็บใหม่?',
+    question: 'เว็บที่ Claude สร้างติด Google ได้ไหม?',
     answer:
-      'โดยทั่วไป Google ใช้เวลา 1-4 สัปดาห์ในการ Crawl และ Index เว็บไซต์ใหม่ แต่อาจนานกว่านั้นหากเว็บไม่มีเนื้อหาเพียงพอ ไม่มี Backlink หรือมีปัญหา Technical SEO ที่ขัดขวางการ Crawl',
+      'ได้ Google ไม่ได้สนว่าเว็บสร้างด้วยอะไร สนแค่ว่าตอบคำถามผู้ใช้ได้ดีแค่ไหน มี Technical SEO ที่ถูกต้องไหม และมีความน่าเชื่อถือมากพอไหม เว็บที่ Claude สร้างติด Google ได้ถ้ามีกลยุทธ์ SEO ที่ชัดเจนและ implement ถูกต้อง',
   },
   {
-    question: 'เว็บที่สร้างด้วย AI ติด Google ได้ไหม?',
+    question: 'Discovery Audit คืออะไรและช่วยอะไรได้บ้าง?',
     answer:
-      'ติดได้ เพราะ Google ไม่ได้ตัดสินว่าเว็บสร้างด้วย AI หรือมนุษย์ แต่ตัดสินจากคุณภาพเนื้อหา ความน่าเชื่อถือ ความเกี่ยวข้องกับคำค้นหา และ Technical SEO Google จะ Rank เว็บที่ตอบคำถามลูกค้าได้ดีที่สุด ไม่ใช่เว็บที่สวยที่สุด',
+      'Discovery Audit คือการตรวจเว็บไซต์อย่างละเอียดเพื่อระบุว่าขาด SEO อะไรบ้าง ควรสั่ง Claude ทำอะไรเพิ่ม และ keyword ไหนที่ธุรกิจนั้นควรสู้ ได้ผลลัพธ์เป็น action plan ที่ชัดเจนภายใน 1 สัปดาห์',
   },
   {
-    question: 'เว็บใหม่ต้องมี Backlink ถึงจะติด Google ไหม?',
+    question: 'Claude ทำ Keyword Research ให้ได้ไหม?',
     answer:
-      'Backlink ช่วยให้เว็บน่าเชื่อถือขึ้นและ Rank ได้เร็วขึ้น แต่ไม่ใช่ปัจจัยเดียว เว็บใหม่ที่มีเนื้อหาคุณภาพสูง ตอบคำถามเฉพาะทาง และ Technical SEO ดี ก็สามารถเริ่มติดอันดับได้โดยไม่ต้องรอ Backlink จำนวนมาก โดยเฉพาะ Long-tail Keywords ที่คู่แข่งน้อย',
+      'Claude แนะนำ keyword ได้แต่ไม่มีข้อมูล search volume จริงจาก Google keyword ที่ Claude แนะนำอาจไม่ตรงกับสิ่งที่ลูกค้าของธุรกิจนั้นค้นหาจริง การทำ keyword research ที่ใช้งานได้ต้องอาศัยข้อมูลจาก Google Search Console, Ahrefs หรือ Google Keyword Planner ร่วมด้วย',
   },
   {
-    question: 'ต้องจ้าง SEO ไหมหลังสร้างเว็บด้วย AI?',
+    question: 'ใช้เวลานานแค่ไหนถึง Google จะเจอเว็บ?',
     answer:
-      'ขึ้นอยู่กับเป้าหมาย หากต้องการ Traffic และ Lead จาก Google อย่างจริงจัง การวางกลยุทธ์ SEO ตั้งแต่ต้นจะช่วยลดเวลาและค่าใช้จ่ายในระยะยาว Discovery Audit เป็นจุดเริ่มต้นที่ดีเพราะช่วยให้รู้ว่าเว็บไซต์มีปัญหาอะไร และควรเริ่มทำอะไรก่อน',
-  },
-  {
-    question: 'Claude หรือ ChatGPT ช่วยทำ Keyword Research ให้ได้ไหม?',
-    answer:
-      'AI ช่วยเสนอ Keyword ได้ แต่ไม่มีข้อมูล Search Volume จริงจาก Google ดังนั้น Keyword ที่ AI แนะนำอาจไม่ตรงกับสิ่งที่ลูกค้าของธุรกิจนั้นค้นหาจริง การทำ Keyword Research ที่ดีต้องใช้ข้อมูลจาก Google Search Console, Ahrefs, SEMrush หรือ Google Keyword Planner ร่วมด้วย',
+      'หลัง submit sitemap ใน Google Search Console แล้ว Google มักใช้เวลา 1-4 สัปดาห์ในการ crawl และ index เว็บใหม่ แต่การติดอันดับในคำค้นที่มีการแข่งขันต้องใช้เวลา 3-6 เดือนขึ้นไปพร้อมกับ content และ SEO ที่ต่อเนื่อง',
   },
 ]
 
 export const blogPosts: BlogPost[] = [
   {
-    title: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ?',
+    title: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด',
     slug: 'ai-website-seo',
     category: 'SEO',
     excerpt:
-      'Claude สร้างเว็บให้ได้ภายในชั่วโมง แต่ Google ยังไม่เจอเว็บนั้น เพราะการสร้างเว็บกับการทำให้ Google เจอเว็บเป็นคนละเรื่องกันโดยสิ้นเชิง บทความนี้อธิบายว่าทำไมถึงเกิดขึ้น และต้องทำอะไรบ้างหลังจากสร้างเว็บด้วย AI เสร็จแล้ว',
-    readingTime: '12 min read',
+      'มี dev คนหนึ่งใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง — 120 หน้า index ใน 24 ชั่วโมง บทความนี้วิเคราะห์ว่าเขาทำยังไง และทำไมคนอื่นทำตามแล้วมักไม่ได้ผลเหมือนกัน',
+    readingTime: '10 min read',
     publishedDate: '2026-06-15',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'สร้างเว็บด้วย Claude แล้ว ทำไม Google ยังไม่เจอ? | Saralak Search',
+    metaTitle: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด | Saralak Search',
     metaDescription:
-      'Claude สร้างเว็บได้แต่ Google ยังไม่เจอ? เข้าใจสาเหตุและสิ่งที่ต้องทำหลังสร้างเว็บด้วย AI เพื่อให้ Google Index และ Rank เว็บไซต์ของคุณ',
+      'วิเคราะห์เคสจริง: dev ใช้ Claude Code ทำ SEO สำเร็จ 120 หน้า index ใน 24 ชั่วโมง — Claude ทำ SEO ได้จริง แต่มีเงื่อนไขที่คนส่วนใหญ่ไม่รู้',
     aiSummary: [
-      'การสร้างเว็บด้วย Claude หรือ AI เป็นแค่ขั้นตอนแรก Google จะไม่รู้ว่าเว็บมีอยู่จนกว่าจะ Submit ผ่าน Google Search Console และรอ Crawl',
-      'เว็บที่สร้างด้วย AI มักขาด Keyword Strategy เนื้อหาที่ตรง Search Intent และ Technical SEO ที่จำเป็นสำหรับการ Rank',
-      'Google ไม่ตัดสินว่าเว็บสร้างด้วย AI หรือมนุษย์ แต่ตัดสินจากคุณภาพเนื้อหา ความน่าเชื่อถือ และ Technical SEO',
-      'สิ่งที่ต้องทำหลังสร้างเว็บด้วย AI ได้แก่ Google Search Console, Sitemap, Keyword Content, Schema, Core Web Vitals และ Backlink',
+      'dev คนหนึ่งใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง โดยให้ Claude implement dynamic metadata, sitemap, JSON-LD schema และ canonical URL ครบถ้วน',
+      'สิ่งที่ทำให้เขาสำเร็จคือเขารู้ก่อนแล้วว่าต้องสั่งอะไร — เขาใช้ Claude เป็น coding assistant ไม่ใช่ SEO strategist',
+      'claude-seo.md มี 7,000+ GitHub stars เพราะคนต้องการ tool ช่วยสั่ง Claude ให้ถูกต้อง — นั่นคือหลักฐานว่าปัญหานี้จริง',
+      'Claude เป็น tool ที่ดีที่สุดที่เคยมี — แต่ยังเป็นแค่ tool ผู้ที่รู้ว่าต้องสั่งอะไรจะได้ผลลัพธ์ที่ต่างกันอย่างสิ้นเชิง',
     ],
     faqs: aiWebsiteSeoFaqs,
     bodyVariant: 'ai-website-seo',
     cta: {
-      headline: 'รู้แล้วว่าเว็บต้องการอะไร แต่ไม่รู้จะเริ่มจากไหน?',
+      headline: 'อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์ขาดอะไร มีปัญหา Technical SEO อะไรบ้าง และควรเริ่มทำอะไรก่อนเพื่อให้ Google เจอเว็บและ Rank ได้จริง',
+        'Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร ควรสั่ง Claude implement อะไรเพิ่ม และ keyword ไหนที่ธุรกิจของคุณควรสู้ — ได้ action plan ชัดเจนภายใน 1 สัปดาห์',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },

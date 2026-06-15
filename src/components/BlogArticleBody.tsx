@@ -2651,55 +2651,34 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
 }
 
 function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
-  const missingItems = [
+  const devKnewBefore = [
     {
-      title: 'Google ยังไม่รู้ว่าเว็บมีอยู่',
-      body: 'Claude ไม่ได้ submit เว็บไซต์ให้ Google Search Console โดยอัตโนมัติ Google จะไม่รู้ว่าเว็บของคุณมีอยู่จนกว่า Googlebot จะ Crawl เจอจากลิงก์อื่น ซึ่งอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน หากไม่ได้ submit เอง',
+      term: 'Dynamic Metadata per Route',
+      desc: 'title, description และ OG tags ที่สร้างแยกตามแต่ละหน้า ไม่ใช่ค่าเดียวทั้งเว็บ',
     },
     {
-      title: 'เนื้อหาไม่ตรงกับสิ่งที่คนค้นหา',
-      body: 'Claude เขียนเนื้อหาตามที่คุณบอก แต่ไม่รู้ว่าลูกค้าจริง ๆ ค้นหาคำไหน ด้วย Search Intent แบบไหน เนื้อหาที่สวยแต่ไม่ตรง Search Intent จะไม่ติด Google ต่อให้ Technical SEO ดีแค่ไหน',
+      term: 'Sitemap ที่ครอบคลุม Multi-locale',
+      desc: 'ถ้าเว็บมีหลายภาษา sitemap ต้องมี hreflang annotations บอก Google ว่าหน้าไหนคือ version อะไร',
     },
     {
-      title: 'ขาด Technical SEO ที่จำเป็น',
-      body: 'เว็บที่สร้างด้วย AI อาจขาด sitemap.xml ที่ถูกต้อง, Schema Markup, canonical tag, Open Graph และ meta description ที่เหมาะสม สิ่งเหล่านี้ Google ใช้ตัดสินใจว่าจะ Index และ Rank หน้าไหน',
+      term: 'JSON-LD Schema Markup',
+      desc: 'โครงสร้างข้อมูลที่บอก Google ว่าหน้านี้คืออะไร — Article, Product, FAQ, Organization — ไม่ใช่แค่ text',
     },
     {
-      title: 'ไม่มี Authority หรือ Backlink',
-      body: 'เว็บใหม่ที่ไม่มีลิงก์จากเว็บอื่นเลย Google จะให้ความไว้วางใจต่ำมาก แม้เนื้อหาดีแค่ไหน คู่แข่งที่มีเว็บเก่ากว่าและมี Backlink มักจะชนะในคำค้นทั่วไปเสมอในช่วงแรก',
+      term: 'Canonical URL',
+      desc: 'กำหนดว่า URL ไหนคือ "ต้นฉบับ" เพื่อไม่ให้ Google นับว่าเว็บมีเนื้อหา duplicate กัน',
     },
     {
-      title: 'Core Web Vitals อาจไม่ผ่าน',
-      body: 'เว็บที่สร้างด้วย AI อาจมี JavaScript หนัก รูปภาพไม่ถูก Optimize หรือ Layout Shift ที่ทำให้ Core Web Vitals ต่ำ ซึ่งเป็นสัญญาณที่ Google ใช้วัดประสบการณ์ผู้ใช้',
+      term: 'robots.txt และ crawl budget',
+      desc: 'ควบคุมว่า Googlebot จะ crawl หน้าไหน ข้ามหน้าไหน เพื่อไม่เสีย crawl budget กับหน้าที่ไม่จำเป็น',
     },
   ]
 
-  const afterAiChecklist = [
-    { step: '01', title: 'Submit ไป Google Search Console', body: 'เพิ่มเว็บไซต์ใน Google Search Console และ Submit sitemap.xml เพื่อให้ Google รู้ว่าเว็บมีอยู่และมีหน้าอะไรบ้าง ขั้นตอนนี้ทำเสร็จได้ภายใน 10 นาที แต่คนส่วนใหญ่ข้ามไป' },
-    { step: '02', title: 'ทำ Keyword Research จริง', body: 'ใช้ Google Keyword Planner หรือ Google Search Console เพื่อดูว่าลูกค้าของคุณค้นหาคำไหนจริง ๆ อย่าพึ่ง AI เดาคีย์เวิร์ด เพราะ AI ไม่มีข้อมูล Search Volume จริงจาก Google' },
-    { step: '03', title: 'เพิ่ม Meta Title และ Meta Description ให้ทุกหน้า', body: 'ทุกหน้าสำคัญต้องมี Meta Title ที่มีคีย์เวิร์ดหลักและ Meta Description ที่ดึงดูดให้คนคลิก สิ่งนี้มีผลต่อทั้งอันดับและ CTR' },
-    { step: '04', title: 'ใส่ Schema Markup', body: 'Organization Schema บอก Google ว่าธุรกิจคืออะไร Article Schema ช่วยให้บทความถูก Index ได้ดีขึ้น FAQ Schema เพิ่มโอกาสติด Featured Snippet สิ่งเหล่านี้ Claude ไม่ได้ทำให้โดยอัตโนมัติ' },
-    { step: '05', title: 'ตรวจ Core Web Vitals', body: 'ใช้ PageSpeed Insights เพื่อดูคะแนน Core Web Vitals ทั้งบน Mobile และ Desktop หากคะแนนต่ำ ต้อง Optimize รูปภาพ ลด JavaScript ที่ไม่จำเป็น และแก้ Layout Shift' },
-    { step: '06', title: 'วางแผน Content ที่ตรง Search Intent', body: 'เขียนบทความหรือหน้า Service ที่ตอบคำถามที่ลูกค้าค้นหาจริง ไม่ใช่แค่อธิบายสินค้า บทความที่ตอบ "ทำไม" และ "อย่างไร" ได้ดีกว่าคู่แข่งมักจะค่อย ๆ ขึ้นอันดับได้แม้เว็บยังใหม่' },
-    { step: '07', title: 'สร้าง Internal Link', body: 'เชื่อมทุกหน้าสำคัญเข้าหากัน Google ใช้ Internal Link เพื่อเข้าใจโครงสร้างเว็บและแจกน้ำหนัก Page Authority ไปยังหน้าที่สำคัญ' },
-    { step: '08', title: 'เริ่มสร้าง Backlink และ Brand Mention', body: 'ลงข้อมูลใน Google Business Profile ขอ Review จากลูกค้า เขียน Guest Post หรือให้สื่อไทยพูดถึงแบรนด์ สัญญาณภายนอกเหล่านี้สำคัญมากสำหรับเว็บใหม่' },
-  ]
-
-  const canDo = [
-    'สร้าง Code และโครงสร้างเว็บไซต์ได้รวดเร็ว',
-    'เขียนเนื้อหาเบื้องต้นได้ตามที่บอก',
-    'สร้าง Component และ Layout ที่สวยงาม',
-    'เพิ่ม Meta Tag หรือ Schema ตามที่สั่ง',
-    'ช่วยแนะนำคีย์เวิร์ดเบื้องต้นได้',
-  ]
-
-  const cannotDo = [
-    'ไม่รู้ว่าลูกค้าจริงค้นหาคำไหนบน Google',
-    'ไม่มีข้อมูล Search Volume หรือ Keyword Difficulty จริง',
-    'ไม่ได้ Submit เว็บให้ Google Search Console โดยอัตโนมัติ',
-    'ไม่ได้สร้าง Backlink หรือ Brand Mention ให้',
-    'ไม่รู้ Search Intent เฉพาะของธุรกิจและตลาดนั้น ๆ',
-    'ไม่สามารถวางกลยุทธ์ Content ระยะยาวได้',
+  const whatToAskClaude = [
+    'schema ประเภทไหนเหมาะกับธุรกิจ [ประเภทธุรกิจ] โดยเฉพาะ?',
+    'keyword ไหนที่ลูกค้าของธุรกิจนี้ค้นหาจริงบน Google?',
+    'หน้าไหนควร index และหน้าไหนควร noindex?',
+    'ถ้า Google index เสร็จแล้วแต่ไม่ rank จะ debug ยังไง?',
   ]
 
   return (
@@ -2707,16 +2686,97 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
 
       <section className="grid gap-5">
-        <P>Claude, ChatGPT, Gemini และ AI ต่าง ๆ ช่วยสร้างเว็บไซต์ได้รวดเร็วกว่าที่เคย หลายธุรกิจที่ไม่เคยมีเว็บ สามารถมีหน้าเว็บที่ดูดีได้ภายในไม่กี่ชั่วโมง แต่หลังจากนั้น สิ่งที่พบบ่อยที่สุดคือ: รอนานแล้ว ทำไม Google ยังไม่เจอเว็บเลย?</P>
-        <P>คำตอบสั้น ๆ คือ การสร้างเว็บและการทำให้ Google เจอเว็บเป็นคนละเรื่องกันโดยสิ้นเชิง Claude ทำอย่างแรกได้ดีมาก แต่อย่างที่สองต้องการกลยุทธ์ SEO ที่แยกต่างหาก</P>
+        <P>
+          มีบทความหนึ่งบน Medium ที่แชร์กันเยอะมากในกลุ่ม developer ชื่อว่า{' '}
+          <em>"I Used Claude Code to Add SEO to My Next.js App"</em> — dev คนนั้นใช้ Claude Code ทำ SEO
+          สำเร็จใน 48 ชั่วโมง 120 หน้า index ภายใน 24 ชั่วโมงหลัง deploy
+        </P>
+        <P>
+          ถ้าอ่านแล้วรู้สึกว่า "ฉันก็ทำแบบนั้นได้สิ" แล้วลองทำตามแต่ไม่ได้ผล — ไม่แปลกเลย
+          เพราะบทความนั้นไม่ได้เล่าส่วนที่สำคัญที่สุด
+        </P>
       </section>
 
-      <ArticleSection title="Claude ทำอะไรได้และทำอะไรไม่ได้">
+      <ArticleSection title="dev คนนั้นรู้อะไรก่อนที่จะสั่ง Claude">
+        <P>
+          สิ่งที่ทำให้เขาสำเร็จไม่ใช่ prompt — แต่คือสิ่งที่เขารู้อยู่แล้วก่อนจะพิมพ์อะไรก็ตาม
+          เขาเป็น dev ที่มีความรู้ SEO อยู่แล้ว และใช้ Claude เป็น coding assistant implement สิ่งที่วางแผนไว้
+        </P>
+        <div className="grid gap-3">
+          {devKnewBefore.map((item) => (
+            <div key={item.term} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+              <p className="font-semibold text-neutral-950">{item.term}</p>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          เขารู้คำเหล่านี้ทั้งหมดก่อน เขาแค่ให้ Claude implement ที่เร็วขึ้น
+          ไม่ใช่ให้ Claude "คิด" ว่าต้องทำอะไร
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ถ้าไม่รู้คำเหล่านั้น จะสั่ง Claude ว่าอะไร?">
+        <P>
+          นี่คือจุดที่ทำให้ผลลัพธ์ต่างกัน ถ้าบอก Claude ว่า "ช่วยทำ SEO ให้หน่อย" Claude จะทำตาม
+          ความเข้าใจทั่วไป ซึ่งมักจะเป็น meta tags พื้นฐาน, alt text บนรูป และ heading structure
+          สิ่งเหล่านั้นไม่ผิด แต่ไม่ตรงกับสิ่งที่เว็บของคุณต้องการโดยเฉพาะ
+        </P>
+        <div className="rounded-lg border border-amber-100 bg-amber-50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-800">
+            คำถามที่ไม่รู้จะถามยังไง ถ้าไม่รู้เรื่อง SEO
+          </p>
+          <ul className="mt-3 grid gap-2">
+            {whatToAskClaude.map((q) => (
+              <li key={q} className="thai-readable flex gap-2 text-sm text-neutral-700">
+                <span className="mt-0.5 shrink-0 text-amber-600">→</span>
+                {q}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <P>
+          ไม่แปลกที่ไม่รู้จะถามว่าอะไร เพราะข้อมูลที่มีส่วนใหญ่บอกแค่ว่า "ใช้ Claude ได้เลย"
+          โดยไม่ได้บอกว่าต้องรู้อะไรก่อน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หลักฐานว่าปัญหานี้จริง: 7,000+ GitHub Stars">
+        <P>
+          มี repository ชื่อ <strong>claude-seo.md</strong> ที่สร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ
+          เป็นไฟล์ prompt สำเร็จรูปที่บอก Claude ให้ทำ SEO อย่างถูกต้อง
+          มีคน star มากกว่า 7,000 ครั้งในเวลาไม่นาน
+        </P>
+        <div className="rounded-lg border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ทำไม 7,000 stars ถึงสำคัญ</p>
+          <p className="thai-readable mt-2 text-sm leading-7 text-neutral-700">
+            คนไม่ star repository เพราะความสนใจ เขา star เพราะเจอปัญหาเดิม และรู้สึกว่านี่คือทางออก
+            7,000 stars หมายความว่ามีคนอย่างน้อย 7,000 คน ที่ใช้ Claude ทำ SEO แล้วไม่ได้ผลที่ต้องการ
+            จนต้องหา prompt ช่วยเพิ่มเติม
+          </p>
+          <p className="thai-readable mt-3 text-sm leading-7 text-neutral-700">
+            มีคนสร้าง tool ทั้งชิ้นขึ้นมาเพื่อแก้ปัญหาเดียวนี้ — นั่นคือหลักฐานว่ามันเป็นปัญหาจริง
+            ไม่ใช่ว่าคุณทำอะไรผิด
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Claude เป็น tool ที่ดีที่สุดที่เคยมี — แต่ยังเป็นแค่ tool">
+        <P>
+          ไม่มีใครสงสัยว่า Claude เก่งไหม มันเก่งที่สุดในบรรดา coding tools ที่เคยมีมา
+          สามารถสร้างเว็บทั้งชิ้น เขียน component, implement feature ซับซ้อน และ debug ได้เร็วกว่ามนุษย์
+        </P>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Claude ทำได้</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Claude ทำได้ดีมาก</p>
             <ul className="mt-3 grid gap-2">
-              {canDo.map((item) => (
+              {[
+                'implement สิ่งที่บอกว่าต้องการให้ทำ',
+                'เขียน schema ตาม spec ที่ระบุ',
+                'สร้าง sitemap, robots.txt ตามโครงสร้างที่กำหนด',
+                'debug technical issues จาก error message',
+                'เขียน code ที่ถูกต้องตาม SEO guidelines ทั่วไป',
+              ].map((item) => (
                 <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
                   {item}
@@ -2724,92 +2784,77 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
               ))}
             </ul>
           </div>
-          <div className="rounded-lg border border-red-100 bg-red-50 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-red-700">Claude ทำไม่ได้</p>
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">ต้องมีคนรู้ก่อน</p>
             <ul className="mt-3 grid gap-2">
-              {cannotDo.map((item) => (
+              {[
+                'keyword ไหนที่ลูกค้าของธุรกิจนี้ค้นหาจริง',
+                'schema ประเภทไหนเหมาะกับ business model นี้',
+                'หน้าไหนมี search intent ที่ควรสู้',
+                'ทำไม rank ไม่ขึ้นแม้ technical ครบแล้ว',
+                'จะวัดผลและ iterate ยังไง',
+              ].map((item) => (
                 <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <P>พูดง่าย ๆ คือ Claude เป็น "ช่างก่อสร้าง" ที่สร้างบ้านให้ได้เร็ว แต่การทำให้คนรู้จักว่าบ้านอยู่ที่ไหน ต้องการป้าย แผนที่ และการบอกต่อ นั่นคืองานของ SEO</P>
+        <P>
+          dev ที่ทำสำเร็จคือคนที่รู้อยู่แล้วว่าต้องสั่งอะไร เขาใช้ Claude execute ไม่ใช่ให้ Claude คิดแทน
+          ความต่างคือความรู้ SEO ที่อยู่ในหัวเขาก่อนจะพิมพ์ prompt แรก
+        </P>
       </ArticleSection>
 
-      <ArticleSection title="5 สาเหตุหลักที่ Google ยังไม่เจอเว็บ">
-        <div className="grid gap-4">
-          {missingItems.map((item, i) => (
-            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สาเหตุที่ {i + 1}</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </ArticleSection>
-
-      <ArticleSection title="เว็บ AI ติด Google ได้ไหม?">
-        <P>ได้ เพราะ Google ไม่ได้สนว่าเว็บสร้างด้วยอะไร Google สนเพียงอย่างเดียวคือ เว็บนั้นตอบคำถามของผู้ใช้ได้ดีแค่ไหน ถ้าเว็บที่สร้างด้วย Claude มีเนื้อหาที่ตรง Search Intent มีโครงสร้างที่ดี มี Technical SEO ที่ถูกต้อง และค่อย ๆ สร้าง Authority ขึ้นมา ก็ติด Google ได้เหมือนกัน</P>
-        <P>ปัญหาไม่ได้อยู่ที่ว่าใครสร้างเว็บ แต่อยู่ที่ว่าหลังสร้างเสร็จแล้วทำอะไรต่อ</P>
+      <ArticleSection title="แล้วเว็บของคุณควรทำอะไร?">
+        <P>
+          ถ้าสร้างเว็บด้วย Claude แล้วและ Google ยังไม่ rank — ปัญหาอาจไม่ใช่ที่ code
+          แต่อยู่ที่กลยุทธ์ก่อน implementation
+        </P>
         <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
-          <p className="thai-readable text-sm leading-7 text-neutral-700">
-            <span className="font-semibold text-neutral-950">เว็บที่ Google ชอบ</span> ไม่ใช่เว็บที่สวยที่สุด แต่คือเว็บที่{' '}
-            <span className="font-medium text-teal-800">ตอบคำถามผู้ใช้ได้ดีที่สุด</span> ในแต่ละคำค้น
-            พร้อมกับ Technical SEO ที่ถูกต้อง และสัญญาณความน่าเชื่อถือจากภายนอก
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800 mb-3">สิ่งที่ต้องรู้ก่อนสั่ง Claude</p>
+          <div className="grid gap-3">
+            {[
+              { num: '1', title: 'Keyword ที่ลูกค้าค้นหาจริง', body: 'ไม่ใช่ keyword ที่ดูสมเหตุสมผล แต่คือคำที่มีข้อมูล search volume จาก Google Keyword Planner, Ahrefs หรือ GSC จริง ๆ' },
+              { num: '2', title: 'Search Intent ของแต่ละหน้า', body: 'หน้านี้ตอบคำถามอะไร? คนที่ search เข้ามาต้องการอะไร? ต้องการซื้อ ต้องการเปรียบเทียบ หรือต้องการข้อมูล?' },
+              { num: '3', title: 'Schema ที่เหมาะกับธุรกิจ', body: 'ร้านอาหาร vs agency vs e-commerce ใช้ schema คนละประเภท ต้องรู้ก่อนว่าต้องการ schema อะไร แล้วค่อยสั่ง Claude implement' },
+              { num: '4', title: 'วิธี verify ว่า Claude ทำถูก', body: 'ใช้ Google Rich Results Test, Schema Validator และ PageSpeed Insights เพื่อ verify ว่าสิ่งที่ Claude implement นั้น Google อ่านออกและ valid จริง' },
+            ].map((item) => (
+              <div key={item.num} className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-bold text-teal-800">
+                  {item.num}
+                </span>
+                <div>
+                  <p className="font-semibold text-sm text-neutral-950">{item.title}</p>
+                  <p className="thai-readable mt-0.5 text-sm leading-6 text-neutral-600">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </ArticleSection>
-
-      <ArticleSection title="8 สิ่งที่ต้องทำหลังสร้างเว็บด้วย AI">
-        <div className="grid gap-4">
-          {afterAiChecklist.map((item) => (
-            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{item.step}</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </ArticleSection>
-
-      <ArticleSection title="ใช้เวลานานแค่ไหนถึงจะเห็นผล?">
-        <P>เว็บใหม่โดยทั่วไปต้องการเวลา 3-6 เดือนก่อนจะเริ่มติดอันดับในคำค้นที่มีการแข่งขัน แต่สำหรับ Long-tail Keywords ที่เฉพาะเจาะจงและคู่แข่งน้อย อาจเริ่มเห็นผลเร็วกว่านั้น</P>
-        <div className="grid gap-3 sm:grid-cols-3">
-          {[
-            { time: '1–4 สัปดาห์', label: 'Google Index', desc: 'หลัง Submit Google Search Console และ Sitemap' },
-            { time: '1–3 เดือน', label: 'เริ่มเห็นสัญญาณ', desc: 'Impression เพิ่มขึ้น เริ่มติด Long-tail Keywords' },
-            { time: '3–6 เดือน', label: 'เริ่มเห็น Traffic', desc: 'หน้าสำคัญเริ่มติดอันดับถ้าเนื้อหาและ SEO ดี' },
-          ].map((item) => (
-            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 text-center">
-              <p className="text-lg font-bold text-teal-800">{item.time}</p>
-              <p className="mt-1 font-semibold text-neutral-950">{item.label}</p>
-              <p className="thai-readable mt-1 text-xs leading-5 text-neutral-600">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-        <P>ตัวแปรที่ส่งผลมากที่สุดคือ คุณภาพเนื้อหา ความเฉพาะเจาะจงของคีย์เวิร์ด และความต่อเนื่องในการทำ SEO หลังสร้างเว็บเสร็จ</P>
-      </ArticleSection>
-
-      <ArticleSection title="GEO: ขั้นต่อไปหลังจาก SEO">
-        <P>ถ้าต้องการให้ไม่แค่ Google แต่ AI อย่าง ChatGPT, Gemini และ Perplexity รู้จักธุรกิจของคุณด้วย ต้องทำ GEO หรือ Generative Engine Optimization ควบคู่ไปด้วย</P>
-        <P>GEO เป็นการต่อยอดจาก SEO โดยมุ่งเน้นที่การสร้างสัญญาณที่ AI ใช้ตัดสินใจว่าแบรนด์ไหนน่าเชื่อถือและควรแนะนำในคำตอบ ได้แก่ Topical Authority, Entity SEO, Brand Mention และ llms.txt</P>
         <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
+          อ่านเพิ่มเติมเรื่อง GEO และ AI Search:{' '}
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600">
             GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
           </Link>
         </p>
       </ArticleSection>
 
-      <ArticleSection title="สรุป: Claude สร้างเว็บได้ SEO ต้องวางกลยุทธ์เอง">
-        <P>Claude และ AI เป็นเครื่องมือที่ยอดเยี่ยมสำหรับการสร้างเว็บไซต์ให้เร็วและประหยัด แต่หลังจากสร้างเสร็จ งานที่สำคัญกว่าคือการทำให้ Google และ AI Search รู้จักเว็บนั้น</P>
-        <P>ขั้นตอนที่ต้องทำมีทั้ง Technical SEO, Keyword Strategy, Content ที่ตรง Search Intent, Internal Linking, Schema Markup, Core Web Vitals และการสร้าง Authority อย่างต่อเนื่อง สิ่งเหล่านี้ไม่มีทางลัด แต่ถ้าทำถูกตั้งแต่ต้น ผลลัพธ์จะคุ้มค่ากว่ามาก</P>
+      <ArticleSection title="สรุป">
+        <P>
+          Claude ทำ SEO ได้จริง — ถ้าคุณรู้ว่าต้องสั่งอะไร
+          dev ที่ทำสำเร็จใน 48 ชั่วโมงไม่ได้เก่งกว่าคุณ เขาแค่มีความรู้ SEO อยู่ก่อนแล้ว
+          และ 7,000 stars บน claude-seo.md บอกว่าคุณไม่ใช่คนเดียวที่เจอปัญหานี้
+        </P>
+        <P>
+          Claude เป็น tool ที่ดีที่สุดที่เคยมี แต่ tool ดีแค่ไหนก็ต้องการคนรู้ว่าจะใช้ทำอะไร
+          กลยุทธ์ SEO ต้องมาก่อน implementation เสมอ
+        </P>
       </ArticleSection>
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับเว็บ AI และ SEO" />
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ Claude และ SEO" />
     </article>
   )
 }
