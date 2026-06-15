@@ -2790,7 +2790,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
           </p>
         </div>
         <ArticleImage
-          src="/image/blog/ai-website/ai-info.png"
+          src="/image/blog/llms-txt-how-to/ai-info.png"
           alt="claude-seo.md — 7,000+ GitHub stars หลักฐานว่าการสั่ง Claude ทำ SEO ต้องการความรู้ก่อน"
         />
       </ArticleSection>
