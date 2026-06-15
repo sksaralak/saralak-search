@@ -87,12 +87,20 @@ export default function Layout() {
       <FontLoader />
       <Outlet />
       <footer className="border-t border-neutral-200 bg-white pb-16 sm:pb-10">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
           <div>
             <img src="/logo.svg" alt={brand.name} className="h-8 w-auto" />
-            <p className="thai-readable mt-3 max-w-2xl leading-7 text-neutral-700">
-              ช่วยธุรกิจไทยและ Agency Partner เพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT, Gemini และ Perplexity
+            <p className="thai-readable mt-3 max-w-xs leading-7 text-neutral-700">
+              ที่ปรึกษา SEO, GEO และ AI Search สำหรับธุรกิจไทย
+              ช่วยให้แบรนด์ถูกเจอบน Google, ChatGPT, Gemini และ Perplexity
             </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {['SEO', 'AEO', 'GEO', 'AI Search'].map((tag) => (
+                <span key={tag} className="rounded-md border border-neutral-200 bg-[#fbfaf6] px-2.5 py-1 text-xs font-semibold text-neutral-600">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
           <nav aria-label="Footer navigation">
             <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Navigation</p>
@@ -118,13 +126,19 @@ export default function Layout() {
                 onClick={() => trackLineClick('footer_line')}
                 className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
               >
-                LINE
+                LINE @sariahihi
               </a>
               <a
                 href={brand.phoneUrl}
                 className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
               >
                 โทรปรึกษา
+              </a>
+              <a
+                href="mailto:saralak@saralak-search.com"
+                className="text-sm font-medium text-neutral-700 transition hover:text-teal-900"
+              >
+                saralak@saralak-search.com
               </a>
               <Link
                 to="/contact"
@@ -141,6 +155,9 @@ export default function Layout() {
                 LinkedIn
               </a>
             </div>
+            <p className="mt-6 text-xs text-neutral-400">
+              © {new Date().getFullYear()} Saralak Search. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

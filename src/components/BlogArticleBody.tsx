@@ -239,6 +239,19 @@ function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร' }: { post
   )
 }
 
+function ArticleCTA({ headline, description }: { headline: string; description: string }) {
+  return (
+    <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
+      <h3 className="mt-2 break-words text-xl font-semibold text-neutral-950">{headline}</h3>
+      <p className="thai-readable mt-3 text-neutral-700">{description}</p>
+      <div className="mt-5">
+        <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+      </div>
+    </aside>
+  )
+}
+
 function GeoIntroArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
@@ -701,6 +714,11 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleCTA
+        headline="ยังไม่รู้ว่าเว็บไซต์ขาด SEO, AEO หรือ GEO ด้านไหน?"
+        description="Discovery Audit ช่วยวิเคราะห์ว่าเว็บไซต์มีปัญหาอะไร พลาดโอกาสตรงไหน และควรเริ่มจาก SEO, AEO หรือ GEO ก่อน — ได้ Prioritized Roadmap ชัดเจนภายใน 1 สัปดาห์"
+      />
+
       <ArticleSection title="วิธีทำ SEO ให้พร้อมสำหรับ AEO และ GEO">
         <P>
           การทำ SEO, AEO และ GEO ไม่จำเป็นต้องเริ่มแยกเป็น 3 โปรเจกต์เสมอไป
@@ -1044,6 +1062,11 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
+      <ArticleCTA
+        headline="ต้องการรู้ว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน?"
+        description="Discovery Audit วิเคราะห์ว่า AI Search มองเว็บไซต์ของคุณอย่างไร มีส่วนไหนที่ขาด Entity, Content หรือ Technical GEO — พร้อม Action Plan ชัดเจน"
+      />
+
       <ArticleSection title="แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย">
         <P>ในประเทศไทย เริ่มมีหลายเอเจนซี่ที่พูดถึง GEO, AEO และ AI Search Optimization มากขึ้น โดยแต่ละบริษัทมีจุดแข็งต่างกัน บางบริษัทเด่นด้าน Enterprise SEO บางบริษัทเด่นด้าน Technical SEO บางบริษัทเด่นด้าน Content Marketing และบางบริษัทเด่นด้าน Performance Marketing</P>
         <P>ด้านล่างคือภาพรวมของบริษัทที่น่าจับตามอง พร้อมจุดแข็งของแต่ละราย โดยเนื้อหานี้ไม่ได้มีเป้าหมายเพื่อบอกว่าบริษัทใดดีที่สุดสำหรับทุกธุรกิจ แต่ช่วยให้ผู้ประกอบการเลือก Agency ที่เหมาะกับโจทย์ของตัวเองได้ง่ายขึ้น</P>
@@ -1330,6 +1353,11 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleCTA
+        headline="อยากให้เว็บไซต์ติด AI Overview และ Featured Snippet?"
+        description="Discovery Audit ช่วยตรวจสอบว่าเนื้อหาของเว็บไซต์พร้อมสำหรับ AEO แค่ไหน Schema, Structure และ Content ด้านไหนที่ควรปรับก่อน"
+      />
+
       <ArticleSection title="ทำไงให้ติด AEO?">
         <ArticleImage src="/image/blog/what-is-aeo/how-to-do-aeo.webp" alt="วิธีทำ AEO ให้ติด Google AI Overview และ Featured Snippet" />
         <P>การทำให้เว็บไซต์มีโอกาสติด AEO ไม่ใช่แค่การใส่คีย์เวิร์ดซ้ำ ๆ แต่ต้องทำให้เนื้อหาตอบคำถามได้ดี มีโครงสร้างชัด และมีความน่าเชื่อถือ</P>
@@ -1604,6 +1632,11 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
         </div>
       </ArticleSection>
+
+      <ArticleCTA
+        headline="ยังไม่รู้ว่า SEO ของเว็บไซต์มีปัญหาอะไรบ้าง?"
+        description="Discovery Audit วิเคราะห์เว็บไซต์เพื่อค้นหาปัญหาและโอกาสบน Google Search, AI Search และ Google Maps พร้อม Prioritized Roadmap และ Quick Wins เริ่มต้นที่ 5,000 THB"
+      />
 
       <ArticleSection title="วิธีเริ่มต้นทำ SEO เบื้องต้น">
         <P>การเริ่มทำ SEO ไม่จำเป็นต้องเริ่มจากเทคนิคที่ซับซ้อนที่สุด แต่ควรเริ่มจากการวางรากฐานให้ถูกต้อง</P>
@@ -2197,6 +2230,12 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="ตัวอย่าง llms.txt สำหรับธุรกิจไทย 3 ประเภท">
+        <P>
+          ดูตัวอย่างไฟล์ llms.txt ที่ใช้งานจริงของ Saralak Search ได้ที่{' '}
+          <a href="https://saralak-search.com/llms.txt" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline underline-offset-2 hover:text-teal-600">
+            saralak-search.com/llms.txt
+          </a>
+        </P>
         <ArticleSubSection title="1. ธุรกิจ Consultant / Agency (เช่น SEO, Marketing, Law)">
           <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
             <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
@@ -2355,6 +2394,11 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         </ArticleSubSection>
       </ArticleSection>
 
+      <ArticleCTA
+        headline="ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?"
+        description="Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่"
+      />
+
       <ArticleSection title="วิธีทดสอบว่า AI อ่าน llms.txt ได้หรือไม่">
         <P>หลัง Deploy แล้ว ทดสอบด้วย 3 วิธีนี้:</P>
         <CheckList
@@ -2480,6 +2524,11 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           ]}
         />
       </ArticleSection>
+
+      <ArticleCTA
+        headline="อยากรู้ว่าเว็บไซต์ผ่าน GEO Checklist ข้อไหนแล้วบ้าง?"
+        description="Discovery Audit ตรวจสอบ Entity, Content, Technical, Mention และ Measurement ของเว็บไซต์คุณครบทั้ง 5 หมวด พร้อม Quick Wins ที่ทำได้ทันที"
+      />
 
       <ArticleSection title="หมวดที่ 3: Technical — AI เข้าใจเว็บไซต์ของคุณหรือยัง (9 รายการ)">
         <P>
