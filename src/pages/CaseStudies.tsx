@@ -7,14 +7,6 @@ import SectionHeader from '../components/SectionHeader'
 import { caseStudies } from '../content/caseStudies'
 import { caseStudiesFaqs } from '../content/faqs'
 
-const trustSignals = [
-  'ประสบการณ์ SEO ตั้งแต่ปี 2016',
-  'เชี่ยวชาญ SEO, GEO และ AEO',
-  'เคยดูแลเว็บไซต์ในหลายอุตสาหกรรม',
-  'ทำงานบนข้อมูลจริง ไม่ใช่การคาดเดา',
-  'เน้นผลลัพธ์ทางธุรกิจมากกว่า Traffic เพียงอย่างเดียว',
-]
-
 const workingFramework = [
   {
     step: '1',
@@ -88,42 +80,29 @@ export default function CaseStudies() {
       />
 
       {/* Section 1: Hero */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Case Studies</p>
-          <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
+      <section className="bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-teal-400">Case Studies</p>
+          <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             ผลลัพธ์จริงจาก SEO, GEO
             <br className="hidden sm:block" />
-            และ AI Search
+            <span className="animate-gradient-text">และ AI Search</span>
           </h1>
-          <p className="thai-readable mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
+          <p className="thai-readable mt-6 max-w-3xl text-lg leading-8 text-neutral-300">
             ตัวอย่างการเพิ่ม Organic Traffic, การติดอันดับคีย์เวิร์ดการแข่งขันสูง
             การปรากฏใน AI Overview และการถูกกล่าวถึงใน AI Search
             จากประสบการณ์การทำงานจริง
           </p>
-          <p className="thai-readable mt-4 max-w-3xl leading-8 text-neutral-600">
-            ทุกธุรกิจมีโอกาสเติบโตผ่าน Search Visibility หากเข้าใจ Search Intent,
-            Website Structure และการทำงานของ Google และ AI Search อย่างถูกต้อง
-          </p>
-        </div>
-      </section>
 
-      {/* Section 2: Trust Signals — compact, before evidence */}
-      <section className="border-y border-neutral-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <p className="font-semibold text-neutral-950">
-            ทำไมลูกค้าจึงให้ Saralak Search ช่วยวิเคราะห์เว็บไซต์
-          </p>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {trustSignals.map((point) => (
-              <li key={point} className="flex items-start gap-2 text-sm text-neutral-700">
-                <span className="mt-0.5 shrink-0 font-bold text-teal-700" aria-hidden="true">
-                  ✓
-                </span>
-                <span className="thai-readable">{point}</span>
-              </li>
+          {/* Result preview grid */}
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {caseStudies.map((s) => (
+              <div key={s.slug} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                <p className="font-bold text-white">{s.projectName}</p>
+                <p className="mt-1 text-xs text-teal-400">{s.channel}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -142,22 +121,25 @@ export default function CaseStudies() {
       </section>
 
       {/* Section 4: Working Framework */}
-      <section className="border-y border-neutral-200 bg-white">
+      <section className="bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="แนวทาง"
             title="แนวทางการทำงานของ Saralak Search"
             description="การเพิ่มการมองเห็นเกิดจากกระบวนการที่เป็นระบบ ไม่ใช่การทำ SEO แบบสุ่มหยิบ"
+            tone="light"
           />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {workingFramework.map((item) => (
               <article
                 key={item.step}
-                className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5"
+                className="group rounded-xl border border-white/8 bg-white/5 p-6 transition-all duration-150 hover:border-teal-500/30 hover:bg-white/8"
               >
-                <p className="text-2xl font-bold text-teal-900">{item.step}</p>
-                <h3 className="mt-2 font-semibold text-neutral-950">{item.title}</h3>
-                <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-700 text-sm font-bold text-white shadow-lg shadow-teal-900/40">
+                  {item.step}
+                </div>
+                <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
+                <p className="thai-readable mt-2 text-sm leading-6 text-neutral-400">
                   {item.description}
                 </p>
               </article>

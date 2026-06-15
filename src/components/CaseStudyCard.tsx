@@ -1,131 +1,109 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import type { CaseStudy } from '../content/caseStudies'
 
-const serviceBlogLinks: Record<string, string> = {
-  GEO: '/blog/what-is-geo',
-  AEO: '/blog/seo-geo-aeo',
+type ColorScheme = { grad: string; accent: string; badge: string; dot: string; arrow: string }
+
+const serviceColors: Record<string, ColorScheme> = {
+  'SEO Strategy':  { grad: 'from-teal-950 to-[#0d3d36]',   accent: 'text-teal-300',   badge: 'bg-teal-900/80 text-teal-100',   dot: 'bg-teal-400',   arrow: 'text-teal-400'   },
+  'GEO':           { grad: 'from-violet-950 to-violet-900', accent: 'text-violet-300', badge: 'bg-violet-900/80 text-violet-100', dot: 'bg-violet-400', arrow: 'text-violet-400' },
+  'AEO':           { grad: 'from-sky-950 to-sky-900',       accent: 'text-sky-300',    badge: 'bg-sky-900/80 text-sky-100',      dot: 'bg-sky-400',    arrow: 'text-sky-400'    },
+  'Technical SEO': { grad: 'from-teal-950 to-neutral-900', accent: 'text-teal-300',   badge: 'bg-teal-900/80 text-teal-100',   dot: 'bg-teal-400',   arrow: 'text-teal-400'   },
 }
 
-type CaseStudyCardProps = {
-  study: CaseStudy
+const fallback: ColorScheme = {
+  grad: 'from-neutral-900 to-neutral-950', accent: 'text-neutral-300',
+  badge: 'bg-neutral-800 text-neutral-100', dot: 'bg-neutral-400', arrow: 'text-neutral-400',
 }
 
-export default function CaseStudyCard({ study }: CaseStudyCardProps) {
+type Props = { study: CaseStudy }
+
+export default function CaseStudyCard({ study }: Props) {
   const [open, setOpen] = useState(false)
+  const c = serviceColors[study.service] ?? fallback
 
   useEffect(() => {
     if (!open) return
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setOpen(false)
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
   return (
     <>
-      <article className="overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm shadow-neutral-950/5">
+      <article className="overflow-hidden rounded-2xl border border-neutral-200 shadow-md shadow-neutral-950/8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-neutral-950/10">
         <div className="flex flex-col lg:flex-row">
 
-          {/* Image panel — click to open lightbox */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="block w-full bg-neutral-100 p-3 text-left transition hover:bg-neutral-200/70 lg:w-72 lg:shrink-0"
-            aria-label={`ดูรูปหลักฐาน: ${study.projectName} — ${study.result}`}
-          >
-            <span className="flex aspect-[4/3] items-center justify-center rounded-md border border-neutral-200 bg-white p-2 lg:aspect-auto lg:min-h-[260px]">
+          {/* Left: dark metric panel */}
+          <div className={`flex flex-col bg-gradient-to-br ${c.grad} p-7 lg:w-72 lg:shrink-0`}>
+            <span className={`inline-flex w-fit rounded-full px-2.5 py-1 text-[11px] font-semibold ${c.badge}`}>
+              {study.service}
+            </span>
+            <p className="mt-5 text-3xl font-bold leading-tight text-white lg:text-[2.25rem]">
+              {study.projectName}
+            </p>
+            <p className={`mt-2 text-xs font-medium ${c.accent}`}>{study.channel}</p>
+
+            {/* Proof screenshot — click to lightbox */}
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="mt-5 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2 transition hover:bg-white/10"
+              aria-label={`ดูหลักฐาน: ${study.projectName}`}
+            >
               <img
                 src={study.image}
                 alt={`${study.projectName} — ${study.result}`}
-                className="max-h-full max-w-full rounded-sm object-contain"
+                className="w-full rounded-md object-contain"
                 loading="lazy"
               />
-            </span>
-          </button>
+            </button>
 
-          {/* Content panel — all fields visible, no clicks required */}
-          <div className="flex flex-col gap-4 p-6 lg:p-8">
+            <p className={`mt-5 text-xs ${c.accent} opacity-50`}>{study.duration}</p>
+          </div>
 
-            {/* Result tag */}
-            <p className="inline-flex w-fit rounded-md border border-teal-200 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-950">
+          {/* Right: details */}
+          <div className="flex flex-col gap-5 bg-white p-7">
+
+            {/* Result badge */}
+            <div className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold ${c.badge}`}>
+              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${c.dot}`} />
               {study.result}
-            </p>
-
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-neutral-950">{study.projectName}</h3>
-
-            {/* Challenge */}
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                ความท้าทาย
-              </p>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                {study.card.challenge}
-              </p>
             </div>
 
-            {/* Actions Taken */}
+            <h3 className="text-xl font-semibold text-neutral-950">{study.businessImpact}</h3>
+
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                สิ่งที่ดำเนินการ
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">ความท้าทาย</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{study.card.challenge}</p>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">สิ่งที่ดำเนินการ</p>
               <ul className="mt-2 grid gap-1.5">
-                {study.card.actions.map((item) => (
-                  <li
-                    key={item}
-                    className="thai-readable flex items-start gap-2 text-sm leading-6 text-neutral-700"
-                  >
-                    <span className="mt-0.5 shrink-0 text-teal-500" aria-hidden="true">
-                      →
-                    </span>
-                    <span>{item}</span>
+                {study.card.actions.map((action) => (
+                  <li key={action} className="thai-readable flex items-start gap-2 text-sm leading-6 text-neutral-700">
+                    <span className={`mt-0.5 shrink-0 font-bold ${c.arrow}`} aria-hidden="true">→</span>
+                    <span>{action}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Results */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                ผลลัพธ์
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">ผลลัพธ์</p>
               <ul className="mt-2 grid gap-1.5">
-                {study.card.results.map((item) => (
-                  <li
-                    key={item}
-                    className="thai-readable flex items-start gap-2 text-sm leading-6 text-neutral-700"
-                  >
-                    <span className="mt-0.5 shrink-0 font-bold text-teal-600" aria-hidden="true">
-                      ✓
-                    </span>
-                    <span>{item}</span>
+                {study.card.results.map((result) => (
+                  <li key={result} className="thai-readable flex items-start gap-2 text-sm leading-6 text-neutral-700">
+                    <span className="mt-0.5 shrink-0 font-bold text-emerald-500" aria-hidden="true">✓</span>
+                    <span>{result}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Service + Duration */}
-            <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-neutral-200 pt-4 text-xs text-neutral-500">
-              {serviceBlogLinks[study.service] ? (
-                <Link
-                  to={serviceBlogLinks[study.service]}
-                  className="rounded bg-neutral-100 px-2 py-0.5 font-medium hover:bg-teal-50 hover:text-teal-800"
-                >
-                  {study.service}
-                </Link>
-              ) : (
-                <span className="rounded bg-neutral-100 px-2 py-0.5 font-medium">
-                  {study.service}
-                </span>
-              )}
-              <span aria-hidden="true">·</span>
-              <span>{study.duration}</span>
+            <div className="mt-auto flex items-center border-t border-neutral-100 pt-4 text-xs text-neutral-400">
+              <span>{study.industry}</span>
             </div>
-
           </div>
         </div>
       </article>
@@ -133,16 +111,13 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
       {/* Lightbox */}
       {open ? (
         <div
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-neutral-950/85 p-4"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-neutral-950/88 p-4"
           role="dialog"
           aria-modal="true"
           aria-label={study.projectName}
           onClick={() => setOpen(false)}
         >
-          <div
-            className="relative max-h-[92vh] w-full max-w-6xl"
-            onClick={(event) => event.stopPropagation()}
-          >
+          <div className="relative max-h-[92vh] w-full max-w-6xl" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               onClick={() => setOpen(false)}
@@ -150,11 +125,11 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
             >
               ปิด
             </button>
-            <div className="rounded-lg bg-white p-3 shadow-2xl shadow-neutral-950/30">
+            <div className="rounded-xl bg-white p-3 shadow-2xl shadow-neutral-950/40">
               <img
                 src={study.image}
                 alt={`${study.projectName} — ${study.result}`}
-                className="max-h-[84vh] w-full rounded-md object-contain"
+                className="max-h-[84vh] w-full rounded-lg object-contain"
               />
             </div>
           </div>
