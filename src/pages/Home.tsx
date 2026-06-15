@@ -88,8 +88,15 @@ export default function Home() {
               '@id': `${baseUrl}/#organization`,
               name: 'Saralak Search',
               url: baseUrl,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${baseUrl}/logo.svg`,
+              },
               founder: { '@id': `${baseUrl}/#saralak` },
-              sameAs: [`https://${brand.linkedIn}`],
+              sameAs: [
+                `https://www.${brand.linkedInCompany}`,
+                `https://www.${brand.linkedIn}`,
+              ],
               contactPoint: {
                 '@type': 'ContactPoint',
                 email: brand.email,

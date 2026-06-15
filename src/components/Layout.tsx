@@ -40,8 +40,8 @@ export default function Layout() {
     <div className="min-h-screen bg-[#fbfaf6] text-neutral-900">
       <header className="sticky top-0 z-40 border-b border-neutral-200 bg-[#fbfaf6]/95 backdrop-blur">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <NavLink to="/" className="text-lg font-semibold text-teal-950">
-            {brand.name}
+          <NavLink to="/" className="flex items-center">
+            <img src="/logo.svg" alt={brand.name} className="h-8 w-auto" />
           </NavLink>
           <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
@@ -89,7 +89,7 @@ export default function Layout() {
       <footer className="border-t border-neutral-200 bg-white pb-16 sm:pb-10">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
           <div>
-            <p className="text-lg font-semibold text-teal-950">{brand.name}</p>
+            <img src="/logo.svg" alt={brand.name} className="h-8 w-auto" />
             <p className="thai-readable mt-3 max-w-2xl leading-7 text-neutral-700">
               ช่วยธุรกิจไทยและ Agency Partner เพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT, Gemini และ Perplexity
             </p>

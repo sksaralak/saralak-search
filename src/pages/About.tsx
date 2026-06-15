@@ -160,13 +160,11 @@ export default function About() {
           '@graph': [
             {
               '@type': 'Person',
+              '@id': 'https://saralak-search.com/#saralak',
               name: 'Saralak Kaewkum',
               jobTitle: 'Founder and SEO, GEO and AI Search Consultant',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Saralak Search',
-                url: 'https://saralak-search.com',
-              },
+              worksFor: { '@id': 'https://saralak-search.com/#organization' },
+              sameAs: ['https://www.linkedin.com/in/saralakkaewkum'],
               knowsAbout: [
                 'SEO',
                 'AEO',
@@ -180,10 +178,19 @@ export default function About() {
             },
             {
               '@type': 'Organization',
+              '@id': 'https://saralak-search.com/#organization',
               name: 'Saralak Search',
               url: 'https://saralak-search.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://saralak-search.com/logo.svg',
+              },
               description:
                 'SEO, GEO and AI Search Consultancy founded and operated by Saralak Kaewkum.',
+              sameAs: [
+                'https://www.linkedin.com/company/saralak-search',
+                'https://www.linkedin.com/in/saralakkaewkum',
+              ],
             },
             {
               '@type': 'BreadcrumbList',

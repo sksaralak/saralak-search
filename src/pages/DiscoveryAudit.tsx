@@ -54,10 +54,17 @@ export default function DiscoveryAudit() {
           '@graph': [
             {
               '@type': 'Service',
+              '@id': 'https://saralak-search.com/discovery-audit/#service',
               name: 'Discovery Audit',
-              provider: { '@type': 'ProfessionalService', name: 'Saralak Search' },
-              areaServed: 'Thailand',
-              offers: { '@type': 'AggregateOffer', lowPrice: '5000', priceCurrency: 'THB' },
+              description: 'วิเคราะห์เว็บไซต์เพื่อค้นหาปัญหาและโอกาสบน Google Search, AI Overview และ Google Maps พร้อม Prioritized Roadmap และ Quick Wins',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: ['Thailand', 'Southeast Asia'],
+              offers: {
+                '@type': 'AggregateOffer',
+                lowPrice: '5000',
+                highPrice: '18000',
+                priceCurrency: 'THB',
+              },
             },
           ],
         }}

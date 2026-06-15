@@ -1,7 +1,7 @@
 import CTAButton from '../components/CTAButton'
 import BlogCard from '../components/BlogCard'
 import SEO from '../components/SEO'
-import { getLatestBlogPosts } from '../content/blog'
+import { blogPosts } from '../content/blog'
 
 export default function BlogIndex() {
   return (
@@ -61,8 +61,8 @@ export default function BlogIndex() {
 
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {getLatestBlogPosts(4).map((post) => (
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {[...blogPosts].sort((a, b) => b.publishedDate.localeCompare(a.publishedDate)).map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
           </div>

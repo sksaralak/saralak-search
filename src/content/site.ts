@@ -1,12 +1,13 @@
 export const brand = {
   name: 'Saralak Search',
   domain: 'saralak-search.com',
-  email: 'hello@saralak-search.com',
+  email: 'saralak@saralak-search.com',
   line: 'LINE: @sariahihi',
   lineUrl: 'https://line.me/ti/p/~sariahihi',
   phone: '0622944999',
   phoneUrl: 'tel:+66622944999',
   linkedIn: 'linkedin.com/in/saralakkaewkum',
+  linkedInCompany: 'linkedin.com/company/saralak-search',
   primaryCta: 'เพิ่มการมองเห็น',
   positioning:
     'Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and AI Search platforms',
