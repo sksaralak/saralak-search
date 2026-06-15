@@ -64,6 +64,10 @@ export default function BlogArticle() {
                 '@type': 'WebPage',
                 '@id': pageUrl,
               },
+              speakableSpecification: {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['h1', '[data-speakable]'],
+              },
             },
             ...(post.faqs && post.faqs.length > 0 ? [faqJsonLd(post.faqs)] : []),
             {

@@ -38,6 +38,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
           {post.title}
         </h1>
         <p
+          data-speakable
           className="mt-5 max-w-3xl text-base leading-7 text-neutral-700 sm:mt-6 sm:text-lg sm:leading-8"
           style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
         >

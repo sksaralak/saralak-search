@@ -28,43 +28,109 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Organization", "ProfessionalService"],
-      "@id": "https://saralak-search.com/#organization",
-      "name": "Saralak Search",
-      "url": "https://saralak-search.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://saralak-search.com/logo.svg"
-      },
-      "description": "Thai SEO consultancy specializing in SEO, AEO, GEO, and AI Search Visibility for businesses and agency partners in Thailand.",
-      "areaServed": ["Thailand", "Southeast Asia"],
-      "serviceType": [
-        "SEO",
-        "Answer Engine Optimization",
-        "Generative Engine Optimization",
-        "AI Search Visibility",
-        "Local SEO",
-        "Google Maps Optimization"
-      ],
-      "knowsAbout": [
-        "Search Engine Optimization",
-        "Answer Engine Optimization",
-        "Generative Engine Optimization",
-        "AI Search Visibility",
-        "Google AI Overviews",
-        "ChatGPT SEO",
-        "Perplexity SEO",
-        "Local SEO Thailand",
-        "Google Business Profile Optimization"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "TH"
-      },
-      "email": "saralak@saralak-search.com",
-      "sameAs": [
-        "https://www.linkedin.com/company/saralak-search",
-        "https://www.linkedin.com/in/saralakkaewkum"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://saralak-search.com/#website",
+          "url": "https://saralak-search.com",
+          "name": "Saralak Search",
+          "description": "Thai SEO, AEO and GEO consultancy helping businesses increase visibility on Google, AI Search and Google Maps.",
+          "inLanguage": ["th", "en"],
+          "publisher": { "@id": "https://saralak-search.com/#organization" }
+        },
+        {
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://saralak-search.com/#organization",
+          "name": "Saralak Search",
+          "url": "https://saralak-search.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://saralak-search.com/logo.svg"
+          },
+          "description": "Thai SEO consultancy specializing in SEO, AEO, GEO, and AI Search Visibility for businesses and agency partners in Thailand.",
+          "foundingDate": "2025",
+          "founder": { "@id": "https://saralak-search.com/#saralak" },
+          "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
+          "areaServed": ["Thailand", "Southeast Asia"],
+          "serviceType": [
+            "SEO",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization",
+            "AI Search Visibility",
+            "Local SEO",
+            "Google Maps Optimization"
+          ],
+          "knowsAbout": [
+            "Search Engine Optimization",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization",
+            "AI Search Visibility",
+            "Google AI Overviews",
+            "ChatGPT SEO",
+            "Perplexity SEO",
+            "Local SEO Thailand",
+            "Google Business Profile Optimization"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "TH"
+          },
+          "email": "saralak@saralak-search.com",
+          "sameAs": [
+            "https://www.linkedin.com/company/saralak-search",
+            "https://www.linkedin.com/in/saralakkaewkum"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Brand Visibility Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Discovery Audit",
+                  "url": "https://saralak-search.com/discovery-audit"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Increase Visibility on Google & AI Search",
+                  "url": "https://saralak-search.com/services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Increase Visibility on Google Maps",
+                  "url": "https://saralak-search.com/services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Monthly SEO Advisor",
+                  "url": "https://saralak-search.com/services"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://saralak-search.com/#saralak",
+          "name": "Saralak Kaewkum",
+          "jobTitle": "Founder and SEO, GEO and AI Search Consultant",
+          "url": "https://saralak-search.com/about",
+          "worksFor": { "@id": "https://saralak-search.com/#organization" },
+          "sameAs": [
+            "https://www.linkedin.com/in/saralakkaewkum",
+            "https://www.linkedin.com/company/saralak-search"
+          ]
+        }
       ]
     }
     </script>
