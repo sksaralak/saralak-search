@@ -2688,8 +2688,15 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
       <section className="grid gap-5">
         <P>
           มีบทความหนึ่งบน Medium ที่แชร์กันเยอะมากในกลุ่ม developer ชื่อว่า{' '}
-          <em>"I Used Claude Code to Add SEO to My Next.js App"</em> — dev คนนั้นใช้ Claude Code ทำ SEO
-          สำเร็จใน 48 ชั่วโมง 120 หน้า index ภายใน 24 ชั่วโมงหลัง deploy
+          <a
+            href="https://medium.com/@chiragthummar16/i-used-claude-code-to-add-seo-to-my-next-js-e59290525118"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
+          >
+            "I Used Claude Code to Add SEO to My Next.js App"
+          </a>{' '}
+          — dev คนนั้นใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง 120 หน้า index ภายใน 24 ชั่วโมงหลัง deploy
         </P>
         <P>
           ถ้าอ่านแล้วรู้สึกว่า "ฉันก็ทำแบบนั้นได้สิ" แล้วลองทำตามแต่ไม่ได้ผล — ไม่แปลกเลย
@@ -2743,7 +2750,16 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="หลักฐานว่าปัญหานี้จริง: 7,000+ GitHub Stars">
         <P>
-          มี repository ชื่อ <strong>claude-seo.md</strong> ที่สร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ
+          มี repository ชื่อ{' '}
+          <a
+            href="https://claude-seo.md/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
+          >
+            claude-seo.md
+          </a>{' '}
+          ที่สร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ
           เป็นไฟล์ prompt สำเร็จรูปที่บอก Claude ให้ทำ SEO อย่างถูกต้อง
           มีคน star มากกว่า 7,000 ครั้งในเวลาไม่นาน
         </P>
@@ -2860,7 +2876,16 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
         <P>
           Claude ทำ SEO ได้จริง — ถ้าคุณรู้ว่าต้องสั่งอะไร
           dev ที่ทำสำเร็จใน 48 ชั่วโมงไม่ได้เก่งกว่าคุณ เขาแค่มีความรู้ SEO อยู่ก่อนแล้ว
-          และ 7,000 stars บน claude-seo.md บอกว่าคุณไม่ใช่คนเดียวที่เจอปัญหานี้
+          และ 7,000 stars บน{' '}
+          <a
+            href="https://claude-seo.md/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
+          >
+            claude-seo.md
+          </a>{' '}
+          บอกว่าคุณไม่ใช่คนเดียวที่เจอปัญหานี้
         </P>
         <P>
           Claude เป็น tool ที่ดีที่สุดที่เคยมี แต่ tool ดีแค่ไหนก็ต้องการคนรู้ว่าจะใช้ทำอะไร
