@@ -104,6 +104,55 @@ const serviceCards: ServiceCard[] = [
   },
 ]
 
+const monitorPlatforms = [
+  { name: 'Google Search', status: 'ok'      as const, label: 'Indexed & Ranking' },
+  { name: 'AI Overview',   status: 'partial' as const, label: 'Partial Visibility' },
+  { name: 'ChatGPT',       status: 'miss'    as const, label: 'Not Found' },
+  { name: 'Gemini',        status: 'miss'    as const, label: 'Not Found' },
+  { name: 'Perplexity',    status: 'partial' as const, label: 'Partial Visibility' },
+]
+
+const monitorDot: Record<typeof monitorPlatforms[number]['status'], string> = {
+  ok:      'bg-emerald-400 animate-pulse-dot',
+  partial: 'bg-amber-400 animate-pulse-dot',
+  miss:    'bg-red-500',
+}
+
+const monitorText: Record<typeof monitorPlatforms[number]['status'], string> = {
+  ok:      'text-emerald-400',
+  partial: 'text-amber-400',
+  miss:    'text-red-400',
+}
+
+function AiBrandMonitor() {
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 shadow-2xl shadow-neutral-950/50">
+      <div className="flex items-center gap-2 border-b border-neutral-800 bg-neutral-900 px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
+        <span className="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
+        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
+        <span className="ml-2 font-mono text-xs text-neutral-600">brand-visibility-scan.sh</span>
+      </div>
+      <div className="p-6">
+        <p className="font-mono text-xs text-neutral-600">$ scanning "your-brand" across AI platforms...</p>
+        <div className="mt-5 grid gap-3">
+          {monitorPlatforms.map((p) => (
+            <div key={p.name} className="flex items-center gap-3">
+              <span className={`h-2 w-2 shrink-0 rounded-full ${monitorDot[p.status]}`} />
+              <span className="flex-1 font-mono text-xs text-neutral-400">{p.name}</span>
+              <span className={`font-mono text-xs font-semibold ${monitorText[p.status]}`}>{p.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 border-t border-neutral-800 pt-5">
+          <p className="font-mono text-xs text-neutral-600">Result: 3 platforms have visibility gaps</p>
+          <p className="mt-2 font-mono text-xs text-teal-400">→ Discovery Audit แก้ได้ภายใน 1 สัปดาห์</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const decisionGuide = [
   {
     condition: 'ยังไม่รู้ว่าปัญหาอยู่ตรงไหน',
@@ -197,35 +246,36 @@ export default function Services() {
 
       {/* Section 1: Hero */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Services</p>
-          <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-            เพิ่มการมองเห็นของแบรนด์
-            <br className="hidden sm:block" />
-            บน Google และ AI Search
-          </h1>
-          <p className="thai-readable mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ลูกค้าไม่ได้ค้นหาธุรกิจผ่าน Google เพียงอย่างเดียวอีกต่อไป วันนี้พวกเขาค้นหาผ่าน
-            Google Search, AI Overview, ChatGPT, Gemini, Perplexity และ Google Maps
-            ก่อนตัดสินใจเลือกสินค้าและบริการ
-          </p>
-          <p className="thai-readable mt-4 max-w-3xl leading-8 text-neutral-700">
-            Saralak Search ช่วยให้ธุรกิจเข้าใจสถานะการมองเห็นของแบรนด์ ค้นหาโอกาสในการเติบโต
-            และเพิ่มการค้นพบจาก Google และ AI Search อย่างเป็นระบบ
-          </p>
-          <p className="thai-readable mt-4 max-w-3xl text-sm leading-7 text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-seo" className="text-teal-700 hover:underline">SEO คืออะไร</Link>
-            {' · '}
-            <Link to="/blog/what-is-aeo" className="text-teal-700 hover:underline">AEO คืออะไร</Link>
-            {' · '}
-            <Link to="/blog/what-is-geo" className="text-teal-700 hover:underline">GEO คืออะไร</Link>
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
-            <CTAButton to="/case-studies" variant="secondary">
-              ดูตัวอย่างผลงาน
-            </CTAButton>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Services</p>
+            <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-[3.25rem]">
+              เพิ่มการมองเห็นของแบรนด์
+              <br className="hidden sm:block" />
+              <span className="animate-gradient-text">บน Google และ AI Search</span>
+            </h1>
+            <p className="thai-readable mt-6 text-lg leading-8 text-neutral-700">
+              ลูกค้าไม่ได้ค้นหาธุรกิจผ่าน Google เพียงอย่างเดียวอีกต่อไป วันนี้พวกเขาค้นหาผ่าน
+              Google Search, AI Overview, ChatGPT, Gemini, Perplexity และ Google Maps
+              ก่อนตัดสินใจเลือกสินค้าและบริการ
+            </p>
+            <p className="thai-readable mt-4 text-sm leading-7 text-neutral-500">
+              อ่านเพิ่มเติม:{' '}
+              <Link to="/blog/what-is-seo" className="text-teal-700 hover:underline">SEO คืออะไร</Link>
+              {' · '}
+              <Link to="/blog/what-is-aeo" className="text-teal-700 hover:underline">AEO คืออะไร</Link>
+              {' · '}
+              <Link to="/blog/what-is-geo" className="text-teal-700 hover:underline">GEO คืออะไร</Link>
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+              <CTAButton to="/case-studies" variant="secondary">
+                ดูตัวอย่างผลงาน
+              </CTAButton>
+            </div>
+          </div>
+          <div>
+            <AiBrandMonitor />
           </div>
         </div>
       </section>

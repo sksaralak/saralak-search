@@ -10,6 +10,52 @@ import { getLatestBlogPosts } from '../content/blog'
 import { homepageFaqs } from '../content/faqs'
 import { brand, proofItems, services } from '../content/site'
 
+const tickerItems = [
+  { platform: 'ChatGPT', query: '"SEO agency ไทย"', status: 'miss' as const, result: 'ไม่พบแบรนด์' },
+  { platform: 'Gemini', query: '"ที่ปรึกษา GEO Thailand"', status: 'miss' as const, result: 'ไม่พบแบรนด์' },
+  { platform: 'Perplexity', query: '"GEO checklist ภาษาไทย"', status: 'found' as const, result: 'พบ saralak-search.com' },
+  { platform: 'AI Overview', query: '"บริษัทรับทำ SEO ราคา"', status: 'partial' as const, result: '1 ใน 5 ปรากฏ' },
+  { platform: 'Claude', query: '"llms.txt สำหรับเว็บไทย"', status: 'miss' as const, result: 'ไม่พบแบรนด์' },
+  { platform: 'ChatGPT', query: '"AEO คืออะไร"', status: 'found' as const, result: 'พบ Saralak Search' },
+  { platform: 'Perplexity', query: '"AI Search consultant ไทย"', status: 'miss' as const, result: 'ไม่พบแบรนด์' },
+  { platform: 'Gemini', query: '"GEO vs SEO ต่างกัน"', status: 'partial' as const, result: 'พบบางส่วน' },
+]
+
+const statusDot: Record<typeof tickerItems[number]['status'], string> = {
+  found:   'bg-emerald-400',
+  partial: 'bg-amber-400',
+  miss:    'bg-red-500',
+}
+
+const statusText: Record<typeof tickerItems[number]['status'], string> = {
+  found:   'text-emerald-400',
+  partial: 'text-amber-400',
+  miss:    'text-red-400',
+}
+
+function CitationTicker() {
+  const items = [...tickerItems, ...tickerItems]
+  return (
+    <div className="relative overflow-hidden border-y border-neutral-800 bg-neutral-950 py-3">
+      <div className="flex animate-ticker whitespace-nowrap">
+        {items.map((item, i) => (
+          <span key={i} className="inline-flex items-center gap-2.5 px-7 font-mono text-[11px]">
+            <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${statusDot[item.status]}`} />
+            <span className="text-neutral-500">{item.platform}</span>
+            <span className="text-neutral-600">·</span>
+            <span className="text-neutral-300">{item.query}</span>
+            <span className="text-neutral-600">·</span>
+            <span className={`font-semibold ${statusText[item.status]}`}>{item.result}</span>
+            <span className="ml-3 text-neutral-800">|</span>
+          </span>
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-neutral-950 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-neutral-950 to-transparent" />
+    </div>
+  )
+}
+
 const searchQueries = [
   'SEO consultant สำหรับธุรกิจไทย',
   'ให้ ChatGPT แนะนำธุรกิจของฉันยังไง',
@@ -257,6 +303,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CitationTicker />
 
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
