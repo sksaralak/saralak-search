@@ -448,6 +448,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
+    heroImageDesktop: '/image/blog/ai-website/ai-website-banner-web.png',
+    heroImageMobile: '/image/blog/ai-website/ai-website-banner-mweb.png',
+    heroImageAlt: 'Claude ทำ SEO ได้จริงไหม? วิเคราะห์จากเคสที่ dev ใช้ Claude Code แล้วสำเร็จ',
+    ogImage: '/image/blog/ai-website/ai-website-banner-web.png',
     metaTitle: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด | Saralak Search',
     metaDescription:
       'วิเคราะห์เคสจริง: dev ใช้ Claude Code ทำ SEO สำเร็จ 120 หน้า index ใน 24 ชั่วโมง — Claude ทำ SEO ได้จริง แต่มีเงื่อนไขที่คนส่วนใหญ่ไม่รู้',
@@ -478,6 +482,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
+    heroImageDesktop: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
+    heroImageMobile: '/image/blog/llms-txt-how-to/llms-txt-how-banner-mweb.png',
+    heroImageAlt: 'llms.txt คืออะไร วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ',
+    ogImage: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
     metaTitle: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทย | Saralak Search',
     metaDescription:
       'llms.txt คือไฟล์ที่ช่วยให้ AI เข้าใจเว็บไซต์ของคุณได้ดีขึ้น เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงสำหรับธุรกิจหลายประเภท และวิธีทดสอบว่า AI อ่านได้หรือไม่',

@@ -2160,6 +2160,11 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleImage
+        src="/image/blog/llms-txt-how-to/how-llms-work.png"
+        alt="AI ทำงานอย่างไร และทำไม llms.txt ถึงช่วยให้ AI เข้าใจเว็บไซต์ได้ดีขึ้น"
+      />
+
       <ArticleSection title="llms.txt ต่างจาก robots.txt อย่างไร?">
         <ArticleSubSection title="robots.txt — บอกว่าหน้าไหนเข้าได้หรือไม่ได้">
           <P>
@@ -2172,6 +2177,11 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
           </P>
         </ArticleSubSection>
       </ArticleSection>
+
+      <ArticleImage
+        src="/image/blog/llms-txt-how-to/llms-robots.png"
+        alt="ความต่างระหว่าง llms.txt และ robots.txt สำหรับเว็บไซต์ไทย"
+      />
 
       <ArticleSection title="โครงสร้างของ llms.txt ที่ดี">
         <P>llms.txt ที่มีประสิทธิภาพควรมี 5 ส่วนหลัก:</P>
@@ -2721,6 +2731,10 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
           เขารู้คำเหล่านี้ทั้งหมดก่อน เขาแค่ให้ Claude implement ที่เร็วขึ้น
           ไม่ใช่ให้ Claude "คิด" ว่าต้องทำอะไร
         </P>
+        <ArticleImage
+          src="/image/blog/ai-website/ai-website-info.png"
+          alt="สิ่งที่ dev รู้ก่อนสั่ง Claude ทำ SEO — Dynamic Metadata, Sitemap, JSON-LD, Canonical, robots.txt"
+        />
       </ArticleSection>
 
       <ArticleSection title="ถ้าไม่รู้คำเหล่านั้น จะสั่ง Claude ว่าอะไร?">
@@ -2775,6 +2789,10 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
             ไม่ใช่ว่าคุณทำอะไรผิด
           </p>
         </div>
+        <ArticleImage
+          src="/image/blog/ai-website/ai-info.png"
+          alt="claude-seo.md — 7,000+ GitHub stars หลักฐานว่าการสั่ง Claude ทำ SEO ต้องการความรู้ก่อน"
+        />
       </ArticleSection>
 
       <ArticleSection title="Claude เป็น tool ที่ดีที่สุดที่เคยมี — แต่ยังเป็นแค่ tool">
