@@ -153,6 +153,32 @@ function AiBrandMonitor() {
   )
 }
 
+const cardColors = [
+  { bar: 'bg-teal-500',   iconBg: 'bg-teal-50',   iconText: 'text-teal-600',   glow: 'hover:shadow-teal-100/50'   },
+  { bar: 'bg-sky-500',    iconBg: 'bg-sky-50',    iconText: 'text-sky-600',    glow: 'hover:shadow-sky-100/50'    },
+  { bar: 'bg-violet-500', iconBg: 'bg-violet-50', iconText: 'text-violet-600', glow: 'hover:shadow-violet-100/50' },
+]
+
+function CardIcon({ index }: { index: number }) {
+  if (index === 0) return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  )
+  if (index === 1) return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+    </svg>
+  )
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>
+  )
+}
+
 const decisionGuide = [
   {
     condition: 'ยังไม่รู้ว่าปัญหาอยู่ตรงไหน',
@@ -245,55 +271,67 @@ export default function Services() {
       />
 
       {/* Section 1: Hero */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Services</p>
-            <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-[3.25rem]">
-              เพิ่มการมองเห็นของแบรนด์
-              <br className="hidden sm:block" />
-              <span className="animate-gradient-text">บน Google และ AI Search</span>
-            </h1>
-            <p className="thai-readable mt-6 text-lg leading-8 text-neutral-700">
-              ลูกค้าไม่ได้ค้นหาธุรกิจผ่าน Google เพียงอย่างเดียวอีกต่อไป วันนี้พวกเขาค้นหาผ่าน
-              Google Search, AI Overview, ChatGPT, Gemini, Perplexity และ Google Maps
-              ก่อนตัดสินใจเลือกสินค้าและบริการ
-            </p>
-            <p className="thai-readable mt-4 text-sm leading-7 text-neutral-500">
-              อ่านเพิ่มเติม:{' '}
-              <Link to="/blog/what-is-seo" className="text-teal-700 hover:underline">SEO คืออะไร</Link>
-              {' · '}
-              <Link to="/blog/what-is-aeo" className="text-teal-700 hover:underline">AEO คืออะไร</Link>
-              {' · '}
-              <Link to="/blog/what-is-geo" className="text-teal-700 hover:underline">GEO คืออะไร</Link>
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
-              <CTAButton to="/case-studies" variant="secondary">
-                ดูตัวอย่างผลงาน
-              </CTAButton>
+      <section className="bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-teal-400">Services</p>
+              <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
+                เพิ่มการมองเห็นของแบรนด์
+                <br className="hidden sm:block" />
+                <span className="animate-gradient-text">บน Google และ AI Search</span>
+              </h1>
+              <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
+                ลูกค้าไม่ได้ค้นหาธุรกิจผ่าน Google เพียงอย่างเดียวอีกต่อไป วันนี้พวกเขาค้นหาผ่าน
+                Google Search, AI Overview, ChatGPT, Gemini, Perplexity และ Google Maps
+                ก่อนตัดสินใจเลือกสินค้าและบริการ
+              </p>
+              <p className="thai-readable mt-4 text-sm leading-7 text-neutral-500">
+                อ่านเพิ่มเติม:{' '}
+                <Link to="/blog/what-is-seo" className="text-teal-400 hover:underline">SEO คืออะไร</Link>
+                {' · '}
+                <Link to="/blog/what-is-aeo" className="text-teal-400 hover:underline">AEO คืออะไร</Link>
+                {' · '}
+                <Link to="/blog/what-is-geo" className="text-teal-400 hover:underline">GEO คืออะไร</Link>
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                <CTAButton to="/case-studies" variant="secondary">
+                  ดูตัวอย่างผลงาน
+                </CTAButton>
+              </div>
             </div>
-          </div>
-          <div>
-            <AiBrandMonitor />
+            <div className="relative">
+              <div className="pointer-events-none absolute -inset-3 rounded-2xl bg-teal-500/10 blur-2xl" />
+              <div className="relative">
+                <AiBrandMonitor />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Common Problems (P3 — problem-focused, replaces feature channels) */}
-      <section className="border-y border-neutral-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-teal-800">
+      {/* Section 2: Common Problems */}
+      <section className="border-b border-neutral-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p className="mb-8 text-sm font-semibold uppercase tracking-wide text-teal-800">
             ปัญหาที่พบบ่อย
           </p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {commonProblems.map(({ setup, pain }) => (
-              <article
-                key={setup}
-                className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5"
-              >
-                <p className="text-sm font-medium text-neutral-500">{setup}</p>
-                <p className="thai-readable mt-1 font-semibold leading-7 text-neutral-950">{pain}</p>
+              <article key={setup} className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <div className="border-b border-neutral-100 bg-neutral-50 px-5 py-4">
+                  <p className="flex items-center gap-2 text-sm font-medium text-neutral-500">
+                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-[9px] text-neutral-400">✓</span>
+                    {setup}
+                  </p>
+                </div>
+                <div className="bg-red-50/70 px-5 py-4">
+                  <p className="flex items-start gap-2 font-semibold leading-6 text-red-800">
+                    <span className="mt-0.5 shrink-0 text-red-400">✗</span>
+                    <span className="thai-readable">{pain}</span>
+                  </p>
+                </div>
               </article>
             ))}
           </div>
@@ -305,63 +343,65 @@ export default function Services() {
       </section>
 
       {/* Section 3: How It Works */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="ขั้นตอน" title="จากการวิเคราะห์สู่การเติบโตระยะยาว" />
-        <div className="mt-10">
-          {/* Mobile: vertical flow */}
-          <div className="lg:hidden">
-            {journey.map((item, index) => (
-              <div key={item.step} className="flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-900 text-sm font-bold text-white">
-                    {item.step}
-                  </div>
-                  {index < journey.length - 1 && (
-                    <div className="mt-1 h-10 w-px bg-teal-300" />
-                  )}
-                </div>
-                <div className="pb-5">
-                  <h3 className="font-semibold text-neutral-950">{item.title}</h3>
-                  <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Desktop: horizontal flow */}
-          <div
-            className="hidden lg:grid items-start"
-            style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr' }}
-          >
-            {journey.map((item, index) => (
-              <Fragment key={item.step}>
-                <div className="px-4 text-center">
-                  <div className="flex justify-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-900 text-base font-bold text-white">
+      <section className="bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="ขั้นตอน" title="จากการวิเคราะห์สู่การเติบโตระยะยาว" tone="light" />
+          <div className="mt-12">
+            {/* Mobile: vertical flow */}
+            <div className="lg:hidden">
+              {journey.map((item, index) => (
+                <div key={item.step} className="flex gap-5">
+                  <div className="flex flex-col items-center">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-700 text-sm font-bold text-white shadow-lg shadow-teal-900/40">
                       {item.step}
                     </div>
+                    {index < journey.length - 1 && (
+                      <div className="mt-1 h-10 w-px bg-teal-800" />
+                    )}
                   </div>
-                  <h3 className="mt-4 font-semibold text-neutral-950">{item.title}</h3>
-                  <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                    {item.description}
-                  </p>
+                  <div className="pb-6">
+                    <h3 className="font-semibold text-white">{item.title}</h3>
+                    <p className="thai-readable mt-1 text-sm leading-6 text-neutral-400">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                {index < journey.length - 1 && (
-                  <div
-                    className="flex items-center justify-center px-1 pt-6 text-2xl text-teal-400"
-                    aria-hidden="true"
-                  >
-                    →
+              ))}
+            </div>
+            {/* Desktop: horizontal flow */}
+            <div
+              className="hidden lg:grid items-start"
+              style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr' }}
+            >
+              {journey.map((item, index) => (
+                <Fragment key={item.step}>
+                  <div className="px-4 text-center">
+                    <div className="flex justify-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-700 text-base font-bold text-white shadow-xl shadow-teal-900/50">
+                        {item.step}
+                      </div>
+                    </div>
+                    <h3 className="mt-5 font-semibold text-white">{item.title}</h3>
+                    <p className="thai-readable mt-2 text-sm leading-6 text-neutral-400">
+                      {item.description}
+                    </p>
                   </div>
-                )}
-              </Fragment>
-            ))}
+                  {index < journey.length - 1 && (
+                    <div
+                      className="flex items-center justify-center px-1 pt-7 text-2xl text-teal-700"
+                      aria-hidden="true"
+                    >
+                      →
+                    </div>
+                  )}
+                </Fragment>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 4: Business Outcomes (P4 — NEW: value before service menu) */}
+      {/* Section 4: Business Outcomes */}
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
@@ -369,69 +409,89 @@ export default function Services() {
             title="สิ่งที่คุณจะได้รับ"
             description="ไม่ว่าคุณจะเลือกบริการใด นี่คือสิ่งที่คุณจะได้รับจากการทำงานร่วมกัน"
           />
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {businessOutcomes.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span
-                  className="mt-0.5 shrink-0 font-bold text-teal-700"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
-                <span className="thai-readable text-neutral-700">{item}</span>
-              </li>
+              <div key={item} className="flex items-start gap-3 rounded-xl border border-teal-100 bg-gradient-to-br from-teal-50 to-white px-5 py-4">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-600 text-[10px] font-bold text-white" aria-hidden="true">✓</span>
+                <span className="thai-readable text-sm leading-6 text-neutral-800">{item}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      {/* Section 5: Choose the Right Service (P1+P2+P7 — renamed, simplified, 2×2 grid) */}
+      {/* Section 5: Choose the Right Service */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="บริการ"
           title="เลือกบริการที่เหมาะกับคุณ"
           description="แต่ละบริการออกแบบมาเพื่อวัตถุประสงค์ที่แตกต่างกัน เลือกตามเป้าหมายของธุรกิจ"
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {serviceCards.map((card) => (
-            <article
-              key={card.title}
-              className="flex flex-col rounded-lg border border-teal-100 bg-white p-6 shadow-sm shadow-neutral-950/5"
-            >
-              <h3 className="break-words text-xl font-semibold text-neutral-950">{card.title}</h3>
-              <p className="thai-readable mt-1 text-sm text-neutral-600">{card.tagline}</p>
-              <p className="mt-3 text-xl font-semibold text-teal-900">{card.price}</p>
 
-              <div className="mt-5 border-t border-neutral-200 pt-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                  เหมาะสำหรับ
-                </p>
-                <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{card.fit}</p>
-              </div>
+        {/* Discovery Audit — featured dark card */}
+        <article className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-teal-950 via-[#0d3d36] to-neutral-900 p-8 text-white shadow-2xl shadow-teal-950/40 sm:p-10 md:flex md:items-center md:gap-10">
+          <div className="flex-1">
+            <span className="inline-flex items-center gap-2 rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-300 ring-1 ring-teal-500/25">
+              <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
+              ไม่แน่ใจว่าควรเริ่มจากตรงไหน? เริ่มที่นี่
+            </span>
+            <h3 className="mt-5 text-2xl font-semibold text-white">Discovery Audit</h3>
+            <p className="thai-readable mt-1 text-teal-200">{serviceCards[0].tagline}</p>
+            <p className="mt-3 text-2xl font-bold text-teal-300">{serviceCards[0].price}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {serviceCards[0].outcomes.map((o) => (
+                <span key={o} className="rounded-full bg-white/8 px-3 py-1 text-sm text-teal-100 ring-1 ring-white/10">
+                  {o}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 shrink-0 md:mt-0">
+            <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+          </div>
+        </article>
 
-              <div className="mt-5 border-t border-neutral-200 pt-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                  สิ่งที่ได้รับ
-                </p>
-                <ul className="mt-3 grid gap-1.5">
-                  {card.outcomes.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
-                      <span className="mt-0.5 text-teal-500" aria-hidden="true">
-                        →
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {/* Other 3 services — accent-colored cards */}
+        <div className="mt-5 grid gap-5 md:grid-cols-3">
+          {serviceCards.slice(1).map((card, i) => {
+            const c = cardColors[i]
+            return (
+              <article
+                key={card.title}
+                className={`group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl ${c.glow}`}
+              >
+                <div className={`h-1 w-full ${c.bar}`} />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg ${c.iconBg} ${c.iconText}`}>
+                    <CardIcon index={i} />
+                  </div>
+                  <h3 className="break-words text-lg font-semibold text-neutral-950">{card.title}</h3>
+                  <p className="thai-readable mt-1 text-sm text-neutral-500">{card.tagline}</p>
+                  <p className="mt-3 text-lg font-bold text-neutral-900">{card.price}</p>
 
-              <div className="mt-auto pt-6">
-                <CTAButton to={card.cta.to} className="w-full">
-                  {card.cta.label}
-                </CTAButton>
-              </div>
-            </article>
-          ))}
+                  <div className="mt-4 border-t border-neutral-100 pt-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">เหมาะสำหรับ</p>
+                    <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-700">{card.fit}</p>
+                  </div>
+
+                  <ul className="mt-4 grid gap-1.5">
+                    {card.outcomes.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
+                        <span className={`mt-0.5 shrink-0 font-bold ${c.iconText}`} aria-hidden="true">→</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-6">
+                    <CTAButton to={card.cta.to} className="w-full">
+                      {card.cta.label}
+                    </CTAButton>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </section>
 
@@ -461,22 +521,22 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Section 7: Trust / Credibility (P5 — strengthened, trust-focused) */}
+      {/* Section 7: Trust / Credibility */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="ทำไม Saralak Search"
           title="ทำไมธุรกิจเลือก Saralak Search"
         />
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-          {trustPoints.map((point) => (
-            <li key={point} className="flex items-start gap-3">
-              <span className="mt-0.5 shrink-0 font-bold text-teal-700" aria-hidden="true">
-                ✓
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {trustPoints.map((point, i) => (
+            <div key={point} className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-all duration-150 hover:border-teal-200 hover:shadow-md hover:shadow-teal-50">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-900 text-xs font-bold text-white">
+                {String(i + 1).padStart(2, '0')}
               </span>
-              <span className="thai-readable text-neutral-700">{point}</span>
-            </li>
+              <span className="thai-readable text-sm leading-6 text-neutral-700">{point}</span>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       {/* Section 8: Social Proof (P2 — real work examples, before FAQ) */}
