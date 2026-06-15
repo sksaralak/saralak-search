@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt'
   cta?: {
     headline: string
     description: string
@@ -312,7 +312,157 @@ export const whatIsAeoFaqs: FAQItem[] = [
   },
 ]
 
+export const llmsTxtFaqs: FAQItem[] = [
+  {
+    question: 'llms.txt คืออะไร',
+    answer:
+      'llms.txt คือไฟล์ข้อความที่วางไว้ในโฟลเดอร์หลักของเว็บไซต์ เพื่อบอก AI ว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน คล้ายกับ robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ',
+  },
+  {
+    question: 'llms.txt ต่างจาก robots.txt อย่างไร',
+    answer:
+      'robots.txt บอก Search Engine Crawler ว่าหน้าไหน "ห้ามเข้า" ส่วน llms.txt บอก AI ว่าเว็บไซต์นี้ "เกี่ยวกับอะไร" และควรอ่านหน้าไหนก่อน robots.txt ใช้ไวยากรณ์เฉพาะ ส่วน llms.txt ใช้ภาษา Markdown ที่อ่านง่ายทั้งสำหรับ AI และมนุษย์',
+  },
+  {
+    question: 'llms.txt จำเป็นกับ GEO ไหม',
+    answer:
+      'llms.txt ไม่ใช่ปัจจัยเดียวของ GEO แต่ช่วยให้ AI เข้าใจเว็บไซต์ได้เร็วและแม่นยำขึ้น โดยเฉพาะเว็บไซต์ที่มีเนื้อหาหลายหัวข้อ การมี llms.txt ที่ดีช่วยให้ AI รู้ว่าควรนำเนื้อหาของเราไปใช้ตอบคำถามเรื่องอะไร',
+  },
+  {
+    question: 'llms.txt ใช้ภาษาอะไร ไทยหรืออังกฤษ',
+    answer:
+      'ใช้ได้ทั้งสองภาษา แต่แนะนำให้เขียนภาษาที่สอดคล้องกับ Target Audience และเนื้อหาหลักของเว็บไซต์ สำหรับเว็บไซต์ภาษาไทยที่เน้นตลาดไทย ควรเขียน llms.txt เป็นภาษาไทยเป็นหลัก และอาจเพิ่มคำอธิบายภาษาอังกฤษในส่วนที่ต้องการ',
+  },
+  {
+    question: 'AI อ่าน llms.txt จริงไหม',
+    answer:
+      'AI บางตัวอ่าน llms.txt เพื่อทำความเข้าใจเว็บไซต์ก่อนประมวลผลเนื้อหา โดยเฉพาะในกรณีที่ AI ต้องการ crawl หรือ index เนื้อหาใหม่ อย่างไรก็ตาม ผลของ llms.txt ยังขึ้นอยู่กับ AI แต่ละระบบว่ารองรับมาตรฐานนี้หรือไม่',
+  },
+  {
+    question: 'วางไฟล์ llms.txt ไว้ที่ไหน',
+    answer:
+      'วางไว้ที่ root directory ของเว็บไซต์ เข้าถึงได้ที่ yourdomain.com/llms.txt เช่นเดียวกับ robots.txt ที่อยู่ที่ yourdomain.com/robots.txt หากใช้ WordPress วางไว้ในโฟลเดอร์ public_html หากใช้ React/Next.js วางไว้ในโฟลเดอร์ public/',
+  },
+  {
+    question: 'llms.txt ควรอัปเดตบ่อยแค่ไหน',
+    answer:
+      'ควรอัปเดต llms.txt ทุกครั้งที่มีการเพิ่มบทความใหม่ บริการใหม่ หรือเปลี่ยนทิศทางของเว็บไซต์ อย่างน้อยปรับปรุงทุก 1-2 เดือน เพื่อให้ AI มีข้อมูลล่าสุดเกี่ยวกับเนื้อหาของเว็บไซต์',
+  },
+  {
+    question: 'เว็บไซต์ที่ไม่มี llms.txt เสียเปรียบไหม',
+    answer:
+      'ในระยะสั้นอาจไม่เห็นความแตกต่างชัดเจน แต่เว็บไซต์ที่มี llms.txt ที่ดีช่วยให้ AI เข้าใจ Context ได้ดีกว่า ซึ่งอาจส่งผลต่อโอกาสถูกอ้างอิงในระยะยาว โดยเฉพาะเมื่อ AI Crawler รองรับมาตรฐานนี้มากขึ้น',
+  },
+]
+
+export const geoChecklistFaqs: FAQItem[] = [
+  {
+    question: 'GEO Checklist คืออะไร',
+    answer:
+      'GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ ครอบคลุม 5 หมวดหลัก ได้แก่ Entity, Content, Technical, Mention และ Measurement',
+  },
+  {
+    question: 'ต้องทำ GEO Checklist ครบทุกข้อไหม',
+    answer:
+      'ไม่จำเป็นต้องทำครบทุกข้อพร้อมกัน แนะนำให้เริ่มจากหมวด Technical และ Entity ก่อน เพราะเป็นพื้นฐานที่ AI ใช้เข้าใจธุรกิจของคุณ จากนั้นค่อยต่อด้วย Content, Mention และ Measurement ตามลำดับ',
+  },
+  {
+    question: 'llms.txt คืออะไรและสำคัญแค่ไหน',
+    answer:
+      'llms.txt คือไฟล์ที่ใส่ไว้ในโฟลเดอร์หลักของเว็บไซต์ เพื่อบอก AI ว่าเว็บไซต์ของเราเกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน คล้ายกับ robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ ธุรกิจไทยส่วนใหญ่ยังไม่มี จึงเป็นโอกาสที่ดีในการทำก่อนคู่แข่ง',
+  },
+  {
+    question: 'Schema Markup ที่จำเป็นสำหรับ GEO มีอะไรบ้าง',
+    answer:
+      'Schema ที่สำคัญสำหรับ GEO ได้แก่ Organization (ข้อมูลแบรนด์), Person (ข้อมูลผู้เชี่ยวชาญ), Article หรือ BlogPosting (บทความ), FAQPage (คำถามที่พบบ่อย) และ BreadcrumbList (โครงสร้างหน้า) โดยควรใช้ @id เพื่อเชื่อมโยง Schema แต่ละประเภทเข้าหากัน เพื่อให้ AI เข้าใจว่าผู้เขียนบทความเป็นคนเดียวกับเจ้าของแบรนด์',
+  },
+  {
+    question: 'ทำไมเนื้อหาภาษาไทยถึงได้เปรียบกว่าภาษาอังกฤษในยุค GEO',
+    answer:
+      'เนื้อหาภาษาไทยบน AI Search มีการแข่งขันต่ำกว่าภาษาอังกฤษมาก เนื่องจากยังมีแบรนด์ไทยน้อยที่ทำ GEO อย่างจริงจัง หากเขียนเนื้อหาภาษาไทยที่ดี มีโครงสร้างชัด และมี Information Gain ที่ AI ยังไม่มี โอกาสถูกอ้างอิงจึงสูงกว่าการแข่งในตลาดภาษาอังกฤษที่มีคู่แข่งระดับโลก',
+  },
+  {
+    question: 'Brand Mention จากที่ไหนที่สำคัญสำหรับ GEO ในไทย',
+    answer:
+      'Brand Mention ที่ AI อ่านได้ในบริบทไทย ได้แก่ LinkedIn (ทั้ง Personal และ Company Page), Google Business Profile Review, บทความหรือ Guest Post ในเว็บไซต์ภายนอก, การถูกพูดถึงใน Facebook Group หรือ Pantip และ Podcast หรือ YouTube ที่มี Transcript',
+  },
+  {
+    question: 'วัดผล GEO ได้อย่างไร',
+    answer:
+      'วัดผล GEO ได้จากการทดสอบ Prompt ใน ChatGPT, Gemini และ Perplexity เดือนละครั้ง ติดตาม Branded Search ใน Google Search Console ดู AI Referral Traffic ใน GA4 และใช้ Tools เช่น Otterly.AI หรือ Profound สำหรับ AI Mention Tracking อย่างเป็นระบบ',
+  },
+  {
+    question: 'ธุรกิจเล็กเริ่มทำ GEO Checklist จากจุดไหนดี',
+    answer:
+      'ธุรกิจเล็กควรเริ่มจาก 3 จุดก่อน ได้แก่ 1) ทำ Organization Schema และ Google Business Profile ให้ครบ 2) เขียน Pillar Content หนึ่งหัวข้อที่ธุรกิจเชี่ยวชาญจริง พร้อม FAQ อย่างน้อย 5 ข้อ 3) อัปเดต LinkedIn Profile หรือ Company Page ให้สอดคล้องกับข้อมูลบนเว็บไซต์',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ',
+    slug: 'llms-txt-thailand',
+    category: 'GEO',
+    excerpt:
+      'llms.txt คือไฟล์ที่บอก AI ว่าเว็บไซต์ของคุณเกี่ยวกับอะไร คล้าย robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงที่ copy ไปใช้ได้เลย',
+    readingTime: '12 min read',
+    publishedDate: '2026-06-15',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทย | Saralak Search',
+    metaDescription:
+      'llms.txt คือไฟล์ที่ช่วยให้ AI เข้าใจเว็บไซต์ของคุณได้ดีขึ้น เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงสำหรับธุรกิจหลายประเภท และวิธีทดสอบว่า AI อ่านได้หรือไม่',
+    aiSummary: [
+      'llms.txt คือไฟล์ที่วางไว้ใน root ของเว็บไซต์เพื่อบอก AI ว่าเว็บไซต์เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน',
+      'ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt ทำก่อนคู่แข่งในอุตสาหกรรมเดียวกันคือข้อได้เปรียบที่ทำได้ทันที',
+      'llms.txt ใช้ภาษา Markdown เขียนง่าย ไม่ต้องมีความรู้ด้าน Code และวางไฟล์ได้ในทุก Platform',
+      'ควรอัปเดต llms.txt ทุกครั้งที่มีบทความหรือบริการใหม่ เพื่อให้ AI มีข้อมูลล่าสุดเสมอ',
+    ],
+    faqs: llmsTxtFaqs,
+    bodyVariant: 'llms-txt',
+    cta: {
+      headline: 'ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ',
+    slug: 'geo-checklist-thailand',
+    category: 'GEO',
+    excerpt:
+      'GEO Checklist สำหรับธุรกิจไทยครอบคลุม 5 หมวดหลัก ได้แก่ Entity, Content, Technical, Mention และ Measurement รวม 40 รายการที่ต้องตรวจสอบ เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ',
+    readingTime: '15 min read',
+    publishedDate: '2026-06-15',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจคุณ',
+    metaDescription:
+      'GEO Checklist ครบจบสำหรับธุรกิจไทย 40 รายการใน 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement เพื่อให้ ChatGPT, Gemini และ Perplexity อ้างอิงเว็บไซต์ของคุณ',
+    heroImageDesktop: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
+    heroImageMobile: '/image/blog/chatgpt-mention/chatgpt-mention-banner-mweb.png',
+    heroImageAlt: 'GEO Checklist สำหรับเว็บไซต์ไทย: ทำยังไงให้ ChatGPT อ้างอิงธุรกิจของคุณ',
+    ogImage: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
+    aiSummary: [
+      'GEO Checklist สำหรับเว็บไซต์ไทยครอบคลุม 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement รวม 40 รายการ',
+      'ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt และ Schema ที่เชื่อมโยงถึงกัน ซึ่งเป็นโอกาสที่ยังทำก่อนคู่แข่งได้',
+      'เนื้อหาภาษาไทยบน AI Search มีการแข่งขันต่ำกว่าภาษาอังกฤษมาก การทำ GEO ในตลาดไทยตอนนี้จึงได้เปรียบ',
+      'เริ่มจากหมวด Technical และ Entity ก่อน จากนั้นต่อด้วย Content, Mention และ Measurement',
+    ],
+    faqs: geoChecklistFaqs,
+    bodyVariant: 'geo-checklist',
+    cta: {
+      headline: 'อยากรู้ว่า GEO Checklist ของเว็บไซต์คุณผ่านกี่ข้อ?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบ GEO Readiness ของเว็บไซต์ พร้อมระบุสิ่งที่ควรทำก่อนเพื่อเพิ่มโอกาสให้ AI Search อ้างอิงธุรกิจของคุณ',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
     slug: 'what-is-aeo',

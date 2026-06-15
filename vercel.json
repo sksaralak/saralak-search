@@ -1,4 +1,6 @@
 {
+  "outputDirectory": "dist/client",
+  "buildCommand": "npm run build",
   "cleanUrls": true,
   "redirects": [
     { "source": "/proof", "destination": "/case-studies", "permanent": true }

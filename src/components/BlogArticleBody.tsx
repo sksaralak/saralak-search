@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
+import { brand } from '../content/site'
 
 type BlogArticleBodyProps = {
   post: BlogPost
@@ -2142,6 +2143,513 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function LlmsTxtArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="llms.txt คืออะไร?">
+        <P>
+          llms.txt คือไฟล์ข้อความที่วางไว้ในโฟลเดอร์หลักของเว็บไซต์ (root directory) เพื่อบอก AI ว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง ใครเป็นผู้เชี่ยวชาญ และ AI ควรอ่านหน้าไหนก่อน เข้าถึงได้ที่ yourdomain.com/llms.txt
+        </P>
+        <P>
+          แนวคิดนี้เกิดขึ้นเพราะ AI ต้องการ "คู่มือ" ในการทำความเข้าใจเว็บไซต์ robots.txt บอกว่าหน้าไหนห้าม Crawl แต่ไม่ได้บอกว่าเว็บไซต์นั้นเกี่ยวกับอะไร llms.txt เติมเต็มช่องว่างนี้ด้วยการอธิบายบริบทของเว็บไซต์ให้ AI เข้าใจได้ทันที
+        </P>
+        <P>
+          สำหรับธุรกิจไทย นี่คือโอกาสที่ยังมีน้อยมากทำก่อนคู่แข่ง ลองพิมพ์ URL ของคู่แข่งในอุตสาหกรรมเดียวกันตามด้วย /llms.txt ส่วนใหญ่จะไม่มีไฟล์นี้เลย
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="llms.txt ต่างจาก robots.txt อย่างไร?">
+        <ArticleSubSection title="robots.txt — บอกว่าหน้าไหนเข้าได้หรือไม่ได้">
+          <P>
+            robots.txt ใช้ไวยากรณ์เฉพาะ เช่น User-agent, Allow, Disallow เพื่อควบคุมว่า Bot ไหนเข้าถึงหน้าไหนได้บ้าง ออกแบบมาสำหรับ Search Engine Crawler เป็นหลัก ไม่ได้บอกว่าเว็บไซต์เกี่ยวกับอะไร
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="llms.txt — บอกว่าเว็บไซต์เกี่ยวกับอะไรและ AI ควรอ่านอะไรก่อน">
+          <P>
+            llms.txt ใช้ภาษา Markdown ที่อ่านง่ายทั้งสำหรับ AI และมนุษย์ อธิบายว่าเว็บไซต์คือใคร ทำอะไร มีเนื้อหาอะไรบ้าง และลิงก์ไปยังหน้าที่สำคัญ ทำให้ AI เข้าใจ Context ของเว็บไซต์ได้โดยไม่ต้อง Crawl ทุกหน้า
+          </P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="โครงสร้างของ llms.txt ที่ดี">
+        <P>llms.txt ที่มีประสิทธิภาพควรมี 5 ส่วนหลัก:</P>
+        <CheckList
+          items={[
+            'ชื่อและคำอธิบายสั้น (H1 + blockquote) — AI เป็นใคร ทำอะไร ให้ใคร',
+            'ข้อมูลผู้เชี่ยวชาญหรือเจ้าของแบรนด์ — ชื่อ บทบาท ประสบการณ์ LinkedIn',
+            'ข้อมูลธุรกิจ — ประเภท ที่ตั้ง บริการ ภาษา',
+            'รายการบทความหรือเนื้อหาหลัก — ลิงก์ + คำอธิบายสั้นแต่ละหน้า',
+            'คำถามที่เว็บไซต์ตอบได้ — ช่วยให้ AI รู้ว่าควรใช้เนื้อหานี้ตอบคำถามอะไร',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่าง llms.txt สำหรับธุรกิจไทย 3 ประเภท">
+        <ArticleSubSection title="1. ธุรกิจ Consultant / Agency (เช่น SEO, Marketing, Law)">
+          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
+            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+{`# ชื่อแบรนด์
+
+> คำอธิบายสั้น 1-2 ประโยค: แบรนด์นี้คืออะไร ทำอะไร ให้ใคร
+
+## ผู้เชี่ยวชาญ
+
+- ชื่อ: [ชื่อ-นามสกุล]
+- บทบาท: [ตำแหน่ง]
+- ประสบการณ์: [จำนวนปี] ปี
+- ความเชี่ยวชาญ: [หัวข้อหลัก]
+- LinkedIn: [URL]
+
+## เกี่ยวกับธุรกิจ
+
+- ประเภท: [ประเภทธุรกิจ]
+- ที่ตั้ง: [จังหวัด/ประเทศ]
+- บริการ: [บริการหลัก]
+- ภาษา: ไทย และ อังกฤษ
+
+## บทความและ Insights
+
+- [ชื่อบทความ](URL): คำอธิบาย 1 ประโยค
+- [ชื่อบทความ](URL): คำอธิบาย 1 ประโยค
+
+## คำถามที่เราตอบได้
+
+- [คำถามที่ลูกค้ามักถาม]
+- [คำถามที่ลูกค้ามักถาม]`}
+            </pre>
+          </div>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="2. โรงแรมหรือที่พัก">
+          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
+            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+{`# ชื่อโรงแรม
+
+> โรงแรม[ประเภท] ตั้งอยู่ที่[ที่ตั้ง] เหมาะสำหรับ[กลุ่มลูกค้า]
+> มี[จำนวน] ห้อง ราคาเริ่มต้น[ราคา] บาทต่อคืน
+
+## เกี่ยวกับที่พัก
+
+- ประเภท: [Resort / Boutique Hotel / Hostel]
+- ที่ตั้ง: [ที่อยู่ ใกล้ landmark อะไร]
+- จำนวนห้อง: [จำนวน]
+- ราคา: เริ่มต้น [ราคา] บาท/คืน
+- สิ่งอำนวยความสะดวก: [สระน้ำ, ร้านอาหาร, สปา ฯลฯ]
+- เหมาะสำหรับ: [คู่รัก / ครอบครัว / กลุ่มเพื่อน]
+
+## จุดเด่น
+
+- [จุดเด่นที่ 1 พร้อมรายละเอียด]
+- [จุดเด่นที่ 2 พร้อมรายละเอียด]
+
+## ข้อมูลการเดินทาง
+
+- [วิธีเดินทางมาถึง]
+- [ระยะห่างจาก landmark สำคัญ]
+
+## ติดต่อและจอง
+
+- เว็บไซต์: [URL]
+- โทร: [เบอร์]
+- LINE: [LINE ID]`}
+            </pre>
+          </div>
+        </ArticleSubSection>
+
+        <ArticleSubSection title="3. ร้านค้าออนไลน์ / E-commerce">
+          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
+            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+{`# ชื่อแบรนด์
+
+> แบรนด์[ประเภทสินค้า] ที่[จุดเด่น] จัดส่งทั่วประเทศไทย
+
+## เกี่ยวกับแบรนด์
+
+- ประเภทสินค้า: [หมวดหมู่สินค้าหลัก]
+- กลุ่มลูกค้า: [Target Audience]
+- ราคา: เริ่มต้น [ราคา] บาท
+- จัดส่ง: [ระยะเวลา] วันทำการ
+- ช่องทางการขาย: เว็บไซต์, Shopee, Lazada, LINE
+
+## สินค้าหลัก
+
+- [หมวดสินค้า 1]: [คำอธิบาย]
+- [หมวดสินค้า 2]: [คำอธิบาย]
+
+## คำถามที่ลูกค้าถามบ่อย
+
+- [คำถาม] → [คำตอบสั้น]
+- [คำถาม] → [คำตอบสั้น]`}
+            </pre>
+          </div>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="llms.txt ควรเขียนภาษาไทยหรืออังกฤษ?">
+        <P>
+          มาตรฐาน llms.txt จาก <strong>llmstxt.org</strong> ไม่ได้กำหนดว่าต้องใช้ภาษาใด และยังไม่มีงานวิจัยที่พิสูจน์ว่าภาษาไหนให้ผลดีกว่ากัน จากการทดสอบในมิถุนายน 2026 TTB Bank ซึ่งเป็นแบรนด์ไทยเพียงรายเดียวที่มี llms.txt จริง เลือกเขียนเป็น <strong>ภาษาอังกฤษทั้งหมด</strong>
+        </P>
+        <P>
+          ข้อแตกต่างของแต่ละแนวทาง:
+        </P>
+        <ArticleSubSection title="เขียนเป็นภาษาอังกฤษ">
+          <CheckList
+            items={[
+              'AI ระดับโลก (ChatGPT, Perplexity, Claude) trained บน English เป็นหลัก อาจ process ได้แม่นยำกว่า',
+              'TTB Bank และ Expedia ซึ่งมี llms.txt ที่ดีที่สุดในการทดสอบล้วนใช้ English',
+              'เหมาะกับเว็บไซต์ที่มี Target Audience ทั้งไทยและต่างประเทศ',
+            ]}
+          />
+        </ArticleSubSection>
+        <ArticleSubSection title="เขียนเป็นภาษาไทย">
+          <CheckList
+            items={[
+              'Content matching — เนื้อหาสอดคล้องกับภาษาของเว็บไซต์และ Target Audience',
+              'เมื่อ AI ตอบ Query ภาษาไทย context ภาษาไทยอาจ match ได้ตรงกว่า',
+              'ข้อมูลภาษาไทยใน AI Training Data ยังบาง ทำให้ภาษาไทยที่มีโครงสร้างดีมีน้ำหนักสูงกว่า',
+            ]}
+          />
+        </ArticleSubSection>
+        <P>
+          <strong>คำแนะนำของ Saralak Search:</strong> ใช้ทั้งสองภาษาในไฟล์เดียว เริ่มด้วย English 1-2 ประโยคที่บนสุดเพื่อให้ AI ระดับโลกเข้าใจ Brand Identity ทันที จากนั้นเขียนเนื้อหาหลักเป็นภาษาไทย วิธีนี้ยังไม่มีหลักฐานยืนยันแน่ชัดว่าดีกว่า แต่เป็นแนวทางที่สมเหตุสมผลที่สุดจากข้อมูลที่มีในปัจจุบัน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเพิ่ม llms.txt ในเว็บไซต์">
+        <ArticleSubSection title="WordPress">
+          <CheckList
+            items={[
+              'เข้า File Manager ใน cPanel หรือ Hosting Control Panel',
+              'ไปที่โฟลเดอร์ public_html (root ของเว็บไซต์)',
+              'สร้างไฟล์ใหม่ชื่อ llms.txt',
+              'วางเนื้อหาตามโครงสร้างด้านบน บันทึกไฟล์',
+              'ทดสอบที่ yourdomain.com/llms.txt',
+            ]}
+          />
+        </ArticleSubSection>
+        <ArticleSubSection title="React / Next.js / Vite">
+          <CheckList
+            items={[
+              'สร้างไฟล์ llms.txt ในโฟลเดอร์ public/ ของ Project',
+              'ไฟล์จะถูก Build และวางไว้ที่ root โดยอัตโนมัติ',
+              'ทดสอบหลัง Deploy ที่ yourdomain.com/llms.txt',
+            ]}
+          />
+        </ArticleSubSection>
+        <ArticleSubSection title="อื่นๆ (Squarespace, Wix, Shopify)">
+          <P>
+            แต่ละ Platform มีวิธีเพิ่มไฟล์ Static ที่แตกต่างกัน Shopify รองรับผ่าน Theme Files, Squarespace ผ่าน Custom File Injection และ Wix ยังไม่รองรับการเพิ่ม Static File ที่ root โดยตรง ควรตรวจสอบ Documentation ของแต่ละ Platform
+          </P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีทดสอบว่า AI อ่าน llms.txt ได้หรือไม่">
+        <P>หลัง Deploy แล้ว ทดสอบด้วย 3 วิธีนี้:</P>
+        <CheckList
+          items={[
+            'เปิด Browser พิมพ์ yourdomain.com/llms.txt — ถ้าเห็นเนื้อหาไฟล์แสดงว่าวางถูกที่',
+            'ถาม ChatGPT หรือ Perplexity ว่า "ช่วยอ่าน llms.txt จาก [URL] ให้หน่อย" เพื่อดูว่า AI เข้าถึงได้',
+            'ตรวจสอบ Server Log หรือ Analytics ว่ามี Bot เข้ามาอ่านไฟล์ llms.txt หรือไม่',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="ทดสอบจริง: แบรนด์ไทยที่ปรากฏใน ChatGPT มี llms.txt หรือไม่?">
+        <P>
+          ทดสอบในมิถุนายน 2026 โดยนำแบรนด์ไทยที่ปรากฏใน ChatGPT จากการทดสอบ 5 หมวดธุรกิจ มาตรวจสอบว่ามี llms.txt จริงหรือไม่ ผลที่ได้น่าสนใจมาก
+        </P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['แบรนด์', 'ปรากฏใน ChatGPT', 'มี llms.txt จริง'].map((h) => (
+                  <th key={h} className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200 text-neutral-700">
+              {[
+                ['TTB Bank', '✅', '✅ มี — เขียนถูกต้อง อัปเดต 2025'],
+                ['Expedia', '✅ (แหล่งอ้างอิง)', '✅ มี — มาตรฐานระดับโลก'],
+                ['AXA Thailand', '✅', '❌ ไม่มี (คืน HTML แทน)'],
+                ['TQM Insurance', '✅', '❌ ไม่มี (คืน HTML แทน)'],
+                ['Flash Express', '✅', '❌ ไม่มี (ไฟล์ว่างเปล่า)'],
+                ['Amari Bangsaen', '✅', '❌ ไม่มี (404)'],
+                ['Kerry Express', '✅', '❌ ไม่มี (ไม่ตอบสนอง)'],
+                ['Thailand Post', '✅', '❌ ไม่มี (ไม่ตอบสนอง)'],
+              ].map((row) => (
+                <tr key={row[0]}>
+                  {row.map((cell, i) => (
+                    <td key={i} className={`thai-readable px-4 py-3 leading-6 ${i === 0 ? 'font-medium text-neutral-950' : ''}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>
+          จาก 8 แบรนด์ไทยที่ ChatGPT พูดถึง มีเพียง TTB Bank เท่านั้นที่มี llms.txt จริง ส่วนอีก 7 แบรนด์ไม่มีเลย นั่นหมายความว่า llms.txt ไม่ใช่ปัจจัยหลักที่ทำให้ปรากฏใน ChatGPT ในปัจจุบัน สิ่งที่ทำให้แบรนด์เหล่านี้ปรากฏคือ Brand Authority, Google Business Profile และการถูกอ้างอิงจาก Third-Party Platform
+        </P>
+        <P>
+          แต่นั่นก็หมายความว่า <strong>โอกาส Early Mover ยังเปิดอยู่</strong> เมื่อ AI รองรับ llms.txt มากขึ้น แบรนด์ที่เตรียมไฟล์นี้ไว้ก่อนจะได้เปรียบทันที เหมือนกับแบรนด์ที่ทำ robots.txt ตั้งแต่ยุคแรกของ Search Engine
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อผิดพลาดที่พบบ่อยใน llms.txt ของธุรกิจไทย">
+        <CheckList
+          items={[
+            'เขียนคำอธิบายกว้างเกินไป เช่น "เว็บไซต์ธุรกิจ" โดยไม่ระบุว่าทำอะไร ให้ใคร ที่ไหน',
+            'ไม่มีลิงก์ไปยังเนื้อหาหลัก ทำให้ AI ไม่รู้ว่าควร Crawl หน้าไหนก่อน',
+            'ไม่อัปเดตเมื่อมีบทความหรือบริการใหม่ ทำให้ข้อมูลล้าสมัย',
+            'ใช้ภาษาที่ไม่สอดคล้องกับเนื้อหาในเว็บไซต์ เช่น llms.txt เป็นอังกฤษแต่เว็บไซต์เป็นไทย',
+            'วางไฟล์ผิดที่ เช่น /blog/llms.txt แทนที่จะเป็น /llms.txt',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ llms.txt" />
+    </article>
+  )
+}
+
+function GeoChecklistArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="GEO Checklist คืออะไร และทำไมธุรกิจไทยถึงต้องสนใจตอนนี้">
+        <P>
+          GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ เมื่อผู้ใช้งานถาม AI ว่า "ที่ไหนดี" "ควรเลือกแบบไหน" หรือ "มีใครทำได้บ้าง" — AI จะไม่ได้เลือกแบบสุ่ม แต่เลือกจากข้อมูลที่ชัดเจน น่าเชื่อถือ และเข้าถึงได้
+        </P>
+        <P>
+          สำหรับธุรกิจไทย ช่วงเวลานี้คือโอกาสที่ดี เพราะตลาดภาษาไทยบน AI Search ยังมีการแข่งขันต่ำกว่าตลาดภาษาอังกฤษมาก ธุรกิจส่วนใหญ่ยังไม่ได้ทำ GEO อย่างจริงจัง การเริ่มก่อนคู่แข่งจึงยังได้เปรียบอยู่
+        </P>
+        <P>
+          Checklist นี้แบ่งเป็น 5 หมวดตามกรอบ GEO หลัก ได้แก่ Entity (AI รู้จักคุณไหม), Content (AI มีเหตุผลจะอ้างอิงคุณไหม), Technical (AI เข้าใจเว็บไซต์คุณไหม), Mention (คนอื่นพูดถึงคุณไหม) และ Measurement (วัดผลได้ไหม) รวม 40 รายการ
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 1: Entity — AI รู้จักธุรกิจของคุณหรือยัง (7 รายการ)">
+        <P>
+          Entity คือรากฐานของ GEO AI ต้องเข้าใจก่อนว่าธุรกิจของคุณคือใคร ทำอะไร และมีหลักฐานยืนยันจากที่ไหนบ้าง หากไม่มีข้อมูล Entity ที่ชัดเจน AI จะไม่รู้ว่าควรนำชื่อแบรนด์ของคุณไปใช้ในบริบทไหน
+        </P>
+        <CheckList
+          items={[
+            'Organization Schema พร้อม @id, name, url, description และ logo ที่หน้าหลักหรือหน้า About',
+            'Person Schema สำหรับผู้เชี่ยวชาญหรือเจ้าของแบรนด์ พร้อม @id ที่เชื่อมถึง Organization',
+            'sameAs links ครบ: LinkedIn, Facebook Page, Google Business Profile URL',
+            'Brand Statement ภาษาไทยและภาษาอังกฤษที่สอดคล้องกันทุกช่องทาง ระบุว่าทำอะไร ให้ใคร ที่ไหน',
+            'Google Business Profile ครบถ้วน: ชื่อ, ที่อยู่, เบอร์, เวลาทำการ, หมวดหมู่, คำอธิบาย',
+            'ชื่อแบรนด์, ที่อยู่, เบอร์โทร (NAP) สม่ำเสมอทุกที่ เว็บไซต์ โซเชียล Directory',
+            'LINE Official Account (ถ้ามี): ชื่อแบรนด์ตรงกันกับเว็บไซต์ เป็นสัญญาณ Entity สำหรับตลาดไทย',
+          ]}
+        />
+        <P>
+          หมายเหตุสำหรับธุรกิจไทย: LINE OA ที่มีชื่อแบรนด์ชัดเจนและมีผู้ติดตามจริง เป็นสัญญาณ Entity ที่ไม่มีในคู่มือ GEO ภาษาอังกฤษส่วนใหญ่ เพราะ LINE ไม่ได้ใช้อย่างแพร่หลายในตลาดต่างประเทศ แต่ในไทย LINE OA ช่วยให้ AI เชื่อมโยงชื่อแบรนด์กับช่องทางที่ผู้ใช้ไทยรู้จักได้มากขึ้น
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 2: Content — AI มีเหตุผลจะอ้างอิงคุณหรือยัง (10 รายการ)">
+        <P>
+          AI จะเลือกอ้างอิงเนื้อหาที่ตอบคำถามชัดเจน มีโครงสร้างที่อ่านง่าย และมีข้อมูลที่ AI ยังไม่รู้จาก Training Data เนื้อหาที่แค่รวบรวมข้อมูลทั่วไปที่มีอยู่แล้วจะไม่สร้าง Information Gain และ AI ไม่มีแรงจูงใจพอที่จะเลือกอ้างอิง
+        </P>
+        <CheckList
+          items={[
+            'Pillar Content: บทความหลักที่ตอบคำถามสำคัญของธุรกิจอย่างครบถ้วน อย่างน้อย 1 บทความต่อหัวข้อหลัก',
+            'Answer First: ตอบคำถามหลักภายใน 200 คำแรก ก่อนลงรายละเอียด',
+            'หัวข้อ H2 และ H3 เป็นคำถามที่ผู้ใช้งานจะถาม AI จริง เช่น "ทำอย่างไร", "คืออะไร", "ต่างกันยังไง"',
+            'FAQ อย่างน้อย 5 คำถาม-คำตอบในทุกบทความหลัก เป็นรูปแบบที่ AI ชอบนำไปใช้มากที่สุด',
+            'Information Gain: ข้อมูลที่ AI ยังไม่รู้ เช่น ตัวเลขจากประสบการณ์จริง กรณีศึกษา หรือมุมมองเฉพาะ',
+            'Last Updated: ระบุวันที่อัปเดตล่าสุดในทุกบทความ และอัปเดตเนื้อหาทุก 6 เดือน',
+            'เนื้อหาภาษาไทยที่เป็นธรรมชาติ ไม่แปลตรงตัวจากภาษาอังกฤษ สะท้อนบริบทของตลาดไทยจริง',
+            'ตัวอย่างหรือกรณีศึกษาจากธุรกิจไทยจริง ไม่ใช่ตัวอย่างจากต่างประเทศล้วน',
+            'Content Cluster: บทความรอง 3-5 เรื่องต่อหัวข้อหลัก 1 เรื่อง พร้อม Internal Link กลับ Pillar',
+            'Internal Link จาก Cluster ไปยัง Pillar Content ในทุกบทความ เพื่อแสดง Knowledge Graph ให้ AI อ่านได้',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 3: Technical — AI เข้าใจเว็บไซต์ของคุณหรือยัง (9 รายการ)">
+        <P>
+          Technical GEO คือการทำให้ AI Crawler เข้าถึงและเข้าใจเนื้อหาของเว็บไซต์ได้อย่างถูกต้อง เว็บไซต์ที่ใช้ JavaScript ในการ Render เนื้อหา (CSR) อาจทำให้ AI อ่านไม่ได้ หรืออ่านได้แค่บางส่วน
+        </P>
+        <CheckList
+          items={[
+            'เว็บไซต์ใช้ SSR (Server-Side Rendering) หรือ SSG (Static Site Generation) ไม่ใช่ CSR ล้วน — AI Crawler อ่าน HTML ได้ทันที',
+            'มีไฟล์ llms.txt ในโฟลเดอร์หลักของเว็บไซต์ พร้อมคำอธิบายว่าเว็บไซต์เกี่ยวกับอะไรและ AI ควรอ่านหน้าไหน',
+            'robots.txt อนุญาต GPTBot, Google-Extended, PerplexityBot และ Bingbot',
+            'Semantic HTML: ใช้ <main>, <article>, <section>, <nav> อย่างถูกต้องตามโครงสร้าง',
+            'Schema Markup ครบ: Organization, Person, Article หรือ BlogPosting, FAQPage, BreadcrumbList',
+            'Schema @id linking: Article ชี้ไปยัง Person @id, Person และ Organization ชี้ถึงกัน เพื่อสร้าง Knowledge Graph',
+            'Canonical URL ถูกต้องทุกหน้า ไม่มี Duplicate Content ที่ทำให้ AI สับสน',
+            'Core Web Vitals ผ่าน: LCP, CLS, INP อยู่ในเกณฑ์ที่ดีตาม PageSpeed Insights',
+            'XML Sitemap ครบและ Submit ใน Google Search Console',
+          ]}
+        />
+        <P>
+          llms.txt คือโอกาสที่ธุรกิจไทยส่วนใหญ่ยังไม่ได้ทำ ไฟล์นี้ทำหน้าที่เหมือนคู่มือสำหรับ AI บอกว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอยู่ที่ไหน และ AI ควรให้ความสำคัญกับหน้าไหนก่อน การทำก่อนคู่แข่งในอุตสาหกรรมเดียวกันถือเป็นข้อได้เปรียบที่ทำได้ทันที
+        </P>
+      </ArticleSection>
+
+      <div className="rounded-xl bg-teal-800 p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">
+          บริการจาก Saralak Search
+        </p>
+        <h2 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">
+          ทำ 26 ข้อแรกไม่ไหวคนเดียว? <br className="hidden sm:block" />
+          ทักมาคุยก่อนได้เลย ฟรี ไม่มีเงื่อนไข
+        </h2>
+        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">
+          บอกชื่อเว็บไซต์และประเภทธุรกิจ แล้วจะบอกให้ว่าควรเริ่มจากจุดไหนก่อน
+          และข้อไหนที่เว็บไซต์คุณยังขาดอยู่
+        </p>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={brand.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
+          >
+            ทักผ่าน LINE: {brand.line.replace('LINE: ', '')}
+          </a>
+          <a
+            href={brand.phoneUrl}
+            className="inline-flex items-center justify-center rounded-lg border border-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-700"
+          >
+            โทร {brand.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
+          </a>
+        </div>
+      </div>
+
+      <ArticleSection title="หมวดที่ 4: Mention — คนอื่นพูดถึงคุณหรือยัง (8 รายการ)">
+        <P>
+          AI ไม่ได้ตัดสินความน่าเชื่อถือจากเว็บไซต์ของคุณเพียงที่เดียว แต่ใช้สัญญาณจากแหล่งภายนอกประกอบด้วย เว็บไซต์ที่ดีแต่ไม่มีใครกล่าวถึงจากภายนอกเลย เหมือนธุรกิจที่ไม่มีลูกค้าบอกต่อ AI จะไม่มีข้อมูลเพียงพอในการยืนยันว่าแบรนด์นั้นน่าเชื่อถือ
+        </P>
+        <CheckList
+          items={[
+            'LinkedIn Personal Profile หรือ Company Page ข้อมูลครบ Bio ตรงกับเว็บไซต์ มี Post ที่เกี่ยวกับธุรกิจ',
+            'Guest Post หรือบทความที่เผยแพร่ในเว็บไซต์ภายนอกที่น่าเชื่อถือและเกี่ยวข้องกับอุตสาหกรรม',
+            'การถูกพูดถึงหรือแชร์ใน Facebook Group ที่มีสมาชิกในวงการจริง',
+            'Pantip หรือ Community ไทยที่มีการพูดถึงหรืออ้างอิงแบรนด์โดยผู้ใช้จริง',
+            'Google Business Profile Review ที่เป็นธรรมชาติ ลูกค้าจริงเขียนเอง ไม่ใช่รีวิวซื้อ',
+            'Podcast หรือ YouTube ที่มีการพูดถึงแบรนด์ — Transcript ช่วยให้ AI อ่านและนำไปอ้างอิงได้',
+            'PR หรือข่าวในสื่อออนไลน์ไทยที่มีการระบุชื่อแบรนด์และสิ่งที่แบรนด์ทำ',
+            'Directory หรือ Listing ที่เกี่ยวข้องกับอุตสาหกรรม เช่น ไดเรกทอรีธุรกิจ รายชื่อผู้ให้บริการ',
+          ]}
+        />
+        <P>
+          สำหรับตลาดไทย Pantip และ Facebook Group ถือเป็น Mention Source ที่ AI อ่านได้และมีความเฉพาะกับตลาดไทยสูง เนื้อหาที่ถูกพูดถึงในชุมชนเหล่านี้เป็นสัญญาณที่ไม่มีใน English GEO Guide แต่มีนัยสำคัญสำหรับการทำให้ AI เข้าใจบริบทของแบรนด์ในตลาดไทย
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 5: Measurement — วัดผล GEO ได้ไหม (6 รายการ)">
+        <P>
+          GEO ที่ไม่วัดผลคือ GEO ที่ไม่รู้ว่าได้ผลหรือไม่ และไม่รู้ว่าควรปรับอะไรต่อ การวัดผล GEO ไม่ซับซ้อน แต่ต้องทำสม่ำเสมอ
+        </P>
+        <CheckList
+          items={[
+            'ตั้ง Google Alerts สำหรับชื่อแบรนด์ภาษาไทยและภาษาอังกฤษ เพื่อรับแจ้งเมื่อมีการพูดถึงใหม่',
+            'ทดสอบ Prompt ใน ChatGPT, Gemini และ Perplexity เดือนละครั้ง เช่น "[ชื่อแบรนด์] คืออะไร" หรือ "ใครทำ [บริการ] ดีในไทย"',
+            'บันทึกผล Prompt Testing เป็น Screenshot หรือ Log เดือนต่อเดือน เพื่อดูพัฒนาการ',
+            'ติดตาม Branded Search ใน Google Search Console: Impression ของชื่อแบรนด์เพิ่มขึ้นหรือไม่',
+            'ดู AI Referral Traffic ใน GA4: มี Session จาก ChatGPT, Perplexity, Copilot หรือ AI อื่นหรือไม่',
+            'ใช้ Tools เช่น Otterly.AI หรือ Profound สำหรับ AI Mention Tracking อย่างเป็นระบบ เมื่อพร้อม',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="ธุรกิจไทยได้เปรียบ 3 อย่างที่ตลาดต่างประเทศไม่มี">
+        <ArticleSubSection title="1. การแข่งขันภาษาไทยบน AI Search ยังต่ำมาก">
+          <P>
+            ตลาดภาษาอังกฤษมีแบรนด์ระดับโลกที่ทำ GEO อย่างจริงจังมาหลายปีแล้ว แต่ในตลาดภาษาไทย ธุรกิจส่วนใหญ่ยังไม่ได้เริ่ม การเขียนเนื้อหาภาษาไทยที่มีโครงสร้างดี ตอบคำถามชัดเจน และมี Schema ถูกต้อง จึงมีโอกาสถูก AI อ้างอิงสูงกว่าการแข่งในภาษาอังกฤษมาก
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="2. ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt">
+          <P>
+            ทดสอบได้ง่าย: ลองพิมพ์ URL ของคู่แข่งในอุตสาหกรรมตามด้วย /llms.txt ธุรกิจไทยส่วนใหญ่จะไม่มีไฟล์นี้เลย การทำ llms.txt ที่ดีก่อนคู่แข่งในอุตสาหกรรมเดียวกัน หมายความว่า AI จะเข้าใจธุรกิจของคุณได้ดีกว่าคู่แข่ง แม้ขนาดเว็บไซต์จะเล็กกว่าก็ตาม
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="3. ข้อมูลภาษาไทยใน AI Training Data ยังบาง">
+          <P>
+            AI ถูกฝึกด้วยข้อมูลที่มีภาษาอังกฤษเป็นหลัก ข้อมูลภาษาไทยที่ครบถ้วนและมีโครงสร้างดีจึงมีน้ำหนักมากกว่าในสัดส่วนที่สูง เนื้อหาภาษาไทยที่ให้ Information Gain จริง เช่น ข้อมูลเฉพาะตลาดไทย ตัวเลขจากประสบการณ์จริง หรือกรณีศึกษาไทย จึงมีโอกาสถูกนำไปใช้สูงกว่าเนื้อหาทั่วไปมาก
+          </P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection title="ทดสอบจริง: ChatGPT เลือกแบรนด์ไทยอย่างไรในมิถุนายน 2026">
+        <P>
+          ทดสอบใน ChatGPT 5 หมวดธุรกิจไทยในเดือนมิถุนายน 2026 ได้แก่ ที่พักบางแสน ประกันเดินทาง คลินิกโบท็อกซ์กรุงเทพ ร้านอาหารเชียงใหม่ และบริษัทขนส่ง พบ pattern ที่ชัดเจน 4 อย่าง
+        </P>
+        <figure className="overflow-hidden rounded-xl border border-neutral-200">
+          <img
+            src="/image/blog/chatgpt-mention/chatgpt-mention-info.png"
+            alt="ผลทดสอบ ChatGPT มิถุนายน 2026: สัญญาณที่ทำให้แบรนด์ไทยถูกพูดถึงใน AI Search"
+            className="w-full"
+            loading="lazy"
+          />
+          <figcaption className="bg-neutral-50 px-4 py-2 text-center text-xs text-neutral-500">
+            ผลทดสอบจริงจาก ChatGPT มิถุนายน 2026 — ทดสอบ 5 หมวดธุรกิจไทย
+          </figcaption>
+        </figure>
+        <ArticleSubSection title="1. ธุรกิจท้องถิ่น: Google Business Profile คือปัจจัยหลัก">
+          <P>
+            สำหรับโรงแรม ร้านอาหาร และคลินิก ChatGPT แสดงแผนที่พร้อมคะแนนดาวก่อนเสมอ ทุกแบรนด์ที่ถูกพูดถึงมี Google Business Profile ที่มีรีวิวและคะแนนชัดเจน เช่น Amari Bangsaen (4.4 ดาว), Beach Walk Boutique Resort (4.5 ดาว), Huen Muan Jai (4.3 ดาว) ธุรกิจที่ไม่มี Google Business Profile ที่สมบูรณ์ไม่ปรากฏในผลการค้นหาเลย แม้เว็บไซต์จะดีแค่ไหนก็ตาม
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="2. Third-Party Validation ชี้ขาด">
+          <P>
+            ร้านอาหารที่ได้รับ Michelin Bib Gourmand ถูกพูดถึงก่อนและได้รับการอธิบายชัดกว่าร้านอื่น โรงแรมที่มี badge จาก Expedia และ TripAdvisor ได้รับการแนะนำในบริบทที่น่าเชื่อถือกว่า ในขณะที่แบรนด์ประกันที่ปรากฏ (AXA, Allianz, TTB, TQM) ล้วนมีสถานะเป็น Official Brand บนแพลตฟอร์มการเงิน AI ไม่ได้เลือกจากคุณภาพเนื้อหาเว็บไซต์ แต่เลือกจากสัญญาณที่แหล่งอื่นยืนยัน
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="3. ไม่มีธุรกิจขนาดเล็กปรากฏเลยแม้แต่รายเดียว">
+          <P>
+            ใน 5 หมวดที่ทดสอบ ไม่มี Independent operator หรือธุรกิจขนาดเล็กที่ไม่มี Third-Party Validation ปรากฏในคำตอบของ ChatGPT เลย บริษัทขนส่งที่ถูกพูดถึงคือ Kerry Express, Flash Express, Thailand Post — ล้วนเป็น major player ที่มี Brand Mention จากสื่อและแพลตฟอร์มหลายแห่ง สิ่งนี้ยืนยันว่าการมีเว็บไซต์อย่างเดียวไม่เพียงพอ AI ต้องการเห็นสัญญาณจากภายนอกด้วย
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="4. รูปแบบคำตอบสะท้อนประเภทธุรกิจ">
+          <P>
+            ChatGPT ใช้รูปแบบที่แตกต่างตามประเภทธุรกิจ โดยธุรกิจท้องถิ่น (โรงแรม ร้านอาหาร คลินิก) ได้รับคำตอบแบบแผนที่พร้อมรีวิว ส่วนธุรกิจบริการ (ประกัน ขนส่ง) ได้รับคำตอบแบบตารางเปรียบเทียบพร้อม source badge กำกับทุกแบรนด์ ซึ่งหมายความว่าแต่ละประเภทธุรกิจต้องการ GEO Checklist ที่เน้นคนละจุด
+          </P>
+        </ArticleSubSection>
+        <P>
+          สรุป: สิ่งที่ทำให้แบรนด์ไทยปรากฏใน ChatGPT ไม่ใช่คุณภาพเนื้อหาบนเว็บไซต์เพียงอย่างเดียว แต่คือการมีสัญญาณยืนยันจากแหล่งภายนอกที่ AI เชื่อถือ ไม่ว่าจะเป็น Google Business Profile, TripAdvisor, Michelin Guide, Expedia หรือแพลตฟอร์มเปรียบเทียบในอุตสาหกรรม
+        </P>
+      </ArticleSection>
+
+      <blockquote className="border-l-4 border-teal-700 py-1 pl-5 sm:pl-6">
+        <p className="thai-readable text-lg font-medium leading-8 text-neutral-800 sm:text-xl sm:leading-9">
+          "SEO ไม่ได้หายไปไหน แต่เป็นอีกหนึ่งแหล่งข้อมูลสำคัญที่ทำให้ ChatGPT และ AI ทุกตัวพูดถึงแบรนด์คุณได้ ยิ่งติดอันดับ Google ดีเท่าไร ยิ่งมีโอกาสถูก AI เลือกอ้างอิงมากเท่านั้น"
+        </p>
+        <cite className="mt-3 block text-sm not-italic text-neutral-500">
+          — Saralak Kaewkum, SEO & GEO Consultant
+        </cite>
+      </blockquote>
+
+      <ArticleSection title="ลำดับความสำคัญ: เริ่มจากอะไรก่อนถ้าทำพร้อมกันไม่ได้">
+        <P>
+          ถ้าทรัพยากรมีจำกัด แนะนำให้เรียงตามลำดับนี้:
+        </P>
+        <CheckList
+          items={[
+            'ขั้นที่ 1 — Technical พื้นฐาน: llms.txt, robots.txt, Schema Organization และ Person, Semantic HTML',
+            'ขั้นที่ 2 — Entity: Google Business Profile, LinkedIn, Brand Statement ที่สม่ำเสมอ',
+            'ขั้นที่ 3 — Content หลัก: Pillar Content 1 หัวข้อพร้อม FAQ อย่างน้อย 5 ข้อ, Answer First',
+            'ขั้นที่ 4 — Mention เริ่มต้น: LinkedIn Post, Guest Post 1-2 ชิ้น, ขอ Review จากลูกค้าจริง',
+            'ขั้นที่ 5 — Measurement: ตั้ง Google Alerts, ทดสอบ Prompt เดือนละครั้ง, ติดตาม GSC',
+          ]}
+        />
+        <P>
+          ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน GEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบ 40 รายการก็ตาม
+        </P>
+      </ArticleSection>
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ GEO Checklist" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -2160,6 +2668,12 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'what-is-seo') {
     return <WhatIsSeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'geo-checklist') {
+    return <GeoChecklistArticle post={post} />
+  }
+  if (post.bodyVariant === 'llms-txt') {
+    return <LlmsTxtArticle post={post} />
   }
 
   return (
