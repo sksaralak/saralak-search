@@ -2808,6 +2808,20 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
+        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
+        <h3 className="mt-2 text-xl font-semibold text-neutral-950">
+          อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?
+        </h3>
+        <p className="thai-readable mt-3 text-neutral-700">
+          Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้
+          และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์
+        </p>
+        <div className="mt-5">
+          <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+        </div>
+      </aside>
+
       <ArticleSection title="แล้วเว็บของคุณควรทำอะไร?">
         <P>
           ถ้าสร้างเว็บด้วย Claude แล้วและ Google ยังไม่ rank — ปัญหาอาจไม่ใช่ที่ code
