@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && vite build --ssr src/entry-server.tsx && node scripts/prerender.mjs",
-    "preview": "vite preview --outDir dist/client"
+    "preview": "vite preview --outDir dist/client",
+    "deploy": "git push origin main"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
