@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from '../components/CTAButton'
 import FAQSection from '../components/FAQSection'
@@ -103,6 +102,119 @@ const serviceCards: ServiceCard[] = [
     cta: { label: 'นัดพูดคุยเบื้องต้น', to: '/contact' },
   },
 ]
+
+function Step01Visual() {
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40">
+      <div className="flex items-center gap-1.5 border-b border-neutral-800 bg-neutral-900/80 px-4 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
+        <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
+        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
+        <span className="ml-2 font-mono text-xs text-neutral-600">discovery-audit.sh</span>
+      </div>
+      <div className="p-5 font-mono text-xs">
+        <p className="text-teal-400">$ scan --brand "your-brand" --platforms all</p>
+        <div className="mt-4 grid gap-2">
+          <p className="text-neutral-500">scanning 5 platforms...</p>
+          {[
+            { icon: '✓', color: 'text-emerald-400', line: 'Google Search    indexed · currently page 3' },
+            { icon: '⚠', color: 'text-amber-400',  line: 'AI Overview      partial — 2 content gaps' },
+            { icon: '✗', color: 'text-red-400',     line: 'ChatGPT          brand not found' },
+            { icon: '✗', color: 'text-red-400',     line: 'Gemini           brand not found' },
+            { icon: '⚠', color: 'text-amber-400',  line: 'Perplexity       low visibility' },
+          ].map(({ icon, color, line }) => (
+            <div key={line} className="flex gap-2.5">
+              <span className={`shrink-0 ${color}`}>{icon}</span>
+              <span className="text-neutral-400">{line}</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 border-t border-neutral-800 pt-4">
+          <p className="text-teal-400">→ Report ready: 14 findings, 8 quick wins</p>
+          <p className="mt-1 text-teal-400">→ Roadmap: prioritized 90-day plan</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Step02Visual() {
+  const items = [
+    { p: 'P1', label: 'แก้ปัญหา Crawl + Technical issues', time: 'Week 1', c: 'bg-red-900/50 text-red-300' },
+    { p: 'P1', label: 'Rewrite AI Overview content',       time: 'Week 1–2', c: 'bg-red-900/50 text-red-300' },
+    { p: 'P2', label: 'สร้าง Topic Authority Cluster',     time: 'Week 2–5', c: 'bg-amber-900/50 text-amber-300' },
+    { p: 'P2', label: 'Add Entity schema + llms.txt',      time: 'Week 3',   c: 'bg-amber-900/50 text-amber-300' },
+    { p: 'P3', label: 'ChatGPT mention strategy',          time: 'Month 2',  c: 'bg-neutral-800 text-neutral-400' },
+    { p: 'P3', label: 'Citation & Link building',           time: 'Month 2–3', c: 'bg-neutral-800 text-neutral-400' },
+  ]
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40">
+      <div className="border-b border-neutral-800 px-5 py-3.5">
+        <p className="text-xs font-semibold text-neutral-400">Growth Roadmap — 90 days</p>
+      </div>
+      <div className="divide-y divide-neutral-800/60">
+        {items.map((item) => (
+          <div key={item.label} className="flex items-center gap-3 px-5 py-3">
+            <span className={`shrink-0 rounded px-1.5 py-0.5 font-mono text-[10px] font-bold ${item.c}`}>{item.p}</span>
+            <span className="flex-1 text-xs text-neutral-300">{item.label}</span>
+            <span className="shrink-0 font-mono text-[10px] text-neutral-600">{item.time}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function Step03Visual() {
+  const rows = [
+    { platform: 'Google Search', before: 'Page 3',    after: 'Page 1',    s: 'up' },
+    { platform: 'AI Overview',   before: 'Partial',   after: 'Featured',  s: 'up' },
+    { platform: 'ChatGPT',       before: 'Not found', after: 'Mentioned', s: 'up' },
+    { platform: 'Gemini',        before: 'Not found', after: 'In progress', s: 'partial' },
+    { platform: 'Perplexity',    before: 'Low',       after: 'Improving', s: 'partial' },
+  ]
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40">
+      <div className="grid grid-cols-3 border-b border-neutral-800 px-5 py-3 font-mono text-[10px] font-semibold text-neutral-600">
+        <span>Platform</span><span className="text-center text-red-500">Before</span><span className="text-right text-emerald-500">After</span>
+      </div>
+      <div className="divide-y divide-neutral-800/60">
+        {rows.map((r) => (
+          <div key={r.platform} className="grid grid-cols-3 items-center gap-2 px-5 py-3">
+            <span className="font-mono text-xs text-neutral-400">{r.platform}</span>
+            <span className="text-center font-mono text-xs text-red-500 line-through">{r.before}</span>
+            <span className={`text-right font-mono text-xs font-semibold ${r.s === 'up' ? 'text-emerald-400' : 'text-amber-400'}`}>{r.after}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function Step04Visual() {
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40 p-6">
+      <p className="font-mono text-xs text-neutral-600">Organic Growth · 12 months tracking</p>
+      <div className="mt-5 grid grid-cols-3 gap-3">
+        {[
+          { value: '+127%', label: 'Organic Traffic', sub: 'vs prev year' },
+          { value: '4/5',   label: 'AI Platforms',    sub: 'visible on' },
+          { value: '8 KWs', label: 'Rank #1',         sub: 'priority terms' },
+        ].map((m) => (
+          <div key={m.label} className="rounded-lg bg-neutral-800/70 p-3.5 text-center">
+            <p className="text-xl font-black text-emerald-400">{m.value}</p>
+            <p className="mt-1 text-[10px] text-neutral-500">{m.label}</p>
+            <p className="text-[10px] text-neutral-600">{m.sub}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 border-t border-neutral-800 pt-4 font-mono text-xs">
+        <p className="text-teal-400">→ Monthly reporting + strategy review</p>
+        <p className="mt-1 text-teal-400">→ Continuous optimization cycle</p>
+      </div>
+    </div>
+  )
+}
 
 const monitorPlatforms = [
   { name: 'Google Search', status: 'ok'      as const, label: 'Indexed & Ranking' },
@@ -342,60 +454,105 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Section 3: How It Works */}
-      <section className="bg-neutral-950">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="ขั้นตอน" title="จากการวิเคราะห์สู่การเติบโตระยะยาว" tone="light" />
-          <div className="mt-12">
-            {/* Mobile: vertical flow */}
-            <div className="lg:hidden">
-              {journey.map((item, index) => (
-                <div key={item.step} className="flex gap-5">
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-700 text-sm font-bold text-white shadow-lg shadow-teal-900/40">
-                      {item.step}
-                    </div>
-                    {index < journey.length - 1 && (
-                      <div className="mt-1 h-10 w-px bg-teal-800" />
-                    )}
-                  </div>
-                  <div className="pb-6">
-                    <h3 className="font-semibold text-white">{item.title}</h3>
-                    <p className="thai-readable mt-1 text-sm leading-6 text-neutral-400">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+      {/* Urgency conversion strip */}
+      <section className="border-y border-teal-900/60 bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-lg font-semibold text-white">ทุกวันที่รอ คือวันที่ลูกค้าเลือกคู่แข่ง</p>
+              <p className="thai-readable mt-1 text-sm text-teal-200">
+                AI Search กำลังแนะนำแบรนด์อื่นให้ลูกค้าของคุณอยู่ในขณะนี้
+              </p>
             </div>
-            {/* Desktop: horizontal flow */}
-            <div
-              className="hidden lg:grid items-start"
-              style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr' }}
-            >
-              {journey.map((item, index) => (
-                <Fragment key={item.step}>
-                  <div className="px-4 text-center">
-                    <div className="flex justify-center">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-teal-700 text-base font-bold text-white shadow-xl shadow-teal-900/50">
-                        {item.step}
-                      </div>
-                    </div>
-                    <h3 className="mt-5 font-semibold text-white">{item.title}</h3>
-                    <p className="thai-readable mt-2 text-sm leading-6 text-neutral-400">
-                      {item.description}
-                    </p>
-                  </div>
-                  {index < journey.length - 1 && (
-                    <div
-                      className="flex items-center justify-center px-1 pt-7 text-2xl text-teal-700"
-                      aria-hidden="true"
-                    >
-                      →
-                    </div>
-                  )}
-                </Fragment>
-              ))}
+            <div className="shrink-0">
+              <CTAButton to="/discovery-audit">รู้จุดอ่อนวันนี้ — Discovery Audit</CTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: How It Works — alternating visual steps */}
+      <section className="overflow-hidden bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="ขั้นตอน" title="จากการวิเคราะห์สู่การเติบโตระยะยาว" tone="light" />
+
+          <div className="mt-20 grid gap-24">
+
+            {/* Step 01 */}
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div>
+                <p className="select-none text-[7rem] font-black leading-none text-teal-950 lg:text-[9rem]">01</p>
+                <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[0].title}</h3>
+                <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[0].description}</p>
+                <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
+                  ค้นหาว่า Google และ AI มองแบรนด์ของคุณอย่างไร มีช่องว่างตรงไหน
+                  และควรแก้อะไรก่อนเพื่อให้ได้ผลเร็วที่สุด
+                </p>
+                <div className="mt-8">
+                  <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                </div>
+              </div>
+              <Step01Visual />
+            </div>
+
+            {/* Step 02 */}
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div className="lg:order-2">
+                <p className="select-none text-[7rem] font-black leading-none text-teal-950 lg:text-[9rem]">02</p>
+                <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[1].title}</h3>
+                <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[1].description}</p>
+                <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
+                  จัดลำดับงานจาก Discovery Audit ให้เป็น Roadmap ที่ทำได้จริง
+                  พร้อม Quick Wins สำหรับสัปดาห์แรก
+                </p>
+              </div>
+              <div className="lg:order-1">
+                <Step02Visual />
+              </div>
+            </div>
+
+            {/* Step 03 */}
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div>
+                <p className="select-none text-[7rem] font-black leading-none text-teal-950 lg:text-[9rem]">03</p>
+                <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[2].title}</h3>
+                <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[2].description}</p>
+                <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
+                  ดำเนินการตามแผน: ปรับ Technical, สร้าง Content, เพิ่ม Entity Signal
+                  เพื่อให้ Google และ AI เริ่มมองเห็นแบรนด์ชัดขึ้น
+                </p>
+              </div>
+              <Step03Visual />
+            </div>
+
+            {/* Step 04 */}
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div className="lg:order-2">
+                <p className="select-none text-[7rem] font-black leading-none text-teal-950 lg:text-[9rem]">04</p>
+                <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[3].title}</h3>
+                <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[3].description}</p>
+                <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
+                  ติดตามผล วัดผล และปรับกลยุทธ์รายเดือน
+                  เพื่อให้การมองเห็นเติบโตต่อเนื่องและยั่งยืนในระยะยาว
+                </p>
+              </div>
+              <div className="lg:order-1">
+                <Step04Visual />
+              </div>
+            </div>
+
+          </div>
+
+          {/* Post-journey CTA */}
+          <div className="mt-24 rounded-2xl border border-teal-800/50 bg-teal-950/60 px-8 py-10 text-center">
+            <p className="text-2xl font-semibold text-white">พร้อมเริ่มต้นแล้ว?</p>
+            <p className="thai-readable mx-auto mt-3 max-w-lg text-neutral-400">
+              Discovery Audit คือขั้นตอนแรกที่ช่วยให้คุณรู้ว่าควรเริ่มจากตรงไหน
+              ก่อนลงทุนกับ SEO หรือ AI Search ใดๆ
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+              <CTAButton to="/contact" variant="secondary">พูดคุยก่อน</CTAButton>
             </div>
           </div>
         </div>
