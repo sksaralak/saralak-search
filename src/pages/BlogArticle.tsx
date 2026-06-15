@@ -2,6 +2,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 import BlogArticleTemplate from '../components/BlogArticleTemplate'
 import { getBlogPostBySlug, getRelatedPosts } from '../content/blog'
+import { faqJsonLd } from '../content/faqs'
 import { brand } from '../content/site'
 
 export default function BlogArticle() {
@@ -40,16 +41,19 @@ export default function BlogArticle() {
           '@graph': [
             {
               '@type': 'Article',
+              '@id': `${pageUrl}#article`,
               headline: post.title,
               description: post.metaDescription,
               image: imageUrl ? [imageUrl] : undefined,
               author: {
                 '@type': 'Person',
+                '@id': 'https://saralak-search.com/#saralak',
                 name: post.authorName,
                 url: `https://saralak-search.com${post.authorUrl}`,
               },
               publisher: {
                 '@type': 'Organization',
+                '@id': 'https://saralak-search.com/#organization',
                 name: brand.name,
                 url: 'https://saralak-search.com/',
               },
@@ -61,6 +65,7 @@ export default function BlogArticle() {
                 '@id': pageUrl,
               },
             },
+            ...(post.faqs && post.faqs.length > 0 ? [faqJsonLd(post.faqs)] : []),
             {
               '@type': 'BreadcrumbList',
               itemListElement: [

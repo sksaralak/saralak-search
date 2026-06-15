@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm'
 import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
-import { contactFaqs } from '../content/faqs'
+import { contactFaqs, faqJsonLd } from '../content/faqs'
 import { brand } from '../content/site'
 
 const contactOptions = [
@@ -23,7 +23,34 @@ export default function Contact() {
         description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Discovery Audit, Increase Visibility on Google & AI Search, Monthly SEO Advisor หรือ recruiter conversations"
         path="/contact"
         image="/image/og/saralak-search-homepage-og.png"
-        jsonLd={undefined}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'ContactPage',
+              '@id': 'https://saralak-search.com/contact#webpage',
+              name: 'ติดต่อ Saralak Search',
+              url: 'https://saralak-search.com/contact',
+              isPartOf: { '@id': 'https://saralak-search.com/#organization' },
+            },
+            {
+              '@type': 'Organization',
+              '@id': 'https://saralak-search.com/#organization',
+              name: brand.name,
+              url: 'https://saralak-search.com',
+              email: brand.email,
+              telephone: brand.phone,
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: brand.email,
+                telephone: '+66622944999',
+                contactType: 'customer service',
+                availableLanguage: ['Thai', 'English'],
+              },
+            },
+            faqJsonLd(contactFaqs),
+          ],
+        }}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
