@@ -88,13 +88,6 @@ const industries = [
   'Financial Services',
 ]
 
-const audiences = [
-  'ธุรกิจที่ต้องการให้ลูกค้าเจอแบรนด์มากขึ้นก่อนตัดสินใจซื้อ',
-  'ทีมการตลาดที่ต้องการเปลี่ยน Search ให้เป็น lead และ demand ที่วัดผลได้',
-  'ธุรกิจ local หรือหลายสาขาที่ต้องการลูกค้าจาก Google Maps',
-  'E-commerce และ retail ที่ต้องการเพิ่มการมองเห็นของหมวดหมู่ สินค้า และบทความ',
-  'Agency Partner ที่ต้องการ specialist support สำหรับตลาดค้นหาในไทย',
-]
 
 const proofCaptions = [
   'Organic โตต่อเนื่อง',
@@ -305,36 +298,38 @@ export default function Home() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               {
-                label: 'SEO',
+                step: '01', label: 'SEO', badge: 'bg-blue-50 text-blue-700', bar: 'bg-blue-400',
                 headline: 'ช่วยให้คุณติดอันดับ',
                 body: 'ทำให้เว็บไซต์ถูกค้นพบบน Google Search และ Search Engine อื่น ๆ',
               },
               {
-                label: 'AEO',
+                step: '02', label: 'AEO', badge: 'bg-teal-50 text-teal-700', bar: 'bg-teal-400',
                 headline: 'ช่วยให้คุณเป็นคำตอบ',
-                body: 'ทำให้เนื้อหาของคุณถูกเลือกไปตอบคำถามใน AI Overview, Featured Snippet และ People Also Ask',
+                body: 'ทำให้เนื้อหาถูกเลือกตอบคำถามใน AI Overview, Featured Snippet และ People Also Ask',
               },
               {
-                label: 'GEO',
+                step: '03', label: 'GEO', badge: 'bg-violet-50 text-violet-700', bar: 'bg-violet-400',
                 headline: 'ช่วยให้คุณเป็นคำแนะนำ',
-                body: 'ทำให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ เชื่อถือ และแนะนำแบรนด์ของคุณในคำตอบ',
+                body: 'ทำให้ ChatGPT, Gemini และ Perplexity เข้าใจ เชื่อถือ และแนะนำแบรนด์ของคุณ',
               },
             ].map((item) => (
-              <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                  {item.label}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold text-neutral-950">{item.headline}</h3>
+              <div key={item.label} className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-md">
+                <div className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>
+                  <span className="opacity-60">{item.step}</span>
+                  <span>{item.label}</span>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-neutral-950">{item.headline}</h3>
                 <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 ${item.bar} opacity-0 transition-opacity duration-200 group-hover:opacity-100`} />
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-lg border border-teal-200 bg-teal-50 px-6 py-5">
+          <div className="mt-6 rounded-xl border border-teal-200 bg-gradient-to-r from-teal-50 to-[#fbfaf6] px-6 py-5">
             <p className="thai-readable text-sm leading-7 text-teal-900">
-              เมื่อทั้ง 3 ทำงานร่วมกัน ธุรกิจของคุณจะมีโอกาสถูกค้นพบมากขึ้นทั้งบน Google, AI Overview, ChatGPT, Gemini และแพลตฟอร์ม AI อื่น ๆ
+              เมื่อทั้ง 3 ทำงานร่วมกัน ธุรกิจจะถูกค้นพบมากขึ้นทั้งบน Google, AI Overview, ChatGPT, Gemini และ AI Search อื่น ๆ
             </p>
             <p className="thai-readable mt-2 font-semibold text-teal-950">
-              ไม่ใช่แค่ถูกค้นหา แต่ต้องถูกเลือกและถูกแนะนำด้วย
+              ไม่ใช่แค่ถูกค้นหา — ต้องถูกเลือกและถูกแนะนำด้วย
             </p>
           </div>
         </div>
@@ -350,7 +345,7 @@ export default function Home() {
           <div className="rounded-lg border border-teal-100 bg-white p-6 shadow-sm shadow-neutral-950/5">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {industries.map((industry) => (
-                <div key={industry} className="rounded-md border border-neutral-200 bg-[#fbfaf6] p-4">
+                <div key={industry} className="rounded-md border border-neutral-200 bg-[#fbfaf6] p-4 transition-all duration-150 hover:border-teal-200 hover:bg-teal-50">
                   <p className="font-semibold text-neutral-950">{industry}</p>
                 </div>
               ))}
@@ -372,9 +367,61 @@ export default function Home() {
             tone="light"
           />
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-            {audiences.map((audience) => (
-              <article key={audience} className="rounded-lg border border-white/15 bg-white/5 p-5">
-                <p className="leading-7 text-teal-50">{audience}</p>
+            {[
+              {
+                text: 'ธุรกิจที่ต้องการให้ลูกค้าเจอแบรนด์มากขึ้นก่อนตัดสินใจซื้อ',
+                label: 'Brand Visibility',
+                icon: (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
+              },
+              {
+                text: 'ทีมการตลาดที่ต้องการเปลี่ยน Search ให้เป็น lead และ demand ที่วัดผลได้',
+                label: 'Marketing Teams',
+                icon: (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                ),
+              },
+              {
+                text: 'ธุรกิจ local หรือหลายสาขาที่ต้องการลูกค้าจาก Google Maps',
+                label: 'Local Business',
+                icon: (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                ),
+              },
+              {
+                text: 'E-commerce และ retail ที่ต้องการเพิ่มการมองเห็นของหมวดหมู่ สินค้า และบทความ',
+                label: 'E-commerce',
+                icon: (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  </svg>
+                ),
+              },
+              {
+                text: 'Agency Partner ที่ต้องการ specialist support สำหรับตลาดค้นหาในไทย',
+                label: 'Agency Partners',
+                icon: (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <article key={item.label} className="group rounded-xl border border-white/10 bg-white/5 p-5 transition-all duration-200 hover:border-white/25 hover:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-800/60 text-teal-300 transition-colors group-hover:bg-teal-700/60">
+                  {item.icon}
+                </div>
+                <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-wide text-teal-400">{item.label}</p>
+                <p className="thai-readable mt-2 text-sm leading-6 text-teal-50">{item.text}</p>
               </article>
             ))}
           </div>
