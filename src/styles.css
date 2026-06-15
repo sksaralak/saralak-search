@@ -42,3 +42,36 @@ h1, h2, h3, h4, h5, h6 {
 .thai-readable {
   line-height: 1.8;
 }
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50% }
+  50%       { background-position: 100% 50% }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(135deg, #0d9488, #1297e0, #22d9d6, #0d9488);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1 }
+  50%       { opacity: 0 }
+}
+
+.cursor-blink {
+  animation: cursor-blink 0.75s step-end infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.5s ease forwards;
+}

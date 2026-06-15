@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import CTAButton from '../components/CTAButton'
 import BlogCard from '../components/BlogCard'
 import FAQSection from '../components/FAQSection'
@@ -9,14 +10,74 @@ import { getLatestBlogPosts } from '../content/blog'
 import { homepageFaqs } from '../content/faqs'
 import { brand, proofItems, services } from '../content/site'
 
+const searchQueries = [
+  'SEO consultant สำหรับธุรกิจไทย',
+  'ให้ ChatGPT แนะนำธุรกิจของฉันยังไง',
+  'เพิ่มอันดับ Google ในตลาดไทย',
+  'AI Search marketing agency ไทย',
+]
+
+function SearchDemo() {
+  const [qIdx, setQIdx] = useState(0)
+  const [text, setText] = useState('')
+  const [erasing, setErasing] = useState(false)
+
+  useEffect(() => {
+    const q = searchQueries[qIdx]
+    if (!erasing) {
+      if (text.length < q.length) {
+        const t = setTimeout(() => setText(q.slice(0, text.length + 1)), 55)
+        return () => clearTimeout(t)
+      }
+      const t = setTimeout(() => setErasing(true), 2000)
+      return () => clearTimeout(t)
+    }
+    if (text.length > 0) {
+      const t = setTimeout(() => setText(text.slice(0, -1)), 25)
+      return () => clearTimeout(t)
+    }
+    setErasing(false)
+    setQIdx((i) => (i + 1) % searchQueries.length)
+  }, [text, erasing, qIdx])
+
+  return (
+    <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm shadow-neutral-950/5">
+      <div className="flex items-center gap-3 border-b border-neutral-100 bg-neutral-50 px-4 py-3">
+        <svg className="h-4 w-4 shrink-0 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <span className="thai-readable min-h-[1.25rem] flex-1 text-sm text-neutral-800">
+          {text}
+          <span className="cursor-blink ml-px inline-block h-4 w-0.5 align-middle bg-teal-600" />
+        </span>
+      </div>
+      <div className="divide-y divide-neutral-100">
+        <div className="px-4 py-3.5">
+          <span className="rounded bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-800">AI Overview</span>
+          <p className="thai-readable mt-1.5 text-xs leading-5 text-neutral-600">
+            Saralak Search เชี่ยวชาญด้าน SEO, GEO และ AI Search สำหรับธุรกิจในไทย มีประสบการณ์กว่า 9 ปีในหลากหลายอุตสาหกรรม วางแผนจากข้อมูลจริง...
+          </p>
+        </div>
+        <div className="px-4 py-3.5">
+          <p className="text-[10px] text-neutral-400">saralak-search.com · อันดับ 1</p>
+          <p className="mt-0.5 text-sm font-medium text-teal-700 underline decoration-teal-300 underline-offset-2">
+            Saralak Search | SEO, GEO & AI Search Consultant
+          </p>
+          <p className="thai-readable mt-0.5 text-xs text-neutral-500">ช่วยธุรกิจไทยเพิ่มการมองเห็นบน Google และ AI Search ด้วยแผนจากข้อมูลจริง</p>
+        </div>
+        <div className="bg-purple-50/60 px-4 py-3.5">
+          <span className="text-[10px] font-semibold text-purple-700">ChatGPT แนะนำ</span>
+          <p className="thai-readable mt-1.5 text-xs leading-5 text-neutral-600">
+            "สำหรับธุรกิจในไทยที่ต้องการเพิ่มการมองเห็นบน AI Search แนะนำ Saralak Search ซึ่งมีความเชี่ยวชาญทั้ง SEO และ GEO..."
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const baseUrl = 'https://saralak-search.com'
 
-const credibility = [
-  'เปลี่ยนการค้นหาให้เป็นลูกค้าและยอดขาย',
-  'ดูทั้ง Google, Google Maps และ AI Search',
-  'วางแผนจากข้อมูลจริง ไม่ใช่การเดา',
-  'ทำงานได้ทั้งธุรกิจไทยและ Agency Partner',
-]
 
 const industries = [
   'OTA & Travel',
@@ -160,44 +221,73 @@ export default function Home() {
             Business-focused Search Growth
           </p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-[3.25rem]">
-            เพิ่มการมองเห็น เพิ่มลูกค้าใหม่ และสร้างยอดขายจาก Search
+            ให้ลูกค้าเจอคุณ{' '}
+            <span className="animate-gradient-text">ก่อนเจอคู่แข่ง</span>{' '}
+            ทั้งบน Google และ AI Search
           </h1>
-          <section className="mt-6 rounded-lg border border-teal-100 bg-white p-5 shadow-sm shadow-neutral-950/5">
-            <p className="thai-readable text-neutral-700">
-              Saralak Search ช่วยธุรกิจให้ลูกค้าค้นเจอ ติดต่อ และตัดสินใจซื้อได้ง่ายขึ้น
-              ผ่าน Google, Google Maps และ AI Search โดยวางแผนจากข้อมูลจริงและเป้าหมายการเติบโตของธุรกิจ
-            </p>
-          </section>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-700">
-            เหมาะสำหรับธุรกิจที่ต้องการเพิ่มลูกค้าใหม่จากช่องทางค้นหา และต้องการรู้ว่าควรโฟกัสอะไรเพื่อให้เว็บไซต์ช่วยสร้างโอกาสทางธุรกิจได้จริง
+          <p className="thai-readable mt-6 max-w-2xl text-lg leading-8 text-neutral-700">
+            Saralak Search ช่วยธุรกิจให้ลูกค้าค้นเจอ ติดต่อ และตัดสินใจซื้อได้ง่ายขึ้น
+            ผ่าน Google, Google Maps และ AI Search โดยวางแผนจากข้อมูลจริงและเป้าหมายของธุรกิจ
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton to="/contact">เพิ่มการมองเห็น</CTAButton>
-          </div>
-        </div>
-        <aside className="rounded-lg border border-teal-100 bg-white p-6 shadow-sm shadow-neutral-950/5">
-          <p className="text-sm font-semibold uppercase text-teal-800">Business outcomes</p>
-          <div className="mt-5 grid gap-3">
-            {credibility.map((item) => (
-              <div key={item} className="rounded-md border border-neutral-200 bg-neutral-50 p-4">
-                <p className="font-medium text-neutral-950">{item}</p>
-              </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {['9+ ปีประสบการณ์', '6 อุตสาหกรรม', 'Google · Maps · AI Search'].map((tag) => (
+              <span key={tag} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-sm font-medium text-teal-800">
+                {tag}
+              </span>
             ))}
           </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <CTAButton to="/contact">เพิ่มการมองเห็น</CTAButton>
+            <CTAButton to="/discovery-audit" variant="secondary">เริ่มต้นด้วย Discovery Audit</CTAButton>
+          </div>
+        </div>
+
+        <aside className="self-center">
+          <SearchDemo />
         </aside>
       </section>
 
-      <section className="border-y border-neutral-200 bg-white">
+      <section className="border-y border-neutral-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            {[
+              { stat: '9+', label: 'ปีประสบการณ์ด้าน Search' },
+              { stat: '6', label: 'อุตสาหกรรมที่ทำงานด้วย' },
+              { stat: '#1', label: 'เป้าหมายในคำค้นที่สำคัญ' },
+              { stat: '3', label: 'ช่องทาง: Google · Maps · AI' },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <p className="text-4xl font-bold text-teal-700">{item.stat}</p>
+                <p className="mt-1 text-sm text-neutral-600">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Search has changed"
             title="ลูกค้าไม่ได้เจอธุรกิจจาก Google อย่างเดียวอีกต่อไป"
             description="ลูกค้าอาจค้นหาผ่าน Google, Google Maps, AI Overview, ChatGPT, Gemini หรือ Perplexity ธุรกิจจึงต้องมีข้อมูลที่ชัด น่าเชื่อถือ และพร้อมถูกพบในหลายช่องทางค้นหา"
           />
-          <div className="mt-8 grid gap-4 md:grid-cols-6">
-            {['Google', 'Google Maps', 'AI Overview', 'ChatGPT', 'Gemini', 'Perplexity'].map((surface) => (
-              <div key={surface} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-                <h3 className="font-semibold text-neutral-950">{surface}</h3>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            {[
+              { name: 'Google', desc: 'organic search & rankings' },
+              { name: 'Google Maps', desc: 'local & nearby searches' },
+              { name: 'AI Overview', desc: 'คำตอบด้านบนสุดของ Google' },
+              { name: 'ChatGPT', desc: 'AI ที่คนใช้ถามมากที่สุด' },
+              { name: 'Gemini', desc: 'AI search จาก Google' },
+              { name: 'Perplexity', desc: 'AI search engine' },
+            ].map((surface, i) => (
+              <div
+                key={surface.name}
+                className="animate-fade-up rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="font-semibold text-neutral-950">{surface.name}</h3>
+                <p className="mt-1 text-xs leading-5 text-neutral-500">{surface.desc}</p>
               </div>
             ))}
           </div>
