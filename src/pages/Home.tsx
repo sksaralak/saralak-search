@@ -280,7 +280,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="self-center">
             <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-teal-400">
-              Business-focused Search Growth
+              ที่ปรึกษา SEO · GEO · AI Search สำหรับธุรกิจไทย
             </p>
             <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
               ให้ลูกค้าเจอคุณ{' '}
@@ -292,7 +292,7 @@ export default function Home() {
               ผ่าน Google, Google Maps และ AI Search โดยวางแผนจากข้อมูลจริงและเป้าหมายของธุรกิจ
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {['9+ ปีประสบการณ์', '6 อุตสาหกรรม', 'Google · Maps · AI Search'].map((tag) => (
+              {['9+ ปีประสบการณ์', 'ลูกค้าจาก 6 อุตสาหกรรม', 'Google · Maps · AI Search'].map((tag) => (
                 <span key={tag} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-neutral-300">
                   {tag}
                 </span>
