@@ -24,6 +24,25 @@ function ArticleSection({ title, children }: SectionProps) {
   )
 }
 
+function ReadMoreLinks({ items }: { items: { to: string; label: string }[] }) {
+  return (
+    <div className="grid gap-2">
+      {items.map((item) => (
+        <Link
+          key={item.to}
+          to={item.to}
+          className="group flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800 transition hover:border-teal-300 hover:bg-teal-50 hover:text-teal-900"
+        >
+          <span className="min-w-0 truncate">{item.label}</span>
+          <svg className="ml-3 h-4 w-4 shrink-0 text-teal-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
 function P({ children }: { children: ReactNode }) {
   return (
     <p
@@ -325,11 +344,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         src="/image/blog/what-is-geo/what-is-geo-seo-vs-aeo-vs-geo.svg"
         alt="แผนภาพเปรียบเทียบ SEO AEO และ GEO"
       />
-      <div className="grid gap-2">
-        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
-        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
-        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
-      </div>
+      <ReadMoreLinks items={[
+        { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+        { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+      ]} />
 
       <ArticleSection title="ทำยังไงให้ติด AI Search?">
         <P>
@@ -350,12 +369,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           อย่างไรก็ตาม GEO ไม่ได้มาแทน SEO ทั้งหมด เพราะ AI Search ยังต้องอาศัยข้อมูลจากเว็บไซต์ที่ถูกจัดเก็บและประเมินความน่าเชื่อถือผ่านระบบ Search อยู่มาก การทำ SEO ที่ดีจึงยังเป็นฐานสำคัญของ GEO
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' }]} />
       </ArticleSection>
 
       <ArticleSection title="GEO ต่างจาก AEO อย่างไร?">
@@ -368,12 +382,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           พูดให้เข้าใจง่าย SEO คือการทำให้เว็บติดอันดับ AEO คือการทำให้เนื้อหาตอบคำถามได้ดี ส่วน GEO คือการทำให้ AI เข้าใจ เชื่อถือ และเลือกแบรนด์ของเราไปแนะนำในคำตอบ
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="ใครควรเริ่มทำ GEO?">
@@ -413,12 +422,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           ขั้นที่หก ควรทำ Internal Linking ระหว่างบทความที่เกี่ยวข้อง เพื่อให้ AI เข้าใจความสัมพันธ์ของหัวข้อ และเห็นว่าเว็บไซต์มีความเชี่ยวชาญในเรื่องนั้นจริง
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' }]} />
       </ArticleSection>
 
       <ArticleSection title="องค์ประกอบสำคัญของเนื้อหาที่เหมาะกับ GEO">
@@ -493,12 +497,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           สำหรับธุรกิจที่เริ่มก่อนในช่วงที่การแข่งขันยังไม่สูง มีโอกาสสร้างความได้เปรียบด้าน AI Visibility ได้เร็วกว่า เพราะเมื่อ AI เริ่มจดจำแบรนด์ในฐานะแหล่งข้อมูลของหัวข้อนั้น การต่อยอดไปสู่การถูกอ้างอิงและแนะนำในคำตอบก็มีโอกาสมากขึ้น
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' }]} />
       </ArticleSection>
 
       <ArticleFAQ post={post} />
@@ -598,12 +597,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           คุณภาพของเนื้อหา ความน่าเชื่อถือของเว็บไซต์
           ประสบการณ์ผู้ใช้ และ Backlink จากแหล่งข้อมูลภายนอก
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' }]} />
       </ArticleSection>
 
       <ArticleSection title="AEO คืออะไร">
@@ -618,12 +612,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           ที่ตอบคำถามหลักใน 40–80 คำ การใช้หัวข้อแบบคำถาม การทำ FAQ
           และการจัดโครงสร้างคำตอบให้ AI สามารถดึงไปใช้ได้ง่าย
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="GEO คืออะไร">
@@ -640,12 +629,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           โปรไฟล์ธุรกิจ รีวิว ข้อมูลองค์กร
           ความสม่ำเสมอของชื่อแบรนด์ และความเชี่ยวชาญเฉพาะด้าน
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="SEO GEO AEO ต่างกันอย่างไร">
@@ -835,12 +819,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         <ArticleSubSection title="GEO Checklist">
           <CheckList items={geoChecklistItems} />
         </ArticleSubSection>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' }]} />
       </ArticleSection>
 
       <ArticleSection title="Saralak Search ช่วยธุรกิจทำ SEO GEO AEO ได้อย่างไร">
@@ -857,12 +836,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           Google Map Optimization ไปจนถึงการทำรายงานผลลัพธ์ที่อ่านเข้าใจง่าย
           และนำไปตัดสินใจต่อได้จริง
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' }]} />
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
@@ -1027,32 +1001,12 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>AEO หรือ Answer Engine Optimization เน้นการทำให้คอนเทนต์ตอบคำถามได้ชัดเจน กระชับ และมีโครงสร้างที่เหมาะกับ Featured Snippet, People Also Ask, FAQ และคำตอบแบบ Answer Box</P>
         <P>GEO หรือ Generative Engine Optimization เน้นการทำให้เว็บไซต์และแบรนด์ถูก AI Search เข้าใจ เชื่อถือ และนำไปสรุป อ้างอิง หรือแนะนำในคำตอบของ AI</P>
         <P>สรุปง่าย ๆ คือ SEO เน้น "ติดอันดับ" AEO เน้น "ตอบคำถาม" และ GEO เน้น "ถูก AI พูดถึงหรืออ้างอิง" ธุรกิจที่ต้องการโตในยุค AI Search จึงควรทำทั้ง 3 อย่างร่วมกัน ไม่ใช่เลือกทำอย่างใดอย่างหนึ่งแยกกัน</P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
-            </Link>
-          </p>
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
-            </Link>
-          </p>
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
-            </Link>
-          </p>
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
-            </Link>
-          </p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="วิธีเลือกบริษัทรับทำ GEO ให้เหมาะกับธุรกิจ">
@@ -1139,12 +1093,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>แนวทางนี้ทำให้ Saralak Search เหมาะกับธุรกิจที่ไม่ได้ต้องการแค่ Traffic แต่ต้องการให้แบรนด์มีตัวตนในโลก Search ยุคใหม่ ทั้งใน Google Search, AI Overview และ AI Search Platform</P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' }]} />
       </ArticleSection>
 
       <ArticleSection title="GEO เหมาะกับธุรกิจประเภทไหน">
@@ -1242,11 +1191,11 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สรุปแบบเข้าใจง่าย</p>
           <p className="thai-readable mt-2 font-medium text-neutral-950">AEO คือการทำให้เนื้อหาบนเว็บไซต์กลายเป็นคำตอบที่ Search Engine และ AI เข้าใจง่าย เชื่อถือได้ และเลือกนำไปแสดงให้ผู้ใช้งาน</p>
         </div>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="ทำไม AEO ถึงสำคัญ?">
@@ -1329,10 +1278,10 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
             </tbody>
           </table>
         </div>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="AEO เหมาะกับเว็บไซต์แบบไหน?">
@@ -1451,11 +1400,11 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>ถ้าทำแค่ SEO เว็บไซต์อาจติดอันดับ แต่ไม่ถูก AI หยิบไปตอบ ถ้าทำแค่ AEO แต่พื้นฐาน SEO ไม่ดี เนื้อหาอาจไม่ถูกค้นพบ ถ้าทำ GEO โดยไม่มีข้อมูลและความน่าเชื่อถือพอ AI ก็อาจไม่แนะนำแบรนด์</P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
+          { to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="AEO กับ Google AI Overview, Featured Snippet และ Voice Search">
@@ -1473,7 +1422,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="สรุป: AEO คือก้าวสำคัญของ SEO ยุค AI Search">
         <P>AEO คือการทำให้เว็บไซต์และเนื้อหาพร้อมสำหรับยุคที่ Search Engine และ AI ไม่ได้แค่แสดงลิงก์ แต่เริ่มทำหน้าที่ตอบคำถามแทนผู้ใช้งาน การทำ AEO ที่ดีไม่ได้หมายถึงการเขียนคีย์เวิร์ดเยอะที่สุด แต่หมายถึงการตอบคำถามให้ชัดที่สุด เข้าใจง่ายที่สุด และน่าเชื่อถือที่สุด</P>
         <P>เว็บไซต์ที่ต้องการเติบโตในยุค AI Search ควรให้ความสำคัญกับ SEO เพื่อให้เว็บไซต์ถูกค้นพบ AEO เพื่อให้เนื้อหาถูกเลือกเป็นคำตอบ และ GEO เพื่อให้แบรนด์ถูก AI แนะนำและอ้างอิง เมื่อทั้ง 3 ส่วนทำงานร่วมกัน เว็บไซต์จะไม่ได้แค่มีอันดับบน Google แต่มีโอกาสถูกมองเห็นในหลายพื้นที่ของการค้นหา</P>
-        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+        <ReadMoreLinks items={[{ to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ AEO" />
@@ -1628,12 +1577,12 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           </table>
         </div>
         <P>สรุปง่าย ๆ คือ SEO คือจุดเริ่มต้นของการถูกค้นเจอบน Google ส่วน AEO และ GEO คือการต่อยอดจาก SEO เพื่อให้เนื้อหาหรือแบรนด์มีโอกาสถูกมองเห็นในระบบคำตอบและ AI Search มากขึ้น</P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleCTA
@@ -1688,7 +1637,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>SEO คือการทำให้เว็บไซต์ของคุณถูกค้นเจอในเวลาที่ลูกค้ากำลังต้องการ ไม่ว่าจะเป็นการค้นหาข้อมูล เปรียบเทียบบริการ อ่านรีวิว หรือมองหาผู้ให้บริการที่น่าเชื่อถือ</P>
         <P>การทำ SEO ที่ดีไม่ใช่แค่การใส่คีย์เวิร์ดลงในบทความ แต่ต้องเข้าใจลูกค้า เข้าใจ Search Intent วางโครงสร้างเว็บไซต์ให้ดี เขียนเนื้อหาที่มีคุณภาพ ปรับ Technical SEO และวัดผลอย่างต่อเนื่อง</P>
         <P>SEO คือจุดเริ่มต้นที่จะทำให้เว็บไซต์ไม่เป็นบ้านร้างบนโลกออนไลน์ แต่กลายเป็นช่องทางที่ช่วยให้ธุรกิจถูกค้นพบ สร้างความน่าเชื่อถือ และเพิ่มโอกาสเติบโตได้อย่างยั่งยืน</P>
-        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย</Link></p>
+        <ReadMoreLinks items={[{ to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' }]} />
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO" />
@@ -1875,12 +1824,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างเช่น ถ้าผู้ใช้ค้นว่า "วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์" Google อาจแสดงบทความหลายอันดับ แต่ถ้าผู้ใช้ถาม ChatGPT หรือ AI Search ระบบจะพยายามสรุปคำตอบให้ทันทีว่า GEO คืออะไร ต้องทำอะไรบ้าง และเว็บไซต์แบบไหนมีโอกาสถูกอ้างอิง ดังนั้นเว็บไซต์ที่มีโครงสร้างคำตอบชัดเจน มีข้อมูลลึก และมีสัญญาณความน่าเชื่อถือสูง จะมีโอกาสถูก AI นำไปใช้มากกว่าเว็บไซต์ที่เขียนกว้าง ๆ หรือเนื้อหาไม่ชัดเจน
         </P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="GEO ต่างจาก SEO และ AEO อย่างไร">
@@ -1908,26 +1852,11 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <P>
           GEO หรือ Generative Engine Optimization คือการปรับเนื้อหาและสัญญาณความน่าเชื่อถือให้ AI Search และ Generative AI เข้าใจ เลือกสรุป และอ้างอิงข้อมูลจากเว็บไซต์ของเรา
         </P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
-            </Link>
-          </p>
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google
-            </Link>
-          </p>
-          <p className="thai-readable text-sm text-neutral-500">
-            อ่านเพิ่มเติม:{' '}
-            <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-              AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search
-            </Link>
-          </p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="ทำไม GEO สำคัญในยุค AI Search">
@@ -2143,12 +2072,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>เมื่อเว็บไซต์มีทั้งบริการ บทความ Case Study และ Framework AI จะเข้าใจได้ดีขึ้นว่าแบรนด์ไม่ได้แค่พูดเรื่อง GEO แต่มีระบบการทำงานจริง</P>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' }]} />
       </ArticleSection>
 
       <ArticleSection title="ความเข้าใจผิดเกี่ยวกับ GEO">
@@ -2452,11 +2376,11 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         <P>
           แต่นั่นก็หมายความว่า <strong>โอกาส Early Mover ยังเปิดอยู่</strong> เมื่อ AI รองรับ llms.txt มากขึ้น แบรนด์ที่เตรียมไฟล์นี้ไว้ก่อนจะได้เปรียบทันที เหมือนกับแบรนด์ที่ทำ robots.txt ตั้งแต่ยุคแรกของ Search Engine
         </P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleSection title="ข้อผิดพลาดที่พบบ่อยใน llms.txt ของธุรกิจไทย">
@@ -2710,11 +2634,11 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <P>
           ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน GEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบ 40 รายการก็ตาม
         </P>
-        <div className="grid gap-2">
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
-          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
-        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+        ]} />
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ GEO Checklist" />
@@ -2935,12 +2859,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
             ))}
           </div>
         </div>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติมเรื่อง GEO และ AI Search:{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600">
-            GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search
-          </Link>
-        </p>
+        <ReadMoreLinks items={[{ to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="สรุป">
