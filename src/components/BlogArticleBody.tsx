@@ -241,10 +241,10 @@ function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร' }: { post
 
 function ArticleCTA({ headline, description }: { headline: string; description: string }) {
   return (
-    <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
-      <h3 className="mt-2 break-words text-xl font-semibold text-neutral-950">{headline}</h3>
-      <p className="thai-readable mt-3 text-neutral-700">{description}</p>
+    <aside className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white">
+      <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">Discovery Audit</p>
+      <h3 className="mt-2 break-words text-xl font-semibold text-white">{headline}</h3>
+      <p className="thai-readable mt-3 text-teal-100">{description}</p>
       <div className="mt-5">
         <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
       </div>
@@ -325,12 +325,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         src="/image/blog/what-is-geo/what-is-geo-seo-vs-aeo-vs-geo.svg"
         alt="แผนภาพเปรียบเทียบ SEO AEO และ GEO"
       />
-      <p className="thai-readable text-sm text-neutral-500">
-        อ่านเพิ่มเติม:{' '}
-        <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-          SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
-        </Link>
-      </p>
+      <div className="grid gap-2">
+        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
+        <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
+      </div>
 
       <ArticleSection title="ทำยังไงให้ติด AI Search?">
         <P>
@@ -478,6 +477,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           สำหรับธุรกิจที่ต้องการทำจริง ควรใช้บทความนี้เป็นจุดเริ่มต้นในการเข้าใจภาพรวมของ GEO แล้วค่อยต่อยอดไปยัง Checklist, Case Study และวิธีทำให้ AI อ้างอิงเว็บไซต์ในบทความเฉพาะ เพื่อไม่ให้เนื้อหาหน้านี้หนักเกินไปและยังคงตอบโจทย์คำค้นหลัก “GEO คืออะไร” ได้ชัดเจน
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headline="อยากรู้ว่า AI เข้าใจแบรนด์ของคุณแค่ไหน?"
+        description="Discovery Audit ช่วยตรวจว่าเว็บไซต์พร้อมสำหรับ GEO และ AI Search แค่ไหน พร้อม Roadmap ที่เริ่มทำได้เลย"
+      />
 
       <ArticleSection title="สรุป GEO คืออะไร และควรเริ่มอย่างไร">
         <P>
@@ -1233,17 +1237,16 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="AEO คืออะไร?">
         <P>AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และระบบ AI สามารถเข้าใจข้อมูลของเราได้ง่าย และมีโอกาสเลือกข้อมูลจากเว็บไซต์ของเราไปใช้เป็นคำตอบให้กับผู้ใช้งาน</P>
         <P>พูดให้ง่ายที่สุด AEO คือการทำให้เว็บไซต์ของเรา "ตอบคำถามได้ดีที่สุด" จน Google, AI Overview, Featured Snippet, Voice Search หรือ AI Assistant มีโอกาสนำข้อมูลของเราไปแสดงเป็นคำตอบ</P>
-        <P>ในอดีต การทำ SEO มักโฟกัสที่การทำให้เว็บไซต์ติดอันดับบนหน้า Google แต่พฤติกรรมการค้นหาในปัจจุบันเปลี่ยนไปมาก ผู้ใช้งานไม่ได้ต้องการแค่ลิงก์เว็บไซต์ แต่ต้องการคำตอบที่เร็ว ชัด และเข้าใจง่าย เว็บไซต์ที่ตอบคำถามได้ดี มีโครงสร้างชัดเจน และน่าเชื่อถือ จึงมีโอกาสถูก Search Engine และ AI เลือกไปแสดงมากกว่า</P>
+        <P>ในอดีต การทำ <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO</Link> มักโฟกัสที่การทำให้เว็บไซต์ติดอันดับบนหน้า Google แต่พฤติกรรมการค้นหาในปัจจุบันเปลี่ยนไปมาก ผู้ใช้งานไม่ได้ต้องการแค่ลิงก์เว็บไซต์ แต่ต้องการคำตอบที่เร็ว ชัด และเข้าใจง่าย เว็บไซต์ที่ตอบคำถามได้ดี มีโครงสร้างชัดเจน และน่าเชื่อถือ จึงมีโอกาสถูก Search Engine และ AI เลือกไปแสดงมากกว่า</P>
         <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] px-6 py-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สรุปแบบเข้าใจง่าย</p>
           <p className="thai-readable mt-2 font-medium text-neutral-950">AEO คือการทำให้เนื้อหาบนเว็บไซต์กลายเป็นคำตอบที่ Search Engine และ AI เข้าใจง่าย เชื่อถือได้ และเลือกนำไปแสดงให้ผู้ใช้งาน</p>
         </div>
-        <p className="thai-readable text-sm text-neutral-500">
-          อ่านเพิ่มเติม:{' '}
-          <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">
-            SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
-          </Link>
-        </p>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google</Link></p>
+        </div>
       </ArticleSection>
 
       <ArticleSection title="ทำไม AEO ถึงสำคัญ?">
@@ -1592,7 +1595,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?">
         <ArticleImage src="/image/blog/what-is-seo/what-seo-compare.webp" alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร" />
-        <P>สำหรับคนที่เพิ่งเริ่มต้น ให้เข้าใจก่อนว่า SEO ยังคือพื้นฐานสำคัญที่สุด ส่วน AEO และ GEO คือการต่อยอดจาก SEO เพื่อให้เนื้อหาและแบรนด์มีโอกาสถูกมองเห็นในรูปแบบคำตอบและ AI Search มากขึ้น</P>
+        <P>สำหรับคนที่เพิ่งเริ่มต้น ให้เข้าใจก่อนว่า SEO ยังคือพื้นฐานสำคัญที่สุด ส่วน <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO</Link> และ <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO</Link> คือการต่อยอดจาก SEO เพื่อให้เนื้อหาและแบรนด์มีโอกาสถูกมองเห็นในรูปแบบคำตอบและ AI Search มากขึ้น</P>
         <div className="grid gap-3 lg:hidden">
           {compareRows.map((row) => (
             <article key={row[0]} className="rounded-lg border border-neutral-200 bg-white p-4">
@@ -2449,6 +2452,11 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         <P>
           แต่นั่นก็หมายความว่า <strong>โอกาส Early Mover ยังเปิดอยู่</strong> เมื่อ AI รองรับ llms.txt มากขึ้น แบรนด์ที่เตรียมไฟล์นี้ไว้ก่อนจะได้เปรียบทันที เหมือนกับแบรนด์ที่ทำ robots.txt ตั้งแต่ยุคแรกของ Search Engine
         </P>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search</Link></p>
+        </div>
       </ArticleSection>
 
       <ArticleSection title="ข้อผิดพลาดที่พบบ่อยใน llms.txt ของธุรกิจไทย">
@@ -2702,6 +2710,11 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <P>
           ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน GEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบ 40 รายการก็ตาม
         </P>
+        <div className="grid gap-2">
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]</Link></p>
+          <p className="thai-readable text-sm text-neutral-500">อ่านเพิ่มเติม:{' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 hover:text-teal-600 underline underline-offset-2">AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search</Link></p>
+        </div>
       </ArticleSection>
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ GEO Checklist" />
@@ -2891,19 +2904,10 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <aside className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-6">
-        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">Discovery Audit</p>
-        <h3 className="mt-2 text-xl font-semibold text-neutral-950">
-          อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?
-        </h3>
-        <p className="thai-readable mt-3 text-neutral-700">
-          Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้
-          และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์
-        </p>
-        <div className="mt-5">
-          <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
-        </div>
-      </aside>
+      <ArticleCTA
+        headline="อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?"
+        description="Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้ และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์"
+      />
 
       <ArticleSection title="แล้วเว็บของคุณควรทำอะไร?">
         <P>
