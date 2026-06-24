@@ -3331,6 +3331,10 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
           นี่คือ 8 สาเหตุที่พบบ่อยที่สุดในการทำ SEO แล้วไม่ได้ผล
           พร้อมวิธีตรวจสอบเบื้องต้นที่ทำได้ด้วยตัวเอง
         </P>
+        <ArticleImage
+          src="/image/blog/seo-not-working/why-seo-not-working.png"
+          alt="ทำไม SEO ไม่ได้ผล — แผนภาพสรุป 8 สาเหตุหลักที่ทำให้เว็บไซต์ไม่ติดอันดับ Google"
+        />
         <div className="grid gap-5">
           {causes.map((cause) => (
             <div key={cause.num} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -3359,6 +3363,11 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
           ก่อนตัดสินใจจ้างผู้เชี่ยวชาญ สามารถเช็ค SEO เบื้องต้นได้ด้วยตัวเองผ่านเครื่องมือฟรีเหล่านี้
         </P>
         <CheckList items={selfCheckItems} />
+        <ArticleImage
+          src="/image/blog/seo-not-working/seo-not-working-dashboard.png"
+          alt="Google Search Console Dashboard — ตรวจสอบ Coverage, Performance และ Indexing เพื่อวิเคราะห์ปัญหา SEO"
+          caption="Google Search Console: เริ่มตรวจจาก Overview → Coverage → Performance"
+        />
         <P>
           ถ้าตรวจแล้วพบว่าเว็บมี Impression ใน Google Search Console แต่คนไม่คลิก
           ปัญหามักอยู่ที่ Title Tag หรือ Meta Description ที่ไม่ดึงดูดเมื่อเทียบกับคู่แข่ง
@@ -3391,6 +3400,10 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="สรุป: ทำ SEO แล้วไม่เห็นผล เริ่มจากการวิเคราะห์ก่อน">
+        <ArticleImage
+          src="/image/blog/seo-not-working/seo-not-working-how-improve.png"
+          alt="วิธีแก้ปัญหา SEO ไม่เห็นผล — Roadmap วิเคราะห์และแก้ปัญหา SEO อย่างเป็นขั้นตอน"
+        />
         <P>
           ทำ SEO แล้วไม่เห็นผลไม่ได้แปลว่า SEO ไม่ work
           แต่แปลว่ายังไม่เจอปัญหาที่แท้จริง
@@ -3818,6 +3831,11 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <ArticleImage
+          src="/image/blog/local-seo/local-seo-road-map.png"
+          alt="Local SEO Roadmap — ขั้นตอนการทำ Local SEO ตั้งแต่ GBP Audit จนถึง Monthly Activities"
+          caption="Local SEO Roadmap: GBP → Keywords → Citations → Reviews → Content → Posts"
+        />
       </ArticleSection>
 
       <ArticleSection title="เช็กจากอะไร — วิธีประเมิน Local SEO ของตัวเอง">
@@ -3842,6 +3860,10 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <ArticleImage
+          src="/image/blog/local-seo/local-seo-checklist.png"
+          alt="Local SEO Checklist — รายการตรวจสอบ Local SEO สำหรับธุรกิจท้องถิ่น"
+        />
         <div className="rounded-xl border border-teal-100 bg-teal-50/60 p-4">
           <p className="thai-readable text-sm leading-6 text-teal-800">
             ถ้าตอบ "ไม่" มากกว่า 3 ข้อ → <strong>Local SEO Audit ฟรี</strong> จะช่วยให้รู้ว่าควรแก้อะไรก่อนเพื่อเห็นผลเร็วที่สุด
@@ -4331,6 +4353,10 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
             </tbody>
           </table>
         </div>
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-how-to.png"
+          alt="วิธีเพิ่มยอดขายร้านอาหาร ด้วย Google Business Profile — ขั้นตอนจากรูปภาพถึง GBP Posts"
+        />
       </ArticleSection>
 
       <ArticleSection title="คนหิวข้าว 2,240,000 คนต่อเดือน — ร้านคุณอยู่ที่ไหน?">
@@ -4413,6 +4439,11 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-dashboard.png"
+          alt="Google Business Profile Insights — ดู Call, Direction Requests และ Website Clicks ที่ได้จาก Google Maps"
+          caption="GBP Insights: Call, Direction, Website Clicks คือ KPI ที่แปลงเป็นลูกค้าจริง"
+        />
         <ReadMoreLinks items={[
           { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps อย่างละเอียด' },
         ]} />
