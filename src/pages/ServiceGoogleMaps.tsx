@@ -210,12 +210,12 @@ export default function ServiceGoogleMaps() {
           </p>
           <div className="max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Google Maps มีอยู่แล้ว
+              บริการ Google Maps Optimization
               <br className="hidden sm:block" />
-              <span className="animate-gradient-text">แต่ลูกค้ายังโทรหาคู่แข่งก่อน?</span>
+              <span className="animate-gradient-text">ให้ลูกค้าในย่านโทรหาคุณก่อนคู่แข่ง</span>
             </h1>
             <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-              Google Maps Optimization ช่วยให้ธุรกิจของคุณปรากฏในอันดับต้นเมื่อลูกค้าค้นหาในย่าน
+              บริการ Google Maps Optimization ช่วยให้ธุรกิจของคุณปรากฏในอันดับต้นเมื่อลูกค้าค้นหาในย่าน
               วัดผลด้วย Call, Direction Requests และ Website Clicks — ไม่ใช่แค่อันดับ
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">

@@ -154,13 +154,13 @@ export default function ServiceContentMarketing() {
           </p>
           <div className="max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              เว็บไซต์มีบทความ
+              บริการเขียนบทความ SEO
               <br className="hidden sm:block" />
-              <span className="animate-gradient-text">แต่ Google ยังไม่ส่ง Traffic?</span>
+              <span className="animate-gradient-text">ให้ Google ส่ง Traffic มาหาคุณทุกวัน</span>
             </h1>
             <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-              บทความส่วนใหญ่ไม่ติดอันดับเพราะเขียนตาม topic ที่ตัวเองอยากเขียน — ไม่ใช่ keyword ที่ลูกค้ากำลังค้นหาจริง
-              บทความที่ดีต้องตอบ Search Intent ได้ครบ และ Structured ให้ Google และ AI เข้าใจ
+              รับเขียนบทความ SEO คุณภาพสูงสำหรับธุรกิจไทย — บทความส่วนใหญ่ไม่ติดอันดับเพราะเขียนตาม topic ที่ตัวเองอยากเขียน
+              ไม่ใช่ keyword ที่ลูกค้ากำลังค้นหาจริง บทความที่ดีต้องตอบ Search Intent ได้ครบ และ Structured ให้ Google และ AI เข้าใจ
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">
               {['SEO Article', 'Long-tail Keywords', 'AI-ready Content', 'Topic Cluster', 'E-E-A-T'].map((tag) => (

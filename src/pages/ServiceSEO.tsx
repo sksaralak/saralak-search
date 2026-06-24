@@ -156,13 +156,13 @@ export default function ServiceSEO() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                ต้องการให้ลูกค้าค้นหา
+                รับทำ SEO ให้ลูกค้าค้นหาเจอ
                 <br className="hidden sm:block" />
-                <span className="animate-gradient-text">เจอเว็บไซต์คุณ ก่อนเจอคู่แข่ง?</span>
+                <span className="animate-gradient-text">เว็บไซต์คุณ ก่อนเจอคู่แข่ง</span>
               </h1>
               <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-                SEO คือการวางระบบให้เว็บไซต์ถูกค้นเจอในทุก keyword ที่ลูกค้าใช้ค้นหาก่อนตัดสินใจ
-                ไม่ใช่แค่ traffic แต่คือ lead, call และโอกาสขาย
+                บริการรับทำ SEO สำหรับธุรกิจไทย — วางระบบให้เว็บไซต์ถูกค้นเจอในทุก keyword
+                ที่ลูกค้าใช้ค้นหาก่อนตัดสินใจ ไม่ใช่แค่ traffic แต่คือ lead, call และโอกาสขาย
               </p>
               <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-900/30 px-4 py-2 text-sm text-amber-300 ring-1 ring-amber-700/40">
                 <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

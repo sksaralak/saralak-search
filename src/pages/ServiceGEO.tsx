@@ -200,12 +200,12 @@ export default function ServiceGEO() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                ลูกค้าถาม AI แล้ว AI
+                บริการ GEO ให้ AI แนะนำ
                 <br className="hidden sm:block" />
-                <span className="animate-gradient-text">แนะนำคู่แข่งแทนคุณ?</span>
+                <span className="animate-gradient-text">แบรนด์คุณ ไม่ใช่คู่แข่ง</span>
               </h1>
               <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-                GEO (Generative Engine Optimization) คือการปรับ Content และ Brand Signals
+                บริการ GEO (Generative Engine Optimization) — ปรับ Content และ Brand Signals
                 เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini, Perplexity และ Google AI Overview
                 พบและอ้างอิงแบรนด์ของคุณเมื่อลูกค้าถาม
               </p>
@@ -411,6 +411,38 @@ export default function ServiceGEO() {
                   ))}
                 </ul>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="ขั้นตอน" title="จาก Brand ที่ AI ไม่รู้จัก สู่ Brand ที่ AI แนะนำ" tone="light" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                step: '01', label: 'AI Visibility Scan',
+                border: 'border-teal-800/50', bg: 'bg-teal-950/25', badge: 'bg-teal-900/60 text-teal-300', color: 'text-teal-950',
+                body: 'ทดสอบ 10–15 Prompt บน ChatGPT, Gemini, Perplexity และ AI Overview — บันทึกว่าแบรนด์ถูกพบ ถูกแนะนำ หรือไม่มีอยู่เลย',
+              },
+              {
+                step: '02', label: 'Optimize & Signal',
+                border: 'border-sky-800/50', bg: 'bg-sky-950/25', badge: 'bg-sky-900/60 text-sky-300', color: 'text-sky-950',
+                body: 'ปรับ 1 หน้า/เดือน ให้ AI อ่านได้ง่ายขึ้น เพิ่ม Entity Signals อัพเดท llms.txt และ FAQ Schema ที่ AI ชอบดึง',
+              },
+              {
+                step: '03', label: 'Monthly GEO Report',
+                border: 'border-emerald-800/50', bg: 'bg-emerald-950/25', badge: 'bg-emerald-900/60 text-emerald-300', color: 'text-emerald-950',
+                body: 'เปรียบเทียบ AI Mention Month-over-Month — Platform ไหนดีขึ้น Platform ไหนยังหลุด พร้อม Recommendations เดือนถัดไป',
+              },
+            ].map((item) => (
+              <div key={item.label} className={`group relative overflow-hidden rounded-2xl border p-7 transition-all duration-200 hover:-translate-y-0.5 ${item.border} ${item.bg}`}>
+                <span className={`select-none absolute -right-3 -top-5 text-[7rem] font-black leading-none ${item.color}`}>{item.step}</span>
+                <span className={`relative z-10 inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>{item.label}</span>
+                <p className="relative z-10 thai-readable mt-4 text-sm leading-6 text-neutral-400">{item.body}</p>
+              </div>
             ))}
           </div>
         </div>

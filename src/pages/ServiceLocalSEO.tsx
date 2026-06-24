@@ -163,12 +163,12 @@ export default function ServiceLocalSEO() {
           </p>
           <div className="max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              มีหน้าร้าน แต่ลูกค้า
+              บริการ Local SEO ให้ลูกค้า
               <br className="hidden sm:block" />
-              <span className="animate-gradient-text">ในย่านยังหาคุณไม่เจอ?</span>
+              <span className="animate-gradient-text">ในย่านค้นหาเจอคุณก่อนคู่แข่ง</span>
             </h1>
             <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-              Local SEO ช่วยให้ธุรกิจที่มีหน้าร้านปรากฏทั้งบน Google Search และ Google Maps
+              บริการ Local SEO ครบวงจร — ช่วยให้ธุรกิจที่มีหน้าร้านปรากฏทั้งบน Google Search และ Google Maps
               เมื่อลูกค้าใกล้ๆ ค้นหา ไม่ว่าจะเป็น "คลินิกลาดพร้าว" หรือ "ร้านอาหารสีลม"
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">
@@ -320,6 +320,43 @@ export default function ServiceLocalSEO() {
                   ))}
                 </ul>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="ขั้นตอน" title="จาก Audit สู่ลูกค้าในย่านที่วัดผลได้" tone="light" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: '01', label: 'GBP & SEO Audit',
+                border: 'border-teal-800/50', bg: 'bg-teal-950/25', badge: 'bg-teal-900/60 text-teal-300', color: 'text-teal-950',
+                body: 'ตรวจ GBP ทุก Field และ SEO เว็บไซต์ — ชื่อ ที่อยู่ เบอร์ รูป ชั่วโมง NAP Consistency และ Local Keyword Gaps',
+              },
+              {
+                step: '02', label: 'Keyword & On-page',
+                border: 'border-sky-800/50', bg: 'bg-sky-950/25', badge: 'bg-sky-900/60 text-sky-300', color: 'text-sky-950',
+                body: 'วิเคราะห์ "[บริการ] [ย่าน]" ที่ลูกค้าใช้จริง ปรับ On-page 2 หน้า/เดือน และเพิ่ม LocalBusiness Schema',
+              },
+              {
+                step: '03', label: 'Monthly Activities',
+                border: 'border-violet-800/50', bg: 'bg-violet-950/25', badge: 'bg-violet-900/60 text-violet-300', color: 'text-violet-950',
+                body: '4 GBP Posts, ตอบรีวิวทุกรีวิว, Citations ใหม่ 2 แห่ง/เดือน และอัพเดท GBP Photos ต่อเนื่อง',
+              },
+              {
+                step: '04', label: 'Report & Strategy',
+                border: 'border-emerald-800/50', bg: 'bg-emerald-950/25', badge: 'bg-emerald-900/60 text-emerald-300', color: 'text-emerald-950',
+                body: 'รายงาน Calls, Directions, Clicks และ Local Keyword Ranking พร้อม Recommendations สำหรับเดือนถัดไป',
+              },
+            ].map((item) => (
+              <div key={item.label} className={`group relative overflow-hidden rounded-2xl border p-7 transition-all duration-200 hover:-translate-y-0.5 ${item.border} ${item.bg}`}>
+                <span className={`select-none absolute -right-3 -top-5 text-[7rem] font-black leading-none ${item.color}`}>{item.step}</span>
+                <span className={`relative z-10 inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>{item.label}</span>
+                <p className="relative z-10 thai-readable mt-4 text-sm leading-6 text-neutral-400">{item.body}</p>
+              </div>
             ))}
           </div>
         </div>
