@@ -1,9 +1,20 @@
+import { useEffect, useState } from 'react'
 import { trackLineClick } from './Analytics'
+import { getCookieConsent } from './CookieConsent'
 import { brand } from '../content/site'
 
 export default function FloatingLineButton() {
+  const [consentPending, setConsentPending] = useState(false)
+
+  useEffect(() => {
+    setConsentPending(!getCookieConsent())
+    const handler = () => setConsentPending(false)
+    window.addEventListener('cookie_consent_resolved', handler)
+    return () => window.removeEventListener('cookie_consent_resolved', handler)
+  }, [])
+
   return (
-    <div className="group fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
+    <div className={`group fixed right-4 z-[70] sm:right-6 transition-all duration-300 ${consentPending ? 'bottom-24 sm:bottom-28' : 'bottom-4 sm:bottom-6'}`}>
       {/* Tooltip — desktop only, shown on hover */}
       <span
         className="pointer-events-none absolute bottom-full right-0 mb-2 hidden whitespace-nowrap rounded-md bg-neutral-950 px-3 py-1.5 text-xs font-semibold text-white shadow-md sm:group-hover:block"

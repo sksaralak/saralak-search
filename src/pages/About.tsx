@@ -95,8 +95,8 @@ const aboutFaqs: FAQItem[] = [
     answer: 'Google Search แบบเดิมแสดงรายการผลลัพธ์ให้ผู้ใช้เลือก ส่วน AI Search มักสรุปคำตอบหรือแนะนำตัวเลือกโดยดึงข้อมูลจากหลายแหล่ง เว็บไซต์จึงต้องมีข้อมูลที่ชัดเจนและน่าเชื่อถือมากขึ้น',
   },
   {
-    question: 'Brand Visibility Audit คืออะไร?',
-    answer: 'Brand Visibility Audit คือการวิเคราะห์เว็บไซต์เพื่อดูปัญหา โอกาสการเติบโต และลำดับความสำคัญของงาน SEO, AEO, GEO, AI Search และ Google Maps ที่ควรทำก่อน',
+    question: 'Discovery Audit คืออะไร?',
+    answer: 'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อดูปัญหา โอกาสการเติบโต และลำดับความสำคัญของงาน SEO, AEO, GEO, AI Search และ Google Maps ที่ควรทำก่อน',
   },
   {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
@@ -196,7 +196,7 @@ export default function About() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
                 <CTAButton to="/contact" variant="secondary">ติดต่อ</CTAButton>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function About() {
                       href="https://www.linkedin.com/in/saralakkaewkum"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 transition hover:text-teal-400"
+                      className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-400 transition hover:text-teal-400"
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -241,7 +241,7 @@ export default function About() {
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
                   <p className="text-4xl font-bold text-teal-400">{s.value}</p>
-                  <p className="mt-1 text-sm text-neutral-500">{s.label}</p>
+                  <p className="mt-1 text-sm text-neutral-300">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -266,7 +266,7 @@ export default function About() {
                 Search ไม่ใช่เพียงช่องทางสร้างทราฟฟิก แต่เป็นหนึ่งในช่องทางสำคัญในการสร้าง
                 Business Visibility บน Google Search, Google Maps และ AI Search
               </p>
-              <p className="text-base text-neutral-600">
+              <p className="text-base text-neutral-400">
                 อ่านเพิ่มเติม:{' '}
                 <Link to="/blog/seo-geo-aeo" className="text-teal-500 hover:underline">SEO, AEO และ GEO ต่างกันอย่างไร</Link>
               </p>
@@ -299,7 +299,7 @@ export default function About() {
               >
                 <div className={`absolute left-0 top-0 h-full w-1 ${item.color}`} />
                 <h3 className="pl-4 font-semibold text-white group-hover:text-teal-300">{item.title}</h3>
-                <p className="thai-readable mt-2 pl-4 text-sm leading-6 text-neutral-500">
+                <p className="thai-readable mt-2 pl-4 text-sm leading-6 text-neutral-300">
                   {item.description}
                 </p>
               </Link>
@@ -328,7 +328,7 @@ export default function About() {
                   {item.icon}
                 </div>
                 <h3 className="mt-3 font-semibold text-white">{item.title}</h3>
-                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-500">{item.description}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-300">{item.description}</p>
               </article>
             ))}
           </div>
@@ -343,7 +343,7 @@ export default function About() {
             {selectedResults.map((item) => (
               <div key={item.label} className="text-center">
                 <p className={`text-4xl font-black sm:text-5xl ${item.c}`}>{item.metric}</p>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-neutral-600">{item.label}</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-neutral-400">{item.label}</p>
               </div>
             ))}
           </div>
@@ -397,14 +397,14 @@ export default function About() {
       {/* Final CTA */}
       <section className="bg-teal-950 px-4 pb-28 pt-16 text-center text-white sm:px-6 lg:px-8 lg:pb-16">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          อยากเพิ่มการมองเห็นบน Search?
+          อยากรู้ว่าลูกค้าค้นหาบน Google แล้วเจอคุณไหม?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-2xl text-lg leading-8 text-teal-50">
-          เริ่มต้นด้วย Discovery Audit เพื่อดูว่าเว็บไซต์มีโอกาสเติบโตตรงไหน
-          และควรเริ่มปรับจากอะไร
+          Discovery Audit ช่วยตรวจว่า Google, Google Maps และ AI Search มองเห็นแบรนด์ของคุณอย่างไร
+          และปัญหาอยู่ที่จุดไหน ก่อนที่จะเลือก service
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <CTAButton to="/discovery-audit" variant="secondary">เริ่มต้นด้วย Discovery Audit</CTAButton>
+          <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
           <a
             href="https://www.linkedin.com/in/saralakkaewkum"
             target="_blank"

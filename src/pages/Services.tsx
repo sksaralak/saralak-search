@@ -60,33 +60,33 @@ const serviceCards: ServiceCard[] = [
     price: 'Starting from 5,000 THB',
     fit: 'ธุรกิจที่ยังไม่รู้ว่าปัญหาอยู่ตรงไหน',
     outcomes: ['Audit Report', 'Prioritized Roadmap', 'Quick Wins', 'Strategic Recommendations'],
-    cta: { label: 'เริ่มต้นด้วย Discovery Audit', to: '/discovery-audit' },
+    cta: { label: 'เริ่ม Discovery Audit', to: '/discovery-audit' },
   },
   {
-    title: 'Increase Visibility on Google & AI Search',
-    tagline: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
-    price: 'Starting from 25,000 THB/month',
+    title: 'SEO & GEO',
+    tagline: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI Search',
+    price: 'Starting from 5,000 THB/month',
     fit: 'SME, B2B, E-commerce และธุรกิจที่ต้องการลูกค้าใหม่จากการค้นหา',
     outcomes: [
-      'เพิ่มการมองเห็นบน Google Search',
-      'เพิ่มการมองเห็นใน AI Overview และ ChatGPT',
-      'พัฒนาเนื้อหาและความน่าเชื่อถือ',
-      'สร้างการเติบโตระยะยาว',
+      'Keyword Ranking บน Google Search',
+      'AI Visibility — ChatGPT, Gemini, Perplexity',
+      'Content Marketing 1–4 บทความ/เดือน',
+      'Monthly Report พร้อม Strategy Review',
     ],
-    cta: { label: 'ขอแผนเพิ่มการมองเห็น', to: '/contact' },
+    cta: { label: 'ดูแพ็กเกจ SEO', to: '/services/seo' },
   },
   {
-    title: 'Increase Visibility on Google Maps',
+    title: 'Local SEO & Google Maps',
     tagline: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีหน้าร้าน',
     price: 'Starting from 6,000 THB/location/month',
     fit: 'คลินิก ร้านอาหาร โรงแรม ร้านค้า และธุรกิจที่มีหน้าร้าน',
     outcomes: [
-      'เพิ่มสายโทรเข้า',
+      'เพิ่มสายโทรเข้าจาก Google Maps',
       'เพิ่มคำขอเส้นทาง',
       'เพิ่มลูกค้าเข้าหน้าร้าน',
-      'เพิ่มการมองเห็นในพื้นที่',
+      'Monthly GBP Report: Call · Direction · Website',
     ],
-    cta: { label: 'ขอแผน Local Growth', to: '/contact' },
+    cta: { label: 'ดูบริการ Local SEO', to: '/services/local-seo' },
   },
   {
     title: 'Monthly SEO Advisor',
@@ -150,13 +150,13 @@ function Step02Visual() {
   return (
     <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40">
       <div className="border-b border-neutral-800 px-5 py-3.5">
-        <p className="text-xs font-semibold text-neutral-400">Growth Roadmap — 90 days</p>
+        <p className="text-sm font-semibold text-neutral-400">Growth Roadmap — 90 days</p>
       </div>
       <div className="divide-y divide-neutral-800/60">
         {items.map((item) => (
           <div key={item.label} className="flex items-center gap-3 px-5 py-3">
-            <span className={`shrink-0 rounded px-1.5 py-0.5 font-mono text-[10px] font-bold ${item.c}`}>{item.p}</span>
-            <span className="flex-1 text-xs text-neutral-300">{item.label}</span>
+            <span className={`shrink-0 rounded px-1.5 py-0.5 font-mono text-sm font-bold ${item.c}`}>{item.p}</span>
+            <span className="flex-1 text-sm text-neutral-300">{item.label}</span>
             <span className="shrink-0 font-mono text-[10px] text-neutral-600">{item.time}</span>
           </div>
         ))}
@@ -175,15 +175,15 @@ function Step03Visual() {
   ]
   return (
     <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40">
-      <div className="grid grid-cols-3 border-b border-neutral-800 px-5 py-3 font-mono text-[10px] font-semibold text-neutral-600">
+      <div className="grid grid-cols-3 border-b border-neutral-800 px-5 py-3 font-mono text-sm font-semibold text-neutral-400">
         <span>Platform</span><span className="text-center text-red-500">Before</span><span className="text-right text-emerald-500">After</span>
       </div>
       <div className="divide-y divide-neutral-800/60">
         {rows.map((r) => (
           <div key={r.platform} className="grid grid-cols-3 items-center gap-2 px-5 py-3">
-            <span className="font-mono text-xs text-neutral-400">{r.platform}</span>
-            <span className="text-center font-mono text-xs text-red-500 line-through">{r.before}</span>
-            <span className={`text-right font-mono text-xs font-semibold ${r.s === 'up' ? 'text-emerald-400' : 'text-amber-400'}`}>{r.after}</span>
+            <span className="font-mono text-sm text-neutral-300">{r.platform}</span>
+            <span className="text-center font-mono text-sm text-red-400 line-through">{r.before}</span>
+            <span className={`text-right font-mono text-sm font-semibold ${r.s === 'up' ? 'text-emerald-400' : 'text-amber-400'}`}>{r.after}</span>
           </div>
         ))}
       </div>
@@ -194,7 +194,7 @@ function Step03Visual() {
 function Step04Visual() {
   return (
     <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 shadow-xl shadow-black/40 p-6">
-      <p className="font-mono text-xs text-neutral-600">Organic Growth · 12 months tracking</p>
+      <p className="font-mono text-sm text-neutral-400">Organic Growth · 12 months tracking</p>
       <div className="mt-5 grid grid-cols-3 gap-3">
         {[
           { value: '+127%', label: 'Organic Traffic', sub: 'vs prev year' },
@@ -203,8 +203,8 @@ function Step04Visual() {
         ].map((m) => (
           <div key={m.label} className="rounded-lg bg-neutral-800/70 p-3.5 text-center">
             <p className="text-xl font-black text-emerald-400">{m.value}</p>
-            <p className="mt-1 text-[10px] text-neutral-500">{m.label}</p>
-            <p className="text-[10px] text-neutral-600">{m.sub}</p>
+            <p className="mt-1 text-sm text-neutral-300">{m.label}</p>
+            <p className="text-sm text-neutral-400">{m.sub}</p>
           </div>
         ))}
       </div>
@@ -258,7 +258,7 @@ function AiBrandMonitor() {
         </div>
         <div className="mt-6 border-t border-neutral-800 pt-5">
           <p className="font-mono text-xs text-neutral-600">Result: 3 platforms have visibility gaps</p>
-          <p className="mt-2 font-mono text-xs text-teal-400">→ Discovery Audit แก้ได้ภายใน 1 สัปดาห์</p>
+          <p className="mt-2 font-mono text-xs text-teal-400">→ Discovery Audit ช่วยระบุว่าควรเริ่มจากจุดไหน</p>
         </div>
       </div>
     </div>
@@ -298,14 +298,29 @@ const decisionGuide = [
     to: '/discovery-audit',
   },
   {
-    condition: 'ต้องการเพิ่มการมองเห็นและการเติบโต',
-    service: 'Increase Visibility on Google & AI Search',
-    to: '/contact',
+    condition: 'ต้องการ Keyword Ranking บน Google + งบเริ่มต้น',
+    service: 'SEO Starter (5,000/เดือน)',
+    to: '/services/seo',
   },
   {
-    condition: 'ต้องการลูกค้าในพื้นที่มากขึ้น',
-    service: 'Increase Visibility on Google Maps',
-    to: '/contact',
+    condition: 'ต้องการ Google + AI Search ครอบคลุม',
+    service: 'SEO Pro + GEO (20,000 + 3,000/เดือน)',
+    to: '/services/seo',
+  },
+  {
+    condition: 'มีหน้าร้าน ต้องการลูกค้าในย่าน',
+    service: 'Local SEO & Google Maps',
+    to: '/services/local-seo',
+  },
+  {
+    condition: 'ต้องการแค่ Google Maps อย่างเดียว',
+    service: 'Google Maps Visibility (6,000/สาขา)',
+    to: '/services/google-maps',
+  },
+  {
+    condition: 'ต้องการให้ AI แนะนำแบรนด์ — เพิ่มจาก SEO',
+    service: 'GEO Add-on (3,000/เดือน)',
+    to: '/services/geo',
   },
   {
     condition: 'ต้องการผู้เชี่ยวชาญสนับสนุนทีม',
@@ -374,9 +389,23 @@ export default function Services() {
               itemListElement: serviceCards.map((service, index) => ({
                 '@type': 'ListItem',
                 position: index + 1,
-                name: service.title,
-                description: service.tagline,
+                item: {
+                  '@type': 'ProfessionalService',
+                  name: service.title,
+                  description: service.tagline,
+                  provider: { '@id': 'https://saralak-search.com/#organization' },
+                  areaServed: 'Thailand',
+                  serviceType: 'Search Visibility Consulting',
+                  url: `https://saralak-search.com/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`,
+                },
               })),
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://saralak-search.com/'         },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+              ],
             },
           ],
         }}
@@ -389,14 +418,14 @@ export default function Services() {
             <div>
               <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-teal-400">Services</p>
               <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-                เพิ่มการมองเห็นของแบรนด์
+                ลูกค้าของคุณกำลังค้นหาก่อนซื้อ
                 <br className="hidden sm:block" />
-                <span className="animate-gradient-text">บน Google และ AI Search</span>
+                <span className="animate-gradient-text">— แบรนด์ของคุณถูกเห็นไหม?</span>
               </h1>
               <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-                ลูกค้าไม่ได้ค้นหาธุรกิจผ่าน Google เพียงอย่างเดียวอีกต่อไป วันนี้พวกเขาค้นหาผ่าน
-                Google Search, AI Overview, ChatGPT, Gemini, Perplexity และ Google Maps
-                ก่อนตัดสินใจเลือกสินค้าและบริการ
+                ทุกวันที่ลูกค้าค้นหา พวกเขากำลังเจอคู่แข่งของคุณ ไม่ใช่คุณ
+                Saralak Search ช่วยวิเคราะห์ว่าแบรนด์ถูกมองเห็นที่ไหน พลาดตรงไหน
+                และควรแก้อะไรก่อน
               </p>
               <p className="thai-readable mt-4 text-sm leading-7 text-neutral-500">
                 อ่านเพิ่มเติม:{' '}
@@ -407,7 +436,7 @@ export default function Services() {
                 <Link to="/blog/what-is-geo" className="text-teal-400 hover:underline">GEO คืออะไร</Link>
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                <CTAButton to="/discovery-audit">รู้จุดอ่อนของแบรนด์ก่อน — Discovery Audit</CTAButton>
                 <CTAButton to="/case-studies" variant="secondary">
                   ดูตัวอย่างผลงาน
                 </CTAButton>
@@ -423,12 +452,38 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Service Quick Nav */}
+      <section className="border-b border-neutral-800 bg-neutral-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-1 py-3">
+            <span className="mr-2 text-xs font-semibold uppercase tracking-wide text-neutral-600">บริการ:</span>
+            {[
+              { label: 'SEO', to: '/services/seo', desc: 'Google Search' },
+              { label: 'Local SEO', to: '/services/local-seo', desc: 'ลูกค้าในย่าน' },
+              { label: 'Google Maps', to: '/services/google-maps', desc: 'GBP & Maps' },
+              { label: 'GEO', to: '/services/geo', desc: 'AI Search' },
+              { label: 'Discovery Audit', to: '/discovery-audit', desc: 'เริ่มที่นี่' },
+            ].map(({ label, to, desc }) => (
+              <Link
+                key={to}
+                to={to}
+                className="flex items-center gap-1.5 rounded-full border border-neutral-700 px-3 py-1.5 text-xs font-medium text-neutral-400 transition hover:border-teal-700 hover:bg-teal-900/30 hover:text-teal-300"
+              >
+                {label}
+                <span className="hidden text-neutral-600 sm:inline">· {desc}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Section 2: Common Problems */}
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <p className="mb-8 text-sm font-semibold uppercase tracking-wide text-teal-800">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
             ปัญหาที่พบบ่อย
           </p>
+          <h2 className="thai-readable mb-8 mt-3 text-2xl font-semibold text-neutral-950">ไม่ใช่ปัญหา SEO ทั่วไป — แต่คือปัญหา Visibility ที่กำลังทำให้เสียลูกค้า</h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {commonProblems.map(({ setup, pain }) => (
               <article key={setup} className="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
@@ -448,8 +503,8 @@ export default function Services() {
             ))}
           </div>
           <p className="thai-readable mt-6 max-w-2xl leading-7 text-neutral-600">
-            หากคุณกำลังเจอหนึ่งในปัญหาเหล่านี้ Saralak Search
-            สามารถช่วยวิเคราะห์และวางแผนแนวทางที่เหมาะสมกับธุรกิจของคุณ
+            Saralak Search ช่วยตรวจตั้งแต่ว่าปัญหาอยู่ที่ Google, Google Maps หรือ AI Search
+            แล้วค่อยวางแผนบริการที่เหมาะ
           </p>
         </div>
       </section>
@@ -465,7 +520,7 @@ export default function Services() {
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit">รู้จุดอ่อนวันนี้ — Discovery Audit</CTAButton>
+              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
             </div>
           </div>
         </div>
@@ -489,7 +544,7 @@ export default function Services() {
                   และควรแก้อะไรก่อนเพื่อให้ได้ผลเร็วที่สุด
                 </p>
                 <div className="mt-8">
-                  <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                  <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
                 </div>
               </div>
               <Step01Visual />
@@ -551,7 +606,7 @@ export default function Services() {
               ก่อนลงทุนกับ SEO หรือ AI Search ใดๆ
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
               <CTAButton to="/contact" variant="secondary">พูดคุยก่อน</CTAButton>
             </div>
           </div>
@@ -581,8 +636,8 @@ export default function Services() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="บริการ"
-          title="เลือกบริการที่เหมาะกับคุณ"
-          description="แต่ละบริการออกแบบมาเพื่อวัตถุประสงค์ที่แตกต่างกัน เลือกตามเป้าหมายของธุรกิจ"
+          title="เลือกบริการตามปัญหาที่กำลังเจอ"
+          description="แต่ถ้ายังไม่แน่ใจว่าปัญหาอยู่ที่ไหน แนะนำให้เริ่มจาก Discovery Audit ก่อน"
         />
 
         {/* Discovery Audit — featured dark card */}
@@ -590,7 +645,7 @@ export default function Services() {
           <div className="flex-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-300 ring-1 ring-teal-500/25">
               <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-              ไม่แน่ใจว่าควรเริ่มจากตรงไหน? เริ่มที่นี่
+              ยังไม่รู้ว่าควรเริ่มจากอะไร? เริ่มที่นี่
             </span>
             <h3 className="mt-5 text-2xl font-semibold text-white">Discovery Audit</h3>
             <p className="thai-readable mt-1 text-teal-200">{serviceCards[0].tagline}</p>
@@ -604,7 +659,7 @@ export default function Services() {
             </div>
           </div>
           <div className="mt-8 shrink-0 md:mt-0">
-            <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
           </div>
         </article>
 
@@ -627,7 +682,7 @@ export default function Services() {
                   <p className="mt-3 text-lg font-bold text-neutral-900">{card.price}</p>
 
                   <div className="mt-4 border-t border-neutral-100 pt-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">เหมาะสำหรับ</p>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">เหมาะสำหรับ</p>
                     <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-700">{card.fit}</p>
                   </div>
 
@@ -656,23 +711,24 @@ export default function Services() {
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="ไม่แน่ใจ?" title="เลือกบริการจากสิ่งที่ต้องการ" />
-          <div className="mt-8 grid max-w-2xl gap-3">
-            {decisionGuide.map(({ condition, service, to }) => (
-              <div
+          <div className="mt-8 grid max-w-2xl gap-2">
+            {decisionGuide.map(({ condition, service, to }, i) => (
+              <Link
                 key={condition}
-                className="flex flex-col gap-2 rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5 sm:flex-row sm:items-center sm:gap-4"
+                to={to}
+                className="group flex items-center gap-4 rounded-xl border border-neutral-200 bg-white px-5 py-4 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md hover:shadow-teal-50"
               >
-                <span className="thai-readable flex-1 text-neutral-700">{condition}</span>
-                <span
-                  className="hidden shrink-0 text-lg text-teal-400 sm:block"
-                  aria-hidden="true"
-                >
-                  →
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-500 transition group-hover:bg-teal-100 group-hover:text-teal-700">
+                  {String(i + 1).padStart(2, '0')}
                 </span>
-                <Link to={to} className="shrink-0 font-semibold text-teal-900 hover:underline">
+                <span className="thai-readable flex-1 text-sm leading-6 text-neutral-700 group-hover:text-neutral-900">{condition}</span>
+                <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800 transition group-hover:border-teal-400 group-hover:bg-teal-100">
                   {service}
-                </Link>
-              </div>
+                  <svg className="h-3 w-3 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -726,28 +782,15 @@ export default function Services() {
       {/* Section 10: Final CTA */}
       <section className="bg-teal-950 px-4 pb-28 pt-16 text-center text-white sm:px-6 lg:px-8 lg:pb-16">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          เว็บไซต์ของคุณมีโอกาสถูก AI พูดถึงหรือยัง?
+          ยังไม่รู้ว่าเว็บไซต์ควรเริ่มแก้จากจุดไหน?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-xl text-lg leading-8 text-teal-50">
-          รับ Discovery Audit เพื่อดูว่า
+          ลูกค้าของคุณกำลังค้นหา — แต่เจอคู่แข่งก่อน
+          Discovery Audit ช่วยให้รู้ว่าปัญหาอยู่ที่ไหน ก่อนลงทุนกับ SEO, GEO หรือ Google Maps
         </p>
-        <ul className="mx-auto mt-4 max-w-sm space-y-2 text-left text-teal-100">
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 shrink-0 text-teal-400" aria-hidden="true">→</span>
-            <span className="thai-readable">Google มองเว็บไซต์อย่างไร</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 shrink-0 text-teal-400" aria-hidden="true">→</span>
-            <span className="thai-readable">AI มองแบรนด์อย่างไร</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 shrink-0 text-teal-400" aria-hidden="true">→</span>
-            <span className="thai-readable">อะไรคือโอกาสที่ควรทำก่อน</span>
-          </li>
-        </ul>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <CTAButton to="/discovery-audit" variant="secondary">
-            เริ่มต้นด้วย Discovery Audit
+            เริ่ม Discovery Audit
           </CTAButton>
           <Link
             to="/contact"

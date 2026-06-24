@@ -40,10 +40,11 @@ export default function BlogArticle() {
           '@context': 'https://schema.org',
           '@graph': [
             {
-              '@type': 'Article',
+              '@type': ['Article', 'BlogPosting'],
               '@id': `${pageUrl}#article`,
               headline: post.title,
               description: post.metaDescription,
+              inLanguage: 'th',
               image: imageUrl ? [imageUrl] : undefined,
               author: {
                 '@type': 'Person',
@@ -60,13 +61,23 @@ export default function BlogArticle() {
               datePublished: post.publishedDate,
               dateModified: post.lastModifiedDate ?? post.publishedDate,
               ...(timeRequired != null && { timeRequired }),
+              about: {
+                '@type': 'DefinedTerm',
+                name: post.category,
+                inDefinedTermSet: 'https://saralak-search.com/blog',
+              },
+              isPartOf: {
+                '@type': 'Blog',
+                '@id': 'https://saralak-search.com/blog#blog',
+                name: 'Saralak Search Blog',
+              },
               mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id': pageUrl,
               },
               speakableSpecification: {
                 '@type': 'SpeakableSpecification',
-                cssSelector: ['h1', '[data-speakable]'],
+                cssSelector: ['h1', 'h2', '[data-speakable]'],
               },
             },
             ...(post.faqs && post.faqs.length > 0 ? [faqJsonLd(post.faqs)] : []),

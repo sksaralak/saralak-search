@@ -106,7 +106,7 @@ export default function Proof() {
           อยากรู้ว่าเว็บไซต์ของคุณมีโอกาสแบบไหน?
         </h2>
         <p className="mt-4 text-lg leading-8 text-neutral-700">
-          เริ่มจาก Brand Visibility Audit เพื่อดูปัญหาหลัก โอกาสที่ควรโฟกัส และแผนเพิ่มการมองเห็นที่ทำต่อได้จริง
+          เริ่มจาก Discovery Audit เพื่อดูปัญหาหลัก โอกาสที่ควรโฟกัส และแผนเพิ่มการมองเห็นที่ทำต่อได้จริง
         </p>
         <div className="mt-8">
           <CTAButton to="/discovery-audit">{brand.primaryCta}</CTAButton>

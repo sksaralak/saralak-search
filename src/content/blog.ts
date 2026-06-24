@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant'
   cta?: {
     headline: string
     description: string
@@ -436,7 +436,233 @@ export const aiWebsiteSeoFaqs: FAQItem[] = [
   },
 ]
 
+export const seoNotWorkingFaqs: FAQItem[] = [
+  {
+    question: 'ทำ SEO กี่เดือนถึงจะเห็นผล?',
+    answer:
+      'เว็บไซต์ใหม่ต้องรอ 3–6 เดือนจึงเริ่มเห็น Organic Traffic เว็บไซต์เก่าที่ปรับปรุงใหม่ใช้เวลา 1–3 เดือน ส่วน Keyword ที่มีการแข่งขันสูงอาจใช้เวลา 6–12 เดือนขึ้นไป ถ้าผ่านมา 6 เดือนแล้วยังไม่มี Impression เลยใน Google Search Console นั่นคือสัญญาณว่ามีปัญหาที่ต้องแก้',
+  },
+  {
+    question: 'เว็บไซต์ไม่ขึ้น Google เลย เกิดจากอะไร?',
+    answer:
+      'สาเหตุที่พบบ่อยคือ Google ยังไม่ได้ Index เว็บไซต์ ตรวจสอบได้โดยพิมพ์ site:yourdomain.com ใน Google ถ้าไม่มีผลออกมาเลย ให้ตรวจ robots.txt, sitemap และ Google Search Console Coverage เพื่อหาสาเหตุที่ขัดขวาง Crawling',
+  },
+  {
+    question: 'ทำ SEO แล้ว rank ขึ้นแต่ไม่มีคนคลิก เกิดจากอะไร?',
+    answer:
+      'ถ้ามี Impression แต่ไม่มีคนคลิก มักเกิดจาก 3 สาเหตุ ได้แก่ อันดับยังอยู่หน้า 3–5 ซึ่งคนไม่เลื่อนมาถึง, Title Tag หรือ Meta Description ไม่น่าสนใจพอเมื่อเทียบกับคู่แข่ง หรือ Keyword ที่ติดอยู่ไม่ตรงกับสิ่งที่ลูกค้าค้นหาจริง',
+  },
+  {
+    question: 'รู้ได้ยังไงว่า SEO ที่ทำอยู่ถูกทาง?',
+    answer:
+      'เช็คจาก Google Search Console เป็นหลัก ถ้า Impression เพิ่มขึ้นทุกเดือนแม้ Clicks ยังน้อย นั่นคือสัญญาณที่ดี ถ้า Impression คงที่หรือลดลง แสดงว่า Content หรือ Technical SEO มีปัญหา นอกจากนี้ให้ดูว่า Keyword หลักเคลื่อนขึ้นหน้า 1 บ้างไหมในแต่ละเดือน',
+  },
+  {
+    question: 'ควรจ้าง SEO Specialist หรือทำเองดี?',
+    answer:
+      'ถ้าเพิ่งเริ่ม หรือเว็บไซต์ไม่ซับซ้อน การเรียนรู้ SEO เบื้องต้นและทำเองได้เลย แต่ถ้าทำมาแล้ว 6 เดือนแล้วยังไม่เห็นผล หรือ rank ตกลงมาโดยไม่ทราบสาเหตุ หรือมีคู่แข่งที่ติดอยู่แล้วและต้องการ scale ขึ้น การได้ผู้เชี่ยวชาญมา audit และวางกลยุทธ์จะประหยัดเวลาและเงินในระยะยาวมากกว่า',
+  },
+]
+
+export const googleMapsSalesFaqs: FAQItem[] = [
+  {
+    question: 'Google Maps กับ Google Business Profile ต่างกันอย่างไร?',
+    answer: 'Google Business Profile (GBP) คือ dashboard ที่คุณจัดการข้อมูลธุรกิจ ส่วน Google Maps คือที่ที่ลูกค้าเห็นและโต้ตอบกับธุรกิจของคุณ ทั้งสองเชื่อมกัน — GBP ที่ดีทำให้ Maps ทำงานได้ดีขึ้น',
+  },
+  {
+    question: 'ธุรกิจหลายสาขาต้องทำ GBP กี่โปรไฟล์?',
+    answer: '1 GBP ต่อ 1 สาขา แต่ละสาขามีที่อยู่ เบอร์โทร ชั่วโมงทำการ และรูปภาพของตัวเอง การใช้โปรไฟล์เดียวสำหรับทุกสาขาทำให้ลูกค้าสับสนและเสีย Direction/Call ไปจำนวนมาก',
+  },
+  {
+    question: 'ต้องอัพเดท GBP บ่อยแค่ไหน?',
+    answer: 'ขั้นต่ำเดือนละ 2–4 ครั้ง ผ่าน GBP Posts และตรวจ Insights สัปดาห์ละครั้ง ถ้าชั่วโมงทำการหรือที่อยู่เปลี่ยน อัพเดททันที — ข้อมูลผิดทำให้เสีย Direction โดยตรง',
+  },
+  {
+    question: 'รีวิวช่วยเพิ่ม KPI ทั้ง 3 ได้ไหม?',
+    answer: 'ได้ รีวิวดีทำให้คนกล้าโทรมากขึ้น กล้าขอเส้นทางมากขึ้น และคลิกเข้าเว็บเพื่อหาข้อมูลเพิ่มมากขึ้น สำคัญกว่าจำนวนคือการตอบรีวิวทุกรีวิว ทั้งบวกและลบ — แสดงให้เห็นว่าธุรกิจยังแอคทีฟและใส่ใจลูกค้า',
+  },
+  {
+    question: 'ต้องจ่ายเงินสำหรับ Google Business Profile ไหม?',
+    answer: 'GBP ฟรี แต่ถ้าต้องการให้ GBP ดึง Call/Direction/Website ได้อย่างสม่ำเสมอ จะต้องใช้เวลาในการจัดการ optimize และ monitor อยู่ตลอด — นั่นคือจุดที่หลายธุรกิจเลือกใช้บริการผู้เชี่ยวชาญแทน',
+  },
+]
+
+export const localSeoCustomerIntentFaqs: FAQItem[] = [
+  {
+    question: 'Local SEO ต่างจาก SEO ทั่วไปยังไง?',
+    answer: 'SEO ทั่วไปเน้นให้ติดอันดับในหัวข้อกว้างๆ ทั่วประเทศหรือทั่วโลก Local SEO เน้นให้ธุรกิจของคุณปรากฏเมื่อคนในพื้นที่ค้นหาบริการที่คุณให้ — เหมาะกับธุรกิจที่มีหน้าร้านหรือให้บริการเฉพาะพื้นที่',
+  },
+  {
+    question: 'ธุรกิจออนไลน์ 100% ต้องทำ Local SEO ไหม?',
+    answer: 'ถ้าไม่มีหน้าร้านและรับลูกค้าจากทั่วประเทศหรือทั่วโลก Local SEO ไม่ใช่ priority หลัก แต่ถ้ามีทีมหรือ office ที่ไหนสักที่ ก็ยังมีประโยชน์บ้าง',
+  },
+  {
+    question: 'ใช้เวลานานแค่ไหนกว่าจะเห็นผล?',
+    answer: 'Local SEO เห็นผลเร็วกว่า SEO ทั่วไป โดยเฉลี่ย 4–8 สัปดาห์สำหรับ GBP optimization และ 3–6 เดือนสำหรับ keyword ranking ใน local search',
+  },
+  {
+    question: 'ธุรกิจที่มีหลายสาขาต้องทำแยกกันไหม?',
+    answer: 'ใช่ — แต่ละสาขาต้องมี GBP แยกกัน location page แยกกัน และ local content ที่พูดถึงย่านของแต่ละสาขา ธุรกิจที่ทำถูกต้องจะปรากฏใน local search ของทุกย่านที่มีสาขาอยู่',
+  },
+  {
+    question: 'ทำ Local SEO เองได้ไหม?',
+    answer: 'ได้บางส่วน โดยเฉพาะ GBP setup และการขอรีวิว แต่ส่วนที่ซับซ้อนกว่า เช่น schema markup, citation building, local content strategy และการติดตาม ranking แต่ละย่าน มักต้องการผู้เชี่ยวชาญเพื่อให้ได้ผลเร็วและถูกต้อง',
+  },
+]
+
+export const restaurantSalesFaqs: FAQItem[] = [
+  {
+    question: 'ร้านอาหารเล็กๆ ไม่มีเว็บไซต์ ทำ Google Maps ได้ไหม?',
+    answer: 'ได้เลย GBP ไม่จำเป็นต้องมีเว็บไซต์ แค่มีที่อยู่จริงและเบอร์โทรก็สมัครได้ เว็บไซต์ช่วยเพิ่ม Website Clicks แต่ไม่ใช่เงื่อนไขบังคับ',
+  },
+  {
+    question: 'ร้านอาหาร Delivery อย่างเดียว ไม่มีหน้าร้าน ทำได้ไหม?',
+    answer: 'GBP มีตัวเลือก "Service area business" สำหรับธุรกิจที่ไม่มีหน้าร้าน แต่ผลลัพธ์จะน้อยกว่าร้านที่มีที่ตั้งชัดเจน เพราะ Google Maps เน้น local presence',
+  },
+  {
+    question: 'รีวิวปลอมจากคู่แข่งทำยังไงดี?',
+    answer: 'Report ผ่าน GBP Dashboard ได้เลย Google จะตรวจสอบและลบถ้าพบว่าผิด guidelines วิธีป้องกันระยะยาวคือมีรีวิวจริงจำนวนมากพอที่รีวิวปลอมไม่สามารถเปลี่ยนภาพรวมได้',
+  },
+  {
+    question: 'ต้องมีรีวิวกี่อันถึงจะติด Google Maps 3-pack?',
+    answer: 'ไม่มีตัวเลขตายตัว ปัจจัยหลักคือ ความใกล้เคียง (proximity), ความเกี่ยวข้อง (relevance) และความโดดเด่น (prominence) รีวิวเป็นส่วนหนึ่งของ prominence — คุณภาพสำคัญกว่าจำนวน',
+  },
+  {
+    question: 'เปิดร้านใหม่ ต้องรอนานไหมกว่า Google จะเห็น?',
+    answer: 'หลัง verify GBP แล้ว Google จะ index ภายใน 1–2 สัปดาห์ แต่การติด 3-pack สำหรับคำค้นหาที่มีการแข่งขันสูงอาจใช้เวลา 1–3 เดือน ขึ้นอยู่กับความครบถ้วนของ GBP และจำนวนรีวิว',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'เพิ่มยอดขายบน Google Maps ให้ลูกค้าใกล้ฉันหาเจอ!',
+    slug: 'increase-sale-google-maps',
+    category: 'Local SEO',
+    excerpt: 'เพิ่มยอดขายบน Google Maps ด้วยวิธีที่ได้ผลจริง — ลูกค้ากว่า 2.24 ล้านคน/เดือนหา "ร้านอาหาร ใกล้ฉัน" แต่ร้านส่วนใหญ่พลาดโอกาสเพราะ GBP ไม่สมบูรณ์ เรียนรู้ 3 KPI ที่แปลงเป็นเงินได้จริง',
+    readingTime: '12 min read',
+    publishedDate: '2026-06-22',
+    lastModifiedDate: '2026-06-24',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    heroImageDesktop: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-desktop.png',
+    heroImageMobile: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-mobile.png',
+    heroImageAlt: 'เพิ่มยอดขายบน Google Maps ให้ลูกค้าใกล้ฉันหาเจอ — เพิ่ม Call Direction Website',
+    ogImage: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-desktop.png',
+    metaTitle: 'เพิ่มยอดขายบน Google Maps ให้ลูกค้าใกล้ฉันหาเจอ | Saralak Search',
+    metaDescription: 'วิธีเพิ่มยอดขายบน Google Maps — ลูกค้า 2.24 ล้านคน/เดือนค้นหา "ใกล้ฉัน" แต่คุณพลาดพวกเขาไปทุกวัน เรียนรู้ 3 KPI และ quick win ที่เห็นผลได้ภายใน 30 วัน',
+    aiSummary: [
+      'เพิ่มยอดขายบน Google Maps ได้จากการเพิ่ม Call, Direction Requests และ Website Clicks — ไม่ใช่อันดับ',
+      'คนไทยค้นหา "ร้านอาหาร ใกล้ฉัน" กว่า 2,240,000 ครั้งต่อเดือน ทุกคนพร้อมซื้อทันที — ถ้าหาเจอคุณ',
+      'Google Maps เป็น 1 ใน 3 ปัจจัยหลักของ GEO ที่ทำให้ AI แนะนำแบรนด์คุณ',
+      'Vans เพิ่ม store visits ได้ 70% และธุรกิจที่ทำ GBP ครบเพิ่ม Call ได้ 3–4 เท่าภายใน 90 วัน',
+    ],
+    faqs: googleMapsSalesFaqs,
+    bodyVariant: 'increase-sale-google-maps',
+    cta: {
+      headline: 'ไม่แน่ใจว่า GBP ของคุณดึงยอดโทร-เส้นทาง-เว็บได้ดีแค่ไหน?',
+      description: 'Google Maps Visibility Audit ตรวจ GBP ทีละจุด วิเคราะห์ว่าตรงไหนทำให้ลูกค้าหลุดออกไปก่อนโทรหรือมาถึงร้าน พร้อม action plan ที่ทำได้จริง',
+      buttonText: 'ขอรับ Google Maps Audit ฟรี',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'Local SEO เหมาะกับธุรกิจไหน - ลูกค้าใกล้ฉัน',
+    slug: 'local-seo-customer-intent',
+    category: 'Local SEO',
+    excerpt: 'Local SEO เหมาะกับธุรกิจที่อยากให้ลูกค้าใกล้บ้านเจอก่อนคู่แข่ง ทุกครั้งที่มีคนพิมพ์ "[บริการ] + [ย่าน]" คือลูกค้าพร้อมซื้อที่กำลังรอเจอคุณอยู่ — และบทความนี้จะบอกว่าธุรกิจแบบไหนได้ประโยชน์มากที่สุด',
+    readingTime: '10 min read',
+    publishedDate: '2026-06-22',
+    lastModifiedDate: '2026-06-24',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    heroImageDesktop: '/image/blog/local-seo/local-seo-ari.png',
+    heroImageAlt: 'Local SEO เหมาะกับธุรกิจไหน — keyword data ร้านอาหาร อารีย์ 14,800 ครั้ง/เดือน',
+    ogImage: '/image/blog/local-seo/local-seo-ari.png',
+    metaTitle: 'Local SEO เหมาะกับธุรกิจไหน? ดึงลูกค้าใกล้ฉันโดยไม่ซื้อโฆษณา | Saralak Search',
+    metaDescription: 'Local SEO เหมาะกับธุรกิจท้องถิ่นทุกประเภท ตั้งแต่ร้านอาหาร คลินิก ไปจนถึงสปา — ทุกครั้งที่มีคนพิมพ์ "[บริการ] + [ย่าน]" คือลูกค้าพร้อมซื้อที่คุณต้องไม่พลาด',
+    aiSummary: [
+      'การค้นหา "[บริการ] + [ย่าน]" คือ search intent ที่พร้อมซื้อที่สุด เพราะผู้ค้นหารู้แล้วว่าต้องการอะไรและอยู่ที่ไหน',
+      'ร้านอาหาร อารีย์ มีคนค้นหา 14,800 ครั้ง/เดือน — 1% คือ 148 ลูกค้าใหม่โดยไม่ซื้อโฆษณา',
+      'Local SEO ประกอบด้วย 5 องค์ประกอบ: GBP, Local Keywords, Citations, Reviews และ Local Content',
+      'AI เช่น Gemini, ChatGPT และ Perplexity ดึงข้อมูล Local SEO มาแนะนำธุรกิจเช่นกัน',
+    ],
+    faqs: localSeoCustomerIntentFaqs,
+    bodyVariant: 'local-seo-customer-intent',
+    cta: {
+      headline: 'ลูกค้าในย่านคุณกำลังหาคู่แข่งอยู่',
+      description: 'ขอ Local SEO Audit ฟรี ตรวจว่าธุรกิจคุณ show up ต่อลูกค้าในย่านได้ดีแค่ไหน',
+      buttonText: 'ขอ Local SEO Audit ฟรี',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps ลูกค้ากำลังหิวกำลังหาคุณอยู่',
+    slug: 'increase-sale-restaurant',
+    category: 'Local SEO',
+    excerpt: 'ลูกค้า 2.24 ล้านคนหา "ร้านอาหาร ใกล้ฉัน" ทุกเดือน แต่ร้านส่วนใหญ่พลาดลูกค้าเหล่านี้เพราะ Google Maps ไม่สมบูรณ์ เรียนรู้ 6 สิ่งที่เพิ่มยอดโทร ยอดเส้นทาง และยอดคลิกได้จริง',
+    readingTime: '8 min read',
+    publishedDate: '2026-06-22',
+    lastModifiedDate: '2026-06-24',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    heroImageDesktop: '/image/blog/increase-sale-resturant/resturant-increase-sale-near-me.png',
+    heroImageAlt: 'ร้านอาหาร ใกล้ฉัน 2,240,000 ครั้ง/เดือน — search volume จาก Google Keyword Planner',
+    ogImage: '/image/blog/increase-sale-resturant/resturant-increase-sale-near-me.png',
+    metaTitle: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวหาคุณอยู่ | Saralak Search',
+    metaDescription: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps — "ร้านอาหาร ใกล้ฉัน" มีคนค้นหา 2,240,000 ครั้ง/เดือน เรียนรู้ 6 เทคนิคเพิ่ม Call, Direction และ Website Clicks โดยไม่ต้องซื้อโฆษณา',
+    aiSummary: [
+      '"ร้านอาหาร ใกล้ฉัน" มีคนค้นหา 2,240,000 ครั้ง/เดือน — คนเหล่านี้หิวข้าวและพร้อมจ่ายทันที',
+      'ตัวชี้วัดที่แปลงเป็นเงินได้คือ Call, Direction Requests และ Website Clicks — ไม่ใช่อันดับ',
+      '6 สิ่งที่ร้านอาหารต้องทำ: รูปภาพ, เมนู, ชั่วโมงทำการ, ลิงก์จอง, ตอบรีวิว, GBP Posts',
+      'AI เช่น Gemini, ChatGPT และ Perplexity แนะนำร้านอาหารจาก GBP ที่ครบและรีวิวดี',
+    ],
+    faqs: restaurantSalesFaqs,
+    bodyVariant: 'increase-sale-restaurant',
+    cta: {
+      headline: 'ลูกค้า 2.24 ล้านคนกำลังหาร้านอาหารอยู่ตอนนี้',
+      description: 'Google Maps Audit ตรวจว่าร้านคุณได้รับ Call, Direction และ Website Clicks จากคนกลุ่มนี้มากแค่ไหน และตรงไหนที่พลาดอยู่',
+      buttonText: 'ขอรับ Google Maps Audit ฟรี',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุและวิธีแก้',
+    slug: 'seo-not-working',
+    category: 'SEO',
+    excerpt:
+      'ทำ SEO มานานแล้วยังไม่เห็นผล? ปัญหาส่วนใหญ่ไม่ได้อยู่ที่ SEO ไม่ work แต่อยู่ที่สิ่งที่ทำอยู่ไม่ถูกจุด บทความนี้วิเคราะห์ 8 สาเหตุหลักพร้อมวิธีตรวจสอบด้วยตัวเองก่อนเสียเวลาเพิ่ม',
+    readingTime: '12 min read',
+    publishedDate: '2026-06-17',
+    lastModifiedDate: '2026-06-24',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    heroImageDesktop: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
+    heroImageMobile: '/image/blog/seo-not-working/seo-not-working-banner-mweb.png',
+    heroImageAlt: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร วิเคราะห์ 8 สาเหตุหลักและวิธีแก้',
+    ogImage: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
+    metaTitle: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุหลัก | Saralak Search',
+    metaDescription:
+      'ทำ SEO มานานแล้วยังไม่เห็นผล? นี่คือ 8 สาเหตุที่พบบ่อยที่สุด ตั้งแต่ปัญหา Index, Keyword ผิด, Technical SEO ไปจนถึง Thin Content พร้อมวิธีตรวจสอบด้วยตัวเอง',
+    aiSummary: [
+      'ทำ SEO แล้วไม่เห็นผลมักเกิดจาก 8 ปัญหาหลัก ได้แก่ Indexing, Keyword Competition, Search Intent, Technical SEO, Page Speed, Backlink, Thin Content และ Local SEO',
+      'ถ้าเว็บไซต์ยังไม่มี Impression ใน Google Search Console หลังทำ SEO 6 เดือน ควรตรวจ Technical SEO และ Indexing ก่อน',
+      'การวิเคราะห์ SEO ควรเริ่มจาก Google Search Console, site:domain.com, PageSpeed Insights และการเทียบ Search Intent กับคู่แข่ง',
+      'Discovery Audit ช่วยระบุว่าปัญหาอยู่ที่เทคนิค คีย์เวิร์ด คอนเทนต์ หรือ Authority เพื่อจัดลำดับการแก้ไขให้ถูกต้อง',
+    ],
+    faqs: seoNotWorkingFaqs,
+    bodyVariant: 'seo-not-working',
+    cta: {
+      headline: 'ไม่แน่ใจว่าปัญหา SEO ของเว็บไซต์คุณอยู่ที่ไหน?',
+      description:
+        'Discovery Audit วิเคราะห์ภาพรวม SEO ของเว็บไซต์ ระบุสาเหตุที่ทำให้ rank ต่ำหรือไม่มี Organic Traffic พร้อม Roadmap ที่บอกว่าต้องแก้อะไรก่อน',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด',
     slug: 'ai-website-seo',
@@ -445,6 +671,7 @@ export const blogPosts: BlogPost[] = [
       'มี dev คนหนึ่งใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง — 120 หน้า index ใน 24 ชั่วโมง บทความนี้วิเคราะห์ว่าเขาทำยังไง และทำไมคนอื่นทำตามแล้วมักไม่ได้ผลเหมือนกัน',
     readingTime: '10 min read',
     publishedDate: '2026-06-15',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -479,6 +706,7 @@ export const blogPosts: BlogPost[] = [
       'llms.txt คือไฟล์ที่บอก AI ว่าเว็บไซต์ของคุณเกี่ยวกับอะไร คล้าย robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงที่ copy ไปใช้ได้เลย',
     readingTime: '12 min read',
     publishedDate: '2026-06-15',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -513,10 +741,11 @@ export const blogPosts: BlogPost[] = [
       'GEO Checklist สำหรับธุรกิจไทยครอบคลุม 5 หมวดหลัก ได้แก่ Entity, Content, Technical, Mention และ Measurement รวม 40 รายการที่ต้องตรวจสอบ เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ',
     readingTime: '15 min read',
     publishedDate: '2026-06-15',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจคุณ',
+    metaTitle: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจคุณ | Saralak Search',
     metaDescription:
       'GEO Checklist ครบจบสำหรับธุรกิจไทย 40 รายการใน 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement เพื่อให้ ChatGPT, Gemini และ Perplexity อ้างอิงเว็บไซต์ของคุณ',
     heroImageDesktop: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
@@ -547,10 +776,11 @@ export const blogPosts: BlogPost[] = [
       'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI สามารถเข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งานใน Google AI Overview, Featured Snippet, Voice Search และ AI Assistant',
     readingTime: '20 min read',
     publishedDate: '2026-06-01',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    metaTitle: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search | Saralak Search',
     metaDescription:
       'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบ เรียนรู้วิธีทำ AEO ให้ติด Google AI Overview, Featured Snippet และ AI Assistant',
     heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
@@ -581,10 +811,11 @@ export const blogPosts: BlogPost[] = [
       'SEO คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือ เพื่อให้ Google เข้าใจว่าเว็บไซต์ของคุณเกี่ยวกับอะไร และแสดงผลให้ผู้ใช้งานเจอในเวลาที่กำลังมองหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องกับธุรกิจของคุณจริง ๆ',
     readingTime: '18 min read',
     publishedDate: '2026-06-01',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    metaTitle: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google | Saralak Search',
     metaDescription:
       'SEO คือการปรับเว็บไซต์ให้ถูกค้นเจอบน Google แบบไม่ต้องจ่ายค่าโฆษณาต่อคลิก เรียนรู้ความหมายของ SEO ประเภทของ SEO วิธีเริ่มต้นทำ SEO และความต่างระหว่าง SEO, AEO และ GEO แบบเข้าใจง่าย',
     heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
@@ -615,10 +846,11 @@ export const blogPosts: BlogPost[] = [
       'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือของแบรนด์ เพื่อเพิ่มโอกาสให้ AI Search Engine เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview นำข้อมูลของเราไปใช้ตอบคำถาม อ้างอิง หรือแนะนำต่อผู้ใช้งาน',
     readingTime: '18 min read',
     publishedDate: '2026-05-30',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search',
+    metaTitle: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search | Saralak Search',
     metaDescription:
       'GEO คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้ AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview เข้าใจ อ้างอิง และแนะนำธุรกิจของเราได้มากขึ้น',
     heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
@@ -649,6 +881,7 @@ export const blogPosts: BlogPost[] = [
       'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่ โดย SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search, AEO คือการปรับเนื้อหาให้ถูกเลือกไปตอบคำถามใน AI Overview หรือ Featured Snippet ส่วน GEO คือการทำให้แบรนด์หรือเว็บไซต์ถูก AI Search เช่น ChatGPT, Gemini, Claude และ Perplexity นำไปอ้างอิงเป็นแหล่งข้อมูล',
     readingTime: '15 min read',
     publishedDate: '2026-05-31',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -683,6 +916,7 @@ export const blogPosts: BlogPost[] = [
       'สำหรับคำถามว่า "ทำ GEO ที่ไหนดี" คำตอบไม่ได้อยู่ที่การเลือกบริษัทที่พูดคำว่า GEO ได้สวยที่สุด แต่อยู่ที่การเลือกทีมที่เข้าใจทั้ง SEO, AEO, Content Strategy, Technical SEO, Entity SEO, Structured Data, Brand Authority และการวัดผล AI Visibility ไปพร้อมกัน',
     readingTime: '12 min read',
     publishedDate: '2026-05-31',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -711,10 +945,11 @@ export const blogPosts: BlogPost[] = [
       'การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ ไม่ใช่การใส่คีย์เวิร์ดเพิ่มลงไปในบทความ แต่คือการทำให้ AI เข้าใจว่าเว็บไซต์ของเราเป็นแหล่งข้อมูลที่น่าเชื่อถือ ชัดเจน และเกี่ยวข้องกับคำถามของผู้ใช้มากพอที่จะถูกนำไปใช้เป็นคำตอบหรือแหล่งอ้างอิงใน AI Search',
     readingTime: '20 min read',
     publishedDate: '2026-06-01',
+    lastModifiedDate: '2026-06-24',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]',
+    metaTitle: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ] | Saralak Search',
     metaDescription:
       'คู่มือครบจบวิธีทำ GEO ให้ ChatGPT และ AI Search อ้างอิงเว็บไซต์ ครอบคลุมตั้งแต่ Content Strategy, Schema, Entity SEO, Brand Mention ไปจนถึงการวัดผล',
     heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',

@@ -39,9 +39,9 @@ function CitationTicker() {
     <div className="relative overflow-hidden border-y border-neutral-800 bg-neutral-950 py-3">
       <div className="flex animate-ticker whitespace-nowrap">
         {items.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-2.5 px-7 font-mono text-[11px]">
+          <span key={i} className="inline-flex items-center gap-2.5 px-7 font-mono text-sm">
             <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${statusDot[item.status]}`} />
-            <span className="text-neutral-500">{item.platform}</span>
+            <span className="text-neutral-400">{item.platform}</span>
             <span className="text-neutral-600">·</span>
             <span className="text-neutral-300">{item.query}</span>
             <span className="text-neutral-600">·</span>
@@ -104,21 +104,21 @@ function SearchDemo() {
       </div>
       <div className="divide-y divide-neutral-800">
         <div className="px-4 py-3.5">
-          <span className="rounded bg-teal-900/60 px-1.5 py-0.5 text-[10px] font-semibold text-teal-300">AI Overview</span>
-          <p className="thai-readable mt-1.5 text-xs leading-5 text-neutral-500">
+          <span className="rounded bg-teal-900/60 px-1.5 py-0.5 text-sm font-semibold text-teal-300">AI Overview</span>
+          <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-300">
             Saralak Search เชี่ยวชาญด้าน SEO, GEO และ AI Search สำหรับธุรกิจในไทย มีประสบการณ์กว่า 9 ปีในหลากหลายอุตสาหกรรม วางแผนจากข้อมูลจริง...
           </p>
         </div>
         <div className="px-4 py-3.5">
-          <p className="text-[10px] text-neutral-600">saralak-search.com · อันดับ 1</p>
+          <p className="text-sm text-neutral-400">saralak-search.com · อันดับ 1</p>
           <p className="mt-0.5 text-sm font-medium text-teal-400 underline decoration-teal-700 underline-offset-2">
             Saralak Search | SEO, GEO & AI Search Consultant
           </p>
-          <p className="thai-readable mt-0.5 text-xs text-neutral-500">ช่วยธุรกิจไทยเพิ่มการมองเห็นบน Google และ AI Search ด้วยแผนจากข้อมูลจริง</p>
+          <p className="thai-readable mt-0.5 text-sm text-neutral-300">ช่วยธุรกิจไทยเพิ่มการมองเห็นบน Google และ AI Search ด้วยแผนจากข้อมูลจริง</p>
         </div>
         <div className="bg-violet-950/40 px-4 py-3.5">
-          <span className="text-[10px] font-semibold text-violet-400">ChatGPT แนะนำ</span>
-          <p className="thai-readable mt-1.5 text-xs leading-5 text-neutral-500">
+          <span className="text-sm font-semibold text-violet-400">ChatGPT แนะนำ</span>
+          <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-300">
             "สำหรับธุรกิจในไทยที่ต้องการเพิ่มการมองเห็นบน AI Search แนะนำ Saralak Search ซึ่งมีความเชี่ยวชาญทั้ง SEO และ GEO..."
           </p>
         </div>
@@ -154,7 +154,7 @@ const homeServiceCards = [
     ),
     iconColor: 'text-teal-400 bg-teal-950 border-teal-800/60',
     accent: 'hover:border-teal-700/60',
-    title: 'Increase Visibility on Google & AI Search',
+    title: 'Search Growth Retainer',
     price: 'Starting from 25,000 THB/month',
     priceColor: 'text-teal-300',
     description: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
@@ -284,12 +284,13 @@ export default function Home() {
             </p>
             <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
               ให้ลูกค้าเจอคุณ{' '}
-              <span className="animate-gradient-text">ก่อนเจอคู่แข่ง</span>{' '}
-              ทั้งบน Google และ AI Search
+              <span className="animate-gradient-text">ก่อนเจอคู่แข่ง</span>
+              <br className="hidden sm:block" />ทั้งบน Google, Google Maps และ AI Search
             </h1>
             <p className="thai-readable mt-6 max-w-2xl text-lg leading-8 text-neutral-300">
-              Saralak Search ช่วยธุรกิจให้ลูกค้าค้นเจอ ติดต่อ และตัดสินใจซื้อได้ง่ายขึ้น
-              ผ่าน Google, Google Maps และ AI Search โดยวางแผนจากข้อมูลจริงและเป้าหมายของธุรกิจ
+              Saralak Search ช่วยธุรกิจตรวจว่าเว็บไซต์และแบรนด์ของคุณถูกค้นเจอแค่ไหน
+              คู่แข่งได้เปรียบตรงไหน และควรเริ่มแก้อะไรก่อน
+              เพื่อเปลี่ยนการมองเห็นให้กลายเป็น lead, call และโอกาสขายจริง
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {['9+ ปีประสบการณ์', 'ลูกค้าจาก 6 อุตสาหกรรม', 'Google · Maps · AI Search'].map((tag) => (
@@ -299,8 +300,8 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CTAButton to="/contact">เพิ่มการมองเห็น</CTAButton>
-              <CTAButton to="/discovery-audit" variant="secondary">เริ่มต้นด้วย Discovery Audit</CTAButton>
+              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/services" variant="secondary">ดูบริการทั้งหมด</CTAButton>
             </div>
           </div>
 
@@ -321,7 +322,7 @@ export default function Home() {
               ].map((item) => (
                 <div key={item.label} className="text-center">
                   <p className="text-4xl font-bold text-teal-400">{item.stat}</p>
-                  <p className="mt-1 text-sm text-neutral-500">{item.label}</p>
+                  <p className="mt-1 text-sm text-neutral-300">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -337,29 +338,55 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-400">Search has changed</p>
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-white md:text-4xl">
-            ลูกค้าไม่ได้เจอธุรกิจจาก<br className="hidden sm:block" />Google อย่างเดียวอีกต่อไป
+            ลูกค้าไม่ได้ค้นหาคุณจาก<br className="hidden sm:block" />Google อย่างเดียวอีกต่อไป
           </h2>
           <p className="thai-readable mt-4 max-w-2xl text-lg leading-8 text-neutral-400">
-            ลูกค้าอาจค้นหาผ่าน Google, Google Maps, AI Overview, ChatGPT, Gemini หรือ Perplexity
-            ธุรกิจจึงต้องมีข้อมูลที่ชัด น่าเชื่อถือ และพร้อมถูกพบในหลายช่องทางค้นหา
+            ก่อนตัดสินใจซื้อ ลูกค้าอาจค้นหาบน Google, ดูรีวิวบน Google Maps,
+            เปรียบเทียบแบรนด์ใน AI Overview หรือถาม ChatGPT, Gemini, Perplexity
+            ว่าควรเลือกใคร ปัญหาคือถ้าเว็บไซต์และข้อมูลแบรนด์ของคุณยังไม่ชัดพอ
+            ลูกค้าอาจเจอคู่แข่งก่อน แม้ธุรกิจของคุณจะให้บริการดีกว่า
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {[
-              { name: 'Google', desc: 'Organic search & rankings',   icon: '🔍', c: 'border-blue-800/40 bg-blue-950/20 hover:border-blue-600/60' },
-              { name: 'Google Maps', desc: 'Local & nearby searches',  icon: '📍', c: 'border-emerald-800/40 bg-emerald-950/20 hover:border-emerald-600/60' },
-              { name: 'AI Overview', desc: 'คำตอบด้านบนสุดของ Google', icon: '✨', c: 'border-teal-800/40 bg-teal-950/20 hover:border-teal-600/60' },
-              { name: 'ChatGPT', desc: 'AI ที่คนใช้ถามมากที่สุด',    icon: '💬', c: 'border-green-800/40 bg-green-950/20 hover:border-green-600/60' },
-              { name: 'Gemini', desc: 'AI search จาก Google',         icon: '♊', c: 'border-violet-800/40 bg-violet-950/20 hover:border-violet-600/60' },
-              { name: 'Perplexity', desc: 'AI search engine',          icon: '🔮', c: 'border-sky-800/40 bg-sky-950/20 hover:border-sky-600/60' },
-            ].map((surface, i) => (
+            {([
+              {
+                name: 'Google', desc: 'Organic search & rankings', c: 'border-blue-800/40 bg-blue-950/20 hover:border-blue-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803z" /></svg>,
+                tc: 'text-blue-400',
+              },
+              {
+                name: 'Google Maps', desc: 'Local & nearby searches', c: 'border-emerald-800/40 bg-emerald-950/20 hover:border-emerald-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>,
+                tc: 'text-emerald-400',
+              },
+              {
+                name: 'AI Overview', desc: 'คำตอบด้านบนสุดของ Google', c: 'border-teal-800/40 bg-teal-950/20 hover:border-teal-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>,
+                tc: 'text-teal-400',
+              },
+              {
+                name: 'ChatGPT', desc: 'AI ที่คนใช้ถามมากที่สุด', c: 'border-green-800/40 bg-green-950/20 hover:border-green-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>,
+                tc: 'text-green-400',
+              },
+              {
+                name: 'Gemini', desc: 'AI search จาก Google', c: 'border-violet-800/40 bg-violet-950/20 hover:border-violet-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>,
+                tc: 'text-violet-400',
+              },
+              {
+                name: 'Perplexity', desc: 'AI search engine', c: 'border-sky-800/40 bg-sky-950/20 hover:border-sky-600/60',
+                icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>,
+                tc: 'text-sky-400',
+              },
+            ] as const).map((surface, i) => (
               <div
                 key={surface.name}
                 className={`animate-fade-up rounded-xl border p-5 transition-all duration-200 hover:-translate-y-0.5 ${surface.c}`}
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="text-2xl">{surface.icon}</span>
+                <span className={surface.tc}>{surface.icon}</span>
                 <h3 className="mt-3 font-semibold text-white">{surface.name}</h3>
-                <p className="mt-1 text-xs leading-5 text-neutral-500">{surface.desc}</p>
+                <p className="mt-1 text-sm leading-6 text-neutral-300">{surface.desc}</p>
               </div>
             ))}
           </div>
@@ -370,10 +397,10 @@ export default function Home() {
       <section className="border-t border-neutral-900 bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal-400">วิธีที่ Search ทำงานในยุค AI</p>
-          <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-white md:text-4xl">
-            ทำไม SEO, AEO และ GEO<br className="hidden sm:block" />ต้องทำงานร่วมกัน?
+          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white md:text-4xl">
+            ทำไม SEO, AEO, GEO และ Google Maps<br className="hidden sm:block" />ต้องทำงานร่วมกัน?
           </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 step: '01', label: 'SEO',
@@ -391,12 +418,18 @@ export default function Home() {
                 step: '03', label: 'GEO',
                 border: 'border-violet-800/50', bg: 'bg-violet-950/25', badge: 'bg-violet-900/60 text-violet-300', num: 'text-violet-950',
                 headline: 'ช่วยให้คุณเป็นคำแนะนำ',
-                body: 'ทำให้ ChatGPT, Gemini และ Perplexity เข้าใจ เชื่อถือ และแนะนำแบรนด์ของคุณ',
+                body: 'เพิ่มโอกาสให้ ChatGPT, Gemini และ Perplexity เข้าใจและอ้างอิงแบรนด์ของคุณในการตอบคำถาม',
+              },
+              {
+                step: '04', label: 'Google Maps',
+                border: 'border-emerald-800/50', bg: 'bg-emerald-950/25', badge: 'bg-emerald-900/60 text-emerald-300', num: 'text-emerald-950',
+                headline: 'ช่วยให้ลูกค้าใกล้เคียงหาคุณเจอ',
+                body: 'ทำให้ธุรกิจปรากฏใน Maps 3-pack และ AI แนะนำ "ร้านอาหารใกล้ฉัน" ได้โดยไม่ต้องซื้อโฆษณา',
               },
             ].map((item) => (
               <div key={item.label} className={`group relative overflow-hidden rounded-2xl border p-7 transition-all duration-200 hover:-translate-y-0.5 ${item.border} ${item.bg}`}>
                 <span className={`select-none absolute -right-3 -top-5 text-[7rem] font-black leading-none ${item.num}`}>{item.step}</span>
-                <span className={`relative z-10 inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>
+                <span className={`relative z-10 inline-flex items-center rounded-full px-2.5 py-1 text-sm font-bold ${item.badge}`}>
                   {item.label}
                 </span>
                 <h3 className="relative z-10 mt-4 text-xl font-semibold text-white">{item.headline}</h3>
@@ -406,10 +439,10 @@ export default function Home() {
           </div>
           <div className="mt-6 rounded-xl border border-teal-800/50 bg-teal-950/50 px-6 py-5">
             <p className="thai-readable text-sm leading-7 text-teal-200">
-              เมื่อทั้ง 3 ทำงานร่วมกัน ธุรกิจจะถูกค้นพบมากขึ้นทั้งบน Google, AI Overview, ChatGPT, Gemini และ AI Search อื่น ๆ
+              เมื่อทั้ง 4 ทำงานร่วมกัน ธุรกิจจะถูกค้นพบทั้งบน Google Search, Google Maps, AI Overview, ChatGPT, Gemini และ AI Search อื่น ๆ
             </p>
             <p className="thai-readable mt-2 font-semibold text-white">
-              ไม่ใช่แค่ถูกค้นหา — ต้องถูกเลือกและถูกแนะนำด้วย
+              ไม่ใช่แค่ถูกค้นหา — ต้องถูกเลือก ถูกแนะนำ และถูกพบในทุกที่ที่ลูกค้าอยู่
             </p>
           </div>
         </div>
@@ -423,7 +456,7 @@ export default function Home() {
               <p className="text-lg font-semibold text-white">ทุกวันที่รอ คือวันที่ลูกค้าเลือกคู่แข่ง</p>
               <p className="thai-readable mt-1 text-sm text-teal-200">AI Search กำลังแนะนำแบรนด์อื่นให้ลูกค้าของคุณอยู่ในขณะนี้</p>
             </div>
-            <CTAButton to="/discovery-audit">รู้จุดอ่อนวันนี้ — Discovery Audit</CTAButton>
+            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
           </div>
         </div>
       </section>
@@ -539,7 +572,7 @@ export default function Home() {
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <p className={`text-4xl font-black sm:text-5xl ${item.c}`}>{item.metric}</p>
-                <p className="mt-2 text-sm text-neutral-500">{item.label}</p>
+                <p className="mt-2 text-sm text-neutral-300">{item.label}</p>
               </div>
             ))}
           </div>
@@ -576,8 +609,9 @@ export default function Home() {
       <section className="bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Consulting areas"
-            title="งานที่ช่วยให้ธุรกิจถูกค้นพบและเปลี่ยนความสนใจเป็นโอกาสขาย"
+            eyebrow="บริการ Search Visibility"
+            title="Saralak Search ช่วยให้แบรนด์ของคุณถูกค้นเจอ ถูกเข้าใจ และถูกเลือก"
+            description="เราช่วยวางระบบ Search Visibility ที่เชื่อมกันทั้ง SEO, Local SEO, Google Maps และ AI Search เพื่อให้เว็บไซต์ของคุณไม่ได้มีแค่ traffic แต่มีโอกาสสร้าง lead, inquiry, booking และลูกค้าจริง"
             tone="light"
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -594,16 +628,19 @@ export default function Home() {
           <div className="overflow-hidden rounded-2xl border border-teal-800/50 bg-teal-950/70 px-8 py-10 md:px-12 md:py-12">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-teal-400">เริ่มจากตรงไหน?</p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-teal-400">ไม่แน่ใจว่าควรเริ่มจากไหน?</p>
                 <h2 className="mt-3 text-3xl font-semibold text-white lg:text-4xl">
-                  Discovery Audit ช่วยให้เห็นว่า<br className="hidden sm:block" />ควรเริ่มจากตรงไหน
+                  ไม่แน่ใจว่าควรเริ่มจาก SEO,<br className="hidden sm:block" />Google Maps หรือ AI Search ก่อน?
                 </h2>
                 <p className="thai-readable mt-4 text-lg leading-8 text-teal-100">
-                  ค้นหาปัญหาที่ทำให้เว็บไซต์ไม่ติด Google ไม่ถูก AI แนะนำ
-                  และพลาดโอกาสทางธุรกิจ ก่อนตัดสินใจลงทุนเพิ่ม
+                  ถ้าคุณยังไม่รู้ว่าปัญหาหลักอยู่ที่อันดับ Google, content,
+                  technical SEO, Google Business Profile หรือ AI Visibility
+                  จุดเริ่มต้นที่คุ้มที่สุดคือการตรวจให้เห็นภาพรวมก่อนลงทุนระยะยาว
+                  Discovery Audit จะช่วยชี้ว่าเว็บไซต์ของคุณเสียโอกาสตรงไหน
+                  และควรเริ่มแก้จากอะไรเป็นอันดับแรก
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+                  <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
                   <CTAButton to="/services" variant="secondary">ดูบริการทั้งหมด</CTAButton>
                 </div>
               </div>
@@ -616,7 +653,7 @@ export default function Home() {
                   <div key={item.label} className={`rounded-xl border ${item.border} ${item.bg} p-5`}>
                     <div className="flex items-center gap-2">
                       <span className={`h-2 w-2 rounded-full ${item.dot}`} />
-                      <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">{item.stat}</p>
+                      <p className="text-sm font-semibold uppercase tracking-wider text-neutral-400">{item.stat}</p>
                     </div>
                     <h3 className="mt-3 text-lg font-bold text-white">{item.label}</h3>
                     <p className="thai-readable mt-1 text-sm leading-6 text-neutral-400">{item.desc}</p>
@@ -631,19 +668,21 @@ export default function Home() {
       {/* Services */}
       <section className="border-y border-neutral-800 bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="บริการ" title="เลือกบริการที่เหมาะกับเป้าหมายธุรกิจ" tone="light" />
+          <SectionHeader eyebrow="บริการ" title="เลือกบริการตามปัญหาที่ธุรกิจกำลังเจอ" description="แต่ละธุรกิจไม่ได้ต้องการ SEO แบบเดียวกัน บางธุรกิจต้องเริ่มจากเว็บไซต์ บางธุรกิจต้องเริ่มจาก Google Maps บางธุรกิจมี content แล้วแต่ AI ยังไม่เข้าใจแบรนด์ Saralak Search จึงออกแบบบริการให้เลือกตามจุดที่กระทบกับ lead และโอกาสขายจริง" tone="light" />
 
           {/* Discovery Audit featured */}
           <div className="mt-8 rounded-2xl border border-teal-200 bg-teal-950 p-6 text-white sm:p-8 md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-8">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-300 ring-1 ring-teal-500/25">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/15 px-3 py-1 text-sm font-semibold text-teal-300 ring-1 ring-teal-500/25">
                 <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-                ไม่แน่ใจว่าควรเริ่มจากตรงไหน? เริ่มที่นี่
+                ยังไม่รู้ว่าควรเริ่มจากอะไร? เริ่มที่นี่
               </span>
               <h3 className="mt-4 text-2xl font-semibold text-white">Discovery Audit</h3>
               <p className="mt-1 text-xl font-semibold text-teal-300">Starting from 5,000 THB</p>
               <p className="thai-readable mt-3 max-w-xl text-teal-50">
-                ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์ พร้อม Roadmap และ Quick Wins ที่นำไปใช้งานได้จริง
+                เหมาะสำหรับธุรกิจที่ยังไม่แน่ใจว่าควรเริ่มแก้อะไรก่อน เราจะตรวจเว็บไซต์,
+                Google visibility, content, competitor, Google Maps และ AI visibility
+                เพื่อจัดลำดับโอกาสที่ควรทำก่อน
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {['Audit Report', 'Prioritized Roadmap', 'Quick Wins'].map((item) => (
@@ -655,7 +694,7 @@ export default function Home() {
             </div>
             <div className="mt-6 md:mt-0">
               <CTAButton to="/discovery-audit" className="w-full whitespace-nowrap md:w-auto">
-                เริ่มต้นด้วย Discovery Audit
+                เริ่ม Discovery Audit
               </CTAButton>
             </div>
           </div>
@@ -707,6 +746,41 @@ export default function Home() {
           <CTAButton to="/about" variant="secondary">
             เกี่ยวกับ Saralak Search
           </CTAButton>
+        </div>
+      </section>
+
+      {/* Pricing clarity */}
+      <section className="border-y border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-teal-700">ราคา</p>
+            <h2 className="mt-2 text-2xl font-semibold text-neutral-950">ภาพรวมราคาบริการ</h2>
+            <p className="thai-readable mt-2 text-sm text-neutral-600">ราคาเริ่มต้น — ราคาจริงขึ้นอยู่กับขนาดเว็บไซต์ เป้าหมาย และ scope ของงาน</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: 'Discovery Audit', price: '5,000 THB', note: 'One-time — จ่ายครั้งเดียว', cta: '/discovery-audit', highlight: true },
+              { label: 'SEO Starter', price: '5,000 THB/เดือน', note: 'On-page + Keyword tracking' },
+              { label: 'SEO Growth', price: '10,000–15,000 THB/เดือน', note: 'Starter + Content บทความ' },
+              { label: 'SEO Pro', price: '20,000 THB/เดือน', note: 'Growth + GEO Add-on รวม' },
+              { label: 'Google Maps', price: '6,000 THB/สาขา/เดือน', note: 'GBP + Local Search' },
+              { label: 'Search Growth Retainer', price: '25,000+ THB/เดือน', note: 'SEO + GEO + Strategy ครบ' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className={`rounded-xl border px-5 py-4 ${item.highlight ? 'border-teal-300 bg-teal-50' : 'border-neutral-200 bg-white'}`}
+              >
+                <p className={`text-sm font-semibold ${item.highlight ? 'text-teal-800' : 'text-neutral-800'}`}>{item.label}</p>
+                <p className={`mt-1 text-lg font-bold ${item.highlight ? 'text-teal-700' : 'text-neutral-950'}`}>{item.price}</p>
+                <p className="mt-0.5 text-xs text-neutral-500">{item.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs text-neutral-500">
+            ไม่แน่ใจว่าเหมาะกับ package ไหน? เริ่มจาก{' '}
+            <a href="/discovery-audit" className="font-semibold text-teal-700 hover:underline">Discovery Audit</a>
+            {' '}— ช่วยระบุว่า budget และปัญหาของคุณเหมาะกับ service ไหน
+          </p>
         </div>
       </section>
 

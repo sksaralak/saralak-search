@@ -20,12 +20,13 @@ export default function CookieConsent() {
   function accept() {
     localStorage.setItem(CONSENT_KEY, 'accepted')
     setVisible(false)
-    window.dispatchEvent(new Event('cookie_consent_accepted'))
+    window.dispatchEvent(new Event('cookie_consent_resolved'))
   }
 
   function decline() {
     localStorage.setItem(CONSENT_KEY, 'declined')
     setVisible(false)
+    window.dispatchEvent(new Event('cookie_consent_resolved'))
   }
 
   if (!visible) return null

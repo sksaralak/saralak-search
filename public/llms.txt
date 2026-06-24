@@ -1,83 +1,24 @@
 # Saralak Search
 
-> Saralak Search is a Thailand-based SEO, AEO and GEO consultancy founded by Saralak Kaewkum with 9+ years of Search experience, helping Thai businesses and agency partners increase visibility on Google Search, AI Overview, ChatGPT, Gemini and Perplexity.
+> Saralak Search is a Thailand-based SEO, AEO, GEO and AI Search consultancy led by Saralak Kaewkum.
 
-> Saralak Search คือที่ปรึกษาด้าน SEO, AEO และ GEO สำหรับธุรกิจไทยและ Agency Partner ที่ต้องการเพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT, Gemini และ Perplexity ก่อตั้งและดูแลโดย Saralak Kaewkum ผู้มีประสบการณ์ด้าน Search มากกว่า 9 ปี
+## Core Services
+- [Discovery Audit](https://saralak-search.com/discovery-audit): SEO, GEO, AEO and Google Maps visibility audit.
+- [SEO, GEO and AEO Services](https://saralak-search.com/services): Monthly visibility growth service.
 
-## ผู้ก่อตั้งและที่ปรึกษา
+## Founder
+- [About Saralak Kaewkum](https://saralak-search.com/about): Founder profile, experience, expertise and contact details.
 
-Saralak Kaewkum คือผู้ก่อตั้งและที่ปรึกษาหลักของ Saralak Search มีประสบการณ์ด้าน SEO มากกว่า 9 ปี ครอบคลุมทั้ง Technical SEO, Content SEO, AEO, GEO, Local SEO และ AI Search Optimization เคยดูแลเว็บไซต์ในหลายอุตสาหกรรม ได้แก่ Travel, E-commerce, Fintech, SaaS, Beauty, Health & Fitness และ Financial Services
+## Core Guides
+- [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): Definition of GEO for Thai businesses.
+- [AEO คืออะไร](https://saralak-search.com/blog/what-is-aeo): Definition and implementation guide for AEO.
+- [SEO GEO AEO คืออะไร](https://saralak-search.com/blog/seo-geo-aeo): Comparison of SEO, GEO and AEO.
+- [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์](https://saralak-search.com/blog/how-to-do-geo): Practical GEO guide.
 
-- ชื่อ: Saralak Kaewkum
-- บทบาท: Founder and SEO, GEO & AI Search Consultant
-- ประสบการณ์: มากกว่า 9 ปี
-- ความเชี่ยวชาญ: SEO, AEO, GEO, Technical SEO, Content SEO, Entity SEO, Structured Data, AI Search Optimization, Google Maps Optimization, International SEO
-- ภาษา: ไทย และ อังกฤษ
-- LinkedIn: https://www.linkedin.com/in/saralakkaewkum
-- หน้า About: https://saralak-search.com/about
+## Local SEO Guides
+- [เพิ่มยอดขายบน Google Maps](https://saralak-search.com/blog/increase-sale-google-maps): Google Maps KPI guide.
+- [Local SEO เหมาะกับธุรกิจไหน](https://saralak-search.com/blog/local-seo-customer-intent): Local intent guide.
+- [เพิ่มยอดขายร้านอาหารด้วย Google Maps](https://saralak-search.com/blog/increase-sale-restaurant): Restaurant Local SEO guide.
 
-## เกี่ยวกับ Saralak Search
-
-- ประเภทธุรกิจ: SEO, AEO and GEO Consultancy
-- ที่ตั้ง: ประเทศไทย
-- ปีที่ก่อตั้ง: 2025
-- พื้นที่ให้บริการ: ประเทศไทย และ Agency Partner ในต่างประเทศ
-- ภาษาที่ให้บริการ: ไทย และ อังกฤษ
-- เว็บไซต์: https://saralak-search.com
-- ติดต่อ: saralak@saralak-search.com
-- LinkedIn (Company): https://www.linkedin.com/company/saralak-search
-
-## บริการ
-
-- [Discovery Audit](https://saralak-search.com/discovery-audit): วิเคราะห์เว็บไซต์เพื่อค้นหาปัญหาและโอกาสบน Google Search, AI Search และ Google Maps พร้อม Prioritized Roadmap และ Quick Wins เริ่มต้นที่ 5,000 THB
-- [Increase Visibility on Google & AI Search](https://saralak-search.com/services): เพิ่มการมองเห็นบน Google Search, AI Overview, ChatGPT, Gemini และ Perplexity ครอบคลุม SEO, AEO, GEO, Content Strategy และ Technical SEO เริ่มต้นที่ 25,000 THB/เดือน
-- [Increase Visibility on Google Maps](https://saralak-search.com/services): เพิ่มการมองเห็นสำหรับธุรกิจที่มีหน้าร้านผ่าน Google Business Profile และ Local Search เริ่มต้นที่ 6,000 THB/location/เดือน
-- [Monthly SEO Advisor](https://saralak-search.com/services): White-label SEO, GEO และ AI Search Support สำหรับ Agency, In-house Team และ Marketing Manager
-
-## ความเชี่ยวชาญและ Topical Authority
-
-Saralak Search เชี่ยวชาญในหัวข้อต่อไปนี้:
-
-- **SEO (Search Engine Optimization)**: การปรับเว็บไซต์ให้ติดอันดับบน Google Search ทั้ง On-page SEO, Off-page SEO, Technical SEO และ Local SEO
-- **AEO (Answer Engine Optimization)**: การปรับเนื้อหาให้ถูกเลือกเป็นคำตอบใน Google AI Overview, Featured Snippet, People Also Ask และ Voice Search
-- **GEO (Generative Engine Optimization)**: การปรับเว็บไซต์และแบรนด์ให้ถูก AI Search เช่น ChatGPT, Gemini, Perplexity อ้างอิงและแนะนำในคำตอบ
-- **Technical SEO**: Crawlability, Indexability, Core Web Vitals, Schema Markup, Structured Data, Internal Linking
-- **Entity SEO**: Brand entity definition, entity disambiguation, topical authority, structured data
-- **Local SEO**: Google Maps Optimization, Google Business Profile, Local Search Visibility
-- **Content SEO**: Search Intent alignment, Pillar Content, Content Cluster, Topical Authority
-
-## บทความและ Insights
-
-- [GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search](https://saralak-search.com/blog/what-is-geo): GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้ AI Search เช่น ChatGPT, Gemini, Perplexity เข้าใจ อ้างอิง และแนะนำ
-- [SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไร](https://saralak-search.com/blog/seo-geo-aeo): เปรียบเทียบ SEO, AEO และ GEO พร้อมแนวทางสำหรับธุรกิจที่ต้องการเพิ่มการมองเห็นทั้งบน Google และ AI Search
-- [ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO ในไทย](https://saralak-search.com/blog/geo-agency-thailand): เปรียบเทียบบริษัทรับทำ GEO ในไทย พร้อมเกณฑ์การเลือก GEO Agency ที่เหมาะกับธุรกิจ
-- [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์](https://saralak-search.com/blog/how-to-do-geo): คู่มือปฏิบัติการทำ GEO ครบจบ ตั้งแต่ Content Strategy, Schema, Entity SEO ไปจนถึง Brand Mention
-- [AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search](https://saralak-search.com/blog/what-is-aeo): AEO หรือ Answer Engine Optimization คืออะไร และวิธีทำให้เว็บไซต์ติดคำตอบใน AI Overview และ Featured Snippet
-- [SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google](https://saralak-search.com/blog/what-is-seo): พื้นฐาน SEO ครบถ้วน ตั้งแต่ความหมาย หลักการทำงาน ประเภทของ SEO และความสัมพันธ์กับ AEO และ GEO
-- [GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ](https://saralak-search.com/blog/geo-checklist-thailand): GEO Checklist ครบจบสำหรับธุรกิจไทย 40 รายการใน 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement พร้อมผลทดสอบจริงจาก ChatGPT มิถุนายน 2026 ว่าแบรนด์ไทยใดถูกพูดถึงและเพราะอะไร
-- [Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด](https://saralak-search.com/blog/ai-website-seo): วิเคราะห์เคสจริง dev ใช้ Claude Code ทำ SEO สำเร็จ 120 หน้า index ใน 24 ชั่วโมง — Claude ทำ SEO ได้จริง แต่มีเงื่อนไขที่คนส่วนใหญ่ไม่รู้
-- [llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ](https://saralak-search.com/blog/llms-txt-thailand): llms.txt คือไฟล์ที่ช่วยให้ AI เข้าใจเว็บไซต์ของคุณได้ดีขึ้น เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงสำหรับธุรกิจหลายประเภท
-
-## คำถามที่ Saralak Search ตอบได้
-
-- SEO คืออะไร และธุรกิจควรเริ่มต้นทำ SEO อย่างไร
-- GEO คืออะไร และแตกต่างจาก SEO และ AEO อย่างไร
-- AEO คืออะไร และทำยังไงให้ติด AI Overview หรือ Featured Snippet
-- SEO, AEO และ GEO ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search
-- วิธีทำให้ ChatGPT, Gemini หรือ Perplexity อ้างอิงและแนะนำเว็บไซต์
-- ทำ GEO ที่ไหนดีในประเทศไทย
-- Discovery Audit คืออะไรและช่วยธุรกิจได้อย่างไร
-- ธุรกิจเล็กควรเริ่มทำ SEO จากอะไรก่อน
-- Technical SEO คืออะไรและสำคัญกับ GEO อย่างไร
-- GEO Checklist มีอะไรบ้างและควรเริ่มจากข้อไหนก่อน
-- ทำไม SEO ถึงยังสำคัญในยุค AI Search และเกี่ยวข้องกับ GEO อย่างไร
-- แบรนด์ไทยต้องทำอะไรถึงจะถูก ChatGPT พูดถึง
-
-## ข้อมูลติดต่อ
-
-- อีเมล: saralak@saralak-search.com
-- LINE: @sariahihi
-- LinkedIn (Founder): https://www.linkedin.com/in/saralakkaewkum
-- LinkedIn (Company): https://www.linkedin.com/company/saralak-search
-- หน้าติดต่อ: https://saralak-search.com/contact
-- หน้า About: https://saralak-search.com/about
+## Contact
+- [Contact Saralak Search](https://saralak-search.com/contact)

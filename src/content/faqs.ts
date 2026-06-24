@@ -27,7 +27,7 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: 'ต้องเริ่มจากบริการไหนก่อน?',
     answer:
-      'ถ้ายังไม่แน่ใจว่าปัญหาหลักอยู่ตรงไหน ควรเริ่มจาก Brand Visibility Audit เพื่อดูว่าควรลงทุนกับ Google Search, Google Maps หรือ AI Search ในส่วนใดก่อน',
+      'ถ้ายังไม่แน่ใจว่าปัญหาหลักอยู่ตรงไหน ควรเริ่มจาก Discovery Audit เพื่อดูว่าควรลงทุนกับ Google Search, Google Maps หรือ AI Search ในส่วนใดก่อน',
   },
   {
     question: 'รับงานกับ Agency Partner ไหม?',
@@ -48,9 +48,9 @@ export const homepageFaqs: FAQItem[] = [
 
 export const discoveryAuditFaqs: FAQItem[] = [
   {
-    question: 'Brand Visibility Audit ต่างจาก SEO Audit อย่างไร?',
+    question: 'Discovery Audit ต่างจาก SEO Audit อย่างไร?',
     answer:
-      'Brand Visibility Audit ไม่ได้ดูแค่ปัญหา SEO เชิงเทคนิค แต่ดูภาพรวมของโอกาสการเติบโต ทั้ง Google Search, AI Search, Google Maps, ความเข้าใจของแบรนด์ และลำดับงานที่ควรลงทุนก่อน',
+      'Discovery Audit ไม่ได้ดูแค่ปัญหา SEO เชิงเทคนิค แต่ดูภาพรวมของโอกาสการเติบโต ทั้ง Google Search, AI Search, Google Maps, ความเข้าใจของแบรนด์ และลำดับงานที่ควรลงทุนก่อน',
   },
   {
     question: 'Audit แล้วต้องทำงานต่อเนื่องต่อหรือไม่?',
@@ -86,9 +86,9 @@ export const discoveryAuditFaqs: FAQItem[] = [
 
 export const servicesFaqs: FAQItem[] = [
   {
-    question: 'ควรเลือกบริการ Brand Visibility แบบไหน?',
+    question: 'ควรเลือกบริการแบบไหนก่อน?',
     answer:
-      'ถ้ายังไม่รู้ปัญหาหลักให้เริ่มจาก Brand Visibility Audit ถ้ามีแผนชัดแล้วค่อยเลือก Increase Brand Visibility, Local Brand Visibility หรือ Agency Partner Support ตามเป้าหมาย',
+      'ถ้ายังไม่รู้ปัญหาหลักให้เริ่มจาก Discovery Audit ถ้ามีแผนชัดแล้วค่อยเลือก Search Growth Retainer, Local SEO, Google Maps หรือ SEO Package ตามเป้าหมาย',
   },
   {
     question: 'SEO, AEO และ GEO ต่างกันอย่างไร?',
@@ -96,7 +96,7 @@ export const servicesFaqs: FAQItem[] = [
       'SEO ช่วยให้เว็บไซต์ติดอันดับใน Search Engine ส่วน AEO ช่วยให้เนื้อหาถูกนำไปตอบคำถามบน AI Overview และ GEO ช่วยเพิ่มโอกาสให้แบรนด์ถูกอ้างอิงใน ChatGPT, Gemini และ Search AI รุ่นใหม่',
   },
   {
-    question: 'Brand Visibility Audit ได้อะไรบ้าง?',
+    question: 'Discovery Audit ได้อะไรบ้าง?',
     answer:
       'ประกอบด้วยการวิเคราะห์เว็บไซต์ การมองเห็นบน Search, AI Search, Google Maps รวมถึงโอกาสในการเติบโตและลำดับความสำคัญของงานที่ควรทำก่อน',
   },
@@ -202,9 +202,9 @@ export const caseStudiesFaqs: FAQItem[] = [
       'Local SEO ช่วยให้ธุรกิจปรากฏต่อผู้ค้นหาในพื้นที่ใกล้เคียงผ่าน Google Search และ Google Maps ซึ่งมีผลโดยตรงต่อการโทร การขอเส้นทาง และการติดต่อจากลูกค้า',
   },
   {
-    question: 'Brand Visibility Audit คืออะไร?',
+    question: 'Discovery Audit คืออะไร?',
     answer:
-      'Brand Visibility Audit คือการวิเคราะห์เว็บไซต์เพื่อค้นหาโอกาสในการเติบโต ความเข้าใจของ Google และ AI Search ต่อธุรกิจ และแนวทางในการเพิ่มการมองเห็นบน Search และ AI Search',
+      'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อค้นหาโอกาสในการเติบโต ความเข้าใจของ Google และ AI Search ต่อธุรกิจ และแนวทางในการเพิ่มการมองเห็นบน Search และ AI Search',
   },
   {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
@@ -237,12 +237,124 @@ export const contactFaqs: FAQItem[] = [
   {
     question: 'รับงานโปรเจกต์เล็กไหม?',
     answer:
-      'รับเป็นบางกรณี โดยเฉพาะ Brand Visibility Audit, Local Brand Visibility หรือ support เฉพาะจุดที่มี scope ชัดเจน',
+      'รับเป็นบางกรณี โดยเฉพาะ Discovery Audit, Local SEO หรือ support เฉพาะจุดที่มี scope ชัดเจน',
   },
   {
     question: 'สามารถส่งเว็บไซต์ให้ประเมินเบื้องต้นก่อนได้ไหม?',
     answer:
       'ส่งได้ สามารถส่ง URL เว็บไซต์และปัญหาที่เจอผ่าน LINE หรืออีเมล เพื่อประเมินเบื้องต้นก่อนเลือกบริการที่เหมาะสม',
+  },
+]
+
+export const googleMapsFaqs: FAQItem[] = [
+  {
+    question: 'Google Business Profile กับ Google Maps ต่างกันอย่างไร?',
+    answer:
+      'Google Business Profile (GBP) คือบัญชีที่เจ้าของธุรกิจใช้จัดการข้อมูลที่ปรากฏบน Google Maps และ Google Search GBP ที่สมบูรณ์และ active ช่วยให้ธุรกิจติด 3-Pack ได้ง่ายขึ้น',
+  },
+  {
+    question: 'มีหลายสาขา จำเป็นต้องทำ GBP แยกทุกสาขาไหม?',
+    answer:
+      'ใช่ ควรมี GBP แยกสำหรับแต่ละสาขา เพราะลูกค้าค้นหาตามพื้นที่ที่ตัวเองอยู่ การมี GBP ที่ถูกต้องตรงสาขาช่วยให้ Google แสดงสาขาที่ใกล้ที่สุดให้ลูกค้า',
+  },
+  {
+    question: 'ต้องอัพเดท GBP บ่อยแค่ไหน?',
+    answer:
+      'ควรอัพเดทอย่างน้อยเดือนละ 4 ครั้งผ่าน GBP Posts แผนบริการนี้รวม 4 โพสต์/เดือน พร้อมอัพเดทชั่วโมงพิเศษ (วันหยุด เทศกาล) ล่วงหน้าเสมอ',
+  },
+  {
+    question: 'รีวิวสำคัญกับ Google Maps ยังไง?',
+    answer:
+      'รีวิวส่งผลโดยตรงต่อ Trust Ranking บน Google Maps ทั้งจำนวนรีวิว คะแนนเฉลี่ย และการตอบรีวิว Google ใช้ข้อมูลนี้จัดลำดับการแสดงผลบน Local 3-Pack',
+  },
+  {
+    question: 'ไม่มีเว็บไซต์ สามารถทำ Google Maps เพียงอย่างเดียวได้ไหม?',
+    answer:
+      'ได้ บริการนี้เน้น GBP Optimization ซึ่งทำงานได้โดยอิสระจากเว็บไซต์ หากต้องการ SEO เว็บไซต์ด้วย แนะนำดู Local SEO Package ที่รวมทั้งสองไว้',
+  },
+]
+
+export const localSeoFaqs: FAQItem[] = [
+  {
+    question: 'Local SEO ต่างจาก Google Maps Service อย่างไร?',
+    answer:
+      'Google Maps Service เน้น GBP Optimization อย่างเดียว ส่วน Local SEO Package รวม GBP + SEO เว็บไซต์ + Citations ในแพ็กเกจเดียว เหมาะกับธุรกิจที่ต้องการลูกค้าทั้งจาก Maps และ Google Search',
+  },
+  {
+    question: 'ธุรกิจที่ไม่มีเว็บไซต์ทำ Local SEO ได้ไหม?',
+    answer:
+      'ได้บางส่วน GBP และ Citations ทำได้โดยไม่มีเว็บไซต์ แต่ Local SEO เต็มรูปแบบที่รวม Location Pages และ On-page Optimization จะได้ผลดีกว่าเมื่อมีเว็บไซต์',
+  },
+  {
+    question: 'จะเห็นผลเร็วแค่ไหน?',
+    answer:
+      'งาน GBP Optimization มักเห็นการเปลี่ยนแปลงภายใน 30–60 วัน ส่วน Local Keyword Ranking บนเว็บไซต์ใช้เวลา 3–6 เดือน ขึ้นกับการแข่งขันในย่านนั้น',
+  },
+  {
+    question: 'ถ้ามีหลายสาขา คิดราคาอย่างไร?',
+    answer:
+      'แพ็กเกจ 15,000 บาทครอบคลุม 1 สาขา สำหรับ 2 สาขาขึ้นไปติดต่อขอราคา Multi-location ซึ่งจะมีส่วนลดตามจำนวนสาขา',
+  },
+  {
+    question: 'ทำ Local SEO เองได้ไหม?',
+    answer:
+      'ทำเองได้ แต่ต้องรู้ Keyword Research เชิง Local, Citation Building, GBP Optimization และ On-page SEO ที่ถูกต้อง ผู้เชี่ยวชาญช่วยประหยัดเวลาและหลีกเลี่ยงข้อผิดพลาดที่ทำให้ Google ลดความน่าเชื่อถือ',
+  },
+]
+
+export const seoPackageFaqs: FAQItem[] = [
+  {
+    question: 'แพ็กเกจ SEO ไหนเหมาะกับธุรกิจฉัน?',
+    answer:
+      'Starter เหมาะกับธุรกิจที่เพิ่งเริ่มทำ SEO หรืองบจำกัด Growth เหมาะกับ SME ที่ต้องการเติบโตจริงจัง Pro เหมาะกับธุรกิจที่ต้องการครอบคลุมทั้ง Google + AI Search ถ้ายังไม่แน่ใจ เริ่มจาก Discovery Audit เพื่อดูว่าควรเริ่มจากตรงไหน',
+  },
+  {
+    question: 'SEO ใช้เวลานานแค่ไหนจึงเห็นผล?',
+    answer:
+      'ผลลัพธ์ขึ้นกับสภาพเว็บไซต์และการแข่งขัน โดยทั่วไปจะเริ่มเห็น Keyword Movement ในเดือน 3–4 และ Traffic Growth ชัดเจนหลัง 6 เดือน รายงานความคืบหน้าทุกเดือน',
+  },
+  {
+    question: 'ถ้าต้องการหยุดชั่วคราวได้ไหม?',
+    answer:
+      'ได้ ไม่มีสัญญาขั้นต่ำระยะยาว แต่แนะนำทำต่อเนื่องอย่างน้อย 6 เดือนเพื่อให้เห็นผลที่ชัดเจน การหยุดกลางคันอาจทำให้งานที่สะสมมาเสียเปล่า',
+  },
+  {
+    question: 'Content ที่ได้รับทุกเดือนคืออะไร?',
+    answer:
+      'บทความ SEO ที่เขียนโดยผู้เชี่ยวชาญ พร้อม Keyword Research, On-page Optimization และ Internal Links เนื้อหาเป็นภาษาไทยหรืออังกฤษตามที่ตกลง',
+  },
+  {
+    question: 'SEO Package รวม GEO หรือไม่?',
+    answer:
+      'Package Pro รวม GEO Optimization ไว้แล้ว สำหรับ Starter และ Growth สามารถเพิ่ม GEO Add-on ในราคา 3,000 บาท/เดือน',
+  },
+]
+
+export const geoFaqs: FAQItem[] = [
+  {
+    question: 'GEO ต่างจาก SEO อย่างไร?',
+    answer:
+      'SEO ช่วยให้เว็บไซต์ติดอันดับบน Google Search ส่วน GEO (Generative Engine Optimization) ปรับ Content และ Brand Signals เพื่อให้ AI อย่าง ChatGPT, Gemini และ Perplexity เข้าใจและแนะนำแบรนด์คุณ',
+  },
+  {
+    question: 'ทำ GEO โดยไม่มี SEO ได้ไหม?',
+    answer:
+      'ทำได้แต่ได้ผลน้อย GEO ทำงานได้ดีที่สุดเมื่อมีฐาน SEO Content ที่แข็งแรง เพราะ AI อ้างอิงข้อมูลจากเว็บที่น่าเชื่อถือและค้นพบได้ง่าย',
+  },
+  {
+    question: 'วัดผล GEO อย่างไร?',
+    answer:
+      'วัดจากการ Prompt Testing ทดสอบ 10–15 คำถามบน ChatGPT, Gemini, Perplexity และ Google AI Overview ทุกเดือน เปรียบเทียบว่าแบรนด์ถูกพูดถึงเพิ่มขึ้นหรือไม่',
+  },
+  {
+    question: 'ผลของ GEO จะเห็นเร็วแค่ไหน?',
+    answer:
+      'บางแพลตฟอร์มเช่น Google AI Overview เห็นผลได้ใน 4–8 สัปดาห์หากเนื้อหาแข็งแกร่งพอ ส่วน ChatGPT และ Gemini ใช้เวลา 2–4 เดือน เพราะ AI อัพเดทฐานข้อมูลต่างกัน',
+  },
+  {
+    question: 'ต้องเพิ่ม GEO Add-on กับ Package ไหนถึงได้ผลดี?',
+    answer:
+      'ได้ผลดีกับทุก Package แต่แนะนำเพิ่มกับ SEO Growth หรือ Pro ซึ่งมี Content 2–4 บทความ/เดือน เพราะมีฐาน Content ที่แข็งแรงพอสำหรับ GEO ทำงานได้เต็มศักยภาพ',
   },
 ]
 

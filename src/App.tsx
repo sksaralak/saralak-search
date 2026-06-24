@@ -9,6 +9,11 @@ import DiscoveryAudit from './pages/DiscoveryAudit'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Privacy from './pages/Privacy'
+import ServiceContentMarketing from './pages/ServiceContentMarketing'
+import ServiceGEO from './pages/ServiceGEO'
+import ServiceGoogleMaps from './pages/ServiceGoogleMaps'
+import ServiceLocalSEO from './pages/ServiceLocalSEO'
+import ServiceSEO from './pages/ServiceSEO'
 import Services from './pages/Services'
 
 export default function App() {
@@ -18,6 +23,11 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="discovery-audit" element={<DiscoveryAudit />} />
         <Route path="services" element={<Services />} />
+        <Route path="services/seo" element={<ServiceSEO />} />
+        <Route path="services/local-seo" element={<ServiceLocalSEO />} />
+        <Route path="services/google-maps" element={<ServiceGoogleMaps />} />
+        <Route path="services/geo" element={<ServiceGEO />} />
+        <Route path="services/content-marketing" element={<ServiceContentMarketing />} />
         <Route path="proof" element={<Navigate to="/case-studies" replace />} />
         <Route path="case-studies" element={<CaseStudies />} />
         <Route path="about" element={<About />} />

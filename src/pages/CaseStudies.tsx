@@ -89,9 +89,8 @@ export default function CaseStudies() {
             <span className="animate-gradient-text">และ AI Search</span>
           </h1>
           <p className="thai-readable mt-6 max-w-3xl text-lg leading-8 text-neutral-300">
-            ตัวอย่างการเพิ่ม Organic Traffic, การติดอันดับคีย์เวิร์ดการแข่งขันสูง
-            การปรากฏใน AI Overview และการถูกกล่าวถึงใน AI Search
-            จากประสบการณ์การทำงานจริง
+            ธุรกิจที่คู่แข่งถูกค้นเจอก่อน ไม่ได้โชคดีกว่า — แต่ลงทุนกับ Visibility ก่อน
+            นี่คือตัวอย่างผลลัพธ์จากการทำ SEO, GEO และ Google Maps จากงานจริง
           </p>
 
           {/* Result preview grid */}
@@ -99,7 +98,7 @@ export default function CaseStudies() {
             {caseStudies.map((s) => (
               <div key={s.slug} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                 <p className="font-bold text-white">{s.projectName}</p>
-                <p className="mt-1 text-xs text-teal-400">{s.channel}</p>
+                <p className="mt-1 text-sm text-teal-400">{s.channel}</p>
               </div>
             ))}
           </div>
@@ -117,6 +116,20 @@ export default function CaseStudies() {
           {caseStudies.map((study) => (
             <CaseStudyCard key={study.slug} study={study} />
           ))}
+        </div>
+      </section>
+
+      {/* Mid-page CTA */}
+      <section className="border-y border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-4xl px-4 py-12 text-center sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-neutral-950">อยากรู้ว่าเว็บไซต์ของคุณมีโอกาสแบบนี้ไหม?</h2>
+          <p className="thai-readable mx-auto mt-3 max-w-xl text-base leading-7 text-neutral-600">
+            Discovery Audit จะช่วยดูว่าโอกาสที่ใกล้ที่สุดอยู่ตรงไหน และควรเริ่มจากงาน SEO, Content, GEO หรือ Google Maps
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+            <CTAButton to="/contact" variant="secondary">พูดคุยเบื้องต้น</CTAButton>
+          </div>
         </div>
       </section>
 
@@ -154,11 +167,11 @@ export default function CaseStudies() {
       {/* Section 6: Discovery Audit CTA — pb-28 clears mobile floating bar */}
       <section className="bg-teal-950 px-4 pb-28 pt-16 text-center text-white sm:px-6 lg:px-8 lg:pb-16">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          อยากรู้ว่าเว็บไซต์ของคุณมีโอกาสแบบไหน?
+          ผลลัพธ์ที่ดีเริ่มจากการรู้ว่าควรแก้อะไรก่อน
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-xl text-lg leading-8 text-teal-50">
-          เริ่มต้นด้วย Discovery Audit เพื่อค้นหาโอกาสในการเติบโตผ่าน Google Search,
-          AI Search และ Search Visibility
+          ถ้าคุณอยากรู้ว่าเว็บไซต์ของคุณมีโอกาสโตจาก Google, Google Maps หรือ AI Search ตรงไหน
+          เริ่มจาก Discovery Audit เพื่อจัดลำดับ priority ก่อนลงทุนต่อ
         </p>
         <ul className="mx-auto mt-5 max-w-xs space-y-2 text-left text-teal-100">
           {[
@@ -177,7 +190,7 @@ export default function CaseStudies() {
         </ul>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <CTAButton to="/discovery-audit" variant="secondary">
-            เริ่มต้นด้วย Discovery Audit
+            เริ่ม Discovery Audit
           </CTAButton>
           <Link
             to="/contact"

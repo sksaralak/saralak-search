@@ -8,7 +8,7 @@ export const brand = {
   phoneUrl: 'tel:+66622944999',
   linkedIn: 'linkedin.com/in/saralakkaewkum',
   linkedInCompany: 'linkedin.com/company/saralak-search',
-  primaryCta: 'เพิ่มการมองเห็น',
+  primaryCta: 'คุยกับเรา',
   positioning:
     'Brand Visibility across Google Search, AI Overview, ChatGPT, Gemini, Perplexity and AI Search platforms',
   plainMessage:
@@ -21,7 +21,7 @@ export const services = [
     description: 'ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์',
   },
   {
-    title: 'Increase Visibility on Google & AI Search',
+    title: 'Search Growth Retainer',
     description: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
   },
   {
@@ -54,7 +54,7 @@ export const packages = [
     ],
   },
   {
-    title: 'Increase Visibility on Google & AI Search',
+    title: 'Search Growth Retainer',
     price: 'Starting from 25,000 THB/month',
     supportingText: 'Typical investment: 25,000–60,000 THB/month',
     detail:

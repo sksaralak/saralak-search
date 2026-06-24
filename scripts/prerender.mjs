@@ -6,6 +6,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
 
 const blogSlugs = [
+  'increase-sale-google-maps',
+  'local-seo-customer-intent',
+  'increase-sale-restaurant',
+  'seo-not-working',
   'ai-website-seo',
   'llms-txt-thailand',
   'geo-checklist-thailand',
@@ -21,6 +25,11 @@ const routes = [
   '/',
   '/about',
   '/services',
+  '/services/seo',
+  '/services/local-seo',
+  '/services/google-maps',
+  '/services/geo',
+  '/services/content-marketing',
   '/discovery-audit',
   '/case-studies',
   '/proof',

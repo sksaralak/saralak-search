@@ -5,7 +5,7 @@ import { trackContactFormSubmission } from './Analytics'
 
 const interests = [
   'Discovery Audit',
-  'Increase Visibility on Google & AI Search',
+  'Search Growth Retainer',
   'Increase Visibility on Google Maps',
   'Monthly SEO Advisor',
   'Recruiter / Contract Role',

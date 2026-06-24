@@ -46,19 +46,22 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
         </p>
         <dl className="mt-8 grid gap-4 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-700 sm:grid-cols-3 sm:p-5">
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               เผยแพร่
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">{post.publishedDate}</dd>
+            {post.lastModifiedDate && post.lastModifiedDate !== post.publishedDate && (
+              <dd className="mt-0.5 text-xs text-neutral-500">อัปเดต {post.lastModifiedDate}</dd>
+            )}
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               เวลาอ่าน
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">{post.readingTime}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               ผู้เขียน
             </dt>
             <dd className="mt-1 font-semibold text-neutral-950">
@@ -115,19 +118,19 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           {post.cta ? (
-            <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 shadow-sm shadow-neutral-950/5 sm:p-6 md:p-8">
+            <div className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white sm:p-8 md:p-10">
               <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">
                     Discovery Audit
                   </p>
                   <h2
-                    className="mt-2 text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl"
+                    className="mt-2 text-2xl font-semibold leading-tight text-white sm:text-3xl"
                     style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
                   >
                     {post.cta.headline}
                   </h2>
-                  <p className="thai-readable mt-4 max-w-3xl text-base text-neutral-700 sm:text-lg">
+                  <p className="thai-readable mt-4 max-w-3xl text-base text-teal-100 sm:text-lg">
                     {post.cta.description}
                   </p>
                 </div>
@@ -148,44 +151,46 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
               </p>
             </div>
           ) : (
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
-              <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-6">
-                <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">ต้องการความช่วยเหลือ?</p>
-                <h2 className="mt-2 text-3xl font-semibold text-neutral-950">
-                  อยากเพิ่มการมองเห็นบน Google และ AI Search?
-                </h2>
-                <p className="thai-readable mt-4 max-w-2xl text-lg leading-8 text-neutral-700">
-                  Saralak Search ช่วยวางกลยุทธ์ SEO, AEO และ GEO สำหรับธุรกิจที่ต้องการเติบโตจาก Search
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
-                  <CTAButton to="/discovery-audit" variant="secondary">
-                    เริ่มต้นด้วย Discovery Audit
-                  </CTAButton>
+            <div className="overflow-hidden rounded-xl border border-teal-800/50 bg-teal-950 text-white">
+              <div className="grid lg:grid-cols-[1fr_auto]">
+                <div className="p-7 sm:p-8">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">ต้องการความช่วยเหลือ?</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">
+                    อยากเพิ่มการมองเห็นบน Google และ AI Search?
+                  </h2>
+                  <p className="thai-readable mt-4 max-w-2xl text-base leading-7 text-teal-100 sm:text-lg">
+                    Saralak Search ช่วยวางกลยุทธ์ SEO, AEO และ GEO สำหรับธุรกิจที่ต้องการเติบโตจาก Search
+                  </p>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
+                    <CTAButton to="/discovery-audit" variant="secondary">
+                      เริ่มต้นด้วย Discovery Audit
+                    </CTAButton>
+                  </div>
                 </div>
-              </div>
-              <div className="rounded-lg border border-teal-100 bg-teal-950 p-6 text-white shadow-sm shadow-neutral-950/10">
-                <p className="text-sm font-semibold uppercase tracking-wide text-teal-200">LINE</p>
-                <h2 className="mt-2 text-2xl font-semibold">คุยผ่าน LINE</h2>
-                <p className="thai-readable mt-3 max-w-sm text-teal-50">
-                  ส่งคำถามหรือ URL เว็บไซต์มาก่อนได้เลย ไม่ต้องรอนัด
-                </p>
-                <div className="mt-5 grid gap-3">
-                  <a
-                    href={brand.lineUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => trackLineClick('blog_cta')}
-                    className="inline-flex min-h-11 items-center justify-center rounded-md border border-[#06C755] bg-[#06C755] px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white transition hover:bg-[#05b84f]"
-                  >
-                    Chat on LINE
-                  </a>
-                  <a
-                    href="tel:+66622944999"
-                    className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 bg-white px-5 py-2.5 text-center text-sm font-semibold leading-6 text-teal-950 transition hover:bg-teal-50"
-                  >
-                    โทรปรึกษา
-                  </a>
+                <div className="border-t border-teal-800/50 p-7 lg:border-l lg:border-t-0">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">LINE</p>
+                  <p className="mt-2 text-xl font-semibold text-white">คุยผ่าน LINE</p>
+                  <p className="thai-readable mt-2 max-w-xs text-sm leading-6 text-teal-200">
+                    ส่งคำถามหรือ URL เว็บไซต์มาก่อนได้เลย ไม่ต้องรอนัด
+                  </p>
+                  <div className="mt-4 grid gap-2">
+                    <a
+                      href={brand.lineUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => trackLineClick('blog_cta')}
+                      className="inline-flex min-h-10 items-center justify-center rounded-md border border-[#06C755] bg-[#06C755] px-5 py-2 text-center text-sm font-semibold text-white transition hover:bg-[#05b84f]"
+                    >
+                      Chat on LINE
+                    </a>
+                    <a
+                      href="tel:+66622944999"
+                      className="inline-flex min-h-10 items-center justify-center rounded-md border border-white/20 bg-white/10 px-5 py-2 text-center text-sm font-semibold text-white transition hover:bg-white/20"
+                    >
+                      โทรปรึกษา
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
