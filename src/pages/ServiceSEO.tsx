@@ -144,6 +144,34 @@ export default function ServiceSEO() {
         title="บริการ SEO ไทย เริ่มต้น 5,000 บาท/เดือน | Saralak Search"
         description="บริการ SEO สำหรับธุรกิจไทย 3 แพ็กเกจ Starter 5,000 / Growth 12,000 / Pro 20,000 บาทต่อเดือน เห็นผลลัพธ์ชัดเจนหลัง 6 เดือน"
         path="/services/seo"
+        image="/image/og/saralak-search-service-og.png"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://saralak-search.com/services/seo#service',
+              name: 'บริการ SEO ไทย',
+              description: 'บริการ SEO สำหรับธุรกิจไทย 3 แพ็กเกจ Starter / Growth / Pro เห็นผลลัพธ์ชัดเจนหลัง 6 เดือน',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: 'Thailand',
+              offers: {
+                '@type': 'AggregateOffer',
+                lowPrice: '5000',
+                highPrice: '20000',
+                priceCurrency: 'THB',
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saralak-search.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+                { '@type': 'ListItem', position: 3, name: 'SEO', item: 'https://saralak-search.com/services/seo' },
+              ],
+            },
+          ],
+        }}
       />
 
       {/* Hero */}

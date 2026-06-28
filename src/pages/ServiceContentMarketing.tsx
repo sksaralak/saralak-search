@@ -143,6 +143,33 @@ export default function ServiceContentMarketing() {
         title="บริการเขียนบทความ SEO เพิ่มการมองเห็น | Saralak Search"
         description="บริการเขียนบทความ SEO คุณภาพสูงสำหรับธุรกิจไทย ทุกบทความผ่าน Keyword Research, On-page Optimization และ AI-ready Structure เริ่มต้น 3,000 บาท/บทความ"
         path="/services/content-marketing"
+        image="/image/og/saralak-search-service-og.png"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://saralak-search.com/services/content-marketing#service',
+              name: 'บริการเขียนบทความ SEO',
+              description: 'บริการเขียนบทความ SEO คุณภาพสูงสำหรับธุรกิจไทย ผ่าน Keyword Research, On-page Optimization และ AI-ready Structure',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: 'Thailand',
+              offers: {
+                '@type': 'Offer',
+                price: '3000',
+                priceCurrency: 'THB',
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saralak-search.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+                { '@type': 'ListItem', position: 3, name: 'Content Marketing', item: 'https://saralak-search.com/services/content-marketing' },
+              ],
+            },
+          ],
+        }}
       />
 
       {/* Hero */}

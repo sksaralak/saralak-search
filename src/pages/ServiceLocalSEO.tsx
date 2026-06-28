@@ -152,6 +152,33 @@ export default function ServiceLocalSEO() {
         title="บริการ Local SEO ไทย สำหรับธุรกิจที่มีหน้าร้าน | Saralak Search"
         description="Local SEO ครบวงจร รวม Google Maps + SEO เว็บไซต์ เริ่มต้น 15,000 บาท/เดือน สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้านในไทย"
         path="/services/local-seo"
+        image="/image/og/saralak-search-service-og.png"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://saralak-search.com/services/local-seo#service',
+              name: 'บริการ Local SEO ไทย',
+              description: 'Local SEO ครบวงจร รวม Google Maps + SEO เว็บไซต์ สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้านในไทย',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: 'Thailand',
+              offers: {
+                '@type': 'Offer',
+                price: '15000',
+                priceCurrency: 'THB',
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saralak-search.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+                { '@type': 'ListItem', position: 3, name: 'Local SEO', item: 'https://saralak-search.com/services/local-seo' },
+              ],
+            },
+          ],
+        }}
       />
 
       {/* Hero */}

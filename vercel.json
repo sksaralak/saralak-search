@@ -3,7 +3,8 @@
   "buildCommand": "npm run build",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/proof", "destination": "/case-studies", "permanent": true }
+    { "source": "/proof", "destination": "/case-studies", "permanent": true },
+    { "source": "/blog/aeo-vs-seo", "destination": "/blog/what-is-aeo", "permanent": true }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [

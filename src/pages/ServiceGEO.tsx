@@ -188,6 +188,33 @@ export default function ServiceGEO() {
         title="บริการ GEO — AI Search Visibility สำหรับธุรกิจไทย | Saralak Search"
         description="GEO (Generative Engine Optimization) ช่วยให้แบรนด์คุณถูก ChatGPT, Gemini และ Perplexity แนะนำ Add-on 3,000 บาท/เดือน"
         path="/services/geo"
+        image="/image/og/saralak-search-service-og.png"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://saralak-search.com/services/geo#service',
+              name: 'บริการ GEO — AI Search Visibility',
+              description: 'GEO (Generative Engine Optimization) ช่วยให้แบรนด์ถูก ChatGPT, Gemini และ Perplexity แนะนำ',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: 'Thailand',
+              offers: {
+                '@type': 'Offer',
+                price: '3000',
+                priceCurrency: 'THB',
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saralak-search.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+                { '@type': 'ListItem', position: 3, name: 'GEO', item: 'https://saralak-search.com/services/geo' },
+              ],
+            },
+          ],
+        }}
       />
 
       {/* Hero */}

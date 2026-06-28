@@ -11,11 +11,12 @@ type BlogArticleBodyProps = {
 type SectionProps = {
   title: string
   children: ReactNode
+  id?: string
 }
 
-function ArticleSection({ title, children }: SectionProps) {
+function ArticleSection({ title, children, id }: SectionProps) {
   return (
-    <section>
+    <section id={id}>
       <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
         {title}
       </h2>
@@ -513,11 +514,16 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           สำหรับธุรกิจที่เริ่มก่อนในช่วงที่การแข่งขันยังไม่สูง มีโอกาสสร้างความได้เปรียบด้าน AI Visibility ได้เร็วกว่า เพราะเมื่อ AI เริ่มจดจำแบรนด์ในฐานะแหล่งข้อมูลของหัวข้อนั้น การต่อยอดไปสู่การถูกอ้างอิงและแนะนำในคำตอบก็มีโอกาสมากขึ้น
         </P>
+        <P>
+          ธุรกิจที่ต้องการเริ่มต้น{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}เพื่อให้ ChatGPT, Gemini และ AI Search รู้จักและแนะนำแบรนด์ ดูบริการ GEO ของ Saralak Search ได้เลย
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -916,13 +922,20 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         <P>
           หากต้องการให้เว็บไซต์ของธุรกิจพร้อมสำหรับทั้ง Google Search และ AI Search,
           Saralak Search ช่วยวางกลยุทธ์ SEO, AEO, GEO และ Google Map Optimization
-          เพื่อเปลี่ยนการค้นหาให้เป็นลูกค้าและยอดขายได้อย่างเป็นระบบ.
+          เพื่อเปลี่ยนการค้นหาให้เป็นลูกค้าและยอดขายได้อย่างเป็นระบบ
+        </P>
+        <P>
+          ดูบริการ{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}และ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}จาก Saralak Search สำหรับธุรกิจที่พร้อมเริ่มต้น
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/ai-website-seo', label: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>
     </article>
@@ -1183,13 +1196,17 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>ถ้าธุรกิจต้องการเอเจนซี่ขนาดใหญ่ที่ดูแล Digital Marketing หลายช่องทาง Primal หรือ ANGA อาจเป็นตัวเลือกที่เหมาะสม</P>
         <P>ถ้าต้องการโฟกัส Technical SEO และ Structured Data Cotactic หรือ NerdOptimize เป็นตัวเลือกที่น่าสนใจ</P>
         <P>ถ้าต้องการ Content Marketing และ Inbound SEO Minimice Group เป็นบริษัทที่มีจุดแข็งด้านนี้</P>
-        <P>แต่ถ้าต้องการทำ GEO แบบเชื่อม SEO, AEO, Entity SEO, Technical SEO และ AI Visibility เข้าด้วยกัน โดยเน้นให้แบรนด์ถูก AI Search เข้าใจ พูดถึง และมีโอกาสถูกเลือกเป็นคำตอบ Saralak Search คือหนึ่งในตัวเลือกที่เหมาะกับธุรกิจที่ต้องการวางรากฐาน Search Visibility สำหรับอนาคต</P>
+        <P>
+          แต่ถ้าต้องการทำ GEO แบบเชื่อม SEO, AEO, Entity SEO, Technical SEO และ AI Visibility เข้าด้วยกัน โดยเน้นให้แบรนด์ถูก AI Search เข้าใจ พูดถึง และมีโอกาสถูกเลือกเป็นคำตอบ Saralak Search เปิดบริการ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}สำหรับธุรกิจที่ต้องการวางรากฐาน Search Visibility สำหรับอนาคต
+        </P>
         <P>GEO ไม่ใช่แค่เทคนิคใหม่ของ SEO แต่คือการเตรียมแบรนด์ให้พร้อมสำหรับอนาคตของ Search ที่ผู้ใช้งานไม่ได้ค้นหาแค่บน Google แต่ถาม AI เพื่อช่วยเปรียบเทียบ คัดเลือก และตัดสินใจมากขึ้นเรื่อย ๆ</P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/discovery-audit', label: 'Free Discovery Audit — ตรวจสอบ GEO Readiness ของเว็บไซต์คุณ' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
     </article>
@@ -1499,11 +1516,16 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="สรุป: AEO คือก้าวสำคัญของ SEO ยุค AI Search">
         <P>AEO คือการทำให้เว็บไซต์และเนื้อหาพร้อมสำหรับยุคที่ Search Engine และ AI ไม่ได้แค่แสดงลิงก์ แต่เริ่มทำหน้าที่ตอบคำถามแทนผู้ใช้งาน การทำ AEO ที่ดีไม่ได้หมายถึงการเขียนคีย์เวิร์ดเยอะที่สุด แต่หมายถึงการตอบคำถามให้ชัดที่สุด เข้าใจง่ายที่สุด และน่าเชื่อถือที่สุด</P>
         <P>เว็บไซต์ที่ต้องการเติบโตในยุค AI Search ควรให้ความสำคัญกับ SEO เพื่อให้เว็บไซต์ถูกค้นพบ AEO เพื่อให้เนื้อหาถูกเลือกเป็นคำตอบ และ GEO เพื่อให้แบรนด์ถูก AI แนะนำและอ้างอิง เมื่อทั้ง 3 ส่วนทำงานร่วมกัน เว็บไซต์จะไม่ได้แค่มีอันดับบน Google แต่มีโอกาสถูกมองเห็นในหลายพื้นที่ของการค้นหา</P>
+        <P>
+          สำหรับธุรกิจที่ต้องการวางกลยุทธ์ AEO ควบคู่กับ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}เพื่อเพิ่มโอกาสให้ AI Search แนะนำแบรนด์ ดูบริการของ Saralak Search ได้เลย
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -1573,9 +1595,35 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
   const seoChecklist = ['ตรวจว่าเว็บไซต์ถูก Index บน Google แล้วหรือยัง', 'ตั้งค่า Google Search Console', 'ตั้งค่า Google Analytics 4', 'เลือกคีย์เวิร์ดหลักของแต่ละหน้า', 'เขียน Title และ Meta Description ให้ครบ', 'ใช้ H1, H2, H3 อย่างเป็นระบบ', 'เขียนเนื้อหาที่ตอบ Search Intent', 'เพิ่ม Internal Link ไปยังหน้าสำคัญ', 'ใส่ Alt Text ให้รูปภาพ', 'ตรวจความเร็วเว็บไซต์', 'ตรวจ Mobile-Friendly', 'เพิ่ม Schema Markup ที่เหมาะสม', 'สร้างหน้า Service Page ให้รองรับคีย์เวิร์ดเชิงซื้อ', 'อัปเดตบทความเก่าทุก 6 เดือน', 'วัดผลและปรับปรุงต่อเนื่อง']
 
+  const tocItems = [
+    { id: 'seo-meaning', label: 'SEO คืออะไร?' },
+    { id: 'seo-how', label: 'SEO ทำงานอย่างไร?' },
+    { id: 'seo-why', label: 'ทำไม SEO สำคัญต่อธุรกิจ?' },
+    { id: 'seo-types', label: 'ประเภทของ SEO ที่ควรรู้' },
+    { id: 'seo-vs-aeo-geo', label: 'SEO, AEO และ GEO ต่างกันอย่างไร?' },
+    { id: 'seo-start', label: 'วิธีเริ่มต้นทำ SEO เบื้องต้น' },
+    { id: 'seo-vs-sem', label: 'SEO vs SEM ต่างกันอย่างไร?' },
+    { id: 'seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล มักเกิดจากอะไร?' },
+    { id: 'seo-checklist', label: 'Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ' },
+  ]
+
   return (
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <nav aria-label="สารบัญ" className="rounded-xl border border-neutral-200 bg-[#fbfaf6] px-5 py-4">
+        <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สารบัญ</p>
+        <ol className="mt-3 grid gap-1.5 text-sm">
+          {tocItems.map((item, i) => (
+            <li key={item.id} className="flex items-start gap-2">
+              <span className="mt-0.5 w-4 shrink-0 text-xs font-medium text-neutral-400">{i + 1}.</span>
+              <a href={`#${item.id}`} className="thai-readable text-neutral-700 underline-offset-2 hover:text-teal-700 hover:underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
 
       <section className="grid gap-5">
         <P>เคยรู้สึกไหมว่าเว็บไซต์ของธุรกิจเหมือนร้านค้าที่ตั้งอยู่บนถนนเปลี่ยว ไม่มีคนเดินผ่าน ไม่มีลูกค้าแวะ ทั้งที่ลงทุนทำเว็บไซต์อย่างดี ดีไซน์สวย ข้อมูลครบ ดูน่าเชื่อถือ แต่กลับไม่มีคนค้นเจอบน Google</P>
@@ -1583,13 +1631,19 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>หากเว็บไซต์ไม่มี SEO ต่อให้สินค้าดี บริการดี หรือแบรนด์น่าเชื่อถือแค่ไหน ลูกค้าก็อาจไม่เคยรู้ว่าคุณมีอยู่ แต่ถ้าวางพื้นฐาน SEO ได้ดี เว็บไซต์จะกลายเป็นช่องทางสำคัญที่ช่วยดึงคนเข้าเว็บ สร้างความน่าเชื่อถือ และเพิ่มโอกาสในการขายได้ในระยะยาว</P>
       </section>
 
-      <ArticleSection title="SEO คืออะไร?">
+      <ArticleSection title="SEO คืออะไร?" id="seo-meaning">
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">นิยาม</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            SEO (Search Engine Optimization) คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือ เพื่อให้ Google เข้าใจว่าเว็บไซต์เกี่ยวกับอะไร และแสดงผลให้ผู้ใช้งานเจอในเวลาที่กำลังมองหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้อง — โดยไม่ต้องจ่ายค่าโฆษณาต่อคลิก
+          </p>
+        </div>
         <P>SEO ย่อมาจาก Search Engine Optimization คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือของเว็บไซต์ เพื่อให้ Search Engine อย่าง Google เข้าใจว่าเว็บไซต์ของคุณเกี่ยวกับอะไร เหมาะกับคำค้นใด และควรแสดงผลให้ผู้ใช้งานเห็นในตำแหน่งไหน</P>
         <P>พูดให้เข้าใจง่ายขึ้น SEO คือการทำให้เว็บไซต์มีโอกาสติดอันดับในผลการค้นหาธรรมชาติของ Google โดยไม่ต้องจ่ายเงินซื้อโฆษณาทุกครั้งที่มีคนคลิก</P>
         <P>ตัวอย่างเช่น หากคุณทำธุรกิจคลินิกทันตกรรม และมีคนค้นหาคำว่า "จัดฟันใส ราคา" หรือ "คลินิกทำฟันใกล้ฉัน" เว็บไซต์ของคุณควรถูกแสดงในจังหวะนั้น เพราะคนที่ค้นหาคำเหล่านี้มีแนวโน้มสนใจบริการจริง ดังนั้น SEO ไม่ใช่แค่เรื่องของอันดับ แต่เป็นเรื่องของการทำให้ธุรกิจปรากฏต่อหน้าลูกค้าในช่วงเวลาที่เหมาะสม</P>
       </ArticleSection>
 
-      <ArticleSection title="SEO ทำงานอย่างไร?">
+      <ArticleSection title="SEO ทำงานอย่างไร?" id="seo-how">
         <ArticleImage src="/image/blog/what-is-seo/seo-process.webp" alt="กระบวนการทำงานของ SEO — Crawling, Indexing และ Ranking" />
         <P>Google ไม่ได้สุ่มเลือกเว็บไซต์ขึ้นมาแสดงในหน้าแรก แต่ใช้ระบบจัดอันดับเพื่อประเมินว่าเว็บไซต์ใดเกี่ยวข้อง มีคุณภาพ และตอบโจทย์ผู้ใช้งานมากที่สุด โดยพื้นฐานแล้ว SEO เกี่ยวข้องกับ 3 กระบวนการสำคัญ</P>
         {[
@@ -1605,7 +1659,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         ))}
       </ArticleSection>
 
-      <ArticleSection title="ทำไม SEO สำคัญต่อธุรกิจ?">
+      <ArticleSection title="ทำไม SEO สำคัญต่อธุรกิจ?" id="seo-why">
         <P>หลายธุรกิจลงทุนทำเว็บไซต์แล้วคาดหวังว่าจะมีลูกค้าเข้ามาเอง แต่เว็บไซต์ที่ไม่มี SEO ก็เหมือนหน้าร้านที่ไม่มีป้าย ไม่มีแผนที่ และไม่มีทางให้คนเดินเข้ามาเจอ</P>
         <div className="grid gap-4">
           {[
@@ -1622,9 +1676,45 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+            <img
+              src="/proof/ranking-bangsaen-serp.png"
+              alt="ตัวอย่างผลลัพธ์จริง: อันดับ #1 บน Google จาก SEO Strategy"
+              className="w-full"
+              loading="lazy"
+            />
+            <div className="px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ตัวอย่างจริง</p>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">
+                อันดับขึ้นจาก #5 สู่ #1 สำหรับคำค้นที่มีการแข่งขันสูง — ผลลัพธ์จาก SEO Strategy ภายใน 3 เดือน
+              </p>
+              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+            <img
+              src="/proof/gsc-product-listing-growth.png"
+              alt="ตัวอย่างผลลัพธ์จริง: Organic Traffic และ Impressions เติบโตต่อเนื่องหลังทำ SEO"
+              className="w-full"
+              loading="lazy"
+            />
+            <div className="px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ตัวอย่างจริง</p>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">
+                Organic Traffic และ Impressions เติบโตต่อเนื่องหลังปรับโครงสร้างเว็บไซต์และ Product Listing Page — ข้อมูลจาก Google Search Console
+              </p>
+              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
       </ArticleSection>
 
-      <ArticleSection title="ประเภทของ SEO ที่ควรรู้">
+      <ArticleSection title="ประเภทของ SEO ที่ควรรู้" id="seo-types">
         <P>SEO ไม่ได้มีแค่การเขียนบทความหรือใส่คีย์เวิร์ดในหน้าเว็บเท่านั้น แต่ประกอบด้วยหลายส่วนที่ทำงานร่วมกัน</P>
         <div className="grid gap-5">
           {seoTypes.map((t) => (
@@ -1634,9 +1724,18 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             </ArticleSubSection>
           ))}
         </div>
+        <P>
+          สำหรับธุรกิจที่ต้องการผู้เชี่ยวชาญ{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {', '}
+          <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+          {' '}หรือ{' '}
+          <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+          {' '}Saralak Search ให้บริการครอบคลุมทั้ง SEO, Local SEO และ Google Maps สำหรับธุรกิจไทยโดยเฉพาะ
+        </P>
       </ArticleSection>
 
-      <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?">
+      <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?" id="seo-vs-aeo-geo">
         <ArticleImage src="/image/blog/what-is-seo/what-seo-compare.webp" alt="เปรียบเทียบ SEO AEO และ GEO ต่างกันอย่างไร" />
         <P>สำหรับคนที่เพิ่งเริ่มต้น ให้เข้าใจก่อนว่า SEO ยังคือพื้นฐานสำคัญที่สุด ส่วน <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO</Link> และ <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO</Link> คือการต่อยอดจาก SEO เพื่อให้เนื้อหาและแบรนด์มีโอกาสถูกมองเห็นในรูปแบบคำตอบและ AI Search มากขึ้น</P>
         <div aria-hidden="true" className="grid gap-3 lg:hidden">
@@ -1677,6 +1776,11 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
         ]} />
+        <P>
+          ธุรกิจที่ต้องการต่อยอดจาก SEO สู่ AI Search สามารถดูบริการ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini และ AI Search รู้จักและแนะนำแบรนด์ของคุณ
+        </P>
       </ArticleSection>
 
       <ArticleCTA
@@ -1684,7 +1788,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         description="Discovery Audit วิเคราะห์เว็บไซต์เพื่อค้นหาปัญหาและโอกาสบน Google Search, AI Search และ Google Maps พร้อม Prioritized Roadmap และ Quick Wins เริ่มต้นที่ 5,000 THB"
       />
 
-      <ArticleSection title="วิธีเริ่มต้นทำ SEO เบื้องต้น">
+      <ArticleSection title="วิธีเริ่มต้นทำ SEO เบื้องต้น" id="seo-start">
         <P>การเริ่มทำ SEO ไม่จำเป็นต้องเริ่มจากเทคนิคที่ซับซ้อนที่สุด แต่ควรเริ่มจากการวางรากฐานให้ถูกต้อง</P>
         <div className="grid gap-4">
           {seoSteps.map((step) => (
@@ -1697,7 +1801,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="SEO vs SEM ต่างกันอย่างไร?">
+      <ArticleSection title="SEO vs SEM ต่างกันอย่างไร?" id="seo-vs-sem">
         <P>SEO และ SEM ต่างเป็นวิธีที่ทำให้ธุรกิจปรากฏบน Google แต่ต่างกันที่วิธีการและรูปแบบการลงทุน</P>
         <div className="grid gap-4 sm:grid-cols-3">
           {[
@@ -1714,17 +1818,22 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>ธุรกิจไม่จำเป็นต้องเลือกอย่างใดอย่างหนึ่งเสมอไป วิธีที่ดีที่สุดคือใช้ SEM เพื่อเก็บความต้องการระยะสั้น และใช้ SEO เพื่อสร้าง Organic Visibility ระยะยาว</P>
       </ArticleSection>
 
-      <ArticleSection title="ทำ SEO แล้วไม่เห็นผล มักเกิดจากอะไร?">
+      <ArticleSection title="ทำ SEO แล้วไม่เห็นผล มักเกิดจากอะไร?" id="seo-not-working">
         <P>หลายธุรกิจเริ่มทำ SEO แล้วรู้สึกว่าไม่เห็นผล ทั้งที่ลงบทความไปหลายชิ้นหรือปรับเว็บไซต์ไปแล้วบางส่วน สาเหตุที่พบบ่อย ได้แก่</P>
         <CheckList items={notWorkingReasons} />
         <P>SEO ที่ดีจึงไม่ใช่แค่การเขียนบทความ แต่ต้องดูทั้งกลยุทธ์ โครงสร้างเว็บไซต์ คุณภาพเนื้อหา ความน่าเชื่อถือ และการวัดผลร่วมกัน</P>
       </ArticleSection>
 
-      <ArticleSection title="Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ">
+      <ArticleSection title="Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ" id="seo-checklist">
         <ArticleImage src="/image/blog/what-is-seo/seo-checklist.webp" alt="SEO Checklist เริ่มต้นทำ SEO สำหรับธุรกิจ" height={600} />
         <P>หากต้องการเริ่มต้นทำ SEO ให้เว็บไซต์มีพื้นฐานที่ดี สามารถเริ่มจาก Checklist นี้ได้</P>
         <CheckList items={seoChecklist} />
-        <P>Checklist นี้เป็นเพียงจุดเริ่มต้น แต่ช่วยให้เห็นภาพว่า SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความแล้วรออันดับขึ้น</P>
+        <P>
+          Checklist นี้เป็นเพียงจุดเริ่มต้น แต่ช่วยให้เห็นภาพว่า SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความแล้วรออันดับขึ้น
+          {' '}ธุรกิจที่ต้องการ{' '}
+          <Link to="/services/content-marketing" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับเขียนบทความ SEO</Link>
+          {' '}ที่ช่วยสร้าง Organic Traffic อย่างเป็นระบบ ดูบริการเขียนบทความ SEO ของ Saralak Search ได้เลย
+        </P>
       </ArticleSection>
 
       <ArticleSection title="สรุป: SEO คือรากฐานของการถูกค้นเจอบน Google">
@@ -1732,11 +1841,11 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>การทำ SEO ที่ดีไม่ใช่แค่การใส่คีย์เวิร์ดลงในบทความ แต่ต้องเข้าใจลูกค้า เข้าใจ Search Intent วางโครงสร้างเว็บไซต์ให้ดี เขียนเนื้อหาที่มีคุณภาพ ปรับ Technical SEO และวัดผลอย่างต่อเนื่อง</P>
         <P>SEO คือจุดเริ่มต้นที่จะทำให้เว็บไซต์ไม่เป็นบ้านร้างบนโลกออนไลน์ แต่กลายเป็นช่องทางที่ช่วยให้ธุรกิจถูกค้นพบ สร้างความน่าเชื่อถือ และเพิ่มโอกาสเติบโตได้อย่างยั่งยืน</P>
         <ReadMoreLinks items={[
+          { to: '/services/seo', label: 'บริการ SEO สำหรับธุรกิจไทย — Saralak Search' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/blog/ai-website-seo', label: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -2202,11 +2311,16 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <P>
           ถ้าธุรกิจต้องการเติบโตในยุค AI Search สิ่งที่ควรทำตั้งแต่วันนี้คือ เลือกหัวข้อที่ต้องการเป็นเจ้าของ สร้าง Pillar Content เขียน Supporting Content เชื่อม Internal Link เพิ่ม Schema สร้าง Brand Mention และวัดผล AI Citation อย่างต่อเนื่อง
         </P>
+        <P>
+          ธุรกิจที่ต้องการทีมช่วยวางกลยุทธ์และลงมือทำ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}ให้ ChatGPT, Gemini และ AI Search รู้จักแบรนด์ ดูบริการ GEO ของ Saralak Search
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
           { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ' },
           { to: '/blog/geo-agency-thailand', label: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -2550,13 +2664,18 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         <P>
           แต่นั่นก็หมายความว่า <strong>โอกาส Early Mover ยังเปิดอยู่</strong> เมื่อ AI รองรับ llms.txt มากขึ้น แบรนด์ที่เตรียมไฟล์นี้ไว้ก่อนจะได้เปรียบทันที เหมือนกับแบรนด์ที่ทำ robots.txt ตั้งแต่ยุคแรกของ Search Engine
         </P>
+        <P>
+          ธุรกิจที่ต้องการเริ่มต้น{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}ควบคู่กับการทำ llms.txt ดูบริการ GEO ของ Saralak Search ได้เลย
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -2823,12 +2942,17 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <P>
           ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน GEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบ 40 รายการก็ตาม
         </P>
+        <P>
+          ต้องการทีมช่วยลงมือทำ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}ให้ครบทั้ง 40 รายการ ดูบริการ GEO ของ Saralak Search ได้เลย
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -3122,7 +3246,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -3192,6 +3316,11 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
         <P>
           Claude เป็น tool ที่ดีที่สุดที่เคยมี แต่ tool ดีแค่ไหนก็ต้องการคนรู้ว่าจะใช้ทำอะไร
           กลยุทธ์ SEO ต้องมาก่อน implementation เสมอ
+        </P>
+        <P>
+          ต้องการทีมช่วยวาง{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ที่ขับเคลื่อนด้วยกลยุทธ์และข้อมูลจริง ไม่ใช่แค่ใช้ AI เขียนบทความ ดูบริการ SEO ของ Saralak Search
         </P>
       </ArticleSection>
 
@@ -3414,11 +3543,16 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
           ถ้ายังไม่เห็นภาพชัด Discovery Audit จะช่วยระบุปัญหาและลำดับความสำคัญ
           เพื่อให้รู้ว่าต้องลงมือแก้อะไรก่อน
         </P>
+        <P>
+          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยแก้ปัญหาและวางแผน{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/services', label: 'บริการ SEO GEO AEO — Saralak Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
@@ -3728,10 +3862,16 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <P>
+        ต้องการผู้เชี่ยวชาญช่วยทำ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}ให้ธุรกิจปรากฏต่อลูกค้าในพื้นที่ ดูบริการ Google Maps ของ Saralak Search ได้เลย
+      </P>
+
       <ReadMoreLinks items={[
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน — ลูกค้าใกล้ฉันรอคุณอยู่' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวกำลังหาคุณอยู่' },
-        { to: '/services/google-maps', label: 'บริการ Google Maps Optimization — Saralak Search' },
+        { to: '/services/google-maps', label: 'รับทำ Google Maps — Saralak Search' },
       ]} />
 
       <SourceBox items={[
@@ -4270,10 +4410,15 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         description="ขอ Local SEO Audit ฟรี ตรวจว่าธุรกิจคุณ show up ต่อลูกค้าในย่านได้ดีแค่ไหน และอะไรทำให้พลาดลูกค้าที่พร้อมซื้ออยู่ทุกวัน"
       />
 
+      <P>
+        ธุรกิจที่มีหน้าร้านและต้องการลูกค้าใกล้เคียงเพิ่มขึ้น ดูบริการ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps: ลูกค้ากำลังหิวกำลังหาคุณอยู่' },
-        { to: '/services/local-seo', label: 'บริการ Local SEO สำหรับธุรกิจไทย — Saralak Search' },
+        { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
       ]} />
 
       <SourceBox items={[
@@ -4677,10 +4822,15 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
         description="Google Maps Audit ตรวจว่าร้านคุณได้รับ Call, Direction และ Website Clicks จากคนกลุ่มนี้มากแค่ไหน และตรงไหนที่พลาดอยู่"
       />
 
+      <P>
+        ร้านอาหารที่ต้องการให้ลูกค้าเจอก่อนคู่แข่ง ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}สำหรับร้านอาหารของ Saralak Search ได้เลย
+      </P>
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-google-maps', label: 'เพิ่มยอดขายบน Google Maps: วัดผลด้วย โทร · เส้นทาง · เว็บไซต์' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
-        { to: '/services/google-maps', label: 'บริการ Google Maps สำหรับร้านอาหาร — Saralak Search' },
+        { to: '/services/google-maps', label: 'รับทำ Google Maps สำหรับร้านอาหาร — Saralak Search' },
       ]} />
 
       <SourceBox items={[
@@ -4691,6 +4841,305 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านอาหารบน Google Maps" />
+    </article>
+  )
+}
+
+function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
+  const steps = [
+    {
+      num: '01',
+      title: 'วาง structure ของเว็บไซต์',
+      prompt: 'ฉันมีธุรกิจ [ประเภท] บริการหลักคือ [บริการ] กลุ่มลูกค้าคือ [ลูกค้า] ช่วยวางโครงสร้างเว็บไซต์ให้หน่อย มีกี่หน้า แต่ละหน้าควรมีเนื้อหาอะไร',
+      result: 'ได้ sitemap พร้อมเหตุผลว่าทำไมต้องมีแต่ละหน้า',
+    },
+    {
+      num: '02',
+      title: 'เขียน copy สำหรับแต่ละหน้า',
+      prompt: 'เขียน copy สำหรับหน้า Homepage ธุรกิจ [X] ที่เน้น [Y] ให้มี H1 ที่ชัด, subtitle, รายการบริการ 3 อย่าง และ CTA ที่ชวนให้ติดต่อ',
+      result: 'ได้ content พร้อมใช้ที่ตรงกับธุรกิจ ไม่ generic',
+    },
+    {
+      num: '03',
+      title: 'สั่งเขียน HTML + CSS',
+      prompt: 'เขียน HTML+CSS สำหรับหน้านี้ให้เป็น single file, responsive, ใช้ Tailwind CSS จาก CDN, สีหลัก teal และ white',
+      result: 'ได้ไฟล์ .html ที่เปิดดูในเบราว์เซอร์ได้ทันที',
+    },
+    {
+      num: '04',
+      title: 'ปรับแต่งซ้ำๆ จนพอใจ',
+      prompt: 'เปลี่ยน font เป็น Inter, เพิ่ม section testimonial 3 ข้อ, ทำ navigation ให้ sticky',
+      result: 'แก้ได้ไม่จำกัดครั้ง Claude จำ context ทั้งหมดไว้ให้',
+    },
+    {
+      num: '05',
+      title: 'Deploy ขึ้น Internet',
+      prompt: 'ไปที่ netlify.com → Drop Zone → ลากโฟลเดอร์ไปวาง → เว็บ live ใน 30 วินาที',
+      result: 'ได้ URL ฟรี (.netlify.app) หรือ connect domain เองก็ได้',
+    },
+  ]
+
+  const claudeCanDo = [
+    'Title tag และ meta description สำหรับแต่ละหน้า',
+    'H1, H2, H3 ที่มี structure ชัดเจน',
+    'Alt text บน image ทุกรูป',
+    'Schema markup เบื้องต้น (FAQ, Organization)',
+    'Internal link structure ระหว่างหน้า',
+    'sitemap.xml และ robots.txt พื้นฐาน',
+  ]
+
+  const needConsultant = [
+    'วิเคราะห์ว่า keyword ไหนที่ลูกค้าค้นหาจริงบน Google',
+    'ตรวจว่าคู่แข่งกำลังทำอะไรอยู่',
+    'วางแผนว่าหน้าไหนควร rank keyword ไหน',
+    'สร้าง authority ผ่าน backlink และ brand signal',
+    'วัดผลและปรับ strategy จาก data จริง',
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <section className="grid gap-5">
+        <P>
+          ถ้าคุณเคยลองให้ Claude ช่วยเขียน HTML หรือวาง layout เว็บไซต์
+          คุณรู้แล้วว่ามันทำได้เร็วมาก จาก idea คร่าวๆ กลายเป็นหน้าเว็บที่เปิดดูได้จริงภายในไม่กี่ชั่วโมง
+        </P>
+        <P>
+          แต่ปัญหาที่เจ้าของธุรกิจส่วนใหญ่เจอหลังจากนั้นคือ —{' '}
+          <strong className="font-semibold text-neutral-950">เว็บสร้างเสร็จแล้ว แต่ยังไม่มีคนเข้า</strong>
+          {' '}นั่นเพราะ "การสร้างเว็บ" กับ "การทำให้คนหาเจอบน Google" คือคนละขั้นตอนกันทั้งหมด
+        </P>
+      </section>
+
+      <ArticleSection title="5 ขั้นตอนสร้างเว็บด้วย Claude">
+        <P>
+          สำหรับเจ้าของธุรกิจที่ไม่ได้เป็น developer Claude.ai แบบ chat เพียงพอสำหรับสร้าง
+          brochure site หรือ landing page โดยไม่ต้องรู้ภาษา programming
+        </P>
+        <div className="grid gap-4">
+          {steps.map((step) => (
+            <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <div className="flex items-start gap-4">
+                <span className="shrink-0 text-2xl font-bold text-teal-700">{step.num}</span>
+                <div className="min-w-0">
+                  <p className="font-semibold text-neutral-950">{step.title}</p>
+                  <div className="mt-2 rounded-md border border-neutral-100 bg-neutral-50 px-3 py-2">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                      Prompt ตัวอย่าง
+                    </p>
+                    <p className="thai-readable text-sm italic text-neutral-600">
+                      "{step.prompt}"
+                    </p>
+                  </div>
+                  <p className="thai-readable mt-2 text-sm text-teal-700">→ {step.result}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <P>
+          เว็บที่ได้จากกระบวนการนี้ responsive รองรับมือถือ และ deploy บน Netlify หรือ GitHub Pages
+          ได้ฟรีสำหรับ static site
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ทำเว็บเสร็จแล้ว... แต่ทำไมยังไม่มีคนเข้า?">
+        <P>
+          หลัง deploy ขึ้น internet สิ่งที่เกิดขึ้นจริงคือ — Google ยังไม่รู้ว่าเว็บคุณมีอยู่
+          และถึงรู้ก็ยังต้องตัดสินว่าเว็บนี้ควรขึ้นสำหรับ keyword ไหน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            {
+              icon: '🔍',
+              title: 'Google ยังไม่รู้',
+              desc: 'ต้อง submit ใน Google Search Console และรอ crawl ก่อนถึงจะมี impression',
+            },
+            {
+              icon: '🎯',
+              title: 'ไม่มี keyword strategy',
+              desc: 'Claude เขียน copy ได้ดี แต่ไม่รู้ว่าลูกค้าของธุรกิจคุณค้นหาคำไหนจริงๆ',
+            },
+            {
+              icon: '🏆',
+              title: 'ไม่มี authority',
+              desc: 'เว็บใหม่ที่ไม่มีใครรู้จัก Google จะให้ rank ต่ำกว่าคู่แข่งที่อยู่มานานเสมอ',
+            },
+          ].map((item) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 text-center">
+              <div className="text-3xl">{item.icon}</div>
+              <p className="mt-2 font-semibold text-neutral-950">{item.title}</p>
+              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          นี่คือจุดที่ SEO เข้ามา — ไม่ใช่เพื่อ "ทำให้เว็บสวยขึ้น" แต่เพื่อทำให้ Google เข้าใจว่า
+          เว็บคุณตอบโจทย์ลูกค้าที่กำลังค้นหาอยู่
+        </P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ทำเว็บด้วย Claude แล้ว อยากให้มีคนเจอจริงๆ?"
+        description="Discovery Audit วิเคราะห์ว่าเว็บที่คุณสร้างขาดอะไร และต้องทำ SEO ตรงไหนก่อนให้ลูกค้าเจอ"
+      />
+
+      <ArticleSection title="Claude ช่วย SEO ได้อะไร — ต้องการ consultant ตรงไหน?">
+        <P>
+          Claude ทำ SEO เบื้องต้นได้จริง แต่มีขีดจำกัดที่ชัดเจน เข้าใจตรงนี้จะช่วยประหยัดเวลาได้มาก
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-teal-100 bg-teal-50 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">Claude ทำได้เอง</p>
+            <ul className="mt-3 grid gap-2">
+              {claudeCanDo.map((item) => (
+                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
+                  <span className="mt-0.5 shrink-0 text-teal-600">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg border border-amber-100 bg-amber-50 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">ต้องการ consultant</p>
+            <ul className="mt-3 grid gap-2">
+              {needConsultant.map((item) => (
+                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
+                  <span className="mt-0.5 shrink-0 text-amber-600">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="4 กลยุทธ์ที่ต้องทำต่อ ให้เว็บมีคนเข้าจริง">
+        <div className="rounded-lg border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">01 — SEO</p>
+          <h3 className="mt-1 text-lg font-semibold text-neutral-950">Keyword Strategy และ On-page SEO</h3>
+          <P>
+            Claude เขียน copy ได้ดี แต่ไม่รู้ว่าลูกค้าของธุรกิจคุณพิมพ์อะไรลง Google จริงๆ
+            keyword research ต้องใช้ data จริง เช่น Google Search Console และการวิเคราะห์ว่า
+            คู่แข่ง rank อยู่กับ keyword อะไรบ้าง
+          </P>
+          <P>
+            หลังรู้ keyword แล้ว การวาง content แต่ละหน้าให้ตรง search intent
+            คือสิ่งที่ทำให้ Google เลือกเว็บคุณแทนคู่แข่ง บริการ{' '}
+            <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+            {' '}ครอบคลุมทั้ง keyword research, on-page optimization และ technical SEO
+          </P>
+        </div>
+
+        <div className="rounded-lg border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">02 — Content</p>
+          <h3 className="mt-1 text-lg font-semibold text-neutral-950">Blog และ Content Marketing</h3>
+          <P>
+            Claude เขียนบทความได้เร็วมาก แต่ถ้าไม่มี topic cluster strategy
+            แต่ละบทความจะแข่งกันเองหรือ target keyword ที่ไม่มีคนค้นหา
+            ผลคือมี content เยอะแต่ traffic ไม่โต
+          </P>
+          <P>
+            การวาง content plan ที่ดีต้องรู้ว่า keyword cluster ของธุรกิจคุณมีอะไรบ้าง
+            หน้าไหนเป็น pillar page และหน้าไหนเป็น supporting content บริการ{' '}
+            <Link to="/services/content-marketing" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับเขียนบทความ SEO</Link>
+            {' '}วางแผน cluster และเขียน content ที่ตรง keyword จริง
+          </P>
+        </div>
+
+        <div className="rounded-lg border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">03 — Local SEO & Maps</p>
+          <h3 className="mt-1 text-lg font-semibold text-neutral-950">Local SEO และ Google Maps</h3>
+          <P>
+            ถ้าธุรกิจรับลูกค้าในพื้นที่ เช่น ร้านอาหาร คลินิก หรือ service ที่มีหน้าร้าน
+            Claude เขียน description สำหรับ Google Business Profile ได้ดี
+            แต่การที่เว็บและ GBP จะ rank ในผลแบบ "ใกล้ฉัน" ต้องการมากกว่านั้น
+          </P>
+          <P>
+            NAP consistency ทุก platform, citation building, review strategy
+            และการ optimize Google Maps pin คือสิ่งที่ Claude ทำให้ไม่ได้ บริการ{' '}
+            <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+            {' '}และ{' '}
+            <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+            {' '}ครอบคลุมทั้งหมดนี้
+          </P>
+        </div>
+
+        <div className="rounded-lg border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">04 — GEO</p>
+          <h3 className="mt-1 text-lg font-semibold text-neutral-950">GEO — ให้ AI Search อ้างอิงธุรกิจของคุณ</h3>
+          <P>
+            นอกจาก Google แล้ว ลูกค้าจำนวนมากเริ่มถาม ChatGPT, Gemini และ Perplexity
+            เพื่อหาข้อมูลและเปรียบเทียบ Claude ช่วยเขียน FAQ schema และ llms.txt ได้ดี
+            แต่การสร้าง brand entity และทำให้ AI ไว้วางใจข้อมูลของคุณต้องการกลยุทธ์ที่ชัดเจน
+          </P>
+          <P>
+            บริการ{' '}
+            <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+            {' '}ออกแบบมาสำหรับธุรกิจที่ต้องการให้ AI Search พูดถึงและอ้างอิงแบรนด์ในยุค AI Search
+          </P>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีทำงานที่ได้ผล: Claude Execute — Consultant วาง Strategy">
+        <P>
+          ไม่ต้องเลือกว่าจะใช้ Claude หรือใช้ SEO consultant — ใช้ทั้งสองในบทบาทที่ต่างกัน
+        </P>
+        <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">Claude ทำ</p>
+              <ul className="mt-2 grid gap-1.5 text-sm text-neutral-700">
+                {[
+                  'สร้างโครงสร้างเว็บไซต์',
+                  'เขียน copy ตาม brief',
+                  'เขียน HTML/CSS และ schema',
+                  'แก้ไขและ iterate เร็ว',
+                  'สร้าง FAQ และ content template',
+                ].map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="shrink-0 text-teal-600">→</span>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">Consultant วาง</p>
+              <ul className="mt-2 grid gap-1.5 text-sm text-neutral-700">
+                {[
+                  'Keyword และ topic strategy',
+                  'วิเคราะห์คู่แข่งและ search intent',
+                  'กำหนด priority ว่าต้องทำอะไรก่อน',
+                  'วัดผลและปรับ strategy จาก data',
+                  'Local SEO และ AI Search strategy',
+                ].map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="shrink-0 text-amber-600">→</span>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <P>
+          รูปแบบนี้ลดต้นทุนสร้างเว็บลงได้มาก ขณะที่ strategy ยังอยู่ในมือผู้เชี่ยวชาญ
+          ผลลัพธ์คือเว็บที่สร้างเร็ว ต้นทุนต่ำ และติด Google ได้จริง
+        </P>
+      </ArticleSection>
+
+      <ReadMoreLinks
+        items={[
+          { to: '/blog/ai-website-seo', label: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+        ]}
+      />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเรื่องทำเว็บด้วย Claude" />
     </article>
   )
 }
@@ -4734,6 +5183,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'increase-sale-restaurant') {
     return <IncreaseSaleRestaurantArticle post={post} />
+  }
+  if (post.bodyVariant === 'tham-web-claude') {
+    return <ThamWebClaudeArticle post={post} />
   }
 
   return (

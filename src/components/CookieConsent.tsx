@@ -15,6 +15,11 @@ export default function CookieConsent() {
     if (!getCookieConsent()) {
       setVisible(true)
     }
+    function handleOpen() {
+      setVisible(true)
+    }
+    window.addEventListener('cookie_settings_open', handleOpen)
+    return () => window.removeEventListener('cookie_settings_open', handleOpen)
   }, [])
 
   function accept() {

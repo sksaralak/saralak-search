@@ -199,6 +199,33 @@ export default function ServiceGoogleMaps() {
         title="บริการ Google Maps Optimization สำหรับธุรกิจไทย | Saralak Search"
         description="เพิ่ม Call, Direction และ Website Clicks จาก Google Maps เริ่มต้น 6,000 บาท/สาขา/เดือน สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้าน"
         path="/services/google-maps"
+        image="/image/og/saralak-search-service-og.png"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://saralak-search.com/services/google-maps#service',
+              name: 'บริการ Google Maps Optimization',
+              description: 'เพิ่ม Call, Direction และ Website Clicks จาก Google Maps สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้านในไทย',
+              provider: { '@id': 'https://saralak-search.com/#organization' },
+              areaServed: 'Thailand',
+              offers: {
+                '@type': 'Offer',
+                price: '6000',
+                priceCurrency: 'THB',
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saralak-search.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://saralak-search.com/services' },
+                { '@type': 'ListItem', position: 3, name: 'Google Maps', item: 'https://saralak-search.com/services/google-maps' },
+              ],
+            },
+          ],
+        }}
       />
 
       {/* Hero */}

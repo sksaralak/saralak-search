@@ -1,18 +1,14 @@
 import AnswerBlock from '../components/AnswerBlock'
 import { trackLineClick } from '../components/Analytics'
-import ContactActions from '../components/ContactActions'
-import ContactForm from '../components/ContactForm'
 import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
-import SectionHeader from '../components/SectionHeader'
 import { contactFaqs, faqJsonLd } from '../content/faqs'
 import { brand } from '../content/site'
 
-const contactOptions = [
-  ['LINE', brand.line, brand.lineUrl],
-  ['Phone', brand.phone, brand.phoneUrl],
-  ['Email', brand.email, `mailto:${brand.email}`],
-  ['LinkedIn', brand.linkedIn, `https://${brand.linkedIn}`],
+const secondaryContacts = [
+  { label: 'โทรศัพท์', value: brand.phone, href: brand.phoneUrl },
+  { label: 'อีเมล', value: brand.email, href: `mailto:${brand.email}` },
+  { label: 'LinkedIn', value: brand.linkedIn, href: `https://${brand.linkedIn}`, external: true },
 ]
 
 export default function Contact() {
@@ -20,7 +16,7 @@ export default function Contact() {
     <main>
       <SEO
         title="ติดต่อ Saralak Search | Discovery Audit และ SEO Consulting"
-        description="ติดต่อ Saralak Search ผ่าน LINE หรือ Email สำหรับ Discovery Audit, Search Growth Retainer, SEO, Google Maps หรือ Monthly SEO Advisor"
+        description="ติดต่อ Saralak Search ผ่าน LINE สำหรับ Discovery Audit, Search Growth Retainer, SEO, Google Maps หรือ Monthly SEO Advisor"
         path="/contact"
         image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
@@ -53,6 +49,7 @@ export default function Contact() {
         }}
       />
 
+      {/* Hero */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Contact</p>
@@ -63,14 +60,11 @@ export default function Contact() {
             ยังไม่รู้ว่าปัญหาอยู่ที่ SEO, Google Maps หรือ AI Search? เริ่มจาก Discovery Audit —
             ส่ง URL เว็บไซต์มาและเล่าให้ฟังว่าธุรกิจทำอะไรและอยากได้อะไรจาก Search
           </p>
-          <p className="thai-readable mt-4 max-w-3xl text-base text-neutral-700">
-            หากต้องการคำตอบเร็ว แนะนำให้ติดต่อผ่าน LINE หรืออีเมลก่อน โดยปกติตอบกลับภายใน 1–2 วันทำการ
-          </p>
         </div>
       </section>
 
       <AnswerBlock>
-        หากต้องการเริ่มปรับ SEO หรือยังไม่แน่ใจว่าเว็บไซต์ควรแก้จุดไหน สามารถส่งเว็บไซต์หรือปัญหาที่เจอมาเพื่อประเมินเบื้องต้นผ่าน LINE หรืออีเมลได้
+        ส่ง URL เว็บไซต์หรือปัญหาที่เจอมาทาง LINE ได้เลย ตอบกลับภายใน 1–2 วันทำการ
       </AnswerBlock>
 
       {/* What to send */}
@@ -95,45 +89,48 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* LINE primary CTA */}
       <section className="border-y border-neutral-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <SectionHeader eyebrow="Contact options" title="ช่องทางติดต่อหลัก" />
-            <div className="mt-8 grid gap-4">
-              {contactOptions.map(([label, value, href]) => (
-                <article key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-                  <h2 className="text-lg font-semibold text-neutral-950">{label}</h2>
-                  <a
-                    href={href}
-                    target={label === 'Email' || label === 'Phone' ? undefined : '_blank'}
-                    rel={label === 'Email' || label === 'Phone' ? undefined : 'noreferrer'}
-                    onClick={label === 'LINE' ? () => trackLineClick('contact_section') : undefined}
-                    className="mt-2 inline-block break-words text-teal-900 hover:text-teal-700"
-                  >
-                    {value}
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div>
-            <ContactForm />
-          </div>
+        <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-teal-700">ช่องทางหลัก</p>
+          <p className="mt-4 text-5xl font-bold tracking-tight text-neutral-950">{brand.line}</p>
+          <p className="thai-readable mt-3 text-base text-neutral-600">
+            ส่ง URL เว็บไซต์ + ปัญหาที่เจอมาได้เลย ไม่ต้องรอนัด
+          </p>
+          <a
+            href={brand.lineUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackLineClick('contact_line_primary')}
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-[#06C755] px-8 py-3 text-base font-semibold text-white shadow-md shadow-green-900/20 transition hover:bg-[#05b34c]"
+          >
+            เพิ่มเพื่อน LINE
+          </a>
+          <p className="mt-4 text-sm text-neutral-400">ตอบกลับภายใน 1–2 วันทำการ</p>
+        </div>
+      </section>
+
+      {/* Secondary contacts */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">ช่องทางอื่น</p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          {secondaryContacts.map(({ label, value, href, external }) => (
+            <article key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">{label}</h2>
+              <a
+                href={href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+                className="mt-2 inline-block break-words text-teal-900 hover:text-teal-700"
+              >
+                {value}
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
       <FAQSection faqs={contactFaqs} />
-
-      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold text-neutral-950 md:text-4xl">
-          ยังไม่แน่ใจว่าควรเริ่มจากอะไร?
-        </h2>
-        <p className="mt-4 text-lg leading-8 text-neutral-700">
-          ส่ง URL เว็บไซต์ผ่าน LINE หรือ Email — Discovery Audit ช่วยตรวจว่า Google, Google Maps
-          และ AI Search มองเห็นแบรนด์ของคุณอย่างไรก่อนเริ่ม service ใดก็ตาม
-        </p>
-        <ContactActions align="center" className="mt-8" lineSource="contact_section" />
-      </section>
     </main>
   )
 }

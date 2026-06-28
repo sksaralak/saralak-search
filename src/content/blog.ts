@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'tham-web-claude'
   cta?: {
     headline: string
     description: string
@@ -533,7 +533,69 @@ export const restaurantSalesFaqs: FAQItem[] = [
   },
 ]
 
+export const thamWebClaudeFaqs: FAQItem[] = [
+  {
+    question: 'ทำเว็บด้วย Claude ต้องรู้โค้ดไหม?',
+    answer:
+      'ไม่จำเป็น สำหรับ brochure site หรือ landing page ธรรมดา Claude.ai แบบ chat เขียน HTML/CSS ให้ได้เลย เพียงแต่ต้องรู้จะสื่อสารกับ Claude ว่าต้องการอะไร และ deploy ขึ้น Netlify ซึ่งแค่ลากโฟลเดอร์ไปวาง',
+  },
+  {
+    question: 'เว็บที่ทำด้วย Claude ติด Google ได้ไหม?',
+    answer:
+      'ติดได้ แต่ต้องทำ SEO ด้วย การสร้างเว็บด้วย Claude เป็นแค่ขั้นแรก Google ต้องรู้ว่าเว็บมีอยู่ก่อน (ผ่าน Google Search Console) จากนั้นต้องมี keyword ที่ถูกต้องในตำแหน่งที่ใช่ และ authority เพียงพอ สิ่งเหล่านี้ต้องการ SEO strategy แยกต่างหาก',
+  },
+  {
+    question: 'Claude.ai กับ Claude Code ต่างกันอย่างไรสำหรับการทำเว็บ?',
+    answer:
+      'Claude.ai คือแบบ chat ผ่านเบราว์เซอร์ เหมาะกับเจ้าของธุรกิจทั่วไปที่ต้องการ brochure site ส่วน Claude Code คือ command-line tool สำหรับ developer ที่สร้าง web application เต็มรูปแบบ มีระบบ database, auth และ backend ได้',
+  },
+  {
+    question: 'ทำเว็บด้วย Claude เสร็จแล้วต้องทำ SEO เพิ่มอีกไหม?',
+    answer:
+      'ต้องทำแน่นอน Claude สร้างโครงสร้างเว็บได้ แต่ไม่รู้ว่าลูกค้าของธุรกิจคุณค้นหา keyword ไหนจริงๆ ไม่รู้ว่าคู่แข่งทำอะไรอยู่บน Google และไม่ได้สร้าง authority หรือ backlink ให้ สิ่งเหล่านี้ต้องการ SEO consultant วางแผน',
+  },
+  {
+    question: 'ค่าใช้จ่ายในการทำเว็บด้วย Claude เท่าไหร่?',
+    answer:
+      'ค่า Claude Pro อยู่ที่ $20/เดือน (ราว 700 บาท) บวกค่า domain ประมาณ 300–500 บาท/ปี และ hosting บน Netlify หรือ GitHub Pages ฟรีสำหรับ static site ต้นทุนสร้างเว็บต่ำมาก แต่ SEO strategy ที่ทำให้เว็บติด Google มีต้นทุนแยกต่างหาก',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
+    slug: 'tham-web-claude',
+    category: 'SEO',
+    excerpt:
+      'Claude ทำเว็บได้จริง — แต่ "ทำเว็บเสร็จ" กับ "มีคนเข้าเว็บ" คือคนละขั้นตอนกันทั้งหมด บทความนี้บอก 5 ขั้นตอนสร้างเว็บด้วย Claude และสิ่งที่ต้องทำต่อให้ Google พาลูกค้ามาเจอ',
+    readingTime: '10 min read',
+    publishedDate: '2026-06-28',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    heroImageDesktop: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
+    heroImageMobile: '/image/blog/tham-web-claude/tham-web-claude-banner-mweb.png',
+    heroImageAlt: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า — Claude สร้างเว็บ → ได้เว็บแต่ไม่มีคนเข้า → SEO Strategy → มีคนเข้า',
+    ogImage: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
+    metaTitle: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า | Saralak Search',
+    metaDescription:
+      'วิธีใช้ Claude สร้างเว็บไซต์ตั้งแต่ต้น + สิ่งที่ต้องทำต่อให้เว็บที่สร้างด้วย AI ติด Google และมีลูกค้าเข้ามาจริง',
+    aiSummary: [
+      'Claude ทำเว็บได้จริงใน 5 ขั้นตอน ตั้งแต่วาง structure จนถึง deploy โดยไม่ต้องรู้โค้ด',
+      'แต่เว็บที่สร้างด้วย Claude ไม่ได้ติด Google อัตโนมัติ เพราะ Google ยังไม่รู้ว่าเว็บมีอยู่ และไม่มี keyword strategy',
+      'Claude ช่วยด้าน technical ได้ดี — แต่ keyword research, content strategy, Local SEO และ GEO ต้องการผู้เชี่ยวชาญวางแผน',
+      'วิธีที่ได้ผลที่สุดคือ ใช้ Claude สร้างเว็บ + ให้ SEO consultant วาง strategy ว่าต้องทำอะไรต่อ',
+    ],
+    faqs: thamWebClaudeFaqs,
+    bodyVariant: 'tham-web-claude',
+    cta: {
+      headline: 'ทำเว็บด้วย Claude แล้ว อยากให้มีคนเจอจริงๆ?',
+      description:
+        'Discovery Audit วิเคราะห์ว่าเว็บที่คุณสร้างขาดอะไร และต้องทำ SEO ตรงไหนก่อนให้ลูกค้าเจอ',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
   {
     title: 'เพิ่มยอดขายบน Google Maps ให้ลูกค้าใกล้ฉันหาเจอ!',
     slug: 'increase-sale-google-maps',

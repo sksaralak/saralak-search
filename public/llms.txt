@@ -3,22 +3,35 @@
 > Saralak Search is a Thailand-based SEO, AEO, GEO and AI Search consultancy led by Saralak Kaewkum.
 
 ## Core Services
-- [Discovery Audit](https://saralak-search.com/discovery-audit): SEO, GEO, AEO and Google Maps visibility audit.
-- [SEO, GEO and AEO Services](https://saralak-search.com/services): Monthly visibility growth service.
+- [Discovery Audit](https://saralak-search.com/discovery-audit): SEO, GEO, AEO and Google Maps visibility audit for Thai businesses.
+- [รับทำ SEO](https://saralak-search.com/services/seo): Monthly SEO retainer — keyword research, on-page optimisation, technical SEO.
+- [รับทำ Local SEO](https://saralak-search.com/services/local-seo): Local search visibility for businesses serving customers in a specific area.
+- [รับทำ Google Maps](https://saralak-search.com/services/google-maps): Google Business Profile optimisation and Google Maps ranking.
+- [รับทำ GEO](https://saralak-search.com/services/geo): Generative Engine Optimisation — making AI Search (ChatGPT, Gemini, Perplexity) cite and recommend your brand.
+- [รับเขียนบทความ SEO](https://saralak-search.com/services/content-marketing): SEO content writing with keyword cluster strategy for Thai businesses.
 
 ## Founder
 - [About Saralak Kaewkum](https://saralak-search.com/about): Founder profile, experience, expertise and contact details.
 
-## Core Guides
-- [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): Definition of GEO for Thai businesses.
-- [AEO คืออะไร](https://saralak-search.com/blog/what-is-aeo): Definition and implementation guide for AEO.
-- [SEO GEO AEO คืออะไร](https://saralak-search.com/blog/seo-geo-aeo): Comparison of SEO, GEO and AEO.
-- [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์](https://saralak-search.com/blog/how-to-do-geo): Practical GEO guide.
+## SEO Guides
+- [SEO คืออะไร](https://saralak-search.com/blog/what-is-seo): SEO fundamentals and how to rank on Google for Thai businesses.
+- [ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร](https://saralak-search.com/blog/seo-not-working): 8 root causes of SEO failure with diagnostic steps.
+- [ทำเว็บด้วย Claude ยังไงให้มีคนเข้า](https://saralak-search.com/blog/tham-web-claude): How to build a website with Claude AI and what SEO steps are needed to get traffic.
+- [Claude ทำ SEO ให้ได้จริงไหม](https://saralak-search.com/blog/ai-website-seo): Analysis of whether Claude can replace an SEO specialist, with real case evidence.
+
+## GEO & AEO Guides
+- [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): Definition of Generative Engine Optimisation for Thai businesses.
+- [AEO คืออะไร](https://saralak-search.com/blog/what-is-aeo): Definition and implementation guide for Answer Engine Optimisation.
+- [SEO GEO AEO คืออะไร](https://saralak-search.com/blog/seo-geo-aeo): Comparison of SEO, GEO and AEO — differences and which to start with.
+- [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์](https://saralak-search.com/blog/how-to-do-geo): Practical GEO implementation guide for Thai businesses.
+- [ทำ GEO ที่ไหนดี](https://saralak-search.com/blog/geo-agency-thailand): How to choose a GEO agency in Thailand.
+- [GEO Checklist สำหรับเว็บไซต์ไทย](https://saralak-search.com/blog/geo-checklist-thailand): 40-item GEO readiness checklist before AI cites your website.
+- [llms.txt คืออะไร](https://saralak-search.com/blog/llms-txt-thailand): What llms.txt is and how to implement it for Thai websites.
 
 ## Local SEO Guides
-- [เพิ่มยอดขายบน Google Maps](https://saralak-search.com/blog/increase-sale-google-maps): Google Maps KPI guide.
-- [Local SEO เหมาะกับธุรกิจไหน](https://saralak-search.com/blog/local-seo-customer-intent): Local intent guide.
-- [เพิ่มยอดขายร้านอาหารด้วย Google Maps](https://saralak-search.com/blog/increase-sale-restaurant): Restaurant Local SEO guide.
+- [เพิ่มยอดขายบน Google Maps](https://saralak-search.com/blog/increase-sale-google-maps): Google Maps KPI guide — Calls, Directions, Website Clicks.
+- [Local SEO เหมาะกับธุรกิจไหน](https://saralak-search.com/blog/local-seo-customer-intent): Local intent guide — which businesses benefit most from Local SEO.
+- [เพิ่มยอดขายร้านอาหารด้วย Google Maps](https://saralak-search.com/blog/increase-sale-restaurant): Restaurant-specific Google Maps optimisation guide.
 
 ## Contact
-- [Contact Saralak Search](https://saralak-search.com/contact)
+- [Contact Saralak Search](https://saralak-search.com/contact): Contact via LINE for Discovery Audit and consulting.

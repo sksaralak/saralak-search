@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 import { brand } from '../content/site'
 import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
-import CookieConsent from './CookieConsent'
+import CookieConsent, { CONSENT_KEY } from './CookieConsent'
 import FloatingLineButton from './FloatingLineButton'
 import FontLoader from './FontLoader'
 import ScrollToTop from './ScrollToTop'
@@ -340,6 +340,16 @@ export default function Layout() {
             <div className="flex gap-4">
               <Link to="/privacy" className="text-xs text-neutral-700 hover:text-neutral-400">Privacy Policy</Link>
               <Link to="/privacy#cookies" className="text-xs text-neutral-700 hover:text-neutral-400">Cookie Policy</Link>
+              <button
+                type="button"
+                onClick={() => {
+                  localStorage.removeItem(CONSENT_KEY)
+                  window.dispatchEvent(new Event('cookie_settings_open'))
+                }}
+                className="text-xs text-neutral-700 hover:text-neutral-400"
+              >
+                Cookie Settings
+              </button>
             </div>
           </div>
         </div>

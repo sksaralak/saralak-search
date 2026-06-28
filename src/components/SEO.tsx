@@ -24,7 +24,7 @@ export default function SEO({
   jsonLd,
 }: SEOProps) {
   const url = `${baseUrl}${path}`
-  const imagePath = image ?? '/og-image.png'
+  const imagePath = image ?? '/image/og/saralak-search-homepage-og.png'
   const imageUrl = imagePath.startsWith('http') ? imagePath : `${baseUrl}${imagePath}`
 
   return (
