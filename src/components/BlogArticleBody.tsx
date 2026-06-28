@@ -4919,20 +4919,20 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
         </P>
         <div className="grid gap-4">
           {steps.map((step) => (
-            <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
+            <div key={step.num} className="overflow-hidden rounded-lg border border-neutral-200 bg-white p-5">
               <div className="flex items-start gap-4">
                 <span className="shrink-0 text-2xl font-bold text-teal-700">{step.num}</span>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="font-semibold text-neutral-950">{step.title}</p>
-                  <div className="mt-2 rounded-md border border-neutral-100 bg-neutral-50 px-3 py-2">
+                  <div className="mt-2 overflow-hidden rounded-md border border-neutral-100 bg-neutral-50 px-3 py-2">
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
                       Prompt ตัวอย่าง
                     </p>
-                    <p className="thai-readable text-sm italic text-neutral-600">
+                    <p className="thai-readable break-words text-sm italic text-neutral-600">
                       "{step.prompt}"
                     </p>
                   </div>
-                  <p className="thai-readable mt-2 text-sm text-teal-700">→ {step.result}</p>
+                  <p className="thai-readable mt-2 break-words text-sm text-teal-700">→ {step.result}</p>
                 </div>
               </div>
             </div>

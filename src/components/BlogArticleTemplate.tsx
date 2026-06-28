@@ -13,7 +13,7 @@ type BlogArticleTemplateProps = {
 
 export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleTemplateProps) {
   return (
-    <main className="overflow-x-clip">
+    <main className="overflow-x-hidden">
       <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-24 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500">
@@ -91,7 +91,7 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
         </section>
       ) : null}
 
-      <section className="border-y border-neutral-200 bg-white">
+      <section className="overflow-x-hidden border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           <BlogArticleBody post={post} />
         </div>
