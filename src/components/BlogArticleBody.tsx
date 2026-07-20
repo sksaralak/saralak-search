@@ -5150,7 +5150,8 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
     {
       num: '01',
       title: 'ทำ Keyword Research ให้ตรง Search Intent',
-      body: 'ก่อนเขียนบทความหรือปรับหน้าเว็บ ต้องรู้ก่อนว่าลูกค้าค้นหาด้วยคำว่าอะไร และคำนั้นมี Search Intent แบบไหน — ต้องการข้อมูล กำลังเปรียบเทียบ หรือพร้อมซื้อแล้ว การเลือกคีย์เวิร์ดผิด ต่อให้มี Traffic เพิ่มขึ้นก็อาจไม่เกิดยอดขาย',
+      body: 'ก่อนเขียนบทความหรือปรับหน้าเว็บ ต้องรู้ก่อนว่าลูกค้าค้นหาด้วยคำว่าอะไร และคำนั้นมี Search Intent แบบไหน — ต้องการข้อมูล (Informational) กำลังเปรียบเทียบ (Commercial) หรือพร้อมซื้อแล้ว (Transactional) การเลือกคีย์เวิร์ดผิดประเภท ต่อให้มี Traffic เพิ่มขึ้นก็อาจไม่เกิดยอดขาย เพราะพาคนที่ยังไม่พร้อมซื้อเข้ามาในหน้าที่ออกแบบมาสำหรับคนพร้อมซื้อ',
+      tip: 'เริ่มจาก Google Search Console → Performance ดูว่าตอนนี้เว็บไซต์ได้ Impression จากคำค้นไหนอยู่แล้วบ้าง แล้วขยายคีย์เวิร์ดที่ใกล้เคียงจากตรงนั้น จะเร็วกว่าการเริ่มจากศูนย์',
     },
     {
       num: '02',
@@ -5158,49 +5159,60 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
       body: (
         <>
           Title Tag, Meta Description, H1-H3 และเนื้อหาในหน้าเว็บต้องสื่อสารตรงกับคีย์เวิร์ดเป้าหมาย
+          รวมถึง URL ที่สั้นและสื่อความหมาย, Alt Text ของรูปภาพ และการจัดโครงสร้างหัวข้อให้ Google อ่านลำดับความสำคัญของเนื้อหาได้ถูกต้อง
           หากยังไม่แน่ใจว่า On-Page SEO ควรมีอะไรบ้าง อ่านพื้นฐานได้ที่{' '}
           <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
             SEO คืออะไร? เข้าใจพื้นฐาน SEO
           </Link>
         </>
       ),
+      tip: 'หน้าที่มี Impression สูงแต่ Click ต่ำ (ดูได้จาก Search Console) มักเป็นหน้าที่ควรแก้ Title กับ Meta Description ก่อน เพราะอันดับมาแล้วแต่คนยังไม่คลิก',
     },
     {
       num: '03',
       title: 'สร้าง Content ที่ตอบคำถามลูกค้าจริง',
-      body: 'Google ให้น้ำหนักกับเนื้อหาที่มี E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) เนื้อหาที่ตอบคำถามได้ตรงจุด มีตัวอย่างจริง และแสดงความเชี่ยวชาญ มักได้เปรียบกว่าเนื้อหาที่เขียนกว้างๆ เพื่อใส่คีย์เวิร์ดอย่างเดียว',
+      body: 'Google ให้น้ำหนักกับเนื้อหาที่มี E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) เนื้อหาที่ตอบคำถามได้ตรงจุด มีตัวอย่างจริง ข้อมูลอ้างอิง และแสดงความเชี่ยวชาญของผู้เขียน มักได้เปรียบกว่าเนื้อหาที่เขียนกว้างๆ เพื่อใส่คีย์เวิร์ดอย่างเดียว โดยเฉพาะในคีย์เวิร์ดที่มีการแข่งขันสูงซึ่งมีเว็บไซต์ใหญ่ครองอันดับอยู่แล้ว',
+      tip: 'ก่อนเขียน ลองค้นหาคีย์เวิร์ดเป้าหมายใน Google แล้วดูว่าหน้าที่ติดอันดับ 1-3 ตอบคำถามแบบไหน เนื้อหาของคุณต้องให้คุณค่ามากกว่านั้น ไม่ใช่แค่ยาวกว่า',
     },
     {
       num: '04',
       title: 'แก้ Technical SEO ให้ Google Crawl ได้ง่าย',
-      body: 'ตรวจว่าเว็บไซต์ไม่มีปัญหาที่ขัดขวางการ Crawl และ Index เช่น ความเร็วโหลดหน้าเว็บ Core Web Vitals การรองรับมือถือ Sitemap และ Robots.txt เว็บไซต์ที่มีปัญหาทางเทคนิคจะเสียเปรียบคู่แข่งแม้เนื้อหาจะดีกว่า',
+      body: 'ตรวจว่าเว็บไซต์ไม่มีปัญหาที่ขัดขวางการ Crawl และ Index เช่น ความเร็วโหลดหน้าเว็บ Core Web Vitals การรองรับมือถือ Sitemap และ Robots.txt ที่ไม่บล็อกหน้าสำคัญโดยไม่ตั้งใจ เว็บไซต์ที่มีปัญหาทางเทคนิคจะเสียเปรียบคู่แข่งแม้เนื้อหาจะดีกว่า เพราะ Google อาจไม่สามารถเก็บข้อมูลหน้านั้นได้ครบถ้วนตั้งแต่แรก',
+      tip: 'ทดสอบความเร็วเว็บไซต์ที่ PageSpeed Insights (pagespeed.web.dev) และตรวจ Coverage ใน Search Console ว่ามีหน้าใดถูก Exclude หรือมี Error หรือไม่',
     },
     {
       num: '05',
       title: 'เพิ่ม Internal Link อย่างเป็นระบบ',
-      body: 'การลิงก์จากบทความหนึ่งไปยังหน้าที่เกี่ยวข้องภายในเว็บไซต์เดียวกัน ช่วยให้ Google เข้าใจโครงสร้างเว็บไซต์ดีขึ้น ส่งต่อความน่าเชื่อถือไปยังหน้าสำคัญ และพาผู้อ่านไปยังเนื้อหาที่เกี่ยวข้องต่อ — บทความนี้เองก็เชื่อมโยงไปยังบทความอื่นในหมวด SEO และ GEO ด้วยหลักการเดียวกัน',
+      body: 'การลิงก์จากบทความหนึ่งไปยังหน้าที่เกี่ยวข้องภายในเว็บไซต์เดียวกัน ช่วยให้ Google เข้าใจโครงสร้างเว็บไซต์และความสัมพันธ์ระหว่างหน้าได้ดีขึ้น ส่งต่อความน่าเชื่อถือจากหน้าที่มี Traffic สูงไปยังหน้าที่ต้องการดันอันดับ และพาผู้อ่านไปยังเนื้อหาที่เกี่ยวข้องต่อแทนที่จะออกจากเว็บไซต์ทันที — บทความนี้เองก็เชื่อมโยงไปยังบทความอื่นในหมวด SEO และ GEO ด้วยหลักการเดียวกัน',
+      tip: 'เลือกหน้าที่มี Traffic หรือ Authority สูงที่สุดในเว็บไซต์ แล้วลิงก์จากหน้านั้นไปยังหน้าที่อยากดันอันดับ วิธีนี้ส่งต่อคุณค่าได้ตรงจุดกว่าการลิงก์แบบสุ่ม',
     },
     {
       num: '06',
       title: 'สร้าง Backlink คุณภาพ',
-      body: 'Backlink คือสัญญาณที่บอก Google ว่าเว็บไซต์อื่นไว้วางใจและอ้างอิงเนื้อหาของคุณ เว็บไซต์ที่มีเนื้อหาดีแต่ไม่มี Backlink สนับสนุนจะสู้กับคู่แข่งที่มี Authority สูงกว่าได้ยาก โดยเฉพาะคีย์เวิร์ดที่มีการแข่งขันสูง',
+      body: 'Backlink คือสัญญาณที่บอก Google ว่าเว็บไซต์อื่นไว้วางใจและอ้างอิงเนื้อหาของคุณ เว็บไซต์ที่มีเนื้อหาดีแต่ไม่มี Backlink สนับสนุนจะสู้กับคู่แข่งที่มี Authority สูงกว่าได้ยาก โดยเฉพาะคีย์เวิร์ดที่มีการแข่งขันสูง Backlink ที่มีคุณภาพควรมาจากเว็บไซต์ที่เกี่ยวข้องกับธุรกิจ มี Authority จริง ไม่ใช่การซื้อลิงก์จำนวนมากจากเว็บไซต์ที่ไม่เกี่ยวข้อง ซึ่งอาจเสี่ยงถูก Google ลงโทษ',
+      tip: 'ตรวจ Backlink ของคู่แข่งที่ติดอันดับ 1-3 ผ่าน Ahrefs Free หรือ Moz Link Explorer เพื่อดูว่าต้องมี Authority ระดับไหนถึงจะแข่งขันได้',
     },
     {
       num: '07',
       title: 'เตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search',
       body: (
         <>
-          นอกจาก Google Search แบบเดิม ผู้ใช้งานเริ่มค้นหาผ่าน ChatGPT, Gemini และ Perplexity มากขึ้น การเตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search อ่านเพิ่มเติมได้ที่{' '}
+          นอกจาก Google Search แบบเดิม ผู้ใช้งานเริ่มค้นหาผ่าน ChatGPT, Gemini และ Perplexity มากขึ้น
+          Traffic ในอนาคตจึงไม่ได้มาจาก Google Search เพียงอย่างเดียว การเตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search
+          ตั้งแต่การตอบคำถามให้ชัดเจน มี FAQ ที่ครอบคลุม และมี Schema Markup ที่ถูกต้อง
+          จะเพิ่มโอกาสให้แบรนด์ถูกอ้างอิงในคำตอบของ AI ด้วย อ่านเพิ่มเติมได้ที่{' '}
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
           {' '}และ{' '}
           <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
         </>
       ),
+      tip: 'ลองถามคำถามที่เกี่ยวกับธุรกิจของคุณใน ChatGPT หรือ Gemini ดูว่าแบรนด์ถูกกล่าวถึงไหม ถ้าไม่ถูกกล่าวถึงเลย นั่นคือจุดที่ต้องเริ่มทำ GEO',
     },
     {
       num: '08',
       title: 'ติดตามผลด้วย Google Search Console',
-      body: 'Traffic ที่เพิ่มขึ้นต้องวัดผลได้ ไม่ใช่แค่ความรู้สึก เปิด Google Search Console เพื่อดู Impression, Click, CTR และ Average Position ของแต่ละหน้า หากหน้าไหนมี Impression สูงแต่ Click ต่ำ มักเป็นสัญญาณว่าอันดับยังต่ำเกินไปหรือ Title/Meta Description ไม่ดึงดูดพอ',
+      body: 'Traffic ที่เพิ่มขึ้นต้องวัดผลได้ ไม่ใช่แค่ความรู้สึก เปิด Google Search Console เพื่อดู Impression, Click, CTR และ Average Position ของแต่ละหน้าอย่างสม่ำเสมอ หากหน้าไหนมี Impression สูงแต่ Click ต่ำ มักเป็นสัญญาณว่าอันดับยังต่ำเกินไปหรือ Title/Meta Description ไม่ดึงดูดพอเมื่อเทียบกับคู่แข่งในหน้าผลการค้นหา',
+      tip: 'ตั้งเป้าเช็ค Search Console อย่างน้อยเดือนละครั้ง แล้วเทียบ Impression และ Click กับเดือนก่อนหน้า เพื่อรู้ว่าแนวโน้มกำลังไปทางไหน',
     },
   ]
 
@@ -5212,13 +5224,16 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         <P>
           หลายธุรกิจอยากเพิ่ม Traffic SEO ให้เว็บไซต์ แต่ไม่รู้จะเริ่มจากตรงไหน
           บางเว็บไซต์เขียนบทความไปหลายสิบชิ้นแล้ว Traffic ก็ยังไม่ขยับ
+          บางเว็บไซต์มี Impression เพิ่มขึ้นใน Google Search Console แต่ Click แทบไม่ขึ้นเลย
           เพราะเพิ่ม Traffic SEO ไม่ใช่แค่การเขียนเนื้อหาให้เยอะขึ้น
-          แต่ต้องทำหลายด้านร่วมกันอย่างเป็นระบบ
+          แต่ต้องทำหลายด้านร่วมกันอย่างเป็นระบบ ตั้งแต่การเลือกคีย์เวิร์ด โครงสร้างเว็บไซต์
+          คุณภาพเนื้อหา ไปจนถึงความน่าเชื่อถือของแบรนด์
         </P>
         <P>
           บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริง
           ตั้งแต่ Keyword Research, On-Page SEO, Technical SEO, Internal Link
-          ไปจนถึงการวัดผล เพื่อให้เห็นภาพรวมว่าควรเริ่มจากจุดไหนก่อน
+          ไปจนถึงการวัดผล พร้อมตัวอย่างผลลัพธ์จริงจากเว็บไซต์ที่เคยมีปัญหาแบบเดียวกัน
+          เพื่อให้เห็นภาพรวมว่าควรเริ่มจากจุดไหนก่อน
         </P>
         <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
@@ -5230,8 +5245,32 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleSection title="เพิ่ม Traffic SEO ต้องรอนานแค่ไหนถึงจะเห็นผล?">
+        <P>
+          ก่อนเริ่มลงมือ ต้องตั้งความคาดหวังให้ถูกต้องก่อน เพราะ SEO ไม่ใช่ Google Ads
+          ที่จ่ายเงินแล้วเห็น Traffic เพิ่มวันเดียวกัน ระยะเวลาที่เห็นผลขึ้นอยู่กับอายุโดเมนและระดับการแข่งขันของคีย์เวิร์ด
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            { label: 'เว็บไซต์ใหม่', desc: '3-6 เดือนจึงเริ่มเห็น Organic Traffic ขยับขึ้นอย่างชัดเจน' },
+            { label: 'เว็บเก่าที่ปรับปรุงใหม่', desc: '1-3 เดือนหลังจากแก้ปัญหา Technical SEO และปรับเนื้อหา' },
+            { label: 'คีย์เวิร์ดแข่งขันสูง', desc: '6-12 เดือนหรือมากกว่า ขึ้นอยู่กับ Authority ของคู่แข่งในตลาด' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-teal-900">{item.label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้าทำ SEO มายังไม่ถึง 3 เดือนแล้วยังไม่เห็น Traffic เพิ่ม นั่นอาจเป็นเรื่องปกติ
+          แต่ถ้าผ่านมา 6 เดือนแล้วยังไม่มี Impression เพิ่มขึ้นเลยใน Google Search Console
+          นั่นคือสัญญาณว่ามีบางจุดในเช็คลิสต์นี้ที่ยังไม่ได้ทำ หรือทำไม่ถูกจุด
+        </P>
+      </ArticleSection>
+
       <ArticleSection title="8 วิธีเพิ่ม Traffic SEO ให้เว็บไซต์">
-        <P>นี่คือ 8 ขั้นตอนหลักที่ควรทำร่วมกัน เรียงจากพื้นฐานไปถึงขั้นที่ต่อยอดสำหรับยุค AI Search</P>
+        <P>นี่คือ 8 ขั้นตอนหลักที่ควรทำร่วมกัน เรียงจากพื้นฐานไปถึงขั้นที่ต่อยอดสำหรับยุค AI Search พร้อมวิธีเช็คด้วยตัวเองในแต่ละข้อ</P>
         <div className="grid gap-5">
           {steps.map((step) => (
             <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -5243,9 +5282,65 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
               >
                 {step.body}
               </p>
+              <div className="mt-3 rounded-md bg-teal-50 px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">วิธีเช็คด้วยตัวเอง</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.tip}</p>
+              </div>
             </div>
           ))}
         </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างผลลัพธ์จริงจากการเพิ่ม Traffic SEO">
+        <P>
+          เช็คลิสต์นี้ไม่ใช่แค่ทฤษฎี — นี่คือตัวอย่างผลลัพธ์จริงจากเว็บไซต์ที่เคยมีปัญหา Traffic ไม่โต
+          แล้วนำหลักการเดียวกันไปใช้
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+            <img
+              src="/proof/gsc-product-listing-growth.png"
+              alt="ตัวอย่างผลลัพธ์จริง: Organic Traffic เติบโตต่อเนื่องหลังแก้ Technical SEO และ Internal Link"
+              className="w-full"
+              loading="lazy"
+            />
+            <div className="px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · Technical SEO · 6 เดือน</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">Organic Traffic โตต่อเนื่องหลังแก้ Technical SEO</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+                เว็บไซต์ที่มีมานานแต่ขาด SEO พื้นฐาน ทำให้ Product Listing Page ไม่ถูก Index อย่างสมบูรณ์
+                หลังทำ Technical Audit ปรับ Metadata, Internal Link และ Information Architecture ให้รองรับ Search Intent
+                Organic Traffic เติบโตต่อเนื่องและ Product Listing Page ถูก Index ครบถ้วน
+              </p>
+              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+            <img
+              src="/proof/ranking-bangsaen-serp.png"
+              alt="ตัวอย่างผลลัพธ์จริง: อันดับขึ้นจาก #5 สู่ #1 หลังปรับ Content และ Internal Link"
+              className="w-full"
+              loading="lazy"
+            />
+            <div className="px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Local / Commercial Search · SEO Strategy · 3 เดือน</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">อันดับขึ้นจาก #5 สู่ #1 ในคีย์เวิร์ดที่แข่งขันสูง</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+                คำค้นหลักมี Search Demand สูงและมูลค่าทางธุรกิจมาก แต่เว็บไซต์ยังตามหลังคู่แข่งที่อยู่อันดับต้น
+                หลังปรับเนื้อหาให้ตอบ Search Intent เสริม Internal Link และ Supporting Content เพื่อเพิ่ม Topical Authority
+                พร้อม Backlink Support อันดับขึ้นจาก #5 สู่ #1 ภายใน 3 เดือน
+              </p>
+              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <P>
+          ทั้งสองกรณีใช้หลักการเดียวกับเช็คลิสต์ 8 ข้อด้านบน — ไม่มีทางลัด แต่เห็นผลจริงเมื่อทำครบทุกด้านและวัดผลต่อเนื่อง
+        </P>
       </ArticleSection>
 
       <ArticleCTA
@@ -5271,6 +5366,10 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
           พร้อมวัดผลผ่าน Google Search Console อย่างต่อเนื่อง เพื่อรู้ว่าควรปรับจุดไหนต่อ
         </P>
         <P>
+          อย่างที่เห็นจากตัวอย่างผลลัพธ์จริงด้านบน ทั้งการแก้ Technical SEO และการปรับ Content
+          ร่วมกับ Internal Link ล้วนใช้เวลาหลักเดือน ไม่ใช่หลักวัน — ความสม่ำเสมอคือปัจจัยสำคัญที่สุด
+        </P>
+        <P>
           ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยวางแผนและเร่งผลลัพธ์{' '}
           <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
           {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
@@ -5286,6 +5385,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
       <SourceBox items={[
         'Google Search Central documentation, checked July 2026',
         'Google Search Console documentation, checked July 2026',
+        'Saralak Search client case studies (anonymised), checked July 2026',
         'Saralak Search internal SEO audit observations, July 2026',
       ]} />
 

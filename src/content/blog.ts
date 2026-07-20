@@ -1070,7 +1070,7 @@ export const blogPosts: BlogPost[] = [
     category: 'SEO',
     excerpt:
       'เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่แค่เขียนบทความให้เยอะขึ้น แต่ต้องทำตั้งแต่ Keyword Research, On-Page SEO, Technical SEO ไปจนถึง Internal Link และการวัดผลอย่างต่อเนื่อง บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริงสำหรับธุรกิจไทย',
-    readingTime: '10 min read',
+    readingTime: '15 min read',
     publishedDate: '2026-07-20',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
