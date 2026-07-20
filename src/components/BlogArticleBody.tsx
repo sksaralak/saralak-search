@@ -5243,6 +5243,23 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
             เพิ่ม Internal Link และ Backlink คุณภาพ แล้ววัดผลต่อเนื่องผ่าน Google Search Console
           </p>
         </div>
+        <div className="overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm">
+          <img
+            src="/proof/gsc-product-listing-growth.png"
+            alt="ภาพจริงจาก Google Search Console: กราฟ Clicks และ Impressions เติบโตต่อเนื่องหลังทำ SEO ตามเช็คลิสต์นี้"
+            className="w-full"
+            loading="lazy"
+          />
+          <div className="px-6 py-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ภาพจริงจาก Google Search Console</p>
+            <p className="thai-readable mt-2 text-base leading-7 text-neutral-800">
+              กราฟด้านบนคือข้อมูลจริงจาก Google Search Console ของลูกค้ารายหนึ่ง — เส้นสีน้ำเงินคือ Clicks
+              และเส้นสีม่วงคือ Impressions หลังทำ Technical SEO, ปรับ Metadata และเพิ่ม Internal Link
+              ตามเช็คลิสต์ด้านล่างนี้ Traffic เติบโตขึ้นต่อเนื่องภายในไม่กี่เดือน ไม่ใช่ทฤษฎี
+              แต่เป็นผลลัพธ์ที่วัดได้จริงจากบัญชี Search Console ของลูกค้า (ตัวเลขถูกเบลอเพื่อรักษาความลับของลูกค้า)
+            </p>
+          </div>
+        </div>
       </ArticleSection>
 
       <ArticleSection title="เพิ่ม Traffic SEO ต้องรอนานแค่ไหนถึงจะเห็นผล?">
@@ -5341,6 +5358,43 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         <P>
           ทั้งสองกรณีใช้หลักการเดียวกับเช็คลิสต์ 8 ข้อด้านบน — ไม่มีทางลัด แต่เห็นผลจริงเมื่อทำครบทุกด้านและวัดผลต่อเนื่อง
         </P>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อผิดพลาดที่พบบ่อย ทำให้ Traffic SEO ไม่โตสักที">
+        <P>
+          นอกจากเช็คลิสต์ 8 ข้อด้านบน หลายเว็บไซต์ที่ทำ SEO มานานแต่ Traffic ไม่ขยับ
+          มักติดกับดักเดิมๆ ที่ดูเผินๆ เหมือนไม่ใช่เรื่องใหญ่ แต่ส่งผลต่อผลลัพธ์โดยตรง
+        </P>
+        <div className="grid gap-4">
+          {[
+            {
+              title: 'เขียนบทความเยอะ แต่ไม่ตรง Search Intent',
+              body: 'ตีพิมพ์เนื้อหาจำนวนมากเพื่อให้ครบตามแผน แต่ไม่ได้เช็คก่อนว่าคนที่ค้นคำนั้นต้องการอะไรจริงๆ ผลคือมี Impression ขึ้นบ้างแต่ Click แทบไม่มี เพราะเนื้อหาไม่ตรงกับสิ่งที่ผู้ค้นหาคาดหวังเห็นในหน้าผลลัพธ์',
+            },
+            {
+              title: 'เจาะคีย์เวิร์ดที่แข่งขันสูงเกินไปตั้งแต่แรก',
+              body: 'เว็บไซต์ใหม่หรือ Authority ยังต่ำ แต่เลือกเขียนแข่งกับคีย์เวิร์ดที่มีเว็บไซต์ใหญ่ครองอันดับอยู่แล้ว ทำให้ไม่ติดหน้าแรกเลยแม้เนื้อหาจะดี ควรเริ่มจากคีย์เวิร์ดหางยาว (Long-tail) ที่แข่งขันน้อยกว่าก่อน แล้วค่อยขยับไปคีย์เวิร์ดที่ยากขึ้นเมื่อ Authority สูงขึ้น',
+            },
+            {
+              title: 'ลืมทำ Internal Link ระหว่างบทความ',
+              body: 'เขียนบทความแยกกันเป็นเกาะๆ โดยไม่เชื่อมโยงถึงกัน ทำให้ Google ไม่เข้าใจว่าหน้าไหนสำคัญที่สุดในเว็บไซต์ และผู้อ่านก็ไม่ถูกพาไปอ่านเนื้อหาอื่นต่อ ทำให้ Bounce Rate สูงและเสียโอกาสในการส่งต่อ Authority ระหว่างหน้า',
+            },
+            {
+              title: 'โฟกัสแต่เนื้อหา ไม่แก้ปัญหา Technical SEO',
+              body: 'ทุ่มเวลาเขียนเนื้อหาคุณภาพดี แต่เว็บไซต์โหลดช้า ไม่รองรับมือถือ หรือมีหน้าที่ Google Crawl ไม่ได้ ต่อให้เนื้อหาดีแค่ไหนก็อาจไม่ถูก Index หรือได้อันดับต่ำกว่าที่ควรจะเป็น',
+            },
+            {
+              title: 'ไม่เช็ค Search Console อย่างสม่ำเสมอ',
+              body: 'ทำ SEO แล้วปล่อยผ่าน ไม่ได้กลับมาดูว่าคำไหนได้ Impression แต่ Click ต่ำ หน้าไหนหลุดอันดับ หรือมี Error ใน Coverage ทำให้พลาดโอกาสแก้ไขจุดที่ใกล้จะเห็นผลอยู่แล้ว',
+            },
+          ].map((item, i) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p aria-hidden="true" className="text-xs font-semibold uppercase tracking-wide text-teal-800">{i + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
       </ArticleSection>
 
       <ArticleCTA
