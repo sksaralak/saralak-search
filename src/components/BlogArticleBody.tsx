@@ -1842,6 +1842,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>SEO คือจุดเริ่มต้นที่จะทำให้เว็บไซต์ไม่เป็นบ้านร้างบนโลกออนไลน์ แต่กลายเป็นช่องทางที่ช่วยให้ธุรกิจถูกค้นพบ สร้างความน่าเชื่อถือ และเพิ่มโอกาสเติบโตได้อย่างยั่งยืน</P>
         <ReadMoreLinks items={[
           { to: '/services/seo', label: 'บริการ SEO สำหรับธุรกิจไทย — Saralak Search' },
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
@@ -5144,6 +5145,155 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
+  const steps = [
+    {
+      num: '01',
+      title: 'ทำ Keyword Research ให้ตรง Search Intent',
+      body: 'ก่อนเขียนบทความหรือปรับหน้าเว็บ ต้องรู้ก่อนว่าลูกค้าค้นหาด้วยคำว่าอะไร และคำนั้นมี Search Intent แบบไหน — ต้องการข้อมูล กำลังเปรียบเทียบ หรือพร้อมซื้อแล้ว การเลือกคีย์เวิร์ดผิด ต่อให้มี Traffic เพิ่มขึ้นก็อาจไม่เกิดยอดขาย',
+    },
+    {
+      num: '02',
+      title: 'ปรับ On-Page SEO ให้ครบ',
+      body: (
+        <>
+          Title Tag, Meta Description, H1-H3 และเนื้อหาในหน้าเว็บต้องสื่อสารตรงกับคีย์เวิร์ดเป้าหมาย
+          หากยังไม่แน่ใจว่า On-Page SEO ควรมีอะไรบ้าง อ่านพื้นฐานได้ที่{' '}
+          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
+            SEO คืออะไร? เข้าใจพื้นฐาน SEO
+          </Link>
+        </>
+      ),
+    },
+    {
+      num: '03',
+      title: 'สร้าง Content ที่ตอบคำถามลูกค้าจริง',
+      body: 'Google ให้น้ำหนักกับเนื้อหาที่มี E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) เนื้อหาที่ตอบคำถามได้ตรงจุด มีตัวอย่างจริง และแสดงความเชี่ยวชาญ มักได้เปรียบกว่าเนื้อหาที่เขียนกว้างๆ เพื่อใส่คีย์เวิร์ดอย่างเดียว',
+    },
+    {
+      num: '04',
+      title: 'แก้ Technical SEO ให้ Google Crawl ได้ง่าย',
+      body: 'ตรวจว่าเว็บไซต์ไม่มีปัญหาที่ขัดขวางการ Crawl และ Index เช่น ความเร็วโหลดหน้าเว็บ Core Web Vitals การรองรับมือถือ Sitemap และ Robots.txt เว็บไซต์ที่มีปัญหาทางเทคนิคจะเสียเปรียบคู่แข่งแม้เนื้อหาจะดีกว่า',
+    },
+    {
+      num: '05',
+      title: 'เพิ่ม Internal Link อย่างเป็นระบบ',
+      body: 'การลิงก์จากบทความหนึ่งไปยังหน้าที่เกี่ยวข้องภายในเว็บไซต์เดียวกัน ช่วยให้ Google เข้าใจโครงสร้างเว็บไซต์ดีขึ้น ส่งต่อความน่าเชื่อถือไปยังหน้าสำคัญ และพาผู้อ่านไปยังเนื้อหาที่เกี่ยวข้องต่อ — บทความนี้เองก็เชื่อมโยงไปยังบทความอื่นในหมวด SEO และ GEO ด้วยหลักการเดียวกัน',
+    },
+    {
+      num: '06',
+      title: 'สร้าง Backlink คุณภาพ',
+      body: 'Backlink คือสัญญาณที่บอก Google ว่าเว็บไซต์อื่นไว้วางใจและอ้างอิงเนื้อหาของคุณ เว็บไซต์ที่มีเนื้อหาดีแต่ไม่มี Backlink สนับสนุนจะสู้กับคู่แข่งที่มี Authority สูงกว่าได้ยาก โดยเฉพาะคีย์เวิร์ดที่มีการแข่งขันสูง',
+    },
+    {
+      num: '07',
+      title: 'เตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search',
+      body: (
+        <>
+          นอกจาก Google Search แบบเดิม ผู้ใช้งานเริ่มค้นหาผ่าน ChatGPT, Gemini และ Perplexity มากขึ้น การเตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search อ่านเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}และ{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+        </>
+      ),
+    },
+    {
+      num: '08',
+      title: 'ติดตามผลด้วย Google Search Console',
+      body: 'Traffic ที่เพิ่มขึ้นต้องวัดผลได้ ไม่ใช่แค่ความรู้สึก เปิด Google Search Console เพื่อดู Impression, Click, CTR และ Average Position ของแต่ละหน้า หากหน้าไหนมี Impression สูงแต่ Click ต่ำ มักเป็นสัญญาณว่าอันดับยังต่ำเกินไปหรือ Title/Meta Description ไม่ดึงดูดพอ',
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="เพิ่ม Traffic SEO ให้เว็บไซต์ เริ่มจากตรงไหนดี?">
+        <P>
+          หลายธุรกิจอยากเพิ่ม Traffic SEO ให้เว็บไซต์ แต่ไม่รู้จะเริ่มจากตรงไหน
+          บางเว็บไซต์เขียนบทความไปหลายสิบชิ้นแล้ว Traffic ก็ยังไม่ขยับ
+          เพราะเพิ่ม Traffic SEO ไม่ใช่แค่การเขียนเนื้อหาให้เยอะขึ้น
+          แต่ต้องทำหลายด้านร่วมกันอย่างเป็นระบบ
+        </P>
+        <P>
+          บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริง
+          ตั้งแต่ Keyword Research, On-Page SEO, Technical SEO, Internal Link
+          ไปจนถึงการวัดผล เพื่อให้เห็นภาพรวมว่าควรเริ่มจากจุดไหนก่อน
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            เพิ่ม Traffic SEO ทำได้โดยทำ Keyword Research ให้ตรง Search Intent
+            ปรับ On-Page และ Technical SEO ให้ครบ สร้างเนื้อหาที่มี E-E-A-T
+            เพิ่ม Internal Link และ Backlink คุณภาพ แล้ววัดผลต่อเนื่องผ่าน Google Search Console
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="8 วิธีเพิ่ม Traffic SEO ให้เว็บไซต์">
+        <P>นี่คือ 8 ขั้นตอนหลักที่ควรทำร่วมกัน เรียงจากพื้นฐานไปถึงขั้นที่ต่อยอดสำหรับยุค AI Search</P>
+        <div className="grid gap-5">
+          {steps.map((step) => (
+            <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p
+                className="thai-readable mt-2 text-sm leading-6 text-neutral-700"
+                style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
+              >
+                {step.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?"
+        description="Discovery Audit ช่วยวิเคราะห์ Keyword โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด"
+      />
+
+      <ArticleSection title="ทำครบแล้วแต่ Traffic ยังไม่ขึ้น?">
+        <P>
+          ถ้าทำตามเช็คลิสต์นี้แล้วแต่ Traffic ยังไม่ขยับ ปัญหาอาจซับซ้อนกว่าที่คิด
+          เช่น เว็บไซต์ยังไม่ถูก Index, คีย์เวิร์ดแข่งขันสูงเกินไปสำหรับ Authority ปัจจุบัน
+          หรือมีปัญหา Technical SEO ที่มองไม่เห็นด้วยตาเปล่า
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุและวิธีแก้' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: เพิ่ม Traffic SEO ต้องทำต่อเนื่องและวัดผลสม่ำเสมอ">
+        <P>
+          เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่งานที่ทำครั้งเดียวแล้วจบ
+          แต่ต้องทำ Keyword Research, On-Page SEO, Technical SEO, Internal Link และ Backlink ร่วมกัน
+          พร้อมวัดผลผ่าน Google Search Console อย่างต่อเนื่อง เพื่อรู้ว่าควรปรับจุดไหนต่อ
+        </P>
+        <P>
+          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยวางแผนและเร่งผลลัพธ์{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Central documentation, checked July 2026',
+        'Google Search Console documentation, checked July 2026',
+        'Saralak Search internal SEO audit observations, July 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเรื่องเพิ่ม Traffic SEO" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -5186,6 +5336,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'tham-web-claude') {
     return <ThamWebClaudeArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-seo-traffic') {
+    return <IncreaseSeoTrafficArticle post={post} />
   }
 
   return (

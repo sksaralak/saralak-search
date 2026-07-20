@@ -19,6 +19,8 @@ const blogSlugs = [
   'how-to-do-geo',
   'what-is-aeo',
   'what-is-seo',
+  'tham-web-claude',
+  'increase-seo-traffic',
 ]
 
 const routes = [

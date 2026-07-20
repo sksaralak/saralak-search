@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'tham-web-claude'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'tham-web-claude' | 'increase-seo-traffic'
   cta?: {
     headline: string
     description: string
@@ -561,6 +561,34 @@ export const thamWebClaudeFaqs: FAQItem[] = [
   },
 ]
 
+export const increaseSeoTrafficFaqs: FAQItem[] = [
+  {
+    question: 'เพิ่ม Traffic SEO ต้องรอกี่เดือนถึงจะเห็นผล?',
+    answer:
+      'ส่วนใหญ่เริ่มเห็นสัญญาณภายใน 3-6 เดือน ขึ้นอยู่กับการแข่งขันของคีย์เวิร์ด อายุโดเมน และความต่อเนื่องในการทำ Content และ Technical SEO เว็บไซต์ใหม่มักใช้เวลานานกว่าเว็บที่มี Authority อยู่แล้ว',
+  },
+  {
+    question: 'เพิ่ม Traffic SEO โดยไม่ต้องจ่ายค่าโฆษณาได้จริงไหม?',
+    answer:
+      'ได้จริง เพราะ Organic Traffic จาก SEO ไม่ต้องจ่ายต่อคลิกเหมือน Google Ads แต่ต้องลงทุนเวลาและความสม่ำเสมอในการทำ Keyword Research, Content และ Technical SEO แทน ผลลัพธ์มักยั่งยืนกว่าเพราะไม่หายไปทันทีที่หยุดจ่ายเงิน',
+  },
+  {
+    question: 'ทำไม Traffic ไม่ขึ้นทั้งที่เขียนบทความไปหลายชิ้นแล้ว?',
+    answer:
+      'สาเหตุที่พบบ่อยคือคีย์เวิร์ดกว้างเกินไป เนื้อหาไม่ตรง Search Intent ไม่มี Internal Link เชื่อมโยงบทความ หรือเว็บไซต์มีปัญหา Technical SEO ที่ขัดขวางการจัดอันดับ ลองตรวจสอบ Google Search Console เพื่อดูว่าเว็บได้ Impression แต่ไม่ได้คลิก หรือไม่ได้ Impression เลย',
+  },
+  {
+    question: 'Internal Link ช่วยเพิ่ม Traffic SEO ได้จริงไหม?',
+    answer:
+      'ช่วยได้ เพราะ Internal Link ทำให้ Google เข้าใจโครงสร้างเว็บไซต์ดีขึ้น ส่งต่อความน่าเชื่อถือไปยังหน้าที่สำคัญ และช่วยให้ผู้อ่านอยู่ในเว็บไซต์นานขึ้นด้วยการอ่านบทความที่เกี่ยวข้องต่อ ซึ่งเป็นสัญญาณเชิงบวกต่อการจัดอันดับ',
+  },
+  {
+    question: 'เพิ่ม Traffic SEO เองได้ไหม หรือต้องจ้างผู้เชี่ยวชาญ?',
+    answer:
+      'ทำเองได้ในระดับพื้นฐาน เช่น ปรับ Title, Meta Description และเขียนบทความตอบ Search Intent แต่ถ้าต้องการโตเร็วขึ้นหรือเว็บไซต์มีปัญหา Technical SEO ที่ซับซ้อน ผู้เชี่ยวชาญจะช่วยระบุจุดที่ควรแก้ก่อนและลดเวลาลองผิดลองถูก',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1032,6 +1060,36 @@ export const blogPosts: BlogPost[] = [
       headline: 'ต้องการให้ ChatGPT อ้างอิงเว็บไซต์ของธุรกิจคุณ?',
       description:
         'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน พร้อมระบุโอกาสและขั้นตอนที่ควรเริ่มก่อนอย่างเป็นระบบ',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]',
+    slug: 'increase-seo-traffic',
+    category: 'SEO',
+    excerpt:
+      'เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่แค่เขียนบทความให้เยอะขึ้น แต่ต้องทำตั้งแต่ Keyword Research, On-Page SEO, Technical SEO ไปจนถึง Internal Link และการวัดผลอย่างต่อเนื่อง บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริงสำหรับธุรกิจไทย',
+    readingTime: '10 min read',
+    publishedDate: '2026-07-20',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อ] | Saralak Search',
+    metaDescription:
+      'เพิ่ม Traffic SEO ให้เว็บไซต์ด้วยเช็คลิสต์ 8 ข้อที่ใช้ได้จริง ตั้งแต่ Keyword Research, On-Page SEO, Technical SEO, Internal Link ไปจนถึงการวัดผลด้วย Google Search Console',
+    aiSummary: [
+      'เพิ่ม Traffic SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความให้เยอะขึ้น',
+      'จุดเริ่มต้นที่สำคัญคือ Keyword Research ที่ตรง Search Intent และ On-Page SEO ที่ครบถ้วน',
+      'Internal Link และ Technical SEO เป็นปัจจัยที่หลายเว็บไซต์มองข้าม แต่ส่งผลต่อการจัดอันดับโดยตรง',
+      'ควรวัดผลด้วย Google Search Console อย่างต่อเนื่องเพื่อรู้ว่าควรปรับจุดไหนต่อ',
+    ],
+    faqs: increaseSeoTrafficFaqs,
+    bodyVariant: 'increase-seo-traffic',
+    cta: {
+      headline: 'อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?',
+      description:
+        'Discovery Audit ช่วยวิเคราะห์ Keyword, โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
