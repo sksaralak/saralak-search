@@ -16,7 +16,7 @@
 ## SEO Guides
 - [SEO คืออะไร](https://saralak-search.com/blog/what-is-seo): SEO fundamentals and how to rank on Google for Thai businesses.
 - [ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร](https://saralak-search.com/blog/seo-not-working): 8 root causes of SEO failure with diagnostic steps.
-- [ทำเว็บด้วย Claude ยังไงให้มีคนเข้า](https://saralak-search.com/blog/tham-web-claude): How to build a website with Claude AI and what SEO steps are needed to get traffic.
+- [ทำเว็บด้วย Claude ยังไงให้มีคนเข้า](https://saralak-search.com/blog/build-website-with-claude): How to build a website with Claude AI and what SEO steps are needed to get traffic.
 - [Claude ทำ SEO ให้ได้จริงไหม](https://saralak-search.com/blog/ai-website-seo): Analysis of whether Claude can replace an SEO specialist, with real case evidence.
 
 ## GEO & AEO Guides

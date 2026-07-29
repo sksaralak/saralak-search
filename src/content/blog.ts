@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'tham-web-claude' | 'increase-seo-traffic'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
   cta?: {
     headline: string
     description: string
@@ -589,10 +589,38 @@ export const increaseSeoTrafficFaqs: FAQItem[] = [
   },
 ]
 
+export const checkTrafficFreeFaqs: FAQItem[] = [
+  {
+    question: 'เช็ค Traffic เว็บไซต์ตัวเองฟรีได้จากไหน?',
+    answer:
+      'เช็คได้ฟรี 100% ผ่าน Google Search Console (ดู Clicks, Impressions, CTR, Average Position) และ Google Analytics 4 (ดู Session, User, ช่องทางที่คนเข้ามา) ทั้งสองตัวใช้ฟรีไม่จำกัด ไม่มีเงื่อนไข ขอแค่เว็บไซต์ยืนยันความเป็นเจ้าของแล้ว',
+  },
+  {
+    question: 'เช็ค Traffic เว็บไซต์คู่แข่งฟรีได้ไหม?',
+    answer:
+      'ได้ ผ่าน Free Tier ของเครื่องมืออย่าง Ubersuggest, Semrush หรือ Ahrefs Free Traffic Checker แต่ตัวเลขที่ได้เป็น "ค่าประมาณการ" จากการวิเคราะห์อันดับคีย์เวิร์ด ไม่ใช่ตัวเลข Click จริงเหมือนที่เจ้าของเว็บไซต์เห็นใน Search Console ของตัวเอง',
+  },
+  {
+    question: 'ทำไมตัวเลข Traffic จาก Ahrefs หรือ Semrush ไม่ตรงกับ Google Search Console?',
+    answer:
+      'เพราะเป็นคนละวิธีวัด เครื่องมือภายนอกอย่าง Ahrefs/Semrush ประมาณการ Traffic จากอันดับคีย์เวิร์ดคูณกับ CTR เฉลี่ยของตำแหน่งนั้นๆ ส่วน Google Search Console รายงาน Click จริงที่เกิดขึ้น ตัวเลขจึงต่างกันได้เป็นหลักเท่าตัว โดยเฉพาะเว็บไซต์ขนาดเล็กหรือคีย์เวิร์ดเฉพาะทาง',
+  },
+  {
+    question: 'เช็ค Traffic แล้วรู้ได้อย่างไรว่าตัวเลขดีหรือแย่?',
+    answer:
+      'ดูจากแนวโน้ม (Trend) มากกว่าตัวเลขเดี่ยวๆ — เทียบเดือนต่อเดือนว่าขึ้นหรือลง และดูว่า Traffic มาจากคำค้น Brand (ชื่อธุรกิจ) เป็นหลัก หรือเริ่มมีคำค้น Non-Brand ที่เกี่ยวกับสินค้า/บริการเข้ามาด้วย เว็บไซต์ที่พึ่งพา Brand Search อย่างเดียวมักมีความเสี่ยงเพราะไม่ได้เข้าถึงลูกค้าใหม่ที่ยังไม่รู้จักแบรนด์',
+  },
+  {
+    question: 'นอกจาก Traffic ปกติ ต้องเช็คอะไรเพิ่มสำหรับ AI Search (GEO)?',
+    answer:
+      'ควรลองถามคำถามเกี่ยวกับธุรกิจของคุณใน ChatGPT, Gemini หรือ Perplexity ดูว่าแบรนด์ถูกกล่าวถึงไหม และเช็ค GA4 ว่ามี Referral Traffic จาก AI Platform เข้ามาหรือยัง เพราะ Traffic จาก AI Search เป็นช่องทางใหม่ที่ Google Search Console แบบเดิมยังรายงานได้ไม่ครบ',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
-    slug: 'tham-web-claude',
+    slug: 'build-website-with-claude',
     category: 'SEO',
     excerpt:
       'Claude ทำเว็บได้จริง — แต่ "ทำเว็บเสร็จ" กับ "มีคนเข้าเว็บ" คือคนละขั้นตอนกันทั้งหมด บทความนี้บอก 5 ขั้นตอนสร้างเว็บด้วย Claude และสิ่งที่ต้องทำต่อให้ Google พาลูกค้ามาเจอ',
@@ -1090,6 +1118,36 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?',
       description:
         'Discovery Audit ช่วยวิเคราะห์ Keyword, โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'เช็ค Traffic เว็บไซต์ฟรี ไม่ต้องเสียเงิน [เช็คเองได้ใน 5 นาที]',
+    slug: 'check-website-traffic-free',
+    category: 'SEO',
+    excerpt:
+      'เช็ค Traffic เว็บไซต์ตัวเองฟรี 100% ผ่าน Google Search Console และ GA4 พร้อมวิธีเช็ค Traffic คู่แข่งแบบประมาณการ และสิ่งที่ต้องรู้ก่อนเชื่อตัวเลขจากเครื่องมือฟรีทุกตัว',
+    readingTime: '10 min read',
+    publishedDate: '2026-07-27',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'เช็ค Traffic เว็บไซต์ฟรี [เช็คเองได้ใน 5 นาที] | Saralak Search',
+    metaDescription:
+      'วิธีเช็ค Traffic เว็บไซต์ฟรี ทั้งเว็บไซต์ตัวเอง (Google Search Console, GA4) และเว็บไซต์คู่แข่ง (Ubersuggest, Semrush, Ahrefs) พร้อมวิธีอ่านตัวเลขให้ถูกต้อง',
+    aiSummary: [
+      'เช็ค Traffic เว็บไซต์ตัวเองได้ฟรี 100% และแม่นยำผ่าน Google Search Console และ GA4',
+      'เช็ค Traffic เว็บไซต์คู่แข่งทำได้ฟรีผ่าน Ubersuggest, Semrush หรือ Ahrefs แต่เป็นตัวเลขประมาณการ ไม่ใช่ Click จริง',
+      'ตัวเลขจากเครื่องมือภายนอกกับ Search Console มักไม่ตรงกัน เพราะคนละวิธีวัด',
+      'นอกจาก Traffic ปกติ ควรเช็ค AI Search Visibility (GEO) ด้วย เพราะเป็นช่องทางที่กำลังโตขึ้นเรื่อยๆ',
+    ],
+    faqs: checkTrafficFreeFaqs,
+    bodyVariant: 'check-website-traffic-free',
+    cta: {
+      headline: 'เช็คแล้วเจอว่า Traffic นิ่งหรือน้อยกว่าที่ควร?',
+      description:
+        'Discovery Audit ช่วยอ่านตัวเลข Traffic ของเว็บไซต์คุณ พร้อมระบุว่าอะไรคือสาเหตุ และควรแก้จุดไหนก่อนถึงจะเห็นผลเร็วที่สุด',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },

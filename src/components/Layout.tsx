@@ -5,7 +5,6 @@ import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
 import CookieConsent, { CONSENT_KEY } from './CookieConsent'
 import FloatingLineButton from './FloatingLineButton'
-import FontLoader from './FontLoader'
 import ScrollToTop from './ScrollToTop'
 
 const navItems = [
@@ -249,7 +248,6 @@ export default function Layout() {
 
       <ScrollToTop />
       <Analytics />
-      <FontLoader />
       <Outlet />
 
       {/* Footer — dark */}

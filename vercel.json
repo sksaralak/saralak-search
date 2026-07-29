@@ -4,7 +4,8 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/proof", "destination": "/case-studies", "permanent": true },
-    { "source": "/blog/aeo-vs-seo", "destination": "/blog/what-is-aeo", "permanent": true }
+    { "source": "/blog/aeo-vs-seo", "destination": "/blog/what-is-aeo", "permanent": true },
+    { "source": "/blog/tham-web-claude", "destination": "/blog/build-website-with-claude", "permanent": true }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [

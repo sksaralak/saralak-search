@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { brand } from '../content/site'
 import { trackContactFormSubmission } from './Analytics'
@@ -57,19 +57,11 @@ function isValidUrl(value: string) {
   }
 }
 
-function normalizeWebsite(value: string) {
-  const trimmed = value.trim()
-  if (!trimmed) return ''
-  if (/^https?:\/\//i.test(trimmed)) return trimmed
-  return `https://${trimmed}`
-}
-
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState)
   const [status, setStatus] = useState<FormStatus>('idle')
   const [feedback, setFeedback] = useState('')
 
-  const scriptUrl = useMemo(() => import.meta.env.VITE_GOOGLE_SCRIPT_URL?.trim() ?? '', [])
   const isSubmitDisabled = status === 'submitting'
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -106,38 +98,34 @@ export default function ContactForm() {
       return
     }
 
-    if (!scriptUrl) {
-      setStatus('error')
-      setFeedback('ยังไม่ได้ตั้งค่า Google Script URL')
-      return
-    }
-
     setStatus('submitting')
     setFeedback('')
 
-    const body = new URLSearchParams({
-      timestamp: new Date().toISOString(),
-      name: form.name.trim(),
-      email: form.email.trim(),
-      company: form.company.trim(),
-      website: normalizeWebsite(form.website),
-      interest: form.interest,
-      budget: form.budget,
-      message: form.message.trim(),
-      source: 'Saralak Search Contact Form',
-      pagePath: window.location.pathname,
-      pageUrl: window.location.href,
-    })
-
     try {
-      await fetch(scriptUrl, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          'Content-Type': 'application/json',
         },
-        body: body.toString(),
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          company: form.company.trim(),
+          website: form.website.trim(),
+          interest: form.interest,
+          budget: form.budget,
+          message: form.message.trim(),
+          _hp: form._hp,
+          pagePath: window.location.pathname,
+          pageUrl: window.location.href,
+        }),
       })
+
+      const result = await response.json().catch(() => ({ success: false }))
+
+      if (!response.ok || !result.success) {
+        throw new Error(typeof result.error === 'string' ? result.error : 'submit_failed')
+      }
 
       trackContactFormSubmission({
         interest: form.interest,

@@ -8,6 +8,7 @@ const serviceColors: Record<string, ColorScheme> = {
   'GEO':           { grad: 'from-violet-950 to-violet-900', accent: 'text-violet-300', badge: 'bg-violet-900/80 text-violet-100', dot: 'bg-violet-400', arrow: 'text-violet-400' },
   'AEO':           { grad: 'from-sky-950 to-sky-900',       accent: 'text-sky-300',    badge: 'bg-sky-900/80 text-sky-100',      dot: 'bg-sky-400',    arrow: 'text-sky-400'    },
   'Technical SEO': { grad: 'from-teal-950 to-neutral-900', accent: 'text-teal-300',   badge: 'bg-teal-900/80 text-teal-100',   dot: 'bg-teal-400',   arrow: 'text-teal-400'   },
+  'Content SEO':   { grad: 'from-amber-950 to-amber-900',   accent: 'text-amber-300',  badge: 'bg-amber-900/80 text-amber-100',  dot: 'bg-amber-400',  arrow: 'text-amber-400'  },
 }
 
 const fallback: ColorScheme = {

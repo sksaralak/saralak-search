@@ -278,11 +278,11 @@ export default function Home() {
       {/* Hero — dark */}
       <section className="bg-neutral-950">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-          <div className="self-center">
+          <div className="min-w-0 self-center">
             <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-teal-400">
               ที่ปรึกษา SEO · GEO · AI Search สำหรับธุรกิจไทย
             </p>
-            <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="break-words text-3xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
               ให้ลูกค้าเจอคุณ{' '}
               <span className="animate-gradient-text">ก่อนเจอคู่แข่ง</span>
               <br className="hidden sm:block" />ทั้งบน Google, Google Maps และ AI Search
@@ -305,7 +305,7 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="self-center">
+          <aside className="min-w-0 self-center">
             <SearchDemo />
           </aside>
         </div>

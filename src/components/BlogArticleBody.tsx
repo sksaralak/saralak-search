@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
@@ -95,6 +95,44 @@ function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]', width = 9
         </figcaption>
       ) : null}
     </figure>
+  )
+}
+
+function ZoomableImage({ src, alt, className = 'w-full' }: { src: string; alt: string; className?: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="block w-full cursor-zoom-in"
+        aria-label={`ขยายภาพ: ${alt}`}
+      >
+        <img src={src} alt={alt} loading="lazy" className={className} />
+      </button>
+      {open ? (
+        <div
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-neutral-950/88 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={alt}
+          onClick={() => setOpen(false)}
+        >
+          <div className="relative max-h-[92vh] w-full max-w-6xl" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="absolute right-0 top-0 z-10 rounded-md border border-white/20 bg-white px-3 py-2 text-sm font-semibold text-neutral-950 shadow-sm"
+            >
+              ปิด
+            </button>
+            <div className="rounded-xl bg-white p-3 shadow-2xl shadow-neutral-950/40">
+              <img src={src} alt={alt} className="max-h-[84vh] w-full rounded-lg object-contain" />
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </>
   )
 }
 
@@ -5244,11 +5282,9 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
           </p>
         </div>
         <div className="overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm">
-          <img
+          <ZoomableImage
             src="/proof/gsc-product-listing-growth.png"
             alt="ภาพจริงจาก Google Search Console: กราฟ Clicks และ Impressions เติบโตต่อเนื่องหลังทำ SEO ตามเช็คลิสต์นี้"
-            className="w-full"
-            loading="lazy"
           />
           <div className="px-6 py-5">
             <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ภาพจริงจาก Google Search Console</p>
@@ -5313,13 +5349,11 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
           เช็คลิสต์นี้ไม่ใช่แค่ทฤษฎี — นี่คือตัวอย่างผลลัพธ์จริงจากเว็บไซต์ที่เคยมีปัญหา Traffic ไม่โต
           แล้วนำหลักการเดียวกันไปใช้
         </P>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
-            <img
+            <ZoomableImage
               src="/proof/gsc-product-listing-growth.png"
               alt="ตัวอย่างผลลัพธ์จริง: Organic Traffic เติบโตต่อเนื่องหลังแก้ Technical SEO และ Internal Link"
-              className="w-full"
-              loading="lazy"
             />
             <div className="px-5 py-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · Technical SEO · 6 เดือน</p>
@@ -5335,11 +5369,9 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
             </div>
           </div>
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
-            <img
+            <ZoomableImage
               src="/proof/ranking-bangsaen-serp.png"
               alt="ตัวอย่างผลลัพธ์จริง: อันดับขึ้นจาก #5 สู่ #1 หลังปรับ Content และ Internal Link"
-              className="w-full"
-              loading="lazy"
             />
             <div className="px-5 py-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Local / Commercial Search · SEO Strategy · 3 เดือน</p>
@@ -5354,9 +5386,30 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
               </Link>
             </div>
           </div>
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+            <ZoomableImage
+              src="/proof/nutrition-content-growth.png"
+              alt="ตัวอย่างผลลัพธ์จริง: Organic Clicks โต 14 เท่าใน 3 เดือน จาก Brand Search สู่ Non-Brand และ AI Search"
+            />
+            <div className="px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · SEO + GEO · 3 เดือน</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks โต 14 เท่า จาก Brand สู่ Non-Brand + AI Search</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+                เว็บไซต์กลุ่มสุขภาพและโภชนาการรายหนึ่งเคยถูกค้นพบจากคำค้น Brand เท่านั้น
+                หลังทำ Keyword Research 5 คำต่อเดือนและปรับ On-Page SEO ให้ตรง Search Intent (ฝั่ง SEO)
+                พร้อมจัดโครงสร้างเนื้อหาแบบตอบคำถามชัดเจน มี FAQ และตาราง Comparison เพื่อให้ AI Search
+                เข้าใจและอ้างอิงได้ง่ายขึ้น (ฝั่ง GEO) Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150
+                ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
+              </p>
+              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
         </div>
         <P>
-          ทั้งสองกรณีใช้หลักการเดียวกับเช็คลิสต์ 8 ข้อด้านบน — ไม่มีทางลัด แต่เห็นผลจริงเมื่อทำครบทุกด้านและวัดผลต่อเนื่อง
+          ทั้งสามกรณีใช้หลักการเดียวกับเช็คลิสต์ 8 ข้อด้านบน — ไม่มีทางลัด แต่เห็นผลจริงเมื่อทำครบทุกด้านและวัดผลต่อเนื่อง
+          กรณีล่าสุดยังแสดงให้เห็นว่า SEO และ GEO ไม่ใช่คนละเรื่องกัน แต่เสริมกันได้ในเนื้อหาชุดเดียว
         </P>
       </ArticleSection>
 
@@ -5429,6 +5482,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
           {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
         </P>
         <ReadMoreLinks items={[
+          { to: '/blog/check-website-traffic-free', label: 'เช็ค Traffic เว็บไซต์ฟรี ไม่ต้องเสียเงิน [เช็คเองได้ใน 5 นาที]' },
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
@@ -5444,6 +5498,172 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
       ]} />
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเรื่องเพิ่ม Traffic SEO" />
+    </article>
+  )
+}
+
+function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="เช็ค Traffic เว็บไซต์ฟรี ทำได้จริงไหม?">
+        <P>
+          ทำได้จริง และไม่ต้องเสียเงินเลยสักบาท — แต่มี 2 กรณีที่ต้องแยกให้ออกก่อน
+          คือเช็ค Traffic เว็บไซต์ของตัวเอง (ฟรี 100% และแม่นยำ) กับเช็ค Traffic เว็บไซต์คนอื่นหรือคู่แข่ง
+          (ฟรีเช่นกัน แต่เป็นตัวเลขประมาณการ ไม่ใช่ Click จริง) หลายคนสับสนสองอย่างนี้
+          แล้วเอาตัวเลขประมาณการมาเข้าใจผิดว่าคือ Traffic จริงของตัวเอง
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            เช็ค Traffic เว็บไซต์ตัวเองฟรีผ่าน Google Search Console และ GA4 (แม่นยำ 100%)
+            ส่วนเว็บไซต์คู่แข่งเช็คผ่าน Ubersuggest, Semrush หรือ Ahrefs Free (ประมาณการเท่านั้น)
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเอง (ฟรี 100% แม่นยำ)">
+        <P>
+          ถ้าเป็นเว็บไซต์ของตัวเอง ไม่ต้องพึ่งเครื่องมือภายนอกเลย เพราะ Google มีเครื่องมือฟรีที่แม่นยำที่สุดให้ใช้อยู่แล้ว
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">Google Search Console</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+              ดู Clicks, Impressions, CTR และ Average Position จริงจาก Google Search — เข้า Performance Report
+              แล้วเลือกช่วงเวลาที่ต้องการเทียบ (เช่น 3 เดือนล่าสุด เทียบกับ 3 เดือนก่อนหน้า)
+            </p>
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">Google Analytics 4 (GA4)</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+              ดู Session, User และช่องทางที่คนเข้ามา (Organic Search, Direct, Social, Referral, AI)
+              ช่วยให้เห็นภาพกว้างกว่า Search Console ว่า Traffic มาจากไหนบ้าง ไม่ใช่แค่ Google Search
+            </p>
+          </div>
+        </div>
+        <P>
+          ถ้ายังไม่เคยติดตั้งทั้งสองตัว นี่คือสิ่งแรกที่ควรทำก่อนจะพูดถึงเรื่องเพิ่ม Traffic เลย
+          เพราะแก้ไขอะไรก็วัดผลไม่ได้ถ้าไม่มีข้อมูลตั้งต้น
+        </P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="เช็คแล้วเจอเลข — แต่รู้ไหมว่ามันบอกอะไร?"
+        description="เลขนี้บอกอะไรคุณบ้าง? คู่แข่งที่รู้เลขตัวเองอยู่แล้วกำลังแก้จุดอ่อนไปเรื่อยๆ ในขณะที่คุณเพิ่งจะมาเช็คเป็นครั้งแรก Discovery Audit ช่วยอ่านเลขนี้ให้ว่าดีหรือแย่ และควรแก้จุดไหนก่อน"
+      />
+
+      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์คู่แข่ง (ฟรี แต่เป็นตัวเลขประมาณการ)">
+        <P>
+          ถ้าอยากรู้ Traffic ของเว็บไซต์ที่ไม่ใช่ของตัวเอง (เช่น คู่แข่ง) จะเข้า Search Console ของเขาไม่ได้แน่นอน
+          ต้องใช้เครื่องมือภายนอกที่ประมาณการ Traffic จากอันดับคีย์เวิร์ดแทน เช่น Ubersuggest, Semrush
+          (Free Tier) หรือ Ahrefs Free Traffic Checker
+        </P>
+        <div className="rounded-xl border-l-4 border-amber-500 bg-amber-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">ข้อควรระวัง</p>
+          <p className="thai-readable mt-2 text-base leading-7 text-neutral-900">
+            ตัวเลขจากเครื่องมือเหล่านี้ไม่ใช่ Click จริง แต่เป็นการ "ประมาณการ" จากอันดับคีย์เวิร์ดคูณกับ CTR เฉลี่ยของตำแหน่งนั้นๆ
+            เคยเจอกรณีจริง — รายงานที่ใช้ตัวเลขประมาณการแบบนี้บอกว่าเว็บไซต์ลูกค้ารายหนึ่งได้ Traffic หลักร้อยต่อเดือน
+            แต่พอดึงข้อมูลจริงจาก Search Console กลับพบว่า Click จริงต่างจากตัวเลขประมาณการหลายเท่าตัว
+            เพราะคนละวิธีวัด — ถ้าเป็นเว็บไซต์ของตัวเอง อย่าเชื่อเครื่องมือประมาณการเพียงอย่างเดียว
+            ใช้ Search Console เป็นหลักเสมอ
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="เช็คแล้วเจอว่า Traffic นิ่งหรือน้อย ต้องทำอย่างไรต่อ">
+        <P>
+          รู้ตัวเลขแล้วเป็นแค่จุดเริ่มต้น — คำถามที่สำคัญกว่าคือ Traffic ที่ได้มาจากคำค้น Brand (ชื่อธุรกิจ)
+          เป็นหลักหรือเปล่า เพราะถ้าใช่ แปลว่าเว็บไซต์ยังเข้าไม่ถึงลูกค้าใหม่ที่ยังไม่รู้จักแบรนด์เลย
+        </P>
+        <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
+          <ZoomableImage
+            src="/proof/nutrition-content-growth.png"
+            alt="ตัวอย่างผลลัพธ์จริง: Organic Clicks โต 14 เท่าใน 3 เดือน จาก Brand Search สู่ Non-Brand และ AI Search"
+          />
+          <div className="px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · SEO + GEO · 3 เดือน</p>
+            <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks โต 14 เท่า จาก Brand สู่ Non-Brand + AI Search</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+              เว็บไซต์กลุ่มสุขภาพและโภชนาการรายหนึ่งเคยถูกค้นพบจากคำค้น Brand เท่านั้น — เหมือนกับที่หลายเว็บไซต์เจอตอนเช็ค Traffic ครั้งแรก
+              หลังทำ Keyword Research 5 คำต่อเดือนและปรับ On-Page SEO ให้ตรง Search Intent (ฝั่ง SEO)
+              พร้อมจัดโครงสร้างเนื้อหาแบบตอบคำถามชัดเจน มี FAQ และตาราง Comparison เพื่อให้ AI Search
+              เข้าใจและอ้างอิงได้ง่ายขึ้น (ฝั่ง GEO) Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150
+              ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
+            </p>
+            <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
+              ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </div>
+        <P>
+          เว็บไซต์นี้ก็เคยเช็ค Traffic แล้วเจอเลขนิ่งๆ พึ่งพา Brand Search เหมือนกัน — ต่างกันตรงที่มีคนเข้ามาแก้ปัญหาให้ก่อนที่จะเสียโอกาสไปนานกว่านี้
+        </P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="เช็คแล้วเจอว่า Traffic นิ่งมาหลายเดือน? นั่นคือสัญญาณเตือน ไม่ใช่เรื่องปกติ"
+        description="ยิ่งปล่อยไว้นาน คู่แข่งที่ลงมือทำ SEO และ GEO ก่อนก็ยิ่งทิ้งระยะห่างมากขึ้น ดูวิธีแก้แบบเป็นระบบได้ในเช็คลิสต์นี้"
+      />
+
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
+      ]} />
+
+      <ArticleSection title="อย่าลืมเช็ค Traffic จาก AI Search ด้วย (GEO)">
+        <P>
+          เครื่องมือเช็ค Traffic ส่วนใหญ่ยังมองแค่ Google Search แบบเดิม แต่ผู้ใช้งานเริ่มถาม ChatGPT, Gemini
+          และ Perplexity เพื่อหาข้อมูลและตัดสินใจซื้อมากขึ้นเรื่อยๆ — ช่องทางนี้ Google Search Console แบบเดิมยังรายงานได้ไม่ครบ
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">ทดสอบด้วยตัวเอง</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+              ลองถามคำถามเกี่ยวกับธุรกิจของคุณใน ChatGPT, Gemini หรือ Perplexity ดูว่าแบรนด์ถูกกล่าวถึงไหม
+              ถ้าไม่ถูกกล่าวถึงเลย นั่นคือจุดที่ต้องเริ่มทำ GEO
+            </p>
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">เช็คใน GA4</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
+              ดู Referral Traffic ว่ามีคนเข้ามาจาก AI Platform บ้างหรือยัง — ถ้ายังไม่มีเลย
+              ไม่ได้แปลว่าไม่มีโอกาส แต่แปลว่ายังไม่ได้เริ่มทำอะไรในฝั่งนี้เลย
+            </p>
+          </div>
+        </div>
+        <P>
+          อ่านเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: เช็ค Traffic ฟรีคือจุดเริ่มต้น ไม่ใช่ปลายทาง">
+        <P>
+          เช็ค Traffic เว็บไซต์ตัวเองฟรีผ่าน Search Console และ GA4 ได้แม่นยำ 100% ไม่ต้องเสียเงิน
+          ส่วนเว็บไซต์คู่แข่งเช็คได้ฟรีผ่าน Ubersuggest, Semrush หรือ Ahrefs แต่ต้องเข้าใจว่าเป็นตัวเลขประมาณการ
+        </P>
+        <P>
+          แต่รู้ตัวเลขอย่างเดียวไม่พอ — ต้องรู้ด้วยว่าตัวเลขนั้นดีหรือแย่ และควรแก้จุดไหนก่อน
+          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยอ่านตัวเลขและวางแผนต่อ{' '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Console documentation, checked July 2026',
+        'Google Analytics 4 documentation, checked July 2026',
+        'Saralak Search client case studies (anonymised), checked July 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเรื่องเช็ค Traffic เว็บไซต์ฟรี" />
     </article>
   )
 }
@@ -5493,6 +5713,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'increase-seo-traffic') {
     return <IncreaseSeoTrafficArticle post={post} />
+  }
+  if (post.bodyVariant === 'check-website-traffic-free') {
+    return <CheckWebsiteTrafficFreeArticle post={post} />
   }
 
   return (

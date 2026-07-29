@@ -117,4 +117,29 @@ export const caseStudies: CaseStudy[] = [
       ],
     },
   },
+  {
+    slug: 'nutrition-content-growth',
+    projectName: 'Clicks 150 → 2,157',
+    image: '/proof/nutrition-content-growth.png',
+    industry: 'E-commerce / สุขภาพและโภชนาการ',
+    service: 'Content SEO',
+    channel: 'Google Search Console',
+    duration: '3 เดือน',
+    result: 'Organic Clicks โต 14 เท่า',
+    businessImpact: 'Organic Clicks เติบโตกว่า 14 เท่าภายใน 3 เดือน จากเว็บที่เคยมีแต่ Brand Keyword',
+    card: {
+      challenge:
+        'เว็บไซต์ถูกค้นพบจากคำค้น Brand เท่านั้น ทำให้พลาดโอกาสจากลูกค้าที่กำลังหาข้อมูลด้านโภชนาการก่อนตัดสินใจซื้อ',
+      actions: [
+        'วิจัยคีย์เวิร์ดกลุ่มโภชนาการและสุขภาพ 5 คำต่อเดือน เพื่อวางทิศทาง Content ให้ทีมลูกค้าผลิตต่อ',
+        'ปรับ On-page SEO ให้เนื้อหาตอบ Search Intent และเชื่อมโยงไปสู่หน้าสินค้าที่เกี่ยวข้อง',
+        'แก้ปัญหา Technical เล็กน้อยของระบบ Ecommerce เช่น Canonical URL และการทำ Indexing ให้เนื้อหาใหม่ถูกเก็บข้อมูลได้เร็วขึ้น',
+      ],
+      results: [
+        'Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150 ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) และยังเติบโตต่อเนื่อง',
+        'คีย์เวิร์ดกลุ่ม Non-Brand อย่าง "โปรตีนจากพืช" เริ่มติดหน้าแรกภายในไม่กี่เดือน',
+        'เว็บไซต์ขยายการมองเห็นจากคำค้น Brand ไปสู่กลุ่มคำค้นด้านโภชนาการที่กว้างขึ้น',
+      ],
+    },
+  },
 ]
