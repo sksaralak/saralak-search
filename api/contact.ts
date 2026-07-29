@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 function isValidWebsite(value: string) {
   if (!value) return true
   if (!/^(https?:\/\/)/i.test(value)) {
