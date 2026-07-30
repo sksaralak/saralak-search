@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { brand } from '../content/site'
 import Analytics, { trackLineClick } from './Analytics'
 import CTAButton from './CTAButton'
-import CookieConsent, { CONSENT_KEY } from './CookieConsent'
+import CookieConsent, { CONSENT_KEY, getCookieConsent } from './CookieConsent'
 import FloatingLineButton from './FloatingLineButton'
 import ScrollToTop from './ScrollToTop'
 
@@ -99,6 +99,14 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 export default function Layout() {
   const [open, setOpen] = useState(false)
+  const [consentPending, setConsentPending] = useState(false)
+
+  useEffect(() => {
+    setConsentPending(!getCookieConsent())
+    const handler = () => setConsentPending(false)
+    window.addEventListener('cookie_consent_resolved', handler)
+    return () => window.removeEventListener('cookie_consent_resolved', handler)
+  }, [])
 
   return (
     <div className="min-h-screen bg-[#fbfaf6] text-neutral-900">
@@ -356,17 +364,19 @@ export default function Layout() {
       <FloatingLineButton />
       <CookieConsent />
 
-      {/* Mobile floating CTA */}
-      <div className="fixed bottom-4 left-4 right-28 z-50 lg:hidden">
-        <a
-          href={brand.lineUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-teal-900 bg-teal-900 px-4 py-2.5 text-center text-sm font-semibold text-white shadow-lg shadow-teal-950/20 transition hover:bg-teal-800"
-        >
-          คุยกับเรา
-        </a>
-      </div>
+      {/* Mobile floating CTA — hidden while the cookie banner is up, since it would sit underneath it */}
+      {!consentPending ? (
+        <div className="fixed bottom-4 left-4 right-28 z-50 lg:hidden">
+          <a
+            href={brand.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-teal-900 bg-teal-900 px-4 py-2.5 text-center text-sm font-semibold text-white shadow-lg shadow-teal-950/20 transition hover:bg-teal-800"
+          >
+            คุยกับเรา
+          </a>
+        </div>
+      ) : null}
     </div>
   )
 }

@@ -38,9 +38,9 @@ export default function CookieConsent() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[60] border-t border-neutral-200 bg-white px-4 py-4 shadow-lg shadow-neutral-950/10 sm:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="thai-readable text-sm leading-6 text-neutral-700">
+    <div className="fixed bottom-0 left-0 right-0 z-[60] border-t border-neutral-200 bg-white px-4 py-3 shadow-lg shadow-neutral-950/10 sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+        <p className="thai-readable text-xs leading-5 text-neutral-700 sm:text-sm sm:leading-6">
           เว็บไซต์นี้ใช้คุกกี้เพื่อวิเคราะห์การใช้งาน (Google Analytics) และปรับปรุงประสบการณ์ผู้ใช้งาน (Microsoft Clarity){' '}
           <Link
             to="/privacy"
