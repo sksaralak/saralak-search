@@ -3910,6 +3910,9 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
       <ReadMoreLinks items={[
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน — ลูกค้าใกล้ฉันรอคุณอยู่' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวกำลังหาคุณอยู่' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps — Saralak Search' },
       ]} />
 
@@ -4457,6 +4460,9 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps: ลูกค้ากำลังหิวกำลังหาคุณอยู่' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
       ]} />
 
@@ -4868,6 +4874,9 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
       </P>
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-google-maps', label: 'เพิ่มยอดขายบน Google Maps: วัดผลด้วย โทร · เส้นทาง · เว็บไซต์' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps สำหรับร้านอาหาร — Saralak Search' },
       ]} />
@@ -4880,6 +4889,1166 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านอาหารบน Google Maps" />
+    </article>
+  )
+}
+
+function MassageSpaArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ได้จริงไหม?">
+        <P><strong>เพิ่มยอดขายร้านนวด</strong>และสปาด้วย Google Maps เป็นเรื่องที่ทำได้จริง และอาจเป็นช่องทางที่คุ้มที่สุดของธุรกิจนี้ เพราะคนที่ค้นหา "นวด ใกล้ฉัน" ไม่ได้กำลังหาแรงบันดาลใจ — เขาเมื่อย เขาอยู่ใกล้คุณ และเขาต้องการนวดวันนี้</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ขนาดของดีมานด์กลุ่มนวดและสปาในไทย</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '1.34M', label: 'ค้นหากลุ่มนวด/สปา "ใกล้ฉัน"', sub: 'ต่อเดือนในไทย รวมทุกคำหลักในกลุ่ม' },
+              { num: '+49%', label: 'การเติบโตของ massage near me', sub: 'เทียบช่วงเดียวกันของปีก่อน' },
+              { num: 'Low', label: 'ระดับการแข่งขันของคำหลัก', sub: 'ส่วนใหญ่ยัง Low — แข่งน้อยกว่าร้านอาหาร' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { title: 'ร้านที่มีราคา รูปหน้าร้าน และรีวิวที่ตอบครบ', result: 'ลูกค้าโทรจอง', color: 'border-teal-200 bg-teal-50/50 text-teal-800' },
+            { title: 'ร้านที่มีแค่ชื่อกับที่อยู่ ไม่มีราคา ไม่มีรูป', result: 'ลูกค้าเลื่อนผ่าน', color: 'border-neutral-200 bg-neutral-50 text-neutral-500' },
+          ].map(({ title, result, color }) => (
+            <div key={title} className={`rounded-xl border p-4 ${color}`}>
+              <p className="thai-readable text-sm font-semibold">{title}</p>
+              <p className="mt-1.5 text-sm font-bold">{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คนค้นหานวดและสปาเดือนละกี่ครั้ง — ตัวเลขจริงจาก Keyword Planner">
+        <P>นี่คือข้อมูลจริงจาก Google Keyword Planner ประเทศไทย ช่วง กรกฎาคม 2025 – มิถุนายน 2026 ทุกตัวเลขเป็นค่าเฉลี่ยต่อเดือน</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['คำค้นหา', 'ค้นหา/เดือน', 'เทียบปีก่อน', 'การแข่งขัน'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['massage near me', '673,000', '+49%', 'Medium'],
+                ['ร้านนวด ใกล้ฉัน', '450,000', '+22%', 'Low'],
+                ['นวด ใกล้ฉัน', '201,000', '+22%', 'Low'],
+                ['นวดแผนไทย ใกล้ฉัน', '12,100', '0%', 'Low'],
+                ['สปา ใกล้ฉัน', '9,900', '−18%', 'Medium'],
+                ['นวดเท้า ใกล้ฉัน', '2,900', '+21%', 'Medium'],
+                ['สปา เชียงใหม่', '590', '0%', 'High'],
+              ].map(([kw, vol, yoy, comp]) => (
+                <tr key={kw}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{kw}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{vol}</td>
+                  <td className="px-4 py-3 font-mono text-xs text-neutral-500">{yoy}</td>
+                  <td className="px-4 py-3 text-neutral-500">{comp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            สังเกตสองอย่าง: หนึ่ง — <strong>massage near me</strong> เป็นภาษาอังกฤษแต่มี volume สูงสุด แปลว่านักท่องเที่ยวและชาวต่างชาติคือส่วนสำคัญของตลาดนี้ สอง — คำที่ volume สูงที่สุดกลับมี competition แค่ Low ถึง Medium ซึ่งต่างจากร้านอาหารที่แข่งกันดุกว่ามาก
+          </p>
+        </div>
+        <P>ถ้าร้านคุณอยู่ในย่านที่มีนักท่องเที่ยว การตั้งชื่อบริการเป็นภาษาอังกฤษควบคู่ภาษาไทยใน Google Business Profile จะช่วยรับ traffic จากคำว่า massage near me ได้โดยตรง</P>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไมร้านนวดต่างจากร้านอาหารบน Google Maps">
+        <P>หลายคนเอาวิธีของร้านอาหารมาใช้กับร้านนวดแล้วไม่ได้ผล เพราะสิ่งที่ลูกค้าใช้ตัดสินใจคนละอย่างกัน</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['ประเด็น', 'ร้านอาหาร', 'ร้านนวด / สปา'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['สิ่งที่ตัดสินใจ', 'รูปอาหารสวย', 'ราคา ความสะอาด ความน่าเชื่อถือ'],
+                ['ข้อมูลที่ขาดไม่ได้', 'เมนู', 'รายการบริการพร้อมราคาและระยะเวลา'],
+                ['ช่องทางปิดการขาย', 'เดินเข้าร้านเลย', 'โทรจอง หรือกดลิงก์จอง'],
+                ['ความเสี่ยงเฉพาะทาง', 'รีวิวเรื่องรสชาติ', 'ความเข้าใจผิดเรื่องประเภทบริการ'],
+                ['มูลค่าลูกค้า 1 คน', 'ต่อครั้ง', 'ต่อเนื่อง — ลูกค้าประจำกลับมาทุกเดือน'],
+              ].map(([topic, restaurant, spa]) => (
+                <tr key={topic}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{topic}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{restaurant}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700">{spa}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-sale-restaurant', label: 'เทียบกับวิธีของร้านอาหาร: เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่ร้านนวดและสปาต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'เลือกหมวดหมู่ให้ตรงกับบริการจริง',
+              body: 'หมวดหมู่คือสิ่งแรกที่บอก Google ว่าควรแสดงร้านคุณกับคำค้นหาแบบไหน เลือกหมวดหลักให้ตรงกับรายได้หลัก เช่น Thai Massage Shop, Massage Therapist, Day Spa หรือ Foot Massage Parlor แล้วเพิ่มหมวดรองเฉพาะบริการที่มีจริง',
+              tip: 'หมวดหมู่ผิดคือสาเหตุอันดับหนึ่งที่ร้านนวดไม่โผล่ในคำค้นหาที่ควรจะติด',
+            },
+            {
+              num: '2', title: 'ใส่รายการบริการพร้อมราคาและระยะเวลา',
+              body: 'ลูกค้านวดเทียบราคาก่อนโทรเสมอ ใส่ให้ครบว่า นวดไทย 60 นาที เท่าไหร่ นวดน้ำมัน 90 นาที เท่าไหร่ นวดเท้า 60 นาที เท่าไหร่ ร้านที่ไม่ใส่ราคาจะเสียลูกค้าให้ร้านที่ใส่ตั้งแต่ก่อนที่ลูกค้าจะกดโทร',
+              tip: 'ราคาที่โปร่งใสไม่ได้ลดจำนวนสาย แต่เพิ่มคุณภาพของสายที่โทรเข้ามา',
+            },
+            {
+              num: '3', title: 'รูปที่สื่อสารความสะอาดและความเป็นมืออาชีพ',
+              body: 'รูปที่ต้องมีขั้นต่ำ: ด้านหน้าร้านและป้าย ห้องนวดหรือเตียงที่จัดเรียบร้อย พื้นที่ต้อนรับ ผ้าและอุปกรณ์ที่สะอาด และพนักงานในเครื่องแบบ ธุรกิจนี้ขายความไว้ใจก่อนขายบริการ',
+              tip: 'หลีกเลี่ยงรูป stock — ลูกค้าดูออก และมันทำลายความน่าเชื่อถือมากกว่าไม่มีรูป',
+            },
+            {
+              num: '4', title: 'ชั่วโมงทำการที่ตรงความจริง โดยเฉพาะร้านที่เปิดดึก',
+              body: 'จุดขายใหญ่ของร้านนวดคือเปิดดึกกว่าธุรกิจอื่น ถ้าคุณเปิดถึงเที่ยงคืนต้องระบุให้ชัด เพราะคนที่ค้นหาสี่ทุ่มคือคนที่พร้อมมาทันที และคู่แข่งส่วนใหญ่ปิดไปแล้ว',
+              tip: 'อัปเดต Special Hours ทุกวันหยุดยาว ร้านที่แสดงว่าเปิดแต่ปิดจริง = รีวิว 1 ดาว',
+            },
+            {
+              num: '5', title: 'ใส่ลิงก์จอง ลด friction ให้ลูกค้า',
+              body: 'ถ้ามีระบบจองผ่าน LINE, เว็บไซต์ หรือแพลตฟอร์มจอง ให้ใส่ลิงก์ใน GBP ทันที ลูกค้าจำนวนมากไม่อยากโทร โดยเฉพาะกลุ่มนักท่องเที่ยวที่ไม่มั่นใจเรื่องภาษา',
+              tip: null,
+            },
+            {
+              num: '6', title: 'ตอบรีวิวทุกอัน โดยเฉพาะรีวิวที่เข้าใจผิด',
+              body: 'รีวิวดี: ขอบคุณและระบุชื่อบริการที่ลูกค้าใช้ เพื่อให้ Google เห็นคำเหล่านั้นซ้ำ รีวิวแย่: ขอโทษ อธิบายสิ่งที่แก้ไขแล้ว และอย่าเถียง สำหรับธุรกิจนวด การตอบรีวิวอย่างสุภาพและเป็นมืออาชีพคือหลักฐานสาธารณะว่าร้านคุณจริงจังกับมาตรฐาน',
+              tip: 'ตอบภายใน 24–48 ชั่วโมง Google สังเกตความ active ของโปรไฟล์',
+            },
+          ].map(({ num, title, body, tip }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{body}</p>
+                {tip && (
+                  <p className="thai-readable mt-2 rounded bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-700">
+                    Pro tip: {tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline='คนค้นหา "นวด ใกล้ฉัน" 1.3 ล้านครั้งต่อเดือน — ร้านคุณอยู่ตรงไหน'
+        description="Google Maps Audit ตรวจว่าร้านนวดหรือสปาของคุณได้ Call, Direction และ Booking จากคนกลุ่มนี้มากแค่ไหน และจุดไหนที่ทำให้ลูกค้าเลือกร้านข้างๆ แทน"
+      />
+
+      <ArticleSection title="ปัญหาเฉพาะของธุรกิจนวด: ทำให้ Google และลูกค้าเข้าใจถูกว่าคุณคือร้านแบบไหน">
+        <P>คำค้นหากลุ่มนวดมี intent ปนกันหลายแบบ ร้านที่ให้บริการนวดเพื่อสุขภาพจึงควรส่งสัญญาณให้ชัดตั้งแต่แรก ไม่ใช่เพื่อ SEO อย่างเดียว แต่เพื่อให้ได้ลูกค้าที่ตรงกับบริการจริง</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            {
+              label: 'สัญญาณที่ควรส่ง',
+              items: [
+                'ระบุประเภทบริการให้ชัดในคำอธิบายธุรกิจ',
+                'ใช้รูปจริงของห้องนวดและพื้นที่ต้อนรับ',
+                'แสดงใบรับรองหรือมาตรฐานที่มี เช่น การอบรมของพนักงาน',
+                'ใส่รายการบริการและราคาแบบเปิดเผย',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ทำให้เข้าใจผิด',
+              items: [
+                'ไม่มีรูปภายในร้านเลย มีแต่รูปโลโก้',
+                'ไม่ระบุราคาและระยะเวลาบริการ',
+                'ชั่วโมงทำการคลุมเครือหรือไม่อัปเดต',
+                'ไม่ตอบรีวิวที่ตั้งคำถามเรื่องบริการ',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ช่วงเวลาที่คนค้นหานวดมากที่สุด">
+        <P>ต่างจากร้านอาหารที่พีคตอนมื้อเที่ยงและมื้อเย็น ธุรกิจนวดพีคช้ากว่า — และนั่นคือโอกาสที่คู่แข่งส่วนใหญ่ไม่ได้ใช้</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { time: '18:00–21:00', label: 'หลังเลิกงาน', tip: 'ช่วงพีคที่สุดของวันธรรมดา — ต้องมั่นใจว่าชั่วโมงทำการแสดงว่ายังเปิด และมีคนรับสาย', spike: 'highest' },
+            { time: '21:00–24:00', label: 'ดึก', tip: 'คู่แข่งส่วนใหญ่ปิดแล้ว ถ้าคุณเปิดถึงดึกให้ระบุชัดใน GBP นี่คือ differentiator ที่แข่งง่ายที่สุด', spike: 'high' },
+            { time: 'เสาร์–อาทิตย์', label: 'Weekend', tip: 'ลูกค้าจองยาวขึ้น (90–120 นาที) โพสต์แพ็กเกจ weekend ก่อนวันศุกร์', spike: 'high' },
+            { time: 'ช่วง High Season', label: 'นักท่องเที่ยว', tip: 'พ.ย.–ก.พ. คำว่า massage near me พุ่ง ให้เพิ่มคำอธิบายภาษาอังกฤษและรูปที่สื่อสารได้โดยไม่ต้องอ่าน', spike: 'medium' },
+          ].map(({ time, label, tip, spike }) => (
+            <div key={time} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-semibold text-neutral-950">{time}</p>
+                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${spike === 'highest' ? 'bg-teal-100 text-teal-800' : spike === 'high' ? 'bg-sky-100 text-sky-700' : 'bg-neutral-100 text-neutral-600'}`}>
+                  {label}
+                </span>
+              </div>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{tip}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็แนะนำร้านนวดจาก Google Maps เหมือนกัน">
+        <P>เมื่อมีคนถาม <strong>Gemini, ChatGPT หรือ Perplexity</strong> ว่า "ร้านนวดแผนไทยดีๆ แถวอารีย์" หรือ "best Thai massage in Bangkok" — AI เหล่านี้ดึงข้อมูลจาก GBP, รีวิว และ local citations มาประกอบคำตอบ</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'ร้านที่ GBP ครบ มีราคา รูปจริง รีวิวที่ตอบครบ', result: 'AI เลือกแนะนำ', teal: true },
+            { text: 'ร้านที่มีแค่ชื่อและที่อยู่', result: 'ไม่มีอยู่ในสายตา AI', teal: false },
+          ].map(({ text, result, teal }) => (
+            <div key={text} className={`rounded-lg border p-4 ${teal ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`thai-readable text-sm font-semibold ${teal ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`mt-1.5 text-sm font-bold ${teal ? 'text-teal-700' : 'text-neutral-400'}`}>{result}</p>
+            </div>
+          ))}
+        </div>
+        <P>สำหรับธุรกิจนวดที่พึ่งนักท่องเที่ยว นี่สำคัญเป็นพิเศษ เพราะนักท่องเที่ยวจำนวนมากถาม AI ก่อนเปิด Google Maps ด้วยซ้ำ</P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — ทำให้ AI แนะนำธุรกิจของคุณ' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="วิธีขอรีวิวจากลูกค้านวดให้ได้ผลจริง">
+        <P>รีวิวคือสิ่งที่ตัดสินว่าลูกค้าใหม่จะกล้าเข้าร้านคุณหรือไม่ — และธุรกิจนวดเป็นกลุ่มที่ลูกค้า "ไม่ค่อยเขียนเอง" ถ้าไม่ถูกขอ</P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              label: 'จังหวะที่ดีที่สุดในการขอ',
+              items: [
+                'ตอนลูกค้าลุกจากเตียงและบอกว่าสบายขึ้น — นี่คือ peak ของความรู้สึก',
+                'ตอนชำระเงิน พร้อม QR code ที่เคาน์เตอร์',
+                'ผ่าน LINE ในเย็นวันเดียวกัน ไม่ใช่ข้ามสัปดาห์',
+                'หลังลูกค้าประจำมาครั้งที่ 3 — รีวิวจะเจาะจงและน่าเชื่อถือกว่า',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ไม่ควรทำ',
+              items: [
+                'ให้ส่วนลดแลกรีวิว 5 ดาว — ผิด Google guidelines',
+                'ให้พนักงานหรือคนรู้จักเขียนรีวิว',
+                'ขอรีวิวตอนลูกค้ากำลังรีบออกจากร้าน',
+                'ตอบโต้รีวิวลบด้วยการเถียงหรือเปิดเผยข้อมูลลูกค้า',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+          <p className="thai-readable text-sm leading-6 text-neutral-600">
+            <strong className="text-neutral-950">เป้าหมายที่แนะนำ:</strong> ร้านนวดเปิดใหม่ตั้งเป้า <strong>30 รีวิวใน 3 เดือนแรก</strong> ที่ rating เฉลี่ย 4.5+ — ธุรกิจนวดต้องการรีวิวมากกว่าร้านอาหารเพื่อสร้างความไว้ใจในระดับเดียวกัน เพราะลูกค้ากำลังตัดสินใจเรื่องที่ใกล้ตัวกว่าการกินข้าว
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คีย์เวิร์ดที่ร้านนวดควรจับ แยกตามประเภทบริการ">
+        <P>อย่าพยายามติดคำว่า "นวด ใกล้ฉัน" อย่างเดียว เพราะเป็นคำที่แข่งกันทั้งประเทศ ให้จับคำที่เจาะจงกว่าซึ่งแข่งน้อยและ conversion สูงกว่า</P>
+        <div className="grid gap-4">
+          {[
+            {
+              type: 'นวดแผนไทย / นวดเพื่อสุขภาพ',
+              keywords: ['นวดแผนไทย [ย่าน]', 'นวดแผนไทยใกล้ฉัน', 'ร้านนวด [ย่าน] เปิดดึก', 'นวดคลายเส้น [ย่าน]', 'Thai massage [area]'],
+              tip: 'คำหลักของกลุ่ม — ต้องมีในชื่อบริการบน GBP ทั้งไทยและอังกฤษ',
+            },
+            {
+              type: 'นวดเท้า / นวดฝ่าเท้า',
+              keywords: ['นวดเท้าใกล้ฉัน', 'นวดฝ่าเท้า [ย่าน] ราคา', 'foot massage near me', 'นวดเท้า [ห้าง]'],
+              tip: 'volume ไม่สูงแต่ intent แรงมาก คนหาคำนี้คือคนที่จะไปภายในชั่วโมงนี้',
+            },
+            {
+              type: 'สปา / ทรีตเมนต์',
+              keywords: ['สปา [ย่าน] ราคา', 'สปาใกล้ฉัน', 'day spa [จังหวัด]', 'สปาแพ็กเกจคู่รัก [ย่าน]', 'ขัดผิว [ย่าน]'],
+              tip: 'กลุ่มนี้ค้นหาแบบวางแผนล่วงหน้า — ต้องมีแพ็กเกจและราคาให้เทียบ',
+            },
+            {
+              type: 'นวดเฉพาะทาง',
+              keywords: ['นวดออฟฟิศซินโดรม [ย่าน]', 'นวดกดจุด [ย่าน]', 'นวดน้ำมันอโรมา [ย่าน]', 'นวดคนท้อง [ย่าน]', 'นวดหลังคลอด'],
+              tip: 'แข่งน้อยที่สุดและราคาสูงที่สุด — ถ้ามีช่างที่ชำนาญเฉพาะทาง นี่คือช่องที่ควรจับก่อน',
+            },
+          ].map((group) => (
+            <div key={group.type} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <p className="font-semibold text-neutral-950">{group.type}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {group.keywords.map((kw) => (
+                  <span key={kw} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">{kw}</span>
+                ))}
+              </div>
+              <p className="thai-readable mt-3 text-xs leading-5 text-neutral-500">{group.tip}</p>
+            </div>
+          ))}
+        </div>
+        <P>คำใน [] คือตัวแปร เปลี่ยนตามย่าน จังหวัด หรือห้างจริง — ยิ่งเจาะจงยิ่งแข่งน้อยและปิดการขายง่ายกว่า</P>
+      </ArticleSection>
+
+      <ArticleSection title="ร้านเดียว vs หลายสาขา vs ร้านในห้าง">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              label: '1 สาขา',
+              body: 'ทำ GBP โปรไฟล์เดียวให้ครบและ active สม่ำเสมอ โฟกัสที่ราคา รูปหน้าร้าน และรีวิวก่อน — ลงแรงน้อยแต่เห็นผลเร็วที่สุด',
+            },
+            {
+              label: 'หลายสาขา',
+              body: 'ทุกสาขาต้องมี GBP แยก ห้ามใช้โปรไฟล์เดียวแล้วใส่หลายที่อยู่ ตั้งชื่อให้เหมือนกันทุกสาขาแล้วต่อท้ายด้วยชื่อย่าน เช่น "ชื่อร้าน — อารีย์" เพื่อไม่ให้ Google สับสน',
+            },
+            {
+              label: 'ร้านในห้าง',
+              body: 'ระบุชั้นและโซนในช่องที่อยู่ให้ชัด และตั้งชั่วโมงทำการตามห้างไม่ใช่ตามร้าน เพราะลูกค้าที่มาถึงแล้วห้างปิดจะให้รีวิวลบทันที',
+            },
+          ].map(({ label, body }) => (
+            <div key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema Checklist สำหรับร้านนวดและสปา">
+        <P>ถ้ามีเว็บไซต์ ให้ใส่ JSON-LD แบบ HealthAndBeautyBusiness หรือ DaySpa ในหน้าหลัก เพื่อให้ Google และ AI เข้าใจรายละเอียดร้านในระดับโครงสร้าง</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['Schema Field', 'ตัวอย่าง / คำอธิบาย', 'หมายเหตุ'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {[
+                ['@type', '"DaySpa" หรือ "HealthAndBeautyBusiness"', 'เลือกให้ตรงกับบริการหลัก'],
+                ['name', '"ชื่อร้าน"', 'ต้องตรงกับ GBP 100%'],
+                ['address', 'streetAddress + addressLocality + postalCode', 'ตรงกับ NAP ทุก platform'],
+                ['telephone', '"+66812345678"', 'ตรงกับ GBP เสมอ'],
+                ['openingHoursSpecification', 'dayOfWeek + opens + closes', 'สำคัญมากสำหรับร้านที่เปิดดึก'],
+                ['priceRange', '"฿฿" หรือ "฿300–฿1200"', 'ช่วยกรองลูกค้าที่งบไม่ตรง'],
+                ['makesOffer', 'ชื่อบริการ + ราคา + ระยะเวลา', 'ให้ AI เข้าใจว่าคุณให้บริการอะไรบ้าง'],
+                ['hasMap', 'URL ของ Google Maps Listing', 'เชื่อมโยง GBP กับ schema'],
+                ['image', 'URL รูปหน้าร้านและห้องนวด', 'เพิ่มโอกาสแสดงใน Rich Results'],
+                ['aggregateRating', 'ratingValue + reviewCount', 'ดึงจากรีวิวจริงเท่านั้น ห้ามใส่เอง'],
+              ].map(([field, example, note]) => (
+                <tr key={field}>
+                  <td className="px-4 py-3 font-mono text-xs text-teal-700 whitespace-nowrap">{field}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{example}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>ถ้ายังไม่มีเว็บไซต์ ให้ทำ GBP ให้ครบก่อน — Google สร้าง entity ให้เองจากโปรไฟล์ที่สมบูรณ์ได้โดยไม่ต้องมี schema</P>
+      </ArticleSection>
+
+      <P>
+        ร้านนวดและสปาที่ต้องการให้ลูกค้าในย่านเจอก่อนคู่แข่ง ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}และ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวกำลังหาคุณอยู่' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
+        { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner — Thailand, Jul 2025–Jun 2026, checked August 2026',
+        'Google Business Profile documentation, checked August 2026',
+        'Schema.org DaySpa / HealthAndBeautyBusiness specification, checked August 2026',
+        'Manual Google Maps testing by Saralak Search, August 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านนวดและสปาบน Google Maps" />
+    </article>
+  )
+}
+
+function PetGroomingArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="ทำไมร้านอาบน้ำตัดขนคือธุรกิจที่ติด Google Maps ง่ายที่สุดกลุ่มหนึ่ง">
+        <P>ธุรกิจ<strong>อาบน้ำตัดขนสุนัข</strong>มี volume ไม่หวือหวาเท่าร้านอาหาร แต่มีข้อได้เปรียบที่ธุรกิจอื่นไม่มี — คำค้นหาเกือบทั้งกลุ่มมี competition ระดับ <strong>Low</strong> แปลว่าแรงที่ต้องใช้เพื่อติด 3-pack ต่ำกว่าธุรกิจอื่นอย่างมีนัยสำคัญ</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ภาพรวมตลาดกรูมมิ่งในไทย</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '15,540', label: 'ค้นหากลุ่มกรูมมิ่ง/เดือน', sub: 'รวมทุกคำหลักในกลุ่มทั่วประเทศ' },
+              { num: 'Low', label: 'การแข่งขันเกือบทุกคำ', sub: 'ต่ำกว่าร้านอาหารและคลินิกชัดเจน' },
+              { num: '4–8', label: 'สัปดาห์ที่ลูกค้ากลับมา', sub: 'ลูกค้าใหม่ 1 คน = 6–12 ครั้ง/ปี' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <P>นี่คือความต่างสำคัญ: ร้านอาหารแย่งลูกค้ากันทุกมื้อ แต่ร้านกรูมมิ่งที่ลูกค้าไว้ใจแล้ว <strong>แทบไม่มีใครเปลี่ยนร้าน</strong> — ดังนั้นลูกค้าใหม่ที่ได้จาก Google Maps หนึ่งคน มีมูลค่าตลอดปีสูงกว่าที่ตัวเลขต่อครั้งบอก</P>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวเลขจริง: คนค้นหาอะไรบ้างเมื่อจะพาสัตว์เลี้ยงไปตัดขน">
+        <P>ข้อมูลจาก Google Keyword Planner ประเทศไทย ช่วง กรกฎาคม 2025 – มิถุนายน 2026</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['คำค้นหา', 'ค้นหา/เดือน', 'การแข่งขัน', 'สิ่งที่บอกเรา'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['อาบน้ำตัดขนสุนัข ใกล้ฉัน', '9,900', 'Low', 'คำหลักของกลุ่มนี้ — ต้องติดให้ได้'],
+                ['ร้านตัดขนสุนัข ใกล้ฉัน', '2,900', 'Low', 'คนหา "ร้าน" = พร้อมไปวันนี้'],
+                ['อาบน้ำตัดขนแมว', '1,600', 'Low', 'ตลาดแมวแยกจากหมา และคู่แข่งน้อยกว่า'],
+                ['อาบน้ำตัดขนสุนัข', '1,000', 'Low', 'ไม่มี "ใกล้ฉัน" — intent ยังกว้าง'],
+                ['ตัดขนสุนัข ราคา', '90', 'Medium', 'คนเทียบราคา — ตอบด้วยราคาบน GBP'],
+                ['pet grooming ใกล้ฉัน', '50', 'Low', 'กลุ่มชาวต่างชาติและคนเมือง'],
+              ].map(([kw, vol, comp, note]) => (
+                <tr key={kw}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{kw}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{vol}</td>
+                  <td className="px-4 py-3 text-neutral-500">{comp}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            ข้อสังเกตสำคัญ: <strong>อาบน้ำตัดขนแมว 1,600 ครั้ง/เดือน</strong> เป็นตลาดที่ร้านส่วนใหญ่ไม่ได้สื่อสารว่าตัวเองรับ ถ้าร้านคุณรับแมวและมีช่างที่ชำนาญ การระบุให้ชัดคือทางลัดที่แข่งน้อยที่สุดในกลุ่มนี้
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="3 KPI ที่บอกว่าร้านคุณได้ลูกค้าจาก Google จริงหรือเปล่า">
+        <P>ไม่ต้องวัดอันดับ — วัดสิ่งที่แปลงเป็นเงินได้จริงจาก Google Business Profile Insights:</P>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              kpi: 'โทรศัพท์ (Calls)',
+              desc: 'ธุรกิจกรูมมิ่งปิดการขายทางโทรศัพท์เป็นหลัก เพราะลูกค้าต้องถามราคาตามขนาดและนัดคิว ถ้าไม่มีคนรับสายช่วงเสาร์–อาทิตย์ คุณกำลังทิ้งลูกค้าที่ตั้งใจจะมา',
+            },
+            {
+              kpi: 'ขอเส้นทาง (Directions)',
+              desc: 'ลูกค้าตั้งใจมาแล้ว — ถ้า pin ผิด หรือไม่ระบุว่าจอดรถตรงไหน คนที่พาหมาตัวใหญ่มาด้วยจะเปลี่ยนใจง่ายมาก',
+            },
+            {
+              kpi: 'คลิกเว็บไซต์ / LINE',
+              desc: 'ลูกค้าอยากดูผลงาน before/after และตารางคิวก่อนตัดสินใจ ลิงก์ LINE ทำงานได้ดีกว่าเว็บไซต์สำหรับธุรกิจนี้ เพราะจองต่อได้ทันที',
+            },
+          ].map(({ kpi, desc }) => (
+            <div key={kpi} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{kpi}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps อย่างละเอียด' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่ร้านกรูมมิ่งต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'รูป before / after คือสินทรัพย์อันดับหนึ่ง',
+              body: 'เจ้าของสัตว์เลี้ยงตัดสินใจจากผลงานที่เห็น ไม่ใช่คำโฆษณา ลงรูปคู่ก่อน-หลังของสัตว์จริงอย่างน้อย 10 คู่ ครอบคลุมหลายสายพันธุ์และหลายทรง เพราะคนมองหาว่า "ร้านนี้เคยตัดหมาพันธุ์เดียวกับของฉันไหม"',
+              tip: 'ขออนุญาตเจ้าของก่อนลงรูปสัตว์เลี้ยงของลูกค้าเสมอ',
+            },
+            {
+              num: '2', title: 'ใส่ราคาเป็นช่วงตามขนาดหรือสายพันธุ์',
+              body: 'ไม่ต้องกลัวว่าราคาไม่ตายตัว ใส่เป็นช่วง เช่น พันธุ์เล็ก 400–600 บาท พันธุ์กลาง 600–900 บาท แล้วระบุว่าราคาสุดท้ายขึ้นกับสภาพขนและความยาก ลูกค้ากลัวโดนบวกหน้างานมากกว่ากลัวราคาแพง',
+              tip: 'ความโปร่งใสเรื่องราคาเพิ่มอัตราการโทรที่จบเป็นนัดจริง',
+            },
+            {
+              num: '3', title: 'รูปที่แสดงความปลอดภัยและความสะอาด',
+              body: 'นอกจาก before/after ให้ลงรูปโต๊ะกรูมมิ่ง กรงพักที่แห้งและสะอาด อ่างอาบน้ำ และช่างขณะทำงาน ลูกค้ากำลังฝากสิ่งมีชีวิตไว้กับคุณ ความสะอาดคือสัญญาณความปลอดภัย',
+              tip: null,
+            },
+            {
+              num: '4', title: 'ระบุให้ชัดว่ารับสัตว์แบบไหนบ้าง',
+              body: 'รับแมวไหม รับพันธุ์ใหญ่ไหม รับสุนัขสูงอายุหรือสุนัขที่กลัวคนไหม มีบริการรับ-ส่งไหม ข้อมูลเหล่านี้คือสิ่งที่คนโทรมาถามซ้ำที่สุด — ตอบไว้ล่วงหน้าจะได้สายที่ตรงกลุ่มมากขึ้น',
+              tip: 'ใส่ไว้ทั้งในคำอธิบายธุรกิจและใน GBP Q&A ของตัวเอง',
+            },
+            {
+              num: '5', title: 'ขอรีวิวตอนลูกค้ามารับสัตว์',
+              body: 'จังหวะที่ดีที่สุดคือตอนเจ้าของเห็นผลลัพธ์ครั้งแรกและกำลังดีใจ ขอตรงนั้นเลย หรือส่ง LINE ตามในวันเดียวกัน อย่ารอข้ามสัปดาห์เพราะความรู้สึกจะจางไปแล้ว',
+              tip: 'รีวิวที่พูดถึงความใจเย็นกับสัตว์ที่กลัว มีน้ำหนักกว่ารีวิวที่ชมว่าตัดสวย',
+            },
+            {
+              num: '6', title: 'GBP Posts ที่ใช้ได้จริงสำหรับกรูมมิ่ง',
+              body: 'โพสต์ที่ได้ผล: ผลงานประจำสัปดาห์, คิวว่างช่วงวันธรรมดา (ดึงลูกค้าเข้าวันที่ร้านเงียบ), เตือนช่วงเปลี่ยนฤดูที่ขนร่วงหนัก และโปรโมชั่นแพ็กเกจ 3 ครั้งสำหรับลูกค้าประจำ',
+              tip: null,
+            },
+          ].map(({ num, title, body, tip }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{body}</p>
+                {tip && (
+                  <p className="thai-readable mt-2 rounded bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-700">
+                    Pro tip: {tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="คู่แข่งในกลุ่มกรูมมิ่งยังน้อย — ช่วงนี้คือจังหวะที่ติดง่ายที่สุด"
+        description="Google Maps Audit ตรวจว่าร้านคุณติด 3-pack ในย่านตัวเองหรือยัง และต้องแก้อะไรก่อนคู่แข่งเริ่มทำจริงจัง"
+      />
+
+      <ArticleSection title="ร้านมีหน้าร้าน vs กรูมมิ่งเคลื่อนที่ — ตั้ง GBP คนละแบบ">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+            <p className="font-semibold text-neutral-950">มีหน้าร้าน</p>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">
+              ตั้งเป็น storefront ปกติ แสดงที่อยู่เต็ม และถ้ามีบริการรับ-ส่งให้เพิ่ม service area ครอบคลุมย่านที่วิ่งจริง จะได้ทั้ง traffic จากคำว่า "ใกล้ฉัน" และจากย่านรอบข้าง
+            </p>
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <p className="font-semibold text-neutral-950">กรูมมิ่งเคลื่อนที่ / ถึงบ้าน</p>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">
+              ตั้งเป็น Service area business และซ่อนที่อยู่ อย่าใส่ที่อยู่บ้านตัวเองเป็นหน้าร้านปลอมเพราะเสี่ยงโดนระงับโปรไฟล์ ผลลัพธ์จะช้ากว่าร้านที่มีหน้าร้าน แต่ยังติดคำค้นหาในย่านที่ระบุได้
+            </p>
+          </div>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ทำให้ลูกค้ากลับมาซ้ำ — ส่วนที่ทำเงินจริงของธุรกิจนี้">
+        <P>Google Maps พาลูกค้าใหม่มาให้ แต่กำไรของธุรกิจกรูมมิ่งอยู่ที่รอบที่ 2, 3 และ 4 นี่คือสิ่งที่ควรทำทันทีหลังลูกค้าใหม่มาครั้งแรก</P>
+        <div className="grid gap-3">
+          {[
+            { step: 'นัดรอบถัดไปก่อนลูกค้าเดินออกจากร้าน', why: 'ขนโตกลับมาใน 4–8 สัปดาห์อยู่แล้ว การนัดล่วงหน้าเปลี่ยนลูกค้าขาจรเป็นลูกค้าประจำทันที' },
+            { step: 'เก็บโปรไฟล์สัตว์: สายพันธุ์ ทรงที่ตัด นิสัย ข้อควรระวัง', why: 'รอบหน้าลูกค้าไม่ต้องอธิบายซ้ำ — นี่คือ switching cost ที่ทำให้ไม่เปลี่ยนร้าน' },
+            { step: 'ส่งรูปผลงานให้เจ้าของทาง LINE ทุกครั้ง', why: 'เจ้าของมักเอาไปโพสต์ต่อ กลายเป็น word of mouth ฟรีที่ตรงกลุ่มที่สุด' },
+            { step: 'ขอรีวิว Google หลังครั้งที่ 2 ไม่ใช่ครั้งแรก', why: 'ลูกค้าที่กลับมาครั้งที่สองเขียนรีวิวที่มีน้ำหนักและเจาะจงกว่ามาก' },
+          ].map(({ step, why }) => (
+            <div key={step} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <p className="thai-readable font-medium text-neutral-950">{step}</p>
+              <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{why}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คีย์เวิร์ดที่ร้านกรูมมิ่งควรจับ แยกตามบริการ">
+        <P>เพราะ volume รวมของกลุ่มนี้ไม่ได้มหาศาล กลยุทธ์ที่ถูกคือ <strong>จับให้ครบทุกคำแทนที่จะทุ่มกับคำเดียว</strong> — ซึ่งทำได้จริงเพราะ competition ต่ำทั้งกลุ่ม</P>
+        <div className="grid gap-4">
+          {[
+            {
+              type: 'อาบน้ำตัดขนสุนัข',
+              keywords: ['อาบน้ำตัดขนสุนัข [ย่าน]', 'ร้านตัดขนหมา ใกล้ฉัน', 'ตัดขนสุนัข [ย่าน] ราคา', 'ตัดขน [สายพันธุ์] [ย่าน]', 'dog grooming [area]'],
+              tip: 'ใส่ชื่อสายพันธุ์ที่รับบ่อย เช่น พุดเดิ้ล ชิห์สุ ปอมเมอเรเนียน — คนค้นหาแบบระบุพันธุ์เยอะกว่าที่คิด',
+            },
+            {
+              type: 'อาบน้ำตัดขนแมว',
+              keywords: ['อาบน้ำตัดขนแมว [ย่าน]', 'ร้านตัดขนแมว ใกล้ฉัน', 'ตัดขนแมวสิงโต', 'อาบน้ำแมว [ย่าน]', 'cat grooming [area]'],
+              tip: 'แข่งน้อยที่สุดในกลุ่ม ร้านส่วนใหญ่ไม่ระบุว่ารับแมว ถ้าคุณรับให้พูดให้ดัง',
+            },
+            {
+              type: 'บริการเสริม',
+              keywords: ['ตัดเล็บสุนัข [ย่าน]', 'ขูดหินปูนสุนัข ใกล้ฉัน', 'สปาสุนัข [ย่าน]', 'กำจัดเห็บหมัด [ย่าน]', 'บำบัดขนร่วง สุนัข'],
+              tip: 'บริการเสริมคือคำที่ราคาต่อหัวสูงและแทบไม่มีใครแย่ง',
+            },
+            {
+              type: 'รับ-ส่ง / ถึงบ้าน',
+              keywords: ['รับอาบน้ำหมาถึงบ้าน [ย่าน]', 'กรูมมิ่งเคลื่อนที่ [จังหวัด]', 'รับส่งตัดขนสุนัข [ย่าน]', 'mobile pet grooming [area]'],
+              tip: 'volume ยังน้อยแต่กำลังโต และเป็นคำที่ปิดการขายได้ราคาดีที่สุด',
+            },
+          ].map((group) => (
+            <div key={group.type} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <p className="font-semibold text-neutral-950">{group.type}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {group.keywords.map((kw) => (
+                  <span key={kw} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">{kw}</span>
+                ))}
+              </div>
+              <p className="thai-readable mt-3 text-xs leading-5 text-neutral-500">{group.tip}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไมลูกค้าเลือกร้านกรูมมิ่งจาก Google Maps มากกว่า Facebook หรือกลุ่มคนรักสัตว์">
+        <P>ร้านกรูมมิ่งส่วนใหญ่ทุ่มกับ Facebook Page และกลุ่มคนเลี้ยงสัตว์ ซึ่งได้ผลจริง — แต่พลาดจุดที่ลูกค้าใหม่ส่วนใหญ่เริ่มต้น</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['ช่องทาง', 'จุดแข็ง', 'จุดอ่อน'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['Google Maps', 'คนที่พร้อมจองวันนี้ ค้นหาเอง ไม่ต้องซื้อโฆษณา', 'ต้องทำ GBP ให้ครบ ใช้เวลา 1–3 เดือน'],
+                ['Facebook Page', 'ลงผลงานได้เยอะ ลูกค้าเก่าติดตาม', 'คนไม่ค้นหาร้านตัดขนผ่าน Facebook'],
+                ['กลุ่มคนรักสัตว์', 'แนะนำปากต่อปาก น่าเชื่อถือสูงมาก', 'ควบคุมไม่ได้ และมักมีกฎห้ามโปรโมต'],
+                ['TikTok / Instagram', 'คลิป before/after ไวรัลได้', 'คนดูอยู่คนละจังหวัด ไม่ได้แปลงเป็นลูกค้า'],
+              ].map(([platform, pro, con]) => (
+                <tr key={platform}>
+                  <td className="px-4 py-3 font-semibold text-teal-800">{platform}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{pro}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{con}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุป: <strong>Google Maps คือช่องทางหาลูกค้าใหม่ ส่วน Facebook คือช่องทางรักษาลูกค้าเก่า</strong> — ทำทั้งคู่ แต่อย่าสลับหน้าที่กัน</P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีขอรีวิวจากเจ้าของสัตว์เลี้ยง">
+        <P>รีวิวของธุรกิจนี้มีน้ำหนักมากเป็นพิเศษ เพราะลูกค้ากำลังตัดสินใจว่าจะฝากสิ่งมีชีวิตไว้กับใคร</P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              label: 'วิธีที่ได้ผล',
+              items: [
+                'ขอตอนเจ้าของเห็นผลลัพธ์ครั้งแรกและกำลังดีใจ',
+                'ส่งรูป before/after ทาง LINE พร้อมลิงก์รีวิวในข้อความเดียวกัน',
+                'ขอหลังลูกค้ามาครั้งที่ 2 — รีวิวจะเจาะจงกว่ามาก',
+                'ติด QR code ที่เคาน์เตอร์รับ-ส่งสัตว์',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ไม่ควรทำ',
+              items: [
+                'ลดราคาแลกรีวิว 5 ดาว — ผิด Google guidelines',
+                'ลงรูปสัตว์ของลูกค้าโดยไม่ขออนุญาต',
+                'ขอรีวิวตอนเจ้าของกำลังกังวลเรื่องสัตว์',
+                'เถียงกับรีวิวลบเรื่องอุบัติเหตุระหว่างตัดขน',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+          <p className="thai-readable text-sm leading-6 text-neutral-600">
+            <strong className="text-neutral-950">เป้าหมายที่แนะนำ:</strong> เพราะ competition ในกลุ่มนี้ต่ำ <strong>15–20 รีวิวที่ rating 4.5+</strong> มักพอที่จะติด 3-pack ในย่านหนึ่งได้แล้ว ซึ่งน้อยกว่าร้านอาหารที่ต้องใช้มากกว่านี้หลายเท่า
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema Checklist สำหรับร้านอาบน้ำตัดขน">
+        <P>ถ้ามีเว็บไซต์ ให้ใส่ JSON-LD ประเภท LocalBusiness ในหน้าหลัก เพื่อให้ Google และ AI เข้าใจว่าคุณรับสัตว์แบบไหนและให้บริการอะไรบ้าง</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['Schema Field', 'ตัวอย่าง / คำอธิบาย', 'หมายเหตุ'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {[
+                ['@type', '"LocalBusiness" หรือ "PetStore"', 'schema.org ยังไม่มี type สำหรับ groomer โดยตรง'],
+                ['name', '"ชื่อร้าน"', 'ต้องตรงกับ GBP 100%'],
+                ['address', 'streetAddress + addressLocality + postalCode', 'ตรงกับ NAP ทุก platform'],
+                ['areaServed', '"ลาดพร้าว", "รัชดาภิเษก"', 'สำคัญมากถ้ามีบริการรับ-ส่ง'],
+                ['telephone', '"+66812345678"', 'ตรงกับ GBP เสมอ'],
+                ['openingHoursSpecification', 'dayOfWeek + opens + closes', 'ระบุวันหยุดประจำสัปดาห์ให้ชัด'],
+                ['makesOffer', 'ชื่อบริการ + ช่วงราคา', 'แยกตามขนาดหรือสายพันธุ์'],
+                ['priceRange', '"฿400–฿1500"', 'ช่วยกรองลูกค้าที่งบไม่ตรง'],
+                ['image', 'URL รูป before/after และหน้าร้าน', 'เพิ่มโอกาสแสดงใน Rich Results'],
+                ['aggregateRating', 'ratingValue + reviewCount', 'ดึงจากรีวิวจริงเท่านั้น ห้ามใส่เอง'],
+              ].map(([field, example, note]) => (
+                <tr key={field}>
+                  <td className="px-4 py-3 font-mono text-xs text-teal-700 whitespace-nowrap">{field}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{example}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>ถ้ายังไม่มีเว็บไซต์ ให้ทำ GBP ให้ครบก่อน — สำหรับธุรกิจขนาดนี้ GBP ที่สมบูรณ์ให้ผลมากกว่าเว็บไซต์ที่ทำครึ่งๆ กลางๆ</P>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็แนะนำร้านกรูมมิ่งจาก Google Maps">
+        <P>คำถามอย่าง "ร้านตัดขนหมาแถวนี้ที่ใจเย็นกับหมาขี้กลัว" คือคำถามที่คนถาม <strong>Gemini หรือ ChatGPT</strong> มากขึ้นเรื่อยๆ และ AI ตอบจาก GBP กับเนื้อหารีวิว</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'ร้านที่ระบุชัดว่ารับสัตว์แบบไหน + รีวิวเล่ารายละเอียด', result: 'AI เลือกแนะนำ', teal: true },
+            { text: 'ร้านที่มีแค่ชื่อ ที่อยู่ และรูปโลโก้', result: 'ไม่มีอยู่ในสายตา AI', teal: false },
+          ].map(({ text, result, teal }) => (
+            <div key={text} className={`rounded-lg border p-4 ${teal ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`thai-readable text-sm font-semibold ${teal ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`mt-1.5 text-sm font-bold ${teal ? 'text-teal-700' : 'text-neutral-400'}`}>{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <P>
+        ร้านกรูมมิ่งที่ต้องการติด 3-pack ในย่านตัวเอง ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}และ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
+        { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner — Thailand, Jul 2025–Jun 2026, checked August 2026',
+        'Google Business Profile documentation (service area business), checked August 2026',
+        'Manual Google Maps testing by Saralak Search, August 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านอาบน้ำตัดขนบน Google Maps" />
+    </article>
+  )
+}
+
+function PetShopArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="ร้านสัตว์เลี้ยงแข่งกับร้านออนไลน์ไม่ได้จริงหรือ?">
+        <P>คำตอบคือ <strong>แข่งได้ ในสนามที่ร้านออนไลน์ลงมาเล่นไม่ได้</strong> — คนที่พิมพ์ "ร้านขายอาหารสัตว์ ใกล้ฉัน" ไม่ใช่คนที่กำลังเทียบราคา แต่คือคนที่อาหารแมวหมดวันนี้ และไม่อยากรอส่ง 2 วัน</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ขนาดของดีมานด์กลุ่มสัตว์เลี้ยงในไทย</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '134,900', label: 'ค้นหากลุ่มร้านสัตว์เลี้ยง/เดือน', sub: 'รวมทุกคำหลักในกลุ่มทั่วประเทศ' },
+              { num: '40,500', label: '"ร้านขายอาหารสัตว์ ใกล้ฉัน"', sub: 'คำที่ intent พร้อมซื้อที่สุดในกลุ่ม' },
+              { num: 'Low', label: 'การแข่งขันทุกคำหลัก', sub: 'ไม่มีคำไหนในกลุ่มที่แข่งขันสูง' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { title: 'ร้านที่ระบุแบรนด์ที่มีขายและเวลาปิด', result: 'ลูกค้าขับมาซื้อวันนี้', color: 'border-teal-200 bg-teal-50/50 text-teal-800' },
+            { title: 'ร้านที่ใส่แค่ "ร้านขายอุปกรณ์สัตว์เลี้ยง"', result: 'ลูกค้าสั่งออนไลน์แทน', color: 'border-neutral-200 bg-neutral-50 text-neutral-500' },
+          ].map(({ title, result, color }) => (
+            <div key={title} className={`rounded-xl border p-4 ${color}`}>
+              <p className="thai-readable text-sm font-semibold">{title}</p>
+              <p className="mt-1.5 text-sm font-bold">{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวเลขจริง: คนค้นหาอะไรบ้างในกลุ่มสัตว์เลี้ยง">
+        <P>ข้อมูลจาก Google Keyword Planner ประเทศไทย ช่วง กรกฎาคม 2025 – มิถุนายน 2026</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['คำค้นหา', 'ค้นหา/เดือน', 'การแข่งขัน', 'สิ่งที่บอกเรา'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['โรงพยาบาลสัตว์ ใกล้ฉัน', '74,000', 'Low', 'ใหญ่ที่สุดในกลุ่ม — ร้านที่อยู่ใกล้คลินิกได้เปรียบ'],
+                ['ร้านขายอาหารสัตว์ ใกล้ฉัน', '40,500', 'Low', 'intent พร้อมซื้อที่สุด ต้องติดให้ได้'],
+                ['pet shop ใกล้ฉัน', '9,900', 'Low', 'กลุ่มคนเมืองและชาวต่างชาติ'],
+                ['ร้านขายสัตว์เลี้ยง ใกล้ฉัน', '6,600', 'Low', 'คนหาสัตว์มีชีวิตปนกับอุปกรณ์'],
+                ['อาหารแมว ใกล้ฉัน', '2,900', 'Low', 'ตลาดแมวโตต่อเนื่อง แยกสื่อสารได้'],
+                ['ร้านขายอุปกรณ์สัตว์เลี้ยง', '1,000', 'Low', 'ไม่มี "ใกล้ฉัน" — intent ยังกว้าง'],
+              ].map(([kw, vol, comp, note]) => (
+                <tr key={kw}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{kw}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{vol}</td>
+                  <td className="px-4 py-3 text-neutral-500">{comp}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            จุดที่คนส่วนใหญ่มองข้าม: <strong>โรงพยาบาลสัตว์ ใกล้ฉัน มี volume 74,000 ครั้ง/เดือน</strong> สูงกว่าคำว่าร้านขายอาหารสัตว์เกือบเท่าตัว ถ้าร้านคุณอยู่ใกล้คลินิกหรือมีสัตวแพทย์เข้ามาให้บริการเป็นรอบ นี่คือ traffic ก้อนใหญ่ที่เชื่อมมาถึงร้านได้
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อได้เปรียบเดียวที่ร้านออนไลน์เลียนแบบไม่ได้">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['ประเด็น', 'ร้านออนไลน์', 'ร้านหน้าร้าน + Google Maps'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['ความเร็ว', 'รอส่ง 1–3 วัน', 'ได้ของภายในชั่วโมงนี้'],
+                ['ของหมดกะทันหัน', 'ช่วยไม่ได้', 'นี่คือช่วงเวลาที่คุณชนะทุกครั้ง'],
+                ['คำแนะนำเฉพาะตัว', 'อ่านรีวิวเอง', 'คุยกับคนที่รู้จักสัตว์ของลูกค้า'],
+                ['ราคา', 'ถูกกว่าเมื่อซื้อยกลัง', 'แข่งยาก — อย่าแข่งตรงนี้'],
+                ['ของสด/ของแช่เย็น', 'ส่งยาก', 'ได้เปรียบชัดเจน'],
+              ].map(([topic, online, offline]) => (
+                <tr key={topic}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{topic}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{online}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700">{offline}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุปคือ อย่าแข่งเรื่องราคากับ marketplace — <strong>แข่งเรื่องความเร็วและความเชี่ยวชาญ</strong> ซึ่งทั้งสองอย่างสื่อสารผ่าน Google Business Profile ได้ทั้งหมด</P>
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่ร้านสัตว์เลี้ยงต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'ใส่แบรนด์ที่มีขาย ไม่ใช่แค่หมวดสินค้า',
+              body: 'ลูกค้าไม่ได้ค้นหาคำว่า "อุปกรณ์สัตว์เลี้ยง" — เขาค้นหาชื่อแบรนด์ที่ใช้อยู่ ใส่แบรนด์อาหารและทรายแมวที่คุณมีสต็อกจริงลงในรายการสินค้าและคำอธิบายธุรกิจ นี่คือ quick win ที่ร้านส่วนใหญ่ยังไม่ทำ',
+              tip: 'เน้นแบรนด์ที่หาซื้อยากในย่านคุณ — นั่นคือคำที่คุณจะติดง่ายที่สุด',
+            },
+            {
+              num: '2', title: 'ตั้งหมวดหมู่หลักและหมวดรองให้ตรงบริการจริง',
+              body: 'หมวดหลักเลือกตามรายได้หลัก เช่น Pet Store, Pet Supply Store หรือ Pet Food Store แล้วเพิ่มหมวดรองเฉพาะที่มีจริง เช่น Pet Groomer หรือ Veterinary Care การใส่หมวดที่ไม่ได้ให้บริการจริงเสี่ยงถูกรายงานและระงับโปรไฟล์',
+              tip: null,
+            },
+            {
+              num: '3', title: 'ชั่วโมงทำการที่ถูกต้อง — สำคัญกว่าที่คิด',
+              body: 'ลูกค้ากลุ่มนี้มักออกมาซื้อตอนเย็นหลังเลิกงาน หรือวันหยุด ถ้าเวลาปิดบน Google ไม่ตรงกับความจริง คุณกำลังเสียลูกค้าที่ขับมาถึงหน้าร้าน และได้รีวิวแย่แถมมาด้วย',
+              tip: 'อัปเดต Special Hours ทุกวันหยุดนักขัตฤกษ์',
+            },
+            {
+              num: '4', title: 'ลงรูปชั้นวางจริง ไม่ใช่แค่หน้าร้าน',
+              body: 'รูปที่ทำงานได้ดีที่สุดคือรูปชั้นวางที่เห็นแบรนด์ชัด รูปตู้แช่ รูปมุมอาหารแมว/หมาแยกกัน เพราะลูกค้ากำลังตรวจว่า "ร้านนี้มีของที่ฉันใช้ไหม" ก่อนตัดสินใจขับมา',
+              tip: null,
+            },
+            {
+              num: '5', title: 'ระบุบริการเสริมที่มี',
+              body: 'มีที่จอดรถไหม รับสั่งของล่วงหน้าไหม ส่งในระยะ 5 กิโลไหม มีสัตวแพทย์เข้ามาวันไหน มีบริการอาบน้ำตัดขนไหม บริการเสริมเหล่านี้ทำให้คุณติดคำค้นหาอีกหลายกลุ่มโดยไม่ต้องทำอะไรเพิ่ม',
+              tip: 'ถ้ามีกรูมมิ่งด้วย ให้ทำเนื้อหาแยกสำหรับกลุ่มคำนั้นโดยเฉพาะ',
+            },
+            {
+              num: '6', title: 'GBP Posts: ของเข้าใหม่และความรู้สั้นๆ',
+              body: 'โพสต์ที่ได้ผล: สินค้าเข้าใหม่, โปรอาหารกระสอบใหญ่, ตารางวันที่มีสัตวแพทย์, และเนื้อหาให้ความรู้ เช่น วิธีเปลี่ยนอาหารแมวโดยไม่ให้ท้องเสีย โพสต์ให้ความรู้สร้างความเชื่อถือกับลูกค้าใหม่ที่ยังไม่เคยเข้าร้าน',
+              tip: null,
+            },
+          ].map(({ num, title, body, tip }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{body}</p>
+                {tip && (
+                  <p className="thai-readable mt-2 rounded bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-700">
+                    Pro tip: {tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ลูกค้าที่ต้องการของวันนี้กำลังค้นหาร้านใกล้บ้านอยู่"
+        description="Google Maps Audit ตรวจว่าร้านคุณโผล่ในคำค้นหา “ใกล้ฉัน” ของย่านตัวเองหรือยัง และตรงไหนที่ทำให้ลูกค้าเลือกสั่งออนไลน์แทน"
+      />
+
+      <ArticleSection title="ข้อควรระวังเฉพาะของร้านที่ขายสัตว์มีชีวิต">
+        <P>Google Business Profile ไม่ได้ห้ามธุรกิจประเภทนี้ แต่ถ้าคิดจะยิงโฆษณาควรรู้ว่านโยบาย Google Ads จำกัดการโฆษณาการขายสัตว์มีชีวิต</P>
+        <div className="grid gap-3">
+          {[
+            { point: 'ฝั่ง organic ปลอดภัย', detail: 'GBP, รีวิว และเนื้อหาบนเว็บไซต์ทำได้ตามปกติ — โฟกัสตรงนี้ก่อนเสมอ' },
+            { point: 'ถ้าจะทำโฆษณา ให้เน้นอาหารและอุปกรณ์', detail: 'สร้างแคมเปญรอบสินค้าแทนการโฆษณาตัวสัตว์ ปลอดภัยกว่าและ conversion ดีกว่า' },
+            { point: 'ใส่สัญญาณความน่าเชื่อถือให้ชัด', detail: 'ใบอนุญาต มาตรฐานการดูแล ที่มาของสัตว์ และนโยบายรับประกันสุขภาพ — ทั้งลูกค้าและ AI ให้น้ำหนักกับสิ่งเหล่านี้' },
+          ].map(({ point, detail }) => (
+            <div key={point} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <p className="thai-readable font-medium text-neutral-950">{point}</p>
+              <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คีย์เวิร์ดที่ร้านสัตว์เลี้ยงควรจับ แยกตามหมวดสินค้า">
+        <P>ความผิดพลาดที่พบบ่อยที่สุดคือพยายามติดคำกว้างอย่าง "ร้านขายอุปกรณ์สัตว์เลี้ยง" ทั้งที่ลูกค้าจริงค้นหาด้วย <strong>ชื่อสินค้าและชื่อแบรนด์</strong></P>
+        <div className="grid gap-4">
+          {[
+            {
+              type: 'อาหารสัตว์',
+              keywords: ['ร้านขายอาหารสัตว์ ใกล้ฉัน', 'อาหารแมว ใกล้ฉัน', '[แบรนด์] ร้านขาย [ย่าน]', 'อาหารแมวสูตรไต [ย่าน]', 'อาหารหมากระสอบ [ย่าน]'],
+              tip: 'คำที่ volume สูงสุดของกลุ่ม — ต้องใส่แบรนด์ที่สต็อกจริงลงในรายการสินค้า GBP',
+            },
+            {
+              type: 'ของใช้และอุปกรณ์',
+              keywords: ['ทรายแมว [ย่าน]', 'กรงสุนัข ร้านใกล้ฉัน', 'ของเล่นแมว [ย่าน]', 'ปลอกคอสุนัข [ย่าน]', 'ร้านขายอุปกรณ์สัตว์เลี้ยง [ย่าน]'],
+              tip: 'ของหนักและของชิ้นใหญ่คือหมวดที่คนเลือกซื้อหน้าร้านมากกว่าออนไลน์',
+            },
+            {
+              type: 'สัตว์เลี้ยงและสัตว์น้ำ',
+              keywords: ['ร้านขายสัตว์เลี้ยง ใกล้ฉัน', 'ร้านขายปลาสวยงาม [ย่าน]', 'ร้านขายนก [ย่าน]', 'ร้านขายกระต่าย [จังหวัด]', 'pet shop [area]'],
+              tip: 'ฝั่ง organic ทำได้ตามปกติ แต่ระวังนโยบายโฆษณาถ้าจะยิง Ads',
+            },
+            {
+              type: 'บริการเสริมในร้าน',
+              keywords: ['ร้านสัตว์เลี้ยงมีอาบน้ำตัดขน [ย่าน]', 'คลินิกสัตว์ ใกล้ฉัน', 'ฉีดวัคซีนสุนัข [ย่าน]', 'ฝากเลี้ยงแมว [ย่าน]'],
+              tip: 'บริการเสริมเปิดประตูสู่คำค้นหาอีกกลุ่มทั้งหมด รวมถึงคำว่าโรงพยาบาลสัตว์ที่มี volume 74,000',
+            },
+          ].map((group) => (
+            <div key={group.type} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <p className="font-semibold text-neutral-950">{group.type}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {group.keywords.map((kw) => (
+                  <span key={kw} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">{kw}</span>
+                ))}
+              </div>
+              <p className="thai-readable mt-3 text-xs leading-5 text-neutral-500">{group.tip}</p>
+            </div>
+          ))}
+        </div>
+        <P>คำใน [] คือตัวแปร เปลี่ยนตามย่าน จังหวัด หรือแบรนด์ที่คุณมีขายจริง</P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีขอรีวิวจากลูกค้าร้านสัตว์เลี้ยง">
+        <P>ร้านค้าปลีกได้รีวิวยากกว่าธุรกิจบริการ เพราะการซื้อของจบเร็วและไม่มีจังหวะ "ประทับใจ" ชัดเจน — จึงต้องออกแบบจังหวะการขอเอง</P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              label: 'จังหวะที่ได้ผล',
+              items: [
+                'ตอนลูกค้ากลับมาบอกว่าของที่แนะนำไปได้ผล',
+                'หลังช่วยหาสินค้าที่หายากให้ได้',
+                'QR code ที่จุดชำระเงินพร้อมป้ายสั้นๆ',
+                'หลังใช้บริการเสริม เช่น อาบน้ำตัดขน หรือฉีดวัคซีน',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ไม่ควรทำ',
+              items: [
+                'แจกส่วนลดแลกรีวิว — ผิด Google guidelines',
+                'ขอรีวิวตอนลูกค้ากำลังต่อคิวจ่ายเงิน',
+                'ให้พนักงานหรือญาติเขียนรีวิว',
+                'เพิกเฉยรีวิวลบเรื่องราคาแพงกว่าออนไลน์ ควรตอบด้วยเหตุผลเรื่องบริการและความเร็ว',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ร้านเดียว vs หลายสาขา vs ร้านในตลาด">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              label: '1 สาขา',
+              body: 'ทุ่มกับ GBP โปรไฟล์เดียวให้ครบ โดยเฉพาะรายการสินค้าและแบรนด์ที่มี — นี่คือส่วนที่ให้ผลตอบแทนสูงสุดต่อเวลาที่ลงไป',
+            },
+            {
+              label: 'หลายสาขา',
+              body: 'แต่ละสาขาต้องมี GBP แยก และรายการสินค้าควรต่างกันตามสต็อกจริงของสาขานั้น อย่าคัดลอกคำอธิบายเดียวกันทุกสาขาเพราะ Google มองเป็นเนื้อหาซ้ำ',
+            },
+            {
+              label: 'ร้านในตลาด / ตลาดนัด',
+              body: 'ถ้าเปิดเฉพาะบางวัน ต้องตั้งชั่วโมงทำการให้ตรงเป๊ะ และใส่จุดสังเกตในช่องที่อยู่ เช่น ล็อกที่เท่าไร โซนไหน เพราะ pin ในตลาดมักคลาดเคลื่อน',
+            },
+          ].map(({ label, body }) => (
+            <div key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema Checklist สำหรับร้านสัตว์เลี้ยง">
+        <P>ใส่ JSON-LD ประเภท PetStore ในหน้าหลักของเว็บไซต์ เพื่อให้ Google และ AI เข้าใจว่าคุณขายอะไรและมีบริการอะไรบ้าง</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['Schema Field', 'ตัวอย่าง / คำอธิบาย', 'หมายเหตุ'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {[
+                ['@type', '"PetStore"', 'schema.org มี type นี้โดยเฉพาะ ใช้ให้ตรง'],
+                ['name', '"ชื่อร้าน"', 'ต้องตรงกับ GBP 100%'],
+                ['address', 'streetAddress + addressLocality + postalCode', 'ตรงกับ NAP ทุก platform'],
+                ['telephone', '"+66812345678"', 'ตรงกับ GBP เสมอ'],
+                ['openingHoursSpecification', 'dayOfWeek + opens + closes', 'ลูกค้ากลุ่มนี้มาช่วงเย็นและวันหยุดเป็นหลัก'],
+                ['brand / makesOffer', 'รายชื่อแบรนด์ที่จำหน่าย', 'นี่คือ field ที่ AI ใช้ตอบว่าร้านไหนมีของที่ถาม'],
+                ['hasMap', 'URL ของ Google Maps Listing', 'เชื่อมโยง GBP กับ schema'],
+                ['paymentAccepted', '"Cash, PromptPay, Credit Card"', 'ลดคำถามและลดการเสียลูกค้าหน้าร้าน'],
+                ['image', 'URL รูปชั้นวางและหน้าร้าน', 'เพิ่มโอกาสแสดงใน Rich Results'],
+                ['aggregateRating', 'ratingValue + reviewCount', 'ดึงจากรีวิวจริงเท่านั้น ห้ามใส่เอง'],
+              ].map(([field, example, note]) => (
+                <tr key={field}>
+                  <td className="px-4 py-3 font-mono text-xs text-teal-700 whitespace-nowrap">{field}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{example}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็แนะนำร้านสัตว์เลี้ยงจาก Google Maps">
+        <P>คำถามอย่าง "ร้านแถวนี้ที่มีอาหารแมวสูตรไตขายไหม" คือสิ่งที่คนเริ่มถาม <strong>Gemini, ChatGPT และ Perplexity</strong> — และ AI ตอบได้เฉพาะร้านที่ระบุข้อมูลสินค้าไว้จริง</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'ร้านที่ระบุแบรนด์ หมวดสินค้า และบริการเสริมครบ', result: 'AI เลือกแนะนำ', teal: true },
+            { text: 'ร้านที่ใส่แค่ชื่อร้านกับที่อยู่', result: 'ไม่มีอยู่ในสายตา AI', teal: false },
+          ].map(({ text, result, teal }) => (
+            <div key={text} className={`rounded-lg border p-4 ${teal ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`thai-readable text-sm font-semibold ${teal ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`mt-1.5 text-sm font-bold ${teal ? 'text-teal-700' : 'text-neutral-400'}`}>{result}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — ทำให้ AI แนะนำธุรกิจของคุณ' },
+        ]} />
+      </ArticleSection>
+
+      <P>
+        ร้านสัตว์เลี้ยงที่ต้องการให้ลูกค้าในย่านเจอก่อนคู่แข่ง ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}และ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
+        { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner — Thailand, Jul 2025–Jun 2026, checked August 2026',
+        'Google Business Profile documentation, checked August 2026',
+        'Google Ads policy — Animals and animal products, checked August 2026',
+        'Manual Google Maps testing by Saralak Search, August 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านสัตว์เลี้ยงบน Google Maps" />
     </article>
   )
 }
@@ -5707,6 +6876,15 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'increase-sale-restaurant') {
     return <IncreaseSaleRestaurantArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-massage-spa') {
+    return <MassageSpaArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-pet-grooming') {
+    return <PetGroomingArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-pet-shop') {
+    return <PetShopArticle post={post} />
   }
   if (post.bodyVariant === 'tham-web-claude') {
     return <ThamWebClaudeArticle post={post} />

@@ -408,6 +408,27 @@ export default function ServiceLocalSEO() {
               <span className="text-teal-500">→</span>
               เพิ่มยอดขายร้านอาหารด้วย Google
             </Link>
+            <Link
+              to="/blog/increase-sale-massage-spa"
+              className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
+            >
+              <span className="text-teal-500">→</span>
+              เพิ่มยอดขายร้านนวดและสปาด้วย Google Maps
+            </Link>
+            <Link
+              to="/blog/increase-sale-pet-grooming"
+              className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
+            >
+              <span className="text-teal-500">→</span>
+              เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัขด้วย Google Maps
+            </Link>
+            <Link
+              to="/blog/increase-sale-pet-shop"
+              className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
+            >
+              <span className="text-teal-500">→</span>
+              เพิ่มยอดขายร้านขายสัตว์เลี้ยงด้วย Google Maps
+            </Link>
           </div>
         </div>
       </section>

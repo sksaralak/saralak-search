@@ -504,6 +504,63 @@ export default function ServiceGoogleMaps() {
               </div>
             </article>
 
+            {/* Blog cards: อุตสาหกรรมอื่น */}
+            {[
+              {
+                eyebrow: 'นวด / สปา',
+                title: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps',
+                body: 'คำค้นหากลุ่มนวดและสปาแบบ "ใกล้ฉัน" รวมกัน 1.34 ล้านครั้ง/เดือน และโตขึ้นถึง +49% เทียบปีก่อน — แต่ร้านส่วนใหญ่ยังไม่ใส่ราคาและรูปหน้าร้าน',
+                tags: ['ราคาบน GBP', 'ร้านเปิดดึก', 'นักท่องเที่ยว', 'ลิงก์จอง'],
+                to: '/blog/increase-sale-massage-spa',
+              },
+              {
+                eyebrow: 'อาบน้ำตัดขนสัตว์เลี้ยง',
+                title: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps',
+                body: 'คำค้นหากลุ่มกรูมมิ่งมี competition ระดับ Low แทบทุกคำ ติด 3-pack ง่ายกว่าธุรกิจอื่น และลูกค้ากลับมาซ้ำทุก 4–8 สัปดาห์',
+                tags: ['Before / After', 'ราคาเป็นช่วง', 'ลูกค้าประจำ', 'Service area'],
+                to: '/blog/increase-sale-pet-grooming',
+              },
+              {
+                eyebrow: 'ร้านสัตว์เลี้ยง / อาหารสัตว์',
+                title: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยง ด้วย Google Maps',
+                body: '"ร้านขายอาหารสัตว์ ใกล้ฉัน" 40,500 ครั้ง/เดือน คนกลุ่มนี้ต้องการของวันนี้ ไม่ใช่รอส่ง 2 วัน — จุดที่ร้านออนไลน์เลียนแบบไม่ได้',
+                tags: ['แบรนด์ที่มีขาย', 'หมวดหมู่ GBP', 'บริการเสริม', 'แข่งกับ e-commerce'],
+                to: '/blog/increase-sale-pet-shop',
+              },
+            ].map((card) => (
+              <article key={card.to} className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md">
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-700">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-teal-600">{card.eyebrow}</span>
+                  </div>
+                  <h3 className="thai-readable mt-3 text-lg font-semibold leading-7 text-neutral-950">{card.title}</h3>
+                  <p className="thai-readable mt-2 flex-1 text-sm leading-6 text-neutral-500">{card.body}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {card.tags.map(t => (
+                      <span key={t} className="rounded-full bg-teal-50 px-2.5 py-0.5 text-[10px] font-semibold text-teal-700">{t}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="border-t border-neutral-200 px-6 py-4">
+                  <Link
+                    to={card.to}
+                    className="flex items-center gap-2 text-sm font-semibold text-teal-700 transition-colors group-hover:text-teal-800"
+                  >
+                    อ่านบทความเต็ม
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </article>
+            ))}
+
             {/* Blog card: เพิ่มยอดขาย Google Maps */}
             <article className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
               <div className="flex flex-1 flex-col p-6">
