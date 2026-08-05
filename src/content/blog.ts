@@ -1332,8 +1332,22 @@ export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug)
 }
 
+function rotate<T>(items: T[], by: number) {
+  if (items.length === 0) return items
+  const offset = by % items.length
+  return [...items.slice(offset), ...items.slice(0, offset)]
+}
+
 export function getRelatedPosts(slug: string, limit = 3) {
-  return blogPosts.filter((post) => post.slug !== slug).slice(0, limit)
+  const currentIndex = blogPosts.findIndex((post) => post.slug === slug)
+  const current = blogPosts[currentIndex]
+  const rest = blogPosts.filter((post) => post.slug !== slug)
+  const sameCategory = rest.filter((post) => post.category === current?.category)
+  const otherCategory = rest.filter((post) => post.category !== current?.category)
+
+  // Rotate by the post's own position so different articles surface across pages
+  // instead of every page showing the same static first 3 posts.
+  return [...rotate(sameCategory, currentIndex), ...rotate(otherCategory, currentIndex)].slice(0, limit)
 }
 
 export function getLatestBlogPosts(limit = 4) {
