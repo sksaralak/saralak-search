@@ -833,7 +833,7 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ลูกค้าเมื่อยกำลังหาคุณอยู่',
+    title: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ลูกค้าที่เมื่อยกำลังหาคุณอยู่',
     slug: 'increase-sale-massage-spa',
     category: 'Local SEO',
     excerpt:
@@ -893,7 +893,7 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps',
+    title: 'เพิ่มยอดขาย Pet Shop ด้วย Google Maps',
     slug: 'increase-sale-pet-shop',
     category: 'Local SEO',
     excerpt:
@@ -904,7 +904,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยง ด้วย Google Maps | Saralak Search',
+    metaTitle: 'เพิ่มยอดขาย pet shop ด้วย Google Maps | Saralak Search',
     metaDescription:
       'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ด้วย Google Maps — "ร้านขายอาหารสัตว์ ใกล้ฉัน" 40,500 ครั้ง/เดือน เรียนรู้วิธีดึงลูกค้าที่ต้องการของวันนี้ แทนที่จะเสียให้ร้านออนไลน์',
     aiSummary: [
