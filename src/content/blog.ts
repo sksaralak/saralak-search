@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
   cta?: {
     headline: string
     description: string
@@ -617,6 +617,34 @@ export const petShopFaqs: FAQItem[] = [
   },
 ]
 
+export const petHospitalFaqs: FAQItem[] = [
+  {
+    question: 'คลินิกสัตวแพทย์เล็กๆ แข่งกับโรงพยาบาลสัตว์เชนใหญ่บน Google Maps ได้จริงไหม?',
+    answer:
+      'ได้ เพราะคนที่ค้นหา "คลินิกสัตว์ ใกล้ฉัน" หรือ "สัตวแพทย์ ใกล้ฉัน" ส่วนใหญ่ต้องการหมอที่ใกล้และว่างเร็วที่สุด ไม่ใช่เชนที่ใหญ่ที่สุด ถ้าคลินิกคุณตอบสนองไว มีชั่วโมงทำการถูกต้อง และมีรีวิวที่น่าเชื่อถือ ก็แข่งกับเชนใหญ่ในรัศมีใกล้บ้านได้สบาย',
+  },
+  {
+    question: 'ควรตั้งหมวดหมู่ GBP เป็นอะไรสำหรับโรงพยาบาลสัตว์หรือคลินิก?',
+    answer:
+      'หมวดหลักใช้ Veterinarian หรือ Animal Hospital ตามขนาดและใบอนุญาตจริง ถ้ามีบริการฉุกเฉินตลอด 24 ชั่วโมงให้เพิ่มหมวดรอง Emergency Veterinarian Service และถ้ามีอาบน้ำตัดขนหรือขายอาหารสัตว์ด้วย ให้เพิ่มเป็นหมวดรองแยกต่างหาก',
+  },
+  {
+    question: 'ราคาค่ารักษาที่แตกต่างกันมากในแต่ละเคส ควรใส่ราคาบน Google Business Profile ไหม?',
+    answer:
+      'ใส่เป็นราคาเริ่มต้นของบริการที่ประเมินล่วงหน้าได้ เช่น ค่าตรวจสุขภาพทั่วไป ค่าฉีดวัคซีนตามชนิด และค่าทำหมัน พร้อมระบุว่าราคาสุดท้ายขึ้นกับอาการและการวินิจฉัยจริง ความโปร่งใสระดับนี้ช่วยลดความกังวลของเจ้าของสัตว์ก่อนโทรเข้ามา',
+  },
+  {
+    question: 'ควรขอรีวิวจากเจ้าของสัตว์ตอนไหน?',
+    answer:
+      'จังหวะที่ดีที่สุดคือหลังการรักษาสำเร็จและเจ้าของกลับมาติดตามอาการว่าดีขึ้น หรือหลังฉีดวัคซีน/ทำหมันแล้วไม่มีภาวะแทรกซ้อน ควรหลีกเลี่ยงการขอรีวิวในเคสที่สัตว์เลี้ยงอาการหนักหรือเสียชีวิต เพราะเป็นช่วงเวลาที่ละเอียดอ่อนสำหรับเจ้าของ',
+  },
+  {
+    question: 'ต้องแสดงใบอนุญาตหรือข้อมูลสัตวแพทย์บน Google Maps ไหม?',
+    answer:
+      'ควรแสดง เพราะความน่าเชื่อถือคือปัจจัยตัดสินใจอันดับต้นของธุรกิจสุขภาพ ใส่ชื่อและใบอนุญาตประกอบวิชาชีพการสัตวแพทย์ของทีมสัตวแพทย์ในเว็บไซต์และคำอธิบายธุรกิจ พร้อมรูปอุปกรณ์และห้องตรวจที่สะอาด เพราะทั้งเจ้าของสัตว์และ AI Search ให้น้ำหนักกับสัญญาณความน่าเชื่อถือเหล่านี้',
+  },
+]
+
 export const thamWebClaudeFaqs: FAQItem[] = [
   {
     question: 'ทำเว็บด้วย Claude ต้องรู้โค้ดไหม?',
@@ -918,6 +946,36 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ลูกค้าที่ต้องการของวันนี้กำลังค้นหาร้านใกล้บ้านอยู่',
       description: 'Google Maps Audit ตรวจว่าร้านคุณโผล่ในคำค้นหา "ใกล้ฉัน" ของย่านตัวเองหรือยัง และตรงไหนที่ทำให้ลูกค้าเลือกสั่งออนไลน์แทน',
+      buttonText: 'ขอรับ Google Maps Audit ฟรี',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps',
+    slug: 'increase-sale-pet-hospital',
+    category: 'Local SEO',
+    excerpt:
+      'คำค้นหากลุ่มโรงพยาบาลสัตว์และคลินิกสัตวแพทย์แบบ "ใกล้ฉัน" รวมกันกว่า 130,000 ครั้งต่อเดือนในไทย ลูกค้ากลุ่มนี้ตัดสินใจเร็วเพราะเป็นเรื่องฉุกเฉิน แต่คลินิกส่วนใหญ่ยังไม่มีชั่วโมงทำการ บริการ หรือราคาที่ถูกต้องบน Google Maps',
+    readingTime: '12 min read',
+    publishedDate: '2026-08-06',
+    lastModifiedDate: '2026-08-06',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'เพิ่มยอดขายโรงพยาบาลสัตว์ ด้วย Google Maps | Saralak Search',
+    metaDescription:
+      'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ด้วย Google Maps — "โรงพยาบาลสัตว์ ใกล้ฉัน" มีคนค้นหา 74,000 ครั้ง/เดือน เรียนรู้วิธีเปลี่ยนคนค้นหาเป็น Call และ Direction ในเคสฉุกเฉิน',
+    aiSummary: [
+      'คำค้นหากลุ่มโรงพยาบาลสัตว์และคลินิกสัตวแพทย์แบบ "ใกล้ฉัน" ในไทยรวมกันประมาณ 132,800 ครั้ง/เดือน นำโดย โรงพยาบาลสัตว์ ใกล้ฉัน 74,000 และ คลินิกสัตว์ ใกล้ฉัน 33,100',
+      'ลูกค้ากลุ่มนี้ต่างจากธุรกิจอื่นตรงที่ intent มักเร่งด่วนหรือเป็นเหตุฉุกเฉิน การตอบสนองไวและชั่วโมงทำการที่ถูกต้องมีผลต่อการตัดสินใจมากกว่าราคา',
+      'สิ่งที่ต้องมีบน GBP: หมวดหมู่ที่ตรงกับบริการจริง (รวมถึง Emergency Veterinarian Service ถ้ามี) เบอร์โทรที่รับสายจริง ชั่วโมงทำการที่อัปเดตตลอด และรีวิวที่พูดถึงความน่าเชื่อถือ',
+      'ควรแสดงใบอนุญาตประกอบวิชาชีพการสัตวแพทย์และสัญญาณความน่าเชื่อถืออื่นๆ ให้ชัดเจน เพราะทั้งเจ้าของสัตว์และ AI Search ให้น้ำหนักกับสิ่งเหล่านี้ในธุรกิจสายสุขภาพ',
+    ],
+    faqs: petHospitalFaqs,
+    bodyVariant: 'increase-sale-pet-hospital',
+    cta: {
+      headline: 'เคสฉุกเฉินกำลังค้นหาคลินิกที่ใกล้และว่างที่สุดอยู่',
+      description: 'Google Maps Audit ตรวจว่าคลินิกหรือโรงพยาบาลสัตว์ของคุณโผล่ในคำค้นหา "ใกล้ฉัน" หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน',
       buttonText: 'ขอรับ Google Maps Audit ฟรี',
       href: '/discovery-audit',
     },

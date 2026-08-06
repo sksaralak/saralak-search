@@ -12,6 +12,7 @@ const blogSlugs = [
   'increase-sale-massage-spa',
   'increase-sale-pet-grooming',
   'increase-sale-pet-shop',
+  'increase-sale-pet-hospital',
   'seo-not-working',
   'ai-website-seo',
   'llms-txt-thailand',

@@ -3913,6 +3913,7 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps — Saralak Search' },
       ]} />
 
@@ -4463,6 +4464,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
       ]} />
 
@@ -4877,6 +4879,7 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps สำหรับร้านอาหาร — Saralak Search' },
       ]} />
@@ -5302,6 +5305,7 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวกำลังหาคุณอยู่' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
       ]} />
@@ -5676,6 +5680,7 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
       </P>
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
@@ -6035,6 +6040,7 @@ function PetShopArticle({ post }: { post: BlogPost }) {
         {' '}ของ Saralak Search ได้เลย
       </P>
       <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
@@ -6049,6 +6055,365 @@ function PetShopArticle({ post }: { post: BlogPost }) {
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับร้านสัตว์เลี้ยงบน Google Maps" />
+    </article>
+  )
+}
+
+function PetHospitalArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="คลินิกเล็กแข่งกับโรงพยาบาลสัตว์เชนใหญ่ไม่ได้จริงหรือ?">
+        <P>คำตอบคือ <strong>แข่งได้ ในจังหวะที่เชนใหญ่แพ้ทางอยู่แล้ว</strong> — คนที่พิมพ์ "โรงพยาบาลสัตว์ ใกล้ฉัน" ตอนตีสอง ไม่ได้กำลังเทียบชื่อเสียงหรือเทียบราคา แต่ต้องการที่ที่ใกล้ที่สุดและว่างที่สุด ณ วินาทีนั้น</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ขนาดของดีมานด์กลุ่มโรงพยาบาลสัตว์ในไทย</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '132,800', label: 'ค้นหากลุ่มคลินิก/รพ.สัตว์ ต่อเดือน', sub: 'รวมทุกคำหลักในกลุ่มทั่วประเทศ' },
+              { num: '74,000', label: '"โรงพยาบาลสัตว์ ใกล้ฉัน"', sub: 'คำที่ volume สูงสุดในกลุ่ม' },
+              { num: 'Low–Med', label: 'การแข่งขันส่วนใหญ่ของกลุ่ม', sub: 'ยังมีช่องว่างสำหรับคลินิกที่ทำ GBP จริงจัง' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { title: 'คลินิกที่ระบุชั่วโมงฉุกเฉินและเบอร์รับสายจริง', result: 'ลูกค้าโทรและมาทันที', color: 'border-teal-200 bg-teal-50/50 text-teal-800' },
+            { title: 'คลินิกที่ใส่แค่ชื่อกับที่อยู่ ไม่มีชั่วโมงชัดเจน', result: 'ลูกค้าวางสายไปหาที่อื่น', color: 'border-neutral-200 bg-neutral-50 text-neutral-500' },
+          ].map(({ title, result, color }) => (
+            <div key={title} className={`rounded-xl border p-4 ${color}`}>
+              <p className="thai-readable text-sm font-semibold">{title}</p>
+              <p className="mt-1.5 text-sm font-bold">{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวเลขจริง: คนค้นหาอะไรบ้างในกลุ่มโรงพยาบาลสัตว์">
+        <P>ข้อมูลจาก Google Keyword Planner ประเทศไทย ช่วง กรกฎาคม 2025 – มิถุนายน 2026</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['คำค้นหา', 'ค้นหา/เดือน', 'การแข่งขัน', 'สิ่งที่บอกเรา'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['โรงพยาบาลสัตว์ ใกล้ฉัน', '74,000', 'Medium', 'ใหญ่ที่สุดในกลุ่ม — คำที่ต้องติด 3-pack ให้ได้'],
+                ['คลินิกสัตว์ ใกล้ฉัน', '33,100', 'Low', 'intent กว้างกว่า ครอบคลุมทั้งเคสฉุกเฉินและตรวจทั่วไป'],
+                ['สัตวแพทย์ ใกล้ฉัน', '14,800', 'Low', 'คนกำลังหาหมอ ไม่ใช่แค่สถานที่'],
+                ['ฉีดวัคซีนสุนัข ใกล้ฉัน', '4,400', 'Low', 'intent วางแผนล่วงหน้า ไม่ใช่ฉุกเฉิน'],
+                ['ทำหมันแมว ใกล้ฉัน', '3,600', 'Low', 'คำเฉพาะบริการ ปิดการนัดง่ายถ้าตอบไว'],
+                ['รพ สัตว์ 24 ชม', '2,900', 'Low', 'คำที่มี intent ฉุกเฉินชัดเจนที่สุด'],
+              ].map(([kw, vol, comp, note]) => (
+                <tr key={kw}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{kw}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{vol}</td>
+                  <td className="px-4 py-3 text-neutral-500">{comp}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            จุดที่คลินิกส่วนใหญ่มองข้าม: <strong>"รพ สัตว์ 24 ชม" และคำที่มีคำว่าฉุกเฉินแฝงอยู่</strong> มี volume ไม่สูงสุด แต่ intent พร้อมเดินทางทันทีสูงที่สุดในกลุ่มทั้งหมด ถ้าคลินิกคุณเปิดดึกหรือมีเวรฉุกเฉิน ต้องสื่อสารตรงนี้ให้ชัดที่สุด
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไมลูกค้ากลุ่มนี้ตัดสินใจเร็วกว่าธุรกิจอื่น">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['ปัจจัย', 'ธุรกิจทั่วไป', 'โรงพยาบาลสัตว์ / คลินิก'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['เวลาตัดสินใจ', 'เทียบหลายเจ้า ใช้เวลาหลายวัน', 'มักตัดสินใจภายในไม่กี่นาที'],
+                ['ปัจจัยหลัก', 'ราคาและโปรโมชั่น', 'ระยะทาง ความว่าง และความน่าเชื่อถือ'],
+                ['ช่วงเวลาค้นหา', 'กระจายทั้งวัน', 'พีคช่วงเย็น-ดึก และวันหยุด'],
+                ['ผลถ้าข้อมูลผิด', 'เสียโอกาสขาย', 'เสี่ยงต่อชีวิตสัตว์เลี้ยง — ลูกค้าไม่ให้อภัยง่าย'],
+              ].map(([topic, general, vet]) => (
+                <tr key={topic}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{topic}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{general}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700">{vet}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุปคือ ความถูกต้องของ <strong>ชั่วโมงทำการและเบอร์โทรที่รับสายจริง</strong> มีผลต่อธุรกิจนี้มากกว่าธุรกิจทั่วไปหลายเท่า เพราะข้อมูลผิดหนึ่งครั้งอาจแปลว่าลูกค้าขับรถไปถึงแล้วปิดจริง</P>
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่คลินิกและโรงพยาบาลสัตว์ต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'ตั้งหมวดหมู่ให้ตรงกับบริการจริง',
+              body: 'หมวดหลักใช้ Veterinarian หรือ Animal Hospital ตามใบอนุญาตจริง ถ้ามีเวรฉุกเฉินตลอด 24 ชั่วโมงให้เพิ่มหมวดรอง Emergency Veterinarian Service เพราะเป็นหมวดที่ Google ใช้จับคู่กับคำค้นหาที่มี intent ฉุกเฉิน',
+              tip: 'อย่าใส่หมวดฉุกเฉินถ้าไม่มีจริง เสี่ยงถูกรีวิวลบตอนลูกค้าโทรมาแล้วไม่มีคนรับ',
+            },
+            {
+              num: '2', title: 'ชั่วโมงทำการต้องแม่นถึงระดับนาที',
+              body: 'ธุรกิจนี้ไม่มีคำว่า "คลาดเคลื่อนนิดหน่อย" เพราะลูกค้าที่เห็นว่าเปิดแล้วขับมาถึงแต่ปิดจริง คือรีวิว 1 ดาวที่หนักที่สุด อัปเดต Special Hours ทุกวันหยุดนักขัตฤกษ์และวันที่สัตวแพทย์ลา',
+              tip: null,
+            },
+            {
+              num: '3', title: 'เบอร์โทรต้องมีคนรับสายในชั่วโมงที่ระบุไว้',
+              body: 'เบอร์บน GBP ควรเป็นเบอร์ที่มีคนรับจริงตลอดชั่วโมงทำการที่ประกาศไว้ ถ้าเป็นเวรฉุกเฉินกลางคืนควรมีเบอร์แยกหรือระบบโอนสายที่ทำงานจริง เพราะนี่คือจุดตัดสินใจสุดท้ายก่อนลูกค้าเลือกที่อื่น',
+              tip: 'ทดสอบโทรเข้าเบอร์ที่ลงไว้เองเดือนละครั้ง',
+            },
+            {
+              num: '4', title: 'ใส่รายการบริการพร้อมราคาเริ่มต้น',
+              body: 'ใส่บริการที่ประเมินราคาล่วงหน้าได้ เช่น ตรวจสุขภาพทั่วไป ฉีดวัคซีน ทำหมัน พร้อมราคาเริ่มต้น ระบุชัดว่าราคาสุดท้ายขึ้นกับการวินิจฉัย ความโปร่งใสระดับนี้ลดความลังเลก่อนโทรเข้ามาได้มาก',
+              tip: null,
+            },
+            {
+              num: '5', title: 'ลงรูปที่สร้างความน่าเชื่อถือ',
+              body: 'รูปห้องตรวจที่สะอาด อุปกรณ์การแพทย์ ทีมสัตวแพทย์ และป้ายใบอนุญาต สื่อสารความน่าเชื่อถือได้ดีกว่ารูปหน้าร้านเฉยๆ เพราะลูกค้ากำลังตัดสินใจฝากชีวิตสัตว์เลี้ยงไว้กับสถานที่นี้',
+              tip: 'หลีกเลี่ยงรูปที่มีสัตว์ป่วยหนักหรือบาดแผล อาจสร้างความกังวลเกินจำเป็น',
+            },
+            {
+              num: '6', title: 'GBP Posts: ความรู้และการเตือนตามฤดูกาล',
+              body: 'โพสต์ที่ได้ผล: เตือนวัคซีนพิษสุนัขบ้าประจำปี, ความรู้เรื่องโรคตามฤดูกาล (เช่น พยาธิหนอนหัวใจช่วงหน้าฝน), ตารางเวรสัตวแพทย์เฉพาะทาง เนื้อหาให้ความรู้สร้างความเชื่อถือกับเจ้าของสัตว์ที่ยังไม่เคยใช้บริการ',
+              tip: null,
+            },
+          ].map(({ num, title, body, tip }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{body}</p>
+                {tip && (
+                  <p className="thai-readable mt-2 rounded bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-700">
+                    Pro tip: {tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="เคสฉุกเฉินกำลังค้นหาคลินิกที่ใกล้และว่างที่สุดอยู่"
+        description="Google Maps Audit ตรวจว่าคลินิกหรือโรงพยาบาลสัตว์ของคุณโผล่ในคำค้นหา “ใกล้ฉัน” หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน"
+      />
+
+      <ArticleSection title="ความน่าเชื่อถือคือสัญญาณที่สำคัญที่สุดของธุรกิจสายสุขภาพ">
+        <P>ต่างจากร้านค้าทั่วไป ธุรกิจสัตวแพทย์อยู่ในกลุ่มที่ Google และ AI Search ให้ความสำคัญกับสัญญาณความน่าเชื่อถือเป็นพิเศษ เพราะเกี่ยวข้องกับสุขภาพและชีวิต</P>
+        <div className="grid gap-3">
+          {[
+            { point: 'แสดงใบอนุญาตประกอบวิชาชีพให้ชัดเจน', detail: 'ใส่ชื่อและเลขใบอนุญาตของสัตวแพทย์ในเว็บไซต์และคำอธิบายธุรกิจ ไม่ใช่แค่ในคลินิก' },
+            { point: 'อย่าโฆษณาเกินจริงเรื่องการรักษา', detail: 'หลีกเลี่ยงคำสัญญาว่า "รักษาหาย 100%" หรือการอวดอ้างสรรพคุณเกินจริง ทั้งผิดจรรยาบรรณและเสี่ยงถูกรีวิวโต้แย้ง' },
+            { point: 'ตอบรีวิวทุกอันอย่างมืออาชีพ', detail: 'โดยเฉพาะรีวิวลบเรื่องการรอคิวหรือค่าใช้จ่าย ควรตอบด้วยข้อเท็จจริงและความเห็นใจ เพราะคนอ่านรีวิวคลินิกสัตว์มักอ่านละเอียดกว่าธุรกิจทั่วไป' },
+          ].map(({ point, detail }) => (
+            <div key={point} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <p className="thai-readable font-medium text-neutral-950">{point}</p>
+              <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คีย์เวิร์ดที่คลินิกควรจับ แยกตาม intent">
+        <P>ความผิดพลาดที่พบบ่อยคือทำเนื้อหาเน้นแต่คำกว้างอย่าง "โรงพยาบาลสัตว์" ทั้งที่ลูกค้าจริงแบ่งเป็นกลุ่ม <strong>ฉุกเฉิน วางแผนล่วงหน้า และเฉพาะบริการ</strong> ที่ต้องการคำตอบต่างกัน</P>
+        <div className="grid gap-4">
+          {[
+            {
+              type: 'เคสฉุกเฉิน',
+              keywords: ['รพ สัตว์ 24 ชม [ย่าน]', 'โรงพยาบาลสัตว์ฉุกเฉิน ใกล้ฉัน', 'สัตวแพทย์ฉุกเฉินกลางคืน [ย่าน]', 'สุนัขกินยาพิษ ต้องทำไง'],
+              tip: 'volume ไม่สูงสุดแต่ intent พร้อมเดินทางทันที ต้องขึ้นเบอร์โทรและระยะทางให้เห็นชัดที่สุด',
+            },
+            {
+              type: 'ตรวจสุขภาพและวางแผนล่วงหน้า',
+              keywords: ['ฉีดวัคซีนสุนัข ใกล้ฉัน', 'ทำหมันแมว ใกล้ฉัน', 'ตรวจสุขภาพประจำปีสัตว์เลี้ยง [ย่าน]', 'สัตวแพทย์ ใกล้ฉัน'],
+              tip: 'กลุ่มนี้เปรียบเทียบราคาและรีวิวก่อนตัดสินใจ — ใส่ราคาเริ่มต้นและรีวิวให้ครบ',
+            },
+            {
+              type: 'เฉพาะทาง',
+              keywords: ['สัตวแพทย์ผิวหนัง [ย่าน]', 'ผ่าตัดกระดูกสุนัข [จังหวัด]', 'อัลตราซาวด์สัตว์เลี้ยง [ย่าน]', 'สัตวแพทย์หัวใจ [จังหวัด]'],
+              tip: 'competition ต่ำมาก เพราะมีคลินิกที่ทำเฉพาะทางจริงไม่กี่แห่งในแต่ละย่าน',
+            },
+            {
+              type: 'สัตว์เฉพาะชนิด',
+              keywords: ['สัตวแพทย์รักษานก [ย่าน]', 'คลินิกสัตว์เลื้อยคลาน ใกล้ฉัน', 'หมอรักษากระต่าย [จังหวัด]'],
+              tip: 'ตลาดเฉพาะกลุ่มแต่แข่งขันต่ำมาก เหมาะกับคลินิกที่มีความเชี่ยวชาญจริง',
+            },
+          ].map((group) => (
+            <div key={group.type} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <p className="font-semibold text-neutral-950">{group.type}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {group.keywords.map((kw) => (
+                  <span key={kw} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">{kw}</span>
+                ))}
+              </div>
+              <p className="thai-readable mt-3 text-xs leading-5 text-neutral-500">{group.tip}</p>
+            </div>
+          ))}
+        </div>
+        <P>คำใน [] คือตัวแปร เปลี่ยนตามย่าน จังหวัด หรือความเชี่ยวชาญที่คลินิกมีจริง</P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีขอรีวิวจากเจ้าของสัตว์อย่างเหมาะสม">
+        <P>ธุรกิจนี้ละเอียดอ่อนกว่าธุรกิจอื่น เพราะเกี่ยวข้องกับอารมณ์ความรู้สึกของเจ้าของสัตว์โดยตรง จังหวะการขอรีวิวจึงสำคัญไม่แพ้คุณภาพการรักษา</P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              label: 'จังหวะที่ได้ผล',
+              items: [
+                'หลังการรักษาสำเร็จและติดตามอาการว่าดีขึ้นแล้ว',
+                'หลังฉีดวัคซีนหรือทำหมันโดยไม่มีภาวะแทรกซ้อน',
+                'โทรติดตามอาการ 2–3 วันหลังทำหัตถการ แล้วขอรีวิวถ้าลูกค้าพอใจ',
+                'QR code ที่จุดชำระเงินสำหรับเคสตรวจสุขภาพทั่วไป',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ไม่ควรทำ',
+              items: [
+                'ขอรีวิวในเคสที่สัตว์เลี้ยงอาการหนักหรือเสียชีวิต',
+                'แลกส่วนลดกับรีวิว — ผิด Google guidelines',
+                'ขอรีวิวทันทีตอนลูกค้ายังกังวลกับผลการรักษา',
+                'เพิกเฉยรีวิวลบเรื่องการรอคิว ควรตอบด้วยเหตุผลและความเห็นใจ',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คลินิกเดี่ยว vs หลายสาขา vs สัตวแพทย์เคลื่อนที่">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              label: 'คลินิกเดี่ยว',
+              body: 'ทุ่มกับ GBP โปรไฟล์เดียวให้ครบ โดยเฉพาะชั่วโมงทำการ เบอร์โทร และรายการบริการพร้อมราคา — นี่คือส่วนที่ให้ผลตอบแทนสูงสุดต่อเวลาที่ลงไป',
+            },
+            {
+              label: 'หลายสาขา',
+              body: 'แต่ละสาขาต้องมี GBP แยก ระบุสัตวแพทย์และความเชี่ยวชาญเฉพาะของแต่ละสาขาให้ต่างกันตามจริง เพื่อดักคำค้นหาเฉพาะทางได้มากกว่าคัดลอกโปรไฟล์เดียวกันทุกที่',
+            },
+            {
+              label: 'สัตวแพทย์เคลื่อนที่ / ไม่มีหน้าร้าน',
+              body: 'ตั้งเป็น Service area business และซ่อนที่อยู่จริง ระบุพื้นที่ให้บริการให้ชัดเจน ไม่ควรตั้งที่อยู่บ้านเป็นหน้าร้านปลอมเพราะเสี่ยงถูกระงับโปรไฟล์',
+            },
+          ].map(({ label, body }) => (
+            <div key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema Checklist สำหรับโรงพยาบาลสัตว์และคลินิก">
+        <P>ใส่ JSON-LD ประเภท VeterinaryCare ในหน้าหลักของเว็บไซต์ เพื่อให้ Google และ AI เข้าใจว่าคลินิกให้บริการอะไรบ้างและติดต่ออย่างไร</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['Schema Field', 'ตัวอย่าง / คำอธิบาย', 'หมายเหตุ'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {[
+                ['@type', '"VeterinaryCare"', 'schema.org มี type นี้โดยเฉพาะ ใช้ให้ตรง'],
+                ['name', '"ชื่อคลินิก"', 'ต้องตรงกับ GBP 100%'],
+                ['address', 'streetAddress + addressLocality + postalCode', 'ตรงกับ NAP ทุก platform'],
+                ['telephone', '"+66812345678"', 'ต้องเป็นเบอร์ที่มีคนรับสายจริง'],
+                ['openingHoursSpecification', 'dayOfWeek + opens + closes', 'ถ้ามีเวรฉุกเฉิน 24 ชม. ต้องระบุแยกให้ชัด'],
+                ['medicalSpecialty / availableService', 'รายการบริการ เช่น ฉีดวัคซีน ทำหมัน ผ่าตัด', 'field ที่ AI ใช้ตอบว่าคลินิกไหนรักษาอะไรได้'],
+                ['hasMap', 'URL ของ Google Maps Listing', 'เชื่อมโยง GBP กับ schema'],
+                ['paymentAccepted', '"Cash, PromptPay, Credit Card"', 'ลดคำถามช่วงฉุกเฉินที่ลูกค้าไม่มีเวลาถาม'],
+                ['image', 'URL รูปคลินิกและทีมสัตวแพทย์', 'เพิ่มความน่าเชื่อถือและโอกาสแสดงใน Rich Results'],
+                ['aggregateRating', 'ratingValue + reviewCount', 'ดึงจากรีวิวจริงเท่านั้น ห้ามใส่เอง'],
+              ].map(([field, example, note]) => (
+                <tr key={field}>
+                  <td className="px-4 py-3 font-mono text-xs text-teal-700 whitespace-nowrap">{field}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{example}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็แนะนำคลินิกสัตว์จาก Google Maps">
+        <P>คำถามอย่าง "แถวนี้มีสัตวแพทย์ที่เปิดตอนนี้ไหม" คือสิ่งที่คนเริ่มถาม <strong>Gemini, ChatGPT และ Perplexity</strong> — และ AI ตอบได้เฉพาะคลินิกที่ระบุชั่วโมงทำการและบริการไว้จริง</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'คลินิกที่ระบุชั่วโมง บริการ และเบอร์โทรครบ', result: 'AI เลือกแนะนำ', teal: true },
+            { text: 'คลินิกที่ใส่แค่ชื่อกับที่อยู่', result: 'ไม่มีอยู่ในสายตา AI', teal: false },
+          ].map(({ text, result, teal }) => (
+            <div key={text} className={`rounded-lg border p-4 ${teal ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`thai-readable text-sm font-semibold ${teal ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`mt-1.5 text-sm font-bold ${teal ? 'text-teal-700' : 'text-neutral-400'}`}>{result}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — ทำให้ AI แนะนำธุรกิจของคุณ' },
+        ]} />
+      </ArticleSection>
+
+      <P>
+        คลินิกหรือโรงพยาบาลสัตว์ที่ต้องการให้เจ้าของสัตว์ในย่านเจอก่อนคู่แข่งตอนที่ต้องการที่สุด ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}และ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขาย Pet Shop ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner — Thailand, Jul 2025–Jun 2026, checked August 2026',
+        'Google Business Profile documentation, checked August 2026',
+        'Manual Google Maps testing by Saralak Search, August 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับโรงพยาบาลสัตว์และคลินิกบน Google Maps" />
     </article>
   )
 }
@@ -6885,6 +7250,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'increase-sale-pet-shop') {
     return <PetShopArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-pet-hospital') {
+    return <PetHospitalArticle post={post} />
   }
   if (post.bodyVariant === 'tham-web-claude') {
     return <ThamWebClaudeArticle post={post} />

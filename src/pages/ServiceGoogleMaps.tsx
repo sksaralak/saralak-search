@@ -527,6 +527,13 @@ export default function ServiceGoogleMaps() {
                 tags: ['แบรนด์ที่มีขาย', 'หมวดหมู่ GBP', 'บริการเสริม', 'แข่งกับ e-commerce'],
                 to: '/blog/increase-sale-pet-shop',
               },
+              {
+                eyebrow: 'โรงพยาบาลสัตว์ / คลินิก',
+                title: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps',
+                body: '"โรงพยาบาลสัตว์ ใกล้ฉัน" 74,000 ครั้ง/เดือน ลูกค้ากลุ่มนี้ตัดสินใจเร็วเพราะเป็นเรื่องฉุกเฉิน — ชั่วโมงทำการและเบอร์โทรที่ถูกต้องสำคัญกว่าธุรกิจอื่น',
+                tags: ['ชั่วโมงฉุกเฉิน', 'ใบอนุญาต', 'ราคาเริ่มต้น', 'Emergency Vet'],
+                to: '/blog/increase-sale-pet-hospital',
+              },
             ].map((card) => (
               <article key={card.to} className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md">
                 <div className="flex flex-1 flex-col p-6">
