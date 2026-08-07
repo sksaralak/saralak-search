@@ -534,6 +534,13 @@ export default function ServiceGoogleMaps() {
                 tags: ['ชั่วโมงฉุกเฉิน', 'ใบอนุญาต', 'ราคาเริ่มต้น', 'Emergency Vet'],
                 to: '/blog/increase-sale-pet-hospital',
               },
+              {
+                eyebrow: 'โรงแรมสัตว์เลี้ยง / รับฝากเลี้ยง',
+                title: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps',
+                body: '"โรงแรมหมา ใกล้ฉัน" และ "ฝากเลี้ยงหมา ใกล้ฉัน" รวมกันกว่า 25,000 ครั้ง/เดือน พุ่งสูงช่วงเทศกาล — ความไว้ใจสำคัญกว่าราคาถูก',
+                tags: ['รูปสถานที่จริง', 'ราคาต่อคืน', 'ความพร้อมให้บริการ', 'ช่วงเทศกาล'],
+                to: '/blog/increase-sale-pet-hotel',
+              },
             ].map((card) => (
               <article key={card.to} className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md">
                 <div className="flex flex-1 flex-col p-6">

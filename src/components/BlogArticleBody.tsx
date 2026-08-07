@@ -3914,6 +3914,7 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps — Saralak Search' },
       ]} />
 
@@ -4465,6 +4466,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
       ]} />
 
@@ -4880,6 +4882,7 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
         { to: '/services/google-maps', label: 'รับทำ Google Maps สำหรับร้านอาหาร — Saralak Search' },
       ]} />
@@ -5306,6 +5309,7 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
       ]} />
@@ -5681,6 +5685,7 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน: ลูกค้าใกล้ฉันรอคุณอยู่' },
@@ -6041,6 +6046,7 @@ function PetShopArticle({ post }: { post: BlogPost }) {
       </P>
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
         { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps' },
@@ -6401,6 +6407,7 @@ function PetHospitalArticle({ post }: { post: BlogPost }) {
         {' '}ของ Saralak Search ได้เลย
       </P>
       <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขาย Pet Shop ด้วย Google Maps' },
         { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
         { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
@@ -6414,6 +6421,310 @@ function PetHospitalArticle({ post }: { post: BlogPost }) {
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับโรงพยาบาลสัตว์และคลินิกบน Google Maps" />
+    </article>
+  )
+}
+
+function PetHotelArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="ธุรกิจรับฝากเลี้ยงเล็กๆ แข่งกับโรงแรมสัตว์เลี้ยงเชนใหญ่ได้ไหม?">
+        <P>คำตอบคือ <strong>ได้ ในจังหวะที่ความไว้ใจสำคัญกว่าขนาดธุรกิจ</strong> — คนที่พิมพ์ "ฝากเลี้ยงหมา ใกล้ฉัน" ก่อนเดินทางไม่กี่วัน ต้องการที่ที่ใกล้บ้าน ดูน่าเชื่อถือ และว่างรับในวันที่ต้องการ ไม่ใช่แบรนด์ที่ดังที่สุด</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ขนาดของดีมานด์กลุ่มรับฝากเลี้ยงสัตว์เลี้ยงในไทย</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '25,200', label: 'ค้นหากลุ่มฝากเลี้ยง/โรงแรมสัตว์ ต่อเดือน', sub: 'รวมทุกคำหลักในกลุ่มทั่วประเทศ' },
+              { num: '8,100', label: '"โรงแรมหมา ใกล้ฉัน"', sub: 'คำที่ volume สูงสุดในกลุ่ม' },
+              { num: 'Low', label: 'การแข่งขันทุกคำหลัก', sub: 'ยังมีช่องว่างสำหรับผู้ให้บริการรายเล็ก' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { title: 'ที่ฝากเลี้ยงที่มีรูปกรงจริงและรีวิวความปลอดภัย', result: 'ลูกค้าจองล่วงหน้าโดยไม่ลังเล', color: 'border-teal-200 bg-teal-50/50 text-teal-800' },
+            { title: 'ที่ฝากเลี้ยงที่ใส่แค่ชื่อกับที่อยู่', result: 'ลูกค้าไม่กล้าฝากสัตว์ที่รักไว้', color: 'border-neutral-200 bg-neutral-50 text-neutral-500' },
+          ].map(({ title, result, color }) => (
+            <div key={title} className={`rounded-xl border p-4 ${color}`}>
+              <p className="thai-readable text-sm font-semibold">{title}</p>
+              <p className="mt-1.5 text-sm font-bold">{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวเลขจริง: คนค้นหาอะไรบ้างในกลุ่มรับฝากเลี้ยงสัตว์เลี้ยง">
+        <P>ข้อมูลจาก Google Keyword Planner ประเทศไทย ช่วง กรกฎาคม 2025 – มิถุนายน 2026</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['คำค้นหา', 'ค้นหา/เดือน', 'การแข่งขัน', 'สิ่งที่บอกเรา'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['โรงแรมหมา ใกล้ฉัน', '8,100', 'Low', 'คำที่ volume สูงสุด — ต้องติด 3-pack ให้ได้'],
+                ['ฝากเลี้ยงหมา ใกล้ฉัน', '6,600', 'Low', 'intent ชัดเจนที่สุดในกลุ่ม พร้อมจองถ้าข้อมูลครบ'],
+                ['รับฝากแมว ใกล้ฉัน', '4,400', 'Low', 'ตลาดแมวมีความต้องการเฉพาะ เช่น กรงแยกจากหมา'],
+                ['pet hotel ใกล้ฉัน', '2,900', 'Low', 'กลุ่มคนเมืองและชาวต่างชาติ มักค้นด้วยคำอังกฤษ'],
+                ['รับฝากสัตว์เลี้ยง ใกล้ฉัน', '1,900', 'Low', 'คำกว้าง ครอบคลุมทั้งหมาและแมว'],
+                ['โรงแรมแมว [ย่าน]', '1,300', 'Low', 'คำเฉพาะทาง เหมาะกับธุรกิจที่รับเฉพาะแมว'],
+              ].map(([kw, vol, comp, note]) => (
+                <tr key={kw}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{kw}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{vol}</td>
+                  <td className="px-4 py-3 text-neutral-500">{comp}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            จุดที่ธุรกิจรับฝากเลี้ยงส่วนใหญ่มองข้าม: <strong>คำค้นหากลุ่มนี้พุ่งสูงเป็นช่วงๆ ตามเทศกาล</strong> เช่น สงกรานต์ ปีใหม่ และช่วงปิดเทอม ถ้าโปรไฟล์ไม่พร้อมก่อนช่วงเหล่านี้ 2-3 สัปดาห์ จะพลาดคิวที่คนวางแผนล่วงหน้าไปเกือบทั้งหมด
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="สิ่งที่เจ้าของสัตว์กังวลก่อนตัดสินใจฝาก">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['ความกังวล', 'ถ้าไม่ตอบบน GBP', 'ถ้าตอบชัดเจนบน GBP'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['สัตว์เลี้ยงจะปลอดภัยไหม', 'ลูกค้าไม่กล้าจอง', 'รูปกรง/พื้นที่จริง + รีวิวความปลอดภัย'],
+                ['ให้อาหาร/ดูแลตามที่สั่งไหม', 'โทรถามซ้ำหลายรอบ', 'ระบุบริการเสริมและตัวเลือกอาหารชัดเจน'],
+                ['ราคารวมอะไรบ้าง', 'เทียบราคาไม่ได้ ข้ามไปที่อื่น', 'ราคาต่อคืนแยกตามขนาดสัตว์'],
+                ['มีที่ว่างวันที่ต้องการไหม', 'ทักไปแล้วเต็มเสียเวลา', 'อัปเดตความพร้อมให้บริการสม่ำเสมอ'],
+              ].map(([topic, without, withGbp]) => (
+                <tr key={topic}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{topic}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{without}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700">{withGbp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุปคือ ธุรกิจนี้ขายที่ <strong>ความไว้ใจ ไม่ใช่ราคาถูกที่สุด</strong> — และความไว้ใจสื่อสารผ่าน Google Business Profile ได้เกือบทั้งหมดก่อนลูกค้าจะโทรมาด้วยซ้ำ</P>
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่โรงแรมสัตว์เลี้ยงต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'ตั้งหมวดหมู่ให้ตรงกับบริการจริง',
+              body: 'หมวดหลักใช้ Pet Boarding Service หรือ Kennel ตามลักษณะธุรกิจ ถ้ามีอาบน้ำตัดขนหรือรับส่งด้วย เพิ่มเป็นหมวดรอง Pet Groomer หรือ Pet Sitter เพื่อดักคำค้นหาอีกกลุ่มโดยไม่ต้องทำอะไรเพิ่ม',
+              tip: null,
+            },
+            {
+              num: '2', title: 'ลงรูปและวิดีโอสถานที่จริง',
+              body: 'รูปที่ทรงพลังที่สุดคือรูปกรงหรือห้องพักที่สะอาด พื้นที่วิ่งเล่น และวิดีโอสั้นๆ ของสัตว์เลี้ยงระหว่างวัน เพราะลูกค้าตัดสินใจจาก "เห็นแล้วเชื่อ" มากกว่าคำบรรยาย',
+              tip: 'ขออนุญาตเจ้าของก่อนลงรูปหรือวิดีโอสัตว์เลี้ยงของลูกค้าทุกครั้ง',
+            },
+            {
+              num: '3', title: 'ใส่ราคาต่อคืนแยกตามขนาดสัตว์',
+              body: 'ระบุราคาต่อคืนหรือต่อวันแยกตามขนาด เช่น สุนัขเล็ก กลาง ใหญ่ พร้อมระบุว่าราคารวมอะไรบ้าง เช่น อาหาร การเดินเล่น หรือรายงานความเคลื่อนไหวรายวัน ลดคำถามซ้ำและเร่ง conversion',
+              tip: null,
+            },
+            {
+              num: '4', title: 'อัปเดตความพร้อมให้บริการสม่ำเสมอ',
+              body: 'ช่วงเทศกาลคือช่วงที่คิวเต็มเร็วที่สุด การอัปเดต GBP Posts หรือคำอธิบายว่า "ช่วงนี้ยังรับจองได้ถึงวันที่เท่าไร" ช่วยลดข้อความถามซ้ำและกันลูกค้าตัดสินใจผิดที่',
+              tip: 'เปิดจองล่วงหน้าให้ชัดก่อนเทศกาลอย่างน้อย 2-3 สัปดาห์',
+            },
+            {
+              num: '5', title: 'ระบุเงื่อนไขสำคัญให้ชัดตั้งแต่แรก',
+              body: 'วัคซีนที่ต้องมี เอกสารที่ต้องเตรียม เวลารับ-ส่ง และนโยบายกรณียกเลิก ควรอยู่ในคำอธิบายธุรกิจหรือ GBP Posts เพื่อกรองลูกค้าที่ไม่พร้อมออกไปตั้งแต่ต้น ลดปัญหาหน้างาน',
+              tip: null,
+            },
+            {
+              num: '6', title: 'GBP Posts: ก่อนเทศกาลและความรู้สั้นๆ',
+              body: 'โพสต์ที่ได้ผล: เปิดจองช่วงเทศกาล โปรจองล่วงหน้า และเนื้อหาให้ความรู้ เช่น วิธีเตรียมสัตว์เลี้ยงก่อนไปฝากครั้งแรก เพราะช่วยลดความกังวลของลูกค้าใหม่ที่ยังไม่เคยใช้บริการ',
+              tip: null,
+            },
+          ].map(({ num, title, body, tip }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{body}</p>
+                {tip && (
+                  <p className="thai-readable mt-2 rounded bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-700">
+                    Pro tip: {tip}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ช่วงหยุดยาวลูกค้ากำลังหาที่ฝากสัตว์เลี้ยงที่ไว้ใจได้อยู่"
+        description="Google Maps Audit ตรวจว่าโรงแรมหรือบริการรับฝากเลี้ยงของคุณโผล่ในคำค้นหา “ใกล้ฉัน” หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน"
+      />
+
+      <ArticleSection title="วิธีขอรีวิวจากเจ้าของสัตว์เลี้ยง">
+        <P>รีวิวคือปัจจัยตัดสินใจอันดับต้นของธุรกิจนี้ เพราะลูกค้าไม่มีทางรู้ว่าเกิดอะไรขึ้นระหว่างที่สัตว์เลี้ยงอยู่กับคุณ นอกจากเชื่อคนที่เคยใช้บริการมาก่อน</P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              label: 'จังหวะที่ได้ผล',
+              items: [
+                'ตอนมารับสัตว์เลี้ยงกลับและลูกค้าดูพอใจ',
+                'หลังส่งรายงาน/รูปความเคลื่อนไหวระหว่างฝากแล้วลูกค้าชม',
+                'ข้อความติดตามผล 1-2 วันหลังรับกลับ พร้อมลิงก์รีวิว',
+                'ลูกค้าประจำที่ฝากซ้ำเป็นรอบที่ 2 ขึ้นไป',
+              ],
+              good: true,
+            },
+            {
+              label: 'สิ่งที่ไม่ควรทำ',
+              items: [
+                'แลกส่วนลดกับรีวิว — ผิด Google guidelines',
+                'ขอรีวิวตอนลูกค้ากำลังกังวลเรื่องอาการสัตว์เลี้ยง',
+                'เพิกเฉยรีวิวลบเรื่องความสะอาดหรือการดูแล ควรตอบด้วยข้อเท็จจริงและแผนแก้ไข',
+                'ให้พนักงานหรือญาติเขียนรีวิวปลอม',
+              ],
+              good: false,
+            },
+          ].map(({ label, items, good }) => (
+            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
+              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
+                      {good
+                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                      }
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="รับฝากที่บ้าน vs มีหน้าร้าน vs เชนหลายสาขา">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              label: 'รับฝากที่บ้าน (ไม่มีหน้าร้าน)',
+              body: 'ตั้งเป็น Service area business และซ่อนที่อยู่จริง ระบุพื้นที่รับ-ส่งให้ชัดเจน ไม่ควรตั้งที่อยู่บ้านเป็นหน้าร้านปลอมเพราะเสี่ยงถูกระงับโปรไฟล์',
+            },
+            {
+              label: 'มีหน้าร้าน / โรงแรมสัตว์เลี้ยง',
+              body: 'ทุ่มกับ GBP โปรไฟล์เดียวให้ครบ โดยเฉพาะรูปสถานที่จริงและราคาต่อคืน — นี่คือส่วนที่ให้ผลตอบแทนสูงสุดต่อเวลาที่ลงไป',
+            },
+            {
+              label: 'หลายสาขา',
+              body: 'แต่ละสาขาต้องมี GBP แยก และรูปสถานที่ต้องเป็นของสาขานั้นจริง อย่าใช้รูปสาขาหลักซ้ำกันทุกที่ เพราะลูกค้าและ Google มองเป็นข้อมูลไม่ตรงจริง',
+            },
+          ].map(({ label, body }) => (
+            <div key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Schema Checklist สำหรับโรงแรมสัตว์เลี้ยง">
+        <P>ใส่ JSON-LD ประเภท LocalBusiness ร่วมกับ additionalType ที่ระบุบริการรับฝากเลี้ยง เพื่อให้ Google และ AI เข้าใจว่าธุรกิจให้บริการอะไรบ้าง</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                {['Schema Field', 'ตัวอย่าง / คำอธิบาย', 'หมายเหตุ'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {[
+                ['@type', '"LocalBusiness"', 'schema.org ยังไม่มี type เฉพาะสำหรับ pet boarding ใช้ LocalBusiness ร่วมกับ additionalType'],
+                ['name', '"ชื่อธุรกิจ"', 'ต้องตรงกับ GBP 100%'],
+                ['address', 'streetAddress + addressLocality + postalCode', 'ตรงกับ NAP ทุก platform'],
+                ['telephone', '"+66812345678"', 'ต้องเป็นเบอร์ที่มีคนรับสายจริง'],
+                ['openingHoursSpecification', 'dayOfWeek + opens + closes', 'รวมเวลารับ-ส่งสัตว์เลี้ยงให้ชัด'],
+                ['makesOffer / availableService', 'รับฝากรายวัน รายคืน อาบน้ำตัดขน รับ-ส่ง', 'field ที่ AI ใช้ตอบว่าธุรกิจไหนให้บริการอะไรบ้าง'],
+                ['priceRange', '"฿฿"', 'ช่วยลูกค้ากรองก่อนติดต่อ'],
+                ['hasMap', 'URL ของ Google Maps Listing', 'เชื่อมโยง GBP กับ schema'],
+                ['image', 'URL รูปสถานที่และพื้นที่วิ่งเล่น', 'เพิ่มความน่าเชื่อถือและโอกาสแสดงใน Rich Results'],
+                ['aggregateRating', 'ratingValue + reviewCount', 'ดึงจากรีวิวจริงเท่านั้น ห้ามใส่เอง'],
+              ].map(([field, example, note]) => (
+                <tr key={field}>
+                  <td className="px-4 py-3 font-mono text-xs text-teal-700 whitespace-nowrap">{field}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-700">{example}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็แนะนำที่ฝากเลี้ยงสัตว์จาก Google Maps">
+        <P>คำถามอย่าง "แถวนี้มีที่ฝากหมาที่มีรีวิวดีไหม" คือสิ่งที่คนเริ่มถาม <strong>Gemini, ChatGPT และ Perplexity</strong> — และ AI ตอบได้เฉพาะธุรกิจที่ระบุบริการและรีวิวไว้จริง</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'ธุรกิจที่ระบุบริการ ราคา และมีรีวิวครบ', result: 'AI เลือกแนะนำ', teal: true },
+            { text: 'ธุรกิจที่ใส่แค่ชื่อกับที่อยู่', result: 'ไม่มีอยู่ในสายตา AI', teal: false },
+          ].map(({ text, result, teal }) => (
+            <div key={text} className={`rounded-lg border p-4 ${teal ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`thai-readable text-sm font-semibold ${teal ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`mt-1.5 text-sm font-bold ${teal ? 'text-teal-700' : 'text-neutral-400'}`}>{result}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — ทำให้ AI แนะนำธุรกิจของคุณ' },
+        ]} />
+      </ArticleSection>
+
+      <P>
+        โรงแรมสัตว์เลี้ยงหรือธุรกิจรับฝากเลี้ยงที่ต้องการให้เจ้าของสัตว์ในย่านเจอก่อนคู่แข่ง ดูบริการ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}และ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขาย Pet Shop ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข: คู่แข่งน้อยกว่าที่คิด' },
+        { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner — Thailand, Jul 2025–Jun 2026, checked August 2026',
+        'Google Business Profile documentation, checked August 2026',
+        'Manual Google Maps testing by Saralak Search, August 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยสำหรับโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยงบน Google Maps" />
     </article>
   )
 }
@@ -7253,6 +7564,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'increase-sale-pet-hospital') {
     return <PetHospitalArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-pet-hotel') {
+    return <PetHotelArticle post={post} />
   }
   if (post.bodyVariant === 'tham-web-claude') {
     return <ThamWebClaudeArticle post={post} />

@@ -26,6 +26,31 @@ body {
     #fbfaf6;
 }
 
+/*
+  Mobile overflow guard.
+  Grid items default to `min-width: auto`, so their min-content width acts as a
+  floor. Thai text has very few break opportunities, which makes min-content
+  wider than a phone viewport and forces the whole grid item past the screen
+  edge. Combined with `overflow-x: hidden` on html/body, the overflow is clipped
+  instead of scrollable, so the right side of the text is simply cut off.
+  Allowing grid items to shrink to 0 removes that floor.
+*/
+[class~="grid"] > *,
+[class~="inline-grid"] > *,
+[class*=":grid"] > * {
+  min-width: 0;
+}
+
+p,
+li,
+dd,
+dt,
+h1, h2, h3, h4, h5, h6,
+blockquote,
+figcaption {
+  overflow-wrap: break-word;
+}
+
 button,
 input,
 textarea,

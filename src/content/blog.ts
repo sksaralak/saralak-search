@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
   cta?: {
     headline: string
     description: string
@@ -645,6 +645,34 @@ export const petHospitalFaqs: FAQItem[] = [
   },
 ]
 
+export const petHotelFaqs: FAQItem[] = [
+  {
+    question: 'ธุรกิจรับฝากเลี้ยงสัตว์เลี้ยงเล็กๆ ควรทำ Google Maps ไหม?',
+    answer:
+      'ควรทำ เพราะเจ้าของสัตว์ส่วนใหญ่ค้นหา "ฝากเลี้ยงหมา ใกล้ฉัน" หรือ "โรงแรมหมา ใกล้ฉัน" ก่อนเดินทางไกล จังหวัดหรือช่วงหยุดยาว การอยู่ใกล้บ้านลูกค้าคือข้อได้เปรียบที่จับต้องได้ทันที และ competition ของกลุ่มนี้ยังไม่สูงเท่าธุรกิจอื่น',
+  },
+  {
+    question: 'ควรตั้งหมวดหมู่ GBP เป็นอะไรสำหรับโรงแรมสัตว์เลี้ยง?',
+    answer:
+      'หมวดหลักใช้ Pet Boarding Service หรือ Kennel ตามลักษณะธุรกิจจริง ถ้ามีบริการอาบน้ำตัดขนหรือรับส่งด้วย ให้เพิ่มเป็นหมวดรอง Pet Groomer หรือ Pet Sitter การตั้งหมวดให้ตรงช่วยให้ Google จับคู่กับคำค้นหาที่ตรง intent ที่สุด',
+  },
+  {
+    question: 'ลูกค้าอยากเห็นอะไรก่อนตัดสินใจฝากสัตว์เลี้ยงไว้กับที่ไหนสักแห่ง?',
+    answer:
+      'สิ่งที่มีผลต่อการตัดสินใจมากที่สุดคือรูปกรงหรือห้องพักจริง วิดีโอบรรยากาศระหว่างวัน และรีวิวที่พูดถึงความปลอดภัยกับความใส่ใจของพนักงาน เพราะเจ้าของกำลังฝากสิ่งมีชีวิตที่รักไว้กับคนแปลกหน้าเป็นเวลาหลายวัน ความโปร่งใสจึงสำคัญกว่าราคาที่ถูกที่สุด',
+  },
+  {
+    question: 'ควรใส่ราคาค่าฝากเลี้ยงบน Google Business Profile ไหม?',
+    answer:
+      'ควรใส่เป็นราคาต่อคืนหรือต่อวันแยกตามขนาดสัตว์ เช่น สุนัขเล็ก กลาง ใหญ่ พร้อมระบุว่าราคารวมอะไรบ้าง เช่น อาหาร การเดินเล่น หรือค่าบริการเสริม ความชัดเจนเรื่องราคาช่วยลดคำถามซ้ำๆ ทางแชทหรือโทรศัพท์',
+  },
+  {
+    question: 'ช่วงเวลาไหนที่ธุรกิจรับฝากเลี้ยงควรเตรียมโปรไฟล์ให้พร้อมที่สุด?',
+    answer:
+      'ช่วงเทศกาลและวันหยุดยาว เช่น สงกรานต์ ปีใหม่ และช่วงปิดเทอม เป็นช่วงที่คำค้นหากลุ่มนี้พุ่งสูงที่สุด ควรอัปเดตความพร้อมให้บริการ (Availability) และตอบข้อความให้เร็วเป็นพิเศษในช่วงนี้ เพราะลูกค้ามักจองล่วงหน้าไม่นานและเปลี่ยนใจง่ายถ้ารอนาน',
+  },
+]
+
 export const thamWebClaudeFaqs: FAQItem[] = [
   {
     question: 'ทำเว็บด้วย Claude ต้องรู้โค้ดไหม?',
@@ -976,6 +1004,36 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'เคสฉุกเฉินกำลังค้นหาคลินิกที่ใกล้และว่างที่สุดอยู่',
       description: 'Google Maps Audit ตรวจว่าคลินิกหรือโรงพยาบาลสัตว์ของคุณโผล่ในคำค้นหา "ใกล้ฉัน" หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน',
+      buttonText: 'ขอรับ Google Maps Audit ฟรี',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps',
+    slug: 'increase-sale-pet-hotel',
+    category: 'Local SEO',
+    excerpt:
+      'คำค้นหากลุ่ม "ฝากเลี้ยงหมา" และ "โรงแรมหมา" แบบใกล้ฉันรวมกันกว่า 25,000 ครั้งต่อเดือนในไทย และพุ่งสูงช่วงเทศกาลหยุดยาว แต่โรงแรมสัตว์เลี้ยงส่วนใหญ่ยังไม่มีรูปกรงจริง ราคา หรือความพร้อมให้บริการบน Google Maps',
+    readingTime: '12 min read',
+    publishedDate: '2026-08-06',
+    lastModifiedDate: '2026-08-06',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยง (รับฝากเลี้ยง) ด้วย Google Maps | Saralak Search',
+    metaDescription:
+      'เพิ่มยอดขายโรงแรมหมาและรับฝากเลี้ยงสัตว์เลี้ยงด้วย Google Maps — "โรงแรมหมา ใกล้ฉัน" และ "ฝากเลี้ยงหมา ใกล้ฉัน" รวมกันกว่า 25,000 ครั้ง/เดือน เรียนรู้วิธีเปลี่ยนคนค้นหาเป็นการจองล่วงหน้า',
+    aiSummary: [
+      'คำค้นหากลุ่มรับฝากเลี้ยงและโรงแรมสัตว์เลี้ยงแบบ "ใกล้ฉัน" ในไทยรวมกันประมาณ 25,200 ครั้ง/เดือน นำโดย โรงแรมหมา ใกล้ฉัน 8,100 และ ฝากเลี้ยงหมา ใกล้ฉัน 6,600',
+      'คำค้นหากลุ่มนี้พุ่งสูงเป็นพิเศษช่วงเทศกาลและวันหยุดยาว เช่น สงกรานต์ ปีใหม่ และช่วงปิดเทอม ซึ่งเป็นช่วงเวลาที่ต้องเตรียมโปรไฟล์ให้พร้อมล่วงหน้า',
+      'เจ้าของสัตว์ตัดสินใจจากความน่าเชื่อถือมากกว่าราคา — รูปกรงหรือห้องพักจริง วิดีโอบรรยากาศ และรีวิวที่พูดถึงความปลอดภัยมีผลต่อการตัดสินใจมากที่สุด',
+      'สิ่งที่ต้องมีบน GBP: หมวดหมู่ Pet Boarding Service ที่ถูกต้อง ราคาต่อคืนแยกตามขนาดสัตว์ รูปสถานที่จริง และความพร้อมให้บริการที่อัปเดตตลอด',
+    ],
+    faqs: petHotelFaqs,
+    bodyVariant: 'increase-sale-pet-hotel',
+    cta: {
+      headline: 'ช่วงหยุดยาวลูกค้ากำลังหาที่ฝากสัตว์เลี้ยงที่ไว้ใจได้อยู่',
+      description: 'Google Maps Audit ตรวจว่าโรงแรมหรือบริการรับฝากเลี้ยงของคุณโผล่ในคำค้นหา "ใกล้ฉัน" หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน',
       buttonText: 'ขอรับ Google Maps Audit ฟรี',
       href: '/discovery-audit',
     },
