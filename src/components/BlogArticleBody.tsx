@@ -7499,6 +7499,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>

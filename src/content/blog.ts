@@ -118,6 +118,11 @@ export const seoGeoAeoFaqs: FAQItem[] = [
     answer:
       'SEO ยังสำคัญมาก เพราะ AI Search และ AI Overview ยังต้องอาศัยข้อมูลจากเว็บและแหล่งข้อมูลออนไลน์ต่าง ๆ หากเว็บไซต์ไม่มีโครงสร้างที่ดี ไม่มีเนื้อหาคุณภาพ หรือไม่ถูก Search Engine เข้าใจ โอกาสที่จะถูก AI เลือกไปใช้หรือนำไปอ้างอิงก็ลดลงเช่นกัน',
   },
+  {
+    question: 'GEO กับ AEO ต่างกันอย่างไร',
+    answer:
+      'AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบโดยตรง เช่น Featured Snippet, AI Overview หรือ Voice Search ส่วน GEO มีขอบเขตกว้างกว่า โดยดูภาพรวมความน่าเชื่อถือของแบรนด์ทั้งเว็บไซต์ เช่น Brand Mention, Entity และ Citation เพื่อให้ Generative AI อย่าง ChatGPT หรือ Gemini เลือกอ้างอิงหรือแนะนำแบรนด์ ไม่ใช่แค่ตอบคำถามเดียว',
+  },
 ]
 
 export const geoAgencyFaqs: FAQItem[] = [
