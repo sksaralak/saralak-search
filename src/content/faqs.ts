@@ -356,6 +356,11 @@ export const geoFaqs: FAQItem[] = [
     answer:
       'ได้ผลดีกับทุก Package แต่แนะนำเพิ่มกับ SEO Growth หรือ Pro ซึ่งมี Content 2–4 บทความ/เดือน เพราะมีฐาน Content ที่แข็งแรงพอสำหรับ GEO ทำงานได้เต็มศักยภาพ',
   },
+  {
+    question: 'รับทำ GEO ที่ไหนดี?',
+    answer:
+      'เลือกทีมที่เข้าใจทั้ง SEO และ GEO ควบคู่กัน เพราะ GEO ทำงานได้ผลดีที่สุดเมื่อมีฐาน Content และ Technical SEO ที่แข็งแรงรองรับอยู่แล้ว ไม่ใช่บริการที่แยกทำเดี่ยว ๆ',
+  },
 ]
 
 export function faqJsonLd(faqs: FAQItem[]) {

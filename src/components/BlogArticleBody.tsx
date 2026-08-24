@@ -7498,6 +7498,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
           { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>
