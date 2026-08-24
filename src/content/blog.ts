@@ -911,6 +911,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ลูกค้าที่เมื่อยกำลังหาคุณอยู่',
     slug: 'increase-sale-massage-spa',
+    heroImageDesktop: '/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-hero.webp',
+    heroImageAlt: 'ร้านนวดและสปาที่ลูกค้าค้นพบผ่าน Google Maps และจองบริการ',
+    ogImage: '/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-hero.webp',
     category: 'Local SEO',
     excerpt:
       'คำค้นหากลุ่มนวดและสปาแบบ "ใกล้ฉัน" รวมกันกว่า 1.34 ล้านครั้งต่อเดือนในไทย และยังโตขึ้น +22% ถึง +49% เทียบปีก่อน แต่ร้านส่วนใหญ่ยังไม่มีราคา รูป หรือชั่วโมงทำการที่ถูกต้องบน Google Maps',
@@ -941,6 +944,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps คู่แข่งน้อยกว่าที่คิด',
     slug: 'increase-sale-pet-grooming',
+    heroImageDesktop: '/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-hero.webp',
+    heroImageAlt: 'ร้านอาบน้ำตัดขนสัตว์เลี้ยงที่ลูกค้าค้นพบผ่าน Google Maps',
+    ogImage: '/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-hero.webp',
     category: 'Local SEO',
     excerpt:
       'คำค้นหากลุ่มอาบน้ำตัดขนสัตว์เลี้ยงมี competition ระดับ Low แทบทุกคำ แปลว่าติด 3-pack ง่ายกว่าธุรกิจอื่นมาก และลูกค้ากลุ่มนี้กลับมาซ้ำทุก 4–8 สัปดาห์ ซึ่งเป็นมูลค่าที่ธุรกิจส่วนใหญ่มองข้าม',
@@ -971,6 +977,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขาย Pet Shop ด้วย Google Maps',
     slug: 'increase-sale-pet-shop',
+    heroImageDesktop: '/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-hero.webp',
+    heroImageAlt: 'Pet Shop ใกล้บ้านที่ลูกค้าค้นพบและมาซื้อสินค้าได้ทันทีผ่าน Google Maps',
+    ogImage: '/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-hero.webp',
     category: 'Local SEO',
     excerpt:
       'คนค้นหา "ร้านขายอาหารสัตว์ ใกล้ฉัน" 40,500 ครั้งต่อเดือน คนกลุ่มนี้ต้องการของวันนี้ ไม่ใช่รอส่ง 2 วัน นี่คือความได้เปรียบเดียวที่ร้านออนไลน์เลียนแบบไม่ได้ — ถ้าคุณอยู่บน Google Maps',
@@ -1001,6 +1010,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps',
     slug: 'increase-sale-pet-hospital',
+    heroImageDesktop: '/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-hero.webp',
+    heroImageAlt: 'โรงพยาบาลสัตว์และคลินิกสัตวแพทย์ที่เจ้าของสัตว์ค้นพบผ่าน Google Maps',
+    ogImage: '/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-hero.webp',
     category: 'Local SEO',
     excerpt:
       'คำค้นหากลุ่มโรงพยาบาลสัตว์และคลินิกสัตวแพทย์แบบ "ใกล้ฉัน" รวมกันกว่า 130,000 ครั้งต่อเดือนในไทย ลูกค้ากลุ่มนี้ตัดสินใจเร็วเพราะเป็นเรื่องฉุกเฉิน แต่คลินิกส่วนใหญ่ยังไม่มีชั่วโมงทำการ บริการ หรือราคาที่ถูกต้องบน Google Maps',
@@ -1031,6 +1043,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps',
     slug: 'increase-sale-pet-hotel',
+    heroImageDesktop: '/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-hero.webp',
+    heroImageAlt: 'โรงแรมสัตว์เลี้ยงที่เจ้าของสัตว์ค้นพบและจองผ่าน Google Maps',
+    ogImage: '/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-hero.webp',
     category: 'Local SEO',
     excerpt:
       'คำค้นหากลุ่ม "ฝากเลี้ยงหมา" และ "โรงแรมหมา" แบบใกล้ฉันรวมกันกว่า 25,000 ครั้งต่อเดือนในไทย และพุ่งสูงช่วงเทศกาลหยุดยาว แต่โรงแรมสัตว์เลี้ยงส่วนใหญ่ยังไม่มีรูปกรงจริง ราคา หรือความพร้อมให้บริการบน Google Maps',
@@ -1405,6 +1420,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]',
     slug: 'increase-seo-traffic',
+    heroImageDesktop: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
+    heroImageAlt: 'แดชบอร์ดเว็บไซต์ที่ Traffic SEO เติบโตจากกลยุทธ์หลายด้าน',
+    ogImage: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
     category: 'SEO',
     excerpt:
       'เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่แค่เขียนบทความให้เยอะขึ้น แต่ต้องทำตั้งแต่ Keyword Research, On-Page SEO, Technical SEO ไปจนถึง Internal Link และการวัดผลอย่างต่อเนื่อง บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริงสำหรับธุรกิจไทย',
@@ -1435,6 +1453,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เช็ค Traffic เว็บไซต์ฟรี ไม่ต้องเสียเงิน [เช็คเองได้ใน 5 นาที]',
     slug: 'check-website-traffic-free',
+    heroImageDesktop: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
+    heroImageAlt: 'การตรวจสอบ Traffic เว็บไซต์ฟรีผ่านแดชบอร์ดข้อมูลบนคอมพิวเตอร์และมือถือ',
+    ogImage: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
     category: 'SEO',
     excerpt:
       'เช็ค Traffic เว็บไซต์ตัวเองฟรี 100% ผ่าน Google Search Console และ GA4 พร้อมวิธีเช็ค Traffic คู่แข่งแบบประมาณการ และสิ่งที่ต้องรู้ก่อนเชื่อตัวเลขจากเครื่องมือฟรีทุกตัว',

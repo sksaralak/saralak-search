@@ -4904,6 +4904,11 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
+      <ArticleImage
+        src="/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-local-demand.webp"
+        alt="ลูกค้าค้นหาร้านนวดใกล้ฉันบนแผนที่และจองร้านที่อยู่ใกล้ที่สุด"
+      />
+
       <ArticleSection title="เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ได้จริงไหม?">
         <P><strong>เพิ่มยอดขายร้านนวด</strong>และสปาด้วย Google Maps เป็นเรื่องที่ทำได้จริง และอาจเป็นช่องทางที่คุ้มที่สุดของธุรกิจนี้ เพราะคนที่ค้นหา "นวด ใกล้ฉัน" ไม่ได้กำลังหาแรงบันดาลใจ — เขาเมื่อย เขาอยู่ใกล้คุณ และเขาต้องการนวดวันนี้</P>
         <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
@@ -5008,6 +5013,10 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="6 สิ่งที่ร้านนวดและสปาต้องทำบน Google Business Profile">
+        <ArticleImage
+          src="/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-gbp-setup.webp"
+          alt="ข้อมูลสำคัญบน Google Business Profile สำหรับร้านนวดและสปา ทั้งบริการ ราคา เวลา รูปสถานที่ การจอง และรีวิว"
+        />
         <div className="grid gap-4">
           {[
             {
@@ -5331,6 +5340,11 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
+      <ArticleImage
+        src="/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-repeat-visits.webp"
+        alt="ผลลัพธ์ก่อนและหลังอาบน้ำตัดขน พร้อมวงจรลูกค้ากลับมาใช้บริการซ้ำ"
+      />
+
       <ArticleSection title="ทำไมร้านอาบน้ำตัดขนคือธุรกิจที่ติด Google Maps ง่ายที่สุดกลุ่มหนึ่ง">
         <P>ธุรกิจ<strong>อาบน้ำตัดขนสุนัข</strong>มี volume ไม่หวือหวาเท่าร้านอาหาร แต่มีข้อได้เปรียบที่ธุรกิจอื่นไม่มี — คำค้นหาเกือบทั้งกลุ่มมี competition ระดับ <strong>Low</strong> แปลว่าแรงที่ต้องใช้เพื่อติด 3-pack ต่ำกว่าธุรกิจอื่นอย่างมีนัยสำคัญ</P>
         <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
@@ -5418,6 +5432,10 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="6 สิ่งที่ร้านกรูมมิ่งต้องทำบน Google Business Profile">
+        <ArticleImage
+          src="/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-gbp-setup.webp"
+          alt="องค์ประกอบ Google Business Profile สำหรับร้านกรูมมิ่ง ทั้งภาพก่อนหลัง ราคา เวลา รีวิว การจอง และแผนที่"
+        />
         <div className="grid gap-4">
           {[
             {
@@ -5707,6 +5725,11 @@ function PetShopArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
+      <ArticleImage
+        src="/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-local-pickup.webp"
+        alt="เปรียบเทียบการรับสินค้า Pet Shop ใกล้บ้านได้ทันที กับการรอจัดส่งจากร้านออนไลน์"
+      />
+
       <ArticleSection title="ร้านสัตว์เลี้ยงแข่งกับร้านออนไลน์ไม่ได้จริงหรือ?">
         <P>คำตอบคือ <strong>แข่งได้ ในสนามที่ร้านออนไลน์ลงมาเล่นไม่ได้</strong> — คนที่พิมพ์ "ร้านขายอาหารสัตว์ ใกล้ฉัน" ไม่ใช่คนที่กำลังเทียบราคา แต่คือคนที่อาหารแมวหมดวันนี้ และไม่อยากรอส่ง 2 วัน</P>
         <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
@@ -5806,6 +5829,10 @@ function PetShopArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="6 สิ่งที่ร้านสัตว์เลี้ยงต้องทำบน Google Business Profile">
+        <ArticleImage
+          src="/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-product-discovery.webp"
+          alt="ลูกค้าค้นหา Pet Shop จากหมวดสินค้า สต็อกสินค้า แผนที่ เวลา เบอร์โทร และรีวิว"
+        />
         <div className="grid gap-4">
           {[
             {
@@ -6070,6 +6097,11 @@ function PetHospitalArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
+      <ArticleImage
+        src="/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-emergency-search.webp"
+        alt="เจ้าของสัตว์ค้นหาคลินิกสัตวแพทย์ที่เปิดอยู่ใกล้ที่สุดในเวลากลางคืน"
+      />
+
       <ArticleSection title="คลินิกเล็กแข่งกับโรงพยาบาลสัตว์เชนใหญ่ไม่ได้จริงหรือ?">
         <P>คำตอบคือ <strong>แข่งได้ ในจังหวะที่เชนใหญ่แพ้ทางอยู่แล้ว</strong> — คนที่พิมพ์ "โรงพยาบาลสัตว์ ใกล้ฉัน" ตอนตีสอง ไม่ได้กำลังเทียบชื่อเสียงหรือเทียบราคา แต่ต้องการที่ที่ใกล้ที่สุดและว่างที่สุด ณ วินาทีนั้น</P>
         <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
@@ -6168,6 +6200,10 @@ function PetHospitalArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="6 สิ่งที่คลินิกและโรงพยาบาลสัตว์ต้องทำบน Google Business Profile">
+        <ArticleImage
+          src="/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-gbp-setup.webp"
+          alt="ข้อมูลสำคัญบน Google Business Profile สำหรับคลินิกสัตวแพทย์ ทั้งเวลา เบอร์โทร บริการ ราคา รูป และรีวิว"
+        />
         <div className="grid gap-4">
           {[
             {
@@ -6430,6 +6466,11 @@ function PetHotelArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
+      <ArticleImage
+        src="/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-seasonal-demand.webp"
+        alt="เจ้าของสัตว์ค้นหาและจองโรงแรมสัตว์เลี้ยงล่วงหน้าก่อนเดินทางช่วงวันหยุด"
+      />
+
       <ArticleSection title="ธุรกิจรับฝากเลี้ยงเล็กๆ แข่งกับโรงแรมสัตว์เลี้ยงเชนใหญ่ได้ไหม?">
         <P>คำตอบคือ <strong>ได้ ในจังหวะที่ความไว้ใจสำคัญกว่าขนาดธุรกิจ</strong> — คนที่พิมพ์ "ฝากเลี้ยงหมา ใกล้ฉัน" ก่อนเดินทางไม่กี่วัน ต้องการที่ที่ใกล้บ้าน ดูน่าเชื่อถือ และว่างรับในวันที่ต้องการ ไม่ใช่แบรนด์ที่ดังที่สุด</P>
         <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
@@ -6499,6 +6540,10 @@ function PetHotelArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="สิ่งที่เจ้าของสัตว์กังวลก่อนตัดสินใจฝาก">
+        <ArticleImage
+          src="/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-trust-signals.webp"
+          alt="สัญญาณความน่าเชื่อถือของโรงแรมสัตว์เลี้ยง ทั้งห้องพัก พื้นที่เล่น กล้องดูแล พนักงาน และรีวิว"
+        />
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
             <thead className="bg-[#fbfaf6]">
@@ -7103,6 +7148,11 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
 
+      <ArticleImage
+        src="/image/blog/increase-seo-traffic/increase-seo-traffic-measure-improve.webp"
+        alt="กระบวนการวัดผล วิเคราะห์ปัญหา แก้ Technical SEO และเพิ่ม Traffic เว็บไซต์"
+      />
+
       <ArticleSection title="เพิ่ม Traffic SEO ให้เว็บไซต์ เริ่มจากตรงไหนดี?">
         <P>
           หลายธุรกิจอยากเพิ่ม Traffic SEO ให้เว็บไซต์ แต่ไม่รู้จะเริ่มจากตรงไหน
@@ -7168,6 +7218,10 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="8 วิธีเพิ่ม Traffic SEO ให้เว็บไซต์">
+        <ArticleImage
+          src="/image/blog/increase-seo-traffic/increase-seo-traffic-eight-workstreams.webp"
+          alt="ระบบงาน SEO แปดด้านที่ทำงานร่วมกันเพื่อเพิ่ม Organic Traffic"
+        />
         <P>นี่คือ 8 ขั้นตอนหลักที่ควรทำร่วมกัน เรียงจากพื้นฐานไปถึงขั้นที่ต่อยอดสำหรับยุค AI Search พร้อมวิธีเช็คด้วยตัวเองในแต่ละข้อ</P>
         <div className="grid gap-5">
           {steps.map((step) => (
@@ -7352,6 +7406,11 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
 
+      <ArticleImage
+        src="/image/blog/check-website-traffic-free/check-website-traffic-free-own-vs-competitor.webp"
+        alt="เปรียบเทียบข้อมูล Traffic จริงของเว็บไซต์ตัวเองกับข้อมูลประมาณการของเว็บไซต์คู่แข่ง"
+      />
+
       <ArticleSection title="เช็ค Traffic เว็บไซต์ฟรี ทำได้จริงไหม?">
         <P>
           ทำได้จริง และไม่ต้องเสียเงินเลยสักบาท — แต่มี 2 กรณีที่ต้องแยกให้ออกก่อน
@@ -7369,6 +7428,10 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเอง (ฟรี 100% แม่นยำ)">
+        <ArticleImage
+          src="/image/blog/check-website-traffic-free/check-website-traffic-free-workflow.webp"
+          alt="ขั้นตอนตรวจ Traffic เว็บไซต์ฟรี ตั้งแต่เชื่อมเว็บไซต์ ดูกราฟ ไปจนถึงสรุปสิ่งที่ควรแก้"
+        />
         <P>
           ถ้าเป็นเว็บไซต์ของตัวเอง ไม่ต้องพึ่งเครื่องมือภายนอกเลย เพราะ Google มีเครื่องมือฟรีที่แม่นยำที่สุดให้ใช้อยู่แล้ว
         </P>
