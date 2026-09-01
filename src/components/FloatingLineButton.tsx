@@ -32,32 +32,37 @@ export default function FloatingLineButton() {
         </svg>
       </a>
 
-      {/* LINE button */}
-      <a
-        href={brand.lineUrl}
-        target="_blank"
-        rel="noreferrer"
-        onClick={() => trackLineClick('floating_line')}
-        aria-label="ปรึกษา SEO / GEO / AEO ผ่าน LINE"
-        className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#06C755] shadow-lg shadow-neutral-950/25 transition hover:scale-105 hover:bg-[#05b84f] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#06C755] sm:h-[60px] sm:w-[60px]"
-      >
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-[#06C755] opacity-75"
-        />
-        <span
-          className="pointer-events-none absolute bottom-full right-0 mb-2 hidden whitespace-nowrap rounded-md bg-neutral-950 px-3 py-1.5 text-xs font-semibold text-white shadow-md sm:group-hover:block"
-          role="tooltip"
+      {/* LINE button with always-visible CTA label */}
+      <div className="flex items-center gap-2">
+        <a
+          href={brand.lineUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => trackLineClick('floating_line_cta')}
+          className="whitespace-nowrap rounded-full bg-neutral-950 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-neutral-950/20 transition hover:bg-neutral-800 sm:text-sm"
         >
-          ปรึกษา SEO / GEO / AEO
-        </span>
-        <img
-          src="/image/icon/Line-sara-search.png"
-          alt="LINE"
-          className="h-9 w-9 rounded-full sm:h-10 sm:w-10"
-          draggable={false}
-        />
-      </a>
+          ปรึกษาฟรี
+        </a>
+        <a
+          href={brand.lineUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => trackLineClick('floating_line')}
+          aria-label="ปรึกษา SEO / GEO / AEO ผ่าน LINE"
+          className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#06C755] shadow-lg shadow-neutral-950/25 transition hover:scale-105 hover:bg-[#05b84f] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#06C755] sm:h-[60px] sm:w-[60px]"
+        >
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-[#06C755] opacity-75"
+          />
+          <img
+            src="/image/icon/Line-sara-search.png"
+            alt="LINE"
+            className="h-9 w-9 rounded-full sm:h-10 sm:w-10"
+            draggable={false}
+          />
+        </a>
+      </div>
     </div>
   )
 }
