@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ContactActions from '../components/ContactActions'
-import ContactForm from '../components/ContactForm'
 import CTAButton from '../components/CTAButton'
 import FAQSection from '../components/FAQSection'
 import SEO from '../components/SEO'
@@ -370,10 +369,10 @@ export default function DiscoveryAudit() {
           title="อยากรู้ว่าเว็บไซต์ของคุณควรเริ่มแก้จากจุดไหน?"
           description="เริ่มจาก Discovery Audit เพื่อดูว่า Google, Google Maps และ AI Search มองเห็นแบรนด์ของคุณอย่างไร และควรวางแผนต่อด้วย SEO, Local SEO, GEO หรือ Content"
         />
+        <p className="thai-readable mx-auto mt-4 max-w-xl text-center text-sm text-neutral-500">
+          ไม่ต้องกรอกฟอร์ม — ทักมาทาง LINE, โทร หรืออีเมลได้เลย ตอบกลับภายใน 1–2 วันทำการ
+        </p>
         <ContactActions align="center" className="mt-8" lineSource="discovery_cta" />
-        <div className="mt-8">
-          <ContactForm />
-        </div>
       </section>
     </main>
   )

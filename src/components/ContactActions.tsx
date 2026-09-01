@@ -33,6 +33,12 @@ export default function ContactActions({
       >
         โทรปรึกษา
       </a>
+      <a
+        href={`mailto:${brand.email}`}
+        className="inline-flex min-h-11 items-center justify-center rounded-md border border-teal-200 bg-white px-5 py-2.5 text-center text-sm font-semibold leading-6 text-teal-950 shadow-sm shadow-teal-950/5 transition hover:bg-teal-50"
+      >
+        ส่งอีเมล
+      </a>
     </div>
   )
 }
