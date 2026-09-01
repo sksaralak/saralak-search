@@ -7579,16 +7579,32 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
 }
 
 function ProteinSeoArticle({ post }: { post: BlogPost }) {
+  const nonBrandQueries: [string, string, string][] = [
+    ['อาหารเย็นลดน้ำหนัก', '13 คลิก/7 วัน', '#4.4'],
+    ['โปรตีนกินเวลาไหนดีที่สุด', '10 คลิก/7 วัน', '#1.1'],
+    ['กินโปรตีนเวลาไหนดีที่สุด', '10 คลิก/7 วัน', '#1.2'],
+    ['มื้อเย็นกินอะไรดี', '8 คลิก/7 วัน', '#7.6'],
+    ['เมนูลดน้ำหนักตอนเย็น', '6 คลิก/7 วัน', '#3.8'],
+    ['กินโปรตีนลดน้ำหนัก ควรกินตอนไหน', '5 คลิก/7 วัน', '#1.7'],
+  ]
+
   return (
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
       <ArticleSection title="ทำไมธุรกิจขายโปรตีนแข่งขันยากบน Google">
         <P>
-          หน้าแรกของคำว่า "เวย์โปรตีน" หรือ "โปรตีนจากพืช" มักเต็มไปด้วยหน้าสินค้าจาก Shopee, Lazada และแบรนด์ระดับประเทศที่มีงบโฆษณาและลิงก์ย้อนกลับสะสมมาหลายปี ร้านเล็กที่เพิ่งเริ่มทำเว็บแทบไม่มีโอกาสแข่งกับกลุ่มนี้ด้วยคำกว้างเลย
+          หน้าแรกของคำว่า "เวย์โปรตีน" หรือ "โปรตีนจากพืช" มักเต็มไปด้วยหน้าสินค้าจาก Shopee, Lazada และแบรนด์ระดับประเทศที่มีงบโฆษณาและลิงก์ย้อนกลับสะสมมาหลายปี ร้านเล็กที่เพิ่งเริ่มทำเว็บแทบไม่มีโอกาสแข่งกับกลุ่มนี้ด้วยคำกว้างเลย ต่อให้เขียนบทความดีแค่ไหน เว็บไซต์ที่เพิ่งเริ่มต้นก็แทบไม่มีโอกาสไปแซงหน้าเว็บที่มีอายุโดเมนและลิงก์สะสมมาหลายปีในคำเดียวแบบนี้
         </P>
         <P>
-          สิ่งที่มักถูกมองข้ามคือ คนที่ค้นหาคำกว้างแบบนี้จำนวนมากยังไม่ได้ตัดสินใจซื้อ แค่กำลังสำรวจตลาด ในขณะที่คนที่พิมพ์คำเฉพาะเจาะจงกว่านั้นมักใกล้จุดตัดสินใจซื้อมากกว่ามาก — และเป็นจุดที่ธุรกิจขนาดเล็กแข่งขันได้จริง
+          สิ่งที่มักถูกมองข้ามคือ คนที่ค้นหาคำกว้างแบบนี้จำนวนมากยังไม่ได้ตัดสินใจซื้อ แค่กำลังสำรวจตลาด ในขณะที่คนที่พิมพ์คำเฉพาะเจาะจงกว่านั้นมักใกล้จุดตัดสินใจซื้อมากกว่ามาก — และเป็นจุดที่ธุรกิจขนาดเล็กแข่งขันได้จริง เพราะคู่แข่งรายใหญ่มักไม่เสียเวลาทำเนื้อหาละเอียดขนาดนั้นให้กับคำที่มีปริมาณค้นหาต่ำ
+        </P>
+        <P>
+          แนวทางนี้เป็นหลักการเดียวกับ{' '}
+          <Link to="/services/seo" className="font-semibold text-teal-800 underline decoration-teal-300 underline-offset-2 hover:text-teal-900">
+            บริการ SEO ของ Saralak Search
+          </Link>{' '}
+          ที่เริ่มจากการหาว่าเว็บไซต์มีโอกาสแข่งขันตรงไหนจริง ๆ ก่อนลงมือทำเนื้อหาหรือปรับโครงสร้างเว็บ
         </P>
       </ArticleSection>
 
@@ -7603,6 +7619,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
             'โปรตีนจากพืชสำหรับคนแพ้แลคโตส',
             'โปรตีนผงคีโต',
             'เวย์โปรตีนลดน้ำหนักสำหรับผู้หญิง',
+            'โปรตีนกินเวลาไหนดีที่สุด',
           ].map((kw) => (
             <div key={kw} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] px-4 py-3">
               <p className="thai-readable text-sm font-medium text-neutral-800">{kw}</p>
@@ -7610,7 +7627,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>
-          ร้านที่มีหน้าเว็บตอบโจทย์คำเหล่านี้ตรง ๆ มีโอกาสติดอันดับสูงกว่า และคนที่คลิกเข้ามาก็มีแนวโน้มซื้อมากกว่าคนที่ค้นหาคำกว้าง
+          ร้านที่มีหน้าเว็บตอบโจทย์คำเหล่านี้ตรง ๆ มีโอกาสติดอันดับสูงกว่า และคนที่คลิกเข้ามาก็มีแนวโน้มซื้อมากกว่าคนที่ค้นหาคำกว้าง สังเกตว่าคำกลุ่มนี้ไม่ได้มี "เวย์โปรตีน" หรือ "โปรตีนจากพืช" นำหน้าเสมอไป บางคำอย่าง "โปรตีนกินเวลาไหนดีที่สุด" เป็นคำถามเชิงพฤติกรรมการกินล้วน ๆ แต่คนที่ค้นคำนี้คือกลุ่มเป้าหมายของธุรกิจขายโปรตีนโดยตรง
         </P>
       </ArticleSection>
 
@@ -7619,7 +7636,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
           ควรแยก เพราะกลุ่มลูกค้าสองกลุ่มนี้มีเหตุผลในการเลือกซื้อต่างกันโดยสิ้นเชิง คนหาโปรตีนจากพืชมักกังวลเรื่องกลิ่น รสชาติ และความเป็นมังสวิรัติ ส่วนคนหาเวย์โปรตีนมักสนใจปริมาณโปรตีนต่อหน่วยและการดูดซึม
         </P>
         <P>
-          ถ้ารวมทุกอย่างไว้หน้าเดียว เนื้อหาจะตอบโจทย์ทั้งสองกลุ่มได้ไม่ลึกพอ แต่ถ้าแยกหน้าและใส่รายละเอียดที่ตรงประเด็นของแต่ละกลุ่ม โอกาสติดอันดับคำเฉพาะเจาะจงของแต่ละฝั่งก็จะสูงขึ้นตามไปด้วย
+          ถ้ารวมทุกอย่างไว้หน้าเดียว เนื้อหาจะตอบโจทย์ทั้งสองกลุ่มได้ไม่ลึกพอ แต่ถ้าแยกหน้าและใส่รายละเอียดที่ตรงประเด็นของแต่ละกลุ่ม โอกาสติดอันดับคำเฉพาะเจาะจงของแต่ละฝั่งก็จะสูงขึ้นตามไปด้วย ในทางปฏิบัติหมายความว่าแต่ละหน้าควรมี URL, title tag และ H1 ของตัวเอง ไม่ใช่ใช้หน้าสินค้าเดียวกันแล้วสลับแท็บแสดงข้อมูล เพราะ Google จะมองเห็นแค่หน้าเดียวที่ไม่ได้เจาะจงพอ
         </P>
       </ArticleSection>
 
@@ -7628,7 +7645,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
           หน้าสินค้าที่มีแค่รูปภาพกับสเปคทั่วไปไม่พอสำหรับคำค้นหาหางยาว ควรมีเนื้อหาที่ตอบคำถามของแต่ละกลุ่มจริง ๆ เช่น คนแพ้แลคโตสอยากรู้ว่าสูตรนี้มีเวย์โปรตีนไอโซเลตหรือไม่ คนกินคีโตอยากรู้ปริมาณคาร์บต่อหนึ่งช้อน คนที่กังวลเรื่องกลิ่นของโปรตีนจากพืชอยากรู้ว่าผสมกับอะไรแล้วดื่มง่ายขึ้น
         </P>
         <P>
-          การเขียนตอบคำถามเหล่านี้ตรง ๆ ในหน้าสินค้าหรือบทความ ทำให้หน้าเว็บมีโอกาสถูกดึงไปแสดงในคำค้นหาเฉพาะกลุ่มมากขึ้น
+          การเขียนตอบคำถามเหล่านี้ตรง ๆ ในหน้าสินค้าหรือบทความ ทำให้หน้าเว็บมีโอกาสถูกดึงไปแสดงในคำค้นหาเฉพาะกลุ่มมากขึ้น รูปแบบที่ใช้ได้ผลบ่อย ๆ คือการเปิดย่อหน้าด้วยคำตอบตรง ๆ ก่อน แล้วค่อยขยายความ เพราะทั้ง Google และ AI Search มักดึงประโยคแรกไปแสดงเป็นคำตอบโดยตรง
         </P>
       </ArticleSection>
 
@@ -7641,6 +7658,26 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleSection title="แผนการทำ SEO 90 วันแรกสำหรับธุรกิจขายโปรตีน">
+        <P>90 วันแรกควรเน้นวางฐานให้ถูกจุดก่อนขยายจำนวนคอนเทนต์ ลำดับที่ใช้ได้จริงมีดังนี้</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { step: '01', title: 'เดือนที่ 1: วิจัยคีย์เวิร์ดหางยาว', what: 'รวบรวมคำค้นหาเฉพาะกลุ่มจาก Google Search Console, Google Suggest และคำถามที่ลูกค้าถามจริงในแชท/รีวิว' },
+            { step: '02', title: 'เดือนที่ 1: แยกหน้า Plant Protein / Whey Protein', what: 'ตรวจว่าหน้าเว็บปัจจุบันแยกกลุ่มสินค้าชัดเจนหรือไม่ ถ้ายังไม่แยก ควรเริ่มวางโครงสร้าง URL ใหม่ก่อน' },
+            { step: '03', title: 'เดือนที่ 2: เขียนเนื้อหาตอบคำถามเฉพาะกลุ่ม', what: 'เริ่มจากคำที่มีสัญญาณซื้อชัดเจนที่สุดก่อน เช่น กลุ่มแพ้แลคโตสหรือคีโต ที่มักตัดสินใจซื้อเร็ว' },
+            { step: '04', title: 'เดือนที่ 3: ติดตามอันดับและปรับ', what: 'ดูใน Search Console ว่าคำไหนเริ่มขยับ แล้วขยายเนื้อหากลุ่มที่ได้ผลก่อน แทนที่จะเขียนทุกหัวข้อพร้อมกัน' },
+          ].map(({ step, title, what }) => (
+            <div key={step} className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-bold text-teal-800">{step}</span>
+              <div>
+                <p className="font-semibold text-neutral-950">{title}</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{what}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
       <ArticleSection title="วัดผลว่าคุ้มกับการลงทุนทำ SEO หรือไม่">
         <P>
           การทำ SEO แบบเน้นคำหางยาวมักเห็นผลช้ากว่าการยิงโฆษณา แต่ต้นทุนต่อการเข้าชมในระยะยาวต่ำกว่ามาก สิ่งที่ควรติดตามคือจำนวนคำค้นหาเฉพาะเจาะจงที่เริ่มมีอันดับดีขึ้น ไม่ใช่แค่ยอดเข้าชมรวม เพราะคำหางยาวแต่ละคำมีปริมาณการค้นหาต่ำอยู่แล้ว
@@ -7650,13 +7687,63 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="กรณีศึกษา: ทำไมคำค้นหาเฉพาะเจาะจงถึงเปลี่ยนเป็นลูกค้าได้ดีกว่า">
+      <ArticleSection title="ตัวอย่างผลลัพธ์จริงจากงานที่ทำ">
         <P>
-          จากประสบการณ์ทำงานกับแบรนด์อาหารเสริมโปรตีนสัญชาติไทยรายหนึ่ง พบรูปแบบที่สอดคล้องกันคือ หน้าเว็บที่ตอบคำค้นหาเฉพาะกลุ่ม เช่น เงื่อนไขด้านสุขภาพหรือไลฟ์สไตล์การกิน มักมีอัตราการคลิกเป็นยอดขายสูงกว่าเนื้อหาที่เขียนถึงคำกว้าง ๆ อย่างชัดเจน แม้จำนวนคนเข้าชมจากคำเฉพาะจะน้อยกว่ามากก็ตาม
+          ตัวอย่างต่อไปนี้มาจากลูกค้ากลุ่มสุขภาพและโภชนาการรายหนึ่งที่ Saralak Search ดูแลอยู่ (ไม่เปิดเผยชื่อแบรนด์ตามข้อตกลงความเป็นส่วนตัวกับลูกค้า) เพื่อให้เห็นว่าแนวทางคีย์เวิร์ดหางยาวที่อธิบายไปข้างต้นสร้างผลลัพธ์แบบไหนได้จริง
         </P>
+        <ArticleImage
+          src="/proof/nutrition-content-growth.png"
+          alt="Google Search Console แสดง Organic Clicks และ Impressions เติบโตต่อเนื่องภายใน 3 เดือน สำหรับลูกค้ากลุ่มสุขภาพและโภชนาการ"
+          caption="Organic Clicks (เส้นสีฟ้า) และ Impressions (เส้นสีม่วง) จาก Google Search Console ช่วง 3 เดือน — Average CTR 1.4%, Average Position 5.9"
+        />
+        <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">สิ่งที่ทำจริง</p>
+        <div className="grid gap-2">
+          {[
+            'วิจัยคีย์เวิร์ดกลุ่มโภชนาการและสุขภาพ 5 คำต่อเดือน เพื่อวางทิศทาง Content ให้ทีมลูกค้าผลิตต่อ',
+            'ปรับ On-page SEO ให้เนื้อหาตอบ Search Intent และเชื่อมโยงไปสู่หน้าสินค้าที่เกี่ยวข้อง',
+            'แก้ปัญหา Technical เล็กน้อยของระบบ Ecommerce เช่น Canonical URL และการทำ Indexing ให้เนื้อหาใหม่ถูกเก็บข้อมูลได้เร็วขึ้น',
+          ].map((item) => (
+            <div key={item} className="flex items-start gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3">
+              <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+              <p className="thai-readable text-sm text-neutral-700">{item}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
+          ตัวอย่างคีย์เวิร์ดกลุ่ม Non-Brand ที่เริ่มติดอันดับ (ข้อมูล 7 วันล่าสุดจาก Search Console)
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">คำค้นหา</th>
+                <th className="px-4 py-3 font-semibold text-neutral-500">คลิก</th>
+                <th className="px-4 py-3 font-semibold text-teal-700">อันดับเฉลี่ย</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100">
+              {nonBrandQueries.map(([q, clicks, pos]) => (
+                <tr key={q}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{q}</td>
+                  <td className="px-4 py-3 text-neutral-600">{clicks}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{pos}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <P>
-          สะท้อนให้เห็นว่าสำหรับธุรกิจขนาดเล็กที่งบจำกัด การเลือกแข่งในจุดที่แข่งได้จริงสำคัญกว่าการไล่ตามปริมาณการค้นหาที่สูงแต่แข่งขันสูงตามไปด้วย
+          ทุกคำในตารางนี้ไม่มีชื่อแบรนด์ปนอยู่เลย — เป็นคำถามเชิงพฤติกรรมและไลฟ์สไตล์การกินล้วน ๆ สะท้อนแนวทางเดียวกับที่อธิบายไปในหัวข้อ "คีย์เวิร์ดหางยาวที่ลูกค้าโปรตีนค้นหาจริง" ด้านบน ผลลัพธ์รวมคือ Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150 ครั้งต่อเดือนภายใน 3 เดือน และยังเติบโตต่อเนื่อง
         </P>
+        <div className="rounded-xl border border-teal-100 bg-teal-50/60 p-5">
+          <p className="thai-readable text-sm leading-6 text-teal-900">
+            อยากรู้ว่าธุรกิจของคุณมีคีย์เวิร์ดหางยาวแบบนี้ซ่อนอยู่ตรงไหนบ้าง? เริ่มจาก{' '}
+            <Link to="/services/seo" className="font-semibold underline decoration-teal-400 underline-offset-2 hover:text-teal-700">
+              บริการ SEO ของ Saralak Search
+            </Link>{' '}
+            หรือขอ Discovery Audit เพื่อดูโอกาสของเว็บไซต์ก่อนเริ่มลงมือ
+          </p>
+        </div>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
@@ -7666,7 +7753,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
 
       <SourceBox items={[
         'Google Search Console documentation, checked September 2026',
-        'Saralak Search client observations across e-commerce and health/nutrition brands (anonymised), checked September 2026',
+        'Saralak Search client GSC data across e-commerce and health/nutrition brands (anonymised, screenshots September 2026)',
       ]} />
 
       <ArticleFAQ post={post} heading="FAQ: SEO สำหรับธุรกิจขายเวย์โปรตีนและโปรตีนจากพืช" />
