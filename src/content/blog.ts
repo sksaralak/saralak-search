@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo'
   cta?: {
     headline: string
     description: string
@@ -777,6 +777,34 @@ export const checkTrafficFreeFaqs: FAQItem[] = [
   },
 ]
 
+export const proteinSeoFaqs: FAQItem[] = [
+  {
+    question: 'ทำ SEO ให้ธุรกิจขายเวย์โปรตีนหรือโปรตีนจากพืชควรเริ่มจากอะไร?',
+    answer:
+      'ควรเริ่มจากคีย์เวิร์ดหางยาวที่มีเงื่อนไขเฉพาะเจาะจง เช่น เงื่อนไขด้านสุขภาพหรือไลฟ์สไตล์การกิน แทนที่จะไล่ตามคำกว้างอย่าง "เวย์โปรตีน" ซึ่งถูกแบรนด์ใหญ่และมาร์เก็ตเพลสครองพื้นที่อยู่แล้ว',
+  },
+  {
+    question: 'ทำไมคำว่า "เวย์โปรตีน" หรือ "โปรตีนจากพืช" ถึงติดอันดับยาก?',
+    answer:
+      'เพราะหน้าแรกของคำเหล่านี้เต็มไปด้วยหน้าสินค้าจาก Shopee, Lazada และแบรนด์ระดับประเทศที่มีงบโฆษณาและลิงก์ย้อนกลับสะสมมาหลายปี ธุรกิจขนาดเล็กแข่งด้วยคำกว้างแบบนี้ได้ยากมาก',
+  },
+  {
+    question: 'ควรแยกหน้าเว็บระหว่าง Plant Protein กับ Whey Protein หรือไม่?',
+    answer:
+      'ควรแยก เพราะลูกค้าสองกลุ่มนี้มีเหตุผลในการเลือกซื้อต่างกัน คนหาโปรตีนจากพืชมักกังวลเรื่องกลิ่นและความเป็นมังสวิรัติ ส่วนคนหาเวย์โปรตีนมักสนใจปริมาณโปรตีนและการดูดซึม การแยกหน้าให้เนื้อหาตอบโจทย์แต่ละกลุ่มได้ลึกกว่า',
+  },
+  {
+    question: 'ธุรกิจขายโปรตีนที่ไม่มีหน้าร้านควรทำ Google Business Profile ไหม?',
+    answer:
+      'ไม่จำเป็น เพราะ Google Business Profile เหมาะกับธุรกิจที่มีที่ตั้งจริงให้ลูกค้าค้นหาเจอ ธุรกิจที่ขายออนไลน์ล้วนควรให้ความสำคัญกับหน้าเว็บและคีย์เวิร์ดหางยาวเป็นหลักแทน',
+  },
+  {
+    question: 'ทำ SEO คีย์เวิร์ดหางยาวสำหรับธุรกิจโปรตีนแล้วต้องรอนานแค่ไหนถึงเห็นผล?',
+    answer:
+      'มักเห็นผลช้ากว่าการยิงโฆษณา แต่ต้นทุนต่อการเข้าชมในระยะยาวต่ำกว่ามาก ตัวชี้วัดที่ควรติดตามคือจำนวนคำค้นหาเฉพาะเจาะจงที่เริ่มมีอันดับดีขึ้น ไม่ใช่แค่ยอดเข้าชมรวม',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1479,6 +1507,36 @@ export const blogPosts: BlogPost[] = [
       headline: 'เช็คแล้วเจอว่า Traffic นิ่งหรือน้อยกว่าที่ควร?',
       description:
         'Discovery Audit ช่วยอ่านตัวเลข Traffic ของเว็บไซต์คุณ พร้อมระบุว่าอะไรคือสาเหตุ และควรแก้จุดไหนก่อนถึงจะเห็นผลเร็วที่สุด',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'ทำ SEO ธุรกิจขายเวย์โปรตีนและโปรตีนจากพืช เจาะคีย์เวิร์ดหางยาวที่แข่งขันได้จริง',
+    slug: 'seo-whey-plant-protein',
+    category: 'SEO',
+    excerpt:
+      'ธุรกิจขายโปรตีนผงแข่งกับแบรนด์ใหญ่และมาร์เก็ตเพลสด้วยคำกว้างอย่าง "เวย์โปรตีน" ได้ยาก บทความนี้แนะนำวิธีเจาะคีย์เวิร์ดหางยาวที่มีเงื่อนไขเฉพาะเจาะจง ซึ่งแข่งขันได้จริงและใกล้จุดตัดสินใจซื้อมากกว่า',
+    readingTime: '9 min read',
+    publishedDate: '2026-09-01',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'SEO ธุรกิจขายเวย์โปรตีน/โปรตีนจากพืช [คีย์เวิร์ดหางยาว] | Saralak Search',
+    metaDescription:
+      'วิธีทำ SEO ให้ธุรกิจขายเวย์โปรตีนและโปรตีนจากพืชแข่งขันได้จริง ด้วยคีย์เวิร์ดหางยาวเฉพาะกลุ่ม เช่น แพ้แลคโตส คีโต มังสวิรัติ ลดน้ำหนัก แทนการไล่ตามคำกว้างที่แข่งขันสูง',
+    aiSummary: [
+      'คำกว้างอย่าง "เวย์โปรตีน" แข่งขันยากเพราะถูกแบรนด์ใหญ่และมาร์เก็ตเพลสครองพื้นที่ ควรเจาะคีย์เวิร์ดหางยาวแทน',
+      'คีย์เวิร์ดหางยาวที่มีเงื่อนไขเฉพาะ เช่น ไม่มีน้ำตาล แพ้แลคโตส คีโต มีปริมาณค้นหาต่ำแต่ใกล้จุดตัดสินใจซื้อมากกว่า',
+      'ควรแยกหน้าเว็บระหว่าง Plant Protein กับ Whey Protein เพราะเหตุผลการซื้อของลูกค้าต่างกัน',
+      'ธุรกิจที่ไม่มีหน้าร้านควรเน้นหน้าเว็บและคีย์เวิร์ดหางยาว มากกว่า Google Business Profile',
+    ],
+    faqs: proteinSeoFaqs,
+    bodyVariant: 'protein-seo',
+    cta: {
+      headline: 'อยากรู้ว่าคีย์เวิร์ดหางยาวของธุรกิจคุณมีโอกาสติดอันดับตรงไหน?',
+      description:
+        'Discovery Audit ช่วยระบุคีย์เวิร์ดหางยาวที่แข่งขันได้จริงสำหรับธุรกิจของคุณ และจัดลำดับว่าควรเริ่มจากจุดไหนก่อน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },

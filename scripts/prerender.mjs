@@ -27,6 +27,7 @@ const blogSlugs = [
   'build-website-with-claude',
   'increase-seo-traffic',
   'check-website-traffic-free',
+  'seo-whey-plant-protein',
 ]
 
 const routes = [
