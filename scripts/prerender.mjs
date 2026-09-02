@@ -41,7 +41,6 @@ const routes = [
   '/services/content-marketing',
   '/discovery-audit',
   '/case-studies',
-  '/proof',
   '/blog',
   ...blogSlugs.map(slug => `/blog/${slug}`),
   '/contact',

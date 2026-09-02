@@ -6,7 +6,7 @@ export default function Privacy() {
     <main>
       <SEO
         title="Privacy Policy | Saralak Search"
-        description="Privacy Policy for Saralak Search, including contact form data, analytics, Google Sheets storage and rights under Thailand's PDPA."
+        description="Privacy Policy for Saralak Search, including analytics data collected on this website and rights under Thailand's PDPA."
         path="/privacy"
         jsonLd={{
           '@context': 'https://schema.org',
@@ -38,16 +38,17 @@ export default function Privacy() {
           <article>
             <h2 className="text-2xl font-semibold text-neutral-950">Information collected</h2>
             <p className="mt-4 leading-7 text-neutral-700">
-              When you submit the contact form, Saralak Search may collect your name, email,
-              company, website, interest, budget, message, page URL and timestamp.
+              This website does not have a contact form. When you reach out via LINE, phone call, or
+              email, any information you share is collected directly by that channel (LINE, your
+              phone carrier, or your email provider), not through this website.
             </p>
           </article>
 
           <article>
             <h2 className="text-2xl font-semibold text-neutral-950">How information is used</h2>
             <p className="mt-4 leading-7 text-neutral-700">
-              This information is used to reply to inquiries, evaluate whether Saralak Search is a
-              good fit for your request, improve website content, and improve marketing activity.
+              Information shared via LINE, phone, or email is used to reply to inquiries and evaluate
+              whether Saralak Search is a good fit for your request.
             </p>
           </article>
 
@@ -58,14 +59,6 @@ export default function Privacy() {
               performance. Microsoft Clarity is also used to understand page interaction and improve
               the user experience. These tools may collect usage data such as page views, device
               information, approximate location and interaction patterns.
-            </p>
-          </article>
-
-          <article>
-            <h2 className="text-2xl font-semibold text-neutral-950">Contact form storage</h2>
-            <p className="mt-4 leading-7 text-neutral-700">
-              Contact form submissions are sent to Google Sheets through Google Apps Script. Access
-              is limited to the account used by Saralak Search for managing inquiries.
             </p>
           </article>
 
