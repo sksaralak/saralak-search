@@ -7761,6 +7761,254 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
+  const steps = [
+    {
+      num: '01',
+      title: 'ทำให้ลูกค้าเจอธุรกิจก่อนผ่าน SEO',
+      body: (
+        <>
+          ก่อนจะขายได้ ลูกค้าต้องเจอธุรกิจก่อน SEO คือการทำให้เว็บไซต์ติดอันดับในคำค้นที่ลูกค้าใช้จริงตอนกำลังหาซื้อสินค้าหรือบริการ
+          ไม่ใช่แค่ชื่อแบรนด์ อ่านพื้นฐานได้ที่{' '}
+          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
+            SEO คืออะไร
+          </Link>
+        </>
+      ),
+      tip: 'เปิด Google Search Console ดูว่าตอนนี้เว็บไซต์ได้ Impression จากคำค้นไหนอยู่แล้วบ้าง คำที่มี Impression สูงแต่ Click ต่ำ คือจุดที่ควรปรับก่อน',
+    },
+    {
+      num: '02',
+      title: 'ถ้ามีหน้าร้าน ให้ปรากฏบน Google Maps',
+      body: 'ธุรกิจที่มีหน้าร้านหรือจุดให้บริการจริง ควรทำ Google Business Profile ให้ครบ เพราะลูกค้าจำนวนมากค้นหาแบบ "[บริการ] ใกล้ฉัน" แล้วตัดสินใจซื้อภายในไม่กี่ชั่วโมง การไม่ปรากฏใน Google Maps เท่ากับพลาดลูกค้ากลุ่มที่พร้อมซื้อที่สุด',
+      tip: 'ลองค้นหาธุรกิจของตัวเองด้วยคำว่า "[ธุรกิจ] ใกล้ฉัน" ถ้าไม่เจอในผลลัพธ์ 3 อันดับแรกของ Google Maps นั่นคือจุดที่ควรแก้ก่อน',
+    },
+    {
+      num: '03',
+      title: 'เตรียมแบรนด์ให้พร้อมสำหรับ AEO และ GEO',
+      body: (
+        <>
+          นอกจาก Google Search แบบเดิม ลูกค้าเริ่มถามหาสินค้าและบริการผ่าน AI Overview, ChatGPT และ Perplexity มากขึ้น
+          ถ้าเนื้อหาไม่ได้ถูกจัดโครงสร้างให้ AI เข้าใจและอ้างอิงได้ แบรนด์จะไม่ถูกแนะนำเลยแม้จะมีสินค้าดี อ่านเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}และ{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+        </>
+      ),
+      tip: 'ลองถามคำถามเกี่ยวกับสินค้าหรือบริการของธุรกิจใน ChatGPT หรือ Gemini ดูว่าแบรนด์ถูกพูดถึงไหม',
+    },
+    {
+      num: '04',
+      title: 'เขียนคอนเทนต์ที่ตอบคำถามก่อนตัดสินใจซื้อ',
+      body: 'ลูกค้าส่วนใหญ่ไม่ได้ตัดสินใจซื้อทันทีที่เจอเว็บไซต์ แต่มีคำถามที่ต้องการคำตอบก่อน เช่น สินค้านี้เหมาะกับใคร ต่างจากตัวเลือกอื่นอย่างไร ราคาคุ้มค่าแค่ไหน เนื้อหาที่ตอบคำถามเหล่านี้ตรงๆ ช่วยสร้างความมั่นใจและดันให้ลูกค้าตัดสินใจซื้อเร็วขึ้น',
+      tip: 'รวบรวมคำถามที่ลูกค้าถามบ่อยจากแชทหรือคอมเมนต์จริง แล้วเอามาตอบในหน้าสินค้าหรือบทความ แทนที่จะเดาว่าลูกค้าอยากรู้อะไร',
+    },
+    {
+      num: '05',
+      title: 'ปรับหน้าเว็บให้เปลี่ยนผู้เข้าชมเป็นลูกค้า',
+      body: 'ต่อให้มีคนเข้าเว็บไซต์เยอะแค่ไหน ถ้าหน้าเว็บโหลดช้า ไม่มีรีวิว หรือหาปุ่มสั่งซื้อไม่เจอ ยอดขายก็ไม่เพิ่ม สิ่งที่ควรมีในทุกหน้าสำคัญคือความเร็วในการโหลด รีวิวหรือหลักฐานความน่าเชื่อถือ และปุ่ม Call-to-Action ที่ชัดเจน',
+      tip: 'ทดสอบความเร็วเว็บไซต์ที่ pagespeed.web.dev แล้วลองสั่งซื้อสินค้าด้วยตัวเองตั้งแต่ต้นจนจบ เพื่อดูว่ามีขั้นตอนไหนที่ยุ่งยากเกินไป',
+    },
+    {
+      num: '06',
+      title: 'วัดผลต่อเนื่องแล้วปรับปรุง',
+      body: 'เพิ่มยอดขายออนไลน์ไม่ใช่งานที่ทำครั้งเดียวจบ ต้องติดตามผลอย่างสม่ำเสมอผ่าน Google Search Console และ GA4 เพื่อรู้ว่าคำค้นไหนเริ่มมี Impression เพิ่มขึ้น หน้าไหนมีคนเข้าชมแต่ไม่ซื้อ แล้วนำข้อมูลนั้นมาปรับปรุงต่อ',
+      tip: 'ตั้งเป้าเช็คข้อมูลอย่างน้อยเดือนละครั้ง เทียบกับเดือนก่อนหน้า เพื่อรู้ว่าแนวทางที่ทำอยู่ได้ผลจริงหรือควรปรับ',
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="เพิ่มยอดขายออนไลน์ เริ่มจากตรงไหนดี?">
+        <P>
+          หลายธุรกิจอยากเพิ่มยอดขายออนไลน์ แล้วเริ่มจากการยิงโฆษณาทันที
+          บางรายใช้งบไปเยอะแต่ยอดขายไม่ขยับตามที่หวัง เพราะโฆษณาช่วยได้แค่ช่วงที่จ่ายเงินอยู่
+          พอหยุดจ่าย Traffic และยอดขายก็หายไปด้วย
+        </P>
+        <P>
+          ก่อนจะทุ่มงบโฆษณา ควรเริ่มจากคำถามพื้นฐานกว่านั้นก่อน: ตอนนี้ลูกค้าเจอธุรกิจของคุณได้ง่ายแค่ไหน
+          เมื่อเจอแล้ว หน้าเว็บช่วยให้เขาตัดสินใจซื้อได้ง่ายหรือไม่ บทความนี้อธิบายลำดับขั้นตอนที่ควรทำ
+          ตั้งแต่การถูกค้นเจอไปจนถึงการเปลี่ยนผู้เข้าชมให้เป็นลูกค้าจริง
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            เพิ่มยอดขายออนไลน์เริ่มจากทำให้ลูกค้าเจอธุรกิจก่อนผ่าน SEO, Google Maps และ AEO/GEO
+            จากนั้นปรับหน้าเว็บให้เปลี่ยนผู้เข้าชมเป็นลูกค้าได้ง่ายขึ้น แล้ววัดผลต่อเนื่องเพื่อปรับปรุง
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="6 ขั้นตอนเพิ่มยอดขายออนไลน์">
+        <P>เรียงจากการทำให้ลูกค้าเจอธุรกิจ ไปจนถึงการเปลี่ยนผู้เข้าชมให้เป็นลูกค้าและวัดผล พร้อมวิธีเช็คด้วยตัวเองในแต่ละข้อ</P>
+        <div className="grid gap-5">
+          {steps.map((step) => (
+            <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p
+                className="thai-readable mt-2 text-sm leading-6 text-neutral-700"
+                style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
+              >
+                {step.body}
+              </p>
+              <div className="mt-3 rounded-md bg-teal-50 px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">วิธีเช็คด้วยตัวเอง</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.tip}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างผลลัพธ์จริงจากการเพิ่ม Organic Traffic">
+        <P>
+          ตัวอย่างต่อไปนี้มาจากลูกค้ารายหนึ่งที่ Saralak Search ดูแลอยู่ (ตัวเลขถูกเบลอเพื่อรักษาความลับของลูกค้า)
+          หลังทำ Technical SEO, ปรับ Metadata และเพิ่ม Internal Link ตามหลักการเดียวกับขั้นตอนด้านบน
+        </P>
+        <div className="overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm">
+          <ZoomableImage
+            src="/proof/gsc-product-listing-growth.png"
+            alt="ภาพจริงจาก Google Search Console: Clicks และ Impressions เติบโตต่อเนื่องหลังทำ SEO"
+          />
+          <div className="px-6 py-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ภาพจริงจาก Google Search Console</p>
+            <p className="thai-readable mt-2 text-base leading-7 text-neutral-800">
+              เส้นสีน้ำเงินคือ Clicks และเส้นสีม่วงคือ Impressions เติบโตต่อเนื่องภายในไม่กี่เดือน
+              หลังแก้ปัญหา Technical SEO และเสริมโครงสร้างเว็บไซต์ — Organic Traffic ที่เพิ่มขึ้นแบบนี้คือรากฐานที่นำไปสู่ยอดขายที่เพิ่มขึ้นตามมา
+            </p>
+          </div>
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+          { to: '/services/geo', label: 'รับทำ AEO / GEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Console documentation, checked September 2026',
+        'Saralak Search client GSC data (anonymised, screenshot September 2026)',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: วิธีเพิ่มยอดขายออนไลน์" />
+    </article>
+  )
+}
+
+function SalesTechniquesArticle({ post }: { post: BlogPost }) {
+  const groups: { heading: string; description: string; items: { title: string; body: string }[] }[] = [
+    {
+      heading: 'กลุ่มที่ 1: ทำให้ลูกค้าเจอธุรกิจก่อน (เทคนิค 1-5)',
+      description: 'ต่อให้สินค้าดีแค่ไหน ถ้าลูกค้าเจอไม่ได้ก็ไม่มีทางซื้อ กลุ่มนี้เน้นการทำให้ธุรกิจปรากฏในที่ที่ลูกค้ากำลังค้นหาอยู่',
+      items: [
+        { title: 'ทำ SEO ให้เว็บไซต์ติดหน้าแรก Google ในคำค้นที่ลูกค้าใช้จริง', body: 'เริ่มจากคำที่มี Search Intent ตรงกับสินค้าหรือบริการ ไม่ใช่แค่ชื่อแบรนด์' },
+        { title: 'เจาะคีย์เวิร์ดหางยาวที่ใกล้การตัดสินใจซื้อ', body: 'คำที่มีเงื่อนไขเฉพาะเจาะจงมักแข่งขันน้อยกว่าคำกว้าง และคนที่ค้นหามักพร้อมซื้อมากกว่า' },
+        { title: 'ทำ Google Business Profile ให้ครบ ถ้าธุรกิจมีหน้าร้าน', body: 'ใส่หมวดหมู่ รูปภาพ ชั่วโมงทำการให้ครบ เพราะลูกค้าจำนวนมากค้นหาแบบ "ใกล้ฉัน"' },
+        { title: 'ทำ AEO ให้เนื้อหาติด AI Overview และ Featured Snippet', body: 'จัดโครงสร้างเนื้อหาให้ตอบคำถามชัดเจน เพิ่ม FAQ และ Schema Markup' },
+        { title: 'ทำ GEO ให้แบรนด์ถูกแนะนำใน ChatGPT, Gemini, Perplexity', body: 'สร้าง Topic Authority และ Brand Mention จากแหล่งข้อมูลภายนอกให้ AI เชื่อมโยงแบรนด์กับสินค้าได้' },
+      ],
+    },
+    {
+      heading: 'กลุ่มที่ 2: เปลี่ยนผู้เข้าชมให้เป็นลูกค้า (เทคนิค 6-10)',
+      description: 'เมื่อลูกค้าเจอธุรกิจแล้ว ขั้นตอนถัดไปคือทำให้หน้าเว็บช่วยปิดการขายได้ กลุ่มนี้เห็นผลเร็วที่สุดเพราะใช้กับคนที่เข้าเว็บไซต์อยู่แล้ว',
+      items: [
+        { title: 'เขียนคอนเทนต์ตอบคำถามก่อนตัดสินใจซื้อ', body: 'ไม่ใช่แค่โปรโมทสินค้า แต่ตอบว่าเหมาะกับใคร ต่างจากตัวเลือกอื่นอย่างไร' },
+        { title: 'ใส่รีวิวและหลักฐานทางสังคม (Social Proof)', body: 'รีวิวจากลูกค้าจริงช่วยสร้างความมั่นใจได้มากกว่าคำโฆษณาจากแบรนด์เอง' },
+        { title: 'ทำให้เว็บไซต์โหลดเร็วและใช้งานง่ายบนมือถือ', body: 'เว็บที่โหลดช้าทำให้ลูกค้าออกจากหน้าก่อนตัดสินใจซื้อ โดยเฉพาะบนมือถือ' },
+        { title: 'ใส่ปุ่ม CTA ที่ชัดเจนในทุกหน้าสำคัญ', body: 'ลูกค้าไม่ควรต้องเดาว่าต้องกดตรงไหนเพื่อซื้อหรือติดต่อ' },
+        { title: 'ลดขั้นตอนการสั่งซื้อหรือติดต่อให้สั้นที่สุด', body: 'ทุกขั้นตอนที่เพิ่มขึ้นคือโอกาสที่ลูกค้าจะเปลี่ยนใจไม่ซื้อ' },
+      ],
+    },
+    {
+      heading: 'กลุ่มที่ 3: รักษาลูกค้าเดิมและเติบโตต่อเนื่อง (เทคนิค 11-15)',
+      description: 'การหาลูกค้าใหม่มีต้นทุนสูงกว่าการขายซ้ำให้ลูกค้าเดิมเสมอ กลุ่มนี้เน้นการรักษาความสัมพันธ์และปรับปรุงอย่างต่อเนื่อง',
+      items: [
+        { title: 'ใช้ LINE OA หรืออีเมลติดตามลูกค้าที่เคยซื้อแล้ว', body: 'แจ้งโปรโมชั่นหรือสินค้าใหม่ให้กลุ่มที่เคยซื้อแล้วก่อนใคร' },
+        { title: 'Cross-sell และ upsell สินค้าที่เกี่ยวข้อง', body: 'แนะนำสินค้าที่เกี่ยวข้องกับสิ่งที่ลูกค้าเคยซื้อ เพิ่มมูลค่าต่อออเดอร์' },
+        { title: 'ทำโปรโมชั่นตามช่วงเวลาที่ลูกค้าค้นหาเยอะ', body: 'ดูจากฤดูกาลหรือเทศกาลที่คำค้นหาเกี่ยวกับสินค้าของธุรกิจพุ่งสูง' },
+        { title: 'ติดตามข้อมูลผ่าน Google Search Console และ GA4', body: 'รู้ว่าคำค้นไหน หน้าไหน หรือแคมเปญไหนได้ผลจริง ก่อนตัดสินใจลงทุนเพิ่ม' },
+        { title: 'ทดสอบและปรับปรุงอย่างต่อเนื่อง', body: 'ไม่มีสูตรสำเร็จที่ใช้ได้ตลอดไป ต้องทดสอบและปรับตามข้อมูลจริงเรื่อยๆ' },
+      ],
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="15 เทคนิคการเพิ่มยอดขาย เริ่มจากตรงไหนก่อนดี?">
+        <P>
+          "เทคนิคเพิ่มยอดขาย" มีให้อ่านเยอะมาก แต่หลายบทความรวมทุกอย่างปนกันจนไม่รู้ว่าควรเริ่มจากอะไรก่อน
+          บทความนี้จัดกลุ่ม 15 เทคนิคออกเป็น 3 ชุดตามลำดับที่ลูกค้าเจอธุรกิจจริง: เจอธุรกิจ → ตัดสินใจซื้อ → กลับมาซื้อซ้ำ
+          เพื่อให้เห็นว่าธุรกิจของคุณควรโฟกัสกลุ่มไหนก่อนตามสถานการณ์ปัจจุบัน
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            ถ้ายังไม่มีใครเจอเว็บไซต์เลย ให้เริ่มจากกลุ่มการมองเห็น (เทคนิค 1-5)
+            ถ้ามีคนเข้าเว็บแล้วแต่ไม่ซื้อ ให้เริ่มจากกลุ่มเปลี่ยนผู้เข้าชมเป็นลูกค้า (เทคนิค 6-10)
+            ถ้าขายได้แล้วแต่อยากโตต่อ ให้เน้นกลุ่มรักษาลูกค้าเดิม (เทคนิค 11-15)
+          </p>
+        </div>
+      </ArticleSection>
+
+      {groups.map((group, groupIndex) => (
+        <ArticleSection key={group.heading} title={group.heading}>
+          <P>{group.description}</P>
+          <div className="grid gap-3">
+            {group.items.map((item, itemIndex) => (
+              <div key={item.title} className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-bold text-teal-800">
+                  {String(groupIndex * 5 + itemIndex + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <p className="font-semibold text-neutral-950">{item.title}</p>
+                  <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ArticleSection>
+      ))}
+
+      <ArticleSection title="ควรเริ่มจากเทคนิคไหนก่อน?">
+        <P>
+          ไม่ต้องทำครบทั้ง 15 ข้อพร้อมกัน วิธีที่ได้ผลกว่าคือเลือกกลุ่มที่ธุรกิจขาดมากที่สุดก่อน
+          แล้วค่อยขยายไปกลุ่มถัดไปเมื่อกลุ่มแรกเริ่มเห็นผล
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            { label: 'ยังไม่มีคนเจอเว็บไซต์เลย', desc: 'เริ่มจากกลุ่ม 1 — SEO, Google Maps, AEO/GEO' },
+            { label: 'มีคนเข้าเว็บแต่ไม่ซื้อ', desc: 'เริ่มจากกลุ่ม 2 — คอนเทนต์ รีวิว และ CTA' },
+            { label: 'ขายได้แล้วอยากโตต่อ', desc: 'เริ่มจากกลุ่ม 3 — รักษาลูกค้าเดิมและวัดผล' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-teal-900">{item.label}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-online-sales', label: 'วิธีเพิ่มยอดขายออนไลน์ เริ่มจากทำให้ลูกค้าเจอธุรกิจก่อน' },
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Console documentation, checked September 2026',
+        'Saralak Search client observations across e-commerce and service businesses (anonymised), checked September 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: 15 เทคนิคการเพิ่มยอดขาย" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -7827,6 +8075,12 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'protein-seo') {
     return <ProteinSeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-online-sales') {
+    return <IncreaseOnlineSalesArticle post={post} />
+  }
+  if (post.bodyVariant === 'sales-techniques') {
+    return <SalesTechniquesArticle post={post} />
   }
 
   return (

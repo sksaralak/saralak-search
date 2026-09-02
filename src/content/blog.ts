@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques'
   cta?: {
     headline: string
     description: string
@@ -810,6 +810,47 @@ export const proteinSeoFaqs: FAQItem[] = [
   },
 ]
 
+export const increaseOnlineSalesFaqs: FAQItem[] = [
+  {
+    question: 'วิธีเพิ่มยอดขายออนไลน์ที่ได้ผลจริงมีอะไรบ้าง?',
+    answer:
+      'เริ่มจากทำให้ลูกค้าเจอธุรกิจก่อนผ่าน SEO, Google Maps และ AEO/GEO จากนั้นปรับหน้าเว็บให้เปลี่ยนคนเข้าชมเป็นลูกค้าได้ง่ายขึ้น เช่น ความเร็วเว็บ, รีวิว และ CTA ที่ชัดเจน แล้ววัดผลต่อเนื่องด้วย Google Search Console และ GA4 เพื่อรู้ว่าจุดไหนควรปรับปรุงต่อ',
+  },
+  {
+    question: 'เพิ่มยอดขายออนไลน์ต้องใช้งบโฆษณาไหม?',
+    answer:
+      'ไม่จำเป็นต้องใช้โฆษณาเสมอไป การทำ SEO และ AEO/GEO ช่วยให้ลูกค้าเจอธุรกิจแบบ Organic โดยไม่ต้องจ่ายค่าคลิก แต่ต้องใช้เวลานานกว่าโฆษณา จึงเหมาะกับธุรกิจที่มองผลระยะยาวมากกว่าผลทันที',
+  },
+  {
+    question: 'ทำ SEO แล้วยอดขายจะเพิ่มขึ้นเลยไหม?',
+    answer:
+      'SEO ช่วยให้ลูกค้าเจอธุรกิจมากขึ้น แต่ยอดขายจะเพิ่มจริงต้องอาศัยหน้าเว็บที่เปลี่ยนคนเข้าชมเป็นลูกค้าได้ดีด้วย เช่น ข้อมูลสินค้าครบถ้วน มีรีวิว และขั้นตอนสั่งซื้อที่ไม่ยุ่งยาก SEO เพียงอย่างเดียวไม่รับประกันยอดขาย แต่เป็นจุดเริ่มต้นที่จำเป็น',
+  },
+  {
+    question: 'ธุรกิจขนาดเล็กควรเริ่มเพิ่มยอดขายออนไลน์จากตรงไหนก่อน?',
+    answer:
+      'ควรเริ่มจากตรวจสอบว่าตอนนี้ลูกค้าเจอธุรกิจผ่านช่องทางไหนบ้างใน Google Search Console แล้วดูว่าคำค้นหาที่มี Impression สูงแต่ Click ต่ำคือคำไหน นั่นมักเป็นจุดที่ปรับปรุงแล้วเห็นผลเร็วที่สุด ก่อนขยายไปทำคอนเทนต์หรือ AEO/GEO เพิ่มเติม',
+  },
+]
+
+export const salesTechniquesFaqs: FAQItem[] = [
+  {
+    question: '15 เทคนิคการเพิ่มยอดขายในบทความนี้เหมาะกับธุรกิจแบบไหน?',
+    answer:
+      'เหมาะกับธุรกิจที่ขายผ่านช่องทางออนไลน์หรือมีเว็บไซต์เป็นหลัก ทั้งธุรกิจที่มีหน้าร้านจริงและขายออนไลน์ล้วน เพราะเทคนิคส่วนใหญ่เน้นเรื่องการถูกค้นเจอ การเปลี่ยนผู้เข้าชมเป็นลูกค้า และการรักษาลูกค้าเดิม ซึ่งใช้ได้กับธุรกิจส่วนใหญ่',
+  },
+  {
+    question: 'ต้องทำครบทั้ง 15 เทคนิคพร้อมกันไหม?',
+    answer:
+      'ไม่จำเป็น ควรเริ่มจากกลุ่มที่ธุรกิจยังขาดมากที่สุดก่อน เช่น ถ้ายังไม่มีใครเจอเว็บไซต์เลย ควรเริ่มจากกลุ่ม SEO และ Visibility ก่อน แต่ถ้ามีคนเข้าเว็บอยู่แล้วแต่ไม่ซื้อ ควรเริ่มจากกลุ่มเปลี่ยนผู้เข้าชมเป็นลูกค้าก่อน',
+  },
+  {
+    question: 'เทคนิคไหนในบทความนี้เห็นผลเร็วที่สุด?',
+    answer:
+      'เทคนิคที่เกี่ยวกับการเปลี่ยนผู้เข้าชมเป็นลูกค้า เช่น ใส่ CTA ให้ชัดเจน ลดขั้นตอนการสั่งซื้อ และเพิ่มรีวิว มักเห็นผลเร็วที่สุดเพราะใช้กับคนที่เข้าเว็บไซต์อยู่แล้ว ส่วนเทคนิคด้าน SEO และ AEO/GEO ต้องใช้เวลานานกว่าจะเห็นผลแต่ให้ผลระยะยาวที่ยั่งยืนกว่า',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1544,6 +1585,69 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากรู้ว่าคีย์เวิร์ดหางยาวของธุรกิจคุณมีโอกาสติดอันดับตรงไหน?',
       description:
         'Discovery Audit ช่วยระบุคีย์เวิร์ดหางยาวที่แข่งขันได้จริงสำหรับธุรกิจของคุณ และจัดลำดับว่าควรเริ่มจากจุดไหนก่อน',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'วิธีเพิ่มยอดขายออนไลน์ เริ่มจากทำให้ลูกค้าเจอธุรกิจก่อน',
+    slug: 'increase-online-sales',
+    category: 'SEO',
+    excerpt:
+      'เพิ่มยอดขายออนไลน์ไม่ได้เริ่มจากการยิงโฆษณาเสมอไป แต่เริ่มจากการทำให้ลูกค้าเจอธุรกิจตอนกำลังหาซื้อ บทความนี้อธิบายลำดับขั้นตอนตั้งแต่ SEO, AEO/GEO ไปจนถึงการปรับหน้าเว็บให้เปลี่ยนผู้เข้าชมเป็นลูกค้า',
+    readingTime: '11 min read',
+    publishedDate: '2026-09-02',
+    lastModifiedDate: '2026-09-02',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    ogImage: '/proof/gsc-product-listing-growth.png',
+    metaTitle: 'วิธีเพิ่มยอดขายออนไลน์ [เริ่มจากการถูกค้นเจอ] | Saralak Search',
+    metaDescription:
+      'วิธีเพิ่มยอดขายออนไลน์แบบเป็นระบบ เริ่มจาก SEO และ AEO/GEO ให้ลูกค้าเจอธุรกิจ ไปจนถึงปรับหน้าเว็บให้เปลี่ยนผู้เข้าชมเป็นลูกค้า พร้อมตัวอย่างผลลัพธ์จริงจาก Google Search Console',
+    aiSummary: [
+      'เพิ่มยอดขายออนไลน์เริ่มจากการทำให้ลูกค้าเจอธุรกิจก่อนเสมอ ผ่าน SEO, Google Maps และ AEO/GEO',
+      'หลังจากมีคนเข้าเว็บไซต์แล้ว ต้องปรับหน้าเว็บให้เปลี่ยนผู้เข้าชมเป็นลูกค้าได้ง่ายขึ้น เช่น ความเร็วเว็บ รีวิว และ CTA ที่ชัดเจน',
+      'SEO อย่างเดียวไม่รับประกันยอดขาย แต่เป็นจุดเริ่มต้นที่จำเป็นก่อนขั้นตอนอื่น',
+      'ควรวัดผลต่อเนื่องด้วย Google Search Console และ GA4 เพื่อรู้ว่าจุดไหนควรปรับปรุงต่อ',
+    ],
+    faqs: increaseOnlineSalesFaqs,
+    bodyVariant: 'increase-online-sales',
+    cta: {
+      headline: 'อยากรู้ว่าธุรกิจของคุณควรเริ่มเพิ่มยอดขายออนไลน์จากจุดไหนก่อน?',
+      description:
+        'Discovery Audit ช่วยวิเคราะห์ว่าตอนนี้ลูกค้าเจอธุรกิจของคุณมากแค่ไหน และควรแก้จุดไหนก่อนเพื่อเห็นผลเร็วที่สุด',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: '15 เทคนิคการเพิ่มยอดขาย ที่ธุรกิจออนไลน์ใช้ได้จริง',
+    slug: 'sales-techniques',
+    category: 'SEO',
+    excerpt:
+      'รวม 15 เทคนิคการเพิ่มยอดขาย แบ่งเป็น 3 กลุ่ม: ทำให้ลูกค้าเจอธุรกิจก่อน เปลี่ยนผู้เข้าชมเว็บไซต์เป็นลูกค้า และรักษาลูกค้าเดิมให้กลับมาซื้อซ้ำ พร้อมคำแนะนำว่าควรเริ่มจากกลุ่มไหนก่อนตามสถานการณ์ธุรกิจ',
+    readingTime: '12 min read',
+    publishedDate: '2026-09-02',
+    lastModifiedDate: '2026-09-02',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: '15 เทคนิคการเพิ่มยอดขาย สำหรับธุรกิจออนไลน์ | Saralak Search',
+    metaDescription:
+      '15 เทคนิคการเพิ่มยอดขายสำหรับธุรกิจออนไลน์ แบ่งเป็นกลุ่มการมองเห็น (SEO, AEO, GEO), การเปลี่ยนผู้เข้าชมเป็นลูกค้า และการรักษาลูกค้าเดิม พร้อมคำแนะนำว่าควรเริ่มจากจุดไหนก่อน',
+    aiSummary: [
+      '15 เทคนิคแบ่งเป็น 3 กลุ่ม: ทำให้ลูกค้าเจอธุรกิจ (SEO, AEO, GEO), เปลี่ยนผู้เข้าชมเป็นลูกค้า และรักษาลูกค้าเดิม',
+      'ไม่จำเป็นต้องทำครบทุกข้อพร้อมกัน ควรเริ่มจากกลุ่มที่ธุรกิจขาดมากที่สุดก่อน',
+      'เทคนิคกลุ่มเปลี่ยนผู้เข้าชมเป็นลูกค้ามักเห็นผลเร็วที่สุด เพราะใช้กับคนที่เข้าเว็บไซต์อยู่แล้ว',
+      'เทคนิคกลุ่ม SEO และ AEO/GEO ใช้เวลานานกว่าแต่ให้ผลระยะยาวที่ยั่งยืนกว่า',
+    ],
+    faqs: salesTechniquesFaqs,
+    bodyVariant: 'sales-techniques',
+    cta: {
+      headline: 'อยากรู้ว่าธุรกิจของคุณควรเริ่มจากเทคนิคไหนก่อน?',
+      description:
+        'Discovery Audit ช่วยจัดลำดับว่าธุรกิจของคุณควรโฟกัสกลุ่มการมองเห็น การเปลี่ยนลูกค้า หรือการรักษาลูกค้าเดิมก่อน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },

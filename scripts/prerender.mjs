@@ -28,6 +28,8 @@ const blogSlugs = [
   'increase-seo-traffic',
   'check-website-traffic-free',
   'seo-whey-plant-protein',
+  'increase-online-sales',
+  'sales-techniques',
 ]
 
 const routes = [
