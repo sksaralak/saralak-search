@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan'
   cta?: {
     headline: string
     description: string
@@ -874,6 +874,29 @@ export const aeoChecklistFaqs: FAQItem[] = [
   },
 ]
 
+export const spaMarketingPlanFaqs: FAQItem[] = [
+  {
+    question: 'แผนการตลาดสปาที่ดีต้องมีอะไรบ้าง?',
+    answer:
+      'ต้องมี 5 ส่วนหลัก: กลุ่มเป้าหมายและงบประมาณที่ชัดเจน, ช่องทางให้ลูกค้าใหม่เจอร้าน (Google Maps, SEO), การสร้างความน่าเชื่อถือด้วยรีวิวและคอนเทนต์, การเตรียมพร้อมสำหรับ AI Search และการรักษาลูกค้าเดิมให้กลับมาใช้บริการซ้ำ ขาดส่วนใดส่วนหนึ่งไปแผนก็มักไม่ครบวงจร',
+  },
+  {
+    question: 'ร้านสปาขนาดเล็กมีงบจำกัด ควรเริ่มวางแผนการตลาดจากตรงไหนก่อน?',
+    answer:
+      'ควรเริ่มจาก Google Business Profile ให้ครบก่อน เพราะไม่มีค่าใช้จ่ายและลูกค้าที่ค้นหา "นวด ใกล้ฉัน" หรือ "สปา ใกล้ฉัน" พร้อมจองทันทีถ้าข้อมูลครบและน่าเชื่อถือ จากนั้นค่อยขยายไปทำ SEO และคอนเทนต์เมื่อมีงบเพิ่ม',
+  },
+  {
+    question: 'แผนการตลาดสปาควรทำระยะสั้นหรือระยะยาว?',
+    answer:
+      'ควรมีทั้งสองระยะ ระยะสั้น 1-3 เดือนควรโฟกัสที่ Google Maps และรีวิวเพราะเห็นผลเร็ว ส่วนระยะยาว 6-12 เดือนควรลงทุนกับ SEO, คอนเทนต์ และ AEO/GEO เพราะใช้เวลานานกว่าจะเห็นผลแต่ให้ผลตอบแทนที่ยั่งยืนกว่า',
+  },
+  {
+    question: 'ทำไมร้านสปาต้องสนใจ AI Search ด้วย ไม่ใช่แค่ Google?',
+    answer:
+      'เพราะลูกค้าบางกลุ่มเริ่มถาม AI อย่าง ChatGPT หรือ Gemini ว่า "สปาไหนดีแถวบ้าน" ก่อนค้นหาใน Google เอง ถ้าร้านไม่มีข้อมูลที่ AI เข้าใจและอ้างอิงได้ ก็จะพลาดลูกค้ากลุ่มนี้ไปทั้งที่ไม่เคยรู้ตัว',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1702,6 +1725,37 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากรู้ว่าเว็บไซต์ผ่าน AEO Checklist ข้อไหนแล้วบ้าง?',
       description:
         'Discovery Audit ตรวจสอบ Content Structure, Schema, Featured Snippet Targeting และ Measurement ของเว็บไซต์คุณครบทั้ง 4 หมวด',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'วางแผนการตลาดสปาและร้านนวด 5 ขั้นตอน ให้ลูกค้าใหม่และลูกค้าประจำเพิ่มขึ้น',
+    slug: 'spa-marketing-plan',
+    category: 'Local SEO',
+    excerpt:
+      'แผนการตลาดสปาที่ดีไม่ใช่แค่ลงโฆษณาเป็นครั้งคราว แต่ต้องมี 5 ส่วนที่ทำงานร่วมกัน ตั้งแต่กำหนดกลุ่มเป้าหมาย ทำให้ลูกค้าใหม่เจอร้าน สร้างความน่าเชื่อถือ เตรียมพร้อมสำหรับ AI Search ไปจนถึงรักษาลูกค้าเดิม',
+    readingTime: '11 min read',
+    publishedDate: '2026-09-07',
+    lastModifiedDate: '2026-09-07',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'วางแผนการตลาดสปาและร้านนวด [5 ขั้นตอน] | Saralak Search',
+    metaDescription:
+      'วิธีวางแผนการตลาดสปาและร้านนวด 5 ขั้นตอน ตั้งแต่กำหนดกลุ่มเป้าหมาย ทำ Google Maps และ SEO ให้ลูกค้าเจอร้าน สร้างความน่าเชื่อถือ เตรียมพร้อม AI Search ไปจนถึงรักษาลูกค้าเดิม พร้อมตัวอย่างแผน 3 เดือนแรก',
+    aiSummary: [
+      'แผนการตลาดสปาที่ครบวงจรต้องมี 5 ส่วน: กลุ่มเป้าหมาย/งบประมาณ, การถูกค้นเจอ, ความน่าเชื่อถือ, AI Search และการรักษาลูกค้าเดิม',
+      'ร้านสปาขนาดเล็กควรเริ่มจาก Google Business Profile ก่อน เพราะไม่มีค่าใช้จ่ายและเห็นผลเร็วที่สุด',
+      'ลูกค้าบางกลุ่มเริ่มถาม AI อย่าง ChatGPT ว่า "สปาไหนดี" ก่อนค้นหาใน Google เอง ร้านที่ไม่มีข้อมูลให้ AI อ้างอิงจะพลาดลูกค้ากลุ่มนี้',
+      'แผนการตลาดควรมีทั้งเป้าหมายระยะสั้น (Google Maps, รีวิว) และระยะยาว (SEO, คอนเทนต์, AEO/GEO)',
+    ],
+    faqs: spaMarketingPlanFaqs,
+    bodyVariant: 'spa-marketing-plan',
+    cta: {
+      headline: 'อยากรู้ว่าร้านสปาของคุณควรเริ่มแผนการตลาดจากจุดไหนก่อน?',
+      description:
+        'Discovery Audit ช่วยวิเคราะห์ว่าตอนนี้ลูกค้าเจอร้านของคุณมากแค่ไหน และควรจัดลำดับความสำคัญของแผนการตลาดอย่างไร',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },

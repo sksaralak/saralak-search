@@ -31,6 +31,7 @@ const blogSlugs = [
   'increase-online-sales',
   'sales-techniques',
   'aeo-checklist',
+  'spa-marketing-plan',
 ]
 
 const routes = [

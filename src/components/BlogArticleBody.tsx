@@ -5156,6 +5156,7 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
         <P>สำหรับธุรกิจนวดที่พึ่งนักท่องเที่ยว นี่สำคัญเป็นพิเศษ เพราะนักท่องเที่ยวจำนวนมากถาม AI ก่อนเปิด Google Maps ด้วยซ้ำ</P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร — ทำให้ AI แนะนำธุรกิจของคุณ' },
+          { to: '/blog/spa-marketing-plan', label: 'วางแผนการตลาดสปาและร้านนวด 5 ขั้นตอน ให้ลูกค้าใหม่และลูกค้าประจำเพิ่มขึ้น' },
         ]} />
       </ArticleSection>
 
@@ -8153,6 +8154,158 @@ function AeoChecklistArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
+  const steps = [
+    {
+      num: '01',
+      title: 'กำหนดกลุ่มเป้าหมายและงบประมาณให้ชัดเจน',
+      body: 'ก่อนเริ่มทำการตลาด ต้องรู้ก่อนว่าลูกค้าหลักคือใคร คนในย่านที่มองหาความผ่อนคลายหลังเลิกงาน นักท่องเที่ยวที่หาสปาระหว่างทริป หรือกลุ่มที่ต้องการแพ็คเกจสุขภาพระยะยาว แต่ละกลุ่มค้นหาด้วยคำต่างกันและตอบสนองกับข้อเสนอต่างกัน การเจาะกลุ่มให้ชัดก่อนช่วยให้จัดสรรงบประมาณไปยังช่องทางที่คุ้มค่าที่สุด แทนการกระจายงบไปทุกช่องทางแบบเท่าๆ กัน',
+      tip: 'ลองดูจากลูกค้าที่กลับมาใช้บริการซ้ำบ่อยที่สุดในปัจจุบัน แล้วถามตัวเองว่าคนกลุ่มนี้มีลักษณะร่วมกันอย่างไร นั่นมักเป็นกลุ่มเป้าหมายที่แท้จริงมากกว่าที่คิดไว้ตอนแรก',
+    },
+    {
+      num: '02',
+      title: 'ทำให้ลูกค้าใหม่เจอร้านผ่าน Google Maps และ SEO',
+      body: (
+        <>
+          คำค้นหากลุ่ม "นวด ใกล้ฉัน" และ "สปา ใกล้ฉัน" มีคนค้นหารวมกันกว่า 1.3 ล้านครั้งต่อเดือนในไทย
+          Google Business Profile ที่มีข้อมูลครบ รูปภาพชัดเจน และรีวิวสม่ำเสมอ คือจุดเริ่มต้นที่สำคัญที่สุด
+          อ่านรายละเอียดเชิงลึกได้ที่{' '}
+          <Link to="/blog/increase-sale-massage-spa" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
+            เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps
+          </Link>
+        </>
+      ),
+      tip: 'ลองค้นหา "นวด ใกล้ฉัน" หรือ "สปา ใกล้ฉัน" จากมือถือแล้วดูว่าร้านของคุณติด 3 อันดับแรกใน Google Maps ไหม ถ้าไม่ติด นั่นคือจุดที่ควรแก้ก่อนทำการตลาดด้านอื่น',
+    },
+    {
+      num: '03',
+      title: 'สร้างความน่าเชื่อถือด้วยรีวิวและคอนเทนต์',
+      body: 'ธุรกิจสปาขายประสบการณ์ที่จับต้องไม่ได้ก่อนใช้บริการจริง ลูกค้าจึงตัดสินใจจากความน่าเชื่อถือเป็นหลัก เช่น รีวิวจากลูกค้าจริง รูปหน้าร้านและห้องนวดที่สะอาด และคอนเทนต์ที่ตอบคำถามก่อนตัดสินใจ เช่น ความแตกต่างระหว่างประเภทนวด หรือควรเตรียมตัวอย่างไรก่อนมาสปา',
+      tip: 'ตั้งเป้าขอรีวิวจากลูกค้าทุกครั้งหลังใช้บริการ และตอบรีวิวทุกอันทั้งด้านบวกและลบ เพราะการตอบรีวิวสม่ำเสมอเป็นสัญญาณความน่าเชื่อถือที่ทั้งลูกค้าและ Google ให้ความสำคัญ',
+    },
+    {
+      num: '04',
+      title: 'เตรียมร้านให้พร้อมสำหรับ AI Search',
+      body: (
+        <>
+          ลูกค้าบางกลุ่มเริ่มถาม AI อย่าง ChatGPT หรือ Gemini ว่า "สปาไหนดีแถวบ้าน" ก่อนค้นหาใน Google เอง
+          ร้านที่มีข้อมูลชัดเจน มีรีวิวที่ AI อ่านได้ และถูกกล่าวถึงจากแหล่งข้อมูลภายนอก มีโอกาสถูกแนะนำมากกว่า
+          อ่านเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}และ{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+        </>
+      ),
+      tip: 'ลองถาม ChatGPT หรือ Gemini ว่า "สปาแถว [ย่านของร้าน] มีที่ไหนแนะนำบ้าง" ดูว่าร้านของคุณถูกพูดถึงไหม ถ้าไม่ถูกพูดถึงเลย นั่นคือจุดที่ควรเริ่มทำ AEO/GEO',
+    },
+    {
+      num: '05',
+      title: 'รักษาลูกค้าเดิมให้กลับมาใช้บริการซ้ำ',
+      body: 'การหาลูกค้าใหม่มีต้นทุนสูงกว่าการทำให้ลูกค้าเดิมกลับมาซ้ำเสมอ ควรใช้ LINE OA แจ้งโปรโมชั่นหรือแพ็คเกจใหม่ให้ลูกค้าที่เคยใช้บริการก่อนใคร และพิจารณาทำแพ็คเกจสมาชิกหรือคอร์สระยะยาวที่จูงใจให้กลับมาต่อเนื่อง',
+      tip: 'เก็บเบอร์โทรหรือ LINE ของลูกค้าทุกครั้งที่จองผ่านช่องทางไหนก็ตาม แล้วส่งข้อความติดตามอย่างน้อยหนึ่งครั้งหลังใช้บริการเพื่อขอความคิดเห็นและแจ้งโปรโมชั่นครั้งถัดไป',
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="ทำไมร้านสปาต้องมีแผนการตลาดที่ชัดเจน">
+        <P>
+          ร้านสปาและร้านนวดจำนวนมากทำการตลาดแบบเป็นครั้งคราว เช่น ลงโฆษณาช่วงที่ลูกค้าน้อย หรือโพสต์โปรโมชั่นเมื่อนึกขึ้นได้
+          วิธีนี้อาจช่วยได้ระยะสั้น แต่ไม่สร้างการเติบโตที่ต่อเนื่อง เพราะขาดทิศทางว่าควรลงทุนเวลาและงบประมาณไปกับช่องทางไหนก่อน
+        </P>
+        <P>
+          แผนการตลาดสปาที่ทำงานได้จริงไม่จำเป็นต้องซับซ้อน แต่ต้องครอบคลุม 5 ส่วนที่ทำงานร่วมกัน
+          ตั้งแต่การรู้จักกลุ่มเป้าหมาย การทำให้ลูกค้าใหม่เจอร้าน การสร้างความน่าเชื่อถือ การเตรียมพร้อมสำหรับช่องทางค้นหาใหม่ๆ
+          ไปจนถึงการรักษาลูกค้าเดิม
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            แผนการตลาดสปาที่ครบวงจรต้องมี 5 ส่วน: กลุ่มเป้าหมายและงบประมาณ, การถูกค้นเจอผ่าน Google Maps/SEO,
+            ความน่าเชื่อถือจากรีวิวและคอนเทนต์, ความพร้อมสำหรับ AI Search และการรักษาลูกค้าเดิม
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="5 ขั้นตอนวางแผนการตลาดสปาและร้านนวด">
+        <P>เรียงจากการวางฐานไปจนถึงการต่อยอด พร้อมวิธีเช็คด้วยตัวเองในแต่ละข้อ</P>
+        <div className="grid gap-5">
+          {steps.map((step) => (
+            <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
+              <p
+                className="thai-readable mt-2 text-sm leading-6 text-neutral-700"
+                style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
+              >
+                {step.body}
+              </p>
+              <div className="mt-3 rounded-md bg-teal-50 px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">วิธีเช็คด้วยตัวเอง</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.tip}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างแผนการตลาด 3 เดือนแรก">
+        <P>ถ้ายังไม่เคยมีแผนการตลาดมาก่อน ตารางนี้เป็นจุดเริ่มต้นที่ทำได้จริงโดยไม่ต้องใช้งบสูง</P>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ช่วงเวลา</th>
+                <th className="px-4 py-3 font-semibold text-teal-700">โฟกัสหลัก</th>
+                <th className="px-4 py-3 font-semibold text-neutral-500">สิ่งที่ทำ</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100">
+              {[
+                ['เดือนที่ 1', 'Google Maps และรีวิว', 'ทำ Google Business Profile ให้ครบ ใส่รูป ราคา และเริ่มขอรีวิวจากลูกค้าทุกครั้ง'],
+                ['เดือนที่ 2', 'คอนเทนต์และความน่าเชื่อถือ', 'เขียนคอนเทนต์ตอบคำถามก่อนตัดสินใจ และทดสอบถาม AI ว่าร้านถูกพูดถึงไหม'],
+                ['เดือนที่ 3', 'รักษาลูกค้าเดิม', 'เริ่มเก็บข้อมูลลูกค้าผ่าน LINE OA และวางแผนโปรโมชั่นสำหรับลูกค้าประจำ'],
+              ].map(([period, focus, action]) => (
+                <tr key={period}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{period}</td>
+                  <td className="thai-readable px-4 py-3 font-semibold text-teal-700">{focus}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{action}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วัดผลแผนการตลาดสปาอย่างไร">
+        <P>
+          แผนการตลาดที่ดีต้องวัดผลได้ ไม่ใช่แค่ทำแล้วรอดูยอดขายปลายเดือน สิ่งที่ควรติดตามคือจำนวน Call และ Direction
+          จาก Google Business Profile, จำนวนรีวิวใหม่ต่อเดือน และอัตราลูกค้าที่กลับมาใช้บริการซ้ำ
+        </P>
+        <P>
+          ถ้าตัวเลขเหล่านี้ไม่ขยับหลังทำตามแผนไป 2-3 เดือน นั่นเป็นสัญญาณว่าควรกลับไปทบทวนว่าขั้นตอนไหนในแผนยังทำไม่ครบ
+          มากกว่าการเปลี่ยนแผนทั้งหมดใหม่
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ลูกค้าที่เมื่อยกำลังหาคุณอยู่' },
+          { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน - ลูกค้าใกล้ฉัน' },
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Console documentation, checked September 2026',
+        'Saralak Search client observations across local service businesses (anonymised), checked September 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: วางแผนการตลาดสปาและร้านนวด" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -8228,6 +8381,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'aeo-checklist') {
     return <AeoChecklistArticle post={post} />
+  }
+  if (post.bodyVariant === 'spa-marketing-plan') {
+    return <SpaMarketingPlanArticle post={post} />
   }
 
   return (
