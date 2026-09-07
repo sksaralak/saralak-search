@@ -1324,6 +1324,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           <p className="thai-readable mt-2 font-medium text-neutral-950">AEO คือการทำให้เนื้อหาบนเว็บไซต์กลายเป็นคำตอบที่ Search Engine และ AI เข้าใจง่าย เชื่อถือได้ และเลือกนำไปแสดงให้ผู้ใช้งาน</p>
         </div>
         <ReadMoreLinks items={[
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
@@ -2991,6 +2992,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
           { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
         ]} />
       </ArticleSection>
@@ -8009,6 +8011,148 @@ function SalesTechniquesArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function AeoChecklistArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="AEO Checklist คืออะไร และต่างจาก GEO Checklist อย่างไร">
+        <P>
+          AEO Checklist คือรายการสิ่งที่ต้องทำให้ครบ เพื่อเพิ่มโอกาสให้เนื้อหาถูก Google เลือกไปแสดงเป็น Featured Snippet,
+          People Also Ask หรือ AI Overview — ตำแหน่งที่อยู่เหนือผลการค้นหาแบบปกติและมักได้รับการคลิกสูงกว่าลิงก์ทั่วไป
+        </P>
+        <P>
+          AEO กับ GEO ใช้หลักการพื้นฐานร่วมกันหลายอย่าง เช่น การเขียนแบบ Answer-First และการใช้ FAQ Schema
+          แต่ AEO เจาะจงไปที่ Google Search โดยเฉพาะ ส่วน{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO</Link>
+          {' '}ครอบคลุมกว้างกว่า คือการถูกอ้างอิงโดย Generative AI อย่าง ChatGPT, Gemini และ Perplexity ด้วย
+          ถ้ายังไม่แน่ใจว่า AEO คืออะไร อ่านพื้นฐานได้ที่{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+        </P>
+        <P>
+          Checklist นี้แบ่งเป็น 4 หมวด ได้แก่ Content Structure (เนื้อหาพร้อมให้ Google ดึงไปตอบไหม), Schema และ Technical
+          (Google เข้าใจโครงสร้างหน้าเว็บไหม), Featured Snippet Targeting (เจาะรูปแบบคำตอบที่ถูกต้องไหม) และ Measurement (วัดผลได้ไหม)
+          รวม 27 รายการ
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 1: Content Structure — เนื้อหาพร้อมให้ Google ดึงไปตอบหรือยัง (8 รายการ)">
+        <P>
+          Google เลือก Featured Snippet และ AI Overview จากเนื้อหาที่ตอบคำถามได้ชัดเจน กระชับ และมีโครงสร้างที่แยกคำตอบออกจากส่วนขยายความได้ง่าย
+          เนื้อหาที่เขียนคำตอบปนกับบทนำยาวๆ มักไม่ถูกเลือก แม้ข้อมูลจะถูกต้องก็ตาม
+        </P>
+        <CheckList
+          items={[
+            'ตอบคำถามหลักภายใน 40-60 คำแรกของย่อหน้า ก่อนขยายความเพิ่มเติม',
+            'หัวข้อ H2 และ H3 เขียนเป็นคำถามที่ตรงกับสิ่งที่คนค้นหาจริง เช่น "...คืออะไร" "...ทำอย่างไร" "...ต่างกันอย่างไร"',
+            'มี TL;DR หรือคำตอบสั้นๆ อยู่ต้นบทความ สำหรับคำถามหลักของหน้านั้น',
+            'FAQ อย่างน้อย 4-5 คำถาม-คำตอบต่อบทความ ครอบคลุมคำถามที่เกี่ยวข้องแต่ไม่ซ้ำกับเนื้อหาหลัก',
+            'ใช้ List หรือ Numbered List สำหรับเนื้อหาที่เป็นขั้นตอนหรือรายการ แทนการเขียนเป็นย่อหน้ายาว',
+            'ใช้ตารางเปรียบเทียบสำหรับคำถามที่ต้องเทียบตัวเลือก เช่น "ต่างกันอย่างไร" หรือ "แบบไหนดีกว่ากัน"',
+            'นิยามคำศัพท์สำคัญให้ชัดเจนตั้งแต่ต้นบทความ ก่อนใช้คำนั้นซ้ำในส่วนอื่น',
+            'ปรับปรุงเนื้อหาและวันที่ Last Updated สม่ำเสมอ เพราะ Google ให้น้ำหนักเนื้อหาที่ทันสมัยกว่า',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 2: Schema และ Technical — Google เข้าใจโครงสร้างหน้าเว็บหรือยัง (7 รายการ)">
+        <P>
+          ต่อให้เนื้อหาตอบคำถามได้ดี ถ้า Google ไม่สามารถอ่านโครงสร้างหน้าเว็บได้ถูกต้อง โอกาสถูกดึงไปแสดงใน Featured Snippet ก็ลดลงมาก
+        </P>
+        <CheckList
+          items={[
+            'FAQPage Schema ครบทุกคำถาม-คำตอบที่แสดงในหน้าเว็บ ไม่ใช่แค่บางส่วน',
+            'HowTo Schema สำหรับเนื้อหาที่เป็นขั้นตอน เช่น "วิธีทำ..." หรือ "ขั้นตอนการ..."',
+            'Article หรือ BlogPosting Schema พร้อม datePublished และ dateModified',
+            'โครงสร้าง Heading เรียงลำดับถูกต้อง H1 ตามด้วย H2 และ H3 ไม่ข้ามลำดับ',
+            'Canonical URL ถูกต้องทุกหน้า ไม่มี Duplicate Content ที่ทำให้ Google เลือกหน้าผิด',
+            'เว็บไซต์ใช้ SSR หรือ SSG ไม่ใช่ CSR ล้วน เพื่อให้ Google อ่าน HTML ได้ทันทีโดยไม่ต้องรัน JavaScript',
+            'Core Web Vitals ผ่านเกณฑ์ตาม PageSpeed Insights โดยเฉพาะ LCP เพราะหน้าที่โหลดช้ามีโอกาสติด Snippet ต่ำกว่า',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ทำ Checklist คนเดียวไม่ไหว? ให้ทีมช่วยตรวจให้"
+        description="Discovery Audit ตรวจสอบ Content Structure, Schema และ Technical ของเว็บไซต์คุณ พร้อมบอกว่าข้อไหนควรแก้ก่อนเพื่อเห็นผลเร็วที่สุด"
+      />
+
+      <ArticleSection title="หมวดที่ 3: Featured Snippet Targeting — เจาะรูปแบบคำตอบที่ถูกต้อง (7 รายการ)">
+        <P>
+          Google เลือกรูปแบบ Snippet ต่างกันตามประเภทคำถาม การรู้ว่าคำถามเป้าหมายควรตอบแบบย่อหน้า ลิสต์ หรือตาราง
+          ช่วยเพิ่มโอกาสถูกเลือกได้มากกว่าการเดา
+        </P>
+        <CheckList
+          items={[
+            'ค้นหาคำถามเป้าหมายใน Google แล้วดูว่า Snippet ปัจจุบัน (ถ้ามี) เป็นรูปแบบย่อหน้า ลิสต์ หรือตาราง แล้วตอบให้ตรงรูปแบบนั้น',
+            'ตรวจ People Also Ask ของคำค้นเป้าหมาย แล้วเพิ่มคำถามเหล่านั้นเป็นหัวข้อ FAQ ในบทความ',
+            'เจาะคีย์เวิร์ดหางยาวที่เป็นคำถามเต็มประโยค เช่น "ทำไม...ถึง..." แทนคำสั้นๆ ที่แข่งขันสูงกว่า',
+            'หลีกเลี่ยงการเขียนหลายบทความในเว็บไซต์เดียวกันที่แข่งกันเองเพื่อ Snippet เดียวกัน',
+            'วางคำตอบหลักไว้ใกล้ด้านบนของหน้า ก่อนรูปภาพหรือโฆษณาขนาดใหญ่ที่ดันเนื้อหาลงไป',
+            'ใช้ตัวเลขและข้อมูลที่เจาะจง เช่น เปอร์เซ็นต์หรือระยะเวลา แทนคำตอบกว้างๆ ที่ไม่มีหลักฐาน',
+            'ตรวจสอบว่าเนื้อหาตอบคำถามได้ครบในตัวเอง ไม่ต้องอ่านส่วนอื่นของบทความเพิ่มเพื่อเข้าใจ',
+          ]}
+        />
+        <P>
+          สำหรับตลาดไทย Google AI Overview ยังไม่ครอบคลุมทุกคำค้นเท่าตลาดภาษาอังกฤษ แต่ Featured Snippet และ People Also Ask
+          มีให้เห็นในคำค้นภาษาไทยจำนวนมากอยู่แล้ว การทำ AEO ให้ครบตอนนี้จึงเป็นการเตรียมพร้อมสำหรับทั้งสองรูปแบบไปพร้อมกัน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="หมวดที่ 4: Measurement — วัดผล AEO ได้ไหม (5 รายการ)">
+        <P>
+          ตำแหน่ง Featured Snippet เปลี่ยนแปลงได้ตลอดเวลา เว็บไซต์ที่เคยติด Snippet อาจหลุดได้ถ้าคู่แข่งปรับเนื้อหาให้ตอบตรงกว่า
+          การวัดผลสม่ำเสมอจึงจำเป็น
+        </P>
+        <CheckList
+          items={[
+            'ค้นหาคำถามเป้าหมายใน Google เดือนละครั้ง เพื่อดูว่ายังติด Snippet อยู่หรือถูกแทนที่แล้ว',
+            'ติดตาม Impression และ Position ของคำค้นที่เป็นคำถามใน Google Search Console',
+            'เช็ค Generative AI Performance Report ใน Search Console (ถ้าเปิดใช้งานสำหรับ Property) เพื่อดู Impression ใน AI Overview',
+            'บันทึกว่าคำถามไหนติด Snippet แล้วบ้าง เป็น Log เดือนต่อเดือน เพื่อดูแนวโน้ม',
+            'ถ้าหลุดจาก Snippet ให้เทียบเนื้อหากับคู่แข่งที่ได้ตำแหน่งแทน แล้วปรับให้ตอบตรงและกระชับกว่า',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="เริ่มจากอะไรก่อน ถ้าทำพร้อมกันไม่ได้">
+        <P>ถ้าทรัพยากรมีจำกัด แนะนำให้เรียงตามลำดับนี้:</P>
+        <CheckList
+          items={[
+            'ขั้นที่ 1 — Content Structure: เลือกคำถามที่ลูกค้าถามบ่อยที่สุด 5 คำถาม แล้วเขียนแบบ Answer-First',
+            'ขั้นที่ 2 — Schema: ใส่ FAQPage Schema ให้ครบทุกคำถามที่เขียนไว้แล้ว',
+            'ขั้นที่ 3 — Technical: ตรวจ Core Web Vitals และแก้ปัญหาความเร็วที่กระทบ LCP',
+            'ขั้นที่ 4 — Featured Snippet Targeting: ตรวจ People Also Ask ของคำค้นเป้าหมายแล้วปรับรูปแบบคำตอบ',
+            'ขั้นที่ 5 — Measurement: ตั้งตารางเช็คตำแหน่ง Snippet เดือนละครั้ง',
+          ]}
+        />
+        <P>
+          ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน AEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบทั้ง 27 รายการก็ตาม
+        </P>
+        <P>
+          ต้องการทีมช่วยลงมือทำให้ครบ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ AEO / GEO</Link>
+          {' '}ดูบริการของ Saralak Search ได้เลย
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
+          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
+          { to: '/services/geo', label: 'รับทำ AEO / GEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search Central documentation on Featured Snippets and structured data, checked September 2026',
+        'Google Search Console Generative AI performance report documentation, checked September 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: AEO Checklist สำหรับเว็บไซต์ไทย" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -8081,6 +8225,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'sales-techniques') {
     return <SalesTechniquesArticle post={post} />
+  }
+  if (post.bodyVariant === 'aeo-checklist') {
+    return <AeoChecklistArticle post={post} />
   }
 
   return (

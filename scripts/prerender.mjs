@@ -30,6 +30,7 @@ const blogSlugs = [
   'seo-whey-plant-protein',
   'increase-online-sales',
   'sales-techniques',
+  'aeo-checklist',
 ]
 
 const routes = [

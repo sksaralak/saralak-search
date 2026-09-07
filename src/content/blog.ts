@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist'
   cta?: {
     headline: string
     description: string
@@ -851,6 +851,29 @@ export const salesTechniquesFaqs: FAQItem[] = [
   },
 ]
 
+export const aeoChecklistFaqs: FAQItem[] = [
+  {
+    question: 'AEO Checklist ต่างจาก GEO Checklist อย่างไร?',
+    answer:
+      'AEO เน้นการติด Featured Snippet, People Also Ask และ Google AI Overview บน Google Search โดยเฉพาะ ส่วน GEO ครอบคลุมกว้างกว่า คือการถูกอ้างอิงโดย Generative AI เช่น ChatGPT, Gemini และ Perplexity ทั้งสองใช้หลักการ Answer-First และ FAQ Schema ร่วมกัน แต่ AEO Checklist จะเจาะจงไปที่รูปแบบคำตอบที่ Google เลือกไปแสดงมากกว่า',
+  },
+  {
+    question: 'ต้องทำ AEO Checklist ครบทุกข้อก่อนถึงจะเห็นผลไหม?',
+    answer:
+      'ไม่จำเป็น ควรเริ่มจากหมวด Content Structure ก่อน เพราะเป็นพื้นฐานที่ทุกข้ออื่นต่อยอดจาก จากนั้นค่อยทำ Schema และ Technical แล้วปิดท้ายด้วยการวัดผล การทำบางส่วนให้ดีมีผลมากกว่าการทำครบทุกข้อแบบผิวเผิน',
+  },
+  {
+    question: 'ธุรกิจขนาดเล็กในไทยควรเริ่ม AEO จากตรงไหนก่อน?',
+    answer:
+      'เริ่มจากเลือกคำถามที่ลูกค้าถามบ่อยที่สุด 5 คำถาม แล้วเขียนคำตอบแบบ Answer-First ในบทความหรือหน้าเว็บที่มีอยู่แล้ว พร้อมใส่ FAQ Schema ให้ครบ ไม่ต้องเริ่มจากการเขียนบทความใหม่ทั้งหมด',
+  },
+  {
+    question: 'วัดผลว่า AEO ได้ผลหรือไม่ ดูจากอะไร?',
+    answer:
+      'ดูจาก Google Search Console ว่าคำค้นที่เป็นคำถามเริ่มมี Impression เพิ่มขึ้นหรือไม่ และลองค้นหาคำถามเป้าหมายใน Google เพื่อดูว่าเว็บไซต์ถูกดึงไปแสดงใน Featured Snippet หรือ AI Overview หรือยัง ควรเช็คอย่างน้อยเดือนละครั้งเพราะตำแหน่ง Snippet เปลี่ยนแปลงได้ตลอดเวลา',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1648,6 +1671,37 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากรู้ว่าธุรกิจของคุณควรเริ่มจากเทคนิคไหนก่อน?',
       description:
         'Discovery Audit ช่วยจัดลำดับว่าธุรกิจของคุณควรโฟกัสกลุ่มการมองเห็น การเปลี่ยนลูกค้า หรือการรักษาลูกค้าเดิมก่อน',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview',
+    slug: 'aeo-checklist',
+    category: 'AEO',
+    excerpt:
+      'AEO Checklist ครอบคลุม 4 หมวดหลัก ได้แก่ Content Structure, Schema และ Technical, Featured Snippet Targeting และ Measurement รวมกว่า 27 รายการ เพื่อเพิ่มโอกาสให้เนื้อหาติด Featured Snippet, People Also Ask และ Google AI Overview',
+    readingTime: '13 min read',
+    publishedDate: '2026-09-07',
+    lastModifiedDate: '2026-09-07',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'AEO Checklist สำหรับเว็บไซต์ไทย [27 รายการ] | Saralak Search',
+    metaDescription:
+      'AEO Checklist ครบจบสำหรับธุรกิจไทย 27 รายการใน 4 หมวด ได้แก่ Content Structure, Schema, Featured Snippet Targeting และ Measurement เพื่อติด Featured Snippet, People Also Ask และ Google AI Overview',
+    aiSummary: [
+      'AEO Checklist ครอบคลุม 4 หมวด: Content Structure, Schema และ Technical, Featured Snippet Targeting และ Measurement รวม 27 รายการ',
+      'AEO เจาะจงที่ Google Search โดยเฉพาะ (Featured Snippet, People Also Ask, AI Overview) ต่างจาก GEO ที่ครอบคลุม ChatGPT, Gemini และ Perplexity ด้วย',
+      'ควรเริ่มจากหมวด Content Structure ก่อน เพราะเป็นพื้นฐานที่หมวดอื่นต่อยอดจาก',
+      'ตำแหน่ง Featured Snippet เปลี่ยนแปลงได้ตลอดเวลา ควรวัดผลอย่างน้อยเดือนละครั้ง',
+    ],
+    faqs: aeoChecklistFaqs,
+    bodyVariant: 'aeo-checklist',
+    cta: {
+      headline: 'อยากรู้ว่าเว็บไซต์ผ่าน AEO Checklist ข้อไหนแล้วบ้าง?',
+      description:
+        'Discovery Audit ตรวจสอบ Content Structure, Schema, Featured Snippet Targeting และ Measurement ของเว็บไซต์คุณครบทั้ง 4 หมวด',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
