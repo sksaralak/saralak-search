@@ -8194,6 +8194,9 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
           <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
           {' '}และ{' '}
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}หรือดู{' '}
+          <Link to="/blog/aeo-checklist" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO Checklist</Link>
+          {' '}ถ้าอยากเริ่มลงมือทำทันที
         </>
       ),
       tip: 'ลองถาม ChatGPT หรือ Gemini ว่า "สปาแถว [ย่านของร้าน] มีที่ไหนแนะนำบ้าง" ดูว่าร้านของคุณถูกพูดถึงไหม ถ้าไม่ถูกพูดถึงเลย นั่นคือจุดที่ควรเริ่มทำ AEO/GEO',
@@ -8279,6 +8282,76 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleSection title="งบประมาณการตลาดสปาควรแบ่งอย่างไร">
+        <P>
+          ร้านสปาส่วนใหญ่ตั้งงบการตลาดโดยไม่มีหลักเกณฑ์ชัดเจน บางร้านทุ่มเกือบทั้งหมดไปกับโฆษณา ทั้งที่ยังไม่ได้แก้ Google Maps
+          ให้ครบก่อน ตารางนี้เป็นแนวทางแบ่งสัดส่วนงบตามลำดับความสำคัญ ไม่ใช่สูตรตายตัว แต่ช่วยให้เห็นภาพว่าควรลงทุนตรงไหนก่อน
+        </P>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[560px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ช่องทาง</th>
+                <th className="px-4 py-3 font-semibold text-teal-700">สัดส่วนงบแนะนำ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-500">เหตุผล</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100">
+              {[
+                ['Google Maps & Local SEO', '35-40%', 'ต้นทุนต่ำ เห็นผลเร็ว และเป็นช่องทางที่ลูกค้าพร้อมซื้อมากที่สุด'],
+                ['คอนเทนต์และ SEO', '25-30%', 'ลงทุนครั้งเดียว ได้ผลต่อเนื่องระยะยาวโดยไม่ต้องจ่ายซ้ำทุกเดือนแบบโฆษณา'],
+                ['โฆษณา (ถ้ามีงบเพิ่ม)', '15-20%', 'เร่งผลระยะสั้นในช่วงโปรโมชั่นหรือเปิดสาขาใหม่ ไม่ควรเป็นช่องทางหลักช่องทางเดียว'],
+                ['AI Search (AEO/GEO)', '10-15%', 'การลงทุนล่วงหน้าก่อนคู่แข่งในตลาดที่ยังมีคนทำน้อย'],
+              ].map(([channel, budget, reason]) => (
+                <tr key={channel}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{channel}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{budget}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{reason}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>
+          ร้านที่เพิ่งเริ่มทำการตลาดอย่างจริงจังควรเริ่มจาก Google Maps และ SEO ก่อนเสมอ เพราะเป็นฐานที่ช่องทางอื่นต่อยอดได้
+          ดูรายละเอียดบริการแต่ละด้านได้ที่{' '}
+          <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Local SEO</Link>
+          {', '}
+          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO</Link>
+          {' '}และ{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO/GEO</Link>
+          {' '}ของ Saralak Search
+        </P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ไม่รู้จะเริ่มจัดงบตรงไหนก่อน?"
+        description="Discovery Audit ช่วยดูสถานะปัจจุบันของร้านคุณในแต่ละช่องทาง แล้วแนะนำว่าควรจัดสรรงบไปตรงไหนก่อนเพื่อเห็นผลเร็วที่สุด"
+      />
+
+      <ArticleSection title="ข้อผิดพลาดที่ร้านสปาส่วนใหญ่ทำในการวางแผนการตลาด">
+        <P>
+          ก่อนลงมือทำตามแผน ลองเช็คว่าร้านของคุณกำลังทำข้อผิดพลาดเหล่านี้อยู่หรือไม่ เพราะหลายร้านเสียเวลาและงบประมาณไปกับ
+          สิ่งที่ไม่ตรงจุดโดยไม่รู้ตัว
+        </P>
+        <CheckList
+          items={[
+            'ทำการตลาดโดยไม่มีเป้าหมายหรือกลุ่มลูกค้าที่ชัดเจน ทำให้วัดผลไม่ได้ว่าสิ่งที่ทำได้ผลจริงหรือไม่',
+            'ทุ่มงบโฆษณาก่อนแก้ Google Business Profile ให้ครบ ทำให้เสียค่าคลิกไปกับหน้าที่ยังไม่พร้อมเปลี่ยนเป็นลูกค้า',
+            'ไม่ตอบรีวิวทั้งด้านบวกและลบ ทำให้ลูกค้าใหม่ไม่แน่ใจว่าร้านยังดูแลลูกค้าอยู่หรือไม่',
+            'ไม่มีคอนเทนต์ตอบคำถามที่ลูกค้าถามก่อนตัดสินใจ ทำให้ลูกค้าเลือกร้านที่ให้ข้อมูลชัดเจนกว่าแทน',
+            'ไม่เก็บข้อมูลลูกค้าเพื่อติดตามหลังใช้บริการ ทำให้ต้องหาลูกค้าใหม่ตลอดเวลาแทนที่จะขายซ้ำให้ลูกค้าเดิม',
+            'เปลี่ยนแผนหรือหยุดทำก่อนเห็นผล มักเกิดจากคาดหวังผลเร็วเกินไป โดยเฉพาะฝั่ง SEO และคอนเทนต์ที่ต้องใช้เวลา',
+          ]}
+        />
+        <P>
+          ถ้าสงสัยว่าทำไม SEO หรือคอนเทนต์ที่ทำไปแล้วยังไม่เห็นผล อ่านเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/seo-not-working" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
+            ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร?
+          </Link>
+        </P>
+      </ArticleSection>
+
       <ArticleSection title="วัดผลแผนการตลาดสปาอย่างไร">
         <P>
           แผนการตลาดที่ดีต้องวัดผลได้ ไม่ใช่แค่ทำแล้วรอดูยอดขายปลายเดือน สิ่งที่ควรติดตามคือจำนวน Call และ Direction
@@ -8286,13 +8359,21 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           ถ้าตัวเลขเหล่านี้ไม่ขยับหลังทำตามแผนไป 2-3 เดือน นั่นเป็นสัญญาณว่าควรกลับไปทบทวนว่าขั้นตอนไหนในแผนยังทำไม่ครบ
-          มากกว่าการเปลี่ยนแผนทั้งหมดใหม่
+          มากกว่าการเปลี่ยนแผนทั้งหมดใหม่ และถ้าร้านของคุณพร้อมขยายการตลาดไปไกลกว่าลูกค้าในพื้นที่ ลองอ่านแนวทางเพิ่มยอดขาย
+          แบบภาพรวมเพิ่มเติมได้ที่{' '}
+          <Link to="/blog/increase-online-sales" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
+            วิธีเพิ่มยอดขายออนไลน์
+          </Link>
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps ลูกค้าที่เมื่อยกำลังหาคุณอยู่' },
           { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน - ลูกค้าใกล้ฉัน' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
+          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุและวิธีแก้' },
+          { to: '/blog/sales-techniques', label: '15 เทคนิคการเพิ่มยอดขาย ที่ธุรกิจออนไลน์ใช้ได้จริง' },
           { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
         ]} />
       </ArticleSection>
 

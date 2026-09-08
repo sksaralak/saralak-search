@@ -1735,9 +1735,9 @@ export const blogPosts: BlogPost[] = [
     category: 'Local SEO',
     excerpt:
       'แผนการตลาดสปาที่ดีไม่ใช่แค่ลงโฆษณาเป็นครั้งคราว แต่ต้องมี 5 ส่วนที่ทำงานร่วมกัน ตั้งแต่กำหนดกลุ่มเป้าหมาย ทำให้ลูกค้าใหม่เจอร้าน สร้างความน่าเชื่อถือ เตรียมพร้อมสำหรับ AI Search ไปจนถึงรักษาลูกค้าเดิม',
-    readingTime: '11 min read',
+    readingTime: '15 min read',
     publishedDate: '2026-09-07',
-    lastModifiedDate: '2026-09-07',
+    lastModifiedDate: '2026-09-08',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
