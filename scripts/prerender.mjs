@@ -154,7 +154,7 @@ async function main() {
   console.log('Prerendering routes...')
 
   for (const route of routes) {
-    const { html: appHtml } = render(route)
+    const { html: appHtml } = await render(route)
     const pageHtml = buildPageHtml(template, appHtml)
 
     const outDir =

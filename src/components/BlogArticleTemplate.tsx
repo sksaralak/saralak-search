@@ -1,10 +1,19 @@
+import { lazy, Suspense, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
 import BlogCard from './BlogCard'
 import { brand } from '../content/site'
-import BlogArticleBody from './BlogArticleBody'
+import { BlogArticleBodyContext } from './BlogArticleBodyContext'
 import { trackLineClick } from './Analytics'
+
+// This file must never statically import BlogArticleBody — doing so would pull
+// its ~800KB into the client's main bundle regardless of the lazy() call below.
+// entry-server.tsx pre-resolves BlogArticleBody in Node and provides it via
+// context so SSR/prerender output stays plain synchronous HTML (no Suspense
+// fallback baked into the static file). The client never receives that context
+// value, so it falls back to the lazy import and gets its own code-split chunk.
+const LazyBlogArticleBody = lazy(() => import('./BlogArticleBody'))
 
 type BlogArticleTemplateProps = {
   post: BlogPost
@@ -12,6 +21,9 @@ type BlogArticleTemplateProps = {
 }
 
 export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleTemplateProps) {
+  const ssrResolvedBody = useContext(BlogArticleBodyContext)
+  const BlogArticleBody = ssrResolvedBody ?? LazyBlogArticleBody
+
   return (
     <main className="overflow-x-hidden">
       <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-24 lg:px-8">
@@ -93,7 +105,9 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
 
       <section className="overflow-x-hidden border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
-          <BlogArticleBody post={post} />
+          <Suspense fallback={null}>
+            <BlogArticleBody post={post} />
+          </Suspense>
         </div>
       </section>
 
