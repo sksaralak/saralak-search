@@ -8390,40 +8390,40 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
 function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
   const nineSteps = [
     {
-      title: 'ตอบคำถามหลักให้จบในย่อหน้าแรก',
-      body: 'Google มักดึงคำตอบจากส่วนที่ตอบตรงประเด็นที่สุดก่อนเสมอ ไม่ใช่ย่อหน้าเกริ่นนำหรือคำโปรยยาวๆ',
+      title: '1. ตอบคำถามหลักให้จบในย่อหน้าแรก',
+      body: 'Google มักดึงคำตอบจากส่วนที่ตอบตรงประเด็นที่สุดก่อนเสมอ ไม่ใช่ย่อหน้าเกริ่นนำหรือคำโปรยยาวๆ ควรเขียนคำตอบตรงๆ ภายใน 40-60 คำแรกของแต่ละหัวข้อ ก่อนค่อยขยายความในย่อหน้าถัดไป',
     },
     {
-      title: 'เขียนหัวข้อ H2/H3 เป็นคำถามที่คนค้นจริง',
-      body: 'ไม่ใช่หัวข้อทางการตลาด เช่น "ทำไมต้องเลือกเรา" แต่เป็น "ขายอะไรดี" "ราคาเท่าไหร่" "ต่างกันอย่างไร"',
+      title: '2. เขียนหัวข้อ H2/H3 เป็นคำถามที่คนค้นจริง',
+      body: 'ไม่ใช่หัวข้อทางการตลาดที่เขียนเพื่อขายของ เช่น "ทำไมต้องเลือกเรา" แต่ควรเป็นคำถามที่คนพิมพ์ในช่องค้นหาจริงๆ เช่น "ขายอะไรดี" "ราคาเท่าไหร่" "ต่างกันอย่างไร" "เลือกแบบไหนดี"',
     },
     {
-      title: 'แตกหลาย Sub-intent ไว้ในหน้าเดียว',
-      body: 'ยิ่งบทความมีหลายจุดให้ AI หยิบไปใช้ ยิ่งมีโอกาสถูกดึงไปตอบหลายคำถามจากบทความเดียวกัน',
+      title: '3. แตกหลาย Sub-intent ไว้ในหน้าเดียว',
+      body: 'ยิ่งบทความมีหลายจุดที่ตอบคำถามต่างมุมกัน เช่น ของกิน เครื่องดื่ม เทคนิคขาย ราคา ทำเล ยิ่งมีโอกาสถูก AI หยิบไปตอบหลายคำถามจากบทความเดียวกัน แทนที่จะตอบได้แค่คำถามเดียว',
     },
     {
-      title: 'ใช้ Entity และตัวเลขที่เจาะจง',
-      body: '"ลูกชิ้นทอด ต้นทุนหน่วยละ 7-10 บาท" มีโอกาสถูกดึงไปใช้มากกว่า "ของกินราคาถูก" ที่กว้างและคลุมเครือ',
+      title: '4. ใช้ Entity และตัวเลขที่เจาะจง',
+      body: 'เช่น "ลูกชิ้นทอด ต้นทุนหน่วยละ 7-10 บาท" มีโอกาสถูก AI หยิบไปใช้มากกว่า "ของกินราคาถูก" ที่กว้างและคลุมเครือ ยิ่งเจาะจงเท่าไหร่ ยิ่งมีข้อมูลให้ AI นำไปอ้างอิงต่อได้มากเท่านั้น',
     },
     {
-      title: 'เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง',
-      body: 'ถ้า AI ตัดเอาแค่ Section เดียวไปตอบ มันควรเข้าใจได้ทันทีโดยไม่ต้องอ่านส่วนอื่นของบทความประกอบ',
+      title: '5. เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง',
+      body: 'ทดสอบด้วยคำถามว่า "ถ้า AI ตัดเอาแค่ Section นี้ไปตอบ มันยังเข้าใจได้ไหมโดยไม่ต้องอ่านส่วนอื่นประกอบ" ถ้าคำตอบคือไม่ได้ ต้องเขียนใหม่ให้มีบริบทครบในตัวเอง',
     },
     {
-      title: 'ใส่ FAQ Schema และ Article Schema ให้ครบ',
-      body: 'ช่วยให้ Google เข้าใจโครงสร้างเนื้อหาได้ชัดเจนขึ้น และเพิ่มโอกาสถูกเลือกไปแสดงในรูปแบบคำถาม-คำตอบ',
+      title: '6. ใส่ FAQ Schema และ Article Schema ให้ครบ',
+      body: 'Schema ช่วยให้ Google เข้าใจโครงสร้างเนื้อหาได้ชัดเจนขึ้น และเพิ่มโอกาสถูกเลือกไปแสดงในรูปแบบคำถาม-คำตอบ ควรมีอย่างน้อย FAQPage, Article หรือ BlogPosting และ BreadcrumbList',
     },
     {
-      title: 'เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล',
-      body: 'ไม่ใช่โยน CTA ไว้ท้ายบทความ แต่อธิบายปัญหาก่อน แล้วค่อยเชื่อมว่าสินค้าตอบโจทย์ปัญหานั้นอย่างไร',
+      title: '7. เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล',
+      body: 'ไม่ใช่โยน CTA ไว้ท้ายบทความเฉยๆ แต่ต้องอธิบายปัญหาที่เกิดขึ้นจริงก่อน แล้วค่อยเชื่อมว่าสินค้าหรือบริการของแบรนด์ตอบโจทย์ปัญหานั้นอย่างไร ให้สินค้ากลายเป็นคำตอบที่สมเหตุสมผล ไม่ใช่โฆษณาที่แทรกเข้ามา',
     },
     {
-      title: 'ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง',
-      body: 'ทำให้ความสัมพันธ์ระหว่าง Content กับ Product ชัดเจนขึ้น ไม่ต้องให้ Google เดาเอง',
+      title: '8. ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง',
+      body: 'ทำให้ความสัมพันธ์ระหว่าง Content กับ Product ชัดเจนขึ้นในสายตา Google โดยไม่ต้องให้ Google เดาเอง ควรลิงก์จากบทความไปหาหน้าหมวดหมู่หรือหน้าสินค้าที่เกี่ยวข้องโดยตรง',
     },
     {
-      title: 'ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง',
-      body: 'ตัวเลขหรือคำกล่าวอ้างที่ไม่มีที่มา ทำลายความน่าเชื่อถือ — ความแม่นยำคือสิ่งที่ทำให้ AI เลือกอ้างอิงซ้ำในระยะยาว',
+      title: '9. ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง',
+      body: 'ตัวเลขหรือคำกล่าวอ้างที่ไม่มีที่มา เช่น "งานวิจัยพบว่า" หรือ "ผู้ประกอบการจำนวนมากยืนยัน" โดยไม่มีแหล่งอ้างอิงจริง ทำลายความน่าเชื่อถือ — ความแม่นยำคือสิ่งที่ทำให้ AI เลือกอ้างอิงเนื้อหาซ้ำในระยะยาว',
     },
   ]
 
@@ -8454,25 +8454,53 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="9 ข้อ ทำอย่างไรให้ติด AI Overview">
         <P>เรียงจากพื้นฐานของการเขียนเนื้อหาไปจนถึงการเชื่อมโยงสู่สินค้า — ทำได้ครบทุกข้อไม่รับประกันติด แต่เพิ่มโอกาสได้จริง</P>
-        <div className="grid gap-3">
-          {nineSteps.map((step, index) => (
-            <div key={step.title} className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-bold text-teal-800">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <div>
-                <p className="font-semibold text-neutral-950">{step.title}</p>
-                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{step.body}</p>
-              </div>
-            </div>
+        <div className="grid gap-6">
+          {nineSteps.map((step) => (
+            <ArticleSubSection key={step.title} title={step.title}>
+              <P>{step.body}</P>
+            </ArticleSubSection>
           ))}
         </div>
       </ArticleSection>
 
+      <div className="rounded-xl bg-teal-950 p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">บริการจาก Saralak Search</p>
+        <h3 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">
+          ทำ SEO, AEO และ GEO มากับมือ ด้วยประสบการณ์ด้าน Search กว่า 9 ปี
+        </h3>
+        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">
+          อยากรู้ว่าธุรกิจของคุณมีโอกาสติด AI Overview แบบเคสด้านล่างนี้ไหม สแกน QR หรือทักมาคุยได้เลย ไม่มีค่าใช้จ่าย
+        </p>
+        <div className="mt-5 flex flex-col items-center gap-5 sm:flex-row">
+          <img
+            src="/image/icon/line-qr-sariahihi.png"
+            alt="สแกน QR Code เพื่อแอด LINE ปรึกษา Saralak Search"
+            width="112"
+            height="112"
+            className="h-28 w-28 shrink-0 rounded-lg bg-white p-2"
+          />
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a
+              href={brand.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
+            >
+              ทักผ่าน LINE: {brand.line.replace('LINE: ', '')}
+            </a>
+            <a
+              href={brand.phoneUrl}
+              className="inline-flex items-center justify-center rounded-lg border border-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-700"
+            >
+              โทร {brand.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <ArticleSection title="Case Study จริง: ลูกค้ารายหนึ่งติด AI Overview บนคำค้นทั่วไป">
         <P>
-          นี่คือตัวอย่างจริงจากลูกค้ารายหนึ่งของ Saralak Search (ไม่เปิดเผยชื่อแบรนด์ตามข้อตกลงความเป็นส่วนตัว)
-          ที่ยืนยันหลักการด้านบนได้ชัดที่สุด — คำค้น{' '}
+          นี่คือตัวอย่างจริงจากลูกค้ารายหนึ่งของ Saralak Search ที่ยืนยันหลักการด้านบนได้ชัดที่สุด — คำค้น{' '}
           <strong>"ขายอะไรดีตลาดนัด"</strong> (ยอดค้นหาประมาณ 1,600 ครั้งต่อเดือน) เป็นคำค้นกว้างๆ
           ที่ไม่มีคำว่าแบรนด์ บรรจุภัณฑ์ หรือ Packaging ปนอยู่เลย คนที่ค้นคำนี้กำลังมองหาไอเดียทำธุรกิจ
           ยังไม่รู้ด้วยซ้ำว่าจะขายอะไร
@@ -8483,9 +8511,19 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </P>
         <ArticleImage
           src="/proof/ai-overview-flea-market-example.png"
-          alt="ภาพจริงจาก Google AI Overview แสดงผลการค้นหา ขายอะไรดีตลาดนัด (ปิดบังชื่อแบรนด์ลูกค้า)"
-          caption='ภาพจริงจาก Google: AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" อ้างอิงบทความของลูกค้าและแนะนำ Packaging เป็นส่วนหนึ่งของคำตอบ (ชื่อแบรนด์ถูกปิดบังไว้)'
+          alt="ภาพจริงจาก Google AI Overview แสดงผลการค้นหา ขายอะไรดีตลาดนัด วงกลมสีเขียวชี้จุดที่ AI แนะนำ Packaging ของลูกค้า (ปิดบังชื่อแบรนด์)"
+          caption='ภาพจริงจาก Google: AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" — จุดที่วงสีเขียวไว้คือส่วนที่ Google แนะนำ Packaging ของลูกค้าเป็นส่วนหนึ่งของคำตอบ (ชื่อแบรนด์ถูกปิดบังไว้)'
         />
+        <div className="rounded-xl border-2 border-emerald-500 bg-emerald-50 px-5 py-5">
+          <h4 className="text-lg font-bold text-emerald-900 sm:text-xl">
+            ไม่ใช่แค่ตอบคำถาม — AI Overview ยังแนะนำ "สินค้า" ของลูกค้าเราด้วย
+          </h4>
+          <p className="thai-readable mt-2 text-sm leading-6 text-emerald-950 sm:text-base">
+            ทั้งที่ "ขายอะไรดีตลาดนัด" ไม่ใช่คีย์เวิร์ดที่มีเจตนาซื้อสินค้าเลยแม้แต่น้อย (ไม่ใช่ Commercial Keyword)
+            แต่ Google ยังดึงคำแนะนำเรื่องบรรจุภัณฑ์ของแบรนด์เข้าไปอยู่ในคำตอบ — ตรงจุดที่วงสีเขียวไว้ในภาพด้านบน
+            นี่คือสิ่งที่ทำให้ GEO ต่างจาก SEO ทั่วไป
+          </p>
+        </div>
         <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">สิ่งที่เกิดขึ้นจริง</p>
         <div className="grid gap-2">
           {[
