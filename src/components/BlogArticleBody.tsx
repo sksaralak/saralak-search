@@ -8387,6 +8387,155 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
+  const nineSteps = [
+    {
+      title: 'ตอบคำถามหลักให้จบในย่อหน้าแรก',
+      body: 'Google มักดึงคำตอบจากส่วนที่ตอบตรงประเด็นที่สุดก่อนเสมอ ไม่ใช่ย่อหน้าเกริ่นนำหรือคำโปรยยาวๆ',
+    },
+    {
+      title: 'เขียนหัวข้อ H2/H3 เป็นคำถามที่คนค้นจริง',
+      body: 'ไม่ใช่หัวข้อทางการตลาด เช่น "ทำไมต้องเลือกเรา" แต่เป็น "ขายอะไรดี" "ราคาเท่าไหร่" "ต่างกันอย่างไร"',
+    },
+    {
+      title: 'แตกหลาย Sub-intent ไว้ในหน้าเดียว',
+      body: 'ยิ่งบทความมีหลายจุดให้ AI หยิบไปใช้ ยิ่งมีโอกาสถูกดึงไปตอบหลายคำถามจากบทความเดียวกัน',
+    },
+    {
+      title: 'ใช้ Entity และตัวเลขที่เจาะจง',
+      body: '"ลูกชิ้นทอด ต้นทุนหน่วยละ 7-10 บาท" มีโอกาสถูกดึงไปใช้มากกว่า "ของกินราคาถูก" ที่กว้างและคลุมเครือ',
+    },
+    {
+      title: 'เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง',
+      body: 'ถ้า AI ตัดเอาแค่ Section เดียวไปตอบ มันควรเข้าใจได้ทันทีโดยไม่ต้องอ่านส่วนอื่นของบทความประกอบ',
+    },
+    {
+      title: 'ใส่ FAQ Schema และ Article Schema ให้ครบ',
+      body: 'ช่วยให้ Google เข้าใจโครงสร้างเนื้อหาได้ชัดเจนขึ้น และเพิ่มโอกาสถูกเลือกไปแสดงในรูปแบบคำถาม-คำตอบ',
+    },
+    {
+      title: 'เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล',
+      body: 'ไม่ใช่โยน CTA ไว้ท้ายบทความ แต่อธิบายปัญหาก่อน แล้วค่อยเชื่อมว่าสินค้าตอบโจทย์ปัญหานั้นอย่างไร',
+    },
+    {
+      title: 'ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง',
+      body: 'ทำให้ความสัมพันธ์ระหว่าง Content กับ Product ชัดเจนขึ้น ไม่ต้องให้ Google เดาเอง',
+    },
+    {
+      title: 'ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง',
+      body: 'ตัวเลขหรือคำกล่าวอ้างที่ไม่มีที่มา ทำลายความน่าเชื่อถือ — ความแม่นยำคือสิ่งที่ทำให้ AI เลือกอ้างอิงซ้ำในระยะยาว',
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+
+      <ArticleSection title="AI Overview คืออะไร">
+        <P>
+          AI Overview คือกล่องคำตอบที่ Google สร้างขึ้นด้วย AI แสดงอยู่บนสุดของหน้าผลการค้นหา
+          ก่อนลิงก์เว็บไซต์ทั้งหมด โดยดึงข้อมูลจากหลายเว็บไซต์มาสรุปเป็นคำตอบเดียว พร้อมอ้างอิงแหล่งที่มาประกอบ
+        </P>
+        <P>
+          ความเข้าใจผิดที่พบบ่อยคือคิดว่า AI Overview จะแสดงเฉพาะคำค้นที่มีแบรนด์หรือคำเฉพาะทางเท่านั้น
+          แต่ในความเป็นจริง คำค้นกว้างๆ แบบ Non-brand เช่น "ขายอะไรดีตลาดนัด" ก็ติด AI Overview ได้เช่นกัน
+          และที่สำคัญกว่านั้นคือ สินค้าของแบรนด์ยังสามารถถูก AI แนะนำอยู่ในคำตอบนั้นได้ด้วย ถ้าเนื้อหาถูกออกแบบมาอย่างถูกวิธี
+          — ดูตัวอย่างจริงในหัวข้อ Case Study ด้านล่าง
+        </P>
+        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
+          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
+            AI Overview คือกล่องคำตอบที่ Google สร้างด้วย AI แสดงเหนือผลการค้นหาทั้งหมด
+            คำค้นทั่วไปที่ไม่มีแบรนด์ก็ติดได้ และสินค้าของแบรนด์สามารถถูกแนะนำในคำตอบนั้นได้จริง
+            ถ้าเนื้อหาตอบ Intent ครบและเชื่อมไปถึงสินค้าอย่างมีเหตุผล
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="9 ข้อ ทำอย่างไรให้ติด AI Overview">
+        <P>เรียงจากพื้นฐานของการเขียนเนื้อหาไปจนถึงการเชื่อมโยงสู่สินค้า — ทำได้ครบทุกข้อไม่รับประกันติด แต่เพิ่มโอกาสได้จริง</P>
+        <div className="grid gap-3">
+          {nineSteps.map((step, index) => (
+            <div key={step.title} className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-bold text-teal-800">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <p className="font-semibold text-neutral-950">{step.title}</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Case Study จริง: ลูกค้ารายหนึ่งติด AI Overview บนคำค้นทั่วไป">
+        <P>
+          นี่คือตัวอย่างจริงจากลูกค้ารายหนึ่งของ Saralak Search (ไม่เปิดเผยชื่อแบรนด์ตามข้อตกลงความเป็นส่วนตัว)
+          ที่ยืนยันหลักการด้านบนได้ชัดที่สุด — คำค้น{' '}
+          <strong>"ขายอะไรดีตลาดนัด"</strong> (ยอดค้นหาประมาณ 1,600 ครั้งต่อเดือน) เป็นคำค้นกว้างๆ
+          ที่ไม่มีคำว่าแบรนด์ บรรจุภัณฑ์ หรือ Packaging ปนอยู่เลย คนที่ค้นคำนี้กำลังมองหาไอเดียทำธุรกิจ
+          ยังไม่รู้ด้วยซ้ำว่าจะขายอะไร
+        </P>
+        <P>
+          บทความของแบรนด์นี้ถูกออกแบบให้ตอบคำถามนั้นให้ครบก่อน ตั้งแต่ควรขายอะไร ขายยังไง
+          มีปัญหาอะไรบ้าง ไปจนถึงต้องเตรียมอะไร แล้วค่อยเชื่อมไปถึงบรรจุภัณฑ์ที่เหมาะกับแต่ละประเภทสินค้า
+        </P>
+        <ArticleImage
+          src="/proof/ai-overview-flea-market-example.png"
+          alt="ภาพจริงจาก Google AI Overview แสดงผลการค้นหา ขายอะไรดีตลาดนัด (ปิดบังชื่อแบรนด์ลูกค้า)"
+          caption='ภาพจริงจาก Google: AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" อ้างอิงบทความของลูกค้าและแนะนำ Packaging เป็นส่วนหนึ่งของคำตอบ (ชื่อแบรนด์ถูกปิดบังไว้)'
+        />
+        <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">สิ่งที่เกิดขึ้นจริง</p>
+        <div className="grid gap-2">
+          {[
+            'Google AI Overview ไม่ได้แค่ Citation บทความนี้เป็นแหล่งข้อมูลเดียว แต่หยิบข้อมูลจากหลายส่วนของบทความเดียวกัน — ทั้งหมวดของกินเล่น หมวดเครื่องดื่ม และเทคนิคการขาย',
+            'แต่ละหมวดที่ AI หยิบไปใช้ มีตัวอย่างและตัวเลขที่เจาะจง เช่น ลูกชิ้นทอด ไข่นกกระทาทอด ราคาขาย 19/29/39 บาท',
+            'Google นำแบรนด์และ Packaging Solution ของลูกค้าเข้าไปเป็นส่วนหนึ่งของคำแนะนำบนคำค้นที่ไม่มีแบรนด์ปนอยู่เลย',
+          ].map((item) => (
+            <div key={item} className="flex items-start gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3">
+              <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+              <p className="thai-readable text-sm text-neutral-700">{item}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          พูดให้ชัดคือ ผลลัพธ์ไม่ได้เป็นแค่ "บทความถูกอ้างอิง" แต่เป็น{' '}
+          <strong>คำค้นแบบ Non-brand → AI Overview → แบรนด์ถูกอ้างอิงในฐานะแหล่งข้อมูล → แนะนำ Packaging → แบรนด์กลายเป็นส่วนหนึ่งของคำตอบ</strong>
+          {' '}ซึ่งเป็นเป้าหมายเชิงธุรกิจที่แท้จริงของการทำ GEO ไม่ใช่แค่การได้อันดับหรือ Traffic เพิ่มขึ้น
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น">
+        <P>
+          ธุรกิจจำนวนมากเข้าใจว่าต้องมีคำที่เกี่ยวกับแบรนด์หรือสินค้าปนอยู่ในคำค้นก่อน ถึงจะมีโอกาสถูก AI แนะนำ
+          แต่เคสนี้แสดงให้เห็นตรงกันข้าม — จุดเริ่มต้นที่แท้จริงของ GEO ไม่ใช่คำถามว่า "จะเขียนบทความเกี่ยวกับสินค้าเราอะไรดี"
+          แต่คือ "ก่อนที่คนจะรู้ว่าต้องการสินค้าของเรา เขากำลังค้นหาอะไรหรือมีปัญหาอะไร"
+        </P>
+        <P>
+          เมื่อออกแบบเส้นทางเนื้อหาให้เดินจาก Broad Problem ไปจนถึง Product ได้อย่างเป็นธรรมชาติ
+          สินค้าก็กลายเป็นคำตอบที่สมเหตุสมผลของปัญหานั้น แทนที่จะเป็นการโฆษณาที่แทรกเข้ามาโดยไม่มีบริบทรองรับ
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
+          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
+          { to: '/services/geo', label: 'รับทำ AEO / GEO — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox items={[
+        'Google Search documentation on AI Overviews, checked September 2026',
+        'Live Google search result for "ขายอะไรดีตลาดนัด", screenshot September 2026 (client brand name redacted)',
+        'Saralak Search client campaign records (anonymised), checked September 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="FAQ: AI Overview คืออะไร" />
+    </article>
+  )
+}
+
 export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'geo-intro') {
     return <GeoIntroArticle post={post} />
@@ -8465,6 +8614,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'spa-marketing-plan') {
     return <SpaMarketingPlanArticle post={post} />
+  }
+  if (post.bodyVariant === 'what-is-ai-overview') {
+    return <WhatIsAiOverviewArticle post={post} />
   }
 
   return (

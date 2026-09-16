@@ -19,7 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
   cta?: {
     headline: string
     description: string
@@ -897,6 +897,29 @@ export const spaMarketingPlanFaqs: FAQItem[] = [
   },
 ]
 
+export const aiOverviewFaqs: FAQItem[] = [
+  {
+    question: 'AI Overview คืออะไร?',
+    answer:
+      'AI Overview คือกล่องสรุปคำตอบที่ Google สร้างขึ้นด้วย AI แสดงอยู่บนสุดของหน้าผลการค้นหา ก่อนลิงก์เว็บไซต์ทั้งหมด โดยดึงข้อมูลจากหลายเว็บไซต์มาสรุปและอ้างอิงแหล่งที่มาประกอบคำตอบ',
+  },
+  {
+    question: 'ต้องเป็นคำค้นเฉพาะทางแบบมีแบรนด์เท่านั้นถึงจะติด AI Overview ได้ไหม?',
+    answer:
+      'ไม่จำเป็น คำค้นกว้างๆ แบบ Non-brand เช่น "ขายอะไรดีตลาดนัด" ก็ติด AI Overview ได้ และยังสามารถทำให้แบรนด์หรือสินค้าถูกแนะนำในคำตอบนั้นได้ ถ้าบทความออกแบบให้ตอบ Intent ครบและเชื่อมไปถึงสินค้าอย่างมีเหตุผล',
+  },
+  {
+    question: 'ทำ AI Overview แล้วรับประกันติดไหม?',
+    answer:
+      'ไม่รับประกัน เพราะ Google เป็นผู้เลือกว่าจะแสดง AI Overview สำหรับคำค้นไหนและหยิบเนื้อหาจากเว็บไซต์ใด แต่การทำตามหลักการที่ถูกต้อง เช่น ตอบคำถามให้ชัดเจน มีโครงสร้างที่ดี และมี Schema ครบ จะเพิ่มโอกาสได้มากกว่าเว็บไซต์ที่ไม่ได้ทำเลย',
+  },
+  {
+    question: 'AI Overview กับ Featured Snippet ต่างกันอย่างไร?',
+    answer:
+      'Featured Snippet ดึงข้อความจากเว็บไซต์เดียวมาแสดงเป็นคำตอบ ส่วน AI Overview ใช้ AI สรุปและรวมข้อมูลจากหลายเว็บไซต์เข้าด้วยกัน มักมีความยาวและความซับซ้อนมากกว่า และสามารถอ้างอิงแหล่งที่มาได้มากกว่าหนึ่งเว็บไซต์ในคำตอบเดียว',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1756,6 +1779,38 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากรู้ว่าร้านสปาของคุณควรเริ่มแผนการตลาดจากจุดไหนก่อน?',
       description:
         'Discovery Audit ช่วยวิเคราะห์ว่าตอนนี้ลูกค้าเจอร้านของคุณมากแค่ไหน และควรจัดลำดับความสำคัญของแผนการตลาดอย่างไร',
+      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+      href: '/discovery-audit',
+    },
+  },
+  {
+    title: 'AI Overview คืออะไร วิธีทำให้ติด AI Overview [9 ข้อ] พร้อม Case Study จริง',
+    slug: 'what-is-ai-overview',
+    category: 'AEO',
+    excerpt:
+      'AI Overview คือกล่องคำตอบที่ Google สร้างด้วย AI แสดงเหนือผลการค้นหาทั้งหมด บทความนี้สรุป 9 ข้อทำอย่างไรให้ติด AI Overview พร้อม Case Study จริง (ไม่เปิดเผยชื่อแบรนด์) ที่ติดบนคำค้นทั่วไปอย่าง "ขายอะไรดีตลาดนัด" แล้วสินค้าของแบรนด์ยังถูก AI แนะนำด้วย',
+    readingTime: '12 min read',
+    publishedDate: '2026-09-15',
+    lastModifiedDate: '2026-09-16',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    ogImage: '/proof/ai-overview-flea-market-example.png',
+    metaTitle: 'AI Overview คืออะไร วิธีทำให้ติด [9 ข้อ + Case Study] | Saralak Search',
+    metaDescription:
+      'AI Overview คืออะไร และวิธีทำให้เว็บไซต์ติด AI Overview 9 ข้อ พร้อม Case Study จริงจากลูกค้ารายหนึ่ง (ไม่เปิดเผยชื่อแบรนด์) ที่ติดบนคำค้นทั่วไป "ขายอะไรดีตลาดนัด" (ยอดเสิร์ช 1,600/เดือน) แล้วสินค้าของแบรนด์ถูก AI แนะนำด้วย',
+    aiSummary: [
+      'AI Overview คือกล่องคำตอบที่ Google สร้างด้วย AI แสดงเหนือลิงก์เว็บไซต์ทั้งหมดในหน้าผลการค้นหา',
+      'คำค้นทั่วไปแบบ Non-brand ก็ติด AI Overview ได้ และสามารถทำให้สินค้าของแบรนด์ถูกแนะนำในคำตอบนั้นได้ ไม่จำเป็นต้องเป็นคำที่มีแบรนด์อยู่แล้ว',
+      'Case Study จริง (ไม่เปิดเผยชื่อแบรนด์): ลูกค้ารายหนึ่งของ Saralak Search ติด AI Overview บนคำค้น "ขายอะไรดีตลาดนัด" (ยอดเสิร์ช 1,600/เดือน) และ Google แนะนำ Packaging ของแบรนด์เป็นส่วนหนึ่งของคำตอบด้วย',
+      '9 ข้อทำ AI Overview ครอบคลุมตั้งแต่การตอบคำถามให้จบ การใช้ Entity และตัวเลขที่เจาะจง ไปจนถึงการเชื่อมปัญหาสู่สินค้าอย่างมีเหตุผล',
+    ],
+    faqs: aiOverviewFaqs,
+    bodyVariant: 'what-is-ai-overview',
+    cta: {
+      headline: 'อยากรู้ว่าเนื้อหาของธุรกิจคุณมีโอกาสติด AI Overview ไหม?',
+      description:
+        'Discovery Audit ช่วยตรวจสอบว่าเนื้อหาปัจจุบันของคุณพร้อมสำหรับ AI Overview และ AI Search แค่ไหน พร้อมระบุจุดที่ควรแก้ก่อน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
