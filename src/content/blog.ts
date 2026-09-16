@@ -1795,7 +1795,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    ogImage: '/proof/ai-overview-flea-market-example.png',
+    ogImage: '/image/blog/what-is-ai-overview/what-is-ai-overview-case.png',
     metaTitle: 'AI Overview คือ? 9 วิธีติด AI Overview | Saralak Search',
     metaDescription:
       'AI Overview คืออะไร และวิธีทำให้เว็บไซต์ติด AI Overview 9 ข้อ พร้อม Case Study จริงจากลูกค้ารายหนึ่ง ที่ติดบนคำค้นทั่วไป "ขายอะไรดีตลาดนัด" (ยอดเสิร์ช 1,600/เดือน) แล้วสินค้าของแบรนด์ถูก AI แนะนำด้วย',

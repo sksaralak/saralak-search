@@ -8571,9 +8571,9 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           มีปัญหาอะไรบ้าง ไปจนถึงต้องเตรียมอะไร แล้วค่อยเชื่อมไปถึงบรรจุภัณฑ์ที่เหมาะกับแต่ละประเภทสินค้า
         </P>
         <ArticleImage
-          src="/proof/ai-overview-flea-market-example.png"
-          alt="ภาพจริงจาก Google AI Overview แสดงผลการค้นหา ขายอะไรดีตลาดนัด วงกลมสีเขียวชี้จุดที่ AI แนะนำ Packaging ของลูกค้า (ปิดบังชื่อแบรนด์)"
-          caption='ภาพจริงจาก Google: AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" — จุดที่วงสีเขียวไว้คือส่วนที่ Google แนะนำ Packaging ของลูกค้าเป็นส่วนหนึ่งของคำตอบ (ชื่อแบรนด์ถูกปิดบังไว้)'
+          src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
+          alt="ภาพจริงจาก Google AI Overview แสดงผลการค้นหา ขายอะไรดีตลาดนัด วงกลมสีเขียวชี้คำค้นและจุดที่ AI แนะนำ Packaging ของลูกค้า (ปิดบังชื่อแบรนด์)"
+          caption='ภาพจริงจาก Google: AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" — กรอบสีเขียวบนแสดงคำค้นจริงที่พิมพ์ กรอบสีเขียวล่างคือจุดที่ Google แนะนำ Packaging ของลูกค้าเป็นส่วนหนึ่งของคำตอบ (ชื่อแบรนด์ถูกปิดบังไว้)'
         />
         <div className="rounded-xl border-2 border-emerald-500 bg-emerald-50 px-5 py-5">
           <h4 className="text-lg font-bold text-emerald-900 sm:text-xl">
