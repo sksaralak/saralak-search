@@ -275,8 +275,6 @@ function ComparisonTable() {
       <div className="mt-5">
         <ReadMoreLinks items={[
           { to: '/blog/seo-geo-aeo', label: 'เปรียบเทียบ SEO GEO AEO แบบละเอียด' },
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร' },
         ]} />
       </div>
     </section>
@@ -438,14 +436,16 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="อะไรคือข้อมูลที่แพลตฟอร์มยืนยัน และอะไรคือแนวทางของ Saralak Search">
         <ArticleSubSection title="สิ่งที่ Google ยืนยันเกี่ยวกับ AI Overviews และ AI Mode">
           <P>
-            Google Search Central ระบุชัดว่าไม่ต้องมี markup พิเศษ ไฟล์ AI พิเศษ หรือการปรับแบบใหม่เฉพาะเพื่อให้มีสิทธิ์ปรากฏใน
-            AI Overviews หรือ AI Mode หน้าเว็บต้องถูก index และมีสิทธิ์แสดงพร้อม snippet ใน Google Search
-            ส่วนแนวทาง SEO พื้นฐานเดิม เช่น crawlability, internal links, page experience, เนื้อหาที่เป็นข้อความ
-            และ structured data ที่ตรงกับสิ่งที่มองเห็นบนหน้า ยังเป็นพื้นฐานที่ควรดูแล
+            Google Search Central ระบุว่า จากมุมมองของ Google การทำให้เว็บไซต์พร้อมสำหรับ Generative AI Search
+            ยังคงเป็นงาน SEO เป็นหลัก ไม่ต้องมี markup พิเศษ ไฟล์ AI พิเศษ หรือ “GEO hack” เฉพาะสำหรับ AI Overviews และ AI Mode
+            สิ่งที่ควรให้ความสำคัญคือหน้าเว็บถูก index, มีสิทธิ์แสดงพร้อม snippet, มีโครงสร้างทางเทคนิคที่ชัด
+            และมีเนื้อหา unique / non-commodity ที่มีคุณค่าต่อผู้อ่าน
           </P>
           <P>
-            การแสดงใน AI features ไม่ได้รับการรับประกัน และข้อมูลจาก AI Overviews/AI Mode ถูกรวมอยู่ใน
-            Search Console Performance ภายใต้ Web search โดย Google ไม่ได้ให้รายงาน native ที่แยกทุก citation เป็นราย AI answer
+            นอกจากนี้ ตั้งแต่วันที่ 31 สิงหาคม 2026 Google เปิดใช้ Search generative AI control และ
+            Generative AI performance report ใน Search Console ทั่วโลก เว็บไซต์ต้องถูกตั้งให้รวมอยู่ใน Search generative AI features
+            จึงจะมีสิทธิ์แสดงในฟีเจอร์เหล่านี้ ส่วนรายงานใหม่ช่วยดู impressions, pages, countries, devices และแนวโน้มตามเวลา
+            สำหรับ AI Overviews และ AI Mode ได้โดยเฉพาะ ข้อมูลชุดนี้ยังถูกรวมอยู่ในภาพรวม Search performance ด้วย
           </P>
         </ArticleSubSection>
 
@@ -528,7 +528,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['Search Visibility', 'ดู Impressions, Clicks, Queries และ Landing Pages ใน Google Search Console โดยจำไว้ว่า Google รวม AI features ไว้ใน Web performance ไม่ได้แยกเป็นราย citation'],
+            ['Google Generative AI Visibility', 'ใช้ Generative AI performance report ใน Search Console เพื่อติดตาม impressions, pages, countries, devices และแนวโน้มตามเวลาใน AI Overviews/AI Mode แล้วอ่านร่วมกับ Performance ปกติสำหรับภาพรวม Search'],
             ['AI Search Visibility', 'กำหนดชุดคำถามที่สำคัญต่อธุรกิจ แล้วติดตาม mention, citation และความถูกต้องของข้อมูลในแต่ละ platform ซ้ำเป็นช่วงเวลา ไม่สรุปจากการทดสอบครั้งเดียว'],
             ['Referral & Engagement', 'ตรวจ GA4 ว่ามี session หรือ referral จาก AI platform ใดบ้าง พร้อมดู landing page, engaged session และพฤติกรรมหลังเข้าหน้าเว็บ'],
             ['Business Outcome', 'วัด Form, LINE, Call, Lead, Purchase และ Assisted Conversion เพื่อดูว่า visibility เชื่อมต่อกับผลลัพธ์ทางธุรกิจหรือไม่'],
@@ -621,21 +621,13 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           จุดเริ่มต้นที่เหมาะสมจึงไม่ใช่การเพิ่ม FAQ หรือ Schema ตาม checklist แบบตายตัว
           แต่คือทำให้แต่ละ URL มีหน้าที่ชัด ข้อมูลมีหลักฐาน Search เข้าถึงได้ และมีระบบวัดผลที่เชื่อม visibility ไปถึง business outcome
-          จากนั้นจึงค่อยลงรายละเอียดใน{' '}
-          <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
-            วิธีทำ GEO
-          </Link>
-          {' '}และใช้{' '}
-          <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
-            GEO Checklist
-          </Link>
-          {' '}เป็นเครื่องมือตรวจ implementation
+          จากนั้นจึงค่อยลงรายละเอียดในคู่มือวิธีทำ GEO และใช้ GEO Checklist เป็นเครื่องมือตรวจ implementation
         </P>
       </ArticleSection>
 
       <SourceBox heading="Sources & Methodology — checked September 2026" items={[
         'Google Search Central — AI features and your website: no special AI markup required; standard SEO fundamentals still apply',
-        'Google Search Central — Search Console performance for AI features is included in Web search reporting',
+        'Google Search Central — Generative AI performance report in Search Console; worldwide rollout completed August 31, 2026',
         'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search',
         'Aggarwal et al. (2023), GEO: Generative Engine Optimization — research framing of GEO; experimental results are not treated as a platform-wide guarantee',
         'Saralak Search client case: non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview observation and screenshot checked September 2026',
