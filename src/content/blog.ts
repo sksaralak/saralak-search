@@ -901,17 +901,17 @@ export const aiOverviewFaqs: FAQItem[] = [
   {
     question: 'AI Overview คืออะไร?',
     answer:
-      'AI Overview คือกล่องสรุปคำตอบที่ Google สร้างขึ้นด้วย AI แสดงอยู่บนสุดของหน้าผลการค้นหา ก่อนลิงก์เว็บไซต์ทั้งหมด โดยดึงข้อมูลจากหลายเว็บไซต์มาสรุปและอ้างอิงแหล่งที่มาประกอบคำตอบ',
+      'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา โดยรวบรวมและสรุปข้อมูลที่เกี่ยวข้อง พร้อมแสดงลิงก์ไปยังแหล่งข้อมูลที่ใช้ประกอบคำตอบ',
   },
   {
     question: 'ต้องเป็นคำค้นเฉพาะทางแบบมีแบรนด์เท่านั้นถึงจะติด AI Overview ได้ไหม?',
     answer:
-      'ไม่จำเป็น คำค้นกว้างๆ แบบ Non-brand เช่น "ขายอะไรดีตลาดนัด" ก็ติด AI Overview ได้ และยังสามารถทำให้แบรนด์หรือสินค้าถูกแนะนำในคำตอบนั้นได้ ถ้าบทความออกแบบให้ตอบ Intent ครบและเชื่อมไปถึงสินค้าอย่างมีเหตุผล',
+      'ไม่จำเป็น AI Overview สามารถแสดงบนคำค้นแบบ Non-brand เช่น "ขายอะไรดีตลาดนัด" ได้ โดยไม่จำเป็นต้องเป็นคำค้นที่มีชื่อแบรนด์',
   },
   {
     question: 'ทำ AI Overview แล้วรับประกันติดไหม?',
     answer:
-      'ไม่รับประกัน เพราะ Google เป็นผู้เลือกว่าจะแสดง AI Overview สำหรับคำค้นไหนและหยิบเนื้อหาจากเว็บไซต์ใด แต่การทำตามหลักการที่ถูกต้อง เช่น ตอบคำถามให้ชัดเจน มีโครงสร้างที่ดี และมี Schema ครบ จะเพิ่มโอกาสได้มากกว่าเว็บไซต์ที่ไม่ได้ทำเลย',
+      'ไม่มีวิธีรับประกันว่าเว็บไซต์จะถูกอ้างอิงใน AI Overview เพราะ Google เป็นผู้ตัดสินใจว่าจะแสดง AI Overview สำหรับคำค้นใดและเลือกแหล่งข้อมูลใดมาใช้ สิ่งที่ทำได้คือสร้างเนื้อหาที่ตอบ Search Intent ชัดเจน มีข้อมูลที่ตรวจสอบได้ โครงสร้างอ่านง่าย และทำ Technical SEO ให้ Search Engine เข้าถึงเนื้อหาได้ตามปกติ',
   },
   {
     question: 'AI Overview กับ Featured Snippet ต่างกันอย่างไร?',
@@ -1784,11 +1784,11 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AI Overview คืออะไร วิธีทำให้ติด AI Overview [9 ข้อ] พร้อม Case Study จริง',
+    title: 'AI Overview คืออะไร? วิธีทำให้ติด AI Overview พร้อม 9 เทคนิคและ Case Study จริง',
     slug: 'what-is-ai-overview',
     category: 'AEO',
     excerpt:
-      'AI Overview คือกล่องคำตอบที่ Google สร้างด้วย AI แสดงเหนือผลการค้นหาทั้งหมด บทความนี้สรุป 9 ข้อทำอย่างไรให้ติด AI Overview พร้อม Case Study จริง ที่ติดบนคำค้นทั่วไปอย่าง "ขายอะไรดีตลาดนัด" แล้วสินค้าของแบรนด์ยังถูก AI แนะนำด้วย',
+      'AI Overview คือคำตอบที่ Google สร้างด้วย AI บนหน้าผลการค้นหา บทความนี้สรุป 9 แนวทางที่ช่วยเตรียม Content ให้เหมาะกับ Search และ AI-generated answers พร้อม Case Study จริงจาก Saralak Search',
     readingTime: '12 min read',
     publishedDate: '2026-09-15',
     lastModifiedDate: '2026-09-16',
@@ -1796,21 +1796,21 @@ export const blogPosts: BlogPost[] = [
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     ogImage: '/image/blog/what-is-ai-overview/what-is-ai-overview-case.png',
-    metaTitle: 'AI Overview คือ? 9 วิธีติด AI Overview | Saralak Search',
+    metaTitle: 'AI Overview คืออะไร? 9 เทคนิคและ Case Study | Saralak Search',
     metaDescription:
-      'AI Overview คืออะไร และวิธีทำให้เว็บไซต์ติด AI Overview 9 ข้อ พร้อม Case Study จริงจากลูกค้ารายหนึ่ง ที่ติดบนคำค้นทั่วไป "ขายอะไรดีตลาดนัด" (ยอดเสิร์ช 1,600/เดือน) แล้วสินค้าของแบรนด์ถูก AI แนะนำด้วย',
+      'AI Overview คืออะไร และวิธีทำให้เว็บไซต์พร้อมสำหรับ AI Overview ด้วย 9 แนวทาง พร้อม Case Study จริงจาก Saralak Search บนคำค้น Non-brand "ขายอะไรดีตลาดนัด"',
     aiSummary: [
-      'AI Overview คือกล่องคำตอบที่ Google สร้างด้วย AI แสดงเหนือลิงก์เว็บไซต์ทั้งหมดในหน้าผลการค้นหา',
-      'คำค้นทั่วไปแบบ Non-brand ก็ติด AI Overview ได้ และสามารถทำให้สินค้าของแบรนด์ถูกแนะนำในคำตอบนั้นได้ ไม่จำเป็นต้องเป็นคำที่มีแบรนด์อยู่แล้ว',
-      'Case Study จริง: ลูกค้ารายหนึ่งของ Saralak Search ติด AI Overview บนคำค้น "ขายอะไรดีตลาดนัด" (ยอดเสิร์ช 1,600/เดือน) และ Google แนะนำ Packaging ของแบรนด์เป็นส่วนหนึ่งของคำตอบด้วย',
-      '9 ข้อทำ AI Overview ครอบคลุมตั้งแต่การตอบคำถามให้จบ การใช้ Entity และตัวเลขที่เจาะจง ไปจนถึงการเชื่อมปัญหาสู่สินค้าอย่างมีเหตุผล',
+      'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา พร้อมลิงก์ไปยังแหล่งข้อมูลที่ใช้ประกอบคำตอบ',
+      'AI Overview สามารถแสดงบนคำค้นแบบ Non-brand ได้ ไม่จำเป็นต้องเป็นคำค้นที่มีชื่อแบรนด์',
+      'บทความของลูกค้า Saralak Search ถูก Google AI Overview อ้างอิงบนคำค้น "ขายอะไรดีตลาดนัด" และ Packaging Solution ของแบรนด์ถูกนำไปประกอบคำตอบ',
+      '9 แนวทางเตรียม Content สำหรับ AI Overview ครอบคลุมตั้งแต่การตอบคำถามให้จบ การใช้ Entity และตัวเลขที่เจาะจง ไปจนถึงการเชื่อมปัญหาสู่สินค้าอย่างมีเหตุผล',
     ],
     faqs: aiOverviewFaqs,
     bodyVariant: 'what-is-ai-overview',
     cta: {
-      headline: 'อยากรู้ว่าเนื้อหาของธุรกิจคุณมีโอกาสติด AI Overview ไหม?',
+      headline: 'อยากรู้ว่า Content ของธุรกิจมีความพร้อมต่อ AI Overview แค่ไหน?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่าเนื้อหาปัจจุบันของคุณพร้อมสำหรับ AI Overview และ AI Search แค่ไหน พร้อมระบุจุดที่ควรแก้ก่อน',
+        'Discovery Audit ช่วยตรวจสอบว่า Content ปัจจุบันพร้อมสำหรับ AI Overview และ AI Search แค่ไหน พร้อมระบุจุดที่ควรแก้ก่อน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
