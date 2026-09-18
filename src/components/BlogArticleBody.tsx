@@ -512,11 +512,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
         <div className="grid gap-3">
           {[
-            ['1. Search Foundation', 'ตรวจ Crawl, Index, Canonical, Rendering, Sitemap และ Internal Link ก่อน ถ้าหน้า owner ยังถูกค้นหรือ index ไม่ถูกต้อง GEO ไม่ควรเป็นงานแรก'],
+            ['1. พื้นฐาน Search', 'ตรวจ Crawl, Index, Canonical, Rendering, Sitemap และ Internal Link ก่อน ถ้าหน้า owner ยังถูกค้นหรือ index ไม่ถูกต้อง GEO ไม่ควรเป็นงานแรก'],
             ['2. Topic Ownership', 'กำหนด Main Intent ของแต่ละ URL เช่น “GEO คืออะไร” มี owner หนึ่งหน้า และ “วิธีทำ GEO” มี owner อีกหน้า เพื่อลด Cannibalization'],
             ['3. Evidence & Entity', 'เติมข้อมูลจริง ตัวเลข ตัวอย่าง ผู้เขียน แบรนด์ บริการ และแหล่งอ้างอิงที่ช่วยให้ประโยคมี Subject และตรวจสอบย้อนกลับได้'],
             ['4. Content Path', 'วางเส้นทาง Definition → Comparison → How-to → Checklist → Proof → Service ให้ Internal Link ส่งความเกี่ยวข้องไปยัง LDP ที่ถูกต้อง'],
-            ['5. Measurement Loop', 'กำหนดชุดคำถามและ KPI ก่อนแก้ Content แล้วติดตามซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
+            ['5. รอบการวัดผล', 'กำหนดชุดคำถามและ KPI ก่อนแก้ Content แล้วติดตามซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -593,7 +593,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           {[
             ['Non-brand Query', 'Main query คือ “ขายอะไรดีตลาดนัด” และมี support intent อย่าง “ขายอะไรดีตลาดนัดลงทุนน้อย” ทำให้บทความไม่ได้พึ่ง Brand Search'],
             ['Concrete Examples', 'เนื้อหามีตัวอย่างราคา 19 / 29 / 39 บาท เมนู ต้นทุน และสถานการณ์การเลือก Packaging แทนคำแนะนำกว้าง ๆ'],
-            ['Information → Commercial', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุกส่วนเป็น CTA'],
+            ['ข้อมูล → บริบทธุรกิจ', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุกส่วนเป็น CTA'],
             ['เนื้อหาที่อ่านแยกได้', 'แต่ละส่วนมี Subject และคำตอบของตัวเอง เช่น Fried Food → ภาชนะทนร้อน ทำให้ช่วงเนื้อหานั้นยังเข้าใจได้เมื่ออ่านแยก'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
@@ -617,7 +617,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-not-geo" title="อะไรไม่ใช่ GEO">
         <P>
           GEO ไม่ใช่การเพิ่มคำว่า AI ลงในบทความ ใส่ Schema จำนวนมาก สร้าง FAQ จำนวนมาก หรือใช้ AI ผลิต Content ปริมาณสูงแล้วคาดว่าจะถูก Citation
-          การเปลี่ยนชื่อบริการ SEO เป็น GEO โดยไม่เพิ่ม Content Quality, Entity Clarity, Evidence, Retrievable Answers และ Technical Accessibility ก็ไม่ใช่การทำ GEO ที่มีสาระ
+          การเปลี่ยนชื่อบริการ SEO เป็น GEO โดยไม่เพิ่ม Content Quality, Entity Clarity, Evidence, คำตอบที่อ่านแยกได้ และการเข้าถึงทางเทคนิค ก็ไม่ใช่การทำ GEO ที่มีสาระ
         </P>
         <CheckList items={[
           'เพิ่มคำว่า AI หรือ ChatGPT ใน Title และ Heading โดยไม่มีข้อมูลใหม่ ≠ GEO',
@@ -722,7 +722,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         'Google Search Console Help — Generative AI performance report (AI Overviews and AI Mode), rollout completed August 31, 2026',
         'Google Search Console Help — Search generative AI control, rollout completed August 31, 2026',
         'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search, checked September 2026',
-        'Saralak Search original client observation — non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview screenshot and passage review, September 2026',
+        'Saralak Search client case — non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview screenshot and content review, September 2026',
       ]} />
 
       <ArticleFAQ id="geo-faq" post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ GEO" />
