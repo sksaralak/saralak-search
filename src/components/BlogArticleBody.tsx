@@ -128,6 +128,42 @@ function ArticleTableOfContents() {
   )
 }
 
+
+const geoContents = [
+  { id: 'geo-what-is', label: 'GEO คืออะไร?' },
+  { id: 'geo-how-it-works', label: 'GEO ทำงานอย่างไรใน AI Search?' },
+  { id: 'geo-platform-guidance', label: 'ข้อมูลที่แพลตฟอร์มยืนยัน vs แนวทางของ Saralak Search' },
+  { id: 'geo-vs-seo-aeo', label: 'SEO, AEO และ GEO ต่างกันอย่างไร' },
+  { id: 'geo-case-study', label: 'Case Study: จากคำค้น Non-brand สู่ AI Overview' },
+  { id: 'geo-get-started', label: 'ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร' },
+  { id: 'geo-measurement', label: 'GEO วัดผลอย่างไร' },
+  { id: 'geo-limitations', label: 'ข้อจำกัดของ GEO ที่ควรรู้ก่อนลงทุน' },
+  { id: 'geo-priority', label: 'ธุรกิจแบบไหนควรให้ GEO เป็น Priority' },
+  { id: 'geo-service', label: 'GEO เชื่อมกับบริการของ Saralak Search อย่างไร' },
+  { id: 'geo-summary', label: 'สรุป GEO คืออะไร' },
+  { id: 'geo-faq', label: 'FAQ: GEO และ AI Search' },
+] as const
+
+function GeoTableOfContents() {
+  return (
+    <nav aria-label="สารบัญบทความ GEO" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
+      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
+        {geoContents.map((item, index) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+            >
+              {String(index + 1).padStart(2, '0')}. {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
 type ArticleImageProps = {
   src: string
   alt: string
@@ -219,7 +255,7 @@ function ComparisonTable() {
 
   return (
     <section>
-      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+      <h2 id="geo-vs-seo-aeo" className="scroll-mt-24 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
         SEO, AEO และ GEO ต่างกันอย่างไร
       </h2>
       <p className="thai-readable mt-4 text-lg leading-8 text-neutral-700">
@@ -387,8 +423,9 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      <GeoTableOfContents />
 
-      <ArticleSection title="GEO คืออะไร?">
+      <ArticleSection id="geo-what-is" title="GEO คืออะไร?">
         <P>
           <strong>GEO หรือ Generative Engine Optimization</strong> คือแนวทางปรับเนื้อหา เว็บไซต์ และข้อมูลของแบรนด์
           เพื่อเพิ่มโอกาสให้ข้อมูลนั้นถูกค้นพบ นำไปประกอบคำตอบ กล่าวถึง หรืออ้างอิงในระบบ Generative AI และ AI Search
@@ -407,7 +444,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection title="GEO ทำงานอย่างไรใน AI Search?">
+      <ArticleSection id="geo-how-it-works" title="GEO ทำงานอย่างไรใน AI Search?">
         <P>
           โดยภาพรวม AI Search ต้องพาผู้ใช้จาก “คำถาม” ไปสู่ “คำตอบ” ผ่านหลายขั้นตอน เช่น
           การตีความคำถาม การค้นหรือดึงข้อมูลที่เกี่ยวข้อง การคัดเลือกบริบท และการสร้างคำตอบพร้อมแหล่งอ้างอิงเมื่อระบบรองรับ
@@ -433,7 +470,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="อะไรคือข้อมูลที่แพลตฟอร์มยืนยัน และอะไรคือแนวทางของ Saralak Search">
+      <ArticleSection id="geo-platform-guidance" title="อะไรคือข้อมูลที่แพลตฟอร์มยืนยัน และอะไรคือแนวทางของ Saralak Search">
         <ArticleSubSection title="สิ่งที่ Google ยืนยันเกี่ยวกับ AI Overviews และ AI Mode">
           <P>
             Google Search Central ระบุว่า จากมุมมองของ Google การทำให้เว็บไซต์พร้อมสำหรับ Generative AI Search
@@ -475,7 +512,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ComparisonTable />
 
-      <ArticleSection title="ตัวอย่างจากงานจริงของ Saralak Search: จากคำค้น Non-brand สู่ AI Overview">
+      <ArticleSection id="geo-case-study" title="ตัวอย่างจากงานจริงของ Saralak Search: จากคำค้น Non-brand สู่ AI Overview">
         <P>
           หนึ่งในเคสที่ใช้เป็นบทเรียนเรื่อง GEO คือบทความของลูกค้าในหัวข้อ <strong>“ขายอะไรดีตลาดนัด”</strong>
           ซึ่งเป็นคำค้นแบบ Non-brand และมี intent กว้าง บทความไม่ได้หยุดที่รายชื่อสินค้าน่าขาย
@@ -504,7 +541,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection title="ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร">
+      <ArticleSection id="geo-get-started" title="ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร">
         <P>
           สำหรับหน้า “GEO คืออะไร” งานสำคัญคือเข้าใจภาพรวมก่อน ส่วนขั้นตอนลงมือทำควรแยกไปยัง
           {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
@@ -528,7 +565,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="GEO วัดผลอย่างไร">
+      <ArticleSection id="geo-measurement" title="GEO วัดผลอย่างไร">
         <P>
           การวัด GEO ควรใช้หลายชั้นพร้อมกัน เพราะ citation หรือ brand mention เพียงครั้งเดียวไม่บอกผลทางธุรกิจ
           และคำตอบของ Generative AI สามารถเปลี่ยนได้ตาม prompt เวลา แหล่งข้อมูล และการรันแต่ละครั้ง
@@ -552,7 +589,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="ข้อจำกัดของ GEO ที่ควรรู้ก่อนลงทุน">
+      <ArticleSection id="geo-limitations" title="ข้อจำกัดของ GEO ที่ควรรู้ก่อนลงทุน">
         <CheckList items={[
           'ไม่มีแพลตฟอร์มหลักรายใดรับประกันว่าการทำ GEO จะทำให้เว็บไซต์ถูก citation หรือถูกแนะนำ',
           'แหล่งข้อมูลและคำตอบอาจต่างกันระหว่าง ChatGPT, Gemini, Perplexity และ Google เพราะระบบ retrieval และการสร้างคำตอบไม่เหมือนกัน',
@@ -563,7 +600,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="ธุรกิจแบบไหนควรให้ GEO เป็น Priority">
+      <ArticleSection id="geo-priority" title="ธุรกิจแบบไหนควรให้ GEO เป็น Priority">
         <P>
           GEO เหมาะกับธุรกิจที่ลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ เช่น B2B Service, SaaS,
           E-commerce, Education, Travel, Real Estate และ Local Service แต่ลำดับงานควรขึ้นกับสถานะเว็บไซต์จริง
@@ -598,7 +635,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="GEO เชื่อมกับบริการของ Saralak Search อย่างไร">
+      <ArticleSection id="geo-service" title="GEO เชื่อมกับบริการของ Saralak Search อย่างไร">
         <P>
           หากเว็บไซต์มี Organic Visibility อยู่แล้ว แต่ยังไม่ชัดว่า Content, Topic Ownership, Entity และ Internal Link
           พร้อมต่อ Search และ AI Search แค่ไหน การตรวจจุดเหล่านี้ก่อนจะช่วยให้เห็นว่าควรแก้ฐาน SEO
@@ -614,7 +651,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="สรุป GEO คืออะไร">
+      <ArticleSection id="geo-summary" title="สรุป GEO คืออะไร">
         <P>
           GEO คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับโลกที่ Search และ Generative AI ทำงานร่วมกันมากขึ้น
           เป้าหมายคือเพิ่มโอกาสให้ข้อมูลถูกค้นพบ เข้าใจ นำไปใช้ กล่าวถึง หรืออ้างอิงในคำตอบ AI
@@ -635,7 +672,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         'Saralak Search client case: non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview observation and screenshot checked September 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: GEO และ AI Search" />
+      <ArticleFAQ id="geo-faq" post={post} heading="FAQ: GEO และ AI Search" />
     </article>
   )
 }
