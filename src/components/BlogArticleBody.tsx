@@ -16,8 +16,8 @@ type SectionProps = {
 
 function ArticleSection({ title, children, id }: SectionProps) {
   return (
-    <section id={id}>
-      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+    <section>
+      <h2 id={id} className={`break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl ${id ? 'scroll-mt-24' : ''}`}>
         {title}
       </h2>
       <div className="mt-4 grid gap-5">{children}</div>
@@ -58,7 +58,7 @@ function P({ children }: { children: ReactNode }) {
 function AISummary({ items }: { items: string[] }) {
   return (
     <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
-      <h2 className="text-xl font-semibold text-neutral-950">AI Summary</h2>
+      <h2 id="ai-overview-summary" className="scroll-mt-24 text-xl font-semibold text-neutral-950">สรุป AI Overview ใน 30 วินาที</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
           <li key={item} className="thai-readable flex gap-3 text-neutral-700">
@@ -73,6 +73,57 @@ function AISummary({ items }: { items: string[] }) {
         ))}
       </ul>
     </section>
+  )
+}
+
+const aiOverviewContents = [
+  { id: 'what-is-ai-overview', label: 'AI Overview คืออะไร' },
+  { id: 'google-ai-overview-guidelines', label: 'Google บอกอะไรเกี่ยวกับการแสดงผลใน AI Overview?' },
+  {
+    id: 'ai-overview-content-tips',
+    label: '9 วิธีทำให้ Content พร้อมสำหรับ AI Overview',
+    children: [
+      { id: 'direct-answer', label: 'ตอบคำถามหลักให้จบในย่อหน้าแรก' },
+      { id: 'search-intent-headings', label: 'ใช้ H2/H3 ให้ตรงกับคำถามและ Search Intent ที่คนค้น' },
+      { id: 'sub-intent', label: 'แตกหลาย Sub-intent ไว้ในหน้าเดียว' },
+      { id: 'entities-and-numbers', label: 'ใช้ Entity และตัวเลขที่เจาะจง' },
+      { id: 'standalone-sections', label: 'เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง' },
+      { id: 'structured-data', label: 'ใช้ Structured Data ให้ตรงกับเนื้อหาที่มีอยู่จริง' },
+      { id: 'problem-to-product', label: 'เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล' },
+      { id: 'internal-links', label: 'ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง' },
+      { id: 'credible-sources', label: 'ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง' },
+    ],
+  },
+  { id: 'ai-overview-case-study', label: 'Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview' },
+  { id: 'business-impact', label: 'ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น' },
+  { id: 'ai-overview-faq', label: 'FAQ: AI Overview คืออะไร' },
+] as const
+
+function ArticleTableOfContents() {
+  return (
+    <nav aria-label="สารบัญบทความ" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
+      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700">
+        {aiOverviewContents.map((item, index) => (
+          <li key={item.id}>
+            <a href={`#${item.id}`} className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
+              {String(index + 1).padStart(2, '0')}. {item.label}
+            </a>
+            {'children' in item ? (
+              <ol className="mt-1 ml-6 grid list-[lower-alpha] gap-1 text-sm leading-6 text-neutral-600">
+                {item.children.map((child) => (
+                  <li key={child.id}>
+                    <a href={`#${child.id}`} className="hover:text-teal-800 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            ) : null}
+          </li>
+        ))}
+      </ol>
+    </nav>
   )
 }
 
@@ -232,10 +283,10 @@ function ComparisonTable() {
   )
 }
 
-function ArticleSubSection({ title, children }: SectionProps) {
+function ArticleSubSection({ title, children, id }: SectionProps) {
   return (
     <div>
-      <h3 className="break-words text-xl font-semibold text-neutral-950">{title}</h3>
+      <h3 id={id} className={`break-words text-xl font-semibold text-neutral-950 ${id ? 'scroll-mt-24' : ''}`}>{title}</h3>
       <div className="mt-3 grid gap-4">{children}</div>
     </div>
   )
@@ -259,7 +310,7 @@ function CheckList({ items }: { items: string[] }) {
   )
 }
 
-function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร' }: { post: BlogPost; heading?: string }) {
+function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร', id }: { post: BlogPost; heading?: string; id?: string }) {
   if (!post.faqs) {
     return null
   }
@@ -267,7 +318,7 @@ function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร' }: { post
   return (
     <section>
       <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">FAQ</p>
-      <h2 className="mt-2 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+      <h2 id={id} className={`mt-2 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl ${id ? 'scroll-mt-24' : ''}`}>
         {heading}
       </h2>
       <div className="mt-5 grid gap-3">
@@ -8390,6 +8441,7 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
 function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
   const nineSteps = [
     {
+      id: 'direct-answer',
       title: '1. ตอบคำถามหลักให้จบในย่อหน้าแรก',
       body: 'เนื้อหาที่ตอบคำถามตรงประเด็นตั้งแต่ต้นช่วยให้ทั้งผู้อ่านและ Search Engine เข้าใจสาระสำคัญของ Section ได้ทันที โดยแต่ละคำตอบควรอ่านและเข้าใจได้โดยไม่ต้องพึ่งบริบทรอบข้าง',
       bullets: [
@@ -8401,6 +8453,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'ในงาน Content ของ Saralak Search เรามักวาง Direct Answer ไว้ใน 1-2 ประโยคแรก แล้วจึงขยายรายละเอียด เพราะช่วยให้แต่ละ Section มีคำตอบหลักที่ชัดและอ่านแยกจากบริบทส่วนอื่นได้',
     },
     {
+      id: 'search-intent-headings',
       title: '2. ใช้ H2/H3 ให้ตรงกับคำถามและ Search Intent ที่คนค้น',
       body: 'หัวข้อควรทำให้เข้าใจได้ทันทีว่า Section กำลังตอบเรื่องอะไร และสอดคล้องกับ Search Intent จริง หัวข้อไม่จำเป็นต้องเป็นประโยคคำถามทุกครั้ง หากชื่อหัวข้อสื่อสารประเด็นได้ชัดเจน',
       bullets: [
@@ -8411,6 +8464,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'เราเริ่มจากคำถามใน Search และมุมมองของผู้อ่าน แล้วตั้งชื่อ H2/H3 ให้สื่อสารหน้าที่ของ Section อย่างตรงไปตรงมา',
     },
     {
+      id: 'sub-intent',
       title: '3. แตกหลาย Sub-intent ไว้ในหน้าเดียว',
       body: 'การครอบคลุมหลาย Sub-intent ที่เกี่ยวข้องในหน้าเดียวทำให้บทความมีคำตอบสำหรับคำถามหลายรูปแบบ เช่น ราคา วิธีเลือก ข้อดีข้อเสีย ตัวอย่าง และการใช้งาน โดยแต่ละ Sub-intent ควรแยกเป็น Section ที่มีคำตอบครบในตัวเอง',
       bullets: [
@@ -8421,6 +8475,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'จำนวน Sub-intent ไม่ควรกำหนดตายตัว หากหัวข้อนั้นมี 4-6 คำถามสำคัญที่เกี่ยวข้องกันจึงครอบคลุมไว้ในหน้าเดียว แต่ไม่ควรเพิ่มหัวข้อเพียงเพื่อให้บทความยาวขึ้น',
     },
     {
+      id: 'entities-and-numbers',
       title: '4. ใช้ Entity และตัวเลขที่เจาะจง',
       body: 'เมื่อ Section มีข้อมูลที่ระบุให้เฉพาะเจาะจงได้ ควรใช้ชื่อ Entity ตัวเลข ตัวอย่าง Comparison หรือข้อมูลจริงแทนคำอธิบายกว้างๆ แต่ไม่ควรสร้างตัวเลขหรือ Entity ขึ้นมาเพียงเพื่อให้เนื้อหาดูมีข้อมูล',
       bullets: [
@@ -8431,6 +8486,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'เราใช้ Specificity เมื่อช่วยให้คำตอบชัดขึ้น ไม่บังคับให้ทุก Section ต้องมี Entity หรือตัวเลข',
     },
     {
+      id: 'standalone-sections',
       title: '5. เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง',
       body: 'ทดสอบด้วยคำถามว่า "ถ้าอ่านเฉพาะ Section นี้ ยังเข้าใจได้ไหมว่ากำลังพูดถึงอะไร" Passage ที่ดีควรมี Subject และคำตอบครบ แม้ถูกอ่านแยกจาก Paragraph ก่อนหน้า',
       bullets: [
@@ -8441,6 +8497,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'ก่อนเผยแพร่บทความ ทีมเราจะสุ่มอ่านแค่ 1 Section แยกออกจากบทความ แล้วเช็คว่ายังเข้าใจครบไหม ถ้าอ่านแล้วงงเพราะขาดบริบท จะแก้ไขก่อนเผยแพร่ทุกครั้ง',
     },
     {
+      id: 'structured-data',
       title: '6. ใช้ Structured Data ให้ตรงกับเนื้อหาที่มีอยู่จริง',
       body: 'Structured Data ช่วยอธิบายประเภทและโครงสร้างข้อมูลบนหน้าให้ Search Engine เข้าใจได้อย่างเป็นระบบ แต่การใส่ Schema ไม่ได้ทำให้หน้าเว็บติด AI Overview โดยอัตโนมัติ',
       bullets: [
@@ -8451,6 +8508,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'Rich Results Test ใช้ตรวจ Structured Data และ eligibility สำหรับ supported rich results ไม่ใช่เครื่องมือยืนยันว่าจะติด AI Overview',
     },
     {
+      id: 'problem-to-product',
       title: '7. เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล',
       body: 'การเชื่อมปัญหาไปสู่สินค้าไม่ใช่การยัด CTA เข้าไป แต่คือการอธิบายบริบทและความต้องการก่อน แล้วเชื่อม Solution หรือ Product ที่ตอบโจทย์อย่างเป็นธรรมชาติ',
       bullets: [
@@ -8461,6 +8519,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'Framework ที่เราใช้เมื่อเหมาะกับ Intent คือ Problem → Requirement → Solution → Product โดยไม่จำเป็นต้องยัด Product เข้าไปในทุก Section',
     },
     {
+      id: 'internal-links',
       title: '8. ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง',
       body: 'Internal Link ช่วยเชื่อมเส้นทางระหว่าง Informational Content กับหน้าสินค้า บริการ Category หรือบทความที่เกี่ยวข้อง พร้อมช่วยให้ผู้ใช้และ Search Engine สำรวจเนื้อหาที่สัมพันธ์กันได้ง่ายขึ้น',
       bullets: [
@@ -8471,6 +8530,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       recommendation: 'ทีมเราวาง Internal Link Map ก่อนเขียนบทความทุกครั้ง กำหนดไว้ล่วงหน้าว่าแต่ละ Section จะลิงก์ไปหน้าไหน แทนที่จะใส่ลิงก์ทีหลังแบบสุ่ม',
     },
     {
+      id: 'credible-sources',
       title: '9. ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง',
       body: 'ข้อมูลที่ตรวจสอบย้อนกลับได้ช่วยเพิ่มความน่าเชื่อถือและลดความเสี่ยงจากการเผยแพร่ข้อมูลผิด โดยเฉพาะบทความที่มีตัวเลข สถิติ กฎหมาย ราคา หรือข้อกล่าวอ้างเชิงข้อเท็จจริง',
       bullets: [
@@ -8485,8 +8545,9 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      <ArticleTableOfContents />
 
-      <ArticleSection title="AI Overview คืออะไร">
+      <ArticleSection id="what-is-ai-overview" title="AI Overview คืออะไร">
         <P>
           AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา โดยรวบรวมและสรุปข้อมูลที่เกี่ยวข้อง
           พร้อมแสดงลิงก์ไปยังแหล่งข้อมูลที่ใช้ประกอบคำตอบ
@@ -8505,7 +8566,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="Google บอกอะไรเกี่ยวกับการแสดงผลใน AI Overview?">
+      <ArticleSection id="google-ai-overview-guidelines" title="Google บอกอะไรเกี่ยวกับการแสดงผลใน AI Overview?">
         <P>
           Google ระบุอย่างเป็นทางการว่าไม่มีวิธีหรือ Markup พิเศษที่รับประกันการแสดงผลใน AI Overview และไม่จำเป็นต้องสร้างไฟล์หรือ Schema พิเศษเพื่อ “สมัคร” เข้า AI Overview
         </P>
@@ -8529,15 +8590,15 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="9 วิธีทำให้ Content พร้อมสำหรับ AI Overview">
+      <ArticleSection id="ai-overview-content-tips" title="9 วิธีทำให้ Content พร้อมสำหรับ AI Overview">
         <P>เรียงจากพื้นฐานของการเขียนเนื้อหาไปจนถึงการเชื่อมโยงสู่สินค้า — ไม่มีวิธีใดรับประกันการแสดงผลหรือการถูกอ้างอิงใน AI Overview</P>
         <div className="grid gap-8">
           {nineSteps.map((step) => (
-            <ArticleSubSection key={step.title} title={step.title}>
+            <ArticleSubSection key={step.title} id={step.id} title={step.title}>
               <P>{step.body}</P>
               <CheckList items={step.bullets} />
               <div className="rounded-lg border-l-4 border-teal-600 bg-teal-50 px-4 py-3">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-teal-800">Saralak Search แนะนำ</h4>
+                <p className="text-xs font-bold uppercase tracking-wide text-teal-800">Saralak Search แนะนำ</p>
                 <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.recommendation}</p>
               </div>
             </ArticleSubSection>
@@ -8545,7 +8606,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview">
+      <ArticleSection id="ai-overview-case-study" title="Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview">
         <P>
           บทความที่ Saralak Search วางกลยุทธ์และพัฒนาให้ลูกค้าถูก Google AI Overview อ้างอิงบนคำค้น{' '}
           <strong>"ขายอะไรดีตลาดนัด"</strong> เป็นตัวอย่างของคำค้นแบบ Non-brand ที่ไม่มีคำว่าแบรนด์ บรรจุภัณฑ์ หรือ Packaging อยู่ใน Query
@@ -8604,7 +8665,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </div>
       </div>
 
-      <ArticleSection title="ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น">
+      <ArticleSection id="business-impact" title="ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น">
         <P>
           คำถามหนึ่งที่มักเกิดขึ้นเมื่อวางกลยุทธ์ GEO คือ ต้องเริ่มจากคีย์เวิร์ดที่เกี่ยวกับแบรนด์หรือสินค้าหรือไม่
           แต่เคสนี้ชี้ให้เห็นว่าจุดเริ่มต้นไม่จำเป็นต้องเป็นคำถามว่า "จะเขียนบทความเกี่ยวกับสินค้าเราอะไรดี"
@@ -8630,7 +8691,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         'Saralak Search client campaign data (anonymised), checked September 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: AI Overview คืออะไร" />
+      <ArticleFAQ id="ai-overview-faq" post={post} heading="FAQ: AI Overview คืออะไร" />
     </article>
   )
 }
