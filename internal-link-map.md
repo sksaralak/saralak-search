@@ -113,7 +113,7 @@ AEO Checklist
 บริการ SEO
 → /services/seo
 
-บริการ GEO
+รับทำ GEO
 → /services/geo
 
 Local SEO
@@ -383,7 +383,7 @@ Preferred internal links:
 "วิธีทำ GEO"
 → /blog/how-to-do-geo
 
-"บริการ GEO"
+"รับทำ GEO"
 → /services/geo
 
 "SEO Case Studies"
@@ -395,7 +395,7 @@ or
 Primary commercial destination:
 
 ```text
-บริการ GEO
+รับทำ GEO
 → /services/geo
 ```
 
@@ -647,7 +647,7 @@ AI Overview คืออะไร
 วิธีทำ GEO
 → /blog/how-to-do-geo
 
-บริการ GEO
+รับทำ GEO
 → /services/geo
 
 บริการ SEO

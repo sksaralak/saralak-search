@@ -644,7 +644,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           งานเชิง implementation สามารถดูรายละเอียดต่อที่{' '}
           <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
-            บริการ GEO
+            รับทำ GEO
           </Link>
           {' '}ส่วนเว็บไซต์ที่ยังไม่แน่ใจว่าปัญหาหลักอยู่ตรง Search, Content หรือ AI visibility
           สามารถเริ่มจากการ Audit เพื่อจัดลำดับงานก่อนลงทุน
@@ -8740,7 +8740,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           หากต้องการต่อยอดจาก AI Overview ไปสู่ AI Search ในภาพกว้าง ควรทำความเข้าใจว่า
           {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
           {' '}จากนั้นจึงเชื่อม Content ไปยัง
-          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ GEO</Link>
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
           {' '}เมื่อธุรกิจต้องการลงมือทำเชิงกลยุทธ์ และดู
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
           {' '}เพื่อดูตัวอย่างผลลัพธ์จากงานจริง
