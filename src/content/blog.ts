@@ -1476,7 +1476,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'ทำ GEO ที่ไหนดี? เทียบ 6 GEO Agency ไทย อัปเดต 2026 | Saralak Search',
+    metaTitle: 'ทำ GEO ที่ไหนดี? เทียบ 6 GEO Agency ไทย ปี 2026 | Saralak Search',
     metaDescription:
       'ทำ GEO ที่ไหนดี? เช็กเกณฑ์เลือก GEO Agency เปรียบเทียบ 6 ผู้ให้บริการในไทยจากหน้าบริการสาธารณะ พร้อมวิธีวัดผล ข้อจำกัด และเคสจริง อัปเดต ก.ย. 2026',
     heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
@@ -1491,7 +1491,7 @@ export const blogPosts: BlogPost[] = [
       'ไม่มี GEO Agency ที่ควรรับประกัน AI citation หรืออันดับ เพราะแหล่งข้อมูล อินเทอร์เฟซ และคำตอบของแต่ละแพลตฟอร์มเปลี่ยนได้ และ Visibility ไม่ได้แปลว่าจะเกิด Click หรือ Conversion เสมอไป',
     ],
     faqs: geoAgencyFaqs,
-    includeFaqSchema: false,
+    includeFaqSchema: true,
     bodyVariant: 'geo-agency',
     cta: {
       headline: 'ยังไม่ชัดว่าควรจ้าง GEO Agency หรือแก้ SEO ก่อน?',
