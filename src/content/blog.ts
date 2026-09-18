@@ -1423,7 +1423,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO คืออะไร? วิธีทำ GEO สำหรับ Google และ AI Search',
+    metaTitle: 'GEO คืออะไร? Generative Engine Optimization และ AI Search',
     metaDescription:
       'GEO คืออะไร ต่างจาก SEO และ AEO อย่างไร พร้อม Google guidance ปี 2026, GEO Framework ของ Saralak Search, เคส AI Overview จริง, KPI และวิธีเริ่มทำ GEO',
     heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
