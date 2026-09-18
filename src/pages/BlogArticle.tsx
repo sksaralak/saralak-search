@@ -80,7 +80,7 @@ export default function BlogArticle() {
                 cssSelector: ['h1', 'h2', '[data-speakable]'],
               },
             },
-            ...(post.faqs && post.faqs.length > 0 ? [faqJsonLd(post.faqs)] : []),
+            ...(post.includeFaqSchema !== false && post.faqs && post.faqs.length > 0 ? [faqJsonLd(post.faqs)] : []),
             {
               '@type': 'BreadcrumbList',
               itemListElement: [
