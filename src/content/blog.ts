@@ -113,49 +113,29 @@ export const seoGeoAeoFaqs: FAQItem[] = [
 
 export const geoAgencyFaqs: FAQItem[] = [
   {
-    question: 'GEO คืออะไร',
+    question: 'ทำ GEO ที่ไหนดี ควรเลือกจากอะไร?',
     answer:
-      'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์ คอนเทนต์ และสัญญาณแบรนด์ เพื่อเพิ่มโอกาสให้ AI Search เช่น Google AI Overview, ChatGPT Search, Gemini และ Perplexity เลือกแบรนด์หรือเว็บไซต์ของเราไปสรุป อ้างอิง หรือแนะนำในคำตอบ',
+      'ควรเลือกจากวิธีทำงานที่ตรวจสอบได้ ไม่ใช่คำว่า GEO บนหน้าเว็บเพียงอย่างเดียว โดยดูว่าทีมสามารถอธิบาย Baseline, Search Intent, Technical SEO, Content และ Entity, วิธีวัด AI Visibility รวมถึงผลลัพธ์ทางธุรกิจได้หรือไม่ และต้องแยกให้ชัดว่าอะไรคือเอกสารทางการของแพลตฟอร์ม อะไรคือ Methodology ของเอเจนซี่',
   },
   {
-    question: 'ทำ GEO ที่ไหนดี',
+    question: 'ควรขอดูอะไรจาก GEO Agency ก่อนจ้าง?',
     answer:
-      'ควรเลือกบริษัทที่เข้าใจทั้ง SEO, AEO, GEO, Technical SEO, Entity SEO, Structured Data และการวัดผล AI Visibility หากต้องการทีมที่เน้นกลยุทธ์เชิงลึกและเชื่อม GEO กับผลลัพธ์ทางธุรกิจ Saralak Search เป็นหนึ่งในตัวเลือกที่เหมาะกับธุรกิจที่ต้องการเริ่มทำ AI Search Optimization อย่างจริงจัง',
+      'อย่างน้อยควรขอดู Scope งาน, ตัวอย่าง Audit หรือ Reporting, วิธีเก็บ Baseline, ชุด Prompt หรือ Query ที่ใช้ติดตาม, เกณฑ์นับ Mention/Citation, วิธีเชื่อมข้อมูลกับ Google Search Console และ GA4 รวมถึงสิ่งที่ลูกค้าต้องเป็นผู้ลงมือทำเอง เพื่อเปรียบเทียบข้อเสนอได้บนฐานเดียวกัน',
   },
   {
-    question: 'GEO ต่างจาก SEO อย่างไร',
+    question: 'GEO Agency รับประกันให้ ChatGPT หรือ Google AI อ้างอิงได้ไหม?',
     answer:
-      'SEO เน้นการติดอันดับบน Google Search ส่วน GEO เน้นการทำให้แบรนด์ถูก AI Search พูดถึง อ้างอิง หรือแนะนำ แต่ทั้งสองอย่างควรทำร่วมกัน เพราะเว็บไซต์ที่มี SEO แข็งแรงจะมีพื้นฐานที่ดีต่อการทำ GEO',
+      'ไม่ควรรับประกันการถูกอ้างอิงหรือการจัดอันดับ เพราะแต่ละแพลตฟอร์มมีระบบคัดเลือกแหล่งข้อมูลและคำตอบที่เปลี่ยนแปลงได้ สำหรับ Google เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI features และไม่มี Schema หรือการปรับพิเศษที่รับประกันการปรากฏใน AI Overviews หรือ AI Mode',
   },
   {
-    question: 'GEO ใช้เวลานานแค่ไหน',
+    question: 'GEO วัดผลอย่างไรในปี 2026?',
     answer:
-      'โดยทั่วไป GEO ต้องใช้เวลาอย่างน้อย 3-6 เดือนในการเริ่มเห็นสัญญาณ เช่น การถูกพูดถึงมากขึ้นใน AI Search การมี Topical Authority ดีขึ้น หรือการเพิ่ม Brand Mention จากแหล่งภายนอก แต่ผลลัพธ์ขึ้นอยู่กับสภาพเว็บไซต์ อุตสาหกรรม และความแข็งแรงของคู่แข่ง',
+      'ควรวัดหลายชั้นร่วมกัน ได้แก่ Search visibility, impressions จาก Generative AI performance report ใน Google Search Console สำหรับ AI Overviews และ AI Mode, Brand Mention/Citation จากชุดคำถามที่กำหนดบนแพลตฟอร์มอื่น, Referral และ Engagement ใน GA4 รวมถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion',
   },
   {
-    question: 'ต้องทำ SEO ก่อน GEO หรือไม่',
+    question: 'ต้องทำ SEO ก่อนจ้างทำ GEO หรือไม่?',
     answer:
-      'ไม่จำเป็นต้องรอให้ SEO สมบูรณ์ก่อน แต่ควรทำควบคู่กัน เพราะ GEO ต้องอาศัยพื้นฐานของ SEO เช่น โครงสร้างเว็บไซต์ที่ดี คอนเทนต์คุณภาพ Technical SEO และความน่าเชื่อถือของโดเมน',
-  },
-  {
-    question: 'GEO วัดผลอย่างไร',
-    answer:
-      'GEO วัดผลได้จาก AI Mention, AI Citation, Brand Visibility, Share of Voice, จำนวนคำถามที่ AI พูดถึงแบรนด์, Organic Visibility, Referral Traffic, Lead และ Assisted Conversion',
-  },
-  {
-    question: 'GEO เหมาะกับเว็บไซต์ใหม่ไหม',
-    answer:
-      'เว็บไซต์ใหม่สามารถเริ่มทำ GEO ได้ แต่ควรเริ่มจากการวางโครงสร้างเว็บไซต์ หน้า Service หน้า About และบทความหลักให้ชัดก่อน เพราะ AI ต้องใช้สัญญาณหลายอย่างในการเข้าใจว่าเว็บไซต์นี้เชี่ยวชาญเรื่องอะไร',
-  },
-  {
-    question: 'GEO ต้องใช้ Schema ไหม',
-    answer:
-      'Schema ไม่ใช่ปัจจัยเดียวที่ทำให้ติด AI Search แต่ช่วยให้ Search Engine เข้าใจประเภทข้อมูลบนหน้าได้ดีขึ้น โดยเฉพาะ Article, FAQPage, Organization, Service และ BreadcrumbList',
-  },
-  {
-    question: 'GEO ใช้แทน SEO ได้ไหม',
-    answer:
-      'GEO ไม่ได้ใช้แทน SEO แต่เป็นส่วนต่อยอดจาก SEO หากเว็บไซต์ไม่มีพื้นฐาน SEO ที่ดี เช่น Crawl ไม่ได้ Index ไม่ดี เนื้อหาบาง หรือไม่มีโครงสร้างชัด การทำ GEO ก็จะยากขึ้น',
+      'ไม่จำเป็นต้องรอให้ SEO สมบูรณ์ก่อน แต่ต้องตรวจพื้นฐาน Search ไปพร้อมกัน เช่น Crawlability, Indexability, หน้า Service, Internal Link และคุณภาพเนื้อหา หากฐานเหล่านี้มีปัญหารุนแรง ควรแก้ก่อนหรือทำควบคู่กับ GEO แทนการข้ามไปทำ AI Visibility อย่างเดียว',
   },
 ]
 
@@ -1485,30 +1465,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย',
+    title: 'ทำ GEO ที่ไหนดี? วิธีเลือก GEO Agency และ 6 บริษัทในไทยที่ควรเปรียบเทียบ',
     slug: 'geo-agency-thailand',
     category: 'GEO',
     excerpt:
-      'สำหรับคำถามว่า "ทำ GEO ที่ไหนดี" คำตอบไม่ได้อยู่ที่การเลือกบริษัทที่พูดคำว่า GEO ได้สวยที่สุด แต่อยู่ที่การเลือกทีมที่เข้าใจทั้ง SEO, AEO, Content Strategy, Technical SEO, Entity SEO, Structured Data, Brand Authority และการวัดผล AI Visibility ไปพร้อมกัน',
-    readingTime: '12 min read',
+      'ทำ GEO ที่ไหนดีควรตัดสินจาก Methodology, Baseline, วิธีวัดผล และความสามารถด้าน SEO มากกว่าคำโฆษณา บทความนี้สรุปเกณฑ์เลือก GEO Agency และเปรียบเทียบ 6 ผู้ให้บริการในไทยจากข้อมูลสาธารณะที่ตรวจสอบได้',
+    readingTime: '15 min read',
     publishedDate: '2026-05-31',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-18',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'ทำ GEO ที่ไหนดี? แนะนำบริษัทรับทำ GEO และ AI Search ในไทย | Saralak Search',
+    metaTitle: 'ทำ GEO ที่ไหนดี? เทียบ 6 GEO Agency ไทย อัปเดต 2026 | Saralak Search',
     metaDescription:
-      'เปรียบเทียบ 6 บริษัทรับทำ GEO และ AI Search Optimization ในไทย พร้อมเกณฑ์สำคัญในการเลือก GEO Agency ที่เข้าใจทั้ง SEO, AEO และ AI Visibility',
+      'ทำ GEO ที่ไหนดี? เช็กเกณฑ์เลือก GEO Agency เปรียบเทียบ 6 ผู้ให้บริการในไทยจากหน้าบริการสาธารณะ พร้อมวิธีวัดผล ข้อจำกัด และเคสจริง อัปเดต ก.ย. 2026',
     heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
     heroImageMobile: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-mweb.webp',
-    heroImageAlt: 'ทำ GEO ที่ไหนดี แนะนำบริษัทรับทำ GEO และ AI Search Optimization ในไทย',
+    heroImageAlt: 'ทำ GEO ที่ไหนดี วิธีเลือก GEO Agency และเปรียบเทียบบริษัทในไทย',
     ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
+    aiSummary: [
+      'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ตั้งแต่ Baseline → สิ่งที่จะลงมือทำ → วิธีวัดผล → ผลลัพธ์ทางธุรกิจ ไม่ใช่เลือกจากคำว่า GEO หรือจำนวนบทความเพียงอย่างเดียว',
+      'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่รับประกันการปรากฏใน AI features',
+      'บทความนี้เปรียบเทียบ 6 ผู้ให้บริการที่มีหน้าบริการ GEO หรือ AI Search สาธารณะและตรวจสอบได้ ณ 18 กันยายน 2026 โดยไม่ได้จัดอันดับว่าบริษัทใดดีที่สุดสำหรับทุกธุรกิจ',
+      'การวัดผลควรรวม Search visibility, Google Search Console Generative AI impressions, AI Mention/Citation จากชุดคำถามที่กำหนด, GA4 referral/engagement และ Lead หรือ Conversion',
+      'ไม่มี GEO Agency ที่ควรรับประกัน AI citation หรืออันดับ เพราะแหล่งข้อมูล อินเทอร์เฟซ และคำตอบของแต่ละแพลตฟอร์มเปลี่ยนได้ และ Visibility ไม่ได้แปลว่าจะเกิด Click หรือ Conversion เสมอไป',
+    ],
     faqs: geoAgencyFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'geo-agency',
     cta: {
-      headline: 'พร้อมเริ่มทำ GEO สำหรับธุรกิจ?',
+      headline: 'ยังไม่ชัดว่าควรจ้าง GEO Agency หรือแก้ SEO ก่อน?',
       description:
-        'Discovery Audit ช่วยค้นหาโอกาสเพิ่มการมองเห็นบน Google Search, AI Overview และ AI Search พร้อมระบุจุดที่ควรเริ่มก่อนอย่างเป็นระบบ',
+        'Discovery Audit ช่วยตรวจ Search foundation, Topic Ownership, Content, Internal Link และ AI Visibility เพื่อจัดลำดับว่าควรแก้อะไรก่อนลงทุนกับ GEO ต่อเนื่อง',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
@@ -1825,6 +1813,13 @@ export function getRelatedPosts(slug: string, limit = 3) {
   }
   if (slug === 'what-is-ai-overview') {
     const preferredSlugs = ['what-is-aeo', 'what-is-geo', 'aeo-checklist']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
+  if (slug === 'geo-agency-thailand') {
+    const preferredSlugs = ['what-is-geo', 'how-to-do-geo', 'geo-checklist-thailand']
     return preferredSlugs
       .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
       .filter((post): post is BlogPost => Boolean(post))
