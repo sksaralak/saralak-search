@@ -311,32 +311,32 @@ export const geoFaqs: FAQItem[] = [
   {
     question: 'GEO ต่างจาก SEO อย่างไร?',
     answer:
-      'SEO ช่วยให้เว็บไซต์ติดอันดับบน Google Search ส่วน GEO (Generative Engine Optimization) ปรับ Content และ Brand Signals เพื่อให้ AI อย่าง ChatGPT, Gemini และ Perplexity เข้าใจและแนะนำแบรนด์คุณ',
+      'SEO เน้นการค้นพบและการมองเห็นใน Search ส่วน GEO เพิ่มมุมของ Generative AI และ AI Search เช่น Brand Mention, Citation, Source Appearance และการวัด Visibility บนแพลตฟอร์มต่าง ๆ โดยยังต้องอาศัยพื้นฐาน SEO ที่ดี',
   },
   {
     question: 'ทำ GEO โดยไม่มี SEO ได้ไหม?',
     answer:
-      'ทำได้แต่ได้ผลน้อย GEO ทำงานได้ดีที่สุดเมื่อมีฐาน SEO Content ที่แข็งแรง เพราะ AI อ้างอิงข้อมูลจากเว็บที่น่าเชื่อถือและค้นพบได้ง่าย',
+      'ทำได้บางส่วน เช่น การตรวจ AI Visibility หรือปรับข้อมูลแบรนด์ แต่หากเว็บไซต์ยังมีปัญหา Crawl, Index, Content Quality หรือ Search Intent ควรแก้พื้นฐาน SEO ก่อน เพราะสำหรับ Google Generative AI Search ยังใช้ Search index และ core Search systems เป็นฐาน',
   },
   {
     question: 'วัดผล GEO อย่างไร?',
     answer:
-      'วัดจากการ Prompt Testing ทดสอบ 10–15 คำถามบน ChatGPT, Gemini, Perplexity และ Google AI Overview ทุกเดือน เปรียบเทียบว่าแบรนด์ถูกพูดถึงเพิ่มขึ้นหรือไม่',
+      'ควรวัดหลายชั้นร่วมกัน เช่น Organic Search Visibility, AI Search Visibility, Brand Mentions, Citation หรือ Source Appearance, Non-brand Query Coverage, Manual Prompt Tracking และ Conversion ไม่ควรสรุปผลจาก Prompt เดียวหรือ Platform เดียว',
   },
   {
     question: 'ผลของ GEO จะเห็นเร็วแค่ไหน?',
     answer:
-      'บางแพลตฟอร์มเช่น Google AI Overview เห็นผลได้ใน 4–8 สัปดาห์หากเนื้อหาแข็งแกร่งพอ ส่วน ChatGPT และ Gemini ใช้เวลา 2–4 เดือน เพราะ AI อัพเดทฐานข้อมูลต่างกัน',
+      'ไม่มีระยะเวลาที่รับประกันได้ เพราะแต่ละแพลตฟอร์ม Query และเว็บไซต์มีเงื่อนไขต่างกัน เราจึงติดตามผลเป็นรอบและเปรียบเทียบ Query Set เดิมเพื่อดูแนวโน้มของ Mention, Citation และ Search Visibility แทนการกำหนดเวลาตายตัว',
   },
   {
-    question: 'ต้องเพิ่ม GEO Add-on กับ Package ไหนถึงได้ผลดี?',
+    question: 'ต้องมี FAQ Schema หรือ llms.txt เพื่อทำ GEO ไหม?',
     answer:
-      'ได้ผลดีกับทุก Package แต่แนะนำเพิ่มกับ SEO Growth หรือ Pro ซึ่งมี Content 2–4 บทความ/เดือน เพราะมีฐาน Content ที่แข็งแรงพอสำหรับ GEO ทำงานได้เต็มศักยภาพ',
+      'ไม่จำเป็นสำหรับ Google Generative AI Search Google ระบุว่าไม่มี special AI schema หรือ markup ที่ต้องใช้ และ Google Search ไม่ใช้ llms.txt เป็นสัญญาณพิเศษ Structured Data ยังควรใช้ตามวัตถุประสงค์ SEO ปกติเมื่อสอดคล้องกับเนื้อหาที่มองเห็น',
   },
   {
     question: 'รับทำ GEO ที่ไหนดี?',
     answer:
-      'เลือกทีมที่เข้าใจทั้ง SEO และ GEO ควบคู่กัน เพราะ GEO ทำงานได้ผลดีที่สุดเมื่อมีฐาน Content และ Technical SEO ที่แข็งแรงรองรับอยู่แล้ว ไม่ใช่บริการที่แยกทำเดี่ยว ๆ',
+      'ควรเลือกทีมที่อธิบายได้ว่าตรวจ Search Foundation, Content, Entity, Evidence และ AI Visibility อย่างไร พร้อมแยกสิ่งที่เป็นข้อเท็จจริงจากแพลตฟอร์มออกจาก Methodology ของทีม และไม่รับประกันว่า AI จะเลือกหรืออ้างอิงเว็บไซต์',
   },
 ]
 
