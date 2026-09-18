@@ -55,10 +55,10 @@ function P({ children }: { children: ReactNode }) {
   )
 }
 
-function AISummary({ items, heading = 'สรุป AI Overview ใน 30 วินาที' }: { items: string[]; heading?: string }) {
+function AISummary({ items, heading = 'สรุป AI Overview ใน 30 วินาที', id = 'ai-overview-summary' }: { items: string[]; heading?: string; id?: string }) {
   return (
     <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
-      <h2 id="ai-overview-summary" className="scroll-mt-24 text-xl font-semibold text-neutral-950">{heading}</h2>
+      <h2 id={id} className="scroll-mt-24 text-xl font-semibold text-neutral-950">{heading}</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
           <li key={item} className="thai-readable flex gap-3 text-neutral-700">
@@ -260,8 +260,9 @@ function ComparisonTable() {
         GEO ต่างจาก SEO และ AEO อย่างไร
       </h2>
       <p className="thai-readable mt-4 text-lg leading-8 text-neutral-700">
-        ทั้งสามแนวทางทับซ้อนกันบางส่วน แต่ไม่ได้มีระบบจัดอันดับเดียวกัน GEO จึงไม่ควรถูกมองว่าเป็นการแทน SEO
-        หรือเป็นชุดเทคนิคที่ใช้ได้เหมือนกันทุก AI Platform
+        GEO ต่างจาก SEO และ AEO ที่จุดโฟกัสของการมองเห็น: SEO เน้นการค้นพบและอันดับใน Search,
+        AEO เน้นการจัดคำตอบให้ชัดสำหรับ Answer Surfaces, ส่วน GEO ติดตามการกล่าวถึง การอ้างอิง และการนำข้อมูลไปใช้ใน Generative AI
+        ทั้งสามแนวทางใช้พื้นฐานร่วมกันหลายส่วน แต่ไม่ได้มีระบบจัดอันดับหรือ KPI เดียวกัน และ GEO ไม่ได้แทน SEO
       </p>
       <div aria-hidden="true" className="mt-5 grid gap-3 lg:hidden">
         {rows.map((row) => (
@@ -308,11 +309,6 @@ function ComparisonTable() {
             ))}
           </tbody>
         </table>
-      </div>
-      <div className="mt-5">
-        <ReadMoreLinks items={[
-          { to: '/blog/seo-geo-aeo', label: 'เปรียบเทียบ SEO GEO AEO แบบละเอียด' },
-        ]} />
       </div>
     </section>
   )
@@ -438,7 +434,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป GEO ใน 30 วินาที" /> : null}
+      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป GEO ใน 30 วินาที" id="geo-summary-30-seconds" /> : null}
       <GeoTableOfContents />
 
       <ArticleSection id="geo-what-is" title="GEO คืออะไร">
