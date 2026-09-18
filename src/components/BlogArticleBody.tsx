@@ -412,7 +412,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
   const geoFramework = [
     {
       title: 'Answer',
-      body: 'ตอบคำถามหลักให้ตรงใน 1–2 ประโยคแรกของ Section เพื่อให้ผู้อ่านเข้าใจประเด็นทันที และลดการพึ่งบริบทจากย่อหน้าก่อนหน้า',
+      body: 'ตอบคำถามหลักให้ตรงใน 1–2 ประโยคแรกของแต่ละส่วน เพื่อให้ผู้อ่านเข้าใจประเด็นทันที และลดการพึ่งบริบทจากย่อหน้าก่อนหน้า',
     },
     {
       title: 'Evidence',
@@ -428,7 +428,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
     },
     {
       title: 'Retrieval',
-      body: 'ออกแบบแต่ละ Section ให้มี Subject + Answer + Evidence ครบพอที่จะอ่านแยกได้ แนวทางนี้ช่วยให้เนื้อหาเป็น passage ที่ชัด แต่ไม่ใช่สูตรรับประกัน Citation',
+      body: 'ออกแบบแต่ละส่วนให้มี Subject + Answer + Evidence ครบพอที่จะอ่านแยกได้ แนวทางนี้ช่วยให้แต่ละช่วงเนื้อหาชัดขึ้น แต่ไม่ใช่สูตรรับประกัน Citation',
     },
   ]
 
@@ -506,7 +506,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           วิธีทำ GEO ควรเริ่มจากแก้ฐาน Search ก่อน แล้วจึงจัด Topic Ownership, Entity, Evidence และ Internal Link
           เพื่อให้แต่ละ URL มีหน้าที่ชัด จากนั้นค่อยทดสอบการปรากฏใน AI Search และวัดผลเป็นรอบ
-          หน้า Pillar นี้อธิบายภาพรวม ส่วน implementation แบบทีละขั้นอยู่ที่
+          บทความนี้อธิบายภาพรวม ส่วนขั้นตอนลงมือทำแบบทีละขั้นอยู่ที่
           {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
           {' '}โดยเฉพาะ
         </P>
@@ -516,7 +516,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             ['2. Topic Ownership', 'กำหนด Main Intent ของแต่ละ URL เช่น “GEO คืออะไร” มี owner หนึ่งหน้า และ “วิธีทำ GEO” มี owner อีกหน้า เพื่อลด Cannibalization'],
             ['3. Evidence & Entity', 'เติมข้อมูลจริง ตัวเลข ตัวอย่าง ผู้เขียน แบรนด์ บริการ และแหล่งอ้างอิงที่ช่วยให้ประโยคมี Subject และตรวจสอบย้อนกลับได้'],
             ['4. Content Path', 'วางเส้นทาง Definition → Comparison → How-to → Checklist → Proof → Service ให้ Internal Link ส่งความเกี่ยวข้องไปยัง LDP ที่ถูกต้อง'],
-            ['5. Measurement Loop', 'กำหนด Query Set และ KPI ก่อนแก้ Content แล้ว Track ซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
+            ['5. Measurement Loop', 'กำหนดชุดคำถามและ KPI ก่อนแก้ Content แล้วติดตามซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -527,7 +527,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           สำหรับ QA หลังแก้เว็บไซต์ สามารถใช้
           {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
-          {' '}เพื่อตรวจ implementation เป็นรายข้อ โดยไม่ใช้ Checklist เป็นตัวแทนของการคิด Search Intent
+          {' '}เพื่อตรวจเว็บไซต์เป็นรายข้อ โดยไม่ใช้ Checklist เป็นตัวแทนของการคิด Search Intent
         </P>
       </ArticleSection>
 
@@ -535,7 +535,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           Saralak Search ใช้กรอบ <strong>Answer → Evidence → Entity → Context → Retrieval</strong> เพื่อรีวิว Content สำหรับ GEO
           Framework นี้เป็นวิธีทำงานของเรา ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation
-          เป้าหมายคือทำให้แต่ละ Section ตอบคำถามได้ตรง มีหลักฐาน มี Subject ชัด และยังเข้าใจได้เมื่อถูกอ่านแยกจากส่วนอื่น
+          เป้าหมายคือทำให้แต่ละส่วนตอบคำถามได้ตรง มีหลักฐาน มี Subject ชัด และยังเข้าใจได้เมื่อถูกอ่านแยกจากส่วนอื่น
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {geoFramework.map((item) => (
@@ -548,8 +548,8 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างก่อน Optimize: “ควรมี Content ที่มีคุณภาพและใส่ข้อมูลให้ครบ”
           เป็นประโยคที่กว้างและไม่มี Entity หรือ Evidence ชัดเจน
-          หลัง Optimize: “บทความ ‘ขายอะไรดีตลาดนัด’ แยกคำตอบเรื่องเมนู ต้นทุน ราคา 19/29/39 บาท และ Packaging เป็นคนละ Passage”
-          ทำให้เห็น Subject, ตัวเลข และ Context ที่ตรวจสอบได้มากกว่า
+          หลัง Optimize: “บทความ ‘ขายอะไรดีตลาดนัด’ แยกคำตอบเรื่องเมนู ต้นทุน ราคา 19/29/39 บาท และ Packaging เป็นคนละช่วงเนื้อหา”
+          ทำให้เห็น Subject, ตัวเลข และบริบทที่ตรวจสอบได้มากกว่า
         </P>
       </ArticleSection>
 
@@ -584,17 +584,17 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-case-study" title="ตัวอย่าง GEO จากงานจริง: ทำไมบทความหนึ่งถูก AI Overview อ้างอิงหลายจุด">
         <P>
-          Original Observation ของ Saralak Search มาจากบทความลูกค้าคำค้น Non-brand “ขายอะไรดีตลาดนัด”
-          หน้าเดียวตอบหลาย Sub-intent เช่น ขายอะไรดี ลงทุนเท่าไร ตั้งราคาอย่างไร และใช้บรรจุภัณฑ์แบบไหน
-          Google AI Overview ภายหลังอ้างอิงหลาย Passage จากหน้าเดียว ทั้งส่วนตัวอย่างราคาและ Packaging Solution
+          จากการทบทวนเคสจริงของลูกค้า Saralak Search เราพบว่า บทความคำค้น Non-brand “ขายอะไรดีตลาดนัด”
+          หน้าเดียวตอบหลายคำถามย่อย เช่น ขายอะไรดี ลงทุนเท่าไร ตั้งราคาอย่างไร และใช้บรรจุภัณฑ์แบบไหน
+          Google AI Overview ภายหลังอ้างอิงหลายช่วงเนื้อหาจากหน้าเดียว ทั้งส่วนตัวอย่างราคาและ Packaging Solution
           เราจึงใช้เคสนี้เป็นหลักฐานเชิงสังเกต ไม่ใช่ข้อพิสูจน์ว่าโครงเดียวกันจะทำให้ทุกเว็บถูกอ้างอิง
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             ['Non-brand Query', 'Main query คือ “ขายอะไรดีตลาดนัด” และมี support intent อย่าง “ขายอะไรดีตลาดนัดลงทุนน้อย” ทำให้บทความไม่ได้พึ่ง Brand Search'],
             ['Concrete Examples', 'เนื้อหามีตัวอย่างราคา 19 / 29 / 39 บาท เมนู ต้นทุน และสถานการณ์การเลือก Packaging แทนคำแนะนำกว้าง ๆ'],
-            ['Information → Commercial', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุก Section เป็น CTA'],
-            ['Retrievable Passages', 'แต่ละ Section มี Subject และคำตอบของตัวเอง เช่น Fried Food → ภาชนะทนร้อน ทำให้ Passage ยังเข้าใจได้เมื่ออ่านแยก'],
+            ['Information → Commercial', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุกส่วนเป็น CTA'],
+            ['เนื้อหาที่อ่านแยกได้', 'แต่ละส่วนมี Subject และคำตอบของตัวเอง เช่น Fried Food → ภาชนะทนร้อน ทำให้ช่วงเนื้อหานั้นยังเข้าใจได้เมื่ออ่านแยก'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -604,8 +604,8 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </div>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
-          alt="Google AI Overview อ้างอิงหลาย Passage จากบทความคำค้นขายอะไรดีตลาดนัด"
-          caption="Original Observation จากงานจริงของ Saralak Search: AI Overview อ้างอิงหลายส่วนจากบทความ Non-brand เดียวกัน"
+          alt="Google AI Overview อ้างอิงหลายช่วงเนื้อหาจากบทความคำค้นขายอะไรดีตลาดนัด"
+          caption="จากเคสจริงของ Saralak Search: AI Overview อ้างอิงหลายส่วนจากบทความ Non-brand เดียวกัน"
         />
         <P>
           เคสนี้ยังเชื่อมไปยัง
@@ -632,7 +632,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           การวัด GEO ต้องใช้ KPI หลายชั้นและดูแนวโน้มเป็นช่วงเวลา เพราะการเห็นแบรนด์ใน ChatGPT จาก Prompt เดียวไม่ใช่หลักฐานว่ากลยุทธ์สำเร็จ
           ชุดวัดผลควรครอบคลุม Organic Search, AI Visibility, Brand Mention, Citation, Non-brand Coverage และ Conversion
-          แล้วเทียบก่อน–หลังกับ Query Set เดิมเพื่อให้เห็นการเปลี่ยนแปลงที่ตรวจซ้ำได้
+          แล้วเทียบก่อน–หลังด้วยชุดคำถามเดิมเพื่อให้เห็นการเปลี่ยนแปลงที่ตรวจซ้ำได้
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
@@ -659,7 +659,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-priority" title="ธุรกิจแบบไหนควรทำ GEO">
         <P>
-          GEO ควรเป็น Priority เมื่อธุรกิจมี Search Foundation ที่ใช้งานได้แล้ว และลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ
+          GEO ควรให้ความสำคัญเมื่อธุรกิจมีพื้นฐาน Search ที่ใช้งานได้แล้ว และลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ
           เช่น B2B Service, SaaS, E-commerce, Education, Travel, Real Estate และ Local Service
           ถ้าเว็บไซต์ยังมีปัญหา Crawl/Index, หน้า Service ไม่ชัด หรือ Tracking ใช้งานไม่ได้ ควรแก้ฐานเหล่านั้นก่อนขยายงาน GEO
         </P>
@@ -668,7 +668,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             <thead className="bg-[#fbfaf6]">
               <tr>
                 <th className="px-4 py-3 font-semibold text-neutral-950">สถานการณ์</th>
-                <th className="px-4 py-3 font-semibold text-neutral-950">Priority ที่ควรทำ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">สิ่งที่ควรทำก่อน</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 text-neutral-700">
@@ -678,7 +678,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
               </tr>
               <tr>
                 <td className="thai-readable px-4 py-4">Organic มีฐานแล้ว แต่ Non-brand AI Search แทบไม่พบแบรนด์</td>
-                <td className="thai-readable px-4 py-4">ทำ Content/Entity/Evidence Audit และกำหนด Query Set สำหรับ GEO</td>
+                <td className="thai-readable px-4 py-4">ตรวจ Content, Entity และ Evidence พร้อมกำหนดชุดคำถามสำหรับติดตาม GEO</td>
               </tr>
               <tr>
                 <td className="thai-readable px-4 py-4">มี Content เยอะ แต่หลาย URL แย่ง Intent กัน</td>
@@ -697,7 +697,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             รับทำ GEO เพื่อเพิ่ม Brand Visibility บน Google และ AI Search
           </h3>
           <p className="thai-readable mt-3 max-w-3xl text-base leading-7 text-teal-100">
-            สำหรับธุรกิจที่มี Search Foundation แล้วและต้องการวาง Topic Ownership, Content, Entity, Evidence และ Measurement ให้ทำงานร่วมกันเป็นระบบ
+            สำหรับธุรกิจที่มีพื้นฐาน Search แล้วและต้องการจัด Topic Ownership, Content, Entity, Evidence และการวัดผลให้ทำงานร่วมกันเป็นระบบ
           </p>
           <div className="mt-5">
             <CTAButton to="/services/geo">รับทำ GEO</CTAButton>
@@ -708,12 +708,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-summary" title="สรุป GEO คืออะไร">
         <P>
           GEO คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับ Search และ Generative AI โดยไม่แทนที่ SEO
-          แนวทางที่มีเหตุผลคือเริ่มจาก Technical Accessibility และ Topic Ownership แล้วเพิ่ม Answer, Evidence, Entity, Context และ Retrievable Sections
+          แนวทางที่มีเหตุผลคือเริ่มจากการเข้าถึงทางเทคนิคและ Topic Ownership แล้วเพิ่ม Answer, Evidence, Entity, Context และเนื้อหาที่อ่านแยกได้
           จากนั้นวัด Search/AI Visibility ควบคู่กับ Lead และ Revenue โดยยอมรับว่าไม่มีวิธีรับประกัน Citation จากแพลตฟอร์มใด
         </P>
         <P>
-          หน้า “GEO คืออะไร” จึงทำหน้าที่เป็น Definition/Pillar ส่วน implementation เชิงลึกอยู่ในคู่มือวิธีทำ GEO และ GEO Checklist
-          Commercial next step หลักคือบริการรับทำ GEO ส่วน Discovery Audit ด้านล่างเป็น Secondary CTA สำหรับเว็บไซต์ที่ยังไม่แน่ใจว่าควรแก้ Search, Content หรือ AI Visibility ก่อน
+          หากต้องการลงมือทำต่อ สามารถอ่านคู่มือวิธีทำ GEO และใช้ GEO Checklist เพื่อตรวจเว็บไซต์เป็นรายข้อ ส่วนธุรกิจที่ยังไม่แน่ใจว่าปัญหาอยู่ที่ Search Foundation, Content หรือ AI Visibility สามารถเริ่มจาก Discovery Audit เพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
         </P>
       </ArticleSection>
 
