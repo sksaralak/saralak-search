@@ -706,3 +706,49 @@ avoid cannibalization
 +
 support SEO and GEO
 ```
+
+
+---
+
+## 24. External link rule
+
+For Saralak Search content, do not add outbound links to direct or indirect competitors.
+
+This includes:
+- SEO agencies
+- GEO / AEO agencies
+- SEO consultants selling competing services
+- digital marketing agencies
+- Local SEO / Google Maps service providers
+- commercial SEO tools or service vendors when the same factual point can be supported by a primary source
+
+Competitor names may be mentioned when editorially necessary, but do not give them a clickable outbound link.
+
+Preferred external sources are primary / authority sources only, such as:
+- Google Search Central
+- Google Search Console Help
+- Google Business Profile / Google official documentation
+- OpenAI official documentation
+- Schema.org
+- official platform documentation
+- original academic research
+- government or regulator sources
+
+When a factual claim can be supported by an official source, use the official source instead of an agency blog, consultant blog, Medium post, affiliate site, or competitor article.
+
+Do not add an external link merely because a source ranks in Google.
+
+Default rule:
+
+```text
+Official / Primary Source
+→ allowed when useful
+
+Competitor / Agency / Consultant
+→ no outbound link
+
+Third-party blog
+→ avoid when a primary source exists
+```
+
+External links should support factual verification, not send authority or referral traffic to competing commercial pages.
