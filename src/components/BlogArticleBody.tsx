@@ -8675,9 +8675,16 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           เมื่อออกแบบเส้นทางเนื้อหาให้เดินจาก Broad Problem ไปจนถึง Product ได้อย่างเป็นธรรมชาติ
           สินค้าก็กลายเป็นคำตอบที่สมเหตุสมผลของปัญหานั้น แทนที่จะเป็นการโฆษณาที่แทรกเข้ามาโดยไม่มีบริบทรองรับ
         </P>
+        <P>
+          หากต้องการวางพื้นฐาน Search ให้ครบตั้งแต่
+          {' '}<Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ SEO</Link>
+          {' '}ไปจนถึงการทำความเข้าใจว่า{' '}
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}และ{' '}
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}สามารถอ่านเนื้อหาที่เกี่ยวข้องต่อได้ตามเป้าหมายของธุรกิจ
+        </P>
         <ReadMoreLinks items={[
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจ' },
           { to: '/services/geo', label: 'รับทำ AEO / GEO — Saralak Search' },
