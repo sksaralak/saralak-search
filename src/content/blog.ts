@@ -33,32 +33,32 @@ export const geoIntroFaqs: FAQItem[] = [
   {
     question: 'GEO เป็น Ranking Factor ของ Google หรือไม่?',
     answer:
-      'Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode และระบุว่าไม่ต้องมีการปรับแบบพิเศษนอกเหนือจากแนวทาง SEO พื้นฐานเพื่อให้มีสิทธิ์ปรากฏใน AI features ของ Search',
+      'ไม่ใช่ Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode เอกสาร Google Search Central ปี 2026 ระบุว่า SEO best practices, Search index, crawlability, indexability และ helpful non-commodity content ยังเป็น foundation ของ Generative AI Search',
   },
   {
     question: 'ทำ GEO ต้องมี FAQ, Schema หรือ llms.txt หรือไม่?',
     answer:
-      'ไม่มีองค์ประกอบใดในสามอย่างที่เป็นเงื่อนไขรับประกันการถูก AI อ้างอิง สำหรับ Google Search เอกสารทางการปี 2026 ระบุว่า Google ไม่ใช้ llms.txt และไม่ต้องมี Schema พิเศษสำหรับ Generative AI Search ส่วน Structured Data ยังควรใช้ตามวัตถุประสงค์ SEO ปกติเมื่ออธิบายเนื้อหาที่มองเห็นบนหน้าได้ถูกต้อง',
+      'ไม่มีองค์ประกอบใดเป็นเงื่อนไขรับประกันการถูก AI อ้างอิง Google ไม่ได้กำหนด special AI schema หรือ markup สำหรับ AI Overviews/AI Mode และ Structured Data ควรตรงกับ visible content ส่วน FAQ ช่วยจัดโครงคำถาม–คำตอบให้ชัดสำหรับผู้อ่านและระบบค้นหา แต่ไม่ควรทำเพียงเพื่อหวัง FAQ Rich Result',
   },
   {
     question: 'ทำ GEO แล้ว ChatGPT จะอ้างอิงเว็บไซต์แน่นอนหรือไม่?',
     answer:
-      'ไม่แน่นอน OpenAI ระบุว่าเว็บไซต์สาธารณะที่ต้องการให้เนื้อหามีสิทธิ์ถูกค้นพบใน ChatGPT Search ควรไม่บล็อก OAI-SearchBot แต่การอนุญาต crawler ไม่ได้หมายความว่าจะได้รับ placement หรือ citation ในทุกคำถาม',
+      'ไม่แน่นอน OpenAI ระบุว่าเว็บไซต์สาธารณะที่ต้องการให้เนื้อหามีสิทธิ์ถูกค้นพบใน ChatGPT Search ควรไม่บล็อก OAI-SearchBot แต่ crawler access ไม่ได้รับประกัน placement, brand mention หรือ citation ในทุกคำถาม',
   },
   {
     question: 'SEO ยังจำเป็นเมื่อทำ GEO หรือไม่?',
     answer:
-      'ยังจำเป็น โดยเฉพาะ crawlability, indexability, เนื้อหาที่ตรง Search Intent, internal linking และคุณภาพของหน้าเว็บไซต์ Google ระบุว่า SEO best practices เดิมยังใช้กับ AI features ใน Search และ GEO ควรถูกมองเป็นส่วนต่อยอด ไม่ใช่ตัวแทน SEO',
+      'ยังจำเป็น โดยเฉพาะ crawlability, indexability, Search Intent, Internal Link และ Content Quality สำหรับ Google เอกสารปี 2026 ระบุชัดว่า Generative AI features ยังคงใช้ core Search ranking and quality systems และข้อมูลจาก Search index',
   },
   {
     question: 'GEO วัดผลจากอะไร?',
     answer:
-      'ควรวัดหลายชั้นร่วมกัน ได้แก่ Search visibility, AI mention/citation จากชุดคำถามที่กำหนด, referral และ engagement ใน GA4 รวมถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion ไม่ควรใช้ citation เพียงตัวเดียวเป็นตัวแทนผลลัพธ์ทางธุรกิจ',
+      'ควรวัดหลายชั้น ได้แก่ Organic Search Visibility, AI Search/AI Overview Visibility, Brand Mentions, Citation หรือ Source Appearance, Non-brand Query Coverage, Search Console metrics, Assisted Conversion, Leads และ Revenue พร้อม Manual Prompt Tracking ด้วย Query Set เดิมเป็นช่วงเวลา',
   },
   {
-    question: 'Google Search Console แยกข้อมูลจาก AI Overview และ AI Mode ได้หรือไม่?',
+    question: 'Google Search Console แยกข้อมูล AI Overview และ AI Mode ได้หรือไม่?',
     answer:
-      'ได้บางส่วน ตั้งแต่วันที่ 31 สิงหาคม 2026 Google เปิด Generative AI performance report ให้เว็บไซต์ทั่วโลก รายงานนี้แสดง impressions, pages, countries, devices และแนวโน้มตามเวลาใน AI Overviews และ AI Mode โดยข้อมูลยังถูกรวมอยู่ในภาพรวม Search performance ด้วย แต่รายงานไม่ได้เท่ากับการแจกแจง citation ทุกคำตอบของ AI แบบราย prompt',
+      'ได้ในระดับ Generative AI performance report ตั้งแต่วันที่ 31 สิงหาคม 2026 รายงานนี้ครอบคลุม AI Overviews และ AI Mode และแสดงข้อมูล Impressions แยกตาม Pages, Countries, Dates และ Devices แต่ไม่ได้แจกแจงทุก Citation เป็นราย Prompt',
   },
 ]
 
@@ -1412,38 +1412,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'GEO คืออะไร? เข้าใจ Generative Engine Optimization สำหรับ AI Search',
+    title: 'GEO คืออะไร? Generative Engine Optimization สำหรับ Google และ AI Search',
     slug: 'what-is-geo',
     category: 'GEO',
     excerpt:
-      'GEO หรือ Generative Engine Optimization คือแนวทางปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ นำไปประกอบคำตอบ กล่าวถึง หรืออ้างอิงในระบบ Generative AI และ AI Search โดยไม่มีสูตรเดียวที่รับประกันผลได้ทุกแพลตฟอร์ม',
-    readingTime: '14 min read',
+      'GEO คือแนวทางเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับ Generative AI และ AI Search โดยต่อยอดจาก SEO พร้อม Framework, เคสจริง, วิธีวัดผล และข้อจำกัดที่ควรรู้',
+    readingTime: '18 min read',
     publishedDate: '2026-05-30',
     lastModifiedDate: '2026-09-18',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO คืออะไร? Generative Engine Optimization | Saralak Search',
+    metaTitle: 'GEO คืออะไร? วิธีทำ GEO สำหรับ Google และ AI Search',
     metaDescription:
-      'GEO คืออะไร ต่างจาก SEO และ AEO อย่างไร พร้อมข้อเท็จจริงจาก Google/OpenAI เคสจริง วิธีวัดผล ข้อจำกัด และแนวทางเริ่มต้นสำหรับธุรกิจไทย',
+      'GEO คืออะไร ต่างจาก SEO และ AEO อย่างไร พร้อม Google guidance ปี 2026, GEO Framework ของ Saralak Search, เคส AI Overview จริง, KPI และวิธีเริ่มทำ GEO',
     heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-geo/what-is-geo-banner-mweb.webp',
-    heroImageAlt: 'GEO คืออะไร Generative Engine Optimization สำหรับ AI Search',
+    heroImageAlt: 'GEO คืออะไร Generative Engine Optimization สำหรับ Google และ AI Search',
     ogImage: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
     aiSummary: [
-      'GEO คือการปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงในคำตอบของ Generative AI และ AI Search',
-      'ไม่มี GEO ranking factor กลางหรือ checklist ชุดเดียวที่ใช้ได้ทุกแพลตฟอร์ม เพราะแต่ละระบบมี retrieval, ranking และการสร้างคำตอบต่างกัน',
-      'Google ระบุว่า Generative AI Search ยังใช้ SEO fundamentals เป็นฐาน ไม่ต้องมี markup หรือไฟล์ AI พิเศษ และตั้งแต่ 31 ส.ค. 2026 มี Search generative AI control กับรายงาน Generative AI ใน Search Console แล้ว',
-      'OpenAI ระบุว่าเว็บไซต์ที่ต้องการให้ ChatGPT Search ค้นพบควรไม่บล็อก OAI-SearchBot แต่ placement และ citation ไม่ได้รับการรับประกัน',
-      'การวัด GEO ควรดู AI visibility ร่วมกับ Search performance, referral/engagement และ business outcome ไม่ใช่นับ citation เพียงอย่างเดียว',
+      'GEO หรือ Generative Engine Optimization คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงใน Generative AI และ AI Search',
+      'Google ระบุในปี 2026 ว่า SEO best practices ยังเป็น foundation ของ Generative AI Search และไม่มี special AI schema หรือ markup ที่ต้องมีเพื่อเข้า AI Overviews หรือ AI Mode',
+      'Saralak Search ใช้ GEO Content Framework: Answer → Evidence → Entity → Context → Retrieval เพื่อทำให้แต่ละ Section ชัด มีหลักฐาน และอ่านแยกได้',
+      'เคสจริงคำค้น Non-brand “ขายอะไรดีตลาดนัด” แสดงให้เห็นว่าบทความที่ตอบหลาย Sub-intent พร้อมตัวเลขและ Context สามารถถูก AI Overview อ้างอิงหลาย Passage จากหน้าเดียวได้',
+      'การวัด GEO ต้องดู Search Visibility, AI Visibility, Brand Mention, Citation, Non-brand Query Coverage และ Conversion เป็นช่วงเวลา ไม่สรุปจาก Prompt เดียว',
     ],
     faqs: geoIntroFaqs,
     bodyVariant: 'geo-intro',
     cta: {
-      headline: 'ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?',
+      headline: 'ยังไม่แน่ใจว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจ Topic Ownership, Content, Internal Link, Search Visibility และ AI Visibility เพื่อจัดลำดับงานก่อนลงทุนเพิ่ม',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
+        'Discovery Audit เป็นจุดเริ่มต้นสำหรับเว็บไซต์ที่ยังไม่รู้ว่าปัญหาหลักอยู่ที่ Search Foundation, Topic Ownership, Content หรือ AI Visibility',
+      buttonText: 'ตรวจสอบเว็บไซต์ฟรี',
       href: '/discovery-audit',
     },
   },
