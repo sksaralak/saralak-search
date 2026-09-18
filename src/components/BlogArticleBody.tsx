@@ -1299,27 +1299,27 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
         <ArticleSubSection title="2. Primal">
           <P>Primal มีหน้า AI Search Service โดยตรงและระบุการทำงานผ่าน ElevateSEO™ ซึ่งเชื่อม SEO, Semantic/Entity SEO และการติดตาม AI Search หลายแพลตฟอร์ม หน้า Service ยังพูดถึงการวัด AI visibility/citation ควบคู่ Conversion จึงเป็นตัวเลือกที่ควรนำมาเทียบเมื่อองค์กรต้องการเอเจนซี่ที่ดู Search และ Digital Marketing ในภาพใหญ่</P>
-          <P><a href="https://www.primal.co.th/th/ai-search-services/" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจข้อมูลจากหน้า AI Search Service ของ Primal</a></P>
+          
         </ArticleSubSection>
 
         <ArticleSubSection title="3. Cotactic">
           <P>Cotactic มีหน้า Generative Engine Optimization Service โดยเฉพาะ ระบุงาน Website Audit, การปรับโครงสร้าง Content/On-page และการวัดผลจากจำนวนครั้งที่เว็บไซต์ถูก AI อ้างอิง รวมถึง Traffic ที่มาจาก AI sources จุดที่ควรถามเพิ่มคือวิธีเก็บ Baseline และนิยาม Citation/Traffic ใน Report เพื่อให้เทียบก่อน–หลังได้ตรงกัน</P>
-          <P><a href="https://cotactic.com/seo-service/generative-engine-optimization/" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจข้อมูลจากหน้า GEO Service ของ Cotactic</a></P>
+          
         </ArticleSubSection>
 
         <ArticleSubSection title="4. ANGA">
           <P>ANGA มีทั้ง AI Search และ GEO Service โดยหน้าเว็บระบุการทำงานด้าน Entity, Content Strategy และการติดตาม AI Mention, Citation, Brand Visibility, LLM Traffic และ Conversion รวมถึงมี ANGA ONE สำหรับดูข้อมูล AI Search และ Google ในระบบของเอเจนซี่</P>
-          <P><a href="https://anga.co.th/geo/" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจข้อมูลจากหน้า GEO Service ของ ANGA</a></P>
+          
         </ArticleSubSection>
 
         <ArticleSubSection title="5. Minimice Group">
           <P>Minimice Group มีบริการ SEO AI Search และประกาศ KPI เพิ่มจาก SEO เดิม เช่น AI Visibility Percentage และ Citation ควบคู่ Organic Traffic, Conversion, Ranking และ Brand Keyword ทำให้เหมาะสำหรับการนำมาเทียบในกรณีที่ต้องการผูก AI Search เข้ากับ Content, SEO และ Conversion metric ใน Scope เดียว</P>
-          <P><a href="https://minimicegroup.co.th/seo-ai-search/" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจข้อมูลจากหน้า SEO AI Search ของ Minimice Group</a></P>
+          
         </ArticleSubSection>
 
         <ArticleSubSection title="6. NerdOptimize">
           <P>NerdOptimize มี AI Search Service ที่ระบุทั้ง Content Structure, Entity, Technical SEO และ Structured Data พร้อม Monitoring ด้าน Brand Mention/Citation, AI Traffic และ Conversion หน้า Service ระบุว่ามีรายงานผลรายเดือน จึงควรถามต่อว่าชุด Query/Prompt และ Attribution ถูกกำหนดอย่างไรในแต่ละโปรเจกต์</P>
-          <P><a href="https://nerdoptimize.com/ai-search/" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจข้อมูลจากหน้า AI Search Service ของ NerdOptimize</a></P>
+          
         </ArticleSubSection>
       </ArticleSection>
 
@@ -3293,14 +3293,9 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
       <section className="grid gap-5">
         <P>
           มีบทความหนึ่งบน Medium ที่แชร์กันเยอะมากในกลุ่ม developer ชื่อว่า{' '}
-          <a
-            href="https://medium.com/@chiragthummar16/i-used-claude-code-to-add-seo-to-my-next-js-e59290525118"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
-          >
+          
             "I Used Claude Code to Add SEO to My Next.js App"
-          </a>{' '}
+          {' '}
           — dev คนนั้นใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง 120 หน้า index ภายใน 24 ชั่วโมงหลัง deploy
         </P>
         <P>
@@ -3360,14 +3355,9 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="หลักฐานว่าปัญหานี้จริง: 7,000+ GitHub Stars">
         <P>
           มี repository ชื่อ{' '}
-          <a
-            href="https://claude-seo.md/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
-          >
+          
             claude-seo.md
-          </a>{' '}
+          {' '}
           ที่สร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ
           เป็นไฟล์ prompt สำเร็จรูปที่บอก Claude ให้ทำ SEO อย่างถูกต้อง
           มีคน star มากกว่า 7,000 ครั้งในเวลาไม่นาน
@@ -3529,14 +3519,9 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
           Claude ทำ SEO ได้จริง — ถ้าคุณรู้ว่าต้องสั่งอะไร
           dev ที่ทำสำเร็จใน 48 ชั่วโมงไม่ได้เก่งกว่าคุณ เขาแค่มีความรู้ SEO อยู่ก่อนแล้ว
           และ 7,000 stars บน{' '}
-          <a
-            href="https://claude-seo.md/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-600"
-          >
+          
             claude-seo.md
-          </a>{' '}
+          {' '}
           บอกว่าคุณไม่ใช่คนเดียวที่เจอปัญหานี้
         </P>
         <P>
@@ -4007,9 +3992,7 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
         <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">หมายเหตุสำหรับธุรกิจหลายสาขา</p>
           <p className="thai-readable text-sm leading-7 text-neutral-700">
-            การจัดการ GBP พร้อมกันหลายสาขาต้องการระบบเฉพาะทาง{' '}
-            <a href="https://www.ctbmarketing.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-teal-800 underline underline-offset-2">CTB Marketing</a>
-            {' '}ซึ่งเป็น Google Maps Platform Innovator ที่ดูแล franchise networks ในไทย รวมถึง Michelin และ Centara Hotels คือตัวอย่างของ specialist ที่ทำ multi-location GBP โดยเฉพาะ
+            การจัดการ GBP พร้อมกันหลายสาขาต้องใช้ระบบและ Workflow ที่รองรับ Location จำนวนมาก เช่น การจัดสิทธิ์ การแก้ข้อมูลพร้อมกัน การติดตามรีวิว และการควบคุม NAP ให้สอดคล้องกันทุกสาขา
           </p>
         </div>
       </ArticleSection>
@@ -5007,9 +4990,7 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
           <div className="rounded-lg border border-neutral-200 bg-white p-5">
             <p className="font-semibold text-neutral-950">หลายสาขา (5+ สาขา)</p>
             <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">
-              แต่ละสาขาต้องมี GBP แยกกัน ร้านที่ต้องการระบบจัดการ GBP แบบ franchise{' '}
-              <a href="https://www.ctbmarketing.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-teal-800 underline underline-offset-2">CTB Marketing</a>
-              {' '}ผู้เชี่ยวชาญ Google Maps Platform ที่ดูแลเชนร้านอาหารรายใหญ่ในไทย รวมถึงร้านที่ได้รับการรับรองจาก Michelin คือ specialist ที่แนะนำ
+              แต่ละสาขาต้องมี GBP แยกกัน และธุรกิจแบบ franchise ควรใช้ระบบจัดการหลาย Location ที่ควบคุมข้อมูล รีวิว สิทธิ์ผู้ดูแล และ NAP ได้จากส่วนกลาง
             </p>
           </div>
         </div>
