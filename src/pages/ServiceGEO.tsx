@@ -33,14 +33,14 @@ const deliverables = [
       </svg>
     ),
     items: [
-      '1 หน้า/เดือน — ปรับ Structure ให้ AI อ่านและอ้างอิงได้ง่ายขึ้น',
-      'เพิ่ม Entity Signals — ใคร ทำอะไร อยู่ที่ไหน เชี่ยวชาญอะไร',
-      'ปรับ Heading และ Content Structure ให้ตอบคำถามชัดเจน',
-      'FAQ Schema Markup — AI ชอบดึง FAQ มาตอบ',
+      '1 หน้า/เดือน — ปรับโครงสร้างเนื้อหาให้คำตอบชัด อ่านง่าย และมีข้อมูลรองรับ',
+      'ทำ Entity ให้ชัด — ใคร ทำอะไร อยู่ที่ไหน เชี่ยวชาญอะไร',
+      'ปรับ Heading, Internal Link และ Content Structure ให้ตรง Search Intent',
+      'ใช้ FAQ เมื่อช่วยตอบคำถามจริง และใช้ Structured Data เฉพาะเมื่อสอดคล้องกับเนื้อหาที่มองเห็น',
     ],
   },
   {
-    title: 'llms.txt & AI Signals',
+    title: 'Technical & Entity Readiness',
     color: { icon: 'text-violet-400 bg-violet-950 border-violet-800/60' },
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -48,9 +48,9 @@ const deliverables = [
       </svg>
     ),
     items: [
-      'สร้างหรืออัพเดท llms.txt — บอก AI ว่าแบรนด์คุณคืออะไร',
-      'Brand Entity Optimization — ชื่อ ความเชี่ยวชาญ ที่ตั้ง',
-      'ตรวจ Structured Data ที่ส่งผลต่อ AI Citation',
+      'ตรวจ Crawl, Index, Canonical, Robots และการเข้าถึงของ Search/Crawler ที่เกี่ยวข้อง',
+      'ตรวจความสอดคล้องของ Brand Entity — ชื่อ ความเชี่ยวชาญ บริการ และข้อมูลธุรกิจ',
+      'ตรวจ Structured Data ให้ตรงกับ Visible Content และประเภทที่เว็บไซต์รองรับ',
     ],
   },
   {
@@ -100,7 +100,7 @@ const platforms = [
 const audiences = [
   {
     label: 'ธุรกิจที่ทำ SEO อยู่',
-    text: 'ต่อยอด SEO ที่มีอยู่ให้ AI แนะนำแบรนด์ได้ด้วย — เพิ่มแค่ 3,000 บาท/เดือน',
+    text: 'ต่อยอด SEO ที่มีอยู่ด้วยการติดตาม AI Visibility และปรับ Content/Entity ให้พร้อมขึ้น — เพิ่ม 3,000 บาท/เดือน',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
@@ -109,7 +109,7 @@ const audiences = [
   },
   {
     label: 'B2B / บริการเฉพาะทาง',
-    text: 'ลูกค้า B2B ใช้ AI ถามหาผู้เชี่ยวชาญก่อนติดต่อ — GEO ช่วยให้แบรนด์ถูกแนะนำ',
+    text: 'ลูกค้า B2B อาจใช้ AI ค้นและเปรียบเทียบผู้เชี่ยวชาญก่อนติดต่อ — GEO ช่วยเพิ่มความชัดเจนของข้อมูลแบรนด์และบริการ',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
@@ -118,7 +118,7 @@ const audiences = [
   },
   {
     label: 'Brand ที่ต้องการ Trust',
-    text: 'แบรนด์ที่ต้องการให้ AI พูดถึงในแง่ดี และอ้างอิงเป็น authoritative source',
+    text: 'แบรนด์ที่ต้องการให้ข้อมูลบริษัท ความเชี่ยวชาญ และหลักฐานบนเว็บไซต์มีความชัดเจนและตรวจสอบได้',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -127,7 +127,7 @@ const audiences = [
   },
   {
     label: 'E-commerce / Retail',
-    text: 'ลูกค้าถาม AI ว่า "สินค้าไหนดีกว่า" หรือ "แบรนด์ไหนน่าเชื่อถือ" — GEO ช่วยให้ตอบถูก',
+    text: 'ลูกค้าอาจถาม AI ว่า "สินค้าไหนดีกว่า" หรือ "แบรนด์ไหนน่าเชื่อถือ" — GEO ช่วยจัด Content และข้อมูลสินค้าให้พร้อมต่อการค้นพบมากขึ้น',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
@@ -186,7 +186,7 @@ export default function ServiceGEO() {
     <main>
       <SEO
         title="บริการ GEO — AI Search Visibility สำหรับธุรกิจไทย | Saralak Search"
-        description="GEO (Generative Engine Optimization) ช่วยให้แบรนด์คุณถูก ChatGPT, Gemini และ Perplexity แนะนำ Add-on 3,000 บาท/เดือน"
+        description="บริการ GEO สำหรับเพิ่มความพร้อมและติดตาม Brand Visibility บน ChatGPT, Gemini, Perplexity และ Google AI Search — Add-on 3,000 บาท/เดือน"
         path="/services/geo"
         image="/image/og/saralak-search-service-og.png"
         jsonLd={{
@@ -196,7 +196,7 @@ export default function ServiceGEO() {
               '@type': 'Service',
               '@id': 'https://saralak-search.com/services/geo#service',
               name: 'บริการ GEO — AI Search Visibility',
-              description: 'GEO (Generative Engine Optimization) ช่วยให้แบรนด์ถูก ChatGPT, Gemini และ Perplexity แนะนำ',
+              description: 'GEO (Generative Engine Optimization) ช่วยเพิ่มความพร้อมของ Content, Entity และ Search Visibility สำหรับการค้นพบบน Generative AI และ AI Search',
               provider: { '@id': 'https://saralak-search.com/#organization' },
               areaServed: 'Thailand',
               offers: {
@@ -227,14 +227,14 @@ export default function ServiceGEO() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                บริการ GEO ให้ AI แนะนำ
+                บริการ GEO เพิ่ม Brand Visibility
                 <br className="hidden sm:block" />
-                <span className="animate-gradient-text">แบรนด์คุณ ไม่ใช่คู่แข่ง</span>
+                <span className="animate-gradient-text">บน Google และ AI Search</span>
               </h1>
               <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-                บริการ GEO (Generative Engine Optimization) — ปรับ Content และ Brand Signals
-                เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini, Perplexity และ Google AI Overview
-                พบและอ้างอิงแบรนด์ของคุณเมื่อลูกค้าถาม
+                บริการ GEO (Generative Engine Optimization) — ปรับ Content, Entity และ Search Foundation
+                พร้อมติดตาม Visibility บน ChatGPT, Gemini, Perplexity และ Google AI Search
+                เพื่อเพิ่มโอกาสที่ข้อมูลแบรนด์จะถูกค้นพบ กล่าวถึง หรืออ้างอิงเมื่อเกี่ยวข้องกับคำถามของผู้ใช้
               </p>
               <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-900/30 px-4 py-2 text-sm text-teal-300 ring-1 ring-teal-700/40">
                 <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -393,8 +393,8 @@ export default function ServiceGEO() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="เหมาะสำหรับ"
-            title="ธุรกิจที่ต้องการให้ AI แนะนำแบรนด์"
-            description="GEO ได้ผลดีกับธุรกิจที่ลูกค้าถาม AI ก่อนตัดสินใจ — ไม่ว่าจะ B2B, E-commerce หรือบริการเฉพาะทาง"
+            title="ธุรกิจที่ควรติดตาม AI Search Visibility"
+            description="เหมาะกับธุรกิจที่ลูกค้าใช้ Search และ AI เพื่อค้นข้อมูล เปรียบเทียบ หรือคัดตัวเลือกก่อนตัดสินใจ เช่น B2B, E-commerce และบริการเฉพาะทาง"
             tone="light"
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -446,7 +446,7 @@ export default function ServiceGEO() {
       {/* Process */}
       <section className="bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="ขั้นตอน" title="จาก Brand ที่ AI ไม่รู้จัก สู่ Brand ที่ AI แนะนำ" tone="light" />
+          <SectionHeader eyebrow="ขั้นตอน" title="จาก Visibility Gap สู่การวัดผลที่ติดตามได้" tone="light" />
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {[
               {
@@ -457,7 +457,7 @@ export default function ServiceGEO() {
               {
                 step: '02', label: 'Optimize & Signal',
                 border: 'border-sky-800/50', bg: 'bg-sky-950/25', badge: 'bg-sky-900/60 text-sky-300', color: 'text-sky-950',
-                body: 'ปรับ 1 หน้า/เดือน ให้ AI อ่านได้ง่ายขึ้น เพิ่ม Entity Signals อัพเดท llms.txt และ FAQ Schema ที่ AI ชอบดึง',
+                body: 'ปรับ 1 หน้า/เดือนให้คำตอบชัดขึ้น เพิ่ม Entity และ Evidence ที่ตรวจสอบได้ พร้อมดู Internal Link, Technical Accessibility และ Structured Data เมื่อเกี่ยวข้อง',
               },
               {
                 step: '03', label: 'Monthly GEO Report',
@@ -482,8 +482,8 @@ export default function ServiceGEO() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { label: 'SEO', color: 'border-blue-200 bg-blue-50', badge: 'bg-blue-100 text-blue-700', goal: 'ติดอันดับ Google Search', how: 'Technical, Content, Links', result: 'Organic Traffic' },
-              { label: 'AEO', color: 'border-teal-200 bg-teal-50', badge: 'bg-teal-100 text-teal-700', goal: 'ตอบคำถามใน AI Overview', how: 'FAQ, Schema, Answer Structure', result: 'Featured Snippets' },
-              { label: 'GEO', color: 'border-violet-200 bg-violet-50', badge: 'bg-violet-100 text-violet-700', goal: 'ถูก AI แนะนำโดยตรง', how: 'Entity, Brand Signal, llms.txt', result: 'AI Citations & Recommendations' },
+              { label: 'AEO', color: 'border-teal-200 bg-teal-50', badge: 'bg-teal-100 text-teal-700', goal: 'จัดคำตอบให้ชัดสำหรับ Answer Surfaces', how: 'Search Intent, Answer Structure, Evidence', result: 'Answer-ready Content' },
+              { label: 'GEO', color: 'border-violet-200 bg-violet-50', badge: 'bg-violet-100 text-violet-700', goal: 'เพิ่มและติดตาม AI Search Visibility', how: 'Search Foundation, Entity, Evidence, Measurement', result: 'Mentions / Citations ที่ติดตามได้' },
             ].map((item) => (
               <div key={item.label} className={`rounded-xl border p-5 ${item.color}`}>
                 <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>{item.label}</span>
@@ -495,7 +495,7 @@ export default function ServiceGEO() {
           </div>
           <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50 px-5 py-4">
             <p className="thai-readable text-sm leading-7 text-teal-800">
-              <span className="font-semibold">แนะนำ:</span> ทำ SEO + GEO พร้อมกันได้ผลดีที่สุด เพราะ AI ดึงข้อมูลจากเว็บที่ Google เชื่อถือ
+              <span className="font-semibold">แนวทาง:</span> ใช้ SEO เป็นฐาน แล้วเพิ่ม GEO เพื่อจัด Content, Entity, Evidence และการวัด AI Visibility ให้เป็นระบบ
               Package Pro รวม GEO ไว้แล้ว — หรือเพิ่ม GEO Add-on 3,000 บาทกับทุก Package
             </p>
           </div>
@@ -532,9 +532,9 @@ export default function ServiceGEO() {
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-neutral-300">
             {[
-              'AI พูดถึงแบรนด์คุณหรือแนะนำคู่แข่งแทน',
-              'Content ของคุณพร้อมถูก AI อ้างอิงแค่ไหน',
-              'ต้องปรับ Entity Signal อะไรบ้าง',
+              'แบรนด์ถูกกล่าวถึงในคำถามสำคัญหรือคู่แข่งปรากฏแทน',
+              'Content มีคำตอบ หลักฐาน และ Entity ชัดเพียงพอหรือไม่',
+              'ต้องปรับข้อมูลแบรนด์ Entity หรือ Search Foundation จุดไหนบ้าง',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span className="mt-0.5 shrink-0 text-teal-400">→</span>
