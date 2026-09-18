@@ -19,6 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
+  includeFaqSchema?: boolean
   bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
   cta?: {
     headline: string
@@ -1489,6 +1490,7 @@ export const blogPosts: BlogPost[] = [
       'ไม่มี GEO Agency ที่ควรรับประกัน AI citation หรืออันดับ เพราะแหล่งข้อมูล อินเทอร์เฟซ และคำตอบของแต่ละแพลตฟอร์มเปลี่ยนได้ และ Visibility ไม่ได้แปลว่าจะเกิด Click หรือ Conversion เสมอไป',
     ],
     faqs: geoAgencyFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'geo-agency',
     cta: {
       headline: 'ยังไม่ชัดว่าควรจ้าง GEO Agency หรือแก้ SEO ก่อน?',
