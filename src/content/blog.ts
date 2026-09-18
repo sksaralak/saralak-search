@@ -1791,7 +1791,7 @@ export const blogPosts: BlogPost[] = [
       'AI Overview คือคำตอบที่ Google สร้างด้วย AI บนหน้าผลการค้นหา บทความนี้สรุป 9 แนวทางที่ช่วยเตรียม Content ให้เหมาะกับ Search และ AI-generated answers พร้อม Case Study จริงจาก Saralak Search',
     readingTime: '12 min read',
     publishedDate: '2026-09-15',
-    lastModifiedDate: '2026-09-16',
+    lastModifiedDate: '2026-09-18',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
