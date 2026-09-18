@@ -38,7 +38,7 @@ export const geoIntroFaqs: FAQItem[] = [
   {
     question: 'ทำ GEO ต้องมี FAQ, Schema หรือ llms.txt หรือไม่?',
     answer:
-      'ไม่มีองค์ประกอบใดในสามอย่างที่เป็นเงื่อนไขรับประกันการถูก AI อ้างอิง สำหรับ Google AI features เอกสารทางการระบุว่าไม่ต้องมี AI text file หรือ Schema พิเศษ ส่วน Structured Data ควรใช้เมื่ออธิบายเนื้อหาที่มองเห็นบนหน้าได้ถูกต้องตามประเภทข้อมูล',
+      'ไม่มีองค์ประกอบใดในสามอย่างที่เป็นเงื่อนไขรับประกันการถูก AI อ้างอิง สำหรับ Google Search เอกสารทางการปี 2026 ระบุว่า Google ไม่ใช้ llms.txt และไม่ต้องมี Schema พิเศษสำหรับ Generative AI Search ส่วน Structured Data ยังควรใช้ตามวัตถุประสงค์ SEO ปกติเมื่ออธิบายเนื้อหาที่มองเห็นบนหน้าได้ถูกต้อง',
   },
   {
     question: 'ทำ GEO แล้ว ChatGPT จะอ้างอิงเว็บไซต์แน่นอนหรือไม่?',
@@ -56,9 +56,9 @@ export const geoIntroFaqs: FAQItem[] = [
       'ควรวัดหลายชั้นร่วมกัน ได้แก่ Search visibility, AI mention/citation จากชุดคำถามที่กำหนด, referral และ engagement ใน GA4 รวมถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion ไม่ควรใช้ citation เพียงตัวเดียวเป็นตัวแทนผลลัพธ์ทางธุรกิจ',
   },
   {
-    question: 'Google Search Console แยก Traffic จาก AI Overview และ AI Mode ได้หรือไม่?',
+    question: 'Google Search Console แยกข้อมูลจาก AI Overview และ AI Mode ได้หรือไม่?',
     answer:
-      'ตามเอกสาร Google Search Central ที่ตรวจสอบในเดือนกันยายน 2026 การแสดงผลและคลิกจาก AI features ถูกนับรวมใน Performance report ภายใต้ Web search จึงไม่ควรอ้างว่ามี native report ที่แยก citation ของ AI Overview หรือ AI Mode ทุกครั้ง',
+      'ได้บางส่วน ตั้งแต่วันที่ 31 สิงหาคม 2026 Google เปิด Generative AI performance report ให้เว็บไซต์ทั่วโลก รายงานนี้แสดง impressions, pages, countries, devices และแนวโน้มตามเวลาใน AI Overviews และ AI Mode โดยข้อมูลยังถูกรวมอยู่ในภาพรวม Search performance ด้วย แต่รายงานไม่ได้เท่ากับการแจกแจง citation ทุกคำตอบของ AI แบบราย prompt',
   },
 ]
 
@@ -1433,7 +1433,7 @@ export const blogPosts: BlogPost[] = [
     aiSummary: [
       'GEO คือการปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงในคำตอบของ Generative AI และ AI Search',
       'ไม่มี GEO ranking factor กลางหรือ checklist ชุดเดียวที่ใช้ได้ทุกแพลตฟอร์ม เพราะแต่ละระบบมี retrieval, ranking และการสร้างคำตอบต่างกัน',
-      'Google ระบุว่า AI Overviews และ AI Mode ไม่ต้องใช้ markup หรือไฟล์ AI พิเศษ หน้าเว็บยังต้องอาศัย SEO fundamentals และมีสิทธิ์แสดงใน Search',
+      'Google ระบุว่า Generative AI Search ยังใช้ SEO fundamentals เป็นฐาน ไม่ต้องมี markup หรือไฟล์ AI พิเศษ และตั้งแต่ 31 ส.ค. 2026 มี Search generative AI control กับรายงาน Generative AI ใน Search Console แล้ว',
       'OpenAI ระบุว่าเว็บไซต์ที่ต้องการให้ ChatGPT Search ค้นพบควรไม่บล็อก OAI-SearchBot แต่ placement และ citation ไม่ได้รับการรับประกัน',
       'การวัด GEO ควรดู AI visibility ร่วมกับ Search performance, referral/engagement และ business outcome ไม่ใช่นับ citation เพียงอย่างเดียว',
     ],
