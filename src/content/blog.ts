@@ -31,49 +31,34 @@ export type BlogPost = {
 
 export const geoIntroFaqs: FAQItem[] = [
   {
-    question: 'GEO คืออะไร?',
+    question: 'GEO เป็น Ranking Factor ของ Google หรือไม่?',
     answer:
-      'GEO คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้เหมาะกับ AI Search Engine เพื่อเพิ่มโอกาสให้ AI เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview นำข้อมูลไปใช้ตอบคำถามหรือแนะนำต่อผู้ใช้งาน',
+      'Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode และระบุว่าไม่ต้องมีการปรับแบบพิเศษนอกเหนือจากแนวทาง SEO พื้นฐานเพื่อให้มีสิทธิ์ปรากฏใน AI features ของ Search',
   },
   {
-    question: 'GEO ย่อมาจากอะไร?',
+    question: 'ทำ GEO ต้องมี FAQ, Schema หรือ llms.txt หรือไม่?',
     answer:
-      'GEO ย่อมาจาก Generative Engine Optimization หมายถึงการปรับแต่งข้อมูลและเนื้อหาให้เหมาะกับระบบค้นหาแบบ Generative AI',
+      'ไม่มีองค์ประกอบใดในสามอย่างที่เป็นเงื่อนไขรับประกันการถูก AI อ้างอิง สำหรับ Google AI features เอกสารทางการระบุว่าไม่ต้องมี AI text file หรือ Schema พิเศษ ส่วน Structured Data ควรใช้เมื่ออธิบายเนื้อหาที่มองเห็นบนหน้าได้ถูกต้องตามประเภทข้อมูล',
   },
   {
-    question: 'GEO ต่างจาก SEO อย่างไร?',
+    question: 'ทำ GEO แล้ว ChatGPT จะอ้างอิงเว็บไซต์แน่นอนหรือไม่?',
     answer:
-      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Search Engine เช่น Google ส่วน GEO เน้นการทำให้ AI เข้าใจ เชื่อถือ และเลือกข้อมูลของเราไปใช้ในคำตอบ',
+      'ไม่แน่นอน OpenAI ระบุว่าเว็บไซต์สาธารณะที่ต้องการให้เนื้อหามีสิทธิ์ถูกค้นพบใน ChatGPT Search ควรไม่บล็อก OAI-SearchBot แต่การอนุญาต crawler ไม่ได้หมายความว่าจะได้รับ placement หรือ citation ในทุกคำถาม',
   },
   {
-    question: 'GEO ต่างจาก AEO อย่างไร?',
+    question: 'SEO ยังจำเป็นเมื่อทำ GEO หรือไม่?',
     answer:
-      'AEO เน้นการตอบคำถามให้ชัดเจนเพื่อรองรับ Featured Snippet, People Also Ask และ Voice Search ส่วน GEO ครอบคลุมกว่านั้น โดยรวมถึง AI Citation, Entity, Brand Authority และสัญญาณความน่าเชื่อถือของทั้งเว็บไซต์',
+      'ยังจำเป็น โดยเฉพาะ crawlability, indexability, เนื้อหาที่ตรง Search Intent, internal linking และคุณภาพของหน้าเว็บไซต์ Google ระบุว่า SEO best practices เดิมยังใช้กับ AI features ใน Search และ GEO ควรถูกมองเป็นส่วนต่อยอด ไม่ใช่ตัวแทน SEO',
   },
   {
-    question: 'GEO จำเป็นกับธุรกิจไทยไหม?',
+    question: 'GEO วัดผลจากอะไร?',
     answer:
-      'จำเป็นมากขึ้นเรื่อย ๆ โดยเฉพาะธุรกิจที่ต้องการให้ลูกค้าพบแบรนด์ผ่าน AI Search เพราะผู้ใช้เริ่มถาม AI เพื่อหาข้อมูล เปรียบเทียบ และตัดสินใจก่อนซื้อสินค้าและบริการมากขึ้น',
+      'ควรวัดหลายชั้นร่วมกัน ได้แก่ Search visibility, AI mention/citation จากชุดคำถามที่กำหนด, referral และ engagement ใน GA4 รวมถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion ไม่ควรใช้ citation เพียงตัวเดียวเป็นตัวแทนผลลัพธ์ทางธุรกิจ',
   },
   {
-    question: 'เริ่มทำ GEO ต้องทำอะไรก่อน?',
+    question: 'Google Search Console แยก Traffic จาก AI Overview และ AI Mode ได้หรือไม่?',
     answer:
-      'ควรเริ่มจากการเลือกหัวข้อหลักที่ธุรกิจต้องการเป็นเจ้าของ จากนั้นสร้างเนื้อหาแบบ Pillar Content ใส่ Answer First เพิ่ม FAQ ทำ Internal Link ใช้ Schema และเสริมความน่าเชื่อถือของแบรนด์',
-  },
-  {
-    question: 'GEO ใช้เวลานานแค่ไหนถึงเห็นผล?',
-    answer:
-      'ระยะเวลาเห็นผลขึ้นอยู่กับความแข็งแรงของเว็บไซต์ คุณภาพเนื้อหา ความน่าเชื่อถือของแบรนด์ และการแข่งขันของหัวข้อนั้น โดยทั่วไปควรวัดผลเป็นรายเดือนและปรับปรุงต่อเนื่องเหมือนการทำ SEO',
-  },
-  {
-    question: 'SEO ยังจำเป็นไหมถ้าทำ GEO แล้ว?',
-    answer:
-      'SEO ยังจำเป็น เพราะ GEO ใช้พื้นฐานหลายอย่างจาก SEO เช่น โครงสร้างเว็บไซต์ การจัดทำเนื้อหา การทำ Internal Link ความเร็วเว็บ Indexability และความน่าเชื่อถือของโดเมน',
-  },
-  {
-    question: 'รับทำ GEO ราคาเท่าไหร่?',
-    answer:
-      'ราคาทำ GEO ขึ้นอยู่กับ Package SEO ที่ใช้เป็นฐาน เพราะ GEO มักเพิ่มเป็น Add-on บน Package ที่มีการผลิตคอนเทนต์อยู่แล้ว เว็บไซต์ที่มีฐาน Content แข็งแรงจะใช้งบประมาณ GEO ได้คุ้มค่ากว่าเว็บไซต์ที่ยังไม่มีคอนเทนต์',
+      'ตามเอกสาร Google Search Central ที่ตรวจสอบในเดือนกันยายน 2026 การแสดงผลและคลิกจาก AI features ถูกนับรวมใน Performance report ภายใต้ Web search จึงไม่ควรอ้างว่ามี native report ที่แยก citation ของ AI Overview หรือ AI Mode ทุกครั้ง',
   },
 ]
 
@@ -1427,36 +1412,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search',
+    title: 'GEO คืออะไร? เข้าใจ Generative Engine Optimization สำหรับ AI Search',
     slug: 'what-is-geo',
     category: 'GEO',
     excerpt:
-      'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือของแบรนด์ เพื่อเพิ่มโอกาสให้ AI Search Engine เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview นำข้อมูลของเราไปใช้ตอบคำถาม อ้างอิง หรือแนะนำต่อผู้ใช้งาน',
-    readingTime: '18 min read',
+      'GEO หรือ Generative Engine Optimization คือแนวทางปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ นำไปประกอบคำตอบ กล่าวถึง หรืออ้างอิงในระบบ Generative AI และ AI Search โดยไม่มีสูตรเดียวที่รับประกันผลได้ทุกแพลตฟอร์ม',
+    readingTime: '14 min read',
     publishedDate: '2026-05-30',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-18',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search | Saralak Search',
+    metaTitle: 'GEO คืออะไร? Generative Engine Optimization | Saralak Search',
     metaDescription:
-      'GEO คือการปรับเว็บไซต์ เนื้อหา และแบรนด์ให้ AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview เข้าใจ อ้างอิง และแนะนำธุรกิจของเราได้มากขึ้น',
+      'GEO คืออะไร ต่างจาก SEO และ AEO อย่างไร พร้อมข้อเท็จจริงจาก Google/OpenAI เคสจริง วิธีวัดผล ข้อจำกัด และแนวทางเริ่มต้นสำหรับธุรกิจไทย',
     heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-geo/what-is-geo-banner-mweb.webp',
-    heroImageAlt: 'GEO คืออะไร รู้จัก Generative Engine Optimization ยุค AI Search',
+    heroImageAlt: 'GEO คืออะไร Generative Engine Optimization สำหรับ AI Search',
     ogImage: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
     aiSummary: [
-      'GEO คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือของแบรนด์ให้ AI Search เข้าใจ อ้างอิง และแนะนำธุรกิจได้มากขึ้น',
-      'GEO ต่อยอดจาก SEO และ AEO ในยุคที่ผู้ใช้เริ่มค้นหาคำตอบผ่าน AI มากขึ้น',
-      'AI Search เช่น ChatGPT, Gemini, Perplexity และ Google AI Overview อาจใช้ข้อมูลจากเว็บไซต์ที่ชัดเจน น่าเชื่อถือ และมีโครงสร้างดีประกอบคำตอบ',
-      'ธุรกิจควรเริ่มจาก Topic หลัก, Pillar Content, Answer First, FAQ, Schema, E-E-A-T, Internal Linking และหลักฐานความน่าเชื่อถือ',
+      'GEO คือการปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงในคำตอบของ Generative AI และ AI Search',
+      'ไม่มี GEO ranking factor กลางหรือ checklist ชุดเดียวที่ใช้ได้ทุกแพลตฟอร์ม เพราะแต่ละระบบมี retrieval, ranking และการสร้างคำตอบต่างกัน',
+      'Google ระบุว่า AI Overviews และ AI Mode ไม่ต้องใช้ markup หรือไฟล์ AI พิเศษ หน้าเว็บยังต้องอาศัย SEO fundamentals และมีสิทธิ์แสดงใน Search',
+      'OpenAI ระบุว่าเว็บไซต์ที่ต้องการให้ ChatGPT Search ค้นพบควรไม่บล็อก OAI-SearchBot แต่ placement และ citation ไม่ได้รับการรับประกัน',
+      'การวัด GEO ควรดู AI visibility ร่วมกับ Search performance, referral/engagement และ business outcome ไม่ใช่นับ citation เพียงอย่างเดียว',
     ],
     faqs: geoIntroFaqs,
     bodyVariant: 'geo-intro',
     cta: {
-      headline: 'เว็บไซต์ของคุณมีโอกาสถูก AI พูดถึงหรือยัง?',
+      headline: 'ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?',
       description:
-        'Brand Visibility Audit ช่วยตรวจสอบว่า Google และ AI Search เข้าใจธุรกิจของคุณอย่างไร พร้อมระบุโอกาสในการเพิ่มการมองเห็นบน Search และ AI Search อย่างเป็นระบบ',
+        'Discovery Audit ช่วยตรวจ Topic Ownership, Content, Internal Link, Search Visibility และ AI Visibility เพื่อจัดลำดับงานก่อนลงทุนเพิ่ม',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
@@ -1828,6 +1814,13 @@ function rotate<T>(items: T[], by: number) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
+  if (slug === 'what-is-geo') {
+    const preferredSlugs = ['how-to-do-geo', 'geo-checklist-thailand', 'seo-geo-aeo']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
   if (slug === 'what-is-ai-overview') {
     const preferredSlugs = ['what-is-aeo', 'what-is-geo', 'aeo-checklist']
     return preferredSlugs
