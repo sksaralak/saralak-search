@@ -1144,6 +1144,104 @@ function NumberedList({ items }: { items: string[] }) {
   )
 }
 
+const geoAgencyContents = [
+  { id: 'geo-agency-answer', label: 'ทำ GEO ที่ไหนดี?' },
+  { id: 'geo-agency-criteria', label: '8 เกณฑ์เลือก GEO Agency' },
+  { id: 'geo-agency-providers', label: '6 บริษัทที่ควรเปรียบเทียบ' },
+  { id: 'geo-agency-comparison', label: 'ตารางเปรียบเทียบ' },
+  { id: 'geo-agency-case', label: 'ตัวอย่างงานจริง' },
+  { id: 'geo-agency-measurement', label: 'วิธีวัดผล GEO' },
+  { id: 'geo-agency-limitations', label: 'ข้อจำกัดก่อนเซ็นสัญญา' },
+  { id: 'geo-agency-decision', label: 'เมื่อไรควรหรือยังไม่ควรจ้าง' },
+  { id: 'geo-agency-process', label: 'วิธีทำงานของ Saralak Search' },
+  { id: 'geo-agency-faq', label: 'FAQ' },
+] as const
+
+function GeoAgencyTableOfContents() {
+  return (
+    <nav aria-label="สารบัญบทความ GEO Agency" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
+      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
+        {geoAgencyContents.map((item, index) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+            >
+              {String(index + 1).padStart(2, '0')}. {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+function GeoMeasurementFrameworkVisual() {
+  const steps = [
+    { title: 'Search Visibility', body: 'GSC queries, pages, impressions, clicks และ ranking visibility' },
+    { title: 'AI Visibility', body: 'Generative AI impressions, Brand Mention, Citation และ Source appearance' },
+    { title: 'Referral / Engagement', body: 'GA4 referral, landing page และ engaged sessions' },
+    { title: 'Business Outcome', body: 'Lead, LINE, Call, Purchase และ Assisted Conversion' },
+  ]
+
+  return (
+    <figure className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-6">
+      <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">GEO Measurement Framework</p>
+      <div className="mt-4 grid gap-3 md:grid-cols-4">
+        {steps.map((step, index) => (
+          <div key={step.title} className="relative rounded-lg border border-teal-100 bg-white p-4">
+            <p className="text-xs font-semibold text-teal-700">0{index + 1}</p>
+            <h3 className="mt-1 text-base font-semibold text-neutral-950">{step.title}</h3>
+            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{step.body}</p>
+            {index < steps.length - 1 ? (
+              <span aria-hidden="true" className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-lg text-teal-700 md:-right-3 md:bottom-auto md:left-auto md:top-1/2 md:-translate-y-1/2 md:translate-x-0">→</span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <figcaption className="thai-readable mt-4 text-sm leading-6 text-neutral-600">
+        วัดจากการมองเห็นไปจนถึงผลลัพธ์ทางธุรกิจ ไม่ใช้ Mention หรือ Citation เป็น KPI เดี่ยว
+      </figcaption>
+    </figure>
+  )
+}
+
+function GeoAgencyDecisionVisual() {
+  return (
+    <figure className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-6">
+      <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Decision Tree</p>
+      <h3 className="mt-2 text-xl font-semibold text-neutral-950">ควรจ้าง GEO Agency หรือยัง?</h3>
+      <div className="mt-5 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+          <p className="font-semibold text-neutral-950">Search Foundation ยังมีปัญหา</p>
+          <ul className="thai-readable mt-3 grid gap-2 text-sm leading-6 text-neutral-600">
+            <li>• Crawl / Index ยังไม่เสถียร</li>
+            <li>• หน้า Service หรือ Commercial intent ยังไม่ชัด</li>
+            <li>• ยังไม่มี Conversion tracking</li>
+            <li>• ไม่มีทีมลงมือแก้ Recommendation</li>
+          </ul>
+          <p className="mt-4 rounded-md bg-neutral-100 px-3 py-2 text-sm font-semibold text-neutral-800">เริ่มจาก Audit + แก้ Search Foundation ก่อน</p>
+        </div>
+        <div aria-hidden="true" className="hidden items-center justify-center text-2xl font-semibold text-teal-700 md:flex">หรือ</div>
+        <div className="rounded-lg border border-teal-200 bg-white p-4">
+          <p className="font-semibold text-neutral-950">พร้อมเริ่ม GEO</p>
+          <ul className="thai-readable mt-3 grid gap-2 text-sm leading-6 text-neutral-600">
+            <li>• สินค้า/บริการและ Conversion ชัด</li>
+            <li>• มี Search footprint หรือ Content เดิม</li>
+            <li>• มี Content/Dev resource รองรับ</li>
+            <li>• ต้องการ Topic Ownership + AI Visibility + Measurement</li>
+          </ul>
+          <p className="mt-4 rounded-md bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-900">เริ่ม GEO Scope พร้อม Baseline และ Measurement ได้</p>
+        </div>
+      </div>
+      <figcaption className="thai-readable mt-4 text-sm leading-6 text-neutral-600">
+        GEO ไม่ควรถูกใช้เพื่อข้ามปัญหาพื้นฐานของ Search แต่เหมาะเมื่อธุรกิจมีฐานที่พร้อมให้วัดและปรับต่อได้
+      </figcaption>
+    </figure>
+  )
+}
+
 function GeoAgencyComparisonTable() {
   const rows = [
     {
@@ -1180,31 +1278,14 @@ function GeoAgencyComparisonTable() {
 
   return (
     <section>
-      <h2 className="break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
+      <h2 id="geo-agency-comparison" className="scroll-mt-24 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
         เปรียบเทียบ 6 GEO / AI Search Agency จากข้อมูลที่เปิดเผยบนเว็บไซต์
       </h2>
       <p className="thai-readable mt-4 text-base leading-7 text-neutral-700 sm:text-lg">
         ตารางนี้เปรียบเทียบเฉพาะสิ่งที่แต่ละบริษัทประกาศบนหน้าบริการสาธารณะ ณ วันที่ 18 กันยายน 2026
         ไม่ใช่การจัดอันดับคุณภาพ และไม่ควรใช้แทนการขอ Proposal, Scope และตัวอย่าง Reporting ก่อนตัดสินใจ
       </p>
-      <div aria-hidden="true" className="mt-5 grid gap-3 lg:hidden">
-        {rows.map((row) => (
-          <article key={row.company} className="rounded-lg border border-neutral-200 bg-white p-4">
-            <h3 className="font-semibold text-neutral-950">{row.company}</h3>
-            <div className="mt-3 grid gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">แนวทางที่ประกาศ</p>
-                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{row.approach}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">การวัดผลที่ระบุ</p>
-                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{row.measurement}</p>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className="mt-5 hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
+      <div className="mt-5 overflow-x-auto rounded-lg border border-neutral-200">
         <table className="min-w-[820px] divide-y divide-neutral-200 bg-white text-left text-sm">
           <thead className="bg-[#fbfaf6] text-neutral-950">
             <tr>
@@ -1216,7 +1297,7 @@ function GeoAgencyComparisonTable() {
           <tbody className="divide-y divide-neutral-200 text-neutral-700">
             {rows.map((row) => (
               <tr key={row.company}>
-                <td className="px-4 py-4 align-top font-semibold text-neutral-950 whitespace-nowrap">{row.company}</td>
+                <th scope="row" className="whitespace-nowrap px-4 py-4 text-left align-top font-semibold text-neutral-950">{row.company}</th>
                 <td className="thai-readable px-4 py-4 align-top leading-6">{row.approach}</td>
                 <td className="thai-readable px-4 py-4 align-top leading-6">{row.measurement}</td>
               </tr>
@@ -1251,8 +1332,9 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุปการเลือก GEO Agency ใน 30 วินาที" id="geo-agency-summary" /> : null}
+      <GeoAgencyTableOfContents />
 
-      <ArticleSection title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
+      <ArticleSection id="geo-agency-answer" title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
         <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน → จะลงมือแก้อะไร → วัดผลด้วยอะไร → ผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
         <P>GEO ไม่ใช่บริการที่มี Checklist กลางจาก Google ให้ทำตามแล้วรับประกันว่าจะถูกอ้างอิง สำหรับ Google Search เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่ทำให้ได้ placement โดยอัตโนมัติ ดังนั้นเอเจนซี่ที่น่าเปรียบเทียบควรแข็งแรงทั้ง Search foundation, Content, Entity และ Measurement พร้อมอธิบายข้อจำกัดได้ตรงไปตรงมา</P>
         <P>
@@ -1262,7 +1344,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="Google ยืนยันอะไรเกี่ยวกับ AI Search และอะไรเป็น Methodology ของเอเจนซี่">
+      <ArticleSection id="geo-agency-google-guidance" title="Google ยืนยันอะไรเกี่ยวกับ AI Search และอะไรเป็น Methodology ของเอเจนซี่">
         <P><strong>ข้อมูลทางการของ Google:</strong> หน้า AI features and your website ระบุว่าแนวทาง SEO พื้นฐานยังใช้กับ AI Overviews และ AI Mode หน้าเว็บต้องถูก Index และมีสิทธิ์แสดง Snippet จึงจะมีสิทธิ์เป็น Supporting Link และไม่มี Technical Requirement เพิ่มเติมเฉพาะสำหรับ AI features นอกจากนี้ Structured Data ควรตรงกับเนื้อหาที่มองเห็น และ Google ระบุว่าไม่ต้องมี Schema พิเศษหรือ AI text file เพื่อให้ปรากฏในฟีเจอร์เหล่านี้</P>
         <P>
           ตั้งแต่ 31 สิงหาคม 2026 Google Search Console เปิด <strong>Generative AI performance report</strong> ให้เว็บไซต์ทั่วโลก โดยรายงานแยก Impressions ที่เกิดจาก AI Overviews และ AI Mode พร้อมดูตาม Page, Country, Device และช่วงเวลาได้ อย่างไรก็ตาม รายงานนี้ไม่ได้แจกแจงว่าแต่ละ Prompt อ้างอิงประโยคใดจากหน้าเว็บ
@@ -1275,7 +1357,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="8 เกณฑ์เลือกบริษัทรับทำ GEO ที่ตรวจสอบได้จริง">
+      <ArticleSection id="geo-agency-criteria" title="8 เกณฑ์เลือกบริษัทรับทำ GEO ที่ตรวจสอบได้จริง">
         <P>ก่อนเทียบราคา ควรให้แต่ละบริษัทตอบคำถามชุดเดียวกัน เกณฑ์ด้านล่างช่วยแยก Proposal ที่มีระบบวัดผลออกจาก Proposal ที่เพิ่มคำว่า GEO ลงบนงาน SEO เดิมโดยไม่มีวิธีพิสูจน์ผล</P>
         <NumberedList items={selectionCriteria} />
         <ArticleImage
@@ -1285,7 +1367,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection title="6 บริษัทรับทำ GEO และ AI Search ในไทยที่ควรนำไปเปรียบเทียบ">
+      <ArticleSection id="geo-agency-providers" title="6 บริษัทรับทำ GEO และ AI Search ในไทยที่ควรนำไปเปรียบเทียบ">
         <P>รายชื่อนี้คัดจากผู้ให้บริการที่มีหน้า GEO หรือ AI Search Service สาธารณะและตรวจสอบได้ ณ วันที่ 18 กันยายน 2026 ไม่ใช่อันดับ “ดีที่สุด” และไม่ได้หมายความว่ารายอื่นไม่มีความสามารถ การเลือกจริงควรเทียบ Scope, คนที่จะลงมือทำ, Reporting, เงื่อนไขสัญญา และตัวอย่างงานที่เกี่ยวกับอุตสาหกรรมเดียวกัน</P>
 
         <ArticleSubSection title="1. Saralak Search">
@@ -1320,18 +1402,25 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
       <GeoAgencyComparisonTable />
 
-      <ArticleSection title="ตัวอย่างจากงานจริงของ Saralak Search: ทำไม Answer-first อย่างเดียวไม่พอ">
+      <ArticleSection id="geo-agency-case" title="ตัวอย่างจากงานจริงของ Saralak Search: ทำไม Answer-first อย่างเดียวไม่พอ">
         <P>เคส Doozy Online ที่เผยแพร่แล้วบน Saralak Search เป็นตัวอย่างของหน้า Informational ที่เชื่อม Search Intent กับ Commercial Context โดยไม่เปลี่ยนบทความให้กลายเป็นหน้าขายสินค้า คำค้นหลักเป็น Non-brand query “ขายอะไรดีตลาดนัด” และหน้าเดียวกันครอบคลุมหลาย Sub-intent เช่น ไอเดียสินค้า ต้นทุน ราคา และตัวอย่างการเลือกบรรจุภัณฑ์ตามเมนู</P>
         <P>ภายหลัง Google AI Overview อ้างอิงหลาย Passage จากบทความเดียวกัน และมีส่วนที่นำ Packaging Solution ของแบรนด์ไปประกอบคำตอบ จุดที่ใช้เป็นบทเรียนสำหรับการเลือก GEO Agency ไม่ใช่ “เขียนแบบนี้แล้วจะติด AI Overview” แต่คือ Agency ควรสามารถออกแบบเนื้อหาที่แต่ละ Passage มีประโยชน์ด้วยตัวเอง มีข้อมูลเฉพาะ และเชื่อมโจทย์ของผู้อ่านไปสู่สินค้า/บริการอย่างมีเหตุผล</P>
         <P>เคสนี้ไม่พิสูจน์ว่าโครงสร้างใดโครงสร้างหนึ่งเป็นสาเหตุโดยตรงของ AI citation เพราะ Google ไม่เปิดเผยสูตรการเลือก Supporting Link รายหน้า สิ่งที่ยืนยันได้คือหน้าเว็บปรากฏเป็นแหล่งอ้างอิงบน Query จริง และเราสามารถย้อนดูว่า Content Architecture ของหน้ามีองค์ประกอบอะไรบ้าง</P>
+        <ArticleImage
+          src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
+          alt="ตัวอย่าง Google AI Overview ที่อ้างอิงบทความ Doozy Online ในคำค้นขายอะไรดีตลาดนัด"
+          caption="หลักฐานนี้ยืนยันว่า Google AI Overview เคยแสดงบทความ Doozy Online เป็นแหล่งอ้างอิงบน Query จริง แต่ไม่ยืนยันว่าโครงสร้าง Content จุดใดจุดหนึ่งเป็นสาเหตุโดยตรงของการถูกเลือกเป็น Supporting Link"
+          height={675}
+        />
         <ReadMoreLinks items={[
           { to: '/blog/what-is-ai-overview', label: 'ดู Case Study AI Overview และโครงสร้าง Content ที่ใช้จริง' },
           { to: '/case-studies', label: 'ดู SEO Case Studies จากงานจริง' },
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="GEO Agency ควรวัดผลอย่างไรในปี 2026">
+      <ArticleSection id="geo-agency-measurement" title="GEO Agency ควรวัดผลอย่างไรในปี 2026">
         <P>Measurement ที่ดีต้องแยก “การมองเห็น” ออกจาก “ผลลัพธ์ทางธุรกิจ” เพราะการถูก Mention หรือ Citation ไม่ได้แปลว่าจะเกิด Click, Lead หรือยอดขายเสมอไป ควรกำหนด Baseline ก่อนเริ่มงานและใช้ Metric หลายชั้นร่วมกัน</P>
+        <GeoMeasurementFrameworkVisual />
         <ArticleSubSection title="1. Search Visibility">
           <CheckList items={[
             'Queries, landing pages, impressions และ clicks จาก Google Search Console',
@@ -1362,7 +1451,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         </ArticleSubSection>
       </ArticleSection>
 
-      <ArticleSection title="ข้อจำกัดที่ควรตกลงก่อนเซ็นสัญญา GEO">
+      <ArticleSection id="geo-agency-limitations" title="ข้อจำกัดที่ควรตกลงก่อนเซ็นสัญญา GEO">
         <CheckList items={[
           'ไม่มีใครควรรับประกันว่า ChatGPT, Gemini, Perplexity, AI Overview หรือ AI Mode จะอ้างอิงแบรนด์ในทุกคำถาม',
           'แหล่งข้อมูล โมเดล และรูปแบบคำตอบของแต่ละแพลตฟอร์มเปลี่ยนได้ จึงต้องบันทึกวันที่และวิธีวัดทุกครั้ง',
@@ -1373,7 +1462,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="เมื่อไรควรจ้าง GEO Agency และเมื่อไรยังไม่ควร">
+      <ArticleSection id="geo-agency-decision" title="เมื่อไรควรจ้าง GEO Agency และเมื่อไรยังไม่ควร">
+        <GeoAgencyDecisionVisual />
         <P><strong>ควรพิจารณาจ้าง</strong> เมื่อเว็บไซต์มีสินค้า/บริการและ Conversion ชัด มี Organic/Search footprint อยู่แล้ว หรือมีทีม Content/Dev ที่ลงมือทำได้ แต่ยังไม่มีคนวาง Topic Ownership, AI visibility baseline, measurement และลำดับงานข้ามทีม</P>
         <P><strong>ยังไม่ควรเริ่มจาก GEO Retainer</strong> หากเว็บไซต์ยัง Crawl/Index ไม่ได้ หน้า Commercial ยังอธิบายสินค้าไม่ชัด ไม่มี Conversion tracking หรือไม่มีทรัพยากรลงมือแก้ Recommendation ในกรณีนี้การ Audit และแก้ Search foundation ก่อนมักให้ข้อมูลที่ใช้ตัดสินใจได้มากกว่า</P>
         <P>
@@ -1385,7 +1475,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="Saralak Search ทำ GEO อย่างไรเมื่อธุรกิจต้องการทีมภายนอก">
+      <ArticleSection id="geo-agency-process" title="Saralak Search ทำ GEO อย่างไรเมื่อธุรกิจต้องการทีมภายนอก">
         <P>Saralak Search ใช้ GEO เป็นส่วนต่อยอดของ Search Strategy ไม่แยกออกมาเป็นชุดเทคนิคสำหรับ AI เพียงอย่างเดียว กระบวนการเริ่มจากการหาว่าปัญหาจริงอยู่ที่ Search foundation, Content, Topic Ownership, Entity หรือ Measurement ก่อน แล้วจึงกำหนด Scope ที่ต้องทำต่อ</P>
         <div className="grid gap-4">
           {processSteps.map((step, i) => (
@@ -1412,9 +1502,9 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         'Saralak Search — Doozy Online AI Overview case observation และ internal content workflow',
       ]} />
 
-      <ArticleFAQ post={post} heading="คำถามที่ควรถามก่อนเลือก GEO Agency" />
+      <ArticleFAQ post={post} heading="คำถามที่ควรถามก่อนเลือก GEO Agency" id="geo-agency-faq" />
 
-      <ArticleSection title="สรุป: ทำ GEO ที่ไหนดี ให้เลือกจากระบบงาน ไม่ใช่คำโฆษณา">
+      <ArticleSection id="geo-agency-conclusion" title="สรุป: ทำ GEO ที่ไหนดี ให้เลือกจากระบบงาน ไม่ใช่คำโฆษณา">
         <P>คำตอบของ “ทำ GEO ที่ไหนดี” จึงไม่ใช่ชื่อบริษัทเดียวสำหรับทุกธุรกิจ แต่เป็นการเลือกทีมที่เข้ากับปัญหาและทรัพยากรจริง พร้อมพิสูจน์ได้ว่าก่อนเริ่มวัดอะไร จะเปลี่ยนอะไร และหลังทำจะตัดสินผลจากข้อมูลชุดไหน</P>
         <P>ก่อนเซ็นสัญญา ควรขอ Scope, Baseline, Measurement Definition และตัวอย่าง Reporting จากหลายรายมาเทียบบนเกณฑ์เดียวกัน หาก Proposal เน้นจำนวนบทความหรือคำว่า AI-ready แต่ไม่บอกวิธีตรวจ Search foundation, Prompt/Query Set และ Business outcome ยังถือว่าข้อมูลไม่พอสำหรับตัดสินใจ</P>
         <ReadMoreLinks items={[
