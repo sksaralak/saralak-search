@@ -467,6 +467,12 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </ArticleSubSection>
       </ArticleSection>
 
+      <P>
+        หากต้องการแยกบทบาทของทั้งสามแนวทางแบบละเอียด สามารถดู
+        {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO ต่างกันอย่างไร</Link>
+        {' '}เพื่อดูว่าแต่ละแนวทางควรเป็นเจ้าของ Search Intent และ KPI แบบใด
+      </P>
+
       <ComparisonTable />
 
       <ArticleSection title="ตัวอย่างจากงานจริงของ Saralak Search: จากคำค้น Non-brand สู่ AI Overview">
@@ -485,21 +491,26 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           เคสนี้จึงเป็น information gain ที่ใช้ประกอบ methodology ของ Saralak Search
           แต่ไม่ใช่หลักฐานเชิงเหตุและผลว่าโครงสร้างเดียวกันจะทำให้ทุกเว็บไซต์ถูก AI อ้างอิง
+          หากต้องการเข้าใจรูปแบบผลลัพธ์นี้ต่อ สามารถอ่านว่า
+          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
+          {' '}และดู
+          {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
+          {' '}สำหรับตัวอย่างผลลัพธ์จากงานจริงอื่น ๆ
         </P>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
           alt="ตัวอย่าง Google AI Overview อ้างอิงบทความคำค้นขายอะไรดีตลาดนัดจากเคสลูกค้า Saralak Search"
           caption="ตัวอย่างจากเคสจริง: AI Overview อ้างอิงหลาย passage จากบทความ Non-brand เดียวกัน"
         />
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-ai-overview', label: 'ดูรายละเอียด Case Study ในบทความ AI Overview คืออะไร' },
-        ]} />
       </ArticleSection>
 
       <ArticleSection title="ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร">
         <P>
-          สำหรับหน้า “GEO คืออะไร” งานสำคัญคือเข้าใจภาพรวมก่อน ส่วนขั้นตอนลงมือทำควรแยกไปยัง Guide และ Checklist
-          เพื่อให้แต่ละ URL มี Search Intent ชัดเจน ไม่แย่งคีย์เวิร์ดกันเอง
+          สำหรับหน้า “GEO คืออะไร” งานสำคัญคือเข้าใจภาพรวมก่อน ส่วนขั้นตอนลงมือทำควรแยกไปยัง
+          {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
+          {' '}และใช้
+          {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
+          {' '}เพื่อตรวจ implementation ให้แต่ละ URL มี Search Intent ชัดเจนและไม่แย่งคีย์เวิร์ดกันเอง
         </P>
         <div className="grid gap-3">
           {[
@@ -515,10 +526,6 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
-        <ReadMoreLinks items={[
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO: คู่มือ Implementation แบบทีละขั้น' },
-          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist 40 รายการสำหรับตรวจเว็บไซต์' },
-        ]} />
       </ArticleSection>
 
       <ArticleSection title="GEO วัดผลอย่างไร">
@@ -606,11 +613,6 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           สามารถเริ่มจากการ Audit เพื่อจัดลำดับงานก่อนลงทุน
         </P>
       </ArticleSection>
-
-      <ArticleCTA
-        headline="ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?"
-        description="Discovery Audit ตรวจ Topic Ownership, Content, Internal Link, Search Visibility และ AI Visibility เพื่อจัดลำดับว่าควรแก้จุดไหนก่อน โดยไม่สมมติว่า GEO คือคำตอบของทุกเว็บไซต์"
-      />
 
       <ArticleSection title="สรุป GEO คืออะไร">
         <P>
@@ -782,7 +784,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           โปรไฟล์ธุรกิจ รีวิว ข้อมูลองค์กร
           ความสม่ำเสมอของชื่อแบรนด์ และความเชี่ยวชาญเฉพาะด้าน
         </P>
-        <ReadMoreLinks items={[{ to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' }]} />
+        <ReadMoreLinks items={[]} />
       </ArticleSection>
 
       <ArticleSection title="SEO GEO AEO ต่างกันอย่างไร">
@@ -991,7 +993,6 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
         ]} />
@@ -1032,7 +1033,6 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           {' '}จาก Saralak Search สำหรับธุรกิจที่พร้อมเริ่มต้น
         </P>
         <ReadMoreLinks items={[
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/ai-website-seo', label: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด' },
           { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
@@ -2133,7 +2133,9 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="GEO คืออะไร">
         <P>
-          GEO หรือ Generative Engine Optimization คือกระบวนการปรับเว็บไซต์ เนื้อหา โครงสร้างข้อมูล และความน่าเชื่อถือของแบรนด์ เพื่อเพิ่มโอกาสให้ Generative AI และ AI Search เลือกข้อมูลจากเว็บไซต์ของเราไปใช้ในการตอบคำถาม สรุปข้อมูล หรืออ้างอิงเป็นแหล่งข้อมูล
+          ก่อนลงรายละเอียดเชิง implementation ควรเข้าใจก่อนว่า
+          {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}ในภาพรวม: Generative Engine Optimization คือกระบวนการปรับเว็บไซต์ เนื้อหา โครงสร้างข้อมูล และความน่าเชื่อถือของแบรนด์ เพื่อเพิ่มโอกาสให้ Generative AI และ AI Search เลือกข้อมูลจากเว็บไซต์ของเราไปใช้ในการตอบคำถาม สรุปข้อมูล หรืออ้างอิงเป็นแหล่งข้อมูล
         </P>
         <P>
           ถ้า SEO คือการทำให้เว็บไซต์ติดอันดับบน Search Engine แบบเดิม GEO คือการทำให้เว็บไซต์มีโอกาสถูกเลือกเป็น "คำตอบ" ในระบบค้นหาแบบ AI ซึ่งต่างจาก SERP ทั่วไป เพราะ AI ไม่ได้แสดงผลเป็นลิงก์อย่างเดียว แต่สรุปคำตอบให้ผู้ใช้ทันที
@@ -2141,7 +2143,6 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างเช่น ถ้าผู้ใช้ค้นว่า "วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์" Google อาจแสดงบทความหลายอันดับ แต่ถ้าผู้ใช้ถาม ChatGPT หรือ AI Search ระบบจะพยายามสรุปคำตอบให้ทันทีว่า GEO คืออะไร ต้องทำอะไรบ้าง และเว็บไซต์แบบไหนมีโอกาสถูกอ้างอิง ดังนั้นเว็บไซต์ที่มีโครงสร้างคำตอบชัดเจน มีข้อมูลลึก และมีสัญญาณความน่าเชื่อถือสูง จะมีโอกาสถูก AI นำไปใช้มากกว่าเว็บไซต์ที่เขียนกว้าง ๆ หรือเนื้อหาไม่ชัดเจน
         </P>
-        <ReadMoreLinks items={[{ to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' }]} />
       </ArticleSection>
 
       <ArticleSection title="GEO ต่างจาก SEO และ AEO อย่างไร">
@@ -2817,7 +2818,10 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="GEO Checklist คืออะไร และทำไมธุรกิจไทยถึงต้องสนใจตอนนี้">
         <P>
-          GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ เมื่อผู้ใช้งานถาม AI ว่า "ที่ไหนดี" "ควรเลือกแบบไหน" หรือ "มีใครทำได้บ้าง" — AI จะไม่ได้เลือกแบบสุ่ม แต่เลือกจากข้อมูลที่ชัดเจน น่าเชื่อถือ และเข้าถึงได้
+          GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจในคำตอบ
+          หากยังไม่ชัดเรื่องพื้นฐาน ควรเริ่มจาก
+          {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}ก่อน แล้วจึงใช้ Checklist หน้านี้ตรวจ implementation เป็นรายข้อ
         </P>
         <P>
           สำหรับธุรกิจไทย ช่วงเวลานี้คือโอกาสที่ดี เพราะตลาดภาษาไทยบน AI Search ยังมีการแข่งขันต่ำกว่าตลาดภาษาอังกฤษมาก ธุรกิจส่วนใหญ่ยังไม่ได้ทำ GEO อย่างจริงจัง การเริ่มก่อนคู่แข่งจึงยังได้เปรียบอยู่
@@ -3050,7 +3054,6 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           {' '}ให้ครบทั้ง 40 รายการ ดูบริการ GEO ของ Saralak Search ได้เลย
         </P>
         <ReadMoreLinks items={[
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
           { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ' },
           { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
@@ -8593,11 +8596,10 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           </div>
         </div>
         <P>
-          จากแนวทางที่ Saralak Search ใช้ในการทำ Content เราจึงโฟกัสที่คำตอบที่ชัด โครงสร้างที่อ่านง่าย ข้อมูลตรวจสอบได้ และการเชื่อมโยงระหว่าง Search Intent กับ Business Context โดยไม่ตีความว่าเป็นสูตรตายตัวของ Google หากต้องการดูภาพรวมของ{' '}
-          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO</Link>
-          {' '}และ{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO</Link>
-          {' '}สามารถอ่านบทความที่เกี่ยวข้องต่อได้
+          จากแนวทางที่ Saralak Search ใช้ในการทำ Content เราจึงโฟกัสที่คำตอบที่ชัด โครงสร้างที่อ่านง่าย ข้อมูลตรวจสอบได้ และการเชื่อมโยงระหว่าง Search Intent กับ Business Context โดยไม่ตีความว่าเป็นสูตรตายตัวของ Google
+          หากต้องการเจาะเรื่องการจัดคำตอบโดยตรง สามารถอ่าน
+          {' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}ต่อได้
         </P>
       </ArticleSection>
 
@@ -8698,18 +8700,17 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           สินค้าก็กลายเป็นคำตอบที่สมเหตุสมผลของปัญหานั้น แทนที่จะเป็นการโฆษณาที่แทรกเข้ามาโดยไม่มีบริบทรองรับ
         </P>
         <P>
-          หากต้องการวางพื้นฐาน Search ให้ครบตั้งแต่
-          {' '}<Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ SEO</Link>
-          {' '}ไปจนถึงการทำความเข้าใจว่า{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}และ{' '}
-          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
-          {' '}สามารถอ่านเนื้อหาที่เกี่ยวข้องต่อได้ตามเป้าหมายของธุรกิจ
+          หากต้องการต่อยอดจาก AI Overview ไปสู่ AI Search ในภาพกว้าง ควรทำความเข้าใจว่า
+          {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}จากนั้นจึงเชื่อม Content ไปยัง
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ GEO</Link>
+          {' '}เมื่อธุรกิจต้องการลงมือทำเชิงกลยุทธ์ และดู
+          {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
+          {' '}เพื่อดูตัวอย่างผลลัพธ์จากงานจริง
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจ' },
-          { to: '/services/geo', label: 'รับทำ AEO / GEO — Saralak Search' },
         ]} />
       </ArticleSection>
 
