@@ -19,6 +19,7 @@ export type BlogPost = {
   ogImage?: string
   aiSummary?: string[]
   faqs?: FAQItem[]
+  includeFaqSchema?: boolean
   bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-shop' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
   cta?: {
     headline: string
@@ -1438,6 +1439,7 @@ export const blogPosts: BlogPost[] = [
       'การวัด GEO ต้องดู Search Visibility, AI Visibility, Brand Mention, Citation, Non-brand Query Coverage และ Conversion เป็นช่วงเวลา ไม่สรุปจาก Prompt เดียว',
     ],
     faqs: geoIntroFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'geo-intro',
     cta: {
       headline: 'ยังไม่แน่ใจว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?',
