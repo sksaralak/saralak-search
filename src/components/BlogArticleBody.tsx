@@ -55,10 +55,10 @@ function P({ children }: { children: ReactNode }) {
   )
 }
 
-function AISummary({ items }: { items: string[] }) {
+function AISummary({ items, heading = 'สรุป AI Overview ใน 30 วินาที', id = 'ai-overview-summary' }: { items: string[]; heading?: string; id?: string }) {
   return (
     <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
-      <h2 id="ai-overview-summary" className="scroll-mt-24 text-xl font-semibold text-neutral-950">สรุป AI Overview ใน 30 วินาที</h2>
+      <h2 id={id} className="scroll-mt-24 text-xl font-semibold text-neutral-950">{heading}</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
           <li key={item} className="thai-readable flex gap-3 text-neutral-700">
@@ -1198,7 +1198,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุปการเลือก GEO Agency ใน 30 วินาที" id="geo-agency-summary" /> : null}
 
       <ArticleSection title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
         <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน → จะลงมือแก้อะไร → วัดผลด้วยอะไร → ผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
