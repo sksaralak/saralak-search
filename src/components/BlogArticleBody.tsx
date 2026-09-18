@@ -55,10 +55,10 @@ function P({ children }: { children: ReactNode }) {
   )
 }
 
-function AISummary({ items }: { items: string[] }) {
+function AISummary({ items, heading = 'สรุป AI Overview ใน 30 วินาที', id = 'ai-overview-summary' }: { items: string[]; heading?: string; id?: string }) {
   return (
     <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
-      <h2 id="ai-overview-summary" className="scroll-mt-24 text-xl font-semibold text-neutral-950">สรุป AI Overview ใน 30 วินาที</h2>
+      <h2 id={id} className="scroll-mt-24 text-xl font-semibold text-neutral-950">{heading}</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
           <li key={item} className="thai-readable flex gap-3 text-neutral-700">
@@ -130,18 +130,19 @@ function ArticleTableOfContents() {
 
 
 const geoContents = [
-  { id: 'geo-what-is', label: 'GEO คืออะไร?' },
-  { id: 'geo-how-it-works', label: 'GEO ทำงานอย่างไรใน AI Search?' },
-  { id: 'geo-platform-guidance', label: 'ข้อมูลที่แพลตฟอร์มยืนยัน vs แนวทางของ Saralak Search' },
-  { id: 'geo-vs-seo-aeo', label: 'SEO, AEO และ GEO ต่างกันอย่างไร' },
-  { id: 'geo-case-study', label: 'Case Study: จากคำค้น Non-brand สู่ AI Overview' },
-  { id: 'geo-get-started', label: 'ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร' },
-  { id: 'geo-measurement', label: 'GEO วัดผลอย่างไร' },
-  { id: 'geo-limitations', label: 'ข้อจำกัดของ GEO ที่ควรรู้ก่อนลงทุน' },
-  { id: 'geo-priority', label: 'ธุรกิจแบบไหนควรให้ GEO เป็น Priority' },
-  { id: 'geo-service', label: 'GEO เชื่อมกับบริการของ Saralak Search อย่างไร' },
+  { id: 'geo-what-is', label: 'GEO คืออะไร' },
+  { id: 'geo-why-important', label: 'ทำไม GEO ถึงสำคัญ' },
+  { id: 'geo-how-it-works', label: 'GEO ทำงานอย่างไร' },
+  { id: 'geo-vs-seo-aeo', label: 'GEO ต่างจาก SEO และ AEO อย่างไร' },
+  { id: 'geo-how-to', label: 'วิธีทำ GEO' },
+  { id: 'geo-framework', label: 'GEO Content Framework ของ Saralak Search' },
+  { id: 'geo-google-2026', label: 'Google มอง GEO และ AI Search อย่างไรในปี 2026' },
+  { id: 'geo-case-study', label: 'ตัวอย่าง GEO จากงานจริง' },
+  { id: 'geo-not-geo', label: 'อะไรไม่ใช่ GEO' },
+  { id: 'geo-measurement', label: 'วิธีวัดผล GEO' },
+  { id: 'geo-priority', label: 'ธุรกิจแบบไหนควรทำ GEO' },
   { id: 'geo-summary', label: 'สรุป GEO คืออะไร' },
-  { id: 'geo-faq', label: 'FAQ: GEO และ AI Search' },
+  { id: 'geo-faq', label: 'คำถามที่พบบ่อยเกี่ยวกับ GEO' },
 ] as const
 
 function GeoTableOfContents() {
@@ -256,11 +257,12 @@ function ComparisonTable() {
   return (
     <section>
       <h2 id="geo-vs-seo-aeo" className="scroll-mt-24 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
-        SEO, AEO และ GEO ต่างกันอย่างไร
+        GEO ต่างจาก SEO และ AEO อย่างไร
       </h2>
       <p className="thai-readable mt-4 text-lg leading-8 text-neutral-700">
-        ทั้งสามแนวทางทับซ้อนกันบางส่วน แต่ไม่ได้มีระบบจัดอันดับเดียวกัน GEO จึงไม่ควรถูกมองว่าเป็นการแทน SEO
-        หรือเป็นชุดเทคนิคที่ใช้ได้เหมือนกันทุก AI Platform
+        GEO ต่างจาก SEO และ AEO ที่จุดโฟกัสของการมองเห็น: SEO เน้นการค้นพบและอันดับใน Search,
+        AEO เน้นการจัดคำตอบให้ชัดสำหรับ Answer Surfaces, ส่วน GEO ติดตามการกล่าวถึง การอ้างอิง และการนำข้อมูลไปใช้ใน Generative AI
+        ทั้งสามแนวทางใช้พื้นฐานร่วมกันหลายส่วน แต่ไม่ได้มีระบบจัดอันดับหรือ KPI เดียวกัน และ GEO ไม่ได้แทน SEO
       </p>
       <div aria-hidden="true" className="mt-5 grid gap-3 lg:hidden">
         {rows.map((row) => (
@@ -307,11 +309,6 @@ function ComparisonTable() {
             ))}
           </tbody>
         </table>
-      </div>
-      <div className="mt-5">
-        <ReadMoreLinks items={[
-          { to: '/blog/seo-geo-aeo', label: 'เปรียบเทียบ SEO GEO AEO แบบละเอียด' },
-        ]} />
       </div>
     </section>
   )
@@ -412,50 +409,78 @@ function SourceBox({ items, heading = 'แหล่งข้อมูล / Data 
 }
 
 function GeoIntroArticle({ post }: { post: BlogPost }) {
-  const methodologyItems = [
-    'กำหนด Topic Ownership ให้แต่ละ URL มีหน้าที่ชัดเจนและไม่แย่ง Search Intent กันเอง',
-    'เขียน Answer First และทำให้แต่ละ H2 อ่านแยกแล้วเข้าใจได้ โดยไม่ต้องอาศัยบริบททั้งบทความ',
-    'เพิ่มข้อมูลที่ตรวจสอบได้ เช่น ตัวเลข ตัวอย่างจริง ขั้นตอนตัดสินใจ Case Study หรือข้อมูลต้นฉบับ',
-    'ทำ Entity และความสัมพันธ์ของแบรนด์ บริการ ผู้เขียน และหัวข้อให้ชัดในเนื้อหาและหน้าหลักของเว็บไซต์',
-    'เชื่อม Internal Link ตามเส้นทาง Definition → Guide → Checklist → Case/Service แทนการใส่ลิงก์แบบกระจาย',
+  const geoFramework = [
+    {
+      title: 'Answer',
+      body: 'ตอบคำถามหลักให้ตรงใน 1–2 ประโยคแรกของ Section เพื่อให้ผู้อ่านเข้าใจประเด็นทันที และลดการพึ่งบริบทจากย่อหน้าก่อนหน้า',
+    },
+    {
+      title: 'Evidence',
+      body: 'รองรับคำตอบด้วยข้อมูล ตัวเลข ตัวอย่าง Case Study หรือแหล่งอ้างอิงที่ตรวจสอบได้ แทนคำอธิบายกว้าง ๆ ที่ไม่มีหลักฐาน',
+    },
+    {
+      title: 'Entity',
+      body: 'ระบุชื่อบุคคล แบรนด์ ผลิตภัณฑ์ บริการ แพลตฟอร์ม หรือ Concept ให้ชัด เพื่อไม่ให้คำอย่าง “ระบบนี้” หรือ “วิธีนี้” ลอยโดยไม่มี Subject',
+    },
+    {
+      title: 'Context',
+      body: 'อธิบายความสัมพันธ์ระหว่าง Entity กับปัญหา Search Intent หรือ Business Context โดยไม่ใช้ Keyword Stuffing เป็นตัวแทนของความหมาย',
+    },
+    {
+      title: 'Retrieval',
+      body: 'ออกแบบแต่ละ Section ให้มี Subject + Answer + Evidence ครบพอที่จะอ่านแยกได้ แนวทางนี้ช่วยให้เนื้อหาเป็น passage ที่ชัด แต่ไม่ใช่สูตรรับประกัน Citation',
+    },
   ]
 
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป GEO ใน 30 วินาที" id="geo-summary-30-seconds" /> : null}
       <GeoTableOfContents />
 
-      <ArticleSection id="geo-what-is" title="GEO คืออะไร?">
+      <ArticleSection id="geo-what-is" title="GEO คืออะไร">
         <P>
-          <strong>GEO หรือ Generative Engine Optimization</strong> คือแนวทางปรับเนื้อหา เว็บไซต์ และข้อมูลของแบรนด์
-          เพื่อเพิ่มโอกาสให้ข้อมูลนั้นถูกค้นพบ นำไปประกอบคำตอบ กล่าวถึง หรืออ้างอิงในระบบ Generative AI และ AI Search
-          เช่น ChatGPT Search, Gemini และ Perplexity รวมถึง AI features บน Search อย่าง Google AI Overviews และ AI Mode
+          <strong>GEO หรือ Generative Engine Optimization</strong> คือแนวทางปรับเนื้อหา เว็บไซต์ และข้อมูลแบรนด์
+          เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ นำไปประกอบคำตอบ กล่าวถึง หรืออ้างอิงในระบบ Generative AI และ AI Search
+          เช่น ChatGPT Search, Gemini, Perplexity รวมถึง Google AI Overviews และ AI Mode โดยไม่มีวิธีใดรับประกันว่าแพลตฟอร์มจะเลือกหรืออ้างอิงเว็บไซต์ทุกครั้ง
         </P>
         <P>
-          เป้าหมายของ GEO จึงไม่ใช่ “ทำอันดับใน ChatGPT” แบบเดียวกับ SEO แต่คือทำให้แหล่งข้อมูลของแบรนด์
-          มีความชัดเจน เข้าถึงได้ และมีประโยชน์พอสำหรับเส้นทางที่แต่ละระบบใช้ค้นหาและสร้างคำตอบ
-          คำว่า Generative Engine Optimization ถูกนำเสนอเป็นกรอบวิจัยอย่างเป็นระบบในงานของ Aggarwal และคณะช่วงปี 2023
-          แต่ในงานจริงแต่ละแพลตฟอร์มมีระบบ retrieval, ranking, citation และการสร้างคำตอบต่างกัน
-          จึงไม่มีสูตร GEO ชุดเดียวที่รับประกันผลได้ทุกระบบ
+          GEO จึงไม่ใช่ “SEO สำหรับ ChatGPT” แบบเปลี่ยนชื่อเดิม แต่เป็นการมอง Search Visibility เพิ่มอีกชั้น:
+          หน้าเว็บต้องเข้าถึงได้ เนื้อหาต้องตอบคำถามได้จริง Entity ต้องชัด และแต่ละส่วนควรมีข้อมูลที่ระบบและผู้อ่านตรวจสอบบริบทได้
+          คำว่า GEO ถูกใช้ในวงการและงานวิจัย แต่แต่ละแพลตฟอร์มมี retrieval, ranking, citation และ generation pipeline ต่างกัน
         </P>
         <ArticleImage
           src="/image/blog/what-is-geo/what-is-geo-search-vs-ai-search.svg"
-          alt="แผนภาพเปรียบเทียบ Search Engine แบบลิงก์กับ AI Search ที่สร้างคำตอบจากหลายแหล่งข้อมูล"
+          alt="แผนภาพอธิบาย GEO และความสัมพันธ์ระหว่าง Search Engine กับ AI Search"
         />
       </ArticleSection>
 
-      <ArticleSection id="geo-how-it-works" title="GEO ทำงานอย่างไรใน AI Search?">
+      <ArticleSection id="geo-why-important" title="ทำไม GEO ถึงสำคัญ">
         <P>
-          โดยภาพรวม AI Search ต้องพาผู้ใช้จาก “คำถาม” ไปสู่ “คำตอบ” ผ่านหลายขั้นตอน เช่น
-          การตีความคำถาม การค้นหรือดึงข้อมูลที่เกี่ยวข้อง การคัดเลือกบริบท และการสร้างคำตอบพร้อมแหล่งอ้างอิงเมื่อระบบรองรับ
-          แต่รายละเอียดของแต่ละแพลตฟอร์มไม่เหมือนกัน และบางระบบอาจเปลี่ยนแหล่งข้อมูลตามคำถาม เวลา หรือการรันแต่ละครั้ง
+          GEO สำคัญเมื่อ Customer Journey เริ่มมี AI Search เป็นจุดค้นข้อมูล เปรียบเทียบ และคัดตัวเลือกก่อนคลิกเว็บไซต์
+          ธุรกิจจึงต้องติดตามมากกว่าอันดับ Organic แบบเดิม เช่น แบรนด์ถูกกล่าวถึงหรือไม่ แหล่งใดถูก Citation และ Non-brand Query ใดที่เว็บไซต์มีโอกาสปรากฏ
+          แต่ GEO ควรต่อยอดจาก SEO ที่ดี ไม่ใช่แทน Technical SEO หรือ Content Quality
+        </P>
+        <P>
+          ตัวอย่างเช่น Query “บริษัทรับทำ SEO ที่ไหนดี” อาจเริ่มจาก Google, AI Overview หรือ ChatGPT แล้วจบที่การค้นชื่อแบรนด์ต่อ
+          หน้าเว็บจึงต้องเชื่อม Definition, Comparison, Proof และ Service ให้เป็นเส้นทางเดียวกัน
+          หากต้องการเห็นภาพความสัมพันธ์ระหว่างสามแนวทาง สามารถอ่าน
+          {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
+          {' '}แบบละเอียดได้
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="geo-how-it-works" title="GEO ทำงานอย่างไรใน AI Search">
+        <P>
+          GEO ทำงานโดยทำให้แหล่งข้อมูลของแบรนด์พร้อมสำหรับกระบวนการที่ระบบใช้ค้นพบ ดึงบริบท และสร้างคำตอบ
+          กระบวนการจริงต่างกันในแต่ละแพลตฟอร์ม แต่ในเชิง Content สามารถคิดเป็น 4 ขั้นได้: Discover → Retrieve → Generate → Act
+          จุดที่ควร Optimize คือความเข้าถึงได้ ความเกี่ยวข้อง หลักฐาน และเส้นทางที่พาผู้ใช้ต่อจากคำตอบไปยังเว็บไซต์หรือแบรนด์
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['1. Discover', 'ระบบต้องเข้าถึงหรือค้นพบแหล่งข้อมูลได้ก่อน เช่น หน้าเว็บที่เปิดให้ crawler หรือ search system เข้าถึง'],
-            ['2. Retrieve', 'ระบบค้นหรือดึงแหล่งที่เกี่ยวข้องกับคำถาม ไม่จำเป็นต้องใช้หน้าอันดับต้น ๆ ชุดเดียวกับ Search แบบเดิมเสมอไป'],
-            ['3. Generate', 'โมเดลสังเคราะห์คำตอบจากบริบทที่ได้รับ โดยอาจอ้างอิงหลายแหล่งหรือไม่แสดง citation ทุกกรณี'],
-            ['4. Act', 'ผู้ใช้อาจคลิกแหล่งอ้างอิง ค้นชื่อแบรนด์ต่อ เข้าเว็บไซต์ หรือตัดสินใจโดยไม่เกิดคลิกในทันที'],
+            ['1. Discover', 'หน้าและข้อมูลต้องเข้าถึงได้ผ่านระบบ Search หรือ crawler ที่เกี่ยวข้อง เช่น Googlebot หรือ OAI-SearchBot ตามข้อกำหนดของแต่ละแพลตฟอร์ม'],
+            ['2. Retrieve', 'ระบบค้นหรือดึงแหล่งที่เกี่ยวข้องกับ Query และบริบท ไม่จำเป็นต้องเป็นชุด URL เดียวกับ Organic Top 10 เสมอไป'],
+            ['3. Generate', 'ระบบสังเคราะห์คำตอบจากบริบทที่ดึงมา และอาจแสดง Citation หรือ Supporting Links แตกต่างกันตามแพลตฟอร์ม'],
+            ['4. Act', 'ผู้ใช้อาจคลิก Citation ค้นชื่อแบรนด์ต่อ เปิดหน้า Service หรือจบ Journey โดยไม่มีคลิก จึงต้องวัดทั้ง Visibility และ Business Outcome'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -463,99 +488,35 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+      </ArticleSection>
+
+      <section>
         <P>
-          Google ระบุว่า AI features ใน Search อาจใช้เทคนิคที่เรียกว่า query fan-out เพื่อค้นข้อมูลย่อยหลายชุดประกอบคำตอบ
-          ขณะที่ OpenAI แยก crawler สำหรับ ChatGPT Search เป็น OAI-SearchBot
-          ภาพนี้สะท้อนว่าการทำ GEO ต้องเริ่มจากการเข้าใจข้อกำหนดของแต่ละแพลตฟอร์ม ไม่ใช่ตั้งสมมติฐานว่ามี “GEO ranking factor” กลางเพียงชุดเดียว
+          ก่อนเปรียบเทียบ GEO ควรแยกหน้าที่ของ
+          {' '}<Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          {' '}และ
+          {' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}ให้ชัด เพราะทั้งสามแนวทางมีพื้นที่ทับซ้อนกัน แต่ไม่ได้มี KPI หรือระบบจัดอันดับเดียวกัน
         </P>
-      </ArticleSection>
-
-      <ArticleSection id="geo-platform-guidance" title="อะไรคือข้อมูลที่แพลตฟอร์มยืนยัน และอะไรคือแนวทางของ Saralak Search">
-        <ArticleSubSection title="สิ่งที่ Google ยืนยันเกี่ยวกับ AI Overviews และ AI Mode">
-          <P>
-            Google Search Central ระบุว่า จากมุมมองของ Google การทำให้เว็บไซต์พร้อมสำหรับ Generative AI Search
-            ยังคงเป็นงาน SEO เป็นหลัก ไม่ต้องมี markup พิเศษ ไฟล์ AI พิเศษ หรือ “GEO hack” เฉพาะสำหรับ AI Overviews และ AI Mode
-            สิ่งที่ควรให้ความสำคัญคือหน้าเว็บถูก index, มีสิทธิ์แสดงพร้อม snippet, มีโครงสร้างทางเทคนิคที่ชัด
-            และมีเนื้อหา unique / non-commodity ที่มีคุณค่าต่อผู้อ่าน
-          </P>
-          <P>
-            นอกจากนี้ ตั้งแต่วันที่ 31 สิงหาคม 2026 Google เปิดใช้ Search generative AI control และ
-            Generative AI performance report ใน Search Console ทั่วโลก เว็บไซต์ต้องถูกตั้งให้รวมอยู่ใน Search generative AI features
-            จึงจะมีสิทธิ์แสดงในฟีเจอร์เหล่านี้ ส่วนรายงานใหม่ช่วยดู impressions, pages, countries, devices และแนวโน้มตามเวลา
-            สำหรับ AI Overviews และ AI Mode ได้โดยเฉพาะ ข้อมูลชุดนี้ยังถูกรวมอยู่ในภาพรวม Search performance ด้วย
-          </P>
-        </ArticleSubSection>
-
-        <ArticleSubSection title="สิ่งที่ OpenAI ยืนยันเกี่ยวกับ ChatGPT Search">
-          <P>
-            OpenAI ระบุว่าเว็บไซต์สาธารณะสามารถปรากฏใน ChatGPT Search ได้ และเว็บไซต์ที่ต้องการให้เนื้อหามีสิทธิ์ถูกค้นพบ
-            ควรไม่บล็อก OAI-SearchBot ใน robots.txt อย่างไรก็ตาม การอนุญาต crawler เป็นเพียงเงื่อนไขด้านการเข้าถึง
-            ไม่ใช่การรับประกันว่าจะถูกจัดวางหรืออ้างอิงในคำตอบ
-          </P>
-        </ArticleSubSection>
-
-        <ArticleSubSection title="แนวทางที่ Saralak Search ใช้ในงาน GEO">
-          <P>
-            นอกเหนือจากข้อกำหนดของแพลตฟอร์ม เราใช้แนวทางด้าน Content และ Information Architecture ต่อไปนี้
-            เพื่อทำให้ข้อมูลชัด อ่านง่าย ตรวจสอบได้ และเชื่อมโยงกับ Entity ของธุรกิจได้ดีขึ้น
-            แนวทางเหล่านี้เป็น methodology จากการทำงาน ไม่ใช่ ranking factors ที่ Google หรือ OpenAI ประกาศ
-          </P>
-          <CheckList items={methodologyItems} />
-        </ArticleSubSection>
-      </ArticleSection>
-
-      <P>
-        หากต้องการแยกบทบาทของทั้งสามแนวทางแบบละเอียด สามารถดู
-        {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO ต่างกันอย่างไร</Link>
-        {' '}เพื่อดูว่าแต่ละแนวทางควรเป็นเจ้าของ Search Intent และ KPI แบบใด
-      </P>
+      </section>
 
       <ComparisonTable />
 
-      <ArticleSection id="geo-case-study" title="ตัวอย่างจากงานจริงของ Saralak Search: จากคำค้น Non-brand สู่ AI Overview">
+      <ArticleSection id="geo-how-to" title="วิธีทำ GEO ควรเริ่มจากอะไร">
         <P>
-          หนึ่งในเคสที่ใช้เป็นบทเรียนเรื่อง GEO คือบทความของลูกค้าในหัวข้อ <strong>“ขายอะไรดีตลาดนัด”</strong>
-          ซึ่งเป็นคำค้นแบบ Non-brand และมี intent กว้าง บทความไม่ได้หยุดที่รายชื่อสินค้าน่าขาย
-          แต่แตกคำถามต่อเป็นต้นทุน ราคา เมนู ตัวอย่างการตั้งราคา 19 / 29 / 39 บาท
-          และเชื่อมบางสถานการณ์ไปยังประเภทบรรจุภัณฑ์ที่เหมาะกับสินค้าแต่ละแบบอย่างมีบริบท
-        </P>
-        <P>
-          ภายหลัง Google AI Overview อ้างอิงข้อความจากบทความหลายช่วง รวมถึงตัวอย่างราคาและคำแนะนำด้าน Packaging Solution
-          จุดที่สำคัญของเคสนี้ไม่ใช่การสรุปว่า “เทคนิคใดเทคนิคหนึ่งทำให้ติด AI Overview”
-          แต่คือการเห็นว่าหน้าเดียวสามารถสร้าง passage ที่ตอบ sub-intent ได้ independently
-          และเชื่อม informational intent ไปสู่ commercial context โดยไม่เปลี่ยนบทความให้เป็นหน้าขาย
-        </P>
-        <P>
-          เคสนี้จึงเป็น information gain ที่ใช้ประกอบ methodology ของ Saralak Search
-          แต่ไม่ใช่หลักฐานเชิงเหตุและผลว่าโครงสร้างเดียวกันจะทำให้ทุกเว็บไซต์ถูก AI อ้างอิง
-          หากต้องการเข้าใจรูปแบบผลลัพธ์นี้ต่อ สามารถอ่านว่า
-          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
-          {' '}และดู
-          {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
-          {' '}สำหรับตัวอย่างผลลัพธ์จากงานจริงอื่น ๆ
-        </P>
-        <ArticleImage
-          src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
-          alt="ตัวอย่าง Google AI Overview อ้างอิงบทความคำค้นขายอะไรดีตลาดนัดจากเคสลูกค้า Saralak Search"
-          caption="ตัวอย่างจากเคสจริง: AI Overview อ้างอิงหลาย passage จากบทความ Non-brand เดียวกัน"
-        />
-      </ArticleSection>
-
-      <ArticleSection id="geo-get-started" title="ถ้าจะเริ่มทำ GEO ควรเริ่มจากอะไร">
-        <P>
-          สำหรับหน้า “GEO คืออะไร” งานสำคัญคือเข้าใจภาพรวมก่อน ส่วนขั้นตอนลงมือทำควรแยกไปยัง
+          วิธีทำ GEO ควรเริ่มจากแก้ฐาน Search ก่อน แล้วจึงจัด Topic Ownership, Entity, Evidence และ Internal Link
+          เพื่อให้แต่ละ URL มีหน้าที่ชัด จากนั้นค่อยทดสอบการปรากฏใน AI Search และวัดผลเป็นรอบ
+          หน้า Pillar นี้อธิบายภาพรวม ส่วน implementation แบบทีละขั้นอยู่ที่
           {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
-          {' '}และใช้
-          {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
-          {' '}เพื่อตรวจ implementation ให้แต่ละ URL มี Search Intent ชัดเจนและไม่แย่งคีย์เวิร์ดกันเอง
+          {' '}โดยเฉพาะ
         </P>
         <div className="grid gap-3">
           {[
-            ['1. แก้ฐาน Search ก่อน', 'ตรวจ Crawl, Index, Canonical, Rendering, Internal Link และหน้า owner ของแต่ละหัวข้อ ถ้าหน้าหลักยังค้นไม่เจอ การเร่งทำ GEO มักแก้ปัญหาผิดชั้น'],
-            ['2. กำหนด Topic และ Entity', 'ระบุว่าแบรนด์เชี่ยวชาญเรื่องอะไร หน้าไหนเป็นเจ้าของหัวข้อไหน และข้อมูลบริษัท บริการ ผู้เขียน รวมถึงชื่อแบรนด์สอดคล้องกันหรือไม่'],
-            ['3. เพิ่มข้อมูลที่ generic article ไม่มี', 'ใช้ประสบการณ์จริง ตัวเลข ตัวอย่าง Workflow ข้อจำกัด Case Study หรือ decision rule เพื่อให้แต่ละส่วนมีคุณค่าในตัวเอง'],
-            ['4. จัดเส้นทางเนื้อหา', 'เชื่อม Definition → Comparison → How-to → Checklist → Case/Service ด้วยลิงก์ HTML ที่ crawl ได้'],
-            ['5. วัดผลต่อเนื่อง', 'ติดตามทั้ง Search, AI visibility, referral/engagement และ business outcome แทนการนับ citation เพียงตัวเดียว'],
+            ['1. Search Foundation', 'ตรวจ Crawl, Index, Canonical, Rendering, Sitemap และ Internal Link ก่อน ถ้าหน้า owner ยังถูกค้นหรือ index ไม่ถูกต้อง GEO ไม่ควรเป็นงานแรก'],
+            ['2. Topic Ownership', 'กำหนด Main Intent ของแต่ละ URL เช่น “GEO คืออะไร” มี owner หนึ่งหน้า และ “วิธีทำ GEO” มี owner อีกหน้า เพื่อลด Cannibalization'],
+            ['3. Evidence & Entity', 'เติมข้อมูลจริง ตัวเลข ตัวอย่าง ผู้เขียน แบรนด์ บริการ และแหล่งอ้างอิงที่ช่วยให้ประโยคมี Subject และตรวจสอบย้อนกลับได้'],
+            ['4. Content Path', 'วางเส้นทาง Definition → Comparison → How-to → Checklist → Proof → Service ให้ Internal Link ส่งความเกี่ยวข้องไปยัง LDP ที่ถูกต้อง'],
+            ['5. Measurement Loop', 'กำหนด Query Set และ KPI ก่อนแก้ Content แล้ว Track ซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -563,19 +524,77 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <P>
+          สำหรับ QA หลังแก้เว็บไซต์ สามารถใช้
+          {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
+          {' '}เพื่อตรวจ implementation เป็นรายข้อ โดยไม่ใช้ Checklist เป็นตัวแทนของการคิด Search Intent
+        </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-measurement" title="GEO วัดผลอย่างไร">
+      <ArticleSection id="geo-framework" title="GEO Content Framework ของ Saralak Search">
         <P>
-          การวัด GEO ควรใช้หลายชั้นพร้อมกัน เพราะ citation หรือ brand mention เพียงครั้งเดียวไม่บอกผลทางธุรกิจ
-          และคำตอบของ Generative AI สามารถเปลี่ยนได้ตาม prompt เวลา แหล่งข้อมูล และการรันแต่ละครั้ง
+          Saralak Search ใช้กรอบ <strong>Answer → Evidence → Entity → Context → Retrieval</strong> เพื่อรีวิว Content สำหรับ GEO
+          Framework นี้เป็นวิธีทำงานของเรา ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation
+          เป้าหมายคือทำให้แต่ละ Section ตอบคำถามได้ตรง มีหลักฐาน มี Subject ชัด และยังเข้าใจได้เมื่อถูกอ่านแยกจากส่วนอื่น
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {geoFramework.map((item) => (
+            <div key={item.title} className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-base leading-7 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ตัวอย่างก่อน Optimize: “ควรมี Content ที่มีคุณภาพและใส่ข้อมูลให้ครบ”
+          เป็นประโยคที่กว้างและไม่มี Entity หรือ Evidence ชัดเจน
+          หลัง Optimize: “บทความ ‘ขายอะไรดีตลาดนัด’ แยกคำตอบเรื่องเมนู ต้นทุน ราคา 19/29/39 บาท และ Packaging เป็นคนละ Passage”
+          ทำให้เห็น Subject, ตัวเลข และ Context ที่ตรวจสอบได้มากกว่า
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="geo-google-2026" title="Google มอง GEO และ AI Search อย่างไรในปี 2026">
+        <P>
+          Google ระบุว่า SEO best practices ยังเป็น foundation ของ Generative AI Search เพราะ AI Overviews และ AI Mode
+          ใช้ข้อมูลจาก Search index และ core Search systems ในการค้นข้อมูลที่เกี่ยวข้อง
+          หน้าเว็บจึงยังต้อง crawlable, indexable และมีสิทธิ์แสดงพร้อม snippet ขณะเดียวกัน Google เน้น unique, valuable, non-commodity content มากกว่าการทำ “AEO/GEO hack”
+        </P>
+        <P>
+          ในเอกสารปี 2026 Google ใช้คำว่า AEO และ GEO ในบริบทของ terminology จากวงการภายนอก และเตือนให้ตรวจคำแนะนำจาก third party กับเอกสารทางการ
+          Google ไม่ได้กำหนด special AI schema, special markup หรือไฟล์พิเศษที่ต้องมีเพื่อเข้า AI Overviews / AI Mode
+          Structured Data ควรใช้ตามประเภทที่รองรับและต้องสอดคล้องกับ visible content
+        </P>
+        <P>
+          ตั้งแต่ 31 สิงหาคม 2026 Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode
+          พร้อมมิติ Pages, Countries, Dates และ Devices และมี Search generative AI control สำหรับจัดการ inclusion ของเว็บไซต์
+          หากต้องการอ่านรูปแบบผลลัพธ์ของ Google ต่อ สามารถดู
+          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
+          {' '}ได้
+        </P>
+        <div className="rounded-lg border border-sky-200 bg-sky-50 p-5">
+          <p className="thai-readable text-sm leading-6 text-neutral-700">
+            Primary sources:
+            {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central: Optimizing for generative AI features</a>,
+            {' '}<a href="https://developers.google.com/search/docs/fundamentals/third-party-seo" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Third-party SEO guidance</a>
+            {' '}และ
+            {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Generative AI performance report</a>.
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="geo-case-study" title="ตัวอย่าง GEO จากงานจริง: ทำไมบทความหนึ่งถูก AI Overview อ้างอิงหลายจุด">
+        <P>
+          Original Observation ของ Saralak Search มาจากบทความลูกค้าคำค้น Non-brand “ขายอะไรดีตลาดนัด”
+          หน้าเดียวตอบหลาย Sub-intent เช่น ขายอะไรดี ลงทุนเท่าไร ตั้งราคาอย่างไร และใช้บรรจุภัณฑ์แบบไหน
+          Google AI Overview ภายหลังอ้างอิงหลาย Passage จากหน้าเดียว ทั้งส่วนตัวอย่างราคาและ Packaging Solution
+          เราจึงใช้เคสนี้เป็นหลักฐานเชิงสังเกต ไม่ใช่ข้อพิสูจน์ว่าโครงเดียวกันจะทำให้ทุกเว็บถูกอ้างอิง
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['Google Generative AI Visibility', 'ใช้ Generative AI performance report ใน Search Console เพื่อติดตาม impressions, pages, countries, devices และแนวโน้มตามเวลาใน AI Overviews/AI Mode แล้วอ่านร่วมกับ Performance ปกติสำหรับภาพรวม Search'],
-            ['AI Search Visibility', 'กำหนดชุดคำถามที่สำคัญต่อธุรกิจ แล้วติดตาม mention, citation และความถูกต้องของข้อมูลในแต่ละ platform ซ้ำเป็นช่วงเวลา ไม่สรุปจากการทดสอบครั้งเดียว'],
-            ['Referral & Engagement', 'ตรวจ GA4 ว่ามี session หรือ referral จาก AI platform ใดบ้าง พร้อมดู landing page, engaged session และพฤติกรรมหลังเข้าหน้าเว็บ'],
-            ['Business Outcome', 'วัด Form, LINE, Call, Lead, Purchase และ Assisted Conversion เพื่อดูว่า visibility เชื่อมต่อกับผลลัพธ์ทางธุรกิจหรือไม่'],
+            ['Non-brand Query', 'Main query คือ “ขายอะไรดีตลาดนัด” และมี support intent อย่าง “ขายอะไรดีตลาดนัดลงทุนน้อย” ทำให้บทความไม่ได้พึ่ง Brand Search'],
+            ['Concrete Examples', 'เนื้อหามีตัวอย่างราคา 19 / 29 / 39 บาท เมนู ต้นทุน และสถานการณ์การเลือก Packaging แทนคำแนะนำกว้าง ๆ'],
+            ['Information → Commercial', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุก Section เป็น CTA'],
+            ['Retrievable Passages', 'แต่ละ Section มี Subject และคำตอบของตัวเอง เช่น Fried Food → ภาชนะทนร้อน ทำให้ Passage ยังเข้าใจได้เมื่ออ่านแยก'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -583,100 +602,134 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+        <ArticleImage
+          src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
+          alt="Google AI Overview อ้างอิงหลาย Passage จากบทความคำค้นขายอะไรดีตลาดนัด"
+          caption="Original Observation จากงานจริงของ Saralak Search: AI Overview อ้างอิงหลายส่วนจากบทความ Non-brand เดียวกัน"
+        />
         <P>
-          Branded Search หรือ Direct Traffic อาจใช้เป็นบริบทประกอบได้ แต่ไม่ควรอ้างว่า GEO เป็นสาเหตุโดยตรง
-          หากไม่มีการออกแบบการวัดผลที่แยกอิทธิพลจากแคมเปญอื่น
+          เคสนี้ยังเชื่อมไปยัง
+          {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
+          {' '}เพื่อดูหลักฐานและรูปแบบผลลัพธ์อื่นโดยไม่ตีความว่าทุกผลลัพธ์เกิดจาก GEO เพียงปัจจัยเดียว
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-limitations" title="ข้อจำกัดของ GEO ที่ควรรู้ก่อนลงทุน">
+      <ArticleSection id="geo-not-geo" title="อะไรไม่ใช่ GEO">
+        <P>
+          GEO ไม่ใช่การเพิ่มคำว่า AI ลงในบทความ ใส่ Schema จำนวนมาก สร้าง FAQ จำนวนมาก หรือใช้ AI ผลิต Content ปริมาณสูงแล้วคาดว่าจะถูก Citation
+          การเปลี่ยนชื่อบริการ SEO เป็น GEO โดยไม่เพิ่ม Content Quality, Entity Clarity, Evidence, Retrievable Answers และ Technical Accessibility ก็ไม่ใช่การทำ GEO ที่มีสาระ
+        </P>
         <CheckList items={[
-          'ไม่มีแพลตฟอร์มหลักรายใดรับประกันว่าการทำ GEO จะทำให้เว็บไซต์ถูก citation หรือถูกแนะนำ',
-          'แหล่งข้อมูลและคำตอบอาจต่างกันระหว่าง ChatGPT, Gemini, Perplexity และ Google เพราะระบบ retrieval และการสร้างคำตอบไม่เหมือนกัน',
-          'ผลลัพธ์ Generative AI มีความแปรผัน การทดสอบ prompt เดียวครั้งเดียวจึงไม่พอสำหรับสรุป visibility',
-          'Structured Data ช่วยบอกความหมายของข้อมูลเมื่อใช้อย่างถูกต้อง แต่ Google ไม่ได้ระบุว่ามี Schema พิเศษสำหรับ AI Overviews หรือ AI Mode',
-          'การเห็นแบรนด์ใน AI answer ไม่ได้เท่ากับ Lead หรือยอดขาย ต้องติดตาม downstream conversion แยกต่างหาก',
-          'SEO ยังเป็นฐานสำคัญ โดยเฉพาะ indexability, crawlability, content quality และ internal linking',
+          'เพิ่มคำว่า AI หรือ ChatGPT ใน Title และ Heading โดยไม่มีข้อมูลใหม่ ≠ GEO',
+          'ใส่ Structured Data มากกว่าที่เนื้อหารองรับ ≠ GEO และไม่มี special AI schema ที่ Google กำหนดให้ต้องใช้',
+          'เพิ่ม FAQ จำนวนมาก ≠ GEO; FAQ ช่วยจัดคำถาม–คำตอบให้ชัด แต่ไม่ควรทำเพียงเพื่อหวัง FAQ Rich Result',
+          'ใช้ Generative AI เขียนหลายร้อยหน้าโดยไม่มี Information Gain ≠ GEO และอาจเสี่ยงต่อ scaled content abuse หากสร้างเพื่อ manipulate Search',
+          'ทำ SEO แบบเดิมแล้วเปลี่ยนชื่อ Package เป็น GEO ≠ GEO หากไม่มีการวัด AI visibility, entity และ citation context เพิ่มเติม',
         ]} />
       </ArticleSection>
 
-      <ArticleSection id="geo-priority" title="ธุรกิจแบบไหนควรให้ GEO เป็น Priority">
+      <ArticleSection id="geo-measurement" title="วิธีวัดผล GEO">
         <P>
-          GEO เหมาะกับธุรกิจที่ลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ เช่น B2B Service, SaaS,
-          E-commerce, Education, Travel, Real Estate และ Local Service แต่ลำดับงานควรขึ้นกับสถานะเว็บไซต์จริง
+          การวัด GEO ต้องใช้ KPI หลายชั้นและดูแนวโน้มเป็นช่วงเวลา เพราะการเห็นแบรนด์ใน ChatGPT จาก Prompt เดียวไม่ใช่หลักฐานว่ากลยุทธ์สำเร็จ
+          ชุดวัดผลควรครอบคลุม Organic Search, AI Visibility, Brand Mention, Citation, Non-brand Coverage และ Conversion
+          แล้วเทียบก่อน–หลังกับ Query Set เดิมเพื่อให้เห็นการเปลี่ยนแปลงที่ตรวจซ้ำได้
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['Organic Search Visibility', 'ติดตาม Impressions, Clicks, CTR, Queries และ Landing Pages ใน Search Console เพื่อดูฐาน Search ที่ยังเป็น foundation'],
+            ['AI Search / AI Overview Visibility', 'ใช้ Generative AI performance report ของ Search Console สำหรับ AI Overviews/AI Mode และบันทึก Visibility บนแพลตฟอร์มอื่นแยกกัน'],
+            ['Brand Mentions', 'ตรวจว่าแบรนด์ถูกกล่าวถึงในคำตอบที่เกี่ยวข้องหรือไม่ พร้อมบันทึกบริบทว่าเป็นการแนะนำ อ้างอิง หรือกล่าวถึงเฉย ๆ'],
+            ['Citation / Source Appearance', 'บันทึก URL ที่ถูก Citation และ Section/ข้อมูลที่ถูกใช้ เพื่อหา Pattern ของหน้าที่ระบบเลือกเป็น Source'],
+            ['Non-brand Query Coverage', 'ติดตาม Query ที่ไม่มีชื่อแบรนด์ เช่น “บริษัททำ SEO ที่ไหนดี” หรือ Category Question ที่สะท้อนการค้นพบแบรนด์ใหม่'],
+            ['Manual Prompt Tracking', 'ตัวอย่าง Workflow: เลือก 10–20 Query สำคัญ ทดสอบด้วย Prompt เดิมเป็นรายสัปดาห์หรือรายเดือน และเก็บ Date + Platform + Citation + Mention'],
+            ['Assisted Conversion', 'ดูว่า Organic/AI touchpoint มีส่วนก่อน Form, LINE, Call หรือ Purchase หรือไม่ แทนการให้ Last Click เป็นภาพเดียวของ Journey'],
+            ['Leads / Revenue', 'วัดจำนวน Lead, Qualified Lead และ Revenue จาก Organic/Referral พร้อม UTM หรือ Source ที่พอระบุได้เมื่อแพลตฟอร์มส่งข้อมูลมา'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-base leading-7 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ตัวอย่างการตีความ: หาก Prompt Set 15 คำถามมี Brand Mention เพิ่มจาก 2 เป็น 6 คำถามใน 8 สัปดาห์
+          ถือเป็นสัญญาณที่ควรตรวจต่อ แต่ยังไม่ควรสรุปว่า GEO สร้างรายได้จนกว่าจะเชื่อมกับ Search Console, Analytics และ Conversion Data
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="geo-priority" title="ธุรกิจแบบไหนควรทำ GEO">
+        <P>
+          GEO ควรเป็น Priority เมื่อธุรกิจมี Search Foundation ที่ใช้งานได้แล้ว และลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ
+          เช่น B2B Service, SaaS, E-commerce, Education, Travel, Real Estate และ Local Service
+          ถ้าเว็บไซต์ยังมีปัญหา Crawl/Index, หน้า Service ไม่ชัด หรือ Tracking ใช้งานไม่ได้ ควรแก้ฐานเหล่านั้นก่อนขยายงาน GEO
         </P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[680px] divide-y divide-neutral-200 bg-white text-left text-sm">
             <thead className="bg-[#fbfaf6]">
               <tr>
                 <th className="px-4 py-3 font-semibold text-neutral-950">สถานการณ์</th>
-                <th className="px-4 py-3 font-semibold text-neutral-950">สิ่งที่ควรทำก่อน</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">Priority ที่ควรทำ</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 text-neutral-700">
               <tr>
-                <td className="thai-readable px-4 py-4">เว็บ Crawl/Index ยังมีปัญหา หรือหน้า Service ยังไม่ชัด</td>
-                <td className="thai-readable px-4 py-4">แก้ Technical SEO และ Topic Ownership ก่อน</td>
+                <td className="thai-readable px-4 py-4">หน้า Service ยังไม่ index หรือ Canonical/Rendering มีปัญหา</td>
+                <td className="thai-readable px-4 py-4">Technical SEO และ Indexability ก่อน GEO</td>
               </tr>
               <tr>
-                <td className="thai-readable px-4 py-4">Organic Visibility มีฐานแล้ว แต่ AI Search แทบไม่พบแบรนด์</td>
-                <td className="thai-readable px-4 py-4">Audit content, entity, evidence และ AI visibility เพื่อหาช่องว่าง</td>
+                <td className="thai-readable px-4 py-4">Organic มีฐานแล้ว แต่ Non-brand AI Search แทบไม่พบแบรนด์</td>
+                <td className="thai-readable px-4 py-4">ทำ Content/Entity/Evidence Audit และกำหนด Query Set สำหรับ GEO</td>
               </tr>
               <tr>
-                <td className="thai-readable px-4 py-4">มี Content เยอะ แต่หลายหน้าตอบ intent ซ้ำกัน</td>
-                <td className="thai-readable px-4 py-4">จัด owner URL, merge/redirect เมื่อเหมาะสม และแก้ internal links</td>
+                <td className="thai-readable px-4 py-4">มี Content เยอะ แต่หลาย URL แย่ง Intent กัน</td>
+                <td className="thai-readable px-4 py-4">จัด Topic Ownership, Merge/Redirect และ Internal Link ใหม่</td>
               </tr>
               <tr>
-                <td className="thai-readable px-4 py-4">มี Traffic แต่ยังไม่เชื่อมกับ Lead หรือยอดขาย</td>
-                <td className="thai-readable px-4 py-4">แก้ measurement และ conversion path ก่อนเพิ่ม content volume</td>
+                <td className="thai-readable px-4 py-4">มี Visibility แต่ไม่รู้ว่าทำ Lead หรือ Revenue หรือไม่</td>
+                <td className="thai-readable px-4 py-4">แก้ Analytics, Conversion Tracking และ Attribution ก่อนเพิ่ม Content Volume</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </ArticleSection>
-
-      <ArticleSection id="geo-service" title="GEO เชื่อมกับบริการของ Saralak Search อย่างไร">
-        <P>
-          หากเว็บไซต์มี Organic Visibility อยู่แล้ว แต่ยังไม่ชัดว่า Content, Topic Ownership, Entity และ Internal Link
-          พร้อมต่อ Search และ AI Search แค่ไหน การตรวจจุดเหล่านี้ก่อนจะช่วยให้เห็นว่าควรแก้ฐาน SEO
-          ปรับ Content หรือขยาย AI visibility ในส่วนใดก่อน
-        </P>
-        <P>
-          งานเชิง implementation สามารถดูรายละเอียดต่อที่{' '}
-          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
-            รับทำ GEO
-          </Link>
-          {' '}ส่วนเว็บไซต์ที่ยังไม่แน่ใจว่าปัญหาหลักอยู่ตรง Search, Content หรือ AI visibility
-          สามารถเริ่มจากการ Audit เพื่อจัดลำดับงานก่อนลงทุน
-        </P>
+        <div className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">GEO Service</p>
+          <h3 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">
+            รับทำ GEO เพื่อเพิ่ม Brand Visibility บน Google และ AI Search
+          </h3>
+          <p className="thai-readable mt-3 max-w-3xl text-base leading-7 text-teal-100">
+            สำหรับธุรกิจที่มี Search Foundation แล้วและต้องการวาง Topic Ownership, Content, Entity, Evidence และ Measurement ให้ทำงานร่วมกันเป็นระบบ
+          </p>
+          <div className="mt-5">
+            <CTAButton to="/services/geo">รับทำ GEO</CTAButton>
+          </div>
+        </div>
       </ArticleSection>
 
       <ArticleSection id="geo-summary" title="สรุป GEO คืออะไร">
         <P>
-          GEO คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับโลกที่ Search และ Generative AI ทำงานร่วมกันมากขึ้น
-          เป้าหมายคือเพิ่มโอกาสให้ข้อมูลถูกค้นพบ เข้าใจ นำไปใช้ กล่าวถึง หรืออ้างอิงในคำตอบ AI
-          โดยยังต้องอาศัยพื้นฐาน SEO และไม่สามารถรับประกัน citation จากแพลตฟอร์มใดได้
+          GEO คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับ Search และ Generative AI โดยไม่แทนที่ SEO
+          แนวทางที่มีเหตุผลคือเริ่มจาก Technical Accessibility และ Topic Ownership แล้วเพิ่ม Answer, Evidence, Entity, Context และ Retrievable Sections
+          จากนั้นวัด Search/AI Visibility ควบคู่กับ Lead และ Revenue โดยยอมรับว่าไม่มีวิธีรับประกัน Citation จากแพลตฟอร์มใด
         </P>
         <P>
-          จุดเริ่มต้นที่เหมาะสมจึงไม่ใช่การเพิ่ม FAQ หรือ Schema ตาม checklist แบบตายตัว
-          แต่คือทำให้แต่ละ URL มีหน้าที่ชัด ข้อมูลมีหลักฐาน Search เข้าถึงได้ และมีระบบวัดผลที่เชื่อม visibility ไปถึง business outcome
-          จากนั้นจึงค่อยลงรายละเอียดในคู่มือวิธีทำ GEO และใช้ GEO Checklist เป็นเครื่องมือตรวจ implementation
+          หน้า “GEO คืออะไร” จึงทำหน้าที่เป็น Definition/Pillar ส่วน implementation เชิงลึกอยู่ในคู่มือวิธีทำ GEO และ GEO Checklist
+          Commercial next step หลักคือบริการรับทำ GEO ส่วน Discovery Audit ด้านล่างเป็น Secondary CTA สำหรับเว็บไซต์ที่ยังไม่แน่ใจว่าควรแก้ Search, Content หรือ AI Visibility ก่อน
         </P>
       </ArticleSection>
 
       <SourceBox heading="Sources & Methodology — checked September 2026" items={[
-        'Google Search Central — AI features and your website: no special AI markup required; standard SEO fundamentals still apply',
-        'Google Search Central — Generative AI performance report in Search Console; worldwide rollout completed August 31, 2026',
-        'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search',
-        'Aggarwal et al. (2023), GEO: Generative Engine Optimization — research framing of GEO; experimental results are not treated as a platform-wide guarantee',
-        'Saralak Search client case: non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview observation and screenshot checked September 2026',
+        'Google Search Central — Optimizing your website for generative AI features on Google Search, checked September 2026',
+        'Google Search Central — Third-party SEO tools, services and AEO/GEO advice, checked September 2026',
+        'Google Search Console Help — Generative AI performance report (AI Overviews and AI Mode), rollout completed August 31, 2026',
+        'Google Search Console Help — Search generative AI control, rollout completed August 31, 2026',
+        'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search, checked September 2026',
+        'Saralak Search original client observation — non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview screenshot and passage review, September 2026',
       ]} />
 
-      <ArticleFAQ id="geo-faq" post={post} heading="FAQ: GEO และ AI Search" />
+      <ArticleFAQ id="geo-faq" post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ GEO" />
     </article>
   )
 }
-
 function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
   const seoChecklistItems = [
     'ตรวจสอบว่าเว็บไซต์ index ได้ถูกต้อง',
