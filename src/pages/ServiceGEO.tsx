@@ -73,25 +73,25 @@ const deliverables = [
 const platforms = [
   {
     name: 'Google AI Overview',
-    note: 'แสดงผลบน Google Search โดยตรง — คนเห็นก่อน Organic Results',
+    note: 'ฟีเจอร์ Generative AI บน Google Search ที่อาจแสดงคำตอบพร้อมลิงก์ไปยังแหล่งข้อมูล',
     color: 'border-blue-800/40 bg-blue-950/20',
     dot: 'bg-blue-400',
   },
   {
     name: 'Google Gemini',
-    note: 'AI Assistant ของ Google ที่รวมเข้ากับ Search, Docs, Gmail',
+    note: 'Generative AI ของ Google ที่ควรติดตามแยกจาก Visibility บน Google Search',
     color: 'border-violet-800/40 bg-violet-950/20',
     dot: 'bg-violet-400',
   },
   {
     name: 'ChatGPT',
-    note: 'AI ที่คนใช้ถามมากที่สุดในโลก — คนถามเรื่องสินค้าและบริการทุกวัน',
+    note: 'ChatGPT Search สามารถค้นพบและอ้างอิงเนื้อหาสาธารณะบนเว็บเมื่อเกี่ยวข้องกับคำถาม',
     color: 'border-emerald-800/40 bg-emerald-950/20',
     dot: 'bg-emerald-400',
   },
   {
     name: 'Perplexity',
-    note: 'AI Search Engine ที่เติบโตเร็วที่สุด — ให้คำตอบพร้อม Citation',
+    note: 'AI Search ที่มักแสดงคำตอบพร้อม Citation และลิงก์ไปยังแหล่งข้อมูล',
     color: 'border-sky-800/40 bg-sky-950/20',
     dot: 'bg-sky-400',
   },
@@ -264,7 +264,7 @@ export default function ServiceGEO() {
                 { stat: '3,000', label: 'THB/เดือน — Add-on' },
                 { stat: '4', label: 'AI Platforms ที่ติดตาม' },
                 { stat: '10–15', label: 'Prompt Tests/เดือน' },
-                { stat: '2–4', label: 'เดือน — ระยะเวลาที่เริ่มสังเกตเห็น AI Mention (ขึ้นอยู่กับ niche)' },
+                { stat: 'Monthly', label: 'รอบติดตาม Mention / Citation / Visibility' },
               ].map((item) => (
                 <div key={item.label} className="text-center">
                   <p className="text-4xl font-bold text-teal-400">{item.stat}</p>
@@ -416,8 +416,8 @@ export default function ServiceGEO() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Deliverables"
-            title="สิ่งที่คุณจะได้รับทุกเดือน"
-            description="ทุกรายการวัดได้จริง — คุณรู้ทุกเดือนว่า AI มองแบรนด์คุณอย่างไร"
+            title="สิ่งที่ได้รับทุกเดือน"
+            description="ติดตามได้เป็นรอบว่าแบรนด์ปรากฏใน AI Search อย่างไร และจุดไหนควรปรับต่อ"
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {deliverables.map(({ icon, title, items, color }) => (
@@ -440,6 +440,12 @@ export default function ServiceGEO() {
               </article>
             ))}
           </div>
+          <div className="mt-6 rounded-xl border border-teal-100 bg-teal-50 p-5">
+            <p className="thai-readable text-sm leading-7 text-teal-900">
+              <strong>หลักที่ใช้กับ Google:</strong> GEO ไม่ได้อาศัย special AI schema, FAQ Schema หรือ llms.txt เพื่อให้เข้า AI Overviews / AI Mode
+              งานหลักยังเริ่มจาก SEO foundation, เนื้อหาที่มีคุณค่า, Entity ที่ชัด และการวัดผล Generative AI Search โดย Structured Data ใช้เมื่อสอดคล้องกับเนื้อหาที่มองเห็นและประเภทที่ Google รองรับ
+            </p>
+          </div>
         </div>
       </section>
 
@@ -452,7 +458,7 @@ export default function ServiceGEO() {
               {
                 step: '01', label: 'AI Visibility Scan',
                 border: 'border-teal-800/50', bg: 'bg-teal-950/25', badge: 'bg-teal-900/60 text-teal-300', color: 'text-teal-950',
-                body: 'ทดสอบ 10–15 Prompt บน ChatGPT, Gemini, Perplexity และ AI Overview — บันทึกว่าแบรนด์ถูกพบ ถูกแนะนำ หรือไม่มีอยู่เลย',
+                body: 'ทดสอบ 10–15 Prompt บน ChatGPT, Gemini, Perplexity และ AI Overview — บันทึก Brand Mention, Citation, Source Appearance และกรณีที่ไม่พบแบรนด์',
               },
               {
                 step: '02', label: 'Optimize & Signal',
@@ -525,10 +531,10 @@ export default function ServiceGEO() {
       {/* Final CTA */}
       <section className="bg-neutral-950 px-4 py-20 text-center text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-semibold">อยากรู้ว่า AI มองแบรนด์คุณอย่างไร?</h2>
+          <h2 className="text-3xl font-semibold">อยากรู้ว่าแบรนด์ปรากฏบน AI Search อย่างไร?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-neutral-400">
             เริ่มจาก Discovery Audit เพื่อดูว่า ChatGPT, Gemini และ AI Overview
-            มองเห็นและเข้าใจแบรนด์ของคุณอย่างไร
+            กล่าวถึง อ้างอิง หรือไม่พบแบรนด์ในคำถามสำคัญอย่างไร
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-neutral-300">
             {[
