@@ -1784,7 +1784,7 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AI Overview คืออะไร? วิธีทำให้ติด AI Overview พร้อม 9 เทคนิคและ Case Study จริง',
+    title: 'AI Overview คืออะไร? 9 วิธีเตรียม Content ให้พร้อมสำหรับ AI Overview พร้อม Case Study จริง',
     slug: 'what-is-ai-overview',
     category: 'AEO',
     excerpt:
@@ -1828,6 +1828,13 @@ function rotate<T>(items: T[], by: number) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
+  if (slug === 'what-is-ai-overview') {
+    const preferredSlugs = ['what-is-aeo', 'what-is-geo', 'aeo-checklist']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
   const currentIndex = blogPosts.findIndex((post) => post.slug === slug)
   const current = blogPosts[currentIndex]
   const rest = blogPosts.filter((post) => post.slug !== slug)

@@ -94,6 +94,7 @@ const aiOverviewContents = [
       { id: 'credible-sources', label: 'ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง' },
     ],
   },
+  { id: 'ai-overview-measurement', label: 'วัดผลว่าเว็บไซต์ปรากฏใน AI Overview ได้อย่างไร' },
   { id: 'ai-overview-case-study', label: 'Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview' },
   { id: 'business-impact', label: 'ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น' },
   { id: 'ai-overview-faq', label: 'FAQ: AI Overview คืออะไร' },
@@ -8488,7 +8489,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
     {
       id: 'standalone-sections',
       title: '5. เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง',
-      body: 'ทดสอบด้วยคำถามว่า "ถ้าอ่านเฉพาะ Section นี้ ยังเข้าใจได้ไหมว่ากำลังพูดถึงอะไร" Passage ที่ดีควรมี Subject และคำตอบครบ แม้ถูกอ่านแยกจาก Paragraph ก่อนหน้า',
+      body: 'ทดสอบด้วยคำถามว่า "ถ้าอ่านเฉพาะ Section นี้ ยังเข้าใจได้ไหมว่ากำลังพูดถึงอะไร" Passage ที่ดีควรมี Subject และคำตอบครบ แม้ถูกอ่านแยกจาก Paragraph ก่อนหน้า แนวทางนี้เป็นหลักการด้านการเขียนเพื่อให้เนื้อหาชัดและเข้าใจง่าย ไม่ใช่ข้อกำหนดของ Google หรือเทคนิค Content Chunking ที่รับประกันการแสดงผลใน AI Overview',
       bullets: [
         'หลีกเลี่ยงคำลอยๆ เช่น "วิธีนี้" "สิ่งนี้" "แบบนี้" หรือ "ดังกล่าว" หากไม่มี Entity/Subject ให้รู้ว่ากำลังพูดถึงอะไร',
         'ใส่ Subject หรือหัวเรื่องซ้ำในแต่ละ Section แทนการใช้แค่สรรพนาม',
@@ -8606,6 +8607,17 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleSection id="ai-overview-measurement" title="วัดผลว่าเว็บไซต์ปรากฏใน AI Overview ได้อย่างไร">
+        <P>
+          ตั้งแต่ปี 2026 Google Search Console มี{' '}
+          <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Generative AI performance report</a>
+          {' '}สำหรับดูว่า URL จากเว็บไซต์ปรากฏในฟีเจอร์ Generative AI ของ Google Search เช่น AI Overviews และ AI Mode บ่อยแค่ไหน โดยดูข้อมูลระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้
+        </P>
+        <P>
+          การวัดผลจึงไม่ควรดูเพียงว่าเว็บไซต์ “ติด AI Overview หรือไม่” แต่ควรดูร่วมกับ Organic Visibility, Landing Page, Query, Referral Traffic และ Conversion เพื่อประเมินว่าการมองเห็นนั้นสร้าง Business Impact ต่อหรือไม่
+        </P>
+      </ArticleSection>
+
       <ArticleSection id="ai-overview-case-study" title="Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview">
         <P>
           บทความที่ Saralak Search วางกลยุทธ์และพัฒนาให้ลูกค้าถูก Google AI Overview อ้างอิงบนคำค้น{' '}
@@ -8693,6 +8705,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
 
       <SourceBox items={[
         'Google Search Central — AI features / AI Overviews, checked September 2026',
+        'Google Search Central — Generative AI performance reports in Search Console, checked September 2026',
         'Google Search Central — Structured Data and FAQPage guidelines, checked September 2026',
         'Live Google SERP observation for "ขายอะไรดีตลาดนัด", screenshot September 2026 (client brand name redacted)',
         'Saralak Search client campaign data (anonymised), checked September 2026',
