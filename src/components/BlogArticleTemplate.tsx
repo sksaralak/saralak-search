@@ -20,6 +20,22 @@ type BlogArticleTemplateProps = {
   relatedPosts: BlogPost[]
 }
 
+function formatThaiDate(value: string) {
+  const date = new Date(`${value}T00:00:00+07:00`)
+  if (Number.isNaN(date.getTime())) return value
+  return new Intl.DateTimeFormat('th-TH-u-ca-gregory', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Asia/Bangkok',
+  }).format(date)
+}
+
+function formatThaiReadingTime(value: string) {
+  const minutes = Number.parseInt(value, 10)
+  return Number.isNaN(minutes) ? value : `ใช้เวลาอ่าน ${minutes} นาที`
+}
+
 export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleTemplateProps) {
   const ssrResolvedBody = useContext(BlogArticleBodyContext)
   const BlogArticleBody = ssrResolvedBody ?? LazyBlogArticleBody
@@ -61,16 +77,16 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
             <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               เผยแพร่
             </dt>
-            <dd className="mt-1 font-semibold text-neutral-950">{post.publishedDate}</dd>
+            <dd className="mt-1 font-semibold text-neutral-950">{formatThaiDate(post.publishedDate)}</dd>
             {post.lastModifiedDate && post.lastModifiedDate !== post.publishedDate && (
-              <dd className="mt-0.5 text-xs text-neutral-500">อัปเดต {post.lastModifiedDate}</dd>
+              <dd className="mt-0.5 text-xs text-neutral-500">อัปเดต {formatThaiDate(post.lastModifiedDate)}</dd>
             )}
           </div>
           <div>
             <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               เวลาอ่าน
             </dt>
-            <dd className="mt-1 font-semibold text-neutral-950">{post.readingTime}</dd>
+            <dd className="mt-1 font-semibold text-neutral-950">{formatThaiReadingTime(post.readingTime)}</dd>
           </div>
           <div>
             <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
