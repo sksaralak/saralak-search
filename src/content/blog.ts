@@ -67,47 +67,47 @@ export const seoGeoAeoFaqs: FAQItem[] = [
   {
     question: 'SEO GEO AEO คืออะไร',
     answer:
-      'SEO GEO AEO คือแนวทางการเพิ่มการมองเห็นของธุรกิจบน Search ยุคใหม่ SEO ช่วยให้เว็บไซต์ติดอันดับบน Google, AEO ช่วยให้เนื้อหาถูกเลือกไปตอบคำถามใน AI Overview หรือ Featured Snippet และ GEO ช่วยให้แบรนด์ถูก AI Search นำไปอ้างอิงหรือพูดถึง',
+      'SEO, AEO และ GEO คือกรอบการทำ Search Visibility ที่เชื่อมกัน SEO ทำให้เว็บไซต์ถูกค้นพบและเข้าใจได้ใน Search, AEO จัดคำตอบให้ชัดพอสำหรับฟีเจอร์คำตอบ เช่น Featured Snippet หรือ AI Overview และ GEO ทำให้แบรนด์มีข้อมูล ความน่าเชื่อถือ และบริบทเพียงพอสำหรับ AI Search ที่อาจพูดถึงหรืออ้างอิงแบรนด์ได้',
   },
   {
     question: 'SEO กับ AEO ต่างกันอย่างไร',
     answer:
-      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Search Engine ส่วน AEO เน้นการทำให้เนื้อหาถูกเลือกไปแสดงเป็นคำตอบโดยตรง เช่น AI Overview, Featured Snippet, People Also Ask หรือ Voice Search ทั้งสองส่วนควรทำร่วมกัน เพราะ AEO ต้องอาศัยพื้นฐาน SEO ที่ดี',
+      'SEO เน้นให้หน้าเว็บถูกค้นพบและจัดอันดับได้ ส่วน AEO เน้นให้คำตอบบนหน้าเว็บชัด กระชับ และแยกเป็น passage ที่เข้าใจได้เอง เช่น ย่อหน้า answer-first ตารางเปรียบเทียบ หรือคำถามเฉพาะ AEO จึงควรต่อยอดจาก SEO ไม่ใช่ทำแยกจากฐานการ index และ content quality',
   },
   {
     question: 'SEO กับ GEO ต่างกันอย่างไร',
     answer:
-      'SEO เน้นการเพิ่มอันดับและ traffic จาก Search Engine ส่วน GEO เน้นการทำให้แบรนด์หรือเนื้อหาถูกระบบ Generative AI เช่น ChatGPT, Gemini, Claude และ Perplexity นำไปอ้างอิง GEO จึงให้ความสำคัญกับ brand entity, topical authority, citation และความน่าเชื่อถือของแหล่งข้อมูล',
+      'SEO วัดผลหลักจากการมองเห็นและ traffic ใน Search Engine ส่วน GEO มองภาพกว้างกว่า คือแบรนด์ถูกเข้าใจและกล่าวถึงใน AI Search หรือ Generative AI ได้หรือไม่ งาน GEO จึงดูทั้งเว็บไซต์ บทความ case study ข้อมูลแบรนด์ citation และความสอดคล้องของ entity นอกเว็บไซต์',
   },
   {
     question: 'GEO ทำให้เว็บติด ChatGPT ได้จริงไหม',
     answer:
-      'GEO ไม่สามารถการันตีได้ว่า ChatGPT หรือ AI ใดจะเลือกอ้างอิงเว็บไซต์เสมอไป แต่สามารถเพิ่มโอกาสให้ AI เข้าใจและเชื่อมโยงแบรนด์กับหัวข้อที่เกี่ยวข้องได้มากขึ้น ผ่านการสร้างเนื้อหาคุณภาพ ความน่าเชื่อถือของแบรนด์ และการถูกกล่าวถึงจากแหล่งข้อมูลภายนอก',
+      'GEO ไม่สามารถการันตีได้ว่า ChatGPT, Gemini, Perplexity หรือ AI ใดจะอ้างอิงเว็บไซต์เสมอไป สิ่งที่ทำได้คือจัดข้อมูลให้ชัด crawlable น่าเชื่อถือ และเชื่อมโยงแบรนด์กับหัวข้อที่เกี่ยวข้องมากขึ้น แล้วติดตามผลผ่าน query set, citation/mention log, referral, engagement และ conversion',
   },
   {
     question: 'AEO เกี่ยวกับ AI Overview อย่างไร',
     answer:
-      'AEO เกี่ยวข้องกับ AI Overview เพราะ AI Overview มักเลือกข้อมูลที่ตอบคำถามได้ชัดเจน มีโครงสร้างดี และมาจากแหล่งที่น่าเชื่อถือ การเขียนแบบ answer-first, การเพิ่ม FAQ, การใช้หัวข้อที่ตรงคำถาม และการจัดเนื้อหาให้เข้าใจง่าย จึงช่วยเพิ่มโอกาสให้เนื้อหาถูกนำไปใช้ในคำตอบของ AI',
+      'AEO เกี่ยวกับ AI Overview ในมุมการจัดคำตอบให้ชัดและเข้าใจง่าย แต่ไม่ใช่วิธีรับประกันการถูกเลือกเป็นแหล่งข้อมูล Google ระบุว่า AI features ยังอาศัย SEO fundamentals, Search index และระบบคุณภาพของ Search ดังนั้น answer-first, heading ที่ดี และ FAQ ควรใช้เพื่อช่วยคนอ่านและทำให้ข้อมูลชัด ไม่ใช่อ้างว่าเป็น ranking factor พิเศษ',
   },
   {
     question: 'ธุรกิจเล็กควรเริ่มจากอะไร',
     answer:
-      'ธุรกิจเล็กควรเริ่มจาก SEO พื้นฐานก่อน เช่น ทำเว็บไซต์ให้ index ได้ดี ปรับหน้า service ให้ชัดเจน ทำ Google Business Profile ให้ครบ และเขียนบทความที่ตอบคำถามลูกค้าจริง จากนั้นค่อยเพิ่ม AEO และ GEO เพื่อขยายการมองเห็นใน AI Search',
+      'ธุรกิจเล็กควรเริ่มจากฐาน SEO ก่อน เช่น หน้า service ชัด index ได้ ไม่มี technical blocker มี Google Business Profile ครบ และมีบทความที่ตอบคำถามลูกค้าจริง จากนั้นค่อยปรับ AEO ในหน้าที่มี demand และทำ GEO ผ่านข้อมูลแบรนด์ case study review และ citation ที่ตรวจสอบได้',
   },
   {
     question: 'ต้องมีเว็บไซต์ก่อนทำ GEO หรือไม่',
     answer:
-      'การมีเว็บไซต์ช่วยให้ทำ GEO ได้แข็งแรงขึ้น เพราะเว็บไซต์คือแหล่งข้อมูลหลักที่ธุรกิจควบคุมเองได้ แต่ GEO ยังเกี่ยวข้องกับช่องทางอื่นด้วย เช่น Google Business Profile, Social Media, Directory, PR, Review และเว็บไซต์ที่กล่าวถึงแบรนด์ อย่างไรก็ตาม ธุรกิจควรมีเว็บไซต์ที่ชัดเจนเป็นฐานก่อนเสมอ',
+      'ควรมีเว็บไซต์เป็นฐาน เพราะเว็บไซต์คือแหล่งข้อมูลที่ควบคุมข้อความ โครงสร้าง และ internal link ได้เอง แต่ GEO ไม่ได้จบที่เว็บไซต์เท่านั้น ยังเกี่ยวกับ Google Business Profile, social profile, directory, review, PR และเว็บไซต์อื่นที่กล่าวถึงแบรนด์ด้วย',
   },
   {
-    question: 'SEO ยังสำคัญอยู่ไหมในยุค AI',
+    question: 'SEO ยังสำคัญอยู่ไหมเมื่อ Search มี AI features',
     answer:
-      'SEO ยังสำคัญมาก เพราะ AI Search และ AI Overview ยังต้องอาศัยข้อมูลจากเว็บและแหล่งข้อมูลออนไลน์ต่าง ๆ หากเว็บไซต์ไม่มีโครงสร้างที่ดี ไม่มีเนื้อหาคุณภาพ หรือไม่ถูก Search Engine เข้าใจ โอกาสที่จะถูก AI เลือกไปใช้หรือนำไปอ้างอิงก็ลดลงเช่นกัน',
+      'SEO ยังสำคัญ เพราะ Google ระบุว่า generative AI features ใน Search ยัง rooted in core Search ranking and quality systems และใช้ข้อมูลจาก Search index หากเว็บไซต์ crawl ไม่ได้ index ไม่ได้ เนื้อหาไม่ชัด หรือมี canonical/internal link ผิด ฐานสำหรับ AEO และ GEO จะอ่อนตามไปด้วย',
   },
   {
     question: 'GEO กับ AEO ต่างกันอย่างไร',
     answer:
-      'AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบโดยตรง เช่น Featured Snippet, AI Overview หรือ Voice Search ส่วน GEO มีขอบเขตกว้างกว่า โดยดูภาพรวมความน่าเชื่อถือของแบรนด์ทั้งเว็บไซต์ เช่น Brand Mention, Entity และ Citation เพื่อให้ Generative AI อย่าง ChatGPT หรือ Gemini เลือกอ้างอิงหรือแนะนำแบรนด์ ไม่ใช่แค่ตอบคำถามเดียว',
+      'AEO เน้นโครงสร้างคำตอบในระดับหน้าและ passage ส่วน GEO เน้นความเข้าใจแบรนด์ในระดับ entity และ ecosystem เช่น topic ownership, case study, author/entity clarity, citation, review และการกล่าวถึงจากแหล่งอื่น AEO จึงเป็นส่วนหนึ่งของการทำให้คำตอบชัด ส่วน GEO เป็นภาพรวมของแบรนด์ใน AI Search',
   },
 ]
 
@@ -1430,29 +1430,30 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search',
+    title: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรก่อน',
     slug: 'seo-geo-aeo',
     category: 'SEO',
     excerpt:
-      'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่ โดย SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search, AEO คือการปรับเนื้อหาให้ถูกเลือกไปตอบคำถามใน AI Overview หรือ Featured Snippet ส่วน GEO คือการทำให้แบรนด์หรือเว็บไซต์ถูก AI Search เช่น ChatGPT, Gemini, Claude และ Perplexity นำไปอ้างอิงเป็นแหล่งข้อมูล',
+      'SEO, AEO และ GEO คือ 3 ชั้นของ Search Visibility ที่ทำงานร่วมกัน: SEO ทำให้เว็บไซต์ถูกค้นพบ, AEO ทำให้คำตอบชัด และ GEO ทำให้แบรนด์มีโอกาสถูกเข้าใจหรือกล่าวถึงใน AI Search',
     readingTime: '15 min read',
     publishedDate: '2026-05-31',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-20',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร | Saralak Search',
+    metaTitle: 'SEO GEO AEO ต่างกันอย่างไร เริ่มจากอะไรก่อน | Saralak Search',
     metaDescription:
-      'SEO, AEO และ GEO คือ 3 แนวทางหลักของ Search Marketing ยุคใหม่ เรียนรู้ความแตกต่าง และวิธีเริ่มต้นให้ธุรกิจมองเห็นได้ทั้งบน Google และ AI Search',
+      'อธิบายความต่างของ SEO, AEO และ GEO แบบชัดเจน พร้อมตารางเปรียบเทียบ วิธีเลือกว่าจะเริ่มจากอะไรก่อน ข้อจำกัด การวัดผล และตัวอย่างงานจริงของ Saralak Search',
     heroImageDesktop: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
     heroImageMobile: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-mweb.webp',
     heroImageAlt: 'SEO GEO AEO คืออะไร ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไร',
     ogImage: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
     aiSummary: [
-      'SEO GEO AEO คือ 3 แนวทางสำคัญของการทำ Search Marketing ในยุคใหม่',
-      'SEO คือการทำให้เว็บไซต์ติดอันดับบน Google Search',
-      'AEO คือการปรับเนื้อหาให้ถูกเลือกไปตอบคำถามใน AI Overview หรือ Featured Snippet',
-      'GEO คือการทำให้แบรนด์หรือเว็บไซต์ถูก AI Search เช่น ChatGPT, Gemini, Claude และ Perplexity นำไปอ้างอิงเป็นแหล่งข้อมูล',
+      'SEO คือฐานให้เว็บไซต์ crawl, index, เข้าใจ และมีโอกาสติดอันดับใน Google Search',
+      'AEO คือการจัดคำตอบให้ชัดในระดับ passage เพื่อรองรับ Featured Snippet, People Also Ask, AI Overview และคำถามเฉพาะ',
+      'GEO คือการสร้างความชัดของแบรนด์ เนื้อหา และ citation เพื่อเพิ่มโอกาสถูกเข้าใจ กล่าวถึง หรืออ้างอิงใน AI Search',
+      'ถ้าเว็บไซต์ยัง index ไม่ดีหรือหน้า service ไม่ชัด ให้เริ่มจาก SEO ก่อน ถ้ามี traffic แล้วแต่คำตอบยังไม่ชัด ค่อยทำ AEO ถ้าแบรนด์มีฐานข้อมูลพอแล้วจึงขยาย GEO',
+      'Google ระบุว่า AI features ใน Search ยังใช้ SEO fundamentals และไม่มี special schema หรือ AI text file ที่รับประกันการปรากฏใน AI Overview หรือ AI Mode',
     ],
     faqs: seoGeoAeoFaqs,
     bodyVariant: 'seo-geo-aeo',
@@ -1813,6 +1814,13 @@ export function getRelatedPosts(slug: string, limit = 3) {
   }
   if (slug === 'what-is-ai-overview') {
     const preferredSlugs = ['what-is-aeo', 'what-is-geo', 'aeo-checklist']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
+  if (slug === 'seo-geo-aeo') {
+    const preferredSlugs = ['what-is-seo', 'what-is-aeo', 'what-is-geo']
     return preferredSlugs
       .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
       .filter((post): post is BlogPost => Boolean(post))
