@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 219117)
-Total output lines: 8954
-
 import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
@@ -4019,7 +4016,857 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="Google Maps กับ GEO: สัญญาณที่ AI ใช้เข้าใจ Local Business">
-        <P>สำหรับธุรกิจที่มีหน้าร้าน ข้อมู…19117 tokens truncated…ดรถ (ถ้ามี)',
+        <P>สำหรับธุรกิจที่มีหน้าร้าน ข้อมูลจาก <strong>Google Business Profile, รีวิว, NAP (ชื่อ-ที่อยู่-เบอร์) และ citations</strong> คือสัญญาณสำคัญที่ช่วยให้ระบบ Search และ AI เข้าใจธุรกิจได้ดีขึ้น โดยเฉพาะในคำค้นหาที่มีเจตนาแบบ "ใกล้ฉัน" หรือ "[บริการ] + [ย่าน]"</P>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ปัจจัย GEO</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">บทบาทต่อ AI</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">คุณทำแล้วหรือยัง?</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-600">
+              {[
+                ['Google Business Profile (GBP)', 'AI ดึงชื่อ ที่อยู่ รีวิว หมวดหมู่มาอ้างอิง', 'ต้องสมบูรณ์ 100%'],
+                ['Reviews & Rating', 'AI ใช้ rating เฉลี่ยและเนื้อหา review เลือกแนะนำ', 'ต้องมีอย่างน้อย 20 รีวิว 4.0+'],
+                ['Citation Consistency', 'NAP (ชื่อ-ที่อยู่-เบอร์) ต้องตรงกันทุก platform', 'ตรวจ Wongnai, Facebook, เว็บ'],
+              ].map(([factor, role, action]) => (
+                <tr key={factor}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{factor}</td>
+                  <td className="thai-readable px-4 py-3">{role}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700 font-medium">{action}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>พูดง่ายๆ: <strong>ธุรกิจที่ทำ Google Maps ดีอยู่แล้ว = สัญญาณที่ชัดเจนขึ้นสำหรับทั้ง Search และ AI</strong> เพราะข้อมูล GBP ที่สมบูรณ์ทำให้ระบบเข้าใจธุรกิจได้แม่นยำขึ้น</P>
+      </ArticleSection>
+
+      <ArticleSection title="GBP ที่ดี = AI แนะนำคุณ ก่อนคู่แข่ง">
+        <P>เมื่อมีคนถาม Google Gemini, ChatGPT หรือ Perplexity ว่า "ร้านอาหารไทยดีๆ แถวอโศก?" — AI เหล่านี้ใช้ข้อมูล GBP เป็นหนึ่งในสัญญาณหลักในการตัดสินใจว่าจะแนะนำธุรกิจไหน</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { platform: 'Google AI Overview', desc: 'ดึงข้อมูลจาก GBP โดยตรงสำหรับ local queries ธุรกิจที่ GBP ครบมีโอกาสปรากฏสูงกว่า' },
+            { platform: 'Google Gemini', desc: 'ผูกกับ Google Maps อย่างลึก แนะนำธุรกิจจาก GBP ที่มีข้อมูลครบ รีวิวดี และ pin ถูกต้อง' },
+            { platform: 'ChatGPT', desc: 'เวลาตอบคำถามเกี่ยวกับธุรกิจในพื้นที่ มักอ้างอิงจากแหล่งที่ดึง Google Maps ratings และ review counts' },
+            { platform: 'Perplexity', desc: 'ใช้ข้อมูลที่ consistent บน NAP และ local citations ในการยืนยันความน่าเชื่อถือของธุรกิจ' },
+          ].map(({ platform, desc }) => (
+            <div key={platform} className="rounded-lg border border-neutral-200 bg-white p-4">
+              <p className="font-semibold text-neutral-950">{platform}</p>
+              <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <P><strong>สรุปง่ายๆ:</strong> ธุรกิจที่ GBP สมบูรณ์ รีวิวดี และข้อมูลถูกต้องทุกสาขา มีโอกาสสูงกว่าที่ AI จะเลือกแนะนำคุณ — ก่อนที่ลูกค้าจะเห็นคู่แข่งด้วยซ้ำ</P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ไม่แน่ใจว่า GBP ของคุณดึงยอดโทร-เส้นทาง-เว็บได้ดีแค่ไหน?"
+        description="Google Maps Visibility Audit ตรวจ GBP ทีละจุด วิเคราะห์ว่าตรงไหนทำให้ลูกค้าหลุดออกไปก่อนโทรหรือมาถึงร้าน พร้อม action plan ที่ทำได้จริง"
+      />
+
+      <ArticleSection title="Checklist เพิ่ม KPI บน Google Maps">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { label: 'โทรศัพท์ (Calls)', items: ['เบอร์โทรถูกต้องและรับสายได้จริง', 'เปิด Business Messaging', 'ชั่วโมงทำการถูกต้องรวม special hours'] },
+            { label: 'เส้นทาง (Directions)', items: ['Pin บน Maps ตรงตำแหน่งจริง', 'ภาพด้านนอกร้านชัดเจน', 'Description ระบุจุดสังเกต', 'แต่ละสาขามี GBP แยกกัน'] },
+            { label: 'เว็บไซต์ (Website Clicks)', items: ['ลิงก์เว็บไปหน้าที่เกี่ยวข้อง', 'Products/Services ใน GBP ครบ', 'GBP Posts อัพเดทสม่ำเสมอ'] },
+          ].map(({ label, items }) => (
+            <div key={label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{label}</p>
+              <ul className="mt-3 grid gap-2">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
+                    <span className="mt-0.5 shrink-0 text-teal-500">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <P>
+        ต้องการผู้เชี่ยวชาญช่วยทำ{' '}
+        <Link to="/services/google-maps" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Google Maps</Link>
+        {' '}ให้ธุรกิจปรากฏต่อลูกค้าในพื้นที่ ดูบริการ Google Maps ของ Saralak Search ได้เลย
+      </P>
+
+      <ReadMoreLinks items={[
+        { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจไหน — ลูกค้าใกล้ฉันรอคุณอยู่' },
+        { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวกำลังหาคุณอยู่' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
+        { to: '/services/google-maps', label: 'รับทำ Google Maps — Saralak Search' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Business Profile documentation, checked June 2026',
+        'Google Keyword Planner (keyword volume data), checked June 2026',
+        'Think with Google — "open now near me" search growth data',
+        'Manual Google Maps testing by Saralak Search, June 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ Google Maps สำหรับธุรกิจ" />
+    </article>
+  )
+}
+
+function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="Local SEO เหมาะกับธุรกิจไหน?">
+        <P><strong>Local SEO เหมาะกับธุรกิจที่มีที่ตั้งแน่นอนและให้บริการลูกค้าในพื้นที่เฉพาะ</strong> — ทุกครั้งที่มีคนพิมพ์ "[บริการ] + [ย่าน]" คือลูกค้าพร้อมซื้อที่กำลังรอเจอคุณอยู่</P>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ประเภทธุรกิจ</th>
+                <th className="px-4 py-3 font-semibold text-teal-700">เหมาะกับ Local SEO</th>
+                <th className="px-4 py-3 font-semibold text-neutral-500">ทำไม</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100">
+              {[
+                ['ร้านอาหาร / คาเฟ่', '✓ มาก', 'ลูกค้าหิวตัดสินใจเร็ว ค้นหาก่อนไปเสมอ'],
+                ['คลินิก / ทันตกรรม', '✓ มาก', 'ต้องการ trust + location ก่อนนัด'],
+                ['โรงแรม / ที่พัก', '✓ มาก', 'นักท่องเที่ยวค้นหาตาม location ก่อนจอง'],
+                ['ร้านนวด / สปา', '✓ มาก', 'ค้นหา "ใกล้ฉัน" สูงมาก conversion เร็ว'],
+                ['ร้านค้า / Retail', '✓ ดี', 'ลูกค้าอยากดูสินค้าจริงก่อนซื้อ'],
+                ['ช่าง / ซ่อมบำรุง', '✓ ดี', 'ต้องการเร่งด่วน — ติด 3-pack คือชนะ'],
+                ['E-commerce ไม่มีหน้าร้าน', '✗ ไม่เหมาะ', 'ไม่มี physical location ให้แสดงบน Maps'],
+                ['SaaS / Software', '✗ ไม่เหมาะ', 'ลูกค้าไม่ค้นหาด้วย location keyword'],
+                ['B2B ขายทั่วประเทศ', '△ จำกัด', 'SEO ทั่วไปหรือ GEO เหมาะกว่า'],
+              ].map(([type, fit, why]) => (
+                <tr key={type}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{type}</td>
+                  <td className={`px-4 py-3 font-semibold ${fit.startsWith('✓') ? 'text-teal-700' : fit.startsWith('✗') ? 'text-neutral-400' : 'text-amber-600'}`}>{fit}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{why}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ทำไม Local SEO ถึงเหมาะ — ดูจาก Stat จริง">
+        <P>ไม่ใช่แค่ความคิดเห็น — ตัวเลขเหล่านี้คือพฤติกรรมจริงของลูกค้าที่กำลังค้นหาธุรกิจในย่านคุณอยู่ทุกวัน</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">Local Search Stats ที่ต้องรู้</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { num: '46%', label: 'ของการค้นหาบน Google มี local intent', sub: 'เกือบครึ่งคือคนหาธุรกิจในพื้นที่' },
+              { num: '88%', label: 'ของ local search บน mobile', sub: 'โทรหาหรือไปร้านภายใน 24 ชั่วโมง' },
+              { num: '97%', label: 'ของผู้บริโภคค้น Google', sub: 'ก่อนเลือกธุรกิจใกล้บ้าน' },
+              { num: 'Top 3', label: 'Maps 3-pack ได้คลิก ~83%', sub: 'ของทั้งหมด ที่เหลือแทบไม่มีใครเห็น' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="flex items-start gap-4 rounded-lg border border-teal-100 bg-white p-4">
+                <p className="shrink-0 text-2xl font-extrabold text-teal-700">{num}</p>
+                <div>
+                  <p className="thai-readable text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                  <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีทำ Local SEO — ทำอะไรบ้าง?">
+        <P>Local SEO ไม่ใช่แค่สมัคร Google Business Profile แล้วรอ — ต้องทำหลายส่วนประกอบร่วมกันให้ครบ</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { step: '01', title: 'Google Business Profile (GBP)', what: 'กรอกข้อมูลให้ครบ 100%: ชื่อ ที่อยู่ เบอร์ ชั่วโมงทำการ หมวดหมู่ รูปภาพ description', priority: 'ด่วนที่สุด' },
+            { step: '02', title: 'Local Keyword Optimization', what: 'ใส่ "[บริการ] + [ย่าน]" ใน GBP description, หน้าเว็บ title tag, H1, และ content', priority: 'สำคัญ' },
+            { step: '03', title: 'Citation & NAP Consistency', what: 'ชื่อ-ที่อยู่-เบอร์ต้องตรงกันบน Facebook, Wongnai, เว็บ, LINE OA ทุก platform', priority: 'สำคัญ' },
+            { step: '04', title: 'Reviews Management', what: 'ขอรีวิวจากลูกค้าจริง ตอบทุกรีวิว และรักษา rating 4.0+ ให้สม่ำเสมอ', priority: 'ต่อเนื่อง' },
+            { step: '05', title: 'Local Content', what: 'สร้างบทความที่พูดถึงย่าน เช่น "คาเฟ่ดีๆ ในอารีย์" เพื่อให้ Google เชื่อมแบรนด์กับพื้นที่', priority: 'ระยะยาว' },
+            { step: '06', title: 'GBP Posts & Updates', what: 'โพสต์เนื้อหาใหม่ใน GBP สัปดาห์ละครั้ง: โปรโมชั่น เมนูใหม่ กิจกรรม', priority: 'ต่อเนื่อง' },
+          ].map(({ step, title, what, priority }) => (
+            <div key={step} className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-bold text-teal-800">{step}</span>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="font-semibold text-neutral-950">{title}</p>
+                  <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-semibold text-neutral-500">{priority}</span>
+                </div>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{what}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <ArticleImage
+          src="/image/blog/local-seo/local-seo-road-map.png"
+          alt="Local SEO Roadmap — ขั้นตอนการทำ Local SEO ตั้งแต่ GBP Audit จนถึง Monthly Activities"
+          caption="Local SEO Roadmap: GBP → Keywords → Citations → Reviews → Content → Posts"
+        />
+      </ArticleSection>
+
+      <ArticleSection title="เช็กจากอะไร — วิธีประเมิน Local SEO ของตัวเอง">
+        <P>ก่อนเริ่มทำ ลองประเมิน Local SEO ปัจจุบันของคุณจาก Checklist นี้:</P>
+        <div className="grid gap-2">
+          {[
+            { check: 'ค้นหาชื่อธุรกิจบน Google แล้วเจอ GBP ของตัวเองไหม?', howto: 'ถ้าไม่เจอ = ยังไม่ได้สร้าง GBP หรือยังไม่ได้ verify' },
+            { check: 'ค้นหา "[บริการ] + [ย่าน]" แล้วธุรกิจคุณอยู่ใน Maps 3-pack ไหม?', howto: 'ถ้าไม่อยู่ = ต้องทำ Local SEO อย่างจริงจัง' },
+            { check: 'ข้อมูล GBP ครบ 100% ไหม? (รูปภาพ, เมนู, ชั่วโมงทำการ, description)', howto: 'เช็กใน Google Business Profile Manager' },
+            { check: 'Rating เฉลี่ยอยู่ที่ 4.0+ และมีรีวิวอย่างน้อย 20 รีวิวไหม?', howto: 'Rating ต่ำกว่า 4.0 = ลูกค้าเลือกคู่แข่งก่อน' },
+            { check: 'ชื่อ-ที่อยู่-เบอร์ตรงกันบน Google, Facebook, Wongnai ไหม?', howto: 'NAP ไม่ตรงกัน = Google สับสน rank ต่ำลง' },
+            { check: 'มีการอัพเดท GBP Posts ในช่วง 30 วันที่ผ่านมาไหม?', howto: 'GBP ที่ไม่ active = Google ให้น้ำหนักน้อยลง' },
+          ].map(({ check, howto }, i) => (
+            <div key={i} className="flex gap-3 rounded-lg border border-neutral-200 bg-white p-4">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-neutral-300 bg-white text-[10px] font-bold text-neutral-400 mt-0.5">
+                {String(i + 1)}
+              </div>
+              <div>
+                <p className="thai-readable text-sm font-semibold text-neutral-950">{check}</p>
+                <p className="thai-readable mt-1 text-xs leading-5 text-neutral-500">{howto}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <ArticleImage
+          src="/image/blog/local-seo/local-seo-checklist.png"
+          alt="Local SEO Checklist — รายการตรวจสอบ Local SEO สำหรับธุรกิจท้องถิ่น"
+        />
+        <div className="rounded-xl border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">
+            ถ้าตอบ "ไม่" มากกว่า 3 ข้อ → <strong>Local SEO Audit ฟรี</strong> จะช่วยให้รู้ว่าควรแก้อะไรก่อนเพื่อเห็นผลเร็วที่สุด
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ตอนนี้มีคนกำลังหาคุณอยู่">
+        <P>ไม่ใช่เปรียบเปรย — เป็นเรื่องจริง ขณะที่คุณอ่านบทความนี้ มีคนในย่านเดียวกับธุรกิจของคุณกำลังพิมพ์บน Google ว่า "ร้านอาหาร อารีย์" หรือ "นวด เชียงใหม่" หรือ "คาเฟ่ สาทร"</P>
+        <P>คนเหล่านี้ไม่ได้กำลัง browse หาแรงบันดาลใจ — <strong>เขาพร้อมไป พร้อมจ่าย และรอเจอธุรกิจที่ใช่</strong> คำถามคือ: เขาเจอคุณ หรือเจอคู่แข่ง?</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ตัวเลขที่ต้องรู้</p>
+          <div className="grid divide-y divide-teal-100 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {[
+              { num: '97%', label: 'ผู้บริโภคค้น Google ก่อนเลือกธุรกิจใกล้บ้าน', sub: 'ทุกครั้งที่ค้นหาคือโอกาสของคุณ' },
+              { num: '76%', label: 'ไปที่ร้านภายใน 24 ชั่วโมง', sub: 'หลังจากค้นหา local business' },
+              { num: '28%', label: 'เกิดการซื้อจริงหลังค้นหา', sub: 'Intent สูงกว่า search ทั่วไปหลายเท่า' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="py-4 text-center first:pt-0 last:pb-0 sm:px-6 sm:py-0 sm:first:pl-0 sm:last:pr-0">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Local SEO คืออะไร?">
+        <P><strong>Local SEO</strong> คือการทำให้ธุรกิจของคุณปรากฏใน Google เมื่อคนในพื้นที่ค้นหาบริการที่คุณให้ — โดยเฉพาะใน <strong>Google Maps 3-pack</strong> และ local search results</P>
+        <P>ต่างจาก SEO ทั่วไปที่เน้น traffic จากทั่วประเทศ Local SEO เน้นให้ <strong>"คนที่อยู่ใกล้คุณและพร้อมซื้อ"</strong> เจอคุณก่อนคู่แข่ง</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">องค์ประกอบ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">หน้าที่</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['Google Business Profile (GBP)', 'โปรไฟล์ธุรกิจบน Maps — กุญแจหลักของ Local SEO'],
+                ['Local Keywords', '"[บริการ] + [ย่าน]" บนเว็บไซต์และ content'],
+                ['Citations', 'ชื่อ-ที่อยู่-เบอร์ที่ตรงกันทุก directory (Wongnai, Facebook ฯลฯ)'],
+                ['Reviews', 'รีวิวจริงและการตอบรีวิวสม่ำเสมอ'],
+                ['Local Content', 'บทความและหน้าบริการที่ระบุย่านชัดเจน'],
+              ].map(([comp, role]) => (
+                <tr key={comp}>
+                  <td className="thai-readable px-4 py-3 font-medium">{comp}</td>
+                  <td className="thai-readable px-4 py-3">{role}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>
+          <a href="https://business.google.com/us/think/consumer-insights/increase-foot-traffic-and-in-store-sales/" target="_blank" rel="noopener noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google ระบุว่า</a>
+          {' '}การค้นหา "open now near me" เติบโตกว่า <strong>400% ต่อปี</strong> — ตัวเลขนี้สะท้อนว่าคนไทยและทั่วโลกพึ่งพา local search มากขึ้นเรื่อยๆ
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="[บริการ] + [ย่าน] = Intent ที่พร้อมซื้อที่สุด">
+        <P>การค้นหาบน Google มี intent หลายระดับ แต่ไม่มีอะไรพร้อมซื้อเท่า <strong>"[บริการ] + [สถานที่]"</strong></P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ประเภทการค้นหา</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ตัวอย่าง</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">Intent</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['ค้นหาทั่วไป', 'วิธีทำอาหารไทย', 'แค่อยากรู้'],
+                ['ค้นหาแบรนด์', 'ร้าน X เมนูอะไรบ้าง', 'สนใจแล้วแต่ยังไม่ตัดสินใจ'],
+                ['[บริการ] + [ย่าน]', 'ร้านอาหาร อารีย์', 'พร้อมไปทันที'],
+                ['[บริการ] + ใกล้ฉัน', 'นวด ใกล้ฉัน', 'พร้อมไปทันที'],
+              ].map(([type, ex, intent]) => (
+                <tr key={type}>
+                  <td className="thai-readable px-4 py-3">{type}</td>
+                  <td className="thai-readable px-4 py-3 font-medium">{ex}</td>
+                  <td className="thai-readable px-4 py-3 font-semibold text-teal-800">{intent}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>คนที่พิมพ์ "ร้านอาหาร อารีย์" รู้แล้วว่าอยากกินอาหารที่ไหน รู้แล้วว่าอยู่ย่านไหน — <strong>เขาแค่ต้องการเลือกว่าจะไปร้านไหน</strong> และนั่นคือโอกาสของคุณ</P>
+      </ArticleSection>
+
+      <ArticleSection title="Local SEO เหมาะกับธุรกิจไหนมากที่สุด?">
+        <P>ธุรกิจที่ได้ประโยชน์จาก Local SEO มากที่สุดคือธุรกิจที่ <strong>มีที่ตั้งแน่นอน</strong> และให้บริการในพื้นที่เฉพาะ ไม่ว่าจะเป็น:</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 21H9m6 0v-3.375c0-.621-.518-1.125-1.125-1.125H10.125A1.125 1.125 0 009 17.625V21m6 0h3m-9 0H6" />
+                </svg>
+              ),
+              type: 'ร้านอาหาร / คาเฟ่',
+              why: 'ลูกค้าหิว ตัดสินใจเร็ว — ติด 3-pack ตรงกับช่วงเวลามื้ออาหาร',
+            },
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+              ),
+              type: 'คลินิก / ทันตกรรม',
+              why: 'คนไข้ค้นหา "หมอฟัน ใกล้ฉัน" บ่อย และต้องการตรวจ location ก่อนนัด',
+            },
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                </svg>
+              ),
+              type: 'ร้านนวด / สปา',
+              why: '"นวด ใกล้ฉัน" มี search volume สูงและ conversion rate ดีมาก เพราะตัดสินใจเร็ว',
+            },
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              ),
+              type: 'โรงแรม / ที่พัก',
+              why: 'นักท่องเที่ยวค้นหาที่พักตาม location — ต้องติดอันดับก่อนตัดสินใจจอง',
+            },
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
+                </svg>
+              ),
+              type: 'ร้านค้า / Retail',
+              why: 'ลูกค้าต้องการดูสินค้าก่อนซื้อ ค้นหา "ร้านขาย [สินค้า] ใกล้ฉัน" เสมอ',
+            },
+            {
+              icon: (
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                </svg>
+              ),
+              type: 'ช่างและบริการซ่อม',
+              why: '"ช่างแอร์ ใกล้ฉัน" หรือ "ซ่อมรถ [ย่าน]" ต้องการเร่งด่วน — ติด 3-pack คือชนะ',
+            },
+          ].map(({ icon, type, why }) => (
+            <div key={type} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-4">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-700">{icon}</div>
+              <div>
+                <p className="font-semibold text-neutral-950">{type}</p>
+                <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{why}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-amber-100 bg-amber-50 p-4">
+          <p className="thai-readable text-sm leading-6 text-amber-800">
+            <strong>ธุรกิจที่ Local SEO อาจไม่ใช่ Priority:</strong> ธุรกิจ B2B ที่ขายทั่วประเทศ, SaaS, หรือ e-commerce ที่ไม่มีหน้าร้าน — กลุ่มนี้เหมาะกับ SEO ทั่วไปหรือ GEO มากกว่า
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คนในย่านคุณกำลังค้นหาอะไรบ้าง?">
+        <div className="grid gap-5 sm:grid-cols-3">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">อารีย์</p>
+            <ArticleImage src="/image/blog/local-seo/local-seo-ari.png" alt="Local SEO keyword data อารีย์ — ร้านอาหาร อารีย์ 14,800 ครั้ง/เดือน" />
+          </div>
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">เชียงใหม่</p>
+            <ArticleImage src="/image/blog/local-seo/local-seo-chaing-mai.png" alt="Local SEO keyword data เชียงใหม่ — ร้านอาหาร เชียงใหม่ 18,100 ครั้ง/เดือน" />
+          </div>
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">สาทร</p>
+            <ArticleImage src="/image/blog/local-seo/local-seo-sathorn.png" alt="Local SEO keyword data สาทร — ร้านอาหาร สาทร 4,400 ครั้ง/เดือน" caption="Google Keyword Planner, มิ.ย. 2026" />
+          </div>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">แต่ละตัวเลขคือคนจริง ที่มีเงินในกระเป๋า</p>
+          <p className="thai-readable mt-3 text-base leading-7 text-neutral-700">
+            14,800 คน search "ร้านอาหาร อารีย์" ต่อเดือน ถ้าแค่ <strong>1%</strong> เลือกมาร้านคุณ = <strong>148 คนต่อเดือน</strong> ที่เพิ่มขึ้นโดยไม่ต้องซื้อโฆษณา
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ถ้าคุณไม่ show up ใครได้ลูกค้านั้น">
+        <P>Google Maps แสดงผลแค่ <strong>3 อันดับแรก (3-pack)</strong> สำหรับ local query ถ้าคุณไม่อยู่ใน 3 อันดับนั้น ลูกค้าที่พร้อมซื้อจะไม่เห็นคุณเลย — ไม่ใช่ scroll ไปเจอทีหลัง แต่ <strong>ไม่เห็นเลย</strong></P>
+        <P>และนั่นหมายความว่าคู่แข่งที่ทำ Local SEO ดีกว่า ได้ลูกค้าคนนั้นไปแทนคุณ ทุกวัน ทุกเดือน</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">อันดับ Maps 3-pack</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">สัดส่วนคลิก (โดยเฉลี่ย)</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ผลลัพธ์จริง</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['อันดับ 1', '~44%', 'ลูกค้าคลิกมากกว่าครึ่ง'],
+                ['อันดับ 2', '~22%', 'ยังดี ถ้า review โดดเด่น'],
+                ['อันดับ 3', '~17%', 'รอดถ้าราคาหรือ rating ดีกว่า'],
+                ['นอก 3-pack', '~2–5%', 'แทบไม่มีใครเห็น'],
+              ].map(([rank, ctr, result]) => (
+                <tr key={rank}>
+                  <td className="px-4 py-3 font-medium">{rank}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-800">{ctr}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{result}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Local SEO vs โฆษณา Google Ads — ต่างกันอย่างไร?">
+        <P>ธุรกิจหลายเจ้าเลือกยิง Google Ads เพราะเห็นผลเร็ว แต่ไม่รู้ว่ากำลังสร้างยอดขายที่ <strong>หายไปทันทีที่หยุดจ่าย</strong></P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[520px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">มิติ</th>
+                <th className="px-4 py-3 font-semibold text-teal-800">Local SEO</th>
+                <th className="px-4 py-3 font-semibold text-neutral-600">Google Ads</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['ค่าใช้จ่าย', 'ค่า setup + ค่าดูแลรายเดือน', 'จ่ายต่อคลิก — หยุดจ่าย หยุดเห็น'],
+                ['ความยั่งยืน', 'สะสมได้ — อันดับคงอยู่', 'หยุดงบ = หายทันที'],
+                ['ความน่าเชื่อถือ', 'ผู้ใช้เชื่อ organic มากกว่า', 'ผู้ใช้รู้ว่าคือโฆษณา'],
+                ['Timeline', '3–6 เดือน เห็นผลชัดเจน', 'เห็นผลทันทีแต่ต้องจ่ายตลอด'],
+                ['ROI ระยะยาว', 'ดีขึ้นเรื่อยๆ ตามอายุ', 'คงที่หรือแพงขึ้นเมื่อแข่งสูง'],
+              ].map(([dim, seo, ads]) => (
+                <tr key={dim}>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{dim}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-700">{seo}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{ads}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สำหรับธุรกิจท้องถิ่นที่มีงบจำกัด <strong>Local SEO ให้ ROI ระยะยาวดีกว่า Ads อย่างชัดเจน</strong> ส่วน Ads เหมาะสำหรับช่วง launch หรือโปรโมชั่นพิเศษ</P>
+      </ArticleSection>
+
+      <ArticleSection title="5 องค์ประกอบ Local SEO ที่ต้องทำให้ครบ">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '01', title: 'Google Business Profile (GBP)',
+              desc: 'หัวใจของ Local SEO — ต้องสมบูรณ์ 100%: ชื่อธุรกิจ, ที่อยู่, เบอร์โทร, ชั่วโมงทำการ, หมวดหมู่, รูปภาพ และ description ที่ใส่ keyword',
+              badge: 'สำคัญที่สุด',
+            },
+            {
+              num: '02', title: 'Local Keywords บนเว็บไซต์',
+              desc: 'ใส่ "[บริการ] + [ย่าน]" ใน title tag, H1, และ content ของหน้าบริการ ถ้าไม่มีเว็บไซต์ เริ่มจาก GBP description ก่อน',
+              badge: null,
+            },
+            {
+              num: '03', title: 'Citations (NAP Consistency)',
+              desc: 'ชื่อ-ที่อยู่-เบอร์ต้องตรงกันทุก platform: Facebook, Wongnai, Foursquare, LINE OA ถ้าไม่ตรงกัน Google สับสนและ rank ต่ำลง',
+              badge: null,
+            },
+            {
+              num: '04', title: 'Reviews และการตอบรีวิว',
+              desc: 'Rating เฉลี่ย 4.0+ และมีรีวิวอย่างน้อย 20 รีวิว คือ threshold ที่ Google ใช้ตัดสิน ธุรกิจที่ตอบรีวิวสม่ำเสมอ rank ดีกว่าที่ไม่ตอบ',
+              badge: null,
+            },
+            {
+              num: '05', title: 'Local Content',
+              desc: 'บทความที่พูดถึงย่าน/พื้นที่ของคุณ เช่น "ร้านกาแฟที่ดีที่สุดในอารีย์" — ช่วย Google เข้าใจว่าธุรกิจคุณ relevant กับ local search ใน area นั้น',
+              badge: null,
+            },
+          ].map(({ num, title, desc, badge }) => (
+            <div key={num} className="flex gap-4 rounded-lg border border-neutral-200 bg-white p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="font-semibold text-neutral-950">{title}</p>
+                  {badge && <span className="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-semibold text-teal-700">{badge}</span>}
+                </div>
+                <p className="thai-readable mt-1.5 text-sm leading-6 text-neutral-600">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="AI ก็ใช้ข้อมูล Local SEO แนะนำธุรกิจด้วย">
+        <P>เมื่อมีคนถาม <strong>Google Gemini, ChatGPT หรือ Perplexity</strong> ว่า "คาเฟ่น่าไปแถวอารีย์มีที่ไหนบ้าง?" — AI เหล่านี้ดึงข้อมูลจาก Google Maps, รีวิว, และ local citations มาประกอบคำแนะนำ</P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { text: 'ธุรกิจที่ทำ Local SEO ดี', sub: 'AI เลือกแนะนำ', highlight: true },
+            { text: 'ธุรกิจที่ไม่ทำ Local SEO', sub: 'ไม่มีอยู่ในสายตา AI เลย', highlight: false },
+          ].map(({ text, sub, highlight }) => (
+            <div key={text} className={`rounded-lg border p-4 ${highlight ? 'border-teal-200 bg-teal-50' : 'border-neutral-200 bg-white'}`}>
+              <p className={`font-semibold ${highlight ? 'text-teal-900' : 'text-neutral-500'}`}>{text}</p>
+              <p className={`thai-readable mt-1 text-sm ${highlight ? 'text-teal-700' : 'text-neutral-400'}`}>{sub}</p>
+            </div>
+          ))}
+        </div>
+        <P>ในยุคที่ AI เป็นส่วนหนึ่งของการค้นหา <strong>Local SEO ไม่ได้แค่ช่วยให้ติด Google Maps</strong> แต่ยังช่วยให้ AI แนะนำธุรกิจคุณเมื่อถูกถาม — ซึ่งเป็น channel ใหม่ที่คู่แข่งส่วนใหญ่ยังไม่ได้สนใจ</P>
+      </ArticleSection>
+
+      <ArticleSection title="Timeline จริงๆ: Local SEO ใช้เวลานานแค่ไหน?">
+        <P>Local SEO ไม่ใช่ overnight success — แต่ก็ไม่ได้รอนานเท่า national SEO</P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            {
+              period: 'เดือน 1–2',
+              label: 'Setup & Foundation',
+              items: ['GBP สมบูรณ์ 100%', 'Citation cleanup', 'ขอรีวิวชุดแรก', 'Local keywords บนเว็บ'],
+            },
+            {
+              period: 'เดือน 3–4',
+              label: 'Early Signals',
+              items: ['เริ่มติด Maps สำหรับ keyword หาง', 'Views และ clicks ใน GBP เพิ่ม', 'รีวิวสะสมมากขึ้น'],
+            },
+            {
+              period: 'เดือน 5–6+',
+              label: 'Compounding Results',
+              items: ['ติด 3-pack สำหรับ main keyword', 'Call และ Direction เพิ่มชัดเจน', 'ROI เริ่มชัดเจน'],
+            },
+          ].map(({ period, label, items }) => (
+            <div key={period} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">{period}</p>
+              <p className="mt-1 font-semibold text-neutral-950">{label}</p>
+              <ul className="mt-3 grid gap-1">
+                {items.map(item => (
+                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-600">
+                    <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+          <p className="thai-readable text-sm leading-6 text-neutral-600">
+            <strong className="text-neutral-950">ข้อได้เปรียบของ Local SEO เทียบกับ National SEO:</strong> ย่านที่มีคู่แข่งน้อยกว่า ธุรกิจบางประเภทอาจเห็นผลใน <strong>4–8 สัปดาห์</strong> เพราะต้องแข่งในพื้นที่เล็กกว่า ไม่ใช่ทั้งประเทศ
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="คีย์เวิร์ด Local SEO แยกตามประเภทธุรกิจ">
+        <P>แต่ละธุรกิจมีลักษณะการค้นหาต่างกัน — ตัวอย่างคีย์เวิร์ดที่ลูกค้าใช้ค้นหาจริงในแต่ละกลุ่ม:</P>
+        <div className="grid gap-4">
+          {[
+            {
+              type: 'ร้านอาหาร / คาเฟ่',
+              keywords: ['ร้านอาหาร [ย่าน]', 'ร้านอาหารอร่อยใกล้ฉัน', 'คาเฟ่น่านั่ง [ย่าน]', 'ร้าน [ประเภทอาหาร] [ย่าน]', 'ร้านอาหารเปิดดึก [พื้นที่]'],
+              tip: 'เน้น time/place intent — ลูกค้าตัดสินใจเร็ว ไม่ต้องการข้อมูลมาก',
+            },
+            {
+              type: 'คลินิก / ทันตกรรม',
+              keywords: ['คลินิกทันตกรรมใกล้ฉัน', 'จัดฟัน [ย่าน]', 'ฟอกสีฟัน [ย่าน] ราคา', 'คลินิกเปิดวันอาทิตย์ [จังหวัด]', 'หมอฟัน [ย่าน]'],
+              tip: 'Trust keyword สำคัญ — รีวิวและ credential ปิดการตัดสินใจแทนราคา',
+            },
+            {
+              type: 'นวด / สปา',
+              keywords: ['นวดแผนไทยใกล้ฉัน', 'สปา [ย่าน] ราคา', 'นวดเท้า [ย่าน]', 'Thai massage near me', 'นวดเปิดดึก [พื้นที่]'],
+              tip: '"ใกล้ฉัน" keyword สูงมาก — optimize GBP ชั่วโมงทำการให้ถูกต้องเสมอ',
+            },
+            {
+              type: 'โรงแรม / ที่พัก',
+              keywords: ['โรงแรม [จังหวัด] ราคา', 'ที่พัก [จังหวัด] ติดทะเล', 'โรงแรมใกล้ [landmark]', 'ที่พักสัตว์เลี้ยงพักได้ [จังหวัด]', 'resort ราคาถูก [จังหวัด]'],
+              tip: 'Niche keyword (สัตว์เลี้ยง, เด็กเล็ก, สระว่ายน้ำ) แข่งน้อยกว่าและ conversion intent สูงกว่า',
+            },
+            {
+              type: 'ร้านค้า / Retail',
+              keywords: ['[สินค้า] ร้านใกล้ฉัน', 'ร้าน [ประเภทสินค้า] [ย่าน]', 'ซื้อ [สินค้า] [จังหวัด]', '[ยี่ห้อ] authorized dealer [พื้นที่]', 'ร้านขาย [สินค้า] เปิดวันหยุด'],
+              tip: '"Authorized dealer" และ "ของแท้" เพิ่ม trust signal และ conversion rate',
+            },
+            {
+              type: 'ช่าง / ซ่อมบำรุง',
+              keywords: ['ช่างแอร์ใกล้ฉัน ด่วน', 'ช่างประปา [ย่าน]', 'ซ่อมเครื่องใช้ไฟฟ้า [พื้นที่]', 'ช่างไฟฟ้า [จังหวัด]', 'รับซ่อม [อุปกรณ์] ราคา'],
+              tip: 'ลูกค้ากลุ่มนี้ urgent — ติด 3-pack คือปิดดีลทันที ไม่ต้องแข่งราคา',
+            },
+          ].map((industry) => (
+            <div key={industry.type} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <p className="font-semibold text-neutral-950">{industry.type}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {industry.keywords.map((kw) => (
+                  <span key={kw} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">{kw}</span>
+                ))}
+              </div>
+              <p className="thai-readable mt-3 text-xs leading-5 text-neutral-500">{industry.tip}</p>
+            </div>
+          ))}
+        </div>
+        <P>Keyword ใน [] คือตัวแปร เปลี่ยนตามย่าน จังหวัด หรือประเภทธุรกิจจริง — ยิ่ง specific ยิ่งแข่งน้อยกว่า</P>
+      </ArticleSection>
+
+      <ArticleCTA
+        headline="ลูกค้าในย่านคุณกำลังหาคู่แข่งอยู่"
+        description="ขอ Local SEO Audit ฟรี ตรวจว่าธุรกิจคุณ show up ต่อลูกค้าในย่านได้ดีแค่ไหน และอะไรทำให้พลาดลูกค้าที่พร้อมซื้ออยู่ทุกวัน"
+      />
+
+      <P>
+        ธุรกิจที่มีหน้าร้านและต้องการลูกค้าใกล้เคียงเพิ่มขึ้น ดูบริการ{' '}
+        <Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ Local SEO</Link>
+        {' '}ของ Saralak Search ได้เลย
+      </P>
+      <ReadMoreLinks items={[
+        { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps' },
+        { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps: ลูกค้ากำลังหิวกำลังหาคุณอยู่' },
+        { to: '/blog/increase-sale-massage-spa', label: 'เพิ่มยอดขายร้านนวดและสปา ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-grooming', label: 'เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัข ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-shop', label: 'เพิ่มยอดขายร้านขายสัตว์เลี้ยงและอาหารสัตว์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hospital', label: 'เพิ่มยอดขายโรงพยาบาลสัตว์และคลินิกสัตวแพทย์ ด้วย Google Maps' },
+        { to: '/blog/increase-sale-pet-hotel', label: 'เพิ่มยอดขายโรงแรมสัตว์เลี้ยงและรับฝากเลี้ยง ด้วย Google Maps' },
+        { to: '/services/local-seo', label: 'รับทำ Local SEO — Saralak Search' },
+      ]} />
+
+      <SourceBox items={[
+        'Google Keyword Planner (keyword volume data), checked June 2026',
+        'Google Business Profile documentation, checked June 2026',
+        'Manual local search testing by Saralak Search, June 2026',
+      ]} />
+
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ Local SEO" />
+    </article>
+  )
+}
+
+function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      {post.aiSummary && <AISummary items={post.aiSummary} />}
+
+      <ArticleSection title="เพิ่มยอดขายร้านอาหาร ด้วย Google Maps ได้จริงไหม?">
+        <P><strong>เพิ่มยอดขายร้านอาหาร</strong>ด้วย Google Maps เป็นเรื่องที่ทำได้จริง — เพราะลูกค้าที่หิวข้าวและพร้อมจ่ายกำลังค้นหาร้านอาหารของคุณอยู่บน Google ทุกนาที แต่ถ้า Google Maps ของร้านไม่สมบูรณ์ พวกเขาก็จะเลือกร้านคู่แข่งแทน</P>
+        <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-teal-600">ทำไม Google Maps คือ Channel เพิ่มยอดขายที่ดีที่สุดสำหรับร้านอาหาร</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { num: '2.24M', label: 'ค้นหา "ร้านอาหาร ใกล้ฉัน"', sub: 'ต่อเดือนในไทย — ทุกคนหิวและพร้อมจ่าย' },
+              { num: '70%', label: 'เพิ่ม Store Visit', sub: 'Vans เพิ่มได้ด้วย Google (Google Merchant Center)' },
+              { num: '0 บาท', label: 'ค่าโฆษณา', sub: 'Google Maps ดึงลูกค้าได้โดยไม่ต้องซื้อ Ad' },
+            ].map(({ num, label, sub }) => (
+              <div key={num} className="text-center">
+                <p className="bg-gradient-to-b from-teal-700 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">{num}</p>
+                <p className="thai-readable mt-2 text-sm font-semibold leading-5 text-neutral-800">{label}</p>
+                <p className="thai-readable mt-1 text-xs leading-4 text-neutral-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            { title: 'ร้านที่ GBP ครบ + รูปเยอะ + รีวิวดี', result: 'ลูกค้าเลือกมา', color: 'border-teal-200 bg-teal-50/50 text-teal-800' },
+            { title: 'ร้านที่ GBP ไม่ครบ ข้อมูลเก่า ไม่มีรูป', result: 'ลูกค้าไปร้านคู่แข่ง', color: 'border-neutral-200 bg-neutral-50 text-neutral-500' },
+          ].map(({ title, result, color }) => (
+            <div key={title} className={`rounded-xl border p-4 ${color}`}>
+              <p className="thai-readable text-sm font-semibold">{title}</p>
+              <p className="mt-1.5 text-sm font-bold">{result}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเพิ่มยอดขายร้านอาหาร — เริ่มจากอะไรก่อน?">
+        <P>การ<strong>เพิ่มยอดขายร้านอาหาร</strong>ผ่าน Google Maps ไม่ซับซ้อน แต่ต้องทำให้ครบทุกจุด เพราะลูกค้าตัดสินใจจาก <strong>รูปภาพ → รีวิว → ข้อมูล → โทร/เส้นทาง</strong> ภายในเวลาไม่กี่วินาที</P>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ลำดับ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">สิ่งที่ต้องทำ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ผลที่ได้</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">เวลา</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-600">
+              {[
+                ['1', 'รูปภาพอาหารและร้าน', 'เพิ่ม Click-through', '1 วัน'],
+                ['2', 'ชั่วโมงทำการถูกต้อง', 'ลด Bounce จาก Maps', '1 ชั่วโมง'],
+                ['3', 'เพิ่มเมนูและราคา', 'เพิ่ม Website Click', '1–2 วัน'],
+                ['4', 'ขอรีวิวจากลูกค้า', 'เพิ่ม Conversion', 'ต่อเนื่อง'],
+                ['5', 'GBP Posts สัปดาห์ละครั้ง', 'เพิ่ม Engagement', 'ต่อเนื่อง'],
+              ].map(([num, action, result, time]) => (
+                <tr key={num}>
+                  <td className="px-4 py-3 font-bold text-teal-700">{num}</td>
+                  <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{action}</td>
+                  <td className="thai-readable px-4 py-3 text-teal-600">{result}</td>
+                  <td className="px-4 py-3 font-mono text-xs text-neutral-400">{time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-how-to.png"
+          alt="วิธีเพิ่มยอดขายร้านอาหาร ด้วย Google Business Profile — ขั้นตอนจากรูปภาพถึง GBP Posts"
+        />
+      </ArticleSection>
+
+      <ArticleSection title="คนหิวข้าว 2,240,000 คนต่อเดือน — ร้านคุณอยู่ที่ไหน?">
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-near-me.png"
+          alt="ร้านอาหาร ใกล้ฉัน search volume 2,240,000 ครั้งต่อเดือน"
+        />
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-location.png"
+          alt="ร้านอาหาร location search — ร้านอาหาร เชียงใหม่ อารีย์ สาทร"
+          caption="ที่มา: Google Keyword Planner, มิถุนายน 2026"
+        />
+        <P>คนเหล่านี้ไม่ได้ scroll หาแรงบันดาลใจ — <strong>เขาหิวข้าว อยู่ในย่านคุณ และพร้อมจ่ายเงินทันที</strong></P>
+        <P>ถ้าร้านคุณไม่ติด Google Maps 3-pack เขาจะไม่เห็นคุณเลย และเดินเข้าร้านคู่แข่งแทน</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[360px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ย่าน</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ค้นหา/เดือน</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ถ้าได้แค่ 1%</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['ร้านอาหาร เชียงใหม่', '18,100', '181 คน/เดือน'],
+                ['ร้านอาหาร อารีย์', '14,800', '148 คน/เดือน'],
+                ['ร้านอาหาร สาทร', '4,400', '44 คน/เดือน'],
+              ].map(([area, vol, conv]) => (
+                <tr key={area}>
+                  <td className="thai-readable px-4 py-3">{area}</td>
+                  <td className="px-4 py-3 font-semibold">{vol}</td>
+                  <td className="px-4 py-3 font-semibold text-teal-700">{conv}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-lg border border-teal-100 bg-teal-50/60 p-4">
+          <p className="thai-readable text-sm leading-6 text-teal-800">ตัวเลขเหล่านี้คือลูกค้าที่ไม่ต้องซื้อโฆษณา — แต่ถ้า GBP คุณไม่สมบูรณ์ คนเหล่านั้นเดินเข้าร้านคู่แข่งทุกวัน</p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="3 KPI ที่บอกว่าร้านคุณได้ลูกค้าจาก Google จริงหรือเปล่า">
+        <P>ไม่ต้องวัดอันดับ — วัดสิ่งที่แปลงเป็นเงินได้จริง:</P>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              icon: (
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                </svg>
+              ),
+              kpi: 'โทรศัพท์ (Calls)',
+              desc: 'ลูกค้าโทรจองโต๊ะ ถามเมนู หรือถามทางโดยตรงจาก Google Maps — ถ้าเบอร์โทรไม่แสดงหรือไม่มีคนรับ โอกาสหายไปทันที',
+            },
+            {
+              icon: (
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                </svg>
+              ),
+              kpi: 'ขอเส้นทาง (Directions)',
+              desc: 'ลูกค้าตั้งใจจะมาร้านคุณแล้ว — ถ้า pin ผิดหรือที่อยู่ไม่ชัดเจน เขาจะหาร้านอื่นแทน',
+            },
+            {
+              icon: (
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+              ),
+              kpi: 'คลิกเว็บไซต์ (Website)',
+              desc: 'ลูกค้าอยากดูเมนู ราคา หรือโปรโมชั่นก่อนตัดสินใจ — ถ้าไม่มีลิงก์หรือเว็บช้า เขาออกไปดูร้านอื่น',
+            },
+          ].map(({ icon, kpi, desc }) => (
+            <div key={kpi} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-100 text-teal-700">{icon}</div>
+              <p className="mt-3 font-semibold text-neutral-950">{kpi}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <ArticleImage
+          src="/image/blog/increase-sale-resturant/resturant-increase-sale-dashboard.png"
+          alt="Google Business Profile Insights — ดู Call, Direction Requests และ Website Clicks ที่ได้จาก Google Maps"
+          caption="GBP Insights: Call, Direction, Website Clicks คือ KPI ที่แปลงเป็นลูกค้าจริง"
+        />
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอด Call · Direction · Website จาก Google Maps อย่างละเอียด' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="ทำไมลูกค้าเลือกร้านจาก Google Maps มากกว่า Wongnai หรือ Facebook?">
+        <P>หลายร้านทุ่มเทกับ Facebook Page และ Wongnai — แต่ลืมไปว่าลูกค้าส่วนใหญ่เริ่มต้นที่ Google ก่อนเสมอ</P>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">Platform</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">จุดแข็ง</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">จุดอ่อน</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['Google Maps', 'คนค้นหาเยอะที่สุด พร้อมซื้อ ไม่ต้องโฆษณา', 'ต้องทำ GBP ให้ครบ ใช้เวลา 3–6 เดือน'],
+                ['Wongnai', 'คนที่ตั้งใจหาร้านอยู่แล้ว รีวิวน่าเชื่อถือ', 'Audience แคบกว่า Google มาก'],
+                ['Facebook Page', 'เหมาะโปรโมชั่น ดู engagement ได้', 'คนไม่ค้นหาร้านผ่าน Facebook'],
+                ['Instagram', 'ดีสำหรับ visual brand ดึงดูดสาย content', 'ไม่ถูก index Google ไม่มี call/direction'],
+              ].map(([platform, pro, con]) => (
+                <tr key={platform}>
+                  <td className="px-4 py-3 font-semibold text-teal-800">{platform}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-600">{pro}</td>
+                  <td className="thai-readable px-4 py-3 text-neutral-500">{con}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>สรุปคือ: <strong>Google Maps คือ channel ที่ต้องทำก่อน</strong> เพราะลูกค้าที่หิวข้าวและพร้อมจ่ายอยู่ที่นั่น — Wongnai และ Facebook เป็น complement ไม่ใช่ substitute</P>
+      </ArticleSection>
+
+      <ArticleSection title="6 สิ่งที่ร้านอาหารต้องทำบน Google Business Profile">
+        <div className="grid gap-4">
+          {[
+            {
+              num: '1', title: 'รูปภาพ — สำคัญที่สุดสำหรับร้านอาหาร',
+              body: 'ลูกค้าตัดสินใจด้วยตาก่อนเสมอ รูปที่ต้องมีขั้นต่ำ: รูปอาหาร signature dish อย่างน้อย 5 รูป (แสงดี จัดจาน), รูปบรรยากาศด้านใน, รูปด้านนอกและป้ายร้าน และรูปที่จอดรถ (ถ้ามี)',
               tip: 'อัพรูปใหม่ทุกเดือน Google ให้น้ำหนัก profile ที่ active',
             },
             {
