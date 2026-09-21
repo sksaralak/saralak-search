@@ -2138,10 +2138,11 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     { id: 'geo-how-to-overview', label: 'วิธีทำ GEO ต้องทำอะไรบ้าง' },
     { id: 'geo-official-vs-method', label: 'อะไรคือข้อมูลทางการ และอะไรคือ Methodology ของ Saralak Search' },
     { id: 'geo-steps', label: 'วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน' },
-    { id: 'geo-case-study', label: 'ตัวอย่างจากงานจริงของ Saralak Search' },
+    { id: 'geo-case-study', label: 'เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง' },
     { id: 'geo-30-day-plan', label: 'แผนลงมือทำ GEO ภายใน 30 วัน' },
-    { id: 'geo-measurement', label: 'วิธีวัดผล GEO' },
+    { id: 'geo-measurement', label: 'วิธีวัดผล GEO และ Tools ที่ใช้จริง' },
     { id: 'geo-limitations', label: 'ข้อจำกัดของ GEO ที่ควรรู้' },
+    { id: 'geo-summary', label: 'สรุปวิธีทำ GEO' },
     { id: 'geo-next-step', label: 'ควรเริ่มทำ GEO จากจุดไหนต่อ' },
     { id: 'geo-faq', label: 'FAQ เกี่ยวกับการทำ GEO' },
   ]
@@ -2313,10 +2314,14 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-case-study" title="ตัวอย่างจากงานจริงของ Saralak Search: Information → Commercial โดยไม่ยัด CTA">
+      <ArticleSection id="geo-case-study" title="เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง">
         <P>
-          ในเคสเว็บไซต์ E-commerce แห่งหนึ่ง Saralak Search วางบทความสำหรับคำค้น Non-brand “ขายอะไรดีตลาดนัด”
-          ซึ่ง Search Intent หลักคือหาไอเดียสินค้า ไม่ใช่ค้นหา Packaging โดยตรง บทความจึงตอบ Intent กว้างก่อน แล้วแตกเป็นเมนู ต้นทุน ตัวอย่างราคา 19/29/39 บาท ปัญหาการขาย และตัวเลือกบรรจุภัณฑ์ที่สัมพันธ์กับสินค้าแต่ละประเภท
+          <strong>เคสนี้นับเป็นผลลัพธ์ของ GEO เพราะคำค้นแบบ Non-brand นำไปสู่การที่เนื้อหาของเว็บไซต์ถูก Google AI Overview ใช้เป็นแหล่งข้อมูล และ Packaging Solution ของธุรกิจถูกเชื่อมเข้าไปในคำตอบ</strong>
+          {' '}ผลลัพธ์จึงไม่ได้หยุดที่ Ranking หรือ Click แต่เกิด Visibility ในคำตอบที่ AI สร้างขึ้น ซึ่งเป็น Outcome หนึ่งที่งาน GEO ต้องการวัด
+        </P>
+        <P>
+          Saralak Search วางบทความสำหรับคำค้น Non-brand “ขายอะไรดีตลาดนัด” โดย Search Intent หลักคือหาไอเดียสินค้า ไม่ใช่ค้นหา Packaging โดยตรง
+          บทความจึงตอบ Intent กว้างก่อน แล้วแตกเป็นเมนู ต้นทุน ตัวอย่างราคา 19/29/39 บาท ปัญหาการขาย และตัวเลือกบรรจุภัณฑ์ที่สัมพันธ์กับสินค้าแต่ละประเภท
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
@@ -2333,13 +2338,14 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </div>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
-          alt="ตัวอย่าง Google AI Overview อ้างอิงบทความเว็บไซต์ E-commerce บนคำค้นขายอะไรดีตลาดนัด"
-          caption="เคสจริงแบบไม่เปิดเผยชื่อลูกค้า: Google AI Overview อ้างอิงหลายช่วงจากบทความ Non-brand และนำ Packaging Solution ไปประกอบคำตอบ"
+          alt="ผลลัพธ์จริงจากงาน GEO ของ Saralak Search บนคำค้นขายอะไรดีตลาดนัดใน Google AI Overview"
+          caption="ผลลัพธ์จริงจากงาน Saralak Search: บทความคำค้น Non-brand ถูก Google AI Overview อ้างอิงหลายช่วง และ Packaging Solution ถูกนำไปประกอบคำตอบ"
         />
         <P>
-          สิ่งที่เคสนี้ยืนยันได้คือ <strong>ผลลัพธ์เกิดขึ้นจริงในหน้าดังกล่าว</strong> และโครง Content มี Information → Sub-intent → Practical Example → Commercial Context ที่ชัด
-          แต่ไม่สามารถสรุปเชิงเหตุและผลว่า Framework เพียงอย่างเดียวทำให้เกิด Citation เพราะระบบของ Google มีปัจจัยอื่นร่วมด้วย
-          รายละเอียดกลไกของผลลัพธ์อยู่ใน
+          เคสนี้พิสูจน์ได้ว่า <strong>Saralak Search ลงมือวาง Content Strategy และเกิดผลลัพธ์จริงใน Google AI Overview</strong>
+          โดยหน้าเดียวถูกอ้างอิงจากหลายช่วงเนื้อหาและเชื่อมจาก Informational Intent ไปถึง Commercial Context ได้
+          อย่างไรก็ตาม ไม่ควรตีความว่า Framework นี้เป็นสาเหตุเดียวของ Citation เพราะ Google ยังใช้ระบบ Search และปัจจัยอื่นร่วมในการเลือกแหล่งข้อมูล
+          รายละเอียดของผลลัพธ์ดูต่อได้ที่
           {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร พร้อม Case Study จริง</Link>.
         </P>
       </ArticleSection>
@@ -2375,19 +2381,21 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection id="geo-measurement" title="วิธีวัดผล GEO">
+      <ArticleSection id="geo-measurement" title="วิธีวัดผล GEO และ Tools ที่ใช้จริง">
         <P>
           GEO ไม่ควรวัดจาก “ถาม ChatGPT แล้วเจอแบรนด์หรือไม่” เพียงตัวเดียว เพราะคำตอบเปลี่ยนตาม Query, เวลา และแพลตฟอร์ม
-          ควรแบ่ง KPI เป็น 4 ชั้น: Search Visibility, AI Search Visibility, Referral/Engagement และ Business Outcome
+          ในงานจริง Saralak Search ใช้ข้อมูลจาก <strong>Google Search Console, Ahrefs, Bing Webmaster Tools, GA4</strong> และการติดตาม AI Mention/Citation ร่วมกัน
+          เพื่อดูทั้งฐาน Search, การเติบโตของ Topic, สัญญาณจากเว็บไซต์ภายนอก และผลลัพธ์ทางธุรกิจ
         </P>
+
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['Search Visibility', 'Google Search Console: Impressions, Clicks, Queries, Landing Pages และอันดับ เพื่อดูว่าฐาน Organic แข็งแรงขึ้นหรือไม่'],
-            ['Google Generative AI Visibility', 'Search Console Generative AI performance report สำหรับ AI Overviews และ AI Mode โดยดู Impressions แยกตามหน้า ประเทศ อุปกรณ์ และช่วงเวลา'],
-            ['Other AI Platforms', 'บันทึก Mention/Citation ใน ChatGPT, Gemini หรือ Perplexity ด้วย Query Set เดิม พร้อม Date, Platform, Source URL และ Context'],
-            ['Referral / Engagement', 'GA4: Sessions, Engaged Sessions, Landing Page และ Referral Source จาก AI platform เท่าที่ referrer ถูกส่งมา'],
-            ['Business Outcome', 'Form, LINE, Call, Qualified Lead, Purchase และ Revenue โดยใช้ attribution อย่างระมัดระวังและไม่สรุปเหตุจาก Visibility อย่างเดียว'],
-            ['Content Learning', 'บันทึกว่า URL หรือ Section ใดถูกอ้างอิง เพื่อหา Content Gap และสิ่งที่ควร Refresh รอบถัดไป'],
+            ['Google Search Console', 'ใช้ดู Impressions, Clicks, Queries, Landing Pages, Indexing และ Generative AI performance สำหรับ AI Overviews/AI Mode เพื่อวัดว่าหน้าใดและ Topic ใดมี Visibility บน Google เพิ่มขึ้น'],
+            ['Ahrefs', 'ใช้ดู Organic Keywords, Position Movement, Backlinks, Referring Domains, Content Gap และหน้า/Topic ที่คู่แข่งมี Visibility มากกว่า หาก Account มี AI Visibility หรือ Brand Radar สามารถใช้เป็น Supplemental Signal เพิ่มได้'],
+            ['Bing Webmaster Tools', 'ใช้ตรวจ Crawl, Index, URL Inspection และ Search Performance บน Bing เพื่อเช็กว่าเว็บไซต์เข้าถึงได้ดีนอก Google ด้วย ข้อมูลนี้เป็น Search/Technical Signal ไม่ควรตีความว่าเป็น Direct Copilot Attribution'],
+            ['GA4', 'ใช้ดู Organic และ Referral Sessions, Engaged Sessions, Landing Page Behavior และ Conversion เช่น Form, LINE, Call หรือ Purchase เพื่อเชื่อม Visibility กลับไปยัง Business Outcome'],
+            ['AI Mention / Citation Tracking', 'ใช้ Query Set เดิมทดสอบ ChatGPT, Gemini และ Perplexity เป็นรอบ พร้อมบันทึก Date, Platform, Mention, Citation URL และบริบทของคำตอบ'],
+            ['Manual SERP Review', 'ตรวจ AI Overview, AI Mode และ Search Result จริงใน Query สำคัญเพื่อดูว่าแบรนด์หรือ URL ปรากฏใน Context แบบใด ไม่พึ่ง Dashboard เพียงอย่างเดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -2395,9 +2403,11 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
+
         <P>
-          ตัวอย่างการตีความ: ถ้า Generative AI Impressions เพิ่มขึ้น แต่ Lead ไม่เพิ่ม ควรตรวจต่อว่าหน้าใดถูกแสดง Query มี Intent เชิงข้อมูลหรือเชิงซื้อ และผู้ใช้ที่คลิกเข้ามาทำอะไรต่อ
-          การมองเห็นเป็นสัญญาณต้นทาง ไม่ใช่หลักฐานว่ากลยุทธ์สร้างรายได้แล้ว
+          การอ่านผลควรดูเป็น Funnel: <strong>Search/AI Visibility → Visit/Engagement → Lead/Conversion</strong>
+          เช่น ถ้า Generative AI Impressions หรือ Organic Visibility เพิ่มขึ้น แต่ Lead ไม่เพิ่ม ควรตรวจต่อว่าหน้าใดถูกแสดง Query เป็น Informational หรือ Commercial Intent และผู้ใช้ทำอะไรหลังเข้าหน้าเว็บ
+          Visibility เป็นสัญญาณต้นทาง ไม่ใช่หลักฐานว่ากลยุทธ์สร้างรายได้แล้ว
         </P>
       </ArticleSection>
 
@@ -2410,6 +2420,17 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           'Prompt Testing มีความผันผวน จึงควรใช้ Query Set เดิมและวัดเป็นรอบมากกว่าสรุปจาก Screenshot เดียว',
           'Correlation จาก Case Study ไม่ควรถูกเขียนเป็นเหตุและผล หากไม่มีการทดลองที่แยกตัวแปรได้',
         ]} />
+      </ArticleSection>
+
+      <ArticleSection id="geo-summary" title="สรุป: วิธีทำ GEO ให้ได้ผลต้องทำมากกว่าแค่ปรับ Content">
+        <P>
+          วิธีทำ GEO ที่ครบไม่ใช่การเพิ่มคำว่า AI, ใส่ Schema หรือสร้าง FAQ จำนวนมาก แต่เป็นการทำให้ <strong>Search Foundation, Content, Entity, Evidence และ Measurement ทำงานเชื่อมกัน</strong>
+          เริ่มจากให้ Search Engine และ AI crawler เข้าถึงหน้าได้ กำหนด Owner URL ของแต่ละ Intent เขียนคำตอบที่มีข้อมูลจริงและอ่านแยกได้ เชื่อม Topic ไปยัง Brand/Service อย่างมีเหตุผล แล้วสร้างหลักฐานจากภายนอกที่เกี่ยวข้อง
+        </P>
+        <P>
+          เป้าหมายของ GEO จึงไม่ใช่แค่ “ให้ ChatGPT รู้จักแบรนด์” แต่คือการเพิ่มโอกาสให้ธุรกิจถูกค้นพบ ถูกกล่าวถึง หรือถูกอ้างอิงในช่วงที่ผู้ใช้กำลังหาข้อมูล เปรียบเทียบ และตัดสินใจ
+          จากนั้นต้องวัดต่อด้วย GSC, Ahrefs, Bing Webmaster Tools, GA4 และ AI Mention/Citation Tracking เพื่อดูว่าการมองเห็นนั้นนำไปสู่ Traffic, Lead หรือ Conversion จริงหรือไม่
+        </P>
       </ArticleSection>
 
       <ArticleSection id="geo-next-step" title="ควรเริ่มทำ GEO จากจุดไหนต่อ">
