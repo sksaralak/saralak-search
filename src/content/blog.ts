@@ -209,62 +209,37 @@ export const whatIsAeoFaqs: FAQItem[] = [
   {
     question: 'AEO คืออะไร?',
     answer:
-      'AEO คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI สามารถเข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งานใน Google AI Overview, Featured Snippet, Voice Search และ AI Assistant',
+      'AEO หรือ Answer Engine Optimization คือแนวทางจัดเนื้อหาและโครงสร้างหน้าเว็บให้คำตอบตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจดึงข้อมูลไปแสดงเป็นคำตอบ AEO เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google',
   },
   {
     question: 'AEO ย่อมาจากอะไร?',
     answer:
-      'AEO ย่อมาจาก Answer Engine Optimization หมายถึงการทำให้เนื้อหาพร้อมสำหรับระบบที่ตอบคำถามโดยตรง เช่น AI Overview, Featured Snippet และ Voice Search',
+      'AEO ย่อมาจาก Answer Engine Optimization ในบทความนี้หมายถึง AEO ด้าน Search และ Content ไม่ใช่ Authorized Economic Operator ซึ่งเป็นอีกความหมายของคำย่อ AEO ที่พบในผลค้นหาภาษาไทย',
   },
   {
     question: 'AEO ต่างจาก SEO อย่างไร?',
     answer:
-      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Search Engine ส่วน AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบใน Search Engine และ AI ทั้งสองควรทำร่วมกัน เพราะ SEO เป็นพื้นฐานที่ช่วยให้เนื้อหา AEO ถูกค้นพบได้',
+      'SEO เป็นฐานที่ทำให้หน้าเว็บถูกค้นพบ Crawl และ Index ได้ รวมถึงแข่งขันใน Organic Search ส่วน AEO โฟกัสความชัดของคำตอบในระดับหน้าและ Passage เช่น Answer-first, Comparison, Evidence และ Context ทั้งสองจึงทับซ้อนกันมากและควรทำร่วมกัน',
   },
   {
     question: 'AEO ต่างจาก GEO อย่างไร?',
     answer:
-      'AEO เน้นการทำให้เนื้อหาถูกใช้เป็นคำตอบใน Search Engine และ AI Overview ส่วน GEO เน้นการทำให้แบรนด์ถูก Generative AI เช่น ChatGPT, Gemini และ Perplexity แนะนำ อ้างอิง หรือพูดถึงในคำตอบ',
+      'AEO โฟกัสการออกแบบคำตอบบนหน้าให้ชัดและใช้งานได้ ส่วน GEO มองกว้างไปถึง Content, Evidence, Entity, Brand Mention และ Citation ใน Generative AI หรือ AI Search เส้นแบ่งของสองคำนี้ไม่ได้มีมาตรฐานสากลตายตัว',
   },
   {
-    question: 'ทำ AEO แล้วยังต้องทำ SEO ไหม?',
+    question: 'AEO ต้องใช้ Schema หรือ FAQPage ไหม?',
     answer:
-      'ยังต้องทำ SEO เพราะ SEO เป็นพื้นฐานสำคัญที่ช่วยให้เว็บไซต์ถูกค้นพบ ถูกจัดทำดัชนี และมีโครงสร้างที่ Search Engine เข้าใจ หาก SEO พื้นฐานไม่ดี การทำ AEO จะยากขึ้น',
+      'ไม่จำเป็นต้องมี Schema พิเศษสำหรับ AI Overviews หรือ AI Mode Google ระบุว่า Structured Data ควรตรงกับเนื้อหาที่ผู้ใช้เห็นจริง และไม่มี special AI markup ที่ต้องเพิ่ม ส่วน FAQ ที่มีประโยชน์ต่อผู้อ่านยังเขียนได้ แต่ Google ยกเลิก FAQ rich results ใน Search ตั้งแต่ปี 2026 จึงไม่ควรเพิ่ม FAQPage Schema เพียงเพื่อหวัง Rich Result หรือ AI Citation',
   },
   {
-    question: 'AEO ช่วยเพิ่ม Traffic ไหม?',
+    question: 'AEO วัดผลอย่างไร?',
     answer:
-      'AEO อาจช่วยเพิ่ม Traffic ได้เมื่อเว็บไซต์ถูกแสดงใน Featured Snippet หรือ AI Overview แต่บางครั้งผู้ใช้งานอาจเห็นคำตอบแล้วไม่คลิก ดังนั้นควรวัดผลทั้ง Traffic, Impression, Visibility และ Brand Search ร่วมกัน',
+      'ควรวัดเป็นหลายชั้น ได้แก่ Search Visibility ใน Google Search Console, Featured Snippet หรือ Answer Visibility, Generative AI impressions จาก Search Console สำหรับ AI Overviews และ AI Mode, Engagement ใน GA4 และ Business Outcome เช่น Form, LINE, Call, Lead หรือ Purchase',
   },
   {
-    question: 'ทำยังไงให้ติด AEO?',
+    question: 'AEO เกี่ยวกับ ChatGPT อย่างไร?',
     answer:
-      'เริ่มจากการหา Question Keywords เขียนคำตอบให้ชัดในช่วงต้น ใช้หัวข้อแบบคำถาม เพิ่ม FAQ ใช้ Schema Markup ทำ Internal Link และเพิ่มความน่าเชื่อถือให้เนื้อหาด้วย E-E-A-T',
-  },
-  {
-    question: 'AEO ต้องใช้ Schema ไหม?',
-    answer:
-      'ควรใช้ Schema เพราะช่วยให้ Search Engine เข้าใจโครงสร้างข้อมูลได้ดีขึ้น Schema ที่เหมาะกับ AEO ได้แก่ FAQ, Article, HowTo, Organization และ LocalBusiness',
-  },
-  {
-    question: 'AEO เหมาะกับธุรกิจขนาดเล็กไหม?',
-    answer:
-      'เหมาะมาก เพราะธุรกิจขนาดเล็กสามารถใช้ AEO แข่งขันในคำถามเฉพาะทางหรือ Local Search ได้ โดยเฉพาะคำถามที่ลูกค้าต้องการคำตอบก่อนตัดสินใจซื้อหรือติดต่อ',
-  },
-  {
-    question: 'AEO ใช้เวลานานไหมกว่าจะเห็นผล?',
-    answer:
-      'ระยะเวลาขึ้นอยู่กับคุณภาพเว็บไซต์ ความยากของคีย์เวิร์ด และการแข่งขันในตลาด บางหน้าอาจเริ่มเห็นสัญญาณจาก Impression หรือ Ranking ภายในไม่กี่สัปดาห์ แต่ผลลัพธ์ที่มั่นคงต้องใช้เวลาและการปรับปรุงต่อเนื่อง',
-  },
-  {
-    question: 'AEO สำคัญกับธุรกิจไทยไหม?',
-    answer:
-      'สำคัญ เพราะผู้ใช้งานไทยเริ่มคุ้นเคยกับการค้นหาข้อมูลแบบคำถามมากขึ้น และ AI Search กำลังเข้ามามีบทบาทในการช่วยสรุปข้อมูล เปรียบเทียบตัวเลือก และแนะนำแบรนด์',
-  },
-  {
-    question: 'AEO เกี่ยวข้องกับ ChatGPT อย่างไร?',
-    answer:
-      'AEO ช่วยให้เนื้อหาตอบคำถามได้ชัดเจนและมีโครงสร้างที่ระบบ AI เข้าใจง่าย ซึ่งเป็นปัจจัยเดียวกับที่ ChatGPT, Gemini และ Perplexity ใช้พิจารณาว่าจะดึงข้อมูลจากเว็บไซต์ใดไปสรุปเป็นคำตอบ เว็บไซต์ที่ทำ AEO ไว้ดีจึงมีโอกาสถูกอ้างอิงใน AI Search มากกว่าเว็บไซต์ที่ไม่มีโครงสร้างคำตอบชัดเจน',
+      'หลัก Answer-first และ Passage clarity ช่วยให้เนื้อหาอ่านและตีความได้ชัดขึ้น แต่ไม่ได้รับประกันว่า ChatGPT จะอ้างอิงเว็บไซต์ เพราะแต่ละแพลตฟอร์มมีระบบ Retrieval และ Citation ต่างกัน หากเป้าหมายคือ Brand Mention หรือ Citation บน ChatGPT, Gemini และ Perplexity ควรวัดในกรอบ GEO ควบคู่กัน',
   },
 ]
 
@@ -1293,36 +1268,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    title: 'AEO คืออะไร? เข้าใจ Answer Engine Optimization สำหรับ Search และ AI',
     slug: 'what-is-aeo',
     category: 'AEO',
     excerpt:
-      'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine และ AI สามารถเข้าใจข้อมูลได้ง่าย และมีโอกาสเลือกข้อมูลไปใช้เป็นคำตอบให้ผู้ใช้งานใน Google AI Overview, Featured Snippet, Voice Search และ AI Assistant',
-    readingTime: '20 min read',
+      'AEO หรือ Answer Engine Optimization คือแนวทางจัดเนื้อหาและโครงสร้างหน้าเว็บให้คำตอบตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ โดย AEO ไม่ใช่ Ranking Factor หรือสูตรรับประกัน AI Citation',
+    readingTime: '16 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-21',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search | Saralak Search',
+    metaTitle: 'AEO คืออะไร? Answer Engine Optimization สำหรับ AI Search | Saralak Search',
     metaDescription:
-      'AEO หรือ Answer Engine Optimization คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบ เรียนรู้วิธีทำ AEO ให้ติด Google AI Overview, Featured Snippet และ AI Assistant',
+      'AEO คืออะไร เข้าใจ Answer Engine Optimization ต่างจาก SEO และ GEO อย่างไร พร้อม Google guidance ปี 2026 วิธีทำ AEO เคสจริง การวัดผล และข้อจำกัดที่ควรรู้',
     heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.webp',
-    heroImageAlt: 'AEO คืออะไร ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search',
+    heroImageAlt: 'AEO คืออะไร Answer Engine Optimization สำหรับ Search และ AI',
     ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
     aiSummary: [
-      'AEO คือการปรับเว็บไซต์ให้ Search Engine และ AI เลือกนำข้อมูลไปใช้เป็นคำตอบใน AI Overview, Featured Snippet, Voice Search และ AI Assistant',
-      'AEO สำคัญเพราะพฤติกรรมการค้นหาเปลี่ยนไป ผู้ใช้งานต้องการคำตอบทันทีบนหน้าผลการค้นหา ไม่ใช่แค่รายการลิงก์',
-      'วิธีทำ AEO มี 10 ขั้นตอน ตั้งแต่หา Question Keywords ตอบคำถามในช่วงต้น ใช้ FAQ Schema และ Internal Link ไปจนถึงเพิ่ม E-E-A-T',
-      'SEO, AEO และ GEO ควรทำร่วมกัน โดย SEO เป็นพื้นฐาน AEO ทำให้ถูกเลือกเป็นคำตอบ และ GEO ทำให้ AI แนะนำแบรนด์',
+      'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบบนหน้าเว็บให้ตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ',
+      'AEO เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google และไม่มีวิธีรับประกัน Featured Snippet, AI Overview หรือ AI Citation',
+      'คำค้น “aeo คือ” ในไทยมี Mixed Intent ระหว่าง Answer Engine Optimization กับ Authorized Economic Operator จึงควรระบุชื่อเต็มของ Entity ให้ชัดตั้งแต่ต้นหน้า',
+      'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มี Schema หรือ Optimization พิเศษที่ต้องเพิ่มเพื่อให้มีสิทธิ์ปรากฏ',
+      'AEO ควรวัดทั้ง Search Visibility, Answer/AI Visibility, Engagement และ Business Outcome ไม่ใช่ดู Traffic หรือ Citation เพียงตัวเดียว',
     ],
     faqs: whatIsAeoFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'what-is-aeo',
     cta: {
-      headline: 'เว็บไซต์ของคุณมีโอกาสถูก AI เลือกเป็นคำตอบหรือยัง?',
+      headline: 'ยังไม่ชัดว่า Content ควรแก้ AEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ SEO, AEO และ GEO แค่ไหน พร้อมค้นหาโอกาสในการเพิ่ม Brand Visibility บน Google Search และ AI Search',
+        'Discovery Audit ช่วยตรวจ Search Intent, Topic Ownership, Content Structure, Internal Link, Evidence และ AI/Search Visibility เพื่อจัดลำดับสิ่งที่ควรแก้ก่อนผลิต Content เพิ่ม',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
@@ -1802,6 +1779,13 @@ export function getRelatedPosts(slug: string, limit = 3) {
   }
   if (slug === 'what-is-ai-overview') {
     const preferredSlugs = ['what-is-aeo', 'what-is-geo', 'aeo-checklist']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
+  if (slug === 'what-is-aeo') {
+    const preferredSlugs = ['aeo-checklist', 'what-is-ai-overview', 'seo-geo-aeo']
     return preferredSlugs
       .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
       .filter((post): post is BlogPost => Boolean(post))
