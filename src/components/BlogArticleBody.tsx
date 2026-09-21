@@ -889,7 +889,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           <p className="text-sm font-semibold text-sky-950">แยกให้ชัดก่อนวางกลยุทธ์</p>
           <ul className="mt-2 grid gap-2 text-sm leading-6 text-sky-900">
             <li>Official guidance: SEO fundamentals, crawlability, indexability, content quality, visible content และ Search Console measurement</li>
-            <li>Saralak Search methodology: answer-first, topic ownership, information gain, internal link map, entity clarity และ Doozy-style information to commercial flow</li>
+            <li>Saralak Search methodology: answer-first, topic ownership, information gain, internal link map, entity clarity และ information-to-commercial flow</li>
             <li>ข้อห้าม: ไม่เรียก FAQ, Schema, llms.txt, brand mention หรือ answer-first ว่าเป็น Google ranking factor หากไม่มีเอกสารทางการรองรับ</li>
           </ul>
         </div>
@@ -897,6 +897,12 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           เพราะฉะนั้นบทความนี้จะใช้คำว่า AEO และ GEO เป็นกรอบการทำงานเชิง practical
           ไม่ใช่ชื่อ ranking system ของ Google และไม่ใช้ถ้อยคำรับประกันว่า AI feature หรือ structured data
           จะทำให้เว็บไซต์ถูกเลือกเป็นแหล่งข้อมูลเสมอ
+        </P>
+        <P>
+          ในมุมของ Saralak Search, AEO และ GEO ไม่ได้มาแทนที่การปรับปรุงเว็บไซต์แบบ SEO
+          แต่เป็นส่วนเสริมที่ทำให้ฐาน SEO แข็งแรงขึ้นในบริบทของ Search ที่มี AI features
+          เพราะเว็บไซต์ยังต้อง crawl ได้, index ได้, มีเนื้อหาคุณภาพ, มี topic ownership ชัด
+          และมีเส้นทางจากข้อมูลไปสู่ conversion ที่ตรวจสอบได้
         </P>
       </ArticleSection>
 
@@ -956,7 +962,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="case-study" title="ตัวอย่างจากงานจริงของ Saralak Search">
         <P>
-          เคส Doozy Online แสดงความสัมพันธ์ของ SEO, AEO และ GEO ได้ชัด เพราะคำค้นหลักคือ
+          เคสเว็บไซต์ E-commerce เจ้าหนึ่งแสดงความสัมพันธ์ของ SEO, AEO และ GEO ได้ชัด เพราะคำค้นหลักคือ
           <strong> “ขายอะไรดีตลาดนัด” </strong>ซึ่งเป็น non-brand informational query
           ผู้ค้นยังไม่ได้ค้นหาชื่อแบรนด์หรือคำว่า packaging โดยตรง แต่ต้องการไอเดียว่าจะขายอะไรและเริ่มอย่างไร
         </P>
@@ -964,21 +970,21 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           แนวทางที่ใช้คือทำให้บทความตอบ broad intent ก่อน เช่น ไอเดียสินค้า ต้นทุน ราคา วิธีขาย และปัญหาที่พบบ่อย
           จากนั้นค่อยเชื่อมเข้าหาหมวดสินค้าและ packaging solution ที่เกี่ยวข้องกับแต่ละไอเดีย
           ผลลัพธ์ที่ได้รับการยืนยันคือบทความถูก Google AI Overview อ้างอิงหลายจุด และมี product recommendation
-          ของ Doozy Online ปรากฏในบริบทของคำตอบ
+          ของเว็บไซต์ E-commerce เจ้าหนึ่งปรากฏในบริบทของคำตอบ
         </P>
         <ArticleImage
-          src="/image/blog/seo-aeo-geo/doozy-google-ai-overview-market-seller.png"
+          src="/image/blog/seo-aeo-geo/ecommerce-ai-overview-market-seller.png"
           alt="Google AI Overview แสดงคำตอบจากคำค้นขายอะไรดีตลาดนัดและเชื่อมไปยังคำแนะนำเรื่องบรรจุภัณฑ์"
           width={1030}
           height={778}
           caption="ตัวอย่างคำค้นกว้าง “ขายอะไรดีตลาดนัด” ที่ผู้ค้นยังอยู่ในช่วงหาไอเดียสินค้า แต่ AI Overview เริ่มเชื่อมไปถึงปัจจัยเชิงพาณิชย์ เช่น บรรจุภัณฑ์ ราคา และความสะดวกในการขาย"
         />
         <ArticleImage
-          src="/image/blog/seo-aeo-geo/doozy-chatgpt-product-recommendation.png"
+          src="/image/blog/seo-aeo-geo/ecommerce-chatgpt-product-recommendation.png"
           alt="ChatGPT แนะนำสินค้าและแหล่งซื้อกล่องพลาสติกใส่อาหารขาย"
           width={1078}
           height={2048}
-          caption="เมื่อ intent แคบลงเป็น “ซื้อกล่องพลาสติกใส่อาหารขายที่ไหนดี” คำตอบเปลี่ยนจากไอเดียขายของเป็น product recommendation และแหล่งซื้อ ซึ่งเป็นจุดที่ Doozy Online ถูกเชื่อมเข้ากับ commercial context ได้ชัดขึ้น"
+          caption="เมื่อ intent แคบลงเป็น “ซื้อกล่องพลาสติกใส่อาหารขายที่ไหนดี” คำตอบเปลี่ยนจากไอเดียขายของเป็น product recommendation และแหล่งซื้อ ซึ่งเป็นจุดที่เว็บไซต์ E-commerce เจ้าหนึ่งถูกเชื่อมเข้ากับ commercial context ได้ชัดขึ้น"
         />
         <ArticleSubSection title="รูปนี้ต่างกันอย่างไร และรองรับ user intent ตรงไหน">
           <P>
@@ -1065,7 +1071,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         'Google Search Central — Optimizing for generative AI features on Google Search, checked September 2026',
         'Google Search Central — Guidance on third-party SEO tools, services, AEO and GEO advice, checked September 2026',
         'Google Search Central Blog — Search Generative AI performance reports in Search Console, checked September 2026',
-        'Saralak Search case observation — Doozy Online non-brand query “ขายอะไรดีตลาดนัด”, September 2026',
+        'Saralak Search case observation — anonymized E-commerce website, non-brand query “ขายอะไรดีตลาดนัด”, September 2026',
       ]} />
 
       <ArticleFAQ id="seo-geo-aeo-faq" post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
@@ -1363,13 +1369,13 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       <GeoAgencyComparisonTable />
 
       <ArticleSection id="geo-agency-case" title="ตัวอย่างจากงานจริงของ Saralak Search: ทำไม Answer-first อย่างเดียวไม่พอ">
-        <P>เคส Doozy Online ที่เผยแพร่แล้วบน Saralak Search เป็นตัวอย่างของหน้า Informational ที่เชื่อม Search Intent กับ Commercial Context โดยไม่เปลี่ยนบทความให้กลายเป็นหน้าขายสินค้า คำค้นหลักเป็น Non-brand query “ขายอะไรดีตลาดนัด” และหน้าเดียวกันครอบคลุมหลาย Sub-intent เช่น ไอเดียสินค้า ต้นทุน ราคา และตัวอย่างการเลือกบรรจุภัณฑ์ตามเมนู</P>
+        <P>เคสเว็บไซต์ E-commerce เจ้าหนึ่งเป็นตัวอย่างของหน้า Informational ที่เชื่อม Search Intent กับ Commercial Context โดยไม่เปลี่ยนบทความให้กลายเป็นหน้าขายสินค้า คำค้นหลักเป็น Non-brand query “ขายอะไรดีตลาดนัด” และหน้าเดียวกันครอบคลุมหลาย Sub-intent เช่น ไอเดียสินค้า ต้นทุน ราคา และตัวอย่างการเลือกบรรจุภัณฑ์ตามเมนู</P>
         <P>ภายหลัง Google AI Overview อ้างอิงหลาย Passage จากบทความเดียวกัน และมีส่วนที่นำ Packaging Solution ของแบรนด์ไปประกอบคำตอบ จุดที่ใช้เป็นบทเรียนสำหรับการเลือก GEO Agency ไม่ใช่ “เขียนแบบนี้แล้วจะติด AI Overview” แต่คือ Agency ควรสามารถออกแบบเนื้อหาที่แต่ละ Passage มีประโยชน์ด้วยตัวเอง มีข้อมูลเฉพาะ และเชื่อมโจทย์ของผู้อ่านไปสู่สินค้า/บริการอย่างมีเหตุผล</P>
         <P>เคสนี้ไม่พิสูจน์ว่าโครงสร้างใดโครงสร้างหนึ่งเป็นสาเหตุโดยตรงของ AI citation เพราะ Google ไม่เปิดเผยสูตรการเลือก Supporting Link รายหน้า สิ่งที่ยืนยันได้คือหน้าเว็บปรากฏเป็นแหล่งอ้างอิงบน Query จริง และเราสามารถย้อนดูว่า Content Architecture ของหน้ามีองค์ประกอบอะไรบ้าง</P>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
-          alt="ตัวอย่าง Google AI Overview ที่อ้างอิงบทความ Doozy Online ในคำค้นขายอะไรดีตลาดนัด"
-          caption="หลักฐานนี้ยืนยันว่า Google AI Overview เคยแสดงบทความ Doozy Online เป็นแหล่งอ้างอิงบน Query จริง แต่ไม่ยืนยันว่าโครงสร้าง Content จุดใดจุดหนึ่งเป็นสาเหตุโดยตรงของการถูกเลือกเป็น Supporting Link"
+          alt="ตัวอย่าง Google AI Overview ที่อ้างอิงบทความของเว็บไซต์ E-commerce เจ้าหนึ่งในคำค้นขายอะไรดีตลาดนัด"
+          caption="หลักฐานนี้ยืนยันว่า Google AI Overview เคยแสดงบทความของเว็บไซต์ E-commerce เจ้าหนึ่งเป็นแหล่งอ้างอิงบน Query จริง แต่ไม่ยืนยันว่าโครงสร้าง Content จุดใดจุดหนึ่งเป็นสาเหตุโดยตรงของการถูกเลือกเป็น Supporting Link"
           height={675}
         />
         <ReadMoreLinks items={[
@@ -1459,7 +1465,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         'Google Search Central — AI features and your website, checked 18 September 2026',
         'Google Search Console Help — Generative AI performance report, rollout noted 31 August 2026',
         'Primal, Cotactic, ANGA, Minimice Group และ NerdOptimize — public AI Search/GEO service pages, checked 18 September 2026',
-        'Saralak Search — Doozy Online AI Overview case observation และ internal content workflow',
+        'Saralak Search — anonymized E-commerce AI Overview case observation และ internal content workflow',
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่ควรถามก่อนเลือก GEO Agency" id="geo-agency-faq" />
