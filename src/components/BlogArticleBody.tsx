@@ -2962,329 +2962,333 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
 }
 
 function GeoChecklistArticle({ post }: { post: BlogPost }) {
+  const entityItems = [
+    'ระบุชื่อแบรนด์ ประเภทธุรกิจ สินค้า/บริการ และข้อมูล About ให้ชัดใน Visible Content ไม่พึ่ง Schema อย่างเดียว',
+    'มี Brand Statement ที่ตอบได้ว่าแบรนด์ทำอะไร เหมาะกับใคร และให้บริการที่ไหน โดยใช้ข้อความสอดคล้องกันในหน้าหลักและหน้าสำคัญ',
+    'ระบุผู้เขียนหรือผู้เชี่ยวชาญพร้อม Bio และประสบการณ์จริงเมื่อเนื้อหาต้องอาศัย Expertise หรือ First-hand Experience',
+    'ใช้ Organization หรือ Person Structured Data เฉพาะเมื่อข้อมูลนั้นมีอยู่จริงและสอดคล้องกับ Visible Content',
+    'ชื่อแบรนด์ ที่อยู่ และข้อมูลติดต่อสอดคล้องกันในช่องทางที่ธุรกิจใช้ โดยเฉพาะธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการ',
+    'Google Business Profile ถูกต้องและครบถ้วนเมื่อธุรกิจมี Local Intent เช่น ที่ตั้ง หมวดหมู่ เวลาเปิดทำการ และช่องทางติดต่อ',
+    'โปรไฟล์สาธารณะที่แบรนด์เป็นเจ้าของ เช่น LinkedIn, Facebook หรือ LINE OA ใช้ชื่อและคำอธิบายสอดคล้องกัน และใส่ sameAs ใน Schema เฉพาะ URL ที่เป็นตัวตนของ Entity จริง',
+  ]
+
+  const contentItems = [
+    'กำหนด Owner URL ให้หนึ่ง Primary Intent ต่อหนึ่งหน้า เพื่อลด Cannibalization และทำให้ Internal Link ส่งความหมายไปยังหน้าที่ถูกต้อง',
+    'ตอบ Main Query ให้ชัดในช่วงต้นหน้า โดยไม่เปิดด้วยบทนำกว้าง ๆ ที่ยังไม่ตอบคำถาม',
+    'เขียน H2/H3 สำคัญให้แต่ละ Section เข้าใจได้ด้วยตัวเอง มีคำตอบ บริบท และตัวอย่างหรือ Decision Rule เมื่อจำเป็น',
+    'ครอบคลุม Sub-intent ที่เกี่ยวข้อง แต่ถ้า Sub-intent มี Owner URL แยกแล้วให้สรุปสั้นและลิงก์ต่อ แทนการเขียนซ้ำทั้งหัวข้อ',
+    'มี Information Gain เช่น ข้อมูลจากงานจริง ตัวเลข Screenshot Comparison Workflow หรือ Observation ที่ Generic Content ไม่มี',
+    'ข้อเท็จจริงที่เปลี่ยนตามเวลา เช่น Google Search, AI Search หรือ Platform Feature มีแหล่งอ้างอิงและวันที่ตรวจสอบ',
+    'แยก Official Documentation ออกจาก Saralak Search Methodology, Observation และ Working Hypothesis อย่างชัดเจน',
+    'วาง Internal Link ตาม Journey: Pillar → Deeper Guide → Proof/Case → Service โดยไม่ใช้ Anchor เดียวกันชี้หลาย Owner URL',
+    'ใช้ภาพ Screenshot หรือ Diagram เมื่อช่วยอธิบายหลักฐานหรือกระบวนการ พร้อม Alt Text และ Caption ที่บอกว่าภาพแสดงอะไร',
+    'เพิ่ม FAQ เฉพาะคำถามที่ยังไม่ถูกตอบในบทความ ไม่กำหนดจำนวนขั้นต่ำ และไม่ทำ FAQ เพียงเพื่อหวัง Ranking หรือ AI Citation',
+  ]
+
+  const technicalItems = [
+    'Canonical, Indexability และ Status Code ของหน้าสำคัญถูกต้อง ไม่มี noindex หรือ Canonical ชี้ผิดโดยไม่ตั้งใจ',
+    'เนื้อหาหลักเข้าถึงได้ใน Rendered HTML และตรวจเว็บไซต์ JavaScript ว่า Search Crawler เห็น Content จริง โดยไม่ถือว่า CSR ใช้ไม่ได้เสมอไป',
+    'Internal Link สำคัญเป็นลิงก์ที่ Crawl ได้จริง เช่น <a href> หรือ React Link ที่ Render เป็น Anchor ไม่พึ่ง Click Handler อย่างเดียว',
+    'XML Sitemap ครอบคลุม URL ที่ต้องการ Index และส่ง/ตรวจใน Google Search Console',
+    'robots.txt ไม่บล็อก Crawler ที่จำเป็นต่อเป้าหมาย: Googlebot สำหรับ Google Search และ OAI-SearchBot หากต้องการให้เว็บไซต์มีสิทธิ์ปรากฏใน ChatGPT Search',
+    'Structured Data อธิบาย Visible Content อย่างถูกต้อง และไม่มี Special AI Schema ที่ใส่เพียงเพื่อหวัง AI Overview หรือ AI Mode',
+    'เลือก Article/BlogPosting, Organization, BreadcrumbList หรือ Schema อื่นตามประเภทหน้าจริง; ไม่พึ่ง FAQPage เพราะ Google ยุติ FAQ rich result ตั้งแต่ 7 พฤษภาคม 2026',
+    'มอง llms.txt เป็น Optional Infrastructure สำหรับระบบที่รองรับ ไม่ใช่ Google Ranking Factor เพราะ Google Search ระบุว่าไม่ใช้ไฟล์นี้',
+    'HTTPS, Mobile Usability, Page Experience และ Core Web Vitals อยู่ในระดับใช้งานได้ดี เพราะส่งผลต่อประสบการณ์และ Search Foundation แม้ไม่ใช่สูตรรับประกัน AI Citation',
+  ]
+
+  const mentionItems = [
+    'ข้อมูลแบรนด์ใน Owned Profile สาธารณะสอดคล้องกับเว็บไซต์ เพื่อไม่ให้ชื่อ บริการ ที่ตั้ง หรือคำอธิบายขัดกันเอง',
+    'มี Editorial Link หรือ Mention จากแหล่งภายนอกที่เกี่ยวข้องและน่าเชื่อถือ โดยเน้นความเกี่ยวข้องและคุณภาพมากกว่าจำนวนขั้นต่ำ',
+    'ธุรกิจ Local มีรีวิวจริงและข้อมูล Google Business Profile ที่อัปเดต โดยไม่ซื้อหรือสร้างรีวิวปลอม',
+    'อยู่ใน Directory หรือ Listing ที่กลุ่มเป้าหมายใช้จริงเมื่อเกี่ยวข้องกับอุตสาหกรรม ไม่ทำ Mass Directory Submission เพื่อเพิ่มจำนวนลิงก์',
+    'ผู้เชี่ยวชาญหรือผู้เขียนมี Public Presence ที่ตรวจสอบได้เมื่อ Expertise เป็นส่วนสำคัญของเนื้อหา',
+    'Video, Podcast หรือ Webinar ที่มีข้อมูลเฉพาะสามารถมี Transcript หรือหน้าสรุปที่ Crawl ได้เมื่อมีประโยชน์ต่อผู้ใช้',
+    'PR หรือ Media Mention ใช้เมื่อมีเรื่องที่มีสาระและตรวจสอบได้ ไม่สร้างข่าวหรือ Claim เพียงเพื่อให้เกิด Brand Mention',
+    'หลีกเลี่ยง Inauthentic Mention, Review Spam และ Link Scheme เพราะ Mention ที่สร้างขึ้นเพื่อ Manipulate Search ไม่ใช่ GEO Signal ที่ควรไล่สะสม',
+  ]
+
+  const measurementItems = [
+    'ตรวจ Search Console Generative AI performance report เพื่อดู Impressions จาก Google AI Overviews และ AI Mode เมื่อ Property มีข้อมูลและรายงานพร้อมใช้งาน',
+    'ดู Search Console ปกติควบคู่กัน: Impressions, Clicks, Queries และ Landing Pages เพื่อไม่แยก AI Visibility ออกจาก Search Foundation',
+    'ตรวจ GA4 Referral Session จาก AI Platform เมื่อมี Referral Data และระวังว่า Attribution อาจไม่ครบทุก Journey',
+    'ทำ Prompt Set คงที่สำหรับ ChatGPT, Gemini หรือ Perplexity โดยบันทึก Date, Platform, Prompt, Mention, Citation และ URL เพื่อเปรียบเทียบเป็นรอบ',
+    'เก็บ Citation/Source Log ว่าหน้าใดและข้อมูลส่วนไหนถูกใช้ แล้วดู Pattern ตามช่วงเวลา แทนการสรุปจาก Prompt เดียว',
+    'เชื่อม Visibility กับ Business Outcome เช่น Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion โดยไม่สรุป Causation จาก Mention เพียงอย่างเดียว',
+  ]
+
+  const checklistRows = [
+    ...entityItems.map((item, i) => ['Entity', item, i < 6 ? 'สูง' : 'กลาง']),
+    ...contentItems.map((item, i) => ['Content', item, i < 8 ? 'สูง' : 'กลาง']),
+    ...technicalItems.map((item, i) => ['Technical', item, i < 7 ? 'สูง' : 'กลาง']),
+    ...mentionItems.map((item, i) => ['Mention / Evidence', item, i < 4 ? 'สูง' : 'กลาง']),
+    ...measurementItems.map((item, i) => ['Measurement', item, i < 2 ? 'สูง' : 'กลาง']),
+  ]
+
+  const contents = [
+    ['geo-checklist-scope', 'GEO Checklist คืออะไร และใช้ตรวจอะไร'],
+    ['geo-checklist-guidance', 'Official Guidance vs Saralak Methodology'],
+    ['geo-checklist-entity', '1. Entity'],
+    ['geo-checklist-content', '2. Content'],
+    ['geo-checklist-technical', '3. Technical'],
+    ['geo-checklist-mention', '4. Mention / Evidence'],
+    ['geo-checklist-measurement', '5. Measurement'],
+    ['geo-checklist-priority', 'ควรเริ่มจากข้อไหนก่อน'],
+    ['geo-checklist-case', 'ตัวอย่างจากงานจริงของ Saralak Search'],
+    ['geo-checklist-table', 'ตาราง GEO Checklist 40 ข้อ'],
+    ['geo-checklist-limitations', 'ข้อจำกัดของ GEO Checklist'],
+    ['geo-checklist-next', 'อ่านต่อและขั้นถัดไป'],
+  ]
+
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
-
-      <ArticleSection title="GEO Checklist คืออะไร และทำไมธุรกิจไทยถึงต้องสนใจตอนนี้">
+      <ArticleSection id="geo-checklist-scope" title="GEO Checklist คืออะไร และใช้ตรวจอะไร">
         <P>
-          GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจในคำตอบ
-          หากยังไม่ชัดเรื่องพื้นฐาน ควรเริ่มจาก
+          <strong>GEO Checklist คือกรอบ Audit สำหรับตรวจว่าเว็บไซต์มี Search Foundation, Content, Entity, Evidence และ Measurement พร้อมพอสำหรับ Search และ AI Visibility หรือไม่</strong>
+          {' '}หน้านี้ใช้กรอบ 40 ข้อของ Saralak Search แบ่งเป็น 5 หมวด ได้แก่ Entity, Content, Technical, Mention / Evidence และ Measurement
+          โดยไม่ถือว่าเป็น Checklist ทางการของ Google และไม่รับประกันว่า AI จะเลือก Mention หรือ Citation หลังทำครบ
+        </P>
+        <P>
+          หน้านี้มีหน้าที่เป็น <strong>Implementation / QA Checklist</strong> โดยเฉพาะ
+          ถ้าต้องการนิยามและหลักการอ่าน
           {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}ก่อน แล้วจึงใช้ Checklist หน้านี้ตรวจ implementation เป็นรายข้อ
-        </P>
-        <P>
-          สำหรับธุรกิจไทย ช่วงเวลานี้คือโอกาสที่ดี เพราะตลาดภาษาไทยบน AI Search ยังมีการแข่งขันต่ำกว่าตลาดภาษาอังกฤษมาก ธุรกิจส่วนใหญ่ยังไม่ได้ทำ GEO อย่างจริงจัง การเริ่มก่อนคู่แข่งจึงยังได้เปรียบอยู่
-        </P>
-        <P>
-          Checklist นี้แบ่งเป็น 5 หมวดตามกรอบ GEO หลัก ได้แก่ Entity (AI รู้จักคุณไหม), Content (AI มีเหตุผลจะอ้างอิงคุณไหม), Technical (AI เข้าใจเว็บไซต์คุณไหม), Mention (คนอื่นพูดถึงคุณไหม) และ Measurement (วัดผลได้ไหม) รวม 40 รายการ
+          {' '}และถ้าต้องการขั้นตอนลงมือทำแบบเป็นลำดับอ่าน
+          {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
+          {' '}แทนการให้หน้านี้แย่ง Intent ของสองหน้าดังกล่าว
         </P>
       </ArticleSection>
 
-      <ArticleSection title="หมวดที่ 1: Entity — AI รู้จักธุรกิจของคุณหรือยัง (7 รายการ)">
-        <P>
-          Entity คือรากฐานของ GEO AI ต้องเข้าใจก่อนว่าธุรกิจของคุณคือใคร ทำอะไร และมีหลักฐานยืนยันจากที่ไหนบ้าง หากไม่มีข้อมูล Entity ที่ชัดเจน AI จะไม่รู้ว่าควรนำชื่อแบรนด์ของคุณไปใช้ในบริบทไหน
-        </P>
-        <CheckList
-          items={[
-            'Organization Schema พร้อม @id, name, url, description และ logo ที่หน้าหลักหรือหน้า About',
-            'Person Schema สำหรับผู้เชี่ยวชาญหรือเจ้าของแบรนด์ พร้อม @id ที่เชื่อมถึง Organization',
-            'sameAs links ครบ: LinkedIn, Facebook Page, Google Business Profile URL',
-            'Brand Statement ภาษาไทยและภาษาอังกฤษที่สอดคล้องกันทุกช่องทาง ระบุว่าทำอะไร ให้ใคร ที่ไหน',
-            'Google Business Profile ครบถ้วน: ชื่อ, ที่อยู่, เบอร์, เวลาทำการ, หมวดหมู่, คำอธิบาย',
-            'ชื่อแบรนด์, ที่อยู่, เบอร์โทร (NAP) สม่ำเสมอทุกที่ เว็บไซต์ โซเชียล Directory',
-            'LINE Official Account (ถ้ามี): ชื่อแบรนด์ตรงกันกับเว็บไซต์ เป็นสัญญาณ Entity สำหรับตลาดไทย',
-          ]}
+      {post.aiSummary ? (
+        <AISummary
+          items={post.aiSummary}
+          heading="สรุป GEO Checklist ใน 30 วินาที"
+          id="geo-checklist-summary"
         />
-        <P>
-          หมายเหตุสำหรับธุรกิจไทย: LINE OA ที่มีชื่อแบรนด์ชัดเจนและมีผู้ติดตามจริง เป็นสัญญาณ Entity ที่ไม่มีในคู่มือ GEO ภาษาอังกฤษส่วนใหญ่ เพราะ LINE ไม่ได้ใช้อย่างแพร่หลายในตลาดต่างประเทศ แต่ในไทย LINE OA ช่วยให้ AI เชื่อมโยงชื่อแบรนด์กับช่องทางที่ผู้ใช้ไทยรู้จักได้มากขึ้น
-        </P>
-      </ArticleSection>
+      ) : null}
 
-      <ArticleSection title="หมวดที่ 2: Content — AI มีเหตุผลจะอ้างอิงคุณหรือยัง (10 รายการ)">
-        <P>
-          AI จะเลือกอ้างอิงเนื้อหาที่ตอบคำถามชัดเจน มีโครงสร้างที่อ่านง่าย และมีข้อมูลที่ AI ยังไม่รู้จาก Training Data เนื้อหาที่แค่รวบรวมข้อมูลทั่วไปที่มีอยู่แล้วจะไม่สร้าง Information Gain และ AI ไม่มีแรงจูงใจพอที่จะเลือกอ้างอิง
-        </P>
-        <CheckList
-          items={[
-            'Pillar Content: บทความหลักที่ตอบคำถามสำคัญของธุรกิจอย่างครบถ้วน อย่างน้อย 1 บทความต่อหัวข้อหลัก',
-            'Answer First: ตอบคำถามหลักภายใน 200 คำแรก ก่อนลงรายละเอียด',
-            'หัวข้อ H2 และ H3 เป็นคำถามที่ผู้ใช้งานจะถาม AI จริง เช่น "ทำอย่างไร", "คืออะไร", "ต่างกันยังไง"',
-            'FAQ อย่างน้อย 5 คำถาม-คำตอบในทุกบทความหลัก เป็นรูปแบบที่ AI ชอบนำไปใช้มากที่สุด',
-            'Information Gain: ข้อมูลที่ AI ยังไม่รู้ เช่น ตัวเลขจากประสบการณ์จริง กรณีศึกษา หรือมุมมองเฉพาะ',
-            'Last Updated: ระบุวันที่อัปเดตล่าสุดในทุกบทความ และอัปเดตเนื้อหาทุก 6 เดือน',
-            'เนื้อหาภาษาไทยที่เป็นธรรมชาติ ไม่แปลตรงตัวจากภาษาอังกฤษ สะท้อนบริบทของตลาดไทยจริง',
-            'ตัวอย่างหรือกรณีศึกษาจากธุรกิจไทยจริง ไม่ใช่ตัวอย่างจากต่างประเทศล้วน',
-            'Content Cluster: บทความรอง 3-5 เรื่องต่อหัวข้อหลัก 1 เรื่อง พร้อม Internal Link กลับ Pillar',
-            'Internal Link จาก Cluster ไปยัง Pillar Content ในทุกบทความ เพื่อแสดง Knowledge Graph ให้ AI อ่านได้',
-          ]}
-        />
-      </ArticleSection>
+      <nav aria-label="สารบัญ GEO Checklist" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
+        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
+        <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
+          {contents.map(([id, label], index) => (
+            <li key={id}>
+              <a href={`#${id}`} className="font-medium text-teal-900 underline-offset-2 hover:underline">
+                {String(index + 1).padStart(2, '0')}. {label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
 
-      <ArticleCTA
-        headline="อยากรู้ว่าเว็บไซต์ผ่าน GEO Checklist ข้อไหนแล้วบ้าง?"
-        description="Discovery Audit ตรวจสอบ Entity, Content, Technical, Mention และ Measurement ของเว็บไซต์คุณครบทั้ง 5 หมวด พร้อม Quick Wins ที่ทำได้ทันที"
-      />
-
-      <ArticleSection title="หมวดที่ 3: Technical — AI เข้าใจเว็บไซต์ของคุณหรือยัง (9 รายการ)">
+      <ArticleSection id="geo-checklist-guidance" title="ก่อนใช้ Checklist: อะไรคือ Official Guidance และอะไรคือ Saralak Search Methodology">
         <P>
-          Technical GEO คือการทำให้ AI Crawler เข้าถึงและเข้าใจเนื้อหาของเว็บไซต์ได้อย่างถูกต้อง เว็บไซต์ที่ใช้ JavaScript ในการ Render เนื้อหา (CSR) อาจทำให้ AI อ่านไม่ได้ หรืออ่านได้แค่บางส่วน
+          <strong>ข้อเท็จจริงจาก Google:</strong> SEO best practices เดิมยังเป็นพื้นฐานของ AI Overviews และ AI Mode
+          หน้าเว็บยังต้องเข้าถึงและ Index ได้ตามหลัก Search ปกติ Google ไม่กำหนด Special AI Schema และระบุว่า Google Search ไม่ใช้ llms.txt
+          ดังนั้น Schema, FAQ หรือ llms.txt ไม่ควรถูกอธิบายว่าเป็นเงื่อนไขที่ทำให้ติด AI Search
         </P>
-        <CheckList
-          items={[
-            'เว็บไซต์ใช้ SSR (Server-Side Rendering) หรือ SSG (Static Site Generation) ไม่ใช่ CSR ล้วน — AI Crawler อ่าน HTML ได้ทันที',
-            'มีไฟล์ llms.txt ในโฟลเดอร์หลักของเว็บไซต์ พร้อมคำอธิบายว่าเว็บไซต์เกี่ยวกับอะไรและ AI ควรอ่านหน้าไหน',
-            'robots.txt อนุญาต GPTBot, Google-Extended, PerplexityBot และ Bingbot',
-            'Semantic HTML: ใช้ <main>, <article>, <section>, <nav> อย่างถูกต้องตามโครงสร้าง',
-            'Schema Markup ครบ: Organization, Person, Article หรือ BlogPosting, FAQPage, BreadcrumbList',
-            'Schema @id linking: Article ชี้ไปยัง Person @id, Person และ Organization ชี้ถึงกัน เพื่อสร้าง Knowledge Graph',
-            'Canonical URL ถูกต้องทุกหน้า ไม่มี Duplicate Content ที่ทำให้ AI สับสน',
-            'Core Web Vitals ผ่าน: LCP, CLS, INP อยู่ในเกณฑ์ที่ดีตาม PageSpeed Insights',
-            'XML Sitemap ครบและ Submit ใน Google Search Console',
-          ]}
-        />
         <P>
-          llms.txt คือโอกาสที่ธุรกิจไทยส่วนใหญ่ยังไม่ได้ทำ ไฟล์นี้ทำหน้าที่เหมือนคู่มือสำหรับ AI บอกว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอยู่ที่ไหน และ AI ควรให้ความสำคัญกับหน้าไหนก่อน การทำก่อนคู่แข่งในอุตสาหกรรมเดียวกันถือเป็นข้อได้เปรียบที่ทำได้ทันที
+          <strong>วิธีทำงานของ Saralak Search:</strong> การแบ่ง Checklist เป็น Entity, Content, Technical, Mention / Evidence และ Measurement
+          เป็นกรอบที่เราใช้ Audit และจัดลำดับงาน เพื่อให้แต่ละ URL มี Intent ชัด ข้อมูลตรวจสอบได้ Internal Link ไปยัง Owner URL ถูกต้อง
+          และมี Baseline สำหรับวัด Search กับ AI Visibility กรอบนี้เป็น Methodology ไม่ใช่ Ranking Factor ของ Google
         </P>
-      </ArticleSection>
-
-      <div className="rounded-xl bg-teal-800 p-6 sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">
-          บริการจาก Saralak Search
-        </p>
-        <h2 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">
-          ทำ 26 ข้อแรกไม่ไหวคนเดียว? <br className="hidden sm:block" />
-          ทักมาคุยก่อนได้เลย ฟรี ไม่มีเงื่อนไข
-        </h2>
-        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">
-          บอกชื่อเว็บไซต์และประเภทธุรกิจ แล้วจะบอกให้ว่าควรเริ่มจากจุดไหนก่อน
-          และข้อไหนที่เว็บไซต์คุณยังขาดอยู่
-        </p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={brand.lineUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
-          >
-            ทักผ่าน LINE: {brand.line.replace('LINE: ', '')}
-          </a>
-          <a
-            href={brand.phoneUrl}
-            className="inline-flex items-center justify-center rounded-lg border border-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-700"
-          >
-            โทร {brand.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
-          </a>
+        <P>
+          สำหรับ ChatGPT Search, OpenAI ระบุว่าเว็บไซต์ที่ต้องการมีสิทธิ์ปรากฏในผลค้นหาควรไม่บล็อก <strong>OAI-SearchBot</strong>
+          แต่การอนุญาต Crawler ไม่ได้รับประกัน Placement หรือ Citation เช่นเดียวกับ Search Engine อื่น
+        </P>
+        <div className="rounded-lg border border-sky-200 bg-sky-50 p-5">
+          <p className="thai-readable text-sm leading-6 text-neutral-700">
+            Primary sources:
+            {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central: AI optimization guide</a>,
+            {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Search Console Generative AI performance report</a>
+            {' '}และ
+            {' '}<a href="https://help.openai.com/th-th/articles/9237897-chatgpt-search" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: ChatGPT Search</a>.
+            {' '}ตรวจสอบล่าสุด 21 กันยายน 2026
+          </p>
         </div>
-      </div>
+      </ArticleSection>
 
-      <ArticleSection title="หมวดที่ 4: Mention — คนอื่นพูดถึงคุณหรือยัง (8 รายการ)">
+      <ArticleSection id="geo-checklist-entity" title="หมวดที่ 1: Entity — ธุรกิจคือใคร และข้อมูลสอดคล้องกันหรือไม่ (7 ข้อ)">
         <P>
-          AI ไม่ได้ตัดสินความน่าเชื่อถือจากเว็บไซต์ของคุณเพียงที่เดียว แต่ใช้สัญญาณจากแหล่งภายนอกประกอบด้วย เว็บไซต์ที่ดีแต่ไม่มีใครกล่าวถึงจากภายนอกเลย เหมือนธุรกิจที่ไม่มีลูกค้าบอกต่อ AI จะไม่มีข้อมูลเพียงพอในการยืนยันว่าแบรนด์นั้นน่าเชื่อถือ
+          Entity ใน Checklist นี้ไม่ได้หมายถึงการใส่ Schema ให้มากที่สุด แต่หมายถึงการทำให้ข้อมูลพื้นฐานของแบรนด์ บุคคล สินค้า บริการ และสถานที่
+          มี Subject ชัดและไม่ขัดกันระหว่างหน้าเว็บกับ Public Profile ที่ธุรกิจดูแลอยู่
+          Structured Data มีหน้าที่ช่วยอธิบายข้อมูลที่มีอยู่จริง ไม่ควรใช้แทน Visible Content
         </P>
-        <CheckList
-          items={[
-            'LinkedIn Personal Profile หรือ Company Page ข้อมูลครบ Bio ตรงกับเว็บไซต์ มี Post ที่เกี่ยวกับธุรกิจ',
-            'Guest Post หรือบทความที่เผยแพร่ในเว็บไซต์ภายนอกที่น่าเชื่อถือและเกี่ยวข้องกับอุตสาหกรรม',
-            'การถูกพูดถึงหรือแชร์ใน Facebook Group ที่มีสมาชิกในวงการจริง',
-            'Pantip หรือ Community ไทยที่มีการพูดถึงหรืออ้างอิงแบรนด์โดยผู้ใช้จริง',
-            'Google Business Profile Review ที่เป็นธรรมชาติ ลูกค้าจริงเขียนเอง ไม่ใช่รีวิวซื้อ',
-            'Podcast หรือ YouTube ที่มีการพูดถึงแบรนด์ — Transcript ช่วยให้ AI อ่านและนำไปอ้างอิงได้',
-            'PR หรือข่าวในสื่อออนไลน์ไทยที่มีการระบุชื่อแบรนด์และสิ่งที่แบรนด์ทำ',
-            'Directory หรือ Listing ที่เกี่ยวข้องกับอุตสาหกรรม เช่น ไดเรกทอรีธุรกิจ รายชื่อผู้ให้บริการ',
-          ]}
+        <CheckList items={entityItems} />
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-content" title="หมวดที่ 2: Content — แต่ละหน้าตอบ Intent ชัดและมีข้อมูลที่ควรถูกใช้ต่อหรือไม่ (10 ข้อ)">
+        <P>
+          Content ที่พร้อมสำหรับ GEO ควรตอบคำถามของคนให้ครบก่อน แล้วจึงพิจารณาว่าระบบ Search หรือ AI สามารถเข้าใจแต่ละ Passage ได้หรือไม่
+          จุดสำคัญคือ Topic Ownership, Answer First, Evidence และ Information Gain ไม่ใช่การเขียน Heading เป็นคำถามทุกข้อหรือบังคับ FAQ จำนวนหนึ่ง
+        </P>
+        <CheckList items={contentItems} />
+        <P>
+          สำหรับตัวอย่างการจัด Passage, Source และข้อจำกัดของ Google AI feature อ่านต่อที่
+          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
+          {' '}ซึ่งเป็น Owner Page ของหัวข้อนั้นโดยตรง
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-technical" title="หมวดที่ 3: Technical — Search และ AI Crawler เข้าถึงหน้าที่ควรเห็นได้หรือไม่ (9 ข้อ)">
+        <P>
+          Technical GEO ควรเริ่มจากสิ่งที่ตรวจสอบได้ เช่น Indexability, Canonical, Rendered HTML, Crawlable Link, Sitemap และ Crawler Access
+          ไม่ควรเริ่มจากสมมติฐานว่าเว็บไซต์ต้องเปลี่ยนเป็น SSR/SSG หรือมีไฟล์พิเศษทุกชนิดก่อนจึงจะถูก AI ค้นพบ
+        </P>
+        <CheckList items={technicalItems} />
+        <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
+          <p className="thai-readable text-base leading-7 text-neutral-700">
+            <strong>llms.txt อยู่ Priority ไหน?</strong> สำหรับ Google Search ให้จัดเป็น Optional เพราะ Google ระบุชัดว่าไม่ใช้ llms.txt และไฟล์นี้ไม่มีผลบวกหรือลบต่อ Search Visibility
+            หากองค์กรใช้ Agent หรือระบบอื่นที่รองรับ llms.txt ค่อยดู
+            {' '}<Link to="/blog/llms-txt-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">llms.txt คืออะไร</Link>
+            {' '}เป็น Implementation เพิ่มเติม โดยไม่ให้แซง Indexability, Content Quality หรือ Internal Link
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-mention" title="หมวดที่ 4: Mention / Evidence — มีหลักฐานภายนอกที่เกี่ยวข้องและตรวจสอบได้หรือไม่ (8 ข้อ)">
+        <P>
+          External Mention มีประโยชน์เมื่อช่วยยืนยันข้อมูลหรือสร้างเส้นทางให้คนค้นพบแบรนด์จริง แต่ไม่มีเอกสารทางการที่บอกว่า Pantip, Facebook Group,
+          จำนวน Backlink หรือจำนวน Review ที่กำหนดไว้เป็น Threshold ของ GEO
+          Checklist จึงตรวจคุณภาพ ความเกี่ยวข้อง ความสอดคล้อง และความเป็นธรรมชาติของ Evidence มากกว่าตั้งโควตา
+        </P>
+        <CheckList items={mentionItems} />
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-measurement" title="หมวดที่ 5: Measurement — รู้หรือไม่ว่า Visibility เปลี่ยนตรงไหนและสร้าง Business Outcome หรือไม่ (6 ข้อ)">
+        <P>
+          GEO ไม่ควรวัดจากการถาม ChatGPT หนึ่ง Prompt แล้วเห็นชื่อแบรนด์เพียงครั้งเดียว
+          สำหรับ Google มี Search Console Generative AI performance report ที่แยกข้อมูล AI Overviews และ AI Mode
+          ส่วนแพลตฟอร์มอื่นควรใช้ Prompt Set และ Citation Log ที่ตรวจซ้ำได้ แล้วเชื่อมกับ Referral และ Conversion เท่าที่ข้อมูลรองรับ
+        </P>
+        <CheckList items={measurementItems} />
+        <P>
+          Visibility ที่เพิ่มขึ้นยังไม่เท่ากับ Lead หรือ Revenue ที่เพิ่มขึ้น การสรุปผลจึงควรแยก
+          <strong> Search Visibility → AI Visibility → Engagement → Business Outcome</strong>
+          และระบุข้อจำกัดด้าน Attribution ทุกครั้ง
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-priority" title="GEO Checklist ควรเริ่มจากข้อไหนก่อนถ้าทำพร้อมกันไม่ได้">
+        <P>
+          ถ้าทรัพยากรจำกัด ให้เริ่มจากสิ่งที่เป็น Dependency ก่อน:
+          <strong> Search Foundation → Topic Ownership / Entity → Content & Evidence → External Mention → Measurement</strong>
+          เพราะการเพิ่ม FAQ, Schema หรือ Mention ไม่ช่วยแก้หน้าที่ Canonical ผิด, noindex, Content Render ไม่ครบ หรือมีหลาย URL แย่ง Intent เดียวกัน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['1. Search Foundation', 'Indexability, Canonical, Rendered Content, Crawlable Internal Link, Sitemap และ Crawler Access'],
+            ['2. Topic Ownership + Entity', 'กำหนด Owner URL ของแต่ละ Intent แล้วทำข้อมูลแบรนด์ ผู้เขียน บริการ และ Local Entity ให้สอดคล้อง'],
+            ['3. Content + Evidence', 'ตอบ Main Query และ Sub-intent พร้อมข้อมูลจริง ตัวเลข ตัวอย่าง Source และ Passage ที่อ่านแยกได้'],
+            ['4. Mention / Validation', 'หา Evidence ภายนอกที่เกี่ยวข้องกับธุรกิจจริง ไม่สะสม Link หรือ Mention แบบโควตา'],
+            ['5. Measurement', 'ตั้ง Baseline Search Console, AI Visibility Log, Referral และ Conversion แล้ววัดซ้ำเป็นรอบ'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-base leading-7 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-case" title="ตัวอย่างจากงานจริงของ Saralak Search: Checklist ช่วยอ่านเคส AI Overview อย่างไร">
+        <P>
+          เคสเว็บไซต์ E-commerce แห่งหนึ่งของ Saralak Search ใช้คำค้น Non-brand “ขายอะไรดีตลาดนัด” เป็น Main Intent
+          และแตก Sub-intent เช่น ขายอะไรดีแบบลงทุนน้อย เมนู ต้นทุน ราคา และการเลือกบรรจุภัณฑ์
+          เนื้อหาไม่ได้หยุดที่ Definition แต่มีตัวเลข ตัวอย่างสถานการณ์ และเชื่อม Product Category เฉพาะจุดที่เกี่ยวข้อง
+          ภายหลัง Google AI Overview อ้างอิงหลาย Passage จากหน้าเดียวกัน
+        </P>
+        <ArticleImage
+          src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
+          alt="ตัวอย่าง Google AI Overview อ้างอิงหลายช่วงเนื้อหาจากบทความคำค้นขายอะไรดีตลาดนัด"
+          caption="เคสจริงของ Saralak Search: หน้า Non-brand เดียวตอบหลาย Sub-intent และภายหลังปรากฏเป็นแหล่งอ้างอิงหลาย Passage ใน Google AI Overview"
         />
         <P>
-          สำหรับตลาดไทย Pantip และ Facebook Group ถือเป็น Mention Source ที่ AI อ่านได้และมีความเฉพาะกับตลาดไทยสูง เนื้อหาที่ถูกพูดถึงในชุมชนเหล่านี้เป็นสัญญาณที่ไม่มีใน English GEO Guide แต่มีนัยสำคัญสำหรับการทำให้ AI เข้าใจบริบทของแบรนด์ในตลาดไทย
+          สิ่งที่ Checklist ใช้อ่านจากเคสนี้คือ <strong>Owner URL ชัด, Passage ตอบคนละ Sub-intent, มี Concrete Detail, Internal Link เชื่อม Informational → Commercial และมี Measurement หลัง Publish</strong>
+          แต่ผลลัพธ์นี้เป็น Observation จากงานจริง ไม่ได้พิสูจน์ว่า Checklist ข้อใดข้อหนึ่งเป็นสาเหตุให้ Google เลือก Citation
+          รายละเอียดของผลลัพธ์และข้อจำกัดอยู่ใน
+          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">เคส AI Overview</Link>
+          {' '}และรวมหลักฐานอื่นที่
+          {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>.
         </P>
       </ArticleSection>
 
-      <ArticleSection title="หมวดที่ 5: Measurement — วัดผล GEO ได้ไหม (6 รายการ)">
+      <ArticleSection id="geo-checklist-table" title="GEO Checklist 40 ข้อ: ตารางติดตามความคืบหน้า">
         <P>
-          GEO ที่ไม่วัดผลคือ GEO ที่ไม่รู้ว่าได้ผลหรือไม่ และไม่รู้ว่าควรปรับอะไรต่อ การวัดผล GEO ไม่ซับซ้อน แต่ต้องทำสม่ำเสมอ
+          ตารางนี้รวม <strong>{checklistRows.length} ข้อ</strong> ครบตาม 5 หมวด ใช้เป็น Working Template ใน Notion, Google Sheets หรือ Spreadsheet ได้
+          Priority เป็นลำดับเริ่มต้นของ Saralak Search ไม่ใช่ Universal Ranking Weight และควรปรับตามปัญหาจริงของเว็บไซต์
         </P>
-        <CheckList
-          items={[
-            'ตั้ง Google Alerts สำหรับชื่อแบรนด์ภาษาไทยและภาษาอังกฤษ เพื่อรับแจ้งเมื่อมีการพูดถึงใหม่',
-            'ทดสอบ Prompt ใน ChatGPT, Gemini และ Perplexity เดือนละครั้ง เช่น "[ชื่อแบรนด์] คืออะไร" หรือ "ใครทำ [บริการ] ดีในไทย"',
-            'บันทึกผล Prompt Testing เป็น Screenshot หรือ Log เดือนต่อเดือน เพื่อดูพัฒนาการ',
-            'ติดตาม Branded Search ใน Google Search Console: Impression ของชื่อแบรนด์เพิ่มขึ้นหรือไม่',
-            'ดู AI Referral Traffic ใน GA4: มี Session จาก ChatGPT, Perplexity, Copilot หรือ AI อื่นหรือไม่',
-            'ใช้ Tools เช่น Otterly.AI หรือ Profound สำหรับ AI Mention Tracking อย่างเป็นระบบ เมื่อพร้อม',
-          ]}
-        />
-      </ArticleSection>
-
-      <ArticleSection title="ธุรกิจไทยได้เปรียบ 3 อย่างที่ตลาดต่างประเทศไม่มี">
-        <ArticleSubSection title="1. การแข่งขันภาษาไทยบน AI Search ยังต่ำมาก">
-          <P>
-            ตลาดภาษาอังกฤษมีแบรนด์ระดับโลกที่ทำ GEO อย่างจริงจังมาหลายปีแล้ว แต่ในตลาดภาษาไทย ธุรกิจส่วนใหญ่ยังไม่ได้เริ่ม การเขียนเนื้อหาภาษาไทยที่มีโครงสร้างดี ตอบคำถามชัดเจน และมี Schema ถูกต้อง จึงมีโอกาสถูก AI อ้างอิงสูงกว่าการแข่งในภาษาอังกฤษมาก
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="2. ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt">
-          <P>
-            ทดสอบได้ง่าย: ลองพิมพ์ URL ของคู่แข่งในอุตสาหกรรมตามด้วย /llms.txt ธุรกิจไทยส่วนใหญ่จะไม่มีไฟล์นี้เลย การทำ llms.txt ที่ดีก่อนคู่แข่งในอุตสาหกรรมเดียวกัน หมายความว่า AI จะเข้าใจธุรกิจของคุณได้ดีกว่าคู่แข่ง แม้ขนาดเว็บไซต์จะเล็กกว่าก็ตาม
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="3. ข้อมูลภาษาไทยใน AI Training Data ยังบาง">
-          <P>
-            AI ถูกฝึกด้วยข้อมูลที่มีภาษาอังกฤษเป็นหลัก ข้อมูลภาษาไทยที่ครบถ้วนและมีโครงสร้างดีจึงมีน้ำหนักมากกว่าในสัดส่วนที่สูง เนื้อหาภาษาไทยที่ให้ Information Gain จริง เช่น ข้อมูลเฉพาะตลาดไทย ตัวเลขจากประสบการณ์จริง หรือกรณีศึกษาไทย จึงมีโอกาสถูกนำไปใช้สูงกว่าเนื้อหาทั่วไปมาก
-          </P>
-        </ArticleSubSection>
-      </ArticleSection>
-
-      <ArticleSection title="ทดสอบจริง: ChatGPT เลือกแบรนด์ไทยอย่างไรในมิถุนายน 2026">
-        <P>
-          ทดสอบใน ChatGPT 5 หมวดธุรกิจไทยในเดือนมิถุนายน 2026 ได้แก่ ที่พักบางแสน ประกันเดินทาง คลินิกโบท็อกซ์กรุงเทพ ร้านอาหารเชียงใหม่ และบริษัทขนส่ง พบ pattern ที่ชัดเจน 4 อย่าง
-        </P>
-        <figure className="overflow-hidden rounded-xl border border-neutral-200">
-          <img
-            src="/image/blog/chatgpt-mention/chatgpt-mention-info.png"
-            alt="ผลทดสอบ ChatGPT มิถุนายน 2026: สัญญาณที่ทำให้แบรนด์ไทยถูกพูดถึงใน AI Search"
-            className="w-full"
-            loading="lazy"
-          />
-          <figcaption className="bg-neutral-50 px-4 py-2 text-center text-xs text-neutral-500">
-            ผลทดสอบจริงจาก ChatGPT มิถุนายน 2026 — ทดสอบ 5 หมวดธุรกิจไทย
-          </figcaption>
-        </figure>
-        <ArticleSubSection title="1. ธุรกิจท้องถิ่น: Google Business Profile คือปัจจัยหลัก">
-          <P>
-            สำหรับโรงแรม ร้านอาหาร และคลินิก ChatGPT แสดงแผนที่พร้อมคะแนนดาวก่อนเสมอ ทุกแบรนด์ที่ถูกพูดถึงมี Google Business Profile ที่มีรีวิวและคะแนนชัดเจน เช่น Amari Bangsaen (4.4 ดาว), Beach Walk Boutique Resort (4.5 ดาว), Huen Muan Jai (4.3 ดาว) ธุรกิจที่ไม่มี Google Business Profile ที่สมบูรณ์ไม่ปรากฏในผลการค้นหาเลย แม้เว็บไซต์จะดีแค่ไหนก็ตาม
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="2. Third-Party Validation ชี้ขาด">
-          <P>
-            ร้านอาหารที่ได้รับ Michelin Bib Gourmand ถูกพูดถึงก่อนและได้รับการอธิบายชัดกว่าร้านอื่น โรงแรมที่มี badge จาก Expedia และ TripAdvisor ได้รับการแนะนำในบริบทที่น่าเชื่อถือกว่า ในขณะที่แบรนด์ประกันที่ปรากฏ (AXA, Allianz, TTB, TQM) ล้วนมีสถานะเป็น Official Brand บนแพลตฟอร์มการเงิน AI ไม่ได้เลือกจากคุณภาพเนื้อหาเว็บไซต์ แต่เลือกจากสัญญาณที่แหล่งอื่นยืนยัน
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="3. ไม่มีธุรกิจขนาดเล็กปรากฏเลยแม้แต่รายเดียว">
-          <P>
-            ใน 5 หมวดที่ทดสอบ ไม่มี Independent operator หรือธุรกิจขนาดเล็กที่ไม่มี Third-Party Validation ปรากฏในคำตอบของ ChatGPT เลย บริษัทขนส่งที่ถูกพูดถึงคือ Kerry Express, Flash Express, Thailand Post — ล้วนเป็น major player ที่มี Brand Mention จากสื่อและแพลตฟอร์มหลายแห่ง สิ่งนี้ยืนยันว่าการมีเว็บไซต์อย่างเดียวไม่เพียงพอ AI ต้องการเห็นสัญญาณจากภายนอกด้วย
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="4. รูปแบบคำตอบสะท้อนประเภทธุรกิจ">
-          <P>
-            ChatGPT ใช้รูปแบบที่แตกต่างตามประเภทธุรกิจ โดยธุรกิจท้องถิ่น (โรงแรม ร้านอาหาร คลินิก) ได้รับคำตอบแบบแผนที่พร้อมรีวิว ส่วนธุรกิจบริการ (ประกัน ขนส่ง) ได้รับคำตอบแบบตารางเปรียบเทียบพร้อม source badge กำกับทุกแบรนด์ ซึ่งหมายความว่าแต่ละประเภทธุรกิจต้องการ GEO Checklist ที่เน้นคนละจุด
-          </P>
-        </ArticleSubSection>
-        <P>
-          สรุป: สิ่งที่ทำให้แบรนด์ไทยปรากฏใน ChatGPT ไม่ใช่คุณภาพเนื้อหาบนเว็บไซต์เพียงอย่างเดียว แต่คือการมีสัญญาณยืนยันจากแหล่งภายนอกที่ AI เชื่อถือ ไม่ว่าจะเป็น Google Business Profile, TripAdvisor, Michelin Guide, Expedia หรือแพลตฟอร์มเปรียบเทียบในอุตสาหกรรม
-        </P>
-      </ArticleSection>
-
-      <blockquote className="border-l-4 border-teal-700 py-1 pl-5 sm:pl-6">
-        <p className="thai-readable text-lg font-medium leading-8 text-neutral-800 sm:text-xl sm:leading-9">
-          "SEO ไม่ได้หายไปไหน แต่เป็นอีกหนึ่งแหล่งข้อมูลสำคัญที่ทำให้ ChatGPT และ AI ทุกตัวพูดถึงแบรนด์คุณได้ ยิ่งติดอันดับ Google ดีเท่าไร ยิ่งมีโอกาสถูก AI เลือกอ้างอิงมากเท่านั้น"
-        </p>
-        <cite className="mt-3 block text-sm not-italic text-neutral-500">
-          — Saralak Kaewkum, SEO & GEO Consultant
-        </cite>
-      </blockquote>
-
-      <ArticleSection title="ลำดับความสำคัญ: เริ่มจากอะไรก่อนถ้าทำพร้อมกันไม่ได้">
-        <P>
-          ถ้าทรัพยากรมีจำกัด แนะนำให้เรียงตามลำดับนี้:
-        </P>
-        <CheckList
-          items={[
-            'ขั้นที่ 1 — Technical พื้นฐาน: llms.txt, robots.txt, Schema Organization และ Person, Semantic HTML',
-            'ขั้นที่ 2 — Entity: Google Business Profile, LinkedIn, Brand Statement ที่สม่ำเสมอ',
-            'ขั้นที่ 3 — Content หลัก: Pillar Content 1 หัวข้อพร้อม FAQ อย่างน้อย 5 ข้อ, Answer First',
-            'ขั้นที่ 4 — Mention เริ่มต้น: LinkedIn Post, Guest Post 1-2 ชิ้น, ขอ Review จากลูกค้าจริง',
-            'ขั้นที่ 5 — Measurement: ตั้ง Google Alerts, ทดสอบ Prompt เดือนละครั้ง, ติดตาม GSC',
-          ]}
-        />
-        <P>
-          ธุรกิจที่ทำ 5 ขั้นนี้ครบ จะมีพื้นฐาน GEO ที่แข็งแรงกว่าธุรกิจไทยส่วนใหญ่แล้ว แม้จะยังไม่ครบ 40 รายการก็ตาม
-        </P>
-        <P>
-          ต้องการทีมช่วยลงมือทำ{' '}
-          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
-          {' '}ให้ครบทั้ง 40 รายการ ดูบริการ GEO ของ Saralak Search ได้เลย
-        </P>
-        <ReadMoreLinks items={[
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
-          { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview' },
-          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
-        ]} />
-      </ArticleSection>
-
-      <ArticleSection title="GEO Checklist Summary — ตารางติดตามความคืบหน้า">
-        <P>ใช้ตารางด้านล่างเป็น template ติดตาม — copy ไปใส่ใน Notion, Google Sheets หรือ Spreadsheet แล้วกรอก Status ของแต่ละรายการ</P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
-          <table className="min-w-[640px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+          <table className="min-w-[760px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
             <thead className="bg-[#fbfaf6]">
               <tr>
-                {['หมวด', 'รายการ', 'Priority', 'Status'].map((h) => (
+                {['#', 'หมวด', 'รายการตรวจ', 'Priority', 'Status'].map((h) => (
                   <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200">
-              {[
-                ['Entity', 'Organization Schema พร้อม @id, name, url, logo', 'สูง', '☐'],
-                ['Entity', 'Person Schema เชื่อมถึง Organization @id', 'สูง', '☐'],
-                ['Entity', 'sameAs links ครบ: LinkedIn, Facebook, GBP URL', 'สูง', '☐'],
-                ['Entity', 'Brand Statement ไทย + อังกฤษ สม่ำเสมอทุกช่องทาง', 'สูง', '☐'],
-                ['Entity', 'Google Business Profile ครบถ้วน', 'สูง', '☐'],
-                ['Entity', 'NAP สม่ำเสมอทุก platform', 'สูง', '☐'],
-                ['Entity', 'LINE Official Account มีชื่อแบรนด์ตรงกัน (ถ้ามี)', 'กลาง', '☐'],
-                ['Content', 'Pillar Content อย่างน้อย 1 บทความต่อหัวข้อหลัก', 'สูง', '☐'],
-                ['Content', 'Answer First — ตอบคำถามหลักใน 200 คำแรก', 'สูง', '☐'],
-                ['Content', 'H2/H3 เป็นคำถามที่ผู้ใช้ถาม AI จริง', 'สูง', '☐'],
-                ['Content', 'FAQ อย่างน้อย 5 ข้อในทุกบทความหลัก', 'สูง', '☐'],
-                ['Content', 'Information Gain — ข้อมูลที่เฉพาะเจาะจง ไม่ generic', 'กลาง', '☐'],
-                ['Content', 'ระบุวันที่อัปเดตล่าสุดในทุกบทความ', 'กลาง', '☐'],
-                ['Content', 'Content Cluster 3–5 บทความรองต่อหัวข้อหลัก', 'กลาง', '☐'],
-                ['Content', 'Internal Link จาก Cluster ไปยัง Pillar Content', 'สูง', '☐'],
-                ['Technical', 'llms.txt ที่ root ของเว็บไซต์', 'กลาง', '☐'],
-                ['Technical', 'robots.txt ไม่บล็อกหน้าสำคัญ', 'สูง', '☐'],
-                ['Technical', 'XML Sitemap ครบถ้วนและ submit ใน GSC แล้ว', 'สูง', '☐'],
-                ['Technical', 'Article / BlogPosting Schema ในทุกบทความ', 'สูง', '☐'],
-                ['Technical', 'FAQPage Schema ในบทความที่มี FAQ', 'กลาง', '☐'],
-                ['Technical', 'BreadcrumbList Schema ทุกหน้า', 'กลาง', '☐'],
-                ['Technical', 'Semantic HTML ถูกต้อง (header, article, section)', 'กลาง', '☐'],
-                ['Technical', 'Core Web Vitals ผ่าน threshold (LCP, INP, CLS)', 'กลาง', '☐'],
-                ['Technical', 'HTTPS + Mobile-friendly', 'สูง', '☐'],
-                ['Mention', 'Google Business Profile รีวิว 4.0+ และมี response', 'สูง', '☐'],
-                ['Mention', 'Backlink จากเว็บ relevant อย่างน้อย 5 แห่ง', 'สูง', '☐'],
-                ['Mention', 'Brand Mention บนสื่อหรือบล็อกภายนอก', 'กลาง', '☐'],
-                ['Mention', 'LinkedIn Content หรือ Thought Leadership', 'กลาง', '☐'],
-                ['Mention', 'Guest Post หรือการพูดถึงในชุมชน', 'ต่ำ', '☐'],
-                ['Measurement', 'Google Alerts ติดตาม Brand Mention', 'กลาง', '☐'],
-                ['Measurement', 'ทดสอบ AI Prompt ทุกเดือน', 'กลาง', '☐'],
-                ['Measurement', 'ติดตาม Brand Search ใน Search Console', 'กลาง', '☐'],
-                ['Measurement', 'ดู Referral Traffic จาก AI Platform ใน GA4', 'ต่ำ', '☐'],
-                ['Measurement', 'ติดตาม Impressions จาก Question Keywords', 'สูง', '☐'],
-                ['Measurement', 'ทบทวนและอัปเดต GEO Strategy ทุก 6 เดือน', 'กลาง', '☐'],
-              ].map(([cat, item, priority, status]) => (
+              {checklistRows.map(([cat, item, priority], index) => (
                 <tr key={item}>
+                  <td className="px-4 py-3 text-neutral-500">{index + 1}</td>
                   <td className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-teal-700 whitespace-nowrap">{cat}</td>
                   <td className="thai-readable px-4 py-3 text-neutral-800">{item}</td>
-                  <td className={`px-4 py-3 text-xs font-semibold whitespace-nowrap ${priority === 'สูง' ? 'text-rose-600' : priority === 'กลาง' ? 'text-amber-600' : 'text-neutral-400'}`}>{priority}</td>
-                  <td className="px-4 py-3 text-neutral-400">{status}</td>
+                  <td className={`px-4 py-3 text-xs font-semibold whitespace-nowrap ${priority === 'สูง' ? 'text-rose-600' : 'text-amber-600'}`}>{priority}</td>
+                  <td className="px-4 py-3 text-neutral-400">☐</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-neutral-500">Priority: สูง = ทำก่อน · กลาง = ทำถัดไป · ต่ำ = ทำได้เมื่อพร้อม</p>
+        <p className="mt-3 text-xs text-neutral-500">Priority สูง = ตรวจและแก้ก่อนเมื่อเกี่ยวข้องกับเว็บไซต์ · กลาง = ทำถัดไปตามบริบท</p>
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-limitations" title="ข้อจำกัดของ GEO Checklist ที่ควรรู้ก่อนสรุปผล">
+        <P>
+          Checklist ช่วยลด Blind Spot แต่ไม่สามารถบอกได้ว่าแพลตฟอร์มใดจะเลือก Source ไหนในทุกคำถาม
+          เพราะ Search และ Generative AI ใช้ระบบ Retrieval, Ranking, Model, Source และ Interface ต่างกัน และผลลัพธ์อาจเปลี่ยนตามเวลา
+        </P>
+        <CheckList
+          items={[
+            'ทำครบ 40 ข้อไม่รับประกัน Ranking, AI Mention หรือ Citation',
+            'AI Visibility ไม่ได้หมายความว่าจะเกิด Click เพราะบางคำตอบจบในหน้า Search หรือ AI Interface',
+            'Referral และ Conversion Attribution อาจไม่ครบ จึงไม่ควรอ้าง Revenue Impact หากไม่มีข้อมูลรองรับ',
+            'Manual Prompt Test เปลี่ยนได้ตามเวลา Platform Model และ Context ควรวัดเป็นชุดและเป็นรอบ',
+            'Correlation ระหว่าง Ranking, Mention, Schema, Backlink หรือ Review กับ AI Citation ไม่เท่ากับ Causation',
+            'Platform Feature เปลี่ยนเร็ว จึงต้องอัปเดต Checklist เมื่อ Official Documentation เปลี่ยน',
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection id="geo-checklist-next" title="อ่านต่อและขั้นถัดไปหลังทำ GEO Checklist">
+        <P>
+          หาก Checklist พบว่าปัญหาอยู่ที่ Search Foundation หรือ Topic Ownership ให้แก้สองส่วนนี้ก่อนผลิต Content เพิ่ม
+          หากฐาน Organic Visibility ใช้งานได้แล้วแต่ยังไม่ชัดว่า Content, Entity, Evidence และ AI Visibility ควรแก้ตรงไหน
+          {' '}<Link to="/discovery-audit" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Discovery Audit</Link>
+          {' '}ช่วยจัดลำดับ Issue ตาม Impact ได้ก่อนเริ่มงานรายเดือน
+          ส่วนธุรกิจที่มี Scope ชัดและต้องการลงมือทำต่อสามารถดู
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}ได้
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐาน Generative Engine Optimization' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ขั้นตอนลงมือทำแบบเป็นลำดับ' },
+          { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร — Google guidance และเคสจริง' },
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist — ตรวจความพร้อมของ Answer Content' },
+          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
+        ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Central documentation, checked June 2026',
-        'Manual ChatGPT AI testing (brand mention queries), June 2026 — Saralak Search',
-        'Saralak Search internal GEO audit framework, June 2026',
+        'Google Search Central: Optimizing your website for generative AI features on Google Search — checked 21 September 2026',
+        'Google Search Console: Generative AI performance report — checked 21 September 2026',
+        'OpenAI Help Center: ChatGPT Search and OAI-SearchBot guidance — checked 21 September 2026',
+        'Saralak Search GEO audit methodology — methodology, not a Google ranking system',
+        'Saralak Search AI Overview case observation: non-brand query “ขายอะไรดีตลาดนัด” — observational evidence, not causal proof',
       ]} />
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ GEO Checklist" />
     </article>
   )
 }
-
 function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
   const devKnewBefore = [
     {
