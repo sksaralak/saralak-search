@@ -1339,7 +1339,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'SEO คืออะไร? วิธีทำ SEO ให้ Google เข้าใจและลูกค้าค้นเจอ | Saralak Search',
+    metaTitle: 'SEO คืออะไร? วิธีทำ SEO ให้ Google เข้าใจ | Saralak Search',
     metaDescription:
       'SEO คืออะไร ทำงานผ่าน Crawling, Indexing และ Serving อย่างไร พร้อม 4 Workstream, วิธีเริ่มทำ SEO, การวัดผลด้วย Search Console และเคสจริงจาก Saralak Search',
     heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
