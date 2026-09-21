@@ -141,54 +141,34 @@ export const geoAgencyFaqs: FAQItem[] = [
 
 export const howToDoGeoFaqs: FAQItem[] = [
   {
-    question: 'GEO คืออะไร',
+    question: 'วิธีทำ GEO ควรเริ่มจากอะไร?',
     answer:
-      'GEO หรือ Generative Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้เหมาะกับ AI Search เพื่อเพิ่มโอกาสให้ AI เข้าใจ เลือกสรุป และอ้างอิงข้อมูลจากเว็บไซต์ของเราในคำตอบ',
+      'ควรเริ่มจากเก็บ Baseline และตรวจ Search Foundation ก่อน เช่น Crawl, Index, Canonical, Rendering และ Owner URL ของแต่ละ Topic จากนั้นค่อยปรับ Content, Evidence, Entity, Internal Link และ External Evidence แล้ววัดผลเป็นรอบ วิธีนี้ช่วยแยกปัญหาพื้นฐานออกจากงาน GEO และลดการสร้าง Content ซ้ำ Intent เดิม',
   },
   {
-    question: 'GEO ต่างจาก SEO อย่างไร',
+    question: 'ทำ GEO แล้ว ChatGPT จะอ้างอิงเว็บไซต์แน่นอนหรือไม่?',
     answer:
-      'SEO เน้นเพิ่มอันดับและการมองเห็นบน Search Engine ส่วน GEO เน้นเพิ่มโอกาสให้ AI Search นำข้อมูลจากเว็บไซต์ไปใช้ตอบคำถามหรืออ้างอิง ทั้งสองอย่างควรทำร่วมกัน',
+      'ไม่แน่นอน OpenAI ระบุว่าเว็บไซต์สาธารณะที่ต้องการมีสิทธิ์ปรากฏใน ChatGPT Search ควรอนุญาต OAI-SearchBot แต่การเข้าถึงของ crawler ไม่ได้รับประกัน placement, mention หรือ citation ในทุกคำถาม จึงควรวัดผลด้วยชุด Query เดิมเป็นช่วงเวลาแทนการสรุปจาก Prompt ครั้งเดียว',
   },
   {
-    question: 'GEO ต่างจาก AEO อย่างไร',
+    question: 'Schema จำเป็นต่อ GEO หรือไม่?',
     answer:
-      'AEO เน้นการทำคำตอบให้ชัดเพื่อรองรับ Featured Snippet, People Also Ask และคำตอบสั้น ส่วน GEO ขยายไปถึงการทำให้ Generative AI เข้าใจและเลือกเว็บไซต์เป็นแหล่งข้อมูล',
+      'Structured Data มีประโยชน์เมื่อใช้เพื่ออธิบายข้อมูลที่แสดงจริงบนหน้าและรองรับ Search feature ที่เกี่ยวข้อง แต่ Google ระบุว่าไม่มี special AI schema หรือ markup ที่จำเป็นต่อการปรากฏใน AI Overviews หรือ AI Mode จึงไม่ควรเพิ่ม FAQPage, HowTo หรือ Schema อื่นเพียงเพื่อหวัง AI Citation',
   },
   {
-    question: 'ทำอย่างไรให้ ChatGPT อ้างอิงเว็บไซต์',
+    question: 'llms.txt จำเป็นต่อ Google AI Search หรือไม่?',
     answer:
-      'ควรสร้างเนื้อหาที่ตอบคำถามชัดเจน มีโครงสร้างหัวข้อดี ใช้ Schema Markup เพิ่ม E-E-A-T สร้าง Topical Authority และทำให้แบรนด์ถูกกล่าวถึงจากแหล่งข้อมูลภายนอกที่น่าเชื่อถือ',
+      'ไม่จำเป็นสำหรับ Google Search เอกสาร Google Search Central ปี 2026 ระบุว่าไม่ต้องเพิ่ม llms.txt หรือไฟล์พิเศษเพื่อให้เว็บไซต์ปรากฏใน AI features และการมีหรือไม่มี llms.txt ไม่มีผลเชิงบวกหรือลบต่อ Google Search ส่วนระบบ AI อื่นอาจมีนโยบายการค้นพบเว็บไซต์ต่างกัน จึงควรตรวจเอกสารของแต่ละแพลตฟอร์มแยกกัน',
   },
   {
-    question: 'Schema ช่วยให้ ChatGPT อ้างอิงเว็บไซต์หรือไม่',
+    question: 'วัดผล GEO อย่างไรในปี 2026?',
     answer:
-      'Schema ช่วยให้ระบบเข้าใจประเภทและบริบทของเนื้อหาได้ดีขึ้น แต่ไม่ใช่ปัจจัยเดียว ต้องทำร่วมกับคุณภาพเนื้อหา ความน่าเชื่อถือ และ Authority ของแบรนด์',
+      'ควรวัดหลายชั้นร่วมกัน ได้แก่ Search Visibility ใน Google Search Console, Generative AI performance report สำหรับ AI Overviews และ AI Mode, Mention/Citation จากชุดคำถามที่กำหนดบนแพลตฟอร์มอื่น, GA4 Referral/Engagement และ Business Outcome เช่น Form, LINE, Call, Lead หรือ Purchase โดยไม่สรุปเหตุและผลจาก Visibility เพียงตัวเดียว',
   },
   {
-    question: 'Backlink ยังสำคัญกับ GEO หรือไม่',
+    question: 'GEO ใช้เวลานานแค่ไหนถึงเห็นผล?',
     answer:
-      'Backlink ยังสำคัญ เพราะเป็นสัญญาณความน่าเชื่อถือจากเว็บไซต์อื่น แต่ GEO ยังต้องให้ความสำคัญกับ Brand Mention, Entity, Content Quality และความชัดเจนของคำตอบด้วย',
-  },
-  {
-    question: 'เว็บไซต์เล็กทำ GEO ได้หรือไม่',
-    answer:
-      'เว็บไซต์เล็กทำ GEO ได้ โดยควรเริ่มจากหัวข้อเฉพาะทางที่แบรนด์เชี่ยวชาญจริง สร้าง Content Cluster ให้ลึกกว่าเว็บใหญ่ และเพิ่มความน่าเชื่อถือผ่านประสบการณ์จริงหรือข้อมูลเฉพาะ',
-  },
-  {
-    question: 'GEO ใช้เวลานานแค่ไหนถึงเห็นผล',
-    answer:
-      'GEO ไม่มีระยะเวลาตายตัว เพราะขึ้นอยู่กับคุณภาพเว็บไซต์ ความแข็งแรงของแบรนด์ การถูกกล่าวถึง และความสามารถในการ Crawl หรือ Index ของเนื้อหา โดยทั่วไปควรทำต่อเนื่องและวัดผลเป็นรายเดือน',
-  },
-  {
-    question: 'ต้องทำ Blog ถึงจะทำ GEO ได้ไหม',
-    answer:
-      'Blog ช่วยสร้าง Topical Authority ได้ดี แต่ไม่ใช่วิธีเดียว หน้า Service, Product, Category, FAQ, Case Study และ About Page ก็สามารถปรับให้รองรับ GEO ได้เช่นกัน',
-  },
-  {
-    question: 'GEO เหมาะกับธุรกิจประเภทไหน',
-    answer:
-      'GEO เหมาะกับธุรกิจที่ต้องการให้แบรนด์ถูกค้นพบในยุค AI Search เช่น Digital Agency, SaaS, E-commerce, โรงแรม, การศึกษา, สุขภาพ, การเงิน, B2B และ Local Business',
+      'ไม่มีระยะเวลามาตรฐานที่รับประกันได้ เพราะขึ้นอยู่กับสภาพเว็บไซต์เดิม Demand ของ Topic, Crawl/Index, คุณภาพข้อมูล, Authority และระบบของแต่ละแพลตฟอร์ม ควรตั้ง Baseline ก่อนเริ่มและวัดเป็นรอบรายสัปดาห์หรือรายเดือนตาม KPI แทนการกำหนดเส้นตายตายตัว',
   },
 ]
 
@@ -1503,36 +1483,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]',
+    title: 'วิธีทำ GEO ปี 2026: 8 ขั้นตอนสำหรับ Google AI Search และ ChatGPT',
     slug: 'how-to-do-geo',
     category: 'GEO',
     excerpt:
-      'การทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ ไม่ใช่การใส่คีย์เวิร์ดเพิ่มลงไปในบทความ แต่คือการทำให้ AI เข้าใจว่าเว็บไซต์ของเราเป็นแหล่งข้อมูลที่น่าเชื่อถือ ชัดเจน และเกี่ยวข้องกับคำถามของผู้ใช้มากพอที่จะถูกนำไปใช้เป็นคำตอบหรือแหล่งอ้างอิงใน AI Search',
-    readingTime: '20 min read',
+      'วิธีทำ GEO ควรเริ่มจาก Baseline และ Search Foundation ก่อน แล้วค่อยจัด Topic Ownership, Content, Evidence, Entity, Internal Link, External Evidence และ Measurement คู่มือนี้เรียงขั้นตอนลงมือทำ พร้อมเคสจริง ข้อจำกัด และข้อมูล Google/OpenAI ล่าสุด',
+    readingTime: '16 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-21',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ] | Saralak Search',
+    metaTitle: 'วิธีทำ GEO ปี 2026: 8 ขั้นตอน + วัดผล | Saralak Search',
     metaDescription:
-      'คู่มือครบจบวิธีทำ GEO ให้ ChatGPT และ AI Search อ้างอิงเว็บไซต์ ครอบคลุมตั้งแต่ Content Strategy, Schema, Entity SEO, Brand Mention ไปจนถึงการวัดผล',
+      'วิธีทำ GEO แบบ Step by Step ตั้งแต่ Baseline, Crawl/Index, Topic Ownership, Content, Entity, Internal Link และ Measurement พร้อมเคสจริง ข้อจำกัด และข้อมูล Google/OpenAI ล่าสุด',
     heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.webp',
-    heroImageAlt: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ คู่มือ AI SEO สำหรับธุรกิจ',
+    heroImageAlt: 'วิธีทำ GEO แบบ Step by Step สำหรับ Google AI Search และ ChatGPT',
     ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     aiSummary: [
-      'GEO คือการปรับเว็บไซต์ เนื้อหา และสัญญาณความน่าเชื่อถือให้ AI Search เข้าใจ อ้างอิง และแนะนำธุรกิจในคำตอบ',
-      'ChatGPT เลือกข้อมูลจากเว็บไซต์ที่ตอบคำถามชัดเจน มีโครงสร้างดี มี E-E-A-T และมีสัญญาณภายนอกสนับสนุน',
-      'วิธีทำ GEO มี 8 ขั้นตอนหลัก ตั้งแต่เลือก Topic สร้าง Pillar Content ทำ Internal Link เพิ่ม Schema ไปจนถึงสร้าง Brand Mention',
-      'Topical Authority, Entity SEO และ Brand Mention คือหัวใจสำคัญที่ทำให้ AI จดจำและเลือกแบรนด์เป็นแหล่งข้อมูล',
+      'วิธีทำ GEO ควรเริ่มจาก Baseline → Crawl/Index/Bot Access → Topic Ownership → Content/Evidence → Entity/Internal Link → External Evidence → Measurement ไม่ใช่เริ่มจากการใส่ Schema หรือผลิตบทความเพิ่มทันที',
+      'Google ระบุว่า SEO best practices และ Search index ยังเป็นพื้นฐานของ AI Overviews และ AI Mode และไม่มี special AI schema หรือ llms.txt ที่จำเป็นต่อการปรากฏใน Generative AI Search',
+      'สำหรับ ChatGPT Search การอนุญาต OAI-SearchBot ช่วยให้เว็บไซต์มีสิทธิ์ถูกค้นพบ แต่ไม่รับประกันว่า ChatGPT จะกล่าวถึงหรืออ้างอิงเว็บไซต์ในทุกคำถาม',
+      'Saralak Search ใช้กรอบ Answer → Evidence → Entity → Context → Retrieval เพื่อรีวิว Content กรอบนี้เป็น Methodology จากงานจริง ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
+      'การวัดผลควรรวม Search Console Generative AI visibility, Mention/Citation จาก Query Set เดิม, GA4 Referral/Engagement และ Business Outcome เช่น Lead หรือ Purchase',
     ],
     faqs: howToDoGeoFaqs,
     bodyVariant: 'how-to-do-geo',
     cta: {
-      headline: 'ต้องการให้ ChatGPT อ้างอิงเว็บไซต์ของธุรกิจคุณ?',
+      headline: 'ไม่ชัดว่าเว็บไซต์ควรแก้ GEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน พร้อมระบุโอกาสและขั้นตอนที่ควรเริ่มก่อนอย่างเป็นระบบ',
+        'Discovery Audit ช่วยตรวจ Search Foundation, Topic Ownership, Content, Entity, Internal Link และ AI Visibility เพื่อจัดลำดับงานก่อนลงทุนกับ Content หรือ Digital PR เพิ่ม',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
