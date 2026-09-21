@@ -1509,6 +1509,7 @@ export const blogPosts: BlogPost[] = [
       'การวัดผลควรรวม Search Console Generative AI visibility, Mention/Citation จาก Query Set เดิม, GA4 Referral/Engagement และ Business Outcome เช่น Lead หรือ Purchase',
     ],
     faqs: howToDoGeoFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'how-to-do-geo',
     cta: {
       headline: 'ไม่ชัดว่าเว็บไซต์ควรแก้ GEO จุดไหนก่อน?',
@@ -1786,6 +1787,13 @@ function rotate<T>(items: T[], by: number) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
+  if (slug === 'how-to-do-geo') {
+    const preferredSlugs = ['what-is-geo', 'geo-checklist-thailand', 'what-is-ai-overview']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
   if (slug === 'what-is-geo') {
     const preferredSlugs = ['how-to-do-geo', 'geo-checklist-thailand', 'seo-geo-aeo']
     return preferredSlugs
