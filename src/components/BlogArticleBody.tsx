@@ -2168,7 +2168,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           SEO ไม่ควรถูกอธิบายแค่เป็นรายการเทคนิค เพราะผลลัพธ์ที่มีความหมายเกิดเมื่อหน้าเว็บที่ถูกต้อง
           ไปปรากฏต่อหน้าคนที่กำลังค้นหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องจริง
-          สองเคสด้านล่างแสดงทั้งมุม Ranking Growth และการค้นพบเว็บไซต์จากคำค้นสินค้าแบบ Non-brand
+          สองเคสด้านล่างแสดงทั้งมุม Ranking Growth และการค้นพบเว็บไซต์จาก Generic Keyword
           โดยใช้เพื่ออธิบายวิธีคิด ไม่ใช่รับประกันว่าทุกเว็บไซต์จะได้ผลลัพธ์เหมือนกัน
         </P>
 
@@ -2192,13 +2192,13 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             <ArticleImage
               src="/image/blog/what-is-seo/seo-nonbrand-packaging-serp.webp"
               alt="ผลการค้นหา Google คำว่ากล่องข้าวพลาสติก แสดงเว็บไซต์ E-commerce ในกลุ่ม Organic Results ด้านบน"
-              caption="เคส Non-brand SEO: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
+              caption="เคส Generic Keyword: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
             />
             <div className="p-5">
-              <h3 className="font-semibold text-neutral-950">เคส 2: ถูกค้นพบจากคำค้นสินค้าแบบ Non-brand</h3>
+              <h3 className="font-semibold text-neutral-950">เคส 2: ถูกค้นพบจาก Generic Keyword</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
                 ในงาน SEO สำหรับเว็บไซต์ E-commerce กลุ่ม Packaging เราวางหน้า Category / Product Listing ให้รองรับ Commercial Search Intent
-                ของคำค้นสินค้าโดยตรง ตัวอย่างคำว่า <strong>“กล่องข้าวพลาสติก”</strong> ซึ่งผู้ค้นไม่ได้พิมพ์ชื่อแบรนด์
+                ของคำค้นสินค้าโดยตรง ตัวอย่าง Generic Keyword อย่าง <strong>“กล่องข้าวพลาสติก”</strong> ซึ่งผู้ค้นไม่ได้พิมพ์ชื่อแบรนด์
                 เว็บไซต์สามารถปรากฏในกลุ่ม Organic Results ด้านบนร่วมกับ Marketplace และเว็บไซต์ในหมวดเดียวกัน
               </p>
               <p className="thai-readable mt-3 text-sm leading-6 text-neutral-700">
@@ -2212,7 +2212,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           จากสองเคสนี้ สิ่งที่ใช้ซ้ำได้ไม่ใช่ “สูตรดันอันดับ” แต่คือ Workflow:
           หา Search Intent → ระบุ Owner URL → แก้ Content / Technical / Internal Link / Authority ตาม Bottleneck → วัดผลจากข้อมูลจริง
-          สำหรับเคส Non-brand ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
+          สำหรับเคส Generic Keyword ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
           ดูหลักฐานและเคสอื่นได้ที่
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
         </P>
