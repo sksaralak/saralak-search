@@ -1550,7 +1550,6 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         <ol className="mt-4 grid gap-2 text-sm leading-6 sm:grid-cols-2">
           {[
             ['aeo-what-is', 'AEO คืออะไร'],
-            ['aeo-serp-intent', 'ทำไมคำว่า AEO ในไทยต้องระบุความหมายให้ชัด'],
             ['aeo-google-guidance', 'Google บอกอะไรเกี่ยวกับ AEO และ AI Search'],
             ['aeo-how-it-works', 'AEO ทำงานอย่างไรในทางปฏิบัติ'],
             ['aeo-vs-seo-geo', 'AEO ต่างจาก SEO และ GEO อย่างไร'],
@@ -1590,24 +1589,11 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
             AEO = การออกแบบ “คำตอบ” บนหน้าเว็บให้ชัดและใช้งานได้ โดยไม่อ้างว่ามีสูตรพิเศษที่รับประกัน Featured Snippet, AI Overview หรือ AI Citation
           </p>
         </div>
-      </ArticleSection>
-
-      <ArticleSection id="aeo-serp-intent" title="ทำไมคำว่า AEO ในไทยต้องระบุความหมายให้ชัด">
-        <P>
-          คำย่อ <strong>AEO มี Search Intent ซ้อนกัน</strong> ในภาษาไทย
-          จาก Google SERP ที่ Saralak Search ตรวจเมื่อ 21 กันยายน 2026 สำหรับคำค้น “aeo คือ”
-          พบทั้งความหมาย <strong>Answer Engine Optimization</strong> และ
-          <strong> Authorized Economic Operator</strong> ซึ่งเป็นคำด้านศุลกากรอยู่ในหน้าเดียวกัน
-        </P>
-        <P>
-          Observation นี้ทำให้หน้าเกี่ยวกับ Answer Engine Optimization ไม่ควรใช้คำว่า “AEO” ลอย ๆ อย่างเดียว
-          ควรระบุชื่อเต็มตั้งแต่ Title, H1, ย่อหน้าแรก และจุดสำคัญของบทความ เพื่อช่วยให้คนอ่านเข้าใจว่าเนื้อหากำลังพูดถึง AEO ด้าน Search ไม่ใช่ AEO ด้านศุลกากร
-          นี่เป็นวิธีแก้ความกำกวมด้าน Entity และ Intent จาก SERP จริง ไม่ใช่ข้อกำหนดของ Google
-        </P>
-        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
-          <p className="text-sm font-semibold text-amber-950">Saralak Search SERP Observation — 21 Sep 2026</p>
-          <p className="thai-readable mt-2 text-sm leading-6 text-amber-900">
-            Query “aeo คือ” มี Mixed Intent จึงใช้ “AEO (Answer Engine Optimization)” เป็น Entity หลักของหน้า และหลีกเลี่ยงการเขียนคำย่อโดยไม่มีบริบทในจุดสำคัญ
+        <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] px-5 py-4">
+          <p className="thai-readable text-sm leading-6 text-neutral-700">
+            <strong>หมายเหตุ:</strong> คำย่อ AEO มีมากกว่าหนึ่งความหมาย ในบทความนี้ AEO หมายถึง
+            {' '}<strong>Answer Engine Optimization</strong> ซึ่งเกี่ยวข้องกับ Search และการจัดโครงสร้างคำตอบ
+            ไม่ใช่ <strong>Authorized Economic Operator</strong> ที่ใช้ในบริบทศุลกากร
           </p>
         </div>
       </ArticleSection>
@@ -1850,7 +1836,6 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           'Google Search Central — AI features and your website, checked 21 September 2026',
           'Google Search Console Help — Generative AI performance report, checked 21 September 2026',
           'Google Search documentation updates — FAQ rich result removal, checked 21 September 2026',
-          'Live Google SERP observation for “aeo คือ”, checked 21 September 2026',
           'Saralak Search client AI Overview case data (anonymised), checked September 2026',
         ]}
       />
