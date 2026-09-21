@@ -290,42 +290,37 @@ export const geoChecklistFaqs: FAQItem[] = [
   {
     question: 'GEO Checklist คืออะไร',
     answer:
-      'GEO Checklist คือรายการสิ่งที่ต้องตรวจสอบและทำให้ครบ เพื่อเพิ่มโอกาสให้ AI Search เช่น ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ ครอบคลุม 5 หมวดหลัก ได้แก่ Entity, Content, Technical, Mention และ Measurement',
+      'GEO Checklist หน้านี้คือกรอบ Audit 40 ข้อของ Saralak Search สำหรับตรวจความพร้อมด้าน Entity, Content, Technical, Mention/Evidence และ Measurement ของเว็บไซต์ที่ต้องการเพิ่ม Search และ AI Visibility ไม่ใช่ Checklist ทางการของ Google และไม่ใช่สูตรรับประกัน AI Citation',
   },
   {
-    question: 'ต้องทำ GEO Checklist ครบทุกข้อไหม',
+    question: 'ต้องทำ GEO Checklist ครบทั้ง 40 ข้อไหม',
     answer:
-      'ไม่จำเป็นต้องทำครบทุกข้อพร้อมกัน แนะนำให้เริ่มจากหมวด Technical และ Entity ก่อน เพราะเป็นพื้นฐานที่ AI ใช้เข้าใจธุรกิจของคุณ จากนั้นค่อยต่อด้วย Content, Mention และ Measurement ตามลำดับ',
+      'ไม่จำเป็นต้องทำครบพร้อมกัน ให้แก้สิ่งที่ขวางการ Crawl, Index, Canonical, Rendering และ Topic Ownership ก่อน แล้วจึงจัด Entity, Content, Evidence, Mention และ Measurement ตามบริบทธุรกิจ บางข้อ เช่น Local Business Profile หรือ Person Schema ใช้เฉพาะเมื่อเหมาะกับเว็บไซต์นั้น',
   },
   {
-    question: 'llms.txt คืออะไรและสำคัญแค่ไหน',
+    question: 'llms.txt จำเป็นต่อ GEO หรือ Google AI Search ไหม',
     answer:
-      'llms.txt คือไฟล์ที่ใส่ไว้ในโฟลเดอร์หลักของเว็บไซต์ เพื่อบอก AI ว่าเว็บไซต์ของเราเกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน คล้ายกับ robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ ธุรกิจไทยส่วนใหญ่ยังไม่มี จึงเป็นโอกาสที่ดีในการทำก่อนคู่แข่ง',
+      'ไม่จำเป็นสำหรับ Google Search โดย Google ระบุว่า Google Search ไม่ใช้ llms.txt และไฟล์นี้ไม่มีผลบวกหรือลบต่อการมองเห็นใน Google Search จึงควรมอง llms.txt เป็นไฟล์เสริมสำหรับระบบหรือ Agent ที่รองรับ ไม่ใช่ Ranking Factor หรือข้อบังคับของ GEO',
   },
   {
-    question: 'Schema Markup ที่จำเป็นสำหรับ GEO มีอะไรบ้าง',
+    question: 'GEO ต้องใช้ Schema Markup อะไรเป็นพิเศษไหม',
     answer:
-      'Schema ที่สำคัญสำหรับ GEO ได้แก่ Organization (ข้อมูลแบรนด์), Person (ข้อมูลผู้เชี่ยวชาญ), Article หรือ BlogPosting (บทความ), FAQPage (คำถามที่พบบ่อย) และ BreadcrumbList (โครงสร้างหน้า) โดยควรใช้ @id เพื่อเชื่อมโยง Schema แต่ละประเภทเข้าหากัน เพื่อให้ AI เข้าใจว่าผู้เขียนบทความเป็นคนเดียวกับเจ้าของแบรนด์',
+      'ไม่มี Special AI Schema ที่ต้องเพิ่มเพื่อให้มีสิทธิ์ปรากฏใน AI Overviews หรือ AI Mode ควรใช้ Structured Data ประเภทที่ตรงกับ Visible Content และรองรับตามวัตถุประสงค์ของหน้า เช่น Article, Organization หรือ BreadcrumbList เมื่อเหมาะสม โดย Schema ไม่รับประกัน Ranking หรือ AI Citation',
   },
   {
-    question: 'ทำไมเนื้อหาภาษาไทยถึงได้เปรียบกว่าภาษาอังกฤษในยุค GEO',
+    question: 'เว็บไซต์ควรอนุญาต AI Crawler ตัวไหน',
     answer:
-      'เนื้อหาภาษาไทยบน AI Search มีการแข่งขันต่ำกว่าภาษาอังกฤษมาก เนื่องจากยังมีแบรนด์ไทยน้อยที่ทำ GEO อย่างจริงจัง หากเขียนเนื้อหาภาษาไทยที่ดี มีโครงสร้างชัด และมี Information Gain ที่ AI ยังไม่มี โอกาสถูกอ้างอิงจึงสูงกว่าการแข่งในตลาดภาษาอังกฤษที่มีคู่แข่งระดับโลก',
+      'ขึ้นอยู่กับแพลตฟอร์มที่ต้องการให้ค้นพบเว็บไซต์ สำหรับ Google Search ต้องไม่ปิดกั้น Googlebot ในหน้าที่ต้องการ Index ส่วน OpenAI ระบุว่าเว็บไซต์ที่ต้องการมีสิทธิ์ปรากฏใน ChatGPT Search ไม่ควรบล็อก OAI-SearchBot ทั้งนี้ GPTBot เป็น User Agent คนละหน้าที่กับ OAI-SearchBot และไม่ควรใช้แทนกัน',
   },
   {
-    question: 'Brand Mention จากที่ไหนที่สำคัญสำหรับ GEO ในไทย',
+    question: 'วัดผล GEO และ AI Visibility อย่างไร',
     answer:
-      'Brand Mention ที่ AI อ่านได้ในบริบทไทย ได้แก่ LinkedIn (ทั้ง Personal และ Company Page), Google Business Profile Review, บทความหรือ Guest Post ในเว็บไซต์ภายนอก, การถูกพูดถึงใน Facebook Group หรือ Pantip และ Podcast หรือ YouTube ที่มี Transcript',
+      'สำหรับ Google ใช้ Search Console Generative AI performance report เพื่อติดตามการมองเห็นจาก AI Overviews และ AI Mode ควบคู่กับ Search Console ปกติ ส่วนแพลตฟอร์มอื่นควรเก็บ Prompt Set เดิมเป็นรอบ บันทึก Mention, Citation และ URL ที่ถูกใช้ ดู Referral Session ใน GA4 เมื่อมีข้อมูล และเชื่อมกลับไปยัง Lead หรือ Conversion โดยระวังข้อจำกัดด้าน Attribution',
   },
   {
-    question: 'วัดผล GEO ได้อย่างไร',
+    question: 'ทำครบ Checklist แล้วรับประกันว่าจะถูก AI อ้างอิงไหม',
     answer:
-      'วัดผล GEO ได้จากการทดสอบ Prompt ใน ChatGPT, Gemini และ Perplexity เดือนละครั้ง ติดตาม Branded Search ใน Google Search Console ดู AI Referral Traffic ใน GA4 และใช้ Tools เช่น Otterly.AI หรือ Profound สำหรับ AI Mention Tracking อย่างเป็นระบบ',
-  },
-  {
-    question: 'ธุรกิจเล็กเริ่มทำ GEO Checklist จากจุดไหนดี',
-    answer:
-      'ธุรกิจเล็กควรเริ่มจาก 3 จุดก่อน ได้แก่ 1) ทำ Organization Schema และ Google Business Profile ให้ครบ 2) เขียน Pillar Content หนึ่งหัวข้อที่ธุรกิจเชี่ยวชาญจริง พร้อม FAQ อย่างน้อย 5 ข้อ 3) อัปเดต LinkedIn Profile หรือ Company Page ให้สอดคล้องกับข้อมูลบนเว็บไซต์',
+      'ไม่รับประกัน แต่ละแพลตฟอร์มมี Retrieval, Ranking, Source Selection และ Interface ต่างกัน อีกทั้งผลลัพธ์อาจเปลี่ยนตามคำถาม เวลา และบริบท Checklist มีหน้าที่ช่วยลดปัญหาพื้นฐานและทำให้ข้อมูลชัด ตรวจสอบได้ และวัดผลได้มากขึ้น ไม่ใช่สูตรบังคับให้ระบบเลือก Citation',
   },
 ]
 
@@ -1233,36 +1228,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ',
+    title: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 ข้อตรวจ SEO, Content, Entity และ AI Visibility',
     slug: 'geo-checklist-thailand',
     category: 'GEO',
     excerpt:
-      'GEO Checklist สำหรับธุรกิจไทยครอบคลุม 5 หมวดหลัก ได้แก่ Entity, Content, Technical, Mention และ Measurement รวม 40 รายการที่ต้องตรวจสอบ เพื่อเพิ่มโอกาสให้ ChatGPT, Gemini และ Perplexity เข้าใจ อ้างอิง และแนะนำธุรกิจของคุณในคำตอบ',
-    readingTime: '15 min read',
+      'GEO Checklist คือกรอบตรวจเว็บไซต์ 40 ข้อของ Saralak Search ครอบคลุม Entity, Content, Technical, Mention/Evidence และ Measurement เพื่อจัดลำดับสิ่งที่ควรแก้สำหรับ Search และ AI Visibility โดยไม่อ้างว่าเป็นสูตรรับประกัน AI Citation',
+    readingTime: '16 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-21',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจคุณ | Saralak Search',
+    metaTitle: 'GEO Checklist 40 ข้อ สำหรับเว็บไซต์ไทย | Saralak Search',
     metaDescription:
-      'GEO Checklist ครบจบสำหรับธุรกิจไทย 40 รายการใน 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement เพื่อให้ ChatGPT, Gemini และ Perplexity อ้างอิงเว็บไซต์ของคุณ',
+      'GEO Checklist 40 ข้อสำหรับตรวจ Entity, Content, Technical, Mention และ Measurement พร้อมแยก Google Official Guidance, Saralak Methodology, ข้อจำกัด และวิธีวัด AI Visibility',
     heroImageDesktop: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
     heroImageMobile: '/image/blog/chatgpt-mention/chatgpt-mention-banner-mweb.png',
-    heroImageAlt: 'GEO Checklist สำหรับเว็บไซต์ไทย: ทำยังไงให้ ChatGPT อ้างอิงธุรกิจของคุณ',
+    heroImageAlt: 'GEO Checklist 40 ข้อสำหรับตรวจเว็บไซต์ไทยด้าน Search และ AI Visibility',
     ogImage: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
     aiSummary: [
-      'GEO Checklist สำหรับเว็บไซต์ไทยครอบคลุม 5 หมวด ได้แก่ Entity, Content, Technical, Mention และ Measurement รวม 40 รายการ',
-      'ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt และ Schema ที่เชื่อมโยงถึงกัน ซึ่งเป็นโอกาสที่ยังทำก่อนคู่แข่งได้',
-      'เนื้อหาภาษาไทยบน AI Search มีการแข่งขันต่ำกว่าภาษาอังกฤษมาก การทำ GEO ในตลาดไทยตอนนี้จึงได้เปรียบ',
-      'เริ่มจากหมวด Technical และ Entity ก่อน จากนั้นต่อด้วย Content, Mention และ Measurement',
+      'GEO Checklist หน้านี้เป็นกรอบ Audit 40 ข้อของ Saralak Search ไม่ใช่ Checklist ทางการของ Google และไม่มีข้อไหนรับประกัน AI Citation',
+      'Google ระบุว่า SEO best practices เดิมยังเป็นฐานของ AI Overviews และ AI Mode ไม่มี Special AI Schema ที่ต้องเพิ่ม และ Google Search ไม่ใช้ llms.txt',
+      'สิ่งที่ควรแก้ก่อนคือ Search Foundation และ Topic Ownership เช่น Indexability, Canonical, Rendered Content, Crawlable Internal Links และ Owner URL ของแต่ละ Intent',
+      'การวัดผลควรใช้ Search Console Generative AI performance report สำหรับ Google ร่วมกับ Search Visibility, AI Mention/Citation Log, GA4 Referral และ Business Outcome',
+      'เคสจริงของ Saralak Search ใช้เพื่อหา Pattern และบทเรียน ไม่ใช่หลักฐานว่าการทำ Checklist ข้อใดข้อหนึ่งเป็นสาเหตุให้ AI เลือกอ้างอิง',
     ],
     faqs: geoChecklistFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'geo-checklist',
     cta: {
-      headline: 'อยากรู้ว่า GEO Checklist ของเว็บไซต์คุณผ่านกี่ข้อ?',
+      headline: 'GEO Checklist ผ่านหลายข้อแล้ว แต่ยังไม่รู้ว่าควรแก้อะไรก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจสอบ GEO Readiness ของเว็บไซต์ พร้อมระบุสิ่งที่ควรทำก่อนเพื่อเพิ่มโอกาสให้ AI Search อ้างอิงธุรกิจของคุณ',
+        'Discovery Audit ตรวจ Search Foundation, Topic Ownership, Content, Entity, Internal Link และ AI Visibility เพื่อจัดลำดับงานตาม Impact แทนการพยายามทำครบทุกข้อพร้อมกัน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
