@@ -1753,6 +1753,13 @@ function rotate<T>(items: T[], by: number) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
+  if (slug === 'geo-checklist-thailand') {
+    const preferredSlugs = ['what-is-geo', 'how-to-do-geo', 'what-is-ai-overview']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
   if (slug === 'what-is-seo') {
     const preferredSlugs = ['increase-seo-traffic', 'seo-not-working', 'seo-geo-aeo']
     return preferredSlugs
