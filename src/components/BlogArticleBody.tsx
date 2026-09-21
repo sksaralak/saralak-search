@@ -3137,9 +3137,8 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
           <p className="thai-readable text-base leading-7 text-neutral-700">
             <strong>llms.txt อยู่ Priority ไหน?</strong> สำหรับ Google Search ให้จัดเป็น Optional เพราะ Google ระบุชัดว่าไม่ใช้ llms.txt และไฟล์นี้ไม่มีผลบวกหรือลบต่อ Search Visibility
-            หากองค์กรใช้ Agent หรือระบบอื่นที่รองรับ llms.txt ค่อยดู
-            {' '}<Link to="/blog/llms-txt-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">llms.txt คืออะไร</Link>
-            {' '}เป็น Implementation เพิ่มเติม โดยไม่ให้แซง Indexability, Content Quality หรือ Internal Link
+            หากองค์กรใช้ Agent หรือระบบอื่นที่รองรับ llms.txt ค่อยพิจารณาเป็น Implementation เพิ่มเติม
+            โดยไม่ให้แซง Indexability, Content Quality หรือ Internal Link
           </p>
         </div>
       </ArticleSection>
