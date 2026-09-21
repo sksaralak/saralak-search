@@ -2166,9 +2166,10 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="ตัวอย่างจากงานจริงของ Saralak Search" id="seo-case-study">
         <P>
-          สิ่งที่ต่างจากบทความ SEO ทั่วไปคือ SEO ไม่ควรถูกอธิบายแค่เป็นรายการเทคนิค
-          งานจริงต้องเริ่มจากปัญหาของหน้าและ Search Intent แล้ววางหลายองค์ประกอบร่วมกัน
-          สองเคสด้านล่างเป็นข้อมูลจากงานที่ Saralak Search มีหลักฐานอยู่ใน Case Studies และใช้เพื่ออธิบายวิธีคิด ไม่ใช่เพื่อรับประกันว่าทุกเว็บไซต์จะได้ผลลัพธ์เท่ากัน
+          SEO ไม่ควรถูกอธิบายแค่เป็นรายการเทคนิค เพราะผลลัพธ์ที่มีความหมายเกิดเมื่อหน้าเว็บที่ถูกต้อง
+          ไปปรากฏต่อหน้าคนที่กำลังค้นหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องจริง
+          สองเคสด้านล่างแสดงทั้งมุม Ranking Growth และการค้นพบเว็บไซต์จากคำค้นสินค้าแบบ Non-brand
+          โดยใช้เพื่ออธิบายวิธีคิด ไม่ใช่รับประกันว่าทุกเว็บไซต์จะได้ผลลัพธ์เหมือนกัน
         </P>
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -2189,26 +2190,30 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
             <ArticleImage
-              src="/proof/gsc-product-listing-growth.png"
-              alt="Google Search Console แสดง Organic Growth หลังปรับ Product Listing Architecture"
-              caption="เคส Technical SEO + Product Listing: Organic Visibility เติบโตหลังแก้โครงสร้าง"
+              src="/image/blog/what-is-seo/seo-nonbrand-packaging-serp.webp"
+              alt="ผลการค้นหา Google คำว่ากล่องข้าวพลาสติก แสดงเว็บไซต์ E-commerce ในกลุ่ม Organic Results ด้านบน"
+              caption="เคส Non-brand SEO: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
             />
             <div className="p-5">
-              <h3 className="font-semibold text-neutral-950">เคส 2: Product Listing ที่มีปัญหา Index และ Architecture</h3>
+              <h3 className="font-semibold text-neutral-950">เคส 2: ถูกค้นพบจากคำค้นสินค้าแบบ Non-brand</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                เว็บไซต์เดิมมีพื้นฐาน SEO ไม่ครบ ทำให้ Product Listing Page พลาดโอกาสจาก Search
-                งานหลักคือ Technical Audit, Metadata, Internal Link และ Information Architecture เพื่อให้หน้าหมวดรองรับ Search Intent ได้ชัดขึ้น
-                หลังปรับพบ Organic Traffic และ Visibility เติบโตต่อเนื่องใน Google Search Console
+                ในงาน SEO สำหรับเว็บไซต์ E-commerce กลุ่ม Packaging เราวางหน้า Category / Product Listing ให้รองรับ Commercial Search Intent
+                ของคำค้นสินค้าโดยตรง ตัวอย่างคำว่า <strong>“กล่องข้าวพลาสติก”</strong> ซึ่งผู้ค้นไม่ได้พิมพ์ชื่อแบรนด์
+                เว็บไซต์สามารถปรากฏในกลุ่ม Organic Results ด้านบนร่วมกับ Marketplace และเว็บไซต์ในหมวดเดียวกัน
+              </p>
+              <p className="thai-readable mt-3 text-sm leading-6 text-neutral-700">
+                จุดสำคัญของเคสนี้ไม่ใช่การอ้างอันดับจาก Screenshot เพียงครั้งเดียว แต่คือ Google เลือกหน้าที่มีหน้าที่เชิงพาณิชย์มาแสดงสำหรับ Query ที่มี Purchase Intent
+                ทำให้เส้นทางจาก <strong>Search → Product Discovery → Website</strong> เกิดขึ้นได้โดยไม่ต้องพึ่ง Brand Keyword
               </p>
             </div>
           </div>
         </div>
 
         <P>
-          เคสเหล่านี้ไม่พิสูจน์ว่าปัจจัยใดปัจจัยหนึ่งเป็นสาเหตุเดียวของ Ranking
-          เพราะมีหลายการเปลี่ยนแปลงเกิดพร้อมกันและ Search Environment เปลี่ยนตามเวลา
-          สิ่งที่ใช้ซ้ำได้คือ Workflow: หา Bottleneck → ระบุ Owner URL → แก้ Technical/Content/Links ที่สัมพันธ์กับปัญหา → วัดผลจากข้อมูลจริง
-          ดูหลักฐานอื่นได้ที่
+          จากสองเคสนี้ สิ่งที่ใช้ซ้ำได้ไม่ใช่ “สูตรดันอันดับ” แต่คือ Workflow:
+          หา Search Intent → ระบุ Owner URL → แก้ Content / Technical / Internal Link / Authority ตาม Bottleneck → วัดผลจากข้อมูลจริง
+          สำหรับเคส Non-brand ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
+          ดูหลักฐานและเคสอื่นได้ที่
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
         </P>
       </ArticleSection>
@@ -2269,7 +2274,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         'Google Search Console Help — Performance report and metrics definitions, checked September 2026',
         'Google Search Central — General Structured Data Guidelines, checked September 2026',
         'Google Search Central — Optimizing for generative AI features, checked September 2026',
-        'Saralak Search case study records and SEO audit observations, checked September 2026',
+        'Saralak Search case study records, SEO audit observations and non-brand packaging SERP evidence, checked September 2026',
       ]} />
 
       <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO" />
