@@ -174,44 +174,34 @@ export const howToDoGeoFaqs: FAQItem[] = [
 
 export const whatIsSeoFaqs: FAQItem[] = [
   {
-    question: 'ทำ SEO ใช้เวลากี่เดือนถึงจะเห็นผล?',
+    question: 'ทำ SEO ใช้เวลานานแค่ไหนถึงจะเห็นผล?',
     answer:
-      'โดยทั่วไป SEO มักเริ่มเห็นสัญญาณภายใน 3-6 เดือน ขึ้นอยู่กับการแข่งขันของคีย์เวิร์ด คุณภาพเว็บไซต์ อายุโดเมน ความแข็งแรงของเนื้อหา และความต่อเนื่องในการปรับปรุง',
-  },
-  {
-    question: 'ธุรกิจเล็กควรทำ SEO ไหม?',
-    answer:
-      'ควรทำ โดยเฉพาะธุรกิจที่ลูกค้ามักค้นหาข้อมูลก่อนตัดสินใจ เช่น คลินิก โรงแรม ร้านอาหาร บริษัทบริการ ธุรกิจ B2B โรงเรียน คอร์สเรียน หรือร้านค้าออนไลน์ SEO ช่วยให้ธุรกิจเล็กแข่งขันในคีย์เวิร์ดที่เฉพาะเจาะจงได้',
+      'ไม่มีระยะเวลาตายตัว Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนใน Search ภายในไม่กี่ชั่วโมง ขณะที่บางอย่างอาจใช้เวลาหลายเดือน ควรดูสัญญาณเป็นลำดับตั้งแต่ Crawl/Index, Impression และ Query ไปจนถึง Click, Lead และ Conversion แทนการยึดตัวเลข 3 หรือ 6 เดือนเป็นกฎเดียวกับทุกเว็บไซต์',
   },
   {
     question: 'ทำ SEO เองได้ไหม?',
     answer:
-      'ทำเองได้ในระดับพื้นฐาน เช่น การเขียนบทความ ปรับ Title, Meta Description, Internal Link และดูข้อมูลจาก Google Search Console แต่ถ้าเว็บไซต์มีการแข่งขันสูงหรือมีปัญหา Technical SEO การทำงานกับผู้เชี่ยวชาญจะช่วยลดเวลาลองผิดลองถูก',
+      'ทำเองได้ในระดับพื้นฐาน เช่น ตั้งค่า Search Console, ตรวจ Index, ปรับ Title/H1, เขียน Content ให้ตรง Search Intent และวาง Internal Link แต่เว็บไซต์ที่มี JavaScript, Migration, Duplicate URL, Canonical หรือการแข่งขันสูงอาจต้องใช้ Technical SEO และการวิเคราะห์ข้อมูลเชิงลึกมากขึ้น',
   },
   {
     question: 'SEO ยังจำเป็นไหมในยุค AI Search?',
     answer:
-      'ยังจำเป็น เพราะ AI Search ต้องอาศัยข้อมูลจากเว็บไซต์ แหล่งอ้างอิง รีวิว บทความ และสัญญาณความน่าเชื่อถือ เว็บไซต์ที่มี SEO ดี เนื้อหาชัด และโครงสร้างดีจะมีโอกาสถูก AI นำไปอ้างอิงได้ดีกว่า',
-  },
-  {
-    question: 'SEO ต่างจาก AEO และ GEO อย่างไร?',
-    answer:
-      'SEO เน้นการทำให้เว็บไซต์ติดอันดับบน Google ส่วน AEO เน้นการทำให้เนื้อหาถูกเลือกเป็นคำตอบใน AI Overview หรือ Featured Snippet และ GEO เน้นการทำให้แบรนด์มีโอกาสถูก AI พูดถึงหรือแนะนำ ทั้ง 3 อย่างเชื่อมโยงกัน โดย SEO เป็นพื้นฐานที่ช่วยต่อยอดไปสู่ AEO และ GEO',
+      'ยังจำเป็น โดยเฉพาะบน Google เพราะเอกสารทางการระบุว่า SEO best practices และข้อมูลจาก Search index ยังเป็นพื้นฐานของ Generative AI features อย่าง AI Overviews และ AI Mode อย่างไรก็ตาม SEO ที่ดีไม่ได้รับประกันว่าเว็บไซต์จะถูก AI อ้างอิง และแต่ละแพลตฟอร์ม AI อาจมีระบบค้นแหล่งข้อมูลต่างกัน',
   },
   {
     question: 'SEO กับ SEM ต่างกันอย่างไร?',
     answer:
-      'SEO คือการทำให้เว็บไซต์ติดอันดับในผลการค้นหาธรรมชาติโดยไม่ต้องจ่ายต่อคลิก ส่วน SEM คือการลงโฆษณาผ่าน Google Ads ให้เว็บไซต์แสดงผลทันที เห็นผลเร็วแต่ต้องใช้งบประมาณ และหยุดจ่ายก็หยุดแสดง',
+      'SEO เน้น Organic Search ส่วน Paid Search เช่น Google Ads ใช้งบโฆษณาเพื่อซื้อการมองเห็นตามระบบประมูล คำว่า SEM มีการใช้ต่างกัน บางองค์กรใช้หมายถึง Search Marketing ที่รวม SEO และ Paid Search ขณะที่บางตลาดใช้ SEM เพื่อหมายถึง Search Ads ดังนั้นควรระบุความหมายให้ชัดเมื่อวาง KPI',
   },
   {
-    question: 'ทำไมทำ SEO แล้วไม่เห็นผล?',
+    question: 'Schema Markup จำเป็นต่อ SEO ไหม?',
     answer:
-      'สาเหตุที่พบบ่อยได้แก่ เลือกคีย์เวิร์ดกว้างเกินไป เนื้อหาไม่ตรง Search Intent เว็บไซต์โหลดช้า ไม่มี Internal Link ไม่มี Schema Markup ไม่มี Backlink หรือ Brand Mention ไม่ได้วัดผลจาก Search Console และทำครั้งเดียวไม่อัปเดต',
+      'Structured Data ไม่ใช่ข้อกำหนดที่ทำให้เว็บติดอันดับและไม่รับประกัน Rich Result หน้าที่หลักคือช่วยอธิบายข้อมูลบนหน้าในรูปแบบที่ระบบรองรับ โดย Markup ต้องสอดคล้องกับเนื้อหาที่มองเห็นจริงและใช้ประเภทที่ Google รองรับ',
   },
   {
-    question: 'ทำ SEO เว็บไซต์ ราคาเท่าไหร่?',
+    question: 'ทำ SEO แล้วรับประกันอันดับ 1 หรือหน้าแรก Google ได้ไหม?',
     answer:
-      'ราคาทำ SEO เว็บไซต์ขึ้นอยู่กับขนาดเว็บไซต์ จำนวนคีย์เวิร์ดที่แข่งขัน สภาพเทคนิคของเว็บไซต์เดิม และจำนวนบทความที่ต้องผลิตต่อเดือน โดยทั่วไปคิดเป็นแพ็กเกจรายเดือนมากกว่าราคาเหมาจ่ายครั้งเดียว เพราะ SEO ต้องปรับปรุงและวัดผลต่อเนื่อง',
+      'รับประกันไม่ได้ Google ระบุใน SEO Starter Guide ว่าไม่มีเคล็ดลับที่ทำให้เว็บไซต์ติดอันดับ 1 อัตโนมัติ และแม้ทำตาม Search Essentials ก็ยังไม่รับประกันว่าจะถูก Crawl, Index หรือแสดงในผลค้นหา SEO จึงควรวัดจากแนวโน้ม Visibility, Traffic และ Business Outcome หลายตัวร่วมกัน',
   },
 ]
 
@@ -1338,36 +1328,38 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    title: 'SEO คืออะไร? เข้าใจการทำ SEO ตั้งแต่ Google ค้นพบเว็บจนถึงวัดผล',
     slug: 'what-is-seo',
     category: 'SEO',
     excerpt:
-      'SEO คือกระบวนการปรับปรุงเว็บไซต์ เนื้อหา โครงสร้าง และความน่าเชื่อถือ เพื่อให้ Google เข้าใจว่าเว็บไซต์ของคุณเกี่ยวกับอะไร และแสดงผลให้ผู้ใช้งานเจอในเวลาที่กำลังมองหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องกับธุรกิจของคุณจริง ๆ',
+      'SEO คือการปรับเว็บไซต์และเนื้อหาเพื่อช่วยให้ Search Engine เข้าใจหน้าเว็บ และช่วยให้คนค้นพบเว็บไซต์ผ่าน Organic Search พร้อมพื้นฐาน Crawling, Indexing, การวัดผล และข้อจำกัดที่ควรรู้',
     readingTime: '18 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-09-21',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google | Saralak Search',
+    metaTitle: 'SEO คืออะไร? วิธีทำ SEO ให้ Google เข้าใจและลูกค้าค้นเจอ | Saralak Search',
     metaDescription:
-      'SEO คือการปรับเว็บไซต์ให้ถูกค้นเจอบน Google แบบไม่ต้องจ่ายค่าโฆษณาต่อคลิก เรียนรู้ความหมายของ SEO ประเภทของ SEO วิธีเริ่มต้นทำ SEO และความต่างระหว่าง SEO, AEO และ GEO แบบเข้าใจง่าย',
+      'SEO คืออะไร ทำงานผ่าน Crawling, Indexing และ Serving อย่างไร พร้อม 4 Workstream, วิธีเริ่มทำ SEO, การวัดผลด้วย Search Console และเคสจริงจาก Saralak Search',
     heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.webp',
-    heroImageAlt: 'SEO คืออะไร เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google',
+    heroImageAlt: 'SEO คืออะไร การทำ SEO ตั้งแต่ Crawling Indexing ไปจนถึงการวัดผล',
     ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
     aiSummary: [
-      'SEO คือการปรับเว็บไซต์ให้ Google เข้าใจและแสดงผลเมื่อลูกค้ากำลังค้นหาสินค้าหรือบริการที่เกี่ยวข้อง',
-      'SEO ทำงานผ่าน 3 กระบวนการหลัก ได้แก่ Crawling, Indexing และ Ranking',
-      'SEO มี 4 ประเภทหลัก ได้แก่ On-page SEO, Off-page SEO, Technical SEO และ Local SEO',
-      'SEO เป็นพื้นฐานสำคัญที่ต่อยอดไปสู่ AEO และ GEO เพื่อรองรับยุค AI Search',
+      'SEO คือการช่วยให้ Search Engine เข้าใจ Content และช่วยให้คนค้นพบเว็บไซต์ผ่าน Organic Search โดยไม่ใช่การซื้ออันดับหรือการใส่คีย์เวิร์ดให้มากที่สุด',
+      'Google อธิบาย Search เป็น 3 ขั้นหลัก: Crawling, Indexing และ Serving Search Results โดยการถูก Index ไม่ได้หมายความว่าจะติดอันดับในทุกคำค้น',
+      'Saralak Search แบ่งงาน SEO เป็น 4 Workstream: Content & On-page, Technical, Authority & Off-page และ Local SEO เพื่อใช้ Audit และจัดลำดับงาน กรอบนี้เป็น Methodology ไม่ใช่ Taxonomy ทางการของ Google',
+      'การวัด SEO ควรดู Clicks, Impressions, CTR, Queries และ Landing Pages ใน Search Console แล้วเชื่อมกับ Engagement, Leads และ Conversion',
+      'SEO ไม่มีการรับประกันอันดับ ระยะเวลาตายตัว หรือ AI Citation จึงควรวัดผลเป็นรอบและปรับจากข้อมูลจริง',
     ],
     faqs: whatIsSeoFaqs,
+    includeFaqSchema: false,
     bodyVariant: 'what-is-seo',
     cta: {
-      headline: 'ไม่แน่ใจว่าเว็บไซต์มีพื้นฐาน SEO ดีพอหรือยัง?',
+      headline: 'ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจภาพรวมเว็บไซต์ คีย์เวิร์ด โครงสร้างเนื้อหา Technical SEO และโอกาสในการเพิ่ม Organic Visibility เพื่อให้เห็นว่าควรปรับจุดไหนก่อน',
+        'Discovery Audit ช่วยตรวจ Search Intent, Keyword Mapping, Technical SEO, Content, Internal Link และ Search Visibility เพื่อจัดลำดับสิ่งที่ควรแก้ก่อนเริ่มทำรายเดือน',
       buttonText: 'เริ่มต้นด้วย Discovery Audit',
       href: '/discovery-audit',
     },
@@ -1787,6 +1779,13 @@ function rotate<T>(items: T[], by: number) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
+  if (slug === 'what-is-seo') {
+    const preferredSlugs = ['increase-seo-traffic', 'seo-not-working', 'seo-geo-aeo']
+    return preferredSlugs
+      .map((preferredSlug) => blogPosts.find((post) => post.slug === preferredSlug))
+      .filter((post): post is BlogPost => Boolean(post))
+      .slice(0, limit)
+  }
   if (slug === 'how-to-do-geo') {
     const preferredSlugs = ['what-is-geo', 'geo-checklist-thailand', 'what-is-ai-overview']
     return preferredSlugs
