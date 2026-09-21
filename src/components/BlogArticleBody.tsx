@@ -2007,7 +2007,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </div>
         <P>
           ธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการควรแยกงาน
-          {' '}<Link to="/services/local-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Local SEO</Link>
+          {' '}<Link to="/blog/local-seo-customer-intent" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Local SEO</Link>
           {' '}ออกมาวัดผลต่างหาก เพราะ Query, Google Business Profile และ Conversion เช่น Call หรือ Direction มีรูปแบบต่างจากเว็บไซต์ที่ขายทั่วประเทศ
         </P>
       </ArticleSection>
@@ -2034,7 +2034,9 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           ในบริบท AI Search, Google ระบุว่า SEO Best Practices และ Search Index ยังคงเป็นพื้นฐานสำหรับ Generative AI features ของ Google
           แต่ไม่ได้หมายความว่าหน้า SEO ดีจะถูก AI Overview อ้างอิงเสมอไป
-          หากต้องการแยกภาพของ Search แบบเดิมกับ AI Search อ่านต่อได้ที่
+          ข้อมูลทางการส่วนนี้อ้างอิงจาก
+          {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google: Optimizing for generative AI features</a>.
+          {' '}หากต้องการแยกภาพของ Search แบบเดิมกับ AI Search อ่านต่อได้ที่
           {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO ต่างกันอย่างไร</Link>
         </P>
       </ArticleSection>
@@ -2266,6 +2268,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         'Google Search Central — In-depth guide to how Google Search works, checked September 2026',
         'Google Search Console Help — Performance report and metrics definitions, checked September 2026',
         'Google Search Central — General Structured Data Guidelines, checked September 2026',
+        'Google Search Central — Optimizing for generative AI features, checked September 2026',
         'Saralak Search case study records and SEO audit observations, checked September 2026',
       ]} />
 
