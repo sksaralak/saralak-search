@@ -1908,7 +1908,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป SEO ใน 30 วินาที" id="seo-summary" /> : null}
+      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป SEO คืออะไร ใน 30 วินาที" id="seo-summary" /> : null}
 
       <nav aria-label="สารบัญ SEO" className="rounded-xl border border-neutral-200 bg-[#fbfaf6] px-5 py-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
