@@ -1279,7 +1279,7 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'AEO คืออะไร? Answer Engine Optimization สำหรับ AI Search | Saralak Search',
+    metaTitle: 'AEO คืออะไร? Answer Engine Optimization | Saralak Search',
     metaDescription:
       'AEO คืออะไร เข้าใจ Answer Engine Optimization ต่างจาก SEO และ GEO อย่างไร พร้อม Google guidance ปี 2026 วิธีทำ AEO เคสจริง การวัดผล และข้อจำกัดที่ควรรู้',
     heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
@@ -1289,7 +1289,7 @@ export const blogPosts: BlogPost[] = [
     aiSummary: [
       'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบบนหน้าเว็บให้ตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ',
       'AEO เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google และไม่มีวิธีรับประกัน Featured Snippet, AI Overview หรือ AI Citation',
-      'คำค้น “aeo คือ” ในไทยมี Mixed Intent ระหว่าง Answer Engine Optimization กับ Authorized Economic Operator จึงควรระบุชื่อเต็มของ Entity ให้ชัดตั้งแต่ต้นหน้า',
+      'AEO ควรต่อยอดจาก SEO เพราะหน้าเว็บยังต้อง Crawl และ Index ได้ มี Search Intent ชัด และเชื่อม Internal Link ไปยัง Owner URL ที่ถูกต้อง',
       'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มี Schema หรือ Optimization พิเศษที่ต้องเพิ่มเพื่อให้มีสิทธิ์ปรากฏ',
       'AEO ควรวัดทั้ง Search Visibility, Answer/AI Visibility, Engagement และ Business Outcome ไม่ใช่ดู Traffic หรือ Citation เพียงตัวเดียว',
     ],
