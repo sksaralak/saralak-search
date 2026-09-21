@@ -966,6 +966,33 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           ผลลัพธ์ที่ได้รับการยืนยันคือบทความถูก Google AI Overview อ้างอิงหลายจุด และมี product recommendation
           ของ Doozy Online ปรากฏในบริบทของคำตอบ
         </P>
+        <ArticleImage
+          src="/image/blog/seo-aeo-geo/doozy-google-ai-overview-market-seller.png"
+          alt="Google AI Overview แสดงคำตอบจากคำค้นขายอะไรดีตลาดนัดและเชื่อมไปยังคำแนะนำเรื่องบรรจุภัณฑ์"
+          width={1030}
+          height={778}
+          caption="ตัวอย่างคำค้นกว้าง “ขายอะไรดีตลาดนัด” ที่ผู้ค้นยังอยู่ในช่วงหาไอเดียสินค้า แต่ AI Overview เริ่มเชื่อมไปถึงปัจจัยเชิงพาณิชย์ เช่น บรรจุภัณฑ์ ราคา และความสะดวกในการขาย"
+        />
+        <ArticleImage
+          src="/image/blog/seo-aeo-geo/doozy-chatgpt-product-recommendation.png"
+          alt="ChatGPT แนะนำสินค้าและแหล่งซื้อกล่องพลาสติกใส่อาหารขาย"
+          width={1078}
+          height={2048}
+          caption="เมื่อ intent แคบลงเป็น “ซื้อกล่องพลาสติกใส่อาหารขายที่ไหนดี” คำตอบเปลี่ยนจากไอเดียขายของเป็น product recommendation และแหล่งซื้อ ซึ่งเป็นจุดที่ Doozy Online ถูกเชื่อมเข้ากับ commercial context ได้ชัดขึ้น"
+        />
+        <ArticleSubSection title="รูปนี้ต่างกันอย่างไร และรองรับ user intent ตรงไหน">
+          <P>
+            ภาพแรกคือ informational intent ระดับต้น ผู้ค้นยังถามว่า “ขายอะไรดี” จึงต้องการไอเดียสินค้า,
+            วิธีเริ่ม, ต้นทุน และข้อควรระวัง ส่วนภาพที่สองคือ commercial investigation intent
+            ผู้ค้นเริ่มรู้แล้วว่าจะขายอาหารหรือเดลิเวอรี่ และต้องการรู้ว่าจะซื้อกล่องพลาสติกใส่อาหารจากที่ไหน
+          </P>
+          <P>
+            จุดที่ทำให้เคสนี้เกี่ยวกับ SEO, AEO และ GEO คือบทความไม่ได้รีบขายกล่องตั้งแต่ต้น
+            แต่ตอบโจทย์ broad intent ก่อน แล้วค่อยวางบริบทให้ AI และผู้อ่านเห็นความสัมพันธ์ระหว่าง
+            “ของที่น่าขาย” กับ “บรรจุภัณฑ์ที่ทำให้ขายได้จริง” วิธีนี้ช่วยให้หน้า informational
+            ทำหน้าที่เป็นสะพานไปสู่หมวดสินค้าและ product recommendation โดยไม่ทำให้บทความกลายเป็นหน้าโฆษณา
+          </P>
+        </ArticleSubSection>
         <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4">
           <p className="text-sm font-semibold text-emerald-950">บทเรียนจากเคสนี้</p>
           <ul className="mt-2 grid gap-2 text-sm leading-6 text-emerald-950">
