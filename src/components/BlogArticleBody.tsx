@@ -787,7 +787,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
       {post.aiSummary ? (
-        <AISummary items={post.aiSummary} heading="สรุป SEO GEO AEO ใน 30 วินาที" id="seo-geo-aeo-summary" />
+        <AISummary items={post.aiSummary} heading="สรุป SEO GEO AEO คืออะไร ใน 30 วินาที" id="seo-geo-aeo-summary" />
       ) : null}
       <SeoGeoAeoTableOfContents />
 
@@ -948,9 +948,9 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           <CheckList items={geoBaseItems} />
         </ArticleSubSection>
         <ReadMoreLinks items={[
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์' },
-          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย' },
-          { to: '/blog/aeo-checklist', label: 'AEO Checklist สำหรับเว็บไซต์ไทย' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO' },
+          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist' },
+          { to: '/blog/aeo-checklist', label: 'AEO Checklist' },
         ]} />
       </ArticleSection>
 
@@ -1026,10 +1026,10 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           และอะไรควรทำต่อในเชิง GEO
         </P>
         <ReadMoreLinks items={[
-          { to: '/discovery-audit', label: 'ตรวจสอบเว็บไซต์ฟรี / Discovery Audit' },
-          { to: '/services/seo', label: 'บริการ SEO สำหรับฐาน Search Visibility' },
-          { to: '/services/geo', label: 'รับทำ GEO สำหรับ Google และ AI Search' },
-          { to: '/case-studies', label: 'SEO Case Studies และผลลัพธ์จริง' },
+          { to: '/discovery-audit', label: 'ตรวจสอบเว็บไซต์ฟรี' },
+          { to: '/services/seo', label: 'บริการ SEO' },
+          { to: '/services/geo', label: 'บริการ GEO' },
+          { to: '/case-studies', label: 'SEO Case Studies' },
         ]} />
       </ArticleSection>
 
