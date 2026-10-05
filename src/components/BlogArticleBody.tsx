@@ -1833,9 +1833,9 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
 
       <SourceBox
         items={[
-          'Google Search Central — AI features and your website, checked 5 October 2026',
-          'Google Search Console Help — Generative AI performance report, checked 5 October 2026',
-          'Google Search documentation updates — FAQ rich result removal, checked 5 October 2026',
+          'Google Search Central — AI features and your website, checked 21 September 2026',
+          'Google Search Console Help — Generative AI performance report, checked 21 September 2026',
+          'Google Search documentation updates — FAQ rich result removal, checked 21 September 2026',
           'Saralak Search client AI Overview case data (anonymised), checked September 2026',
         ]}
       />
