@@ -27,7 +27,7 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: 'ต้องเริ่มจากบริการไหนก่อน?',
     answer:
-      'ถ้ายังไม่แน่ใจว่าปัญหาหลักอยู่ตรงไหน ควรเริ่มจาก Discovery Audit เพื่อดูว่าควรลงทุนกับ Google Search, Google Maps หรือ AI Search ในส่วนใดก่อน',
+      'เริ่มจากเป้าหมายธุรกิจและจุดที่ Search มีผลต่อรายได้มากที่สุด เช่น ต้องการเพิ่ม Organic Traffic, ลูกค้าจาก Google Maps, Content ที่พาคนไปหน้าสินค้า หรือการมองเห็นใน AI Search แล้วค่อยเลือก scope ที่เหมาะ',
   },
   {
     question: 'รับงานกับ Agency Partner ไหม?',
@@ -88,17 +88,12 @@ export const servicesFaqs: FAQItem[] = [
   {
     question: 'ควรเลือกบริการแบบไหนก่อน?',
     answer:
-      'ถ้ายังไม่รู้ปัญหาหลักให้เริ่มจาก Discovery Audit ถ้ามีแผนชัดแล้วค่อยเลือก Search Growth Retainer, Local SEO, Google Maps หรือ SEO Package ตามเป้าหมาย',
+      'เลือกจากเป้าหมายหลักของธุรกิจ เช่น Search Growth สำหรับการเติบโตบน Google และ AI Search, Local SEO หรือ Google Maps สำหรับธุรกิจที่พึ่งพาลูกค้าในพื้นที่ และ Monthly SEO Advisor สำหรับทีมที่ต้องการผู้เชี่ยวชาญช่วยวางแผนหรือ review งาน',
   },
   {
     question: 'SEO, AEO และ GEO ต่างกันอย่างไร?',
     answer:
       'SEO ช่วยให้เว็บไซต์ติดอันดับใน Search Engine ส่วน AEO ช่วยให้เนื้อหาถูกนำไปตอบคำถามบน AI Overview และ GEO ช่วยเพิ่มโอกาสให้แบรนด์ถูกอ้างอิงใน ChatGPT, Gemini และ Search AI รุ่นใหม่',
-  },
-  {
-    question: 'Discovery Audit ได้อะไรบ้าง?',
-    answer:
-      'ประกอบด้วยการวิเคราะห์เว็บไซต์ การมองเห็นบน Search, AI Search, Google Maps รวมถึงโอกาสในการเติบโตและลำดับความสำคัญของงานที่ควรทำก่อน',
   },
   {
     question: 'ใช้เวลานานเท่าไรจึงเริ่มเห็นผล?',
@@ -179,11 +174,6 @@ export const caseStudiesFaqs: FAQItem[] = [
       'Local SEO ช่วยให้ธุรกิจปรากฏต่อผู้ค้นหาในพื้นที่ใกล้เคียงผ่าน Google Search และ Google Maps ซึ่งมีผลโดยตรงต่อการโทร การขอเส้นทาง และการติดต่อจากลูกค้า',
   },
   {
-    question: 'Discovery Audit คืออะไร?',
-    answer:
-      'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อค้นหาโอกาสในการเติบโต ความเข้าใจของ Google และ AI Search ต่อธุรกิจ และแนวทางในการเพิ่มการมองเห็นบน Search และ AI Search',
-  },
-  {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
     answer:
       'SEO เหมาะกับธุรกิจที่ต้องการสร้างการมองเห็นระยะยาว เช่น Ecommerce, SaaS, โรงแรม, คลินิก, ธุรกิจท้องถิ่น, B2B และธุรกิจบริการที่ลูกค้ามักค้นหาข้อมูลก่อนตัดสินใจซื้อ',
@@ -214,7 +204,7 @@ export const contactFaqs: FAQItem[] = [
   {
     question: 'รับงานโปรเจกต์เล็กไหม?',
     answer:
-      'รับเป็นบางกรณี โดยเฉพาะ Discovery Audit, Local SEO หรือ support เฉพาะจุดที่มี scope ชัดเจน',
+      'รับเป็นบางกรณี โดยเฉพาะ Local SEO, Content SEO หรือ support เฉพาะจุดที่มี scope และผลลัพธ์ที่ต้องการชัดเจน',
   },
   {
     question: 'สามารถส่งเว็บไซต์ให้ประเมินเบื้องต้นก่อนได้ไหม?',
