@@ -346,9 +346,9 @@ export const aiWebsiteSeoFaqs: FAQItem[] = [
       'ได้ Google ไม่ได้สนว่าเว็บสร้างด้วยอะไร สนแค่ว่าตอบคำถามผู้ใช้ได้ดีแค่ไหน มี Technical SEO ที่ถูกต้องไหม และมีความน่าเชื่อถือมากพอไหม เว็บที่ Claude สร้างติด Google ได้ถ้ามีกลยุทธ์ SEO ที่ชัดเจนและ implement ถูกต้อง',
   },
   {
-    question: 'Discovery Audit คืออะไรและช่วยอะไรได้บ้าง?',
+    question: 'การตรวจ SEO เว็บไซต์ควรดูอะไรบ้าง?',
     answer:
-      'Discovery Audit คือการตรวจเว็บไซต์อย่างละเอียดเพื่อระบุว่าขาด SEO อะไรบ้าง ควรสั่ง Claude ทำอะไรเพิ่ม และ keyword ไหนที่ธุรกิจนั้นควรสู้ ได้ผลลัพธ์เป็น action plan ที่ชัดเจนภายใน 1 สัปดาห์',
+      'ควรตรวจทั้ง Technical SEO, Indexing, Search Intent, Keyword Data, Content และโครงสร้างเว็บไซต์ เพื่อแยกว่าอะไรควรแก้ก่อนและอะไรควรทำต่อเป็น Roadmap',
   },
   {
     question: 'Claude ทำ Keyword Research ให้ได้ไหม?',
@@ -856,9 +856,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ทำเว็บด้วย Claude แล้ว อยากให้มีคนเจอจริงๆ?',
       description:
-        'Discovery Audit วิเคราะห์ว่าเว็บที่คุณสร้างขาดอะไร และต้องทำ SEO ตรงไหนก่อนให้ลูกค้าเจอ',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -888,9 +888,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-google-maps',
     cta: {
       headline: 'ไม่แน่ใจว่า GBP ของคุณดึงยอดโทร-เส้นทาง-เว็บได้ดีแค่ไหน?',
-      description: 'Google Maps Visibility Audit ตรวจ GBP ทีละจุด วิเคราะห์ว่าตรงไหนทำให้ลูกค้าหลุดออกไปก่อนโทรหรือมาถึงร้าน พร้อม action plan ที่ทำได้จริง',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -920,9 +921,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'local-seo-customer-intent',
     cta: {
       headline: 'ลูกค้าในย่านคุณกำลังหาคู่แข่งอยู่',
-      description: 'ขอ Local SEO Audit ฟรี ตรวจว่าธุรกิจคุณ show up ต่อลูกค้าในย่านได้ดีแค่ไหน',
-      buttonText: 'ขอ Local SEO Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -952,9 +954,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-restaurant',
     cta: {
       headline: 'ลูกค้า 2.24 ล้านคนกำลังหาร้านอาหารอยู่ตอนนี้',
-      description: 'Google Maps Audit ตรวจว่าร้านคุณได้รับ Call, Direction และ Website Clicks จากคนกลุ่มนี้มากแค่ไหน และตรงไหนที่พลาดอยู่',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -985,9 +988,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-massage-spa',
     cta: {
       headline: 'คนค้นหา "นวด ใกล้ฉัน" 1.3 ล้านครั้งต่อเดือน — ร้านคุณอยู่ตรงไหน',
-      description: 'Google Maps Audit ตรวจว่าร้านนวดหรือสปาของคุณได้ Call, Direction และ Booking จากคนกลุ่มนี้มากแค่ไหน และจุดไหนที่ทำให้ลูกค้าเลือกร้านข้างๆ แทน',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1018,9 +1022,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-pet-grooming',
     cta: {
       headline: 'คู่แข่งในกลุ่มกรูมมิ่งยังน้อย — ช่วงนี้คือจังหวะที่ติดง่ายที่สุด',
-      description: 'Google Maps Audit ตรวจว่าร้านคุณติด 3-pack ในย่านตัวเองหรือยัง และต้องแก้อะไรก่อนคู่แข่งเริ่มทำจริงจัง',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1051,9 +1056,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-pet-shop',
     cta: {
       headline: 'ลูกค้าที่ต้องการของวันนี้กำลังค้นหาร้านใกล้บ้านอยู่',
-      description: 'Google Maps Audit ตรวจว่าร้านคุณโผล่ในคำค้นหา "ใกล้ฉัน" ของย่านตัวเองหรือยัง และตรงไหนที่ทำให้ลูกค้าเลือกสั่งออนไลน์แทน',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1084,9 +1090,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-pet-hospital',
     cta: {
       headline: 'เคสฉุกเฉินกำลังค้นหาคลินิกที่ใกล้และว่างที่สุดอยู่',
-      description: 'Google Maps Audit ตรวจว่าคลินิกหรือโรงพยาบาลสัตว์ของคุณโผล่ในคำค้นหา "ใกล้ฉัน" หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1117,9 +1124,10 @@ export const blogPosts: BlogPost[] = [
     bodyVariant: 'increase-sale-pet-hotel',
     cta: {
       headline: 'ช่วงหยุดยาวลูกค้ากำลังหาที่ฝากสัตว์เลี้ยงที่ไว้ใจได้อยู่',
-      description: 'Google Maps Audit ตรวจว่าโรงแรมหรือบริการรับฝากเลี้ยงของคุณโผล่ในคำค้นหา "ใกล้ฉัน" หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน',
-      buttonText: 'ขอรับ Google Maps Audit ฟรี',
-      href: '/discovery-audit',
+      description:
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1145,16 +1153,16 @@ export const blogPosts: BlogPost[] = [
       'ทำ SEO แล้วไม่เห็นผลมักเกิดจาก 8 ปัญหาหลัก ได้แก่ Indexing, Keyword Competition, Search Intent, Technical SEO, Page Speed, Backlink, Thin Content และ Local SEO',
       'ถ้าเว็บไซต์ยังไม่มี Impression ใน Google Search Console หลังทำ SEO 6 เดือน ควรตรวจ Technical SEO และ Indexing ก่อน',
       'การวิเคราะห์ SEO ควรเริ่มจาก Google Search Console, site:domain.com, PageSpeed Insights และการเทียบ Search Intent กับคู่แข่ง',
-      'Discovery Audit ช่วยระบุว่าปัญหาอยู่ที่เทคนิค คีย์เวิร์ด คอนเทนต์ หรือ Authority เพื่อจัดลำดับการแก้ไขให้ถูกต้อง',
+      'การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยระบุว่าปัญหาอยู่ที่เทคนิค คีย์เวิร์ด คอนเทนต์ หรือ Authority เพื่อจัดลำดับการแก้ไขให้ถูกต้อง',
     ],
     faqs: seoNotWorkingFaqs,
     bodyVariant: 'seo-not-working',
     cta: {
       headline: 'ไม่แน่ใจว่าปัญหา SEO ของเว็บไซต์คุณอยู่ที่ไหน?',
       description:
-        'Discovery Audit วิเคราะห์ภาพรวม SEO ของเว็บไซต์ ระบุสาเหตุที่ทำให้ rank ต่ำหรือไม่มี Organic Traffic พร้อม Roadmap ที่บอกว่าต้องแก้อะไรก่อน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1187,9 +1195,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?',
       description:
-        'Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร ควรสั่ง Claude implement อะไรเพิ่ม และ keyword ไหนที่ธุรกิจของคุณควรสู้ — ได้ action plan ชัดเจนภายใน 1 สัปดาห์',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1222,9 +1230,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1259,9 +1267,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'GEO Checklist ผ่านหลายข้อแล้ว แต่ยังไม่รู้ว่าควรแก้อะไรก่อน?',
       description:
-        'Discovery Audit ตรวจ Search Foundation, Topic Ownership, Content, Entity, Internal Link และ AI Visibility เพื่อจัดลำดับงานตาม Impact แทนการพยายามทำครบทุกข้อพร้อมกัน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1296,9 +1304,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ยังไม่ชัดว่า Content ควรแก้ AEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจ Search Intent, Topic Ownership, Content Structure, Internal Link, Evidence และ AI/Search Visibility เพื่อจัดลำดับสิ่งที่ควรแก้ก่อนผลิต Content เพิ่ม',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1333,9 +1341,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจ Search Intent, Keyword Mapping, Technical SEO, Content, Internal Link และ Search Visibility เพื่อจัดลำดับสิ่งที่ควรแก้ก่อนเริ่มทำรายเดือน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1370,9 +1378,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ยังไม่แน่ใจว่าเว็บไซต์ควรแก้ SEO, Content หรือ GEO ก่อน?',
       description:
-        'Discovery Audit เป็นจุดเริ่มต้นสำหรับเว็บไซต์ที่ยังไม่รู้ว่าปัญหาหลักอยู่ที่ Search Foundation, Topic Ownership, Content หรือ AI Visibility',
-      buttonText: 'ตรวจสอบเว็บไซต์ฟรี',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1406,9 +1414,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ต้องการวางกลยุทธ์ SEO, AEO และ GEO สำหรับธุรกิจ?',
       description:
-        'Discovery Audit ช่วยค้นหาสิ่งที่อาจขวางการเติบโตบน Google และ AI Search พร้อมระบุโอกาสในการเพิ่มการมองเห็นอย่างเป็นระบบ',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1443,9 +1451,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ยังไม่ชัดว่าควรจ้าง GEO Agency หรือแก้ SEO ก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจ Search foundation, Topic Ownership, Content, Internal Link และ AI Visibility เพื่อจัดลำดับว่าควรแก้อะไรก่อนลงทุนกับ GEO ต่อเนื่อง',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1480,9 +1488,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'ไม่ชัดว่าเว็บไซต์ควรแก้ GEO จุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยตรวจ Search Foundation, Topic Ownership, Content, Entity, Internal Link และ AI Visibility เพื่อจัดลำดับงานก่อนลงทุนกับ Content หรือ Digital PR เพิ่ม',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1513,9 +1521,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยวิเคราะห์ Keyword, โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1546,9 +1554,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'เช็คแล้วเจอว่า Traffic นิ่งหรือน้อยกว่าที่ควร?',
       description:
-        'Discovery Audit ช่วยอ่านตัวเลข Traffic ของเว็บไซต์คุณ พร้อมระบุว่าอะไรคือสาเหตุ และควรแก้จุดไหนก่อนถึงจะเห็นผลเร็วที่สุด',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1578,9 +1586,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าคีย์เวิร์ดหางยาวของธุรกิจคุณมีโอกาสติดอันดับตรงไหน?',
       description:
-        'Discovery Audit ช่วยระบุคีย์เวิร์ดหางยาวที่แข่งขันได้จริงสำหรับธุรกิจของคุณ และจัดลำดับว่าควรเริ่มจากจุดไหนก่อน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1610,9 +1618,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าธุรกิจของคุณควรเริ่มเพิ่มยอดขายออนไลน์จากจุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยวิเคราะห์ว่าตอนนี้ลูกค้าเจอธุรกิจของคุณมากแค่ไหน และควรแก้จุดไหนก่อนเพื่อเห็นผลเร็วที่สุด',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1641,9 +1649,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าธุรกิจของคุณควรเริ่มจากเทคนิคไหนก่อน?',
       description:
-        'Discovery Audit ช่วยจัดลำดับว่าธุรกิจของคุณควรโฟกัสกลุ่มการมองเห็น การเปลี่ยนลูกค้า หรือการรักษาลูกค้าเดิมก่อน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
     },
   },
   {
@@ -1672,9 +1680,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าเว็บไซต์ผ่าน AEO Checklist ข้อไหนแล้วบ้าง?',
       description:
-        'Discovery Audit ตรวจสอบ Content Structure, Schema, Featured Snippet Targeting และ Measurement ของเว็บไซต์คุณครบทั้ง 4 หมวด',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
   {
@@ -1703,9 +1711,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่าร้านสปาของคุณควรเริ่มแผนการตลาดจากจุดไหนก่อน?',
       description:
-        'Discovery Audit ช่วยวิเคราะห์ว่าตอนนี้ลูกค้าเจอร้านของคุณมากแค่ไหน และควรจัดลำดับความสำคัญของแผนการตลาดอย่างไร',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางเพิ่มการมองเห็นบน Google Search และ Google Maps สำหรับธุรกิจที่ต้องการลูกค้าจากพื้นที่และคำค้นที่มี Local Intent',
+      buttonText: 'ดูบริการ Local SEO',
+      href: '/services/local-seo',
     },
   },
   {
@@ -1735,9 +1743,9 @@ export const blogPosts: BlogPost[] = [
     cta: {
       headline: 'อยากรู้ว่า Content ของธุรกิจมีความพร้อมต่อ AI Overview แค่ไหน?',
       description:
-        'Discovery Audit ช่วยตรวจสอบว่า Content ปัจจุบันพร้อมสำหรับ AI Overview และ AI Search แค่ไหน พร้อมระบุจุดที่ควรแก้ก่อน',
-      buttonText: 'เริ่มต้นด้วย Discovery Audit',
-      href: '/discovery-audit',
+        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+      buttonText: 'ดูบริการ GEO & AI Search',
+      href: '/services/geo',
     },
   },
 ]
