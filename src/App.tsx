@@ -5,7 +5,6 @@ import BlogArticle from './pages/BlogArticle'
 import BlogIndex from './pages/BlogIndex'
 import CaseStudies from './pages/CaseStudies'
 import Contact from './pages/Contact'
-import DiscoveryAudit from './pages/DiscoveryAudit'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Privacy from './pages/Privacy'
@@ -21,7 +20,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="discovery-audit" element={<DiscoveryAudit />} />
+        <Route path="discovery-audit" element={<Navigate to="/services" replace />} />
         <Route path="services" element={<Services />} />
         <Route path="services/seo" element={<ServiceSEO />} />
         <Route path="services/local-seo" element={<ServiceLocalSEO />} />
