@@ -46,44 +46,6 @@ export const homepageFaqs: FAQItem[] = [
   },
 ]
 
-export const discoveryAuditFaqs: FAQItem[] = [
-  {
-    question: 'Discovery Audit ต่างจาก SEO Audit อย่างไร?',
-    answer:
-      'Discovery Audit ไม่ได้ดูแค่ปัญหา SEO เชิงเทคนิค แต่ดูภาพรวมของโอกาสการเติบโต ทั้ง Google Search, AI Search, Google Maps, ความเข้าใจของแบรนด์ และลำดับงานที่ควรลงทุนก่อน',
-  },
-  {
-    question: 'Audit แล้วต้องทำงานต่อเนื่องต่อหรือไม่?',
-    answer:
-      'ไม่จำเป็น Audit ถูกออกแบบให้ใช้ตัดสินใจได้ด้วยตัวเอง หากต้องการให้ช่วยลงมือทำต่อค่อยคุยเรื่อง retainer หรือ project scope ภายหลัง',
-  },
-  {
-    question: 'ใช้เวลาตรวจนานแค่ไหน?',
-    answer:
-      'โดยทั่วไปใช้เวลา 5 business days หลังได้รับ URL เว็บไซต์ ข้อมูลที่จำเป็น และ access ที่เกี่ยวข้องครบถ้วน',
-  },
-  {
-    question: 'เว็บไซต์ใหม่ตรวจได้ไหม?',
-    answer:
-      'ตรวจได้ โดยเฉพาะถ้าต้องการวางโครงสร้าง SEO, content, Google Maps หรือ AI Search ให้ถูกตั้งแต่ต้นก่อนเริ่มผลิตคอนเทนต์หรือทำแคมเปญ',
-  },
-  {
-    question: 'Shopify และ WordPress ตรวจได้ไหม?',
-    answer:
-      'ตรวจได้ทั้ง Shopify, WordPress และเว็บไซต์ custom โดยขอบเขตการตรวจจะปรับตามระบบเว็บไซต์ ขนาดเว็บ และข้อมูลที่เข้าถึงได้',
-  },
-  {
-    question: 'Audit ช่วยเรื่อง AI Overview ได้อย่างไร?',
-    answer:
-      'Audit จะดูว่าเนื้อหา โครงสร้างคำตอบ FAQ entity และข้อมูลธุรกิจพร้อมต่อการถูกเข้าใจและนำไปแสดงใน AI Overview หรือ AI Search มากแค่ไหน',
-  },
-  {
-    question: 'จะได้รับอะไรกลับไปบ้าง?',
-    answer:
-      'จะได้รับรายงานพร้อมปัญหาหลัก Priority Matrix screenshots ตัวอย่างประกอบ และ Action Plan ที่ช่วยให้ตัดสินใจได้ว่าควรแก้อะไรก่อน',
-  },
-]
-
 export const servicesFaqs: FAQItem[] = [
   {
     question: 'ควรเลือกบริการแบบไหนก่อน?',
