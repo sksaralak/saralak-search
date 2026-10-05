@@ -288,14 +288,14 @@ export const llmsTxtFaqs: FAQItem[] = [
 
 export const geoChecklistFaqs: FAQItem[] = [
   {
-    question: 'GEO Checklist คืออะไร',
+    question: 'ทำ GEO ควรเริ่มจากอะไรก่อน',
     answer:
-      'GEO Checklist หน้านี้คือกรอบ Audit 40 ข้อของ Saralak Search สำหรับตรวจความพร้อมด้าน Entity, Content, Technical, Mention/Evidence และ Measurement ของเว็บไซต์ที่ต้องการเพิ่ม Search และ AI Visibility ไม่ใช่ Checklist ทางการของ Google และไม่ใช่สูตรรับประกัน AI Citation',
+      'เริ่มจาก Search Foundation ก่อน ได้แก่ Indexability, Canonical, Rendered Content, Crawlable Internal Links และ Topic Ownership แล้วจึงตรวจ Entity, Content, Evidence และ Measurement ตามลำดับ เพราะเทคนิคอย่าง Schema, FAQ, llms.txt หรือ External Mention ไม่สามารถแก้หน้าที่ Google ยังเข้าไม่ถึงหรือมีหลาย URL แย่ง Intent กันเองได้',
   },
   {
     question: 'ต้องทำ GEO Checklist ครบทั้ง 40 ข้อไหม',
     answer:
-      'ไม่จำเป็นต้องทำครบพร้อมกัน ให้แก้สิ่งที่ขวางการ Crawl, Index, Canonical, Rendering และ Topic Ownership ก่อน แล้วจึงจัด Entity, Content, Evidence, Mention และ Measurement ตามบริบทธุรกิจ บางข้อ เช่น Local Business Profile หรือ Person Schema ใช้เฉพาะเมื่อเหมาะกับเว็บไซต์นั้น',
+      'ไม่จำเป็นต้องทำครบพร้อมกัน ให้แก้ Blocker ที่กระทบการ Crawl, Index, Canonical, Rendering และ Topic Ownership ก่อน จากนั้นค่อยเพิ่ม Content, Entity, Evidence และ Measurement ตามบริบทของเว็บไซต์ บางข้อ เช่น Google Business Profile หรือ Person Schema ใช้เฉพาะเมื่อเกี่ยวข้องจริง',
   },
   {
     question: 'llms.txt จำเป็นต่อ GEO หรือ Google AI Search ไหม',
@@ -315,7 +315,7 @@ export const geoChecklistFaqs: FAQItem[] = [
   {
     question: 'วัดผล GEO และ AI Visibility อย่างไร',
     answer:
-      'สำหรับ Google ใช้ Search Console Generative AI performance report เพื่อติดตามการมองเห็นจาก AI Overviews และ AI Mode ควบคู่กับ Search Console ปกติ ส่วนแพลตฟอร์มอื่นควรเก็บ Prompt Set เดิมเป็นรอบ บันทึก Mention, Citation และ URL ที่ถูกใช้ ดู Referral Session ใน GA4 เมื่อมีข้อมูล และเชื่อมกลับไปยัง Lead หรือ Conversion โดยระวังข้อจำกัดด้าน Attribution',
+      'สำหรับ Google ใช้ Search Console Generative AI performance report เพื่อติดตาม Impression จาก AI Overviews และ AI Mode ควบคู่กับ Search Console ปกติ สำหรับ ChatGPT สามารถแยก Referral ที่มี utm_source=chatgpt.com ได้เมื่อเกิดการคลิก ส่วน Gemini และ Perplexity ควรเก็บ Prompt Set, Mention, Citation, URL และ Referral ที่ตรวจซ้ำได้ แล้วเชื่อมกลับไปยัง Lead หรือ Conversion โดยระวังข้อจำกัดด้าน Attribution',
   },
   {
     question: 'ทำครบ Checklist แล้วรับประกันว่าจะถูก AI อ้างอิงไหม',
@@ -1236,30 +1236,30 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 ข้อตรวจ SEO, Content, Entity และ AI Visibility',
+    title: 'GEO Checklist 40 ข้อ: ทำ GEO ต้องเช็กอะไรบ้างก่อนวัดผล',
     slug: 'geo-checklist-thailand',
     category: 'GEO',
     excerpt:
-      'GEO Checklist คือกรอบตรวจเว็บไซต์ 40 ข้อของ Saralak Search ครอบคลุม Entity, Content, Technical, Mention/Evidence และ Measurement เพื่อจัดลำดับสิ่งที่ควรแก้สำหรับ Search และ AI Visibility โดยไม่อ้างว่าเป็นสูตรรับประกัน AI Citation',
-    readingTime: '16 min read',
+      'GEO Checklist 40 ข้อสำหรับคนที่กำลังทำ GEO ใช้ตรวจ Search Foundation, Entity, Content, Technical, Evidence และ Measurement พร้อมลำดับว่าควรแก้อะไรก่อน โดยแยก Official Guidance ออกจากวิธีทำงานของ Saralak Search ชัดเจน',
+    readingTime: '17 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-09-21',
+    lastModifiedDate: '2026-10-05',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'GEO Checklist 40 ข้อ สำหรับเว็บไซต์ไทย | Saralak Search',
+    metaTitle: 'ทำ GEO ต้องเช็กอะไรบ้าง? GEO Checklist 40 ข้อ | Saralak Search',
     metaDescription:
-      'GEO Checklist 40 ข้อสำหรับตรวจ Entity, Content, Technical, Mention และ Measurement พร้อมแยก Google Official Guidance, Saralak Methodology, ข้อจำกัด และวิธีวัด AI Visibility',
+      'ทำ GEO แบบไม่ไล่ตามเทคนิคสุ่ม ๆ ด้วย GEO Checklist 40 ข้อ ครอบคลุม Search Foundation, Entity, Content, Technical, Evidence และ Measurement พร้อมลำดับแก้ก่อนหลังและข้อจำกัดที่ควรรู้',
     heroImageDesktop: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
     heroImageMobile: '/image/blog/chatgpt-mention/chatgpt-mention-banner-mweb.png',
     heroImageAlt: 'GEO Checklist 40 ข้อสำหรับตรวจเว็บไซต์ไทยด้าน Search และ AI Visibility',
     ogImage: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
     aiSummary: [
-      'GEO Checklist หน้านี้เป็นกรอบ Audit 40 ข้อของ Saralak Search ไม่ใช่ Checklist ทางการของ Google และไม่มีข้อไหนรับประกัน AI Citation',
+      'ถ้ากำลังทำ GEO ให้เริ่มจาก Search Foundation ก่อนเทคนิคเฉพาะ AI: หน้าเป้าหมายต้อง Index ได้ Canonical ถูก Content Render ครบ และ Internal Link พา Crawler ไปถึงได้',
       'Google ระบุว่า SEO best practices เดิมยังเป็นฐานของ AI Overviews และ AI Mode ไม่มี Special AI Schema ที่ต้องเพิ่ม และ Google Search ไม่ใช้ llms.txt',
-      'สิ่งที่ควรแก้ก่อนคือ Search Foundation และ Topic Ownership เช่น Indexability, Canonical, Rendered Content, Crawlable Internal Links และ Owner URL ของแต่ละ Intent',
-      'การวัดผลควรใช้ Search Console Generative AI performance report สำหรับ Google ร่วมกับ Search Visibility, AI Mention/Citation Log, GA4 Referral และ Business Outcome',
-      'เคสจริงของ Saralak Search ใช้เพื่อหา Pattern และบทเรียน ไม่ใช่หลักฐานว่าการทำ Checklist ข้อใดข้อหนึ่งเป็นสาเหตุให้ AI เลือกอ้างอิง',
+      'สำหรับ Google Search ต้องตรวจ Search generative AI control ใน Search Console ด้วย เพราะเว็บไซต์ที่ Exclude จะไม่มีสิทธิ์แสดงลิงก์หรือ Content ใน AI Overviews และ AI Mode',
+      'GEO Checklist หน้านี้มี 40 ข้อ แบ่งเป็น Entity, Content, Technical, Mention/Evidence และ Measurement และเป็น Methodology ของ Saralak Search ไม่ใช่ Ranking Factor ของ Google',
+      'การวัดผลต้องแยก Search Visibility, AI Visibility, Referral/Engagement และ Business Outcome; การเห็น Citation เพิ่มขึ้นไม่ได้พิสูจน์ว่า Checklist ข้อใดข้อหนึ่งเป็นสาเหตุ',
     ],
     faqs: geoChecklistFaqs,
     includeFaqSchema: false,
