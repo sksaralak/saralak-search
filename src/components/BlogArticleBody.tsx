@@ -1943,6 +1943,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
   const measurementRows = [
     ['Search Visibility', 'Google Search Console', 'Clicks, Impressions, CTR, Average Position, Queries, Pages', 'ดูว่า URL ไหนถูกค้นพบจากคำอะไร และแนวโน้มเพิ่มหรือลดอย่างไร'],
+    ['Generative AI Visibility', 'Search Console — Generative AI performance report', 'Impressions จาก AI Overviews / AI Mode แยกตาม Page, Country, Date และ Device', 'ดูว่าเว็บไซต์เริ่มมี Visibility ในฟีเจอร์ Generative AI ของ Google หรือไม่ โดยไม่ใช้แทน Search Performance ปกติ'],
     ['Website Engagement', 'Google Analytics 4', 'Organic sessions, engaged sessions, landing page behavior', 'ดูว่าคนที่มาจาก Organic เข้ามาแล้วทำอะไรต่อบนเว็บไซต์'],
     ['Business Outcome', 'GA4 / CRM / Form / LINE / Call tracking', 'Leads, qualified leads, calls, purchases, assisted conversions', 'เชื่อม Visibility กับผลลัพธ์ธุรกิจ แทนการสรุปจากอันดับอย่างเดียว'],
     ['Competitive Context', 'Ahrefs / SEMrush หรือเครื่องมือ Rank Tracking', 'Keyword movement, backlinks, competing pages', 'ใช้เป็นข้อมูลเสริมสำหรับการแข่งขัน ไม่แทนข้อมูล First-party จาก Search Console'],
@@ -1950,6 +1951,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
   const tocItems = [
     { id: 'seo-meaning', label: 'SEO คืออะไร?' },
+    { id: 'seo-serp-intent', label: 'คนค้น “SEO คือ” ต้องการรู้อะไรต่อ?' },
     { id: 'seo-how', label: 'Google Search ทำงานอย่างไรกับ SEO?' },
     { id: 'seo-workstreams', label: 'SEO ต้องทำอะไรบ้าง?' },
     { id: 'seo-business-value', label: 'SEO สำคัญต่อธุรกิจอย่างไร?' },
@@ -2006,6 +2008,33 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             {' '}— Google ระบุด้วยว่าไม่มี “เคล็ดลับลับ” ที่ทำให้อันดับ 1 ได้อัตโนมัติ และการทำตาม Best Practice ไม่ได้เป็นการรับประกันอันดับ
           </p>
         </div>
+      </ArticleSection>
+
+      <ArticleSection title="คนค้น “SEO คือ” ต้องการรู้อะไรต่อ?" id="seo-serp-intent">
+        <P>
+          คำค้น <strong>“SEO คือ”</strong> เป็น Definition Intent แต่ SERP ไทยไม่ได้จบที่ความหมายอย่างเดียว
+          จากการตรวจ Google วันที่ <strong>5 ตุลาคม 2026</strong> คำถามที่แสดงต่อเนื่อง ได้แก่
+          “SEO กับ SEM ต่างกันอย่างไร”, “SEO ทำเองได้ไหม”, “SEO ย่อมาจากอะไร” และ “ตัวอย่างการทำ SEO มีอะไรบ้าง”
+          จึงควรตอบภาพรวมเหล่านี้ในหน้า Definition โดยไม่ขยายจนแย่ง Intent จากหน้าวิธีทำหรือหน้าบริการ
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['ความหมาย', 'SEO ย่อมาจาก Search Engine Optimization และเกี่ยวกับ Organic Search ไม่ใช่การซื้ออันดับ'],
+            ['ความต่าง', 'ผู้อ่านมักเทียบ SEO กับ SEM / Google Ads จึงควรแยก Organic กับ Paid ให้ชัด'],
+            ['การลงมือทำ', 'ผู้ค้นต้องการรู้ว่าทำเองได้หรือไม่และต้องเริ่มตรงไหน แต่รายละเอียดเชิงลึกควรส่งต่อไปหน้า Guide ที่เป็น Owner ของ Intent นั้น'],
+            ['ตัวอย่างจริง', 'เคส Ranking, Generic Keyword และการวัดผลช่วยให้คำว่า SEO ไม่กลายเป็นนิยามเชิงทฤษฎีอย่างเดียว'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ฝั่ง Keyword Data ที่ตรวจใน Ahrefs วันที่ 5 ตุลาคม 2026 คำ <strong>“seo คือ”</strong> มี Search Volume ในไทยประมาณ
+          <strong> 8.7K ต่อเดือน</strong> และมี Parent Topic เป็น “seo คืออะไร”
+          ตัวเลขนี้ใช้เป็น Snapshot ของ Demand ณ วันที่ตรวจ ไม่ควรตีความเป็นปริมาณค้นหาคงที่ตลอดเวลา
+        </P>
       </ArticleSection>
 
       <ArticleSection title="Google Search ทำงานอย่างไรกับ SEO?" id="seo-how">
@@ -2089,7 +2118,8 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </div>
         <P>
           ในบริบท AI Search, Google ระบุว่า SEO Best Practices และ Search Index ยังคงเป็นพื้นฐานสำหรับ Generative AI features ของ Google
-          แต่ไม่ได้หมายความว่าหน้า SEO ดีจะถูก AI Overview อ้างอิงเสมอไป
+          และในคู่มือ Generative AI Search ปี 2026 Google กล่าวถึงคำ AEO และ GEO โดยตรง แต่ยังอธิบายว่าการ Optimize สำหรับ Generative AI Search อยู่ในกรอบของ SEO
+          ทั้งนี้ SEO ที่ดีไม่ได้รับประกันว่า AI Overview หรือ AI Mode จะเลือกหน้าใดเป็น Supporting Link
           ข้อมูลทางการส่วนนี้อ้างอิงจาก
           {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google: Optimizing for generative AI features</a>.
           {' '}หากต้องการแยกภาพของ Search แบบเดิมกับ AI Search อ่านต่อได้ที่
@@ -2099,10 +2129,10 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?" id="seo-vs-aeo-geo">
         <P>
-          SEO, AEO และ GEO มีพื้นที่ทับซ้อนกัน แต่ไม่ควรใช้แทนกันเป็นคำเดียว
-          SEO โฟกัสการค้นพบและการมองเห็นใน Search; AEO เป็นแนวทางจัดคำตอบให้ชัดสำหรับระบบที่ตอบคำถามโดยตรง;
-          GEO เป็นแนวทางเพิ่มความพร้อมของ Content, Evidence และ Entity สำหรับ Generative AI
-          AEO และ GEO เป็นคำที่วงการใช้อธิบายวิธีทำงาน ไม่ใช่ชื่อ Ranking Factor ที่ Google ประกาศ
+          SEO, AEO และ GEO มีพื้นที่ทับซ้อนกัน แต่ใช้เพื่อเน้นคนละมุมของงาน
+          SEO ครอบคลุม Discovery, Crawling, Indexing, Content, Ranking และ Organic Visibility;
+          AEO ใช้เป็นกรอบทำให้คำตอบในระดับหน้าและ Section ชัดขึ้น; GEO มองกว้างไปถึง Content, Evidence, Entity และ Brand Visibility ใน Generative AI
+          Google กล่าวถึงคำ AEO และ GEO ในเอกสาร Generative AI Search แต่ไม่ได้อธิบายว่าเป็น Ranking System แยกจาก SEO
         </P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[760px] w-full border-collapse text-left text-sm">
@@ -2179,7 +2209,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="วัดผล SEO อย่างไร?" id="seo-measurement">
         <P>
-          SEO ควรวัดจาก Search Visibility, Website Engagement และ Business Outcome
+          SEO ควรวัดจาก Search Visibility, Generative AI Visibility เมื่อเกี่ยวข้อง, Website Engagement และ Business Outcome
           ไม่ควรสรุปจาก Keyword อันดับเดียว เพราะอันดับเปลี่ยนตาม Query, Device, Location และรูปแบบ Search Results
           Google Search Console เองรายงาน Average Position ซึ่งเป็นค่าเฉลี่ยของตำแหน่ง ไม่ใช่อันดับคงที่ที่ทุกคนเห็นเหมือนกัน
         </P>
@@ -2206,6 +2236,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างการอ่านข้อมูล: ถ้า Impression ของหน้าบริการเพิ่ม แต่ Click และ Lead ไม่เพิ่ม
           งานถัดไปอาจไม่ใช่ “เขียนบทความเพิ่ม” แต่ต้องตรวจ Query ที่หน้าแสดง, CTR ของ Title/Snippet, ความตรงของ Landing Page และ Conversion Path
+          หาก Generative AI Impression เพิ่มแต่ Business Outcome ไม่ขยับ ก็ยังไม่ควรสรุปว่า AI Visibility สร้างผลลัพธ์ทางธุรกิจแล้ว
           นี่คือเหตุผลที่ SEO ต้องเชื่อม Search Console กับ Analytics และข้อมูลธุรกิจ
         </P>
         <p className="thai-readable text-sm leading-6 text-neutral-600">
