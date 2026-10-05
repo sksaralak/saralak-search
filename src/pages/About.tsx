@@ -63,9 +63,9 @@ const industries = [
 ]
 
 const selectedResults = [
-  { metric: '#5 → #1', label: 'SEO Ranking Growth',       c: 'text-teal-400'    },
-  { metric: 'AI ✓',    label: 'Answer Engine Visibility',  c: 'text-blue-400'    },
-  { metric: 'GPT ✓',   label: 'AI Search Mention',         c: 'text-violet-400'  },
+  { metric: 'Rank 5 to Rank 1', label: 'SEO Ranking Growth',       c: 'text-teal-400'    },
+  { metric: 'AI Overview', label: 'Answer Engine Visibility',  c: 'text-blue-400'    },
+  { metric: 'ChatGPT',   label: 'AI Search Mention',         c: 'text-violet-400'  },
   { metric: '+180%',   label: 'Organic Visibility Growth', c: 'text-emerald-400' },
 ]
 
@@ -173,7 +173,7 @@ export default function About() {
               <h1 className="break-words text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
                 ทำให้ SEO เข้าใจง่าย
                 <br />
-                <span className="animate-gradient-text">และเชื่อมกับธุรกิจจริง</span>
+                <span className="animate-gradient-text">และได้ผลตามเป้าหมายธุรกิจ</span>
               </h1>
               <div className="thai-readable mt-6 space-y-3 text-lg leading-8 text-neutral-300">
                 <p>
