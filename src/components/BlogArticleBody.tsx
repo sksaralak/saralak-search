@@ -1488,10 +1488,10 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
   const compareHeadings = ['หัวข้อ', 'SEO', 'AEO', 'GEO']
   const compareRows = [
     ['หน้าที่หลัก', 'ทำให้หน้าเว็บถูกค้นพบ เข้าใจ และแข่งขันใน Organic Search', 'จัดคำตอบบนหน้าให้ตรง ชัด และอ่านแยกเป็นส่วนได้', 'เพิ่มความพร้อมของ Content, Evidence และ Entity สำหรับ Generative AI / AI Search'],
-    ['สถานะของคำ', 'เป็นคำมาตรฐานในวงการ Search', 'เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google', 'เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor ของ Google'],
+    ['สถานะของคำ', 'เป็นคำมาตรฐานในวงการ Search', 'Google กล่าวถึง AEO ในคู่มือ Generative AI Search แต่ไม่ได้แยกเป็นระบบ Ranking คนละชุดจาก SEO', 'Google กล่าวถึง GEO ในคู่มือเดียวกัน และมองงาน Generative AI Search optimization ว่ายังอยู่ในกรอบ SEO'],
     ['จุดที่วัดได้', 'Queries, Impressions, Clicks, CTR, Position, Organic Conversion', 'Featured Snippet / answer visibility, Search visibility และ Generative AI impressions ของ Google เมื่อเกี่ยวข้อง', 'Mention, Citation, AI visibility, Referral และ Business Outcome'],
     ['สิ่งที่มักทำ', 'Search Intent, Technical SEO, Content, Internal Link, Authority', 'Answer-first, passage clarity, evidence, comparison, structured content', 'Entity clarity, evidence, first-party proof, external mentions และ AI visibility tracking'],
-    ['ความสัมพันธ์', 'เป็นฐานที่ AEO และ GEO ควรต่อยอด', 'ทับซ้อนกับ SEO มาก และช่วยจัดรูปคำตอบให้ชัด', 'ทับซ้อนกับ SEO/AEO แต่ขยายไปถึงการมองเห็นแบรนด์ใน AI ecosystem'],
+    ['ความสัมพันธ์', 'เป็นฐานที่ AEO และ GEO ควรต่อยอด', 'เป็น Layer ด้านความชัดของคำตอบที่ทำงานบนพื้นฐาน SEO', 'ทับซ้อนกับ SEO/AEO แต่ขยายไปถึงการมองเห็นแบรนด์ในหลาย AI ecosystem'],
   ]
 
   const principles = [
@@ -1550,6 +1550,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         <ol className="mt-4 grid gap-2 text-sm leading-6 sm:grid-cols-2">
           {[
             ['aeo-what-is', 'AEO คืออะไร'],
+            ['aeo-serp-ambiguity', 'ทำไมค้น AEO แล้วเจอ 2 ความหมาย'],
             ['aeo-google-guidance', 'Google บอกอะไรเกี่ยวกับ AEO และ AI Search'],
             ['aeo-how-it-works', 'AEO ทำงานอย่างไรในทางปฏิบัติ'],
             ['aeo-vs-seo-geo', 'AEO ต่างจาก SEO และ GEO อย่างไร'],
@@ -1598,22 +1599,48 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection id="aeo-google-guidance" title="Google บอกอะไรเกี่ยวกับ AEO และ AI Search">
+      <ArticleSection id="aeo-serp-ambiguity" title="ทำไมค้น “AEO คือ” แล้วเจอทั้ง SEO และเรื่องศุลกากร">
         <P>
-          Google Search Central ไม่ได้กำหนดกระบวนการชื่อ AEO สำหรับ AI Overviews หรือ AI Mode
-          เอกสารทางการระบุว่า <strong>SEO best practices เดิมยังใช้กับ AI features</strong>
-          และไม่มีข้อกำหนดทางเทคนิคหรือ Optimization พิเศษที่ต้องทำเพิ่มเพื่อให้มีสิทธิ์ปรากฏใน AI Overviews หรือ AI Mode
+          คำว่า <strong>AEO มีอย่างน้อย 2 ความหมายที่ใช้จริง</strong> ในภาษาไทย:
+          <strong> Answer Engine Optimization</strong> ในบริบท SEO / AI Search และ
+          <strong> Authorized Economic Operator</strong> ในบริบทศุลกากรและการค้าระหว่างประเทศ
+          จึงเกิด Search Intent แบบกำกวมได้แม้ใช้คำค้นสั้น ๆ เหมือนกัน
         </P>
         <P>
-          สำหรับหน้าเว็บที่จะเป็น Supporting Link ใน AI features ของ Google หน้าต้อง Index ได้
-          และมีสิทธิ์แสดงพร้อม Snippet ใน Search ตามเงื่อนไขปกติ
-          Google ยังระบุว่าไม่จำเป็นต้องมีไฟล์ AI พิเศษหรือ Schema พิเศษสำหรับฟีเจอร์เหล่านี้
+          จากการตรวจ SERP ภาษาไทยของคำค้น <strong>“aeo คือ” เมื่อ 5 ตุลาคม 2026</strong>
+          Google AI Overview ในตัวอย่างที่ตรวจตีความไปทาง Authorized Economic Operator
+          ขณะที่ Organic Results หลายหน้าด้านล่างพูดถึง Answer Engine Optimization
+          นี่เป็นเหตุผลว่าทำไมหน้าเรื่อง Search ควรใส่ชื่อเต็ม <strong>Answer Engine Optimization</strong>
+          ตั้งแต่ Title, H1 และย่อหน้าแรก ไม่พึ่งคำย่อ AEO เพียงอย่างเดียว
+        </P>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
+          <p className="thai-readable text-sm leading-6 text-neutral-700">
+            <strong>Decision rule:</strong> ถ้าเขียนเรื่อง AEO ด้าน Search ให้ระบุ “Answer Engine Optimization” ในบริบทแรกที่กล่าวถึง
+            และใช้คำร่วมอย่าง SEO, Search, Content หรือ AI Search เพื่อช่วยลดความกำกวมของ Entity โดยไม่ยัดคีย์เวิร์ดซ้ำทั้งหน้า
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="aeo-google-guidance" title="Google บอกอะไรเกี่ยวกับ AEO และ AI Search">
+        <P>
+          Google Search Central กล่าวถึงคำว่า <strong>AEO (Answer Engine Optimization)</strong> และ
+          <strong> GEO (Generative Engine Optimization)</strong> โดยตรงในคู่มือการ Optimize สำหรับ Generative AI Search
+          แต่ Google อธิบายว่าจากมุมมองของ Google Search งานเหล่านี้ยังเป็นการ Optimize Search Experience และจึงยังอยู่ในกรอบของ SEO
+          ไม่ได้เป็นระบบ Ranking แยกต่างหาก
+        </P>
+        <P>
+          Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode
+          หน้าเว็บที่จะเป็น Supporting Link ต้อง Index ได้และมีสิทธิ์แสดง Snippet ใน Search ตามเงื่อนไขปกติ
+          รวมถึงไม่มีข้อกำหนดให้สร้าง AI text file หรือ Special Schema เพื่อให้มีสิทธิ์ปรากฏ
           ดังนั้น Answer-first, ตาราง, Heading หรือการจัด Passage ที่ Saralak Search ใช้ควรถูกมองเป็น
-          <strong> วิธีทำ Content ให้ชัดขึ้น</strong> ไม่ใช่ Google Ranking Factor
+          <strong> Methodology เพื่อทำ Content ให้ชัดและใช้งานง่ายขึ้น</strong> ไม่ใช่ Ranking Factor ที่ Google ประกาศ
         </P>
         <div className="rounded-lg border border-sky-200 bg-sky-50 px-5 py-4">
           <p className="text-sm font-semibold text-sky-950">Google Official Documentation</p>
           <div className="mt-2 grid gap-1 text-sm leading-6">
+            <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="text-sky-800 underline underline-offset-2">
+              Optimizing for generative AI features — Google Search Central
+            </a>
             <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="text-sky-800 underline underline-offset-2">
               AI features and your website — Google Search Central
             </a>
@@ -1655,9 +1682,9 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="aeo-vs-seo-geo" title="AEO ต่างจาก SEO และ GEO อย่างไร">
         <P>
           SEO, AEO และ GEO มีพื้นที่ทับซ้อนกันมากกว่าที่ตาราง Marketing ทั่วไปมักอธิบาย
-          SEO เป็นฐานด้าน Search Discovery และ Indexability, AEO โฟกัสความชัดของ “คำตอบ” ในระดับหน้าและ Passage,
-          ส่วน GEO ขยายไปถึงความพร้อมของ Content, Evidence และ Entity สำหรับ Generative AI และการถูกกล่าวถึงหรืออ้างอิงใน AI Search
-          เส้นแบ่งของ AEO กับ GEO ไม่ได้มีมาตรฐานสากลตายตัว
+          SEO เป็นฐานด้าน Discovery, Crawling, Indexing และ Organic Visibility; AEO ใช้เป็นกรอบทำให้ “คำตอบ” ในระดับหน้าและ Section ชัดขึ้น;
+          ส่วน GEO มองกว้างไปถึง Content, Evidence, Entity และ Brand Visibility ใน Generative AI
+          Google เองระบุว่า AEO และ GEO เป็นคำที่ใช้ในวงการ แต่สำหรับ Google Search การ Optimize Generative AI Search ยังถือเป็น SEO
         </P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[860px] w-full border-collapse text-left text-sm">
@@ -1793,9 +1820,9 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         </div>
         <P>
           ตั้งแต่ 31 สิงหาคม 2026 Google ระบุว่า Generative AI performance report ถูก Roll out ให้เว็บไซต์ทั่วโลก
-          และครอบคลุม AI Overviews กับ AI Mode โดยรายงานแยกได้ตาม Page, Country, Date และ Device
-          ส่วน Click จาก AI features ยังถูกรวมใน Search Performance แบบ Web ตามวิธีนับของ Search Console
-          จึงต้องอ่านสองรายงานร่วมกัน ไม่ใช่สรุปผลจาก Impression เพียงตัวเดียว
+          และครอบคลุม AI Overviews กับ AI Mode โดยรายงานแยก Impression ตาม Page, Country, Date และ Device
+          รายงานนี้ไม่ได้ทำให้ Attribution สมบูรณ์ขึ้นทั้งหมด จึงควรอ่านร่วมกับ Search Performance, GA4 และ Conversion Data
+          แทนการสรุปว่า AEO สำเร็จเพียงเพราะ Generative AI Impression เพิ่มขึ้น
         </P>
       </ArticleSection>
 
@@ -1822,10 +1849,13 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           สำหรับเว็บไซต์ที่มี Organic Visibility อยู่แล้วแต่ยังไม่ชัดว่าปัญหาอยู่ที่ Topic Ownership, Answer Structure,
-          Internal Link หรือ Evidence การทำ Audit ก่อนผลิต Content เพิ่มช่วยลดการสร้างหน้าซ้ำ Intent เดิม
-          หากต้องการให้ทีม Saralak Search ช่วยวาง Content เป็นระบบ สามารถดู
+          Internal Link หรือ Evidence การตรวจหน้าที่มี Search Demand ก่อนผลิต Content เพิ่มช่วยลดการสร้างหน้าซ้ำ Intent เดิม
+          หากกำลังมองหา “รับทำ AEO” งานที่ควรได้ไม่ควรมีแค่การเพิ่ม FAQ หรือ Schema แต่ควรเชื่อม Search Intent, Content Structure,
+          SEO Foundation และ Measurement เข้าด้วยกัน สามารถดู
           {' '}<Link to="/services/content-marketing" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ SEO Content</Link>
-          {' '}หรือดูบริการของ Saralak Search ด้านล่างเพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
+          {' '}หรือ
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO & AI Search</Link>
+          {' '}ตาม Scope ที่ต้องการ
         </P>
       </ArticleSection>
 
@@ -1833,9 +1863,10 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
 
       <SourceBox
         items={[
-          'Google Search Central — AI features and your website, checked 21 September 2026',
-          'Google Search Console Help — Generative AI performance report, checked 21 September 2026',
-          'Google Search documentation updates — FAQ rich result removal, checked 21 September 2026',
+          'Google Search Central — Optimizing for generative AI features on Google Search, checked 5 October 2026',
+          'Google Search Central — AI features and your website, checked 5 October 2026',
+          'Google Search Console Help — Generative AI performance report, checked 5 October 2026',
+          'Google Search documentation updates — FAQ rich result removal, checked 5 October 2026',
           'Saralak Search client AI Overview case data (anonymised), checked September 2026',
         ]}
       />
