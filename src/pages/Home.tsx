@@ -605,18 +605,16 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.label}
-                className={`rounded-xl border px-5 py-4 ${item.highlight ? 'border-teal-300 bg-teal-50' : 'border-neutral-200 bg-white'}`}
+                className="rounded-xl border border-neutral-200 bg-white px-5 py-4"
               >
-                <p className={`text-sm font-semibold ${item.highlight ? 'text-teal-800' : 'text-neutral-800'}`}>{item.label}</p>
-                <p className={`mt-1 text-lg font-bold ${item.highlight ? 'text-teal-700' : 'text-neutral-950'}`}>{item.price}</p>
+                <p className="text-sm font-semibold text-neutral-800">{item.label}</p>
+                <p className="mt-1 text-lg font-bold text-neutral-950">{item.price}</p>
                 <p className="mt-0.5 text-xs text-neutral-500">{item.note}</p>
               </div>
             ))}
           </div>
           <p className="mt-5 text-xs text-neutral-500">
-            ไม่แน่ใจว่าเหมาะกับ package ไหน? เริ่มจาก{' '}
-            <a href="/services" className="font-semibold text-teal-700 hover:underline">บริการทั้งหมด</a>
-            {' '}— ช่วยระบุว่า budget และปัญหาของคุณเหมาะกับ service ไหน
+            ราคาเป็นกรอบอ้างอิงเบื้องต้น Scope จริงขึ้นอยู่กับเป้าหมาย ขนาดเว็บไซต์ ปริมาณ Content และงาน Technical ที่ต้องทำ
           </p>
         </div>
       </section>
