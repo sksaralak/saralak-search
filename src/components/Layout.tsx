@@ -257,8 +257,9 @@ export default function Layout() {
           <div>
             <img src="/logo.svg" alt={brand.name} className="h-8 w-auto" />
             <p className="thai-readable mt-4 max-w-xs text-sm leading-7 text-neutral-500">
-              Saralak Search คือที่ปรึกษา SEO, GEO และ AI Search สำหรับธุรกิจไทย
-              ช่วยให้แบรนด์ถูกเจอบน Google, ChatGPT, Gemini และ Perplexity
+              รับทำ SEO, GEO และ AI Search สำหรับธุรกิจทุกขนาด
+              เริ่มได้โดยไม่มีขั้นต่ำ วางแผนตามเป้าหมาย และวัดผลจากข้อมูลจริง
+              ประสบการณ์ SEO มากกว่า 9 ปี
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {['SEO', 'AEO', 'GEO', 'AI Search'].map((tag) => (
