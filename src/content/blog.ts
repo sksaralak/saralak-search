@@ -209,17 +209,17 @@ export const whatIsAeoFaqs: FAQItem[] = [
   {
     question: 'AEO คืออะไร?',
     answer:
-      'AEO หรือ Answer Engine Optimization คือแนวทางจัดเนื้อหาและโครงสร้างหน้าเว็บให้คำตอบตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจดึงข้อมูลไปแสดงเป็นคำตอบ AEO เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google',
+      'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบและโครงสร้างหน้าเว็บให้ตรงกับ Search Intent อ่านแยกเป็นส่วนได้ และมี Context หรือ Evidence เพียงพอสำหรับคน รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปใช้ประกอบคำตอบ โดย AEO ไม่ใช่ Ranking Factor ที่ Google ประกาศ',
   },
   {
     question: 'AEO ย่อมาจากอะไร?',
     answer:
-      'AEO ย่อมาจาก Answer Engine Optimization ในบทความนี้หมายถึง AEO ด้าน Search และ Content ไม่ใช่ Authorized Economic Operator ซึ่งเป็นอีกความหมายของคำย่อ AEO ที่พบในผลค้นหาภาษาไทย',
+      'ในบริบท SEO และ AI Search คำว่า AEO ย่อมาจาก Answer Engine Optimization แต่คำย่อเดียวกันยังหมายถึง Authorized Economic Operator ในงานศุลกากรได้ด้วย จึงควรดูบริบทของคำค้นและระบุชื่อเต็มให้ชัดเมื่อเขียน Content',
   },
   {
     question: 'AEO ต่างจาก SEO อย่างไร?',
     answer:
-      'SEO เป็นฐานที่ทำให้หน้าเว็บถูกค้นพบ Crawl และ Index ได้ รวมถึงแข่งขันใน Organic Search ส่วน AEO โฟกัสความชัดของคำตอบในระดับหน้าและ Passage เช่น Answer-first, Comparison, Evidence และ Context ทั้งสองจึงทับซ้อนกันมากและควรทำร่วมกัน',
+      'SEO ครอบคลุมการทำให้เว็บไซต์ถูกค้นพบ Crawl, Index, Rank และสร้าง Organic Traffic ส่วน AEO โฟกัสการออกแบบคำตอบในระดับหน้าและ Section ให้ตรง ชัด และใช้ต่อได้ เช่น Answer-first, Comparison, Evidence และ Context จากมุมมองของ Google งานที่เรียก AEO หรือ GEO สำหรับ Generative AI Search ยังอยู่ในกรอบ SEO',
   },
   {
     question: 'AEO ต่างจาก GEO อย่างไร?',
@@ -1273,30 +1273,30 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AEO คืออะไร? เข้าใจ Answer Engine Optimization สำหรับ Search และ AI',
+    title: 'AEO คืออะไร? Answer Engine Optimization ต่างจาก SEO และ GEO อย่างไร',
     slug: 'what-is-aeo',
     category: 'AEO',
     excerpt:
-      'AEO หรือ Answer Engine Optimization คือแนวทางจัดเนื้อหาและโครงสร้างหน้าเว็บให้คำตอบตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ โดย AEO ไม่ใช่ Ranking Factor หรือสูตรรับประกัน AI Citation',
-    readingTime: '16 min read',
+      'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบและโครงสร้างหน้าเว็บให้ตรงกับคำถามของผู้ค้น อ่านแยกเป็นส่วนได้ และยังทำงานร่วมกับ SEO ได้ดี บทความนี้อธิบายความต่างจาก SEO และ GEO พร้อมตัวอย่าง วิธีวัดผล และข้อจำกัดที่ควรรู้',
+    readingTime: '17 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-09-21',
+    lastModifiedDate: '2026-10-05',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'AEO คืออะไร? Answer Engine Optimization | Saralak Search',
+    metaTitle: 'AEO คืออะไร? ต่างจาก SEO และ GEO อย่างไร | Saralak Search',
     metaDescription:
-      'AEO คืออะไร เข้าใจ Answer Engine Optimization ต่างจาก SEO และ GEO อย่างไร พร้อม Google guidance ปี 2026 วิธีทำ AEO เคสจริง การวัดผล และข้อจำกัดที่ควรรู้',
+      'AEO คือ Answer Engine Optimization แนวทางจัดคำตอบบนเว็บให้ชัดและใช้งานได้ เข้าใจความต่างจาก SEO และ GEO พร้อม Google guidance ปี 2026 เคสจริง วิธีวัดผล และข้อจำกัด',
     heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.webp',
     heroImageAlt: 'AEO คืออะไร Answer Engine Optimization สำหรับ Search และ AI',
     ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
     aiSummary: [
       'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบบนหน้าเว็บให้ตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ',
-      'AEO เป็นคำที่วงการใช้ ไม่ใช่ชื่อ Ranking Factor หรือผลิตภัณฑ์ของ Google และไม่มีวิธีรับประกัน Featured Snippet, AI Overview หรือ AI Citation',
-      'AEO ควรต่อยอดจาก SEO เพราะหน้าเว็บยังต้อง Crawl และ Index ได้ มี Search Intent ชัด และเชื่อม Internal Link ไปยัง Owner URL ที่ถูกต้อง',
-      'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มี Schema หรือ Optimization พิเศษที่ต้องเพิ่มเพื่อให้มีสิทธิ์ปรากฏ',
-      'AEO ควรวัดทั้ง Search Visibility, Answer/AI Visibility, Engagement และ Business Outcome ไม่ใช่ดู Traffic หรือ Citation เพียงตัวเดียว',
+      'ใน Search ภาษาไทยคำว่า AEO มีความกำกวม เพราะยังหมายถึง Authorized Economic Operator ได้ด้วย จึงควรระบุ Answer Engine Optimization ให้ชัดใน Title, H1 และ Opening ของหน้า',
+      'Google ระบุในคู่มือ Generative AI Search ว่า AEO และ GEO เป็นคำที่ใช้เรียกงานด้าน AI Search แต่จากมุมมองของ Google การ Optimize สำหรับ Generative AI Search ยังถือเป็น SEO',
+      'AEO ควรต่อยอดจาก SEO เพราะหน้าต้อง Crawl และ Index ได้ มี Search Intent ชัด และไม่มี Schema หรือ AI Markup พิเศษที่รับประกัน AI Overview หรือ Citation',
+      'การวัดผลควรแยก Search Visibility, Answer/AI Visibility, Engagement และ Business Outcome เพราะการได้ Visibility ไม่เท่ากับได้ Click หรือ Conversion',
     ],
     faqs: whatIsAeoFaqs,
     includeFaqSchema: false,
