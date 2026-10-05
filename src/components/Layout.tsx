@@ -68,7 +68,6 @@ const serviceDropdown = [
 
 const footerCols = [
   { heading: 'บริการ', items: [
-    { label: 'Discovery Audit', to: '/discovery-audit' },
     { label: 'SEO', to: '/services/seo' },
     { label: 'Local SEO', to: '/services/local-seo' },
     { label: 'Google Maps', to: '/services/google-maps' },
@@ -180,22 +179,6 @@ export default function Layout() {
 
           {/* Desktop CTAs */}
           <div className="hidden items-center gap-3 lg:flex">
-            <NavLink
-              to="/discovery-audit"
-              className={({ isActive }) =>
-                `inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition ${
-                  isActive
-                    ? 'border-teal-500 bg-teal-900/60 text-teal-200'
-                    : 'border-teal-800 bg-teal-900/30 text-teal-300 hover:border-teal-600 hover:bg-teal-900/60 hover:text-teal-200'
-                }`
-              }
-            >
-              <span className="relative flex h-1.5 w-1.5 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal-500" />
-              </span>
-              Discovery Audit
-            </NavLink>
             <a href={brand.lineUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md border border-teal-900 bg-teal-900 px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white shadow-sm shadow-teal-950/10 transition hover:bg-teal-800">{brand.primaryCta}</a>
           </div>
 
@@ -241,13 +224,6 @@ export default function Layout() {
                   {item.label}
                 </NavLink>
               ))}
-              <NavLink
-                to="/discovery-audit"
-                className="mt-1 rounded-md border border-teal-800 bg-teal-900/30 px-3 py-2 text-sm font-semibold text-teal-300"
-                onClick={() => setOpen(false)}
-              >
-                Discovery Audit
-              </NavLink>
               <a href={brand.lineUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-2 inline-flex min-h-11 items-center justify-center rounded-md border border-teal-900 bg-teal-900 px-5 py-2.5 text-center text-sm font-semibold leading-6 text-white shadow-sm shadow-teal-950/10 transition hover:bg-teal-800">{brand.primaryCta}</a>
             </div>
           </div>
@@ -265,11 +241,11 @@ export default function Layout() {
           <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
             <div>
               <p className="font-semibold text-white">พร้อมให้ลูกค้าเจอคุณมากขึ้น?</p>
-              <p className="thai-readable mt-0.5 text-sm text-neutral-500">เริ่มต้นด้วย Discovery Audit หรือติดต่อเพื่อปรึกษาก่อนได้เลย</p>
+              <p className="thai-readable mt-0.5 text-sm text-neutral-500">ส่งเว็บไซต์หรือโจทย์ที่กำลังเจอมาได้ แล้วค่อยดูว่าควรเริ่มจาก SEO, Content, Local หรือ AI Search</p>
             </div>
             <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-              <CTAButton to="/discovery-audit">Discovery Audit</CTAButton>
-              <CTAButton to="/contact" variant="secondary">พูดคุย</CTAButton>
+              <CTAButton to="/contact">พูดคุยเรื่องเว็บไซต์</CTAButton>
+              <CTAButton to="/case-studies" variant="secondary">ดูผลงาน</CTAButton>
             </div>
           </div>
         </div>

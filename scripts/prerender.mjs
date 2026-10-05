@@ -44,7 +44,6 @@ const routes = [
   '/services/google-maps',
   '/services/geo',
   '/services/content-marketing',
-  '/discovery-audit',
   '/case-studies',
   '/blog',
   ...blogSlugs.map(slug => `/blog/${slug}`),

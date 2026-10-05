@@ -16,8 +16,8 @@ const commonProblems = [
 const journey = [
   {
     step: '01',
-    title: 'Discovery Audit',
-    description: 'วิเคราะห์สถานะการมองเห็นของแบรนด์',
+    title: 'Baseline & Opportunity Review',
+    description: 'ดูข้อมูลปัจจุบัน Search demand และหน้าที่มีผลต่อธุรกิจ',
   },
   {
     step: '02',
@@ -54,14 +54,6 @@ type ServiceCard = {
 }
 
 const serviceCards: ServiceCard[] = [
-  {
-    title: 'Discovery Audit',
-    tagline: 'ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์',
-    price: 'Starting from 5,000 THB',
-    fit: 'ธุรกิจที่ยังไม่รู้ว่าปัญหาอยู่ตรงไหน',
-    outcomes: ['Audit Report', 'Prioritized Roadmap', 'Quick Wins', 'Strategic Recommendations'],
-    cta: { label: 'เริ่ม Discovery Audit', to: '/discovery-audit' },
-  },
   {
     title: 'SEO & GEO',
     tagline: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI Search',
@@ -110,7 +102,7 @@ function Step01Visual() {
         <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
-        <span className="ml-2 font-mono text-xs text-neutral-600">discovery-audit.sh</span>
+        <span className="ml-2 font-mono text-xs text-neutral-600">search-review.sh</span>
       </div>
       <div className="p-5 font-mono text-xs">
         <p className="text-teal-400">$ scan --brand "your-brand" --platforms all</p>
@@ -258,7 +250,7 @@ function AiBrandMonitor() {
         </div>
         <div className="mt-6 border-t border-neutral-800 pt-5">
           <p className="font-mono text-xs text-neutral-600">Result: 3 platforms have visibility gaps</p>
-          <p className="mt-2 font-mono text-xs text-teal-400">→ Discovery Audit ช่วยระบุว่าควรเริ่มจากจุดไหน</p>
+          <p className="mt-2 font-mono text-xs text-teal-400">→ ใช้ข้อมูลจริงเพื่อจัดลำดับว่าควรทำอะไรก่อน</p>
         </div>
       </div>
     </div>
@@ -292,11 +284,6 @@ function CardIcon({ index }: { index: number }) {
 }
 
 const decisionGuide = [
-  {
-    condition: 'ยังไม่รู้ว่าปัญหาอยู่ตรงไหน',
-    service: 'Discovery Audit',
-    to: '/discovery-audit',
-  },
   {
     condition: 'ต้องการ Keyword Ranking บน Google + งบเริ่มต้น',
     service: 'SEO Starter (5,000/เดือน)',
@@ -377,7 +364,7 @@ export default function Services() {
     <main>
       <SEO
         title="เพิ่มการมองเห็นให้แบรนด์บน Google, ChatGPT, Gemini และ Google Maps | Saralak Search"
-        description="เพิ่มการมองเห็นให้แบรนด์ผ่าน Google Search, ChatGPT, Gemini, AI Overview และ Google Maps พร้อมบริการ Discovery Audit, SEO, GEO และ AEO เพื่อช่วยให้ธุรกิจเข้าถึงลูกค้าได้มากขึ้น"
+        description="บริการ SEO, GEO, Content และ Local Search สำหรับธุรกิจไทย เน้นการเพิ่มการมองเห็นบน Google, Google Maps และ AI Search โดยเชื่อมงานเข้ากับหน้าที่มีผลต่อ lead และยอดขาย"
         path="/services"
         image="/image/og/saralak-search-service-og.png"
         jsonLd={{
@@ -423,9 +410,9 @@ export default function Services() {
                 <span className="animate-gradient-text">— แบรนด์ของคุณถูกเห็นไหม?</span>
               </h1>
               <p className="thai-readable mt-6 text-lg leading-8 text-neutral-300">
-                ทุกวันที่ลูกค้าค้นหา พวกเขากำลังเจอคู่แข่งของคุณ ไม่ใช่คุณ
-                Saralak Search ช่วยวิเคราะห์ว่าแบรนด์ถูกมองเห็นที่ไหน พลาดตรงไหน
-                และควรแก้อะไรก่อน
+                แต่ละธุรกิจมี Search opportunity ไม่เหมือนกัน Saralak Search เริ่มจากดู
+                คำค้น หน้าที่สร้างมูลค่า โครงสร้างเว็บไซต์ และข้อมูล performance ที่มีอยู่
+                แล้วเลือกงาน SEO, Content, Local หรือ AI Search ที่เหมาะกับเป้าหมายจริง
               </p>
               <p className="thai-readable mt-4 text-sm leading-7 text-neutral-500">
                 อ่านเพิ่มเติม:{' '}
@@ -436,7 +423,7 @@ export default function Services() {
                 <Link to="/blog/what-is-geo" className="text-teal-400 hover:underline">GEO คืออะไร</Link>
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CTAButton to="/discovery-audit">รู้จุดอ่อนของแบรนด์ก่อน — Discovery Audit</CTAButton>
+                <CTAButton to="/contact">คุยเรื่องเว็บไซต์และเป้าหมาย</CTAButton>
                 <CTAButton to="/case-studies" variant="secondary">
                   ดูตัวอย่างผลงาน
                 </CTAButton>
@@ -462,7 +449,6 @@ export default function Services() {
               { label: 'Local SEO', to: '/services/local-seo', desc: 'ลูกค้าในย่าน' },
               { label: 'Google Maps', to: '/services/google-maps', desc: 'GBP & Maps' },
               { label: 'GEO', to: '/services/geo', desc: 'AI Search' },
-              { label: 'Discovery Audit', to: '/discovery-audit', desc: 'เริ่มที่นี่' },
             ].map(({ label, to, desc }) => (
               <Link
                 key={to}
@@ -514,13 +500,13 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-lg font-semibold text-white">ทุกวันที่รอ คือวันที่ลูกค้าเลือกคู่แข่ง</p>
+              <p className="text-lg font-semibold text-white">เลือกงาน Search จากโอกาสที่มีผลต่อธุรกิจ</p>
               <p className="thai-readable mt-1 text-sm text-teal-200">
-                AI Search กำลังแนะนำแบรนด์อื่นให้ลูกค้าของคุณอยู่ในขณะนี้
+                ไม่จำเป็นต้องทำทุกอย่างพร้อมกัน — เริ่มจากส่วนที่วัดผลและเชื่อมกับเป้าหมายได้ก่อน
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact">คุยเรื่อง scope</CTAButton>
             </div>
           </div>
         </div>
@@ -540,11 +526,11 @@ export default function Services() {
                 <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[0].title}</h3>
                 <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[0].description}</p>
                 <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
-                  ค้นหาว่า Google และ AI มองแบรนด์ของคุณอย่างไร มีช่องว่างตรงไหน
-                  และควรแก้อะไรก่อนเพื่อให้ได้ผลเร็วที่สุด
+                  เริ่มจากข้อมูลที่มีอยู่ เช่น Search Console, Analytics, ranking, content และหน้าสำคัญ
+                  เพื่อหาว่าโอกาสไหนมีผลต่อ visibility และธุรกิจมากที่สุด
                 </p>
                 <div className="mt-8">
-                  <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+                  <CTAButton to="/contact">คุยเรื่อง scope</CTAButton>
                 </div>
               </div>
               <Step01Visual />
@@ -557,8 +543,8 @@ export default function Services() {
                 <h3 className="-mt-3 text-3xl font-semibold text-white">{journey[1].title}</h3>
                 <p className="thai-readable mt-4 text-lg leading-8 text-neutral-400">{journey[1].description}</p>
                 <p className="thai-readable mt-3 text-sm leading-7 text-neutral-500">
-                  จัดลำดับงานจาก Discovery Audit ให้เป็น Roadmap ที่ทำได้จริง
-                  พร้อม Quick Wins สำหรับสัปดาห์แรก
+                  เปลี่ยนสิ่งที่พบเป็น Roadmap ที่ทำได้จริง แยกงาน Technical, Content,
+                  Internal Linking และหน้าที่ควรปรับก่อนตาม impact และ effort
                 </p>
               </div>
               <div className="lg:order-1">
@@ -602,11 +588,11 @@ export default function Services() {
           <div className="mt-24 rounded-2xl border border-teal-800/50 bg-teal-950/60 px-8 py-10 text-center">
             <p className="text-2xl font-semibold text-white">พร้อมเริ่มต้นแล้ว?</p>
             <p className="thai-readable mx-auto mt-3 max-w-lg text-neutral-400">
-              Discovery Audit คือขั้นตอนแรกที่ช่วยให้คุณรู้ว่าควรเริ่มจากตรงไหน
-              ก่อนลงทุนกับ SEO หรือ AI Search ใดๆ
+              ส่งเว็บไซต์ เป้าหมาย และบริบทที่มีอยู่มาได้ก่อน แล้วค่อยเลือก scope ที่เหมาะ
+              โดยไม่จำเป็นต้องเริ่มจากแพ็กเกจเดียวกันทุกธุรกิจ
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact">คุยเรื่อง scope</CTAButton>
               <CTAButton to="/contact" variant="secondary">พูดคุยก่อน</CTAButton>
             </div>
           </div>
@@ -637,35 +623,12 @@ export default function Services() {
         <SectionHeader
           eyebrow="บริการ"
           title="เลือกบริการตามปัญหาที่กำลังเจอ"
-          description="แต่ถ้ายังไม่แน่ใจว่าปัญหาอยู่ที่ไหน แนะนำให้เริ่มจาก Discovery Audit ก่อน"
+          description="เลือกจากเป้าหมายหลักของธุรกิจและช่องทาง Search ที่มีโอกาสสร้างผลลัพธ์มากที่สุด"
         />
 
-        {/* Discovery Audit — featured dark card */}
-        <article className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-teal-950 via-[#0d3d36] to-neutral-900 p-8 text-white shadow-2xl shadow-teal-950/40 sm:p-10 md:flex md:items-center md:gap-10">
-          <div className="flex-1">
-            <span className="inline-flex items-center gap-2 rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-300 ring-1 ring-teal-500/25">
-              <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-              ยังไม่รู้ว่าควรเริ่มจากอะไร? เริ่มที่นี่
-            </span>
-            <h3 className="mt-5 text-2xl font-semibold text-white">Discovery Audit</h3>
-            <p className="thai-readable mt-1 text-teal-200">{serviceCards[0].tagline}</p>
-            <p className="mt-3 text-2xl font-bold text-teal-300">{serviceCards[0].price}</p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {serviceCards[0].outcomes.map((o) => (
-                <span key={o} className="rounded-full bg-white/8 px-3 py-1 text-sm text-teal-100 ring-1 ring-white/10">
-                  {o}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="mt-8 shrink-0 md:mt-0">
-            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
-          </div>
-        </article>
-
-        {/* Other 3 services — accent-colored cards */}
+        {/* Core services */}
         <div className="mt-5 grid gap-5 md:grid-cols-3">
-          {serviceCards.slice(1).map((card, i) => {
+          {serviceCards.map((card, i) => {
             const c = cardColors[i]
             return (
               <article
@@ -785,12 +748,12 @@ export default function Services() {
           ยังไม่รู้ว่าเว็บไซต์ควรเริ่มแก้จากจุดไหน?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-xl text-lg leading-8 text-teal-50">
-          ลูกค้าของคุณกำลังค้นหา — แต่เจอคู่แข่งก่อน
-          Discovery Audit ช่วยให้รู้ว่าปัญหาอยู่ที่ไหน ก่อนลงทุนกับ SEO, GEO หรือ Google Maps
+          ส่ง URL เว็บไซต์และเป้าหมายหลักมาได้ก่อน เราจะคุยกันจากข้อมูลที่มีอยู่
+          แล้วเลือกว่าจะเริ่มจาก SEO, Content, Local Search หรือ AI Search
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <CTAButton to="/discovery-audit" variant="secondary">
-            เริ่ม Discovery Audit
+          <CTAButton to="/contact" variant="secondary">
+            คุยเรื่องเว็บไซต์
           </CTAButton>
           <Link
             to="/contact"
