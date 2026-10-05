@@ -131,6 +131,7 @@ function ArticleTableOfContents() {
 
 const geoContents = [
   { id: 'geo-what-is', label: 'GEO คืออะไร' },
+  { id: 'geo-serp-intent', label: 'คนค้น “GEO คือ” ต้องการรู้อะไรต่อ' },
   { id: 'geo-why-important', label: 'ทำไม GEO ถึงสำคัญ' },
   { id: 'geo-how-it-works', label: 'GEO ทำงานอย่างไร' },
   { id: 'geo-vs-seo-aeo', label: 'GEO ต่างจาก SEO และ AEO อย่างไร' },
@@ -454,6 +455,32 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
+      <ArticleSection id="geo-serp-intent" title="คนค้น “GEO คือ” ต้องการรู้อะไรต่อ">
+        <P>
+          คำค้น <strong>“GEO คือ”</strong> เป็น Definition Intent แต่ SERP ไทยที่ตรวจวันที่ <strong>5 ตุลาคม 2026</strong>
+          แสดง Comparison Intent ตามมาชัดเจน โดย Google AI Overview อธิบายความหมายของ GEO และตามด้วยหัวข้อเปรียบเทียบ SEO กับ GEO
+          ขณะที่ Organic Results ส่วนใหญ่เป็นบทความ “GEO คืออะไร” จากเว็บไซต์ด้าน SEO / AI Search
+        </P>
+        <P>
+          Ahrefs Snapshot ที่ตรวจวันเดียวกันแสดง Search Volume ในไทยประมาณ <strong>350 ครั้งต่อเดือน</strong>,
+          Keyword Difficulty <strong>0</strong> และ Parent Topic เป็น <strong>“geo”</strong> ที่มี Search Volume ประมาณ 1.3K
+          ตัวเลขนี้ใช้เป็นภาพ Demand ณ วันที่ตรวจ ไม่ใช่ค่าคงที่ และไม่ควรใช้แทนการดู Query จริงใน Search Console หลังหน้าเริ่มมี Impression
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['Definition ต้องชัดก่อน', 'เปิดด้วย Generative Engine Optimization แบบเต็มและตอบความหมายทันที เพราะผู้ค้นยังอยู่ช่วงทำความเข้าใจแนวคิด'],
+            ['Comparison ต้องตามมา', 'SERP แสดงว่าผู้อ่านต้องการรู้ว่า GEO ต่างจาก SEO อย่างไร จึงควรมี Comparison แบบสั้นและส่งต่อไปหน้า SEO GEO AEO สำหรับรายละเอียดเต็ม'],
+            ['อย่าแย่ง Intent วิธีทำ', 'คำว่า “วิธีทำ GEO” มี owner page แยกอยู่แล้ว หน้านี้จึงอธิบายภาพรวมแล้วส่งต่อไปคู่มือ implementation แทน'],
+            ['Commercial ควรอยู่ท้าย Journey', 'หน้าความหมายควรตอบ Definition, Comparison, Case และ Measurement ให้ครบก่อนเชื่อมไปบริการ GEO'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
       <ArticleSection id="geo-why-important" title="ทำไม GEO ถึงสำคัญ">
         <P>
           GEO สำคัญเมื่อ Customer Journey เริ่มมี AI Search เป็นจุดค้นข้อมูล เปรียบเทียบ และคัดตัวเลือกก่อนคลิกเว็บไซต์
@@ -560,7 +587,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           หน้าเว็บจึงยังต้อง crawlable, indexable และมีสิทธิ์แสดงพร้อม snippet ขณะเดียวกัน Google เน้น unique, valuable, non-commodity content มากกว่าการทำ “AEO/GEO hack”
         </P>
         <P>
-          ในเอกสารปี 2026 Google ใช้คำว่า AEO และ GEO ในบริบทของ terminology จากวงการภายนอก และเตือนให้ตรวจคำแนะนำจาก third party กับเอกสารทางการ
+          ในเอกสารปี 2026 Google กล่าวถึงคำว่า AEO และ GEO โดยตรงในส่วนที่อธิบายความเข้าใจผิดเกี่ยวกับ Generative AI Search และเตือนว่า “hacks” จำนวนมากไม่สอดคล้องกับวิธีทำงานจริงของ Google Search
           Google ไม่ได้กำหนด special AI schema, special markup หรือไฟล์พิเศษที่ต้องมีเพื่อเข้า AI Overviews / AI Mode
           Structured Data ควรใช้ตามประเภทที่รองรับและต้องสอดคล้องกับ visible content
         </P>
@@ -716,13 +743,13 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <SourceBox heading="Sources & Methodology — checked September 2026" items={[
-        'Google Search Central — Optimizing your website for generative AI features on Google Search, checked September 2026',
-        'Google Search Central — Third-party SEO tools, services and AEO/GEO advice, checked September 2026',
-        'Google Search Console Help — Generative AI performance report (AI Overviews and AI Mode), rollout completed August 31, 2026',
-        'Google Search Console Help — Search generative AI control, rollout completed August 31, 2026',
-        'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search, checked September 2026',
-        'Saralak Search client case — non-brand query “ขายอะไรดีตลาดนัด”, Google AI Overview screenshot and content review, September 2026',
+      <SourceBox heading="Sources & Methodology — checked 5 October 2026" items={[
+        'Google Search Central — Optimizing your website for generative AI features on Google Search, checked 5 October 2026',
+        'Google Search Central — Third-party SEO tools, services and AEO/GEO advice, checked 5 October 2026',
+        'Google Search Console Help — Generative AI performance report (AI Overviews and AI Mode), checked 5 October 2026',
+        'Google Search Console Help — Search generative AI control, checked 5 October 2026',
+        'OpenAI Help Center — Publishers and Developers / OAI-SearchBot eligibility for ChatGPT Search, checked 5 October 2026',
+        'Saralak Search SERP observation for “geo คือ”, Ahrefs keyword snapshot and client AI Overview case evidence, checked 5 October 2026',
       ]} />
 
       <ArticleFAQ id="geo-faq" post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ GEO" />
