@@ -15,12 +15,12 @@ const stats = [
 ]
 
 const capabilities = [
-  { title: 'Technical SEO',           description: 'ปรับปรุงโครงสร้างเว็บไซต์ การเก็บข้อมูล และการจัดทำดัชนี',         color: 'border-teal-500',   link: '/blog/what-is-seo'  },
-  { title: 'Content SEO',             description: 'วางกลยุทธ์เนื้อหาตาม Search Intent และ Topical Authority',           color: 'border-teal-600',   link: '/blog/what-is-seo'  },
-  { title: 'AEO',                     description: 'เพิ่มโอกาสในการปรากฏใน AI Overview และ Answer Engines',              color: 'border-sky-500',    link: '/blog/what-is-aeo'  },
-  { title: 'GEO',                     description: 'เพิ่มโอกาสในการถูกอ้างอิงใน ChatGPT และ AI Search',                 color: 'border-violet-500', link: '/blog/what-is-geo'  },
-  { title: 'Local SEO',               description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีพื้นที่ให้บริการ',                  color: 'border-emerald-500',link: '/blog/seo-geo-aeo'  },
-  { title: 'Google Maps Optimization',description: 'เพิ่มประสิทธิภาพ Google Business Profile และ Local Visibility',      color: 'border-amber-500',  link: '/services'          },
+  { title: 'Technical SEO',           description: 'ปรับปรุงโครงสร้างเว็บไซต์ การเก็บข้อมูล และการจัดทำดัชนี',         color: 'border-teal-500',   link: '/services/seo'  },
+  { title: 'Content SEO',             description: 'วางกลยุทธ์เนื้อหาตาม Search Intent และ Topical Authority',           color: 'border-teal-600',   link: '/services/content-marketing'  },
+  { title: 'AEO',                     description: 'เพิ่มโอกาสในการปรากฏใน AI Overview และ Answer Engines',              color: 'border-sky-500',    link: '/services/geo'  },
+  { title: 'GEO',                     description: 'เพิ่มโอกาสในการถูกอ้างอิงใน ChatGPT และ AI Search',                 color: 'border-violet-500', link: '/services/geo'  },
+  { title: 'Local SEO',               description: 'เพิ่มการมองเห็นสำหรับธุรกิจที่มีพื้นที่ให้บริการ',                  color: 'border-emerald-500',link: '/services/local-seo'  },
+  { title: 'Google Maps Optimization',description: 'เพิ่มประสิทธิภาพ Google Business Profile และ Local Visibility',      color: 'border-amber-500',  link: '/services/google-maps'  },
 ]
 
 const industries = [
@@ -70,7 +70,7 @@ const selectedResults = [
 ]
 
 const process = [
-  { title: 'Discovery Audit',           description: 'วิเคราะห์เว็บไซต์และโอกาสการเติบโต' },
+  { title: 'Baseline & Opportunity Review', description: 'ดูข้อมูลปัจจุบัน Search demand และหน้าที่มีผลต่อธุรกิจ' },
   { title: 'Visibility Analysis',       description: 'วิเคราะห์การมองเห็นบน Search' },
   { title: 'SEO / GEO Roadmap',         description: 'วางแผนการเติบโตที่นำไปปฏิบัติได้จริง' },
   { title: 'Implementation Support',    description: 'สนับสนุนการนำแผนไปใช้งาน' },
@@ -93,10 +93,6 @@ const aboutFaqs: FAQItem[] = [
   {
     question: 'AI Search ต่างจาก Google Search อย่างไร?',
     answer: 'Google Search แบบเดิมแสดงรายการผลลัพธ์ให้ผู้ใช้เลือก ส่วน AI Search มักสรุปคำตอบหรือแนะนำตัวเลือกโดยดึงข้อมูลจากหลายแหล่ง เว็บไซต์จึงต้องมีข้อมูลที่ชัดเจนและน่าเชื่อถือมากขึ้น',
-  },
-  {
-    question: 'Discovery Audit คืออะไร?',
-    answer: 'Discovery Audit คือการวิเคราะห์เว็บไซต์เพื่อดูปัญหา โอกาสการเติบโต และลำดับความสำคัญของงาน SEO, AEO, GEO, AI Search และ Google Maps ที่ควรทำก่อน',
   },
   {
     question: 'ธุรกิจแบบไหนเหมาะกับ SEO?',
@@ -196,7 +192,7 @@ export default function About() {
                 ))}
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+                <CTAButton to="/services">ดูบริการ</CTAButton>
                 <CTAButton to="/contact" variant="secondary">ติดต่อ</CTAButton>
               </div>
             </div>
@@ -273,7 +269,7 @@ export default function About() {
             </div>
             <blockquote className="rounded-xl border border-teal-800/60 bg-teal-950/60 px-7 py-6">
               <p className="thai-readable text-lg font-medium leading-8 text-teal-100">
-                "ธุรกิจที่เข้าใจ Search Journey ของลูกค้า และเตรียมตัวก่อน มีโอกาสได้เปรียบคู่แข่งในช่วงที่คนยังไม่แน่นหนา"
+                "เริ่มก่อน เห็นโอกาสก่อน และสร้างความได้เปรียบก่อนที่การแข่งขันบน Search จะสูงขึ้น"
               </p>
               <footer className="mt-4 text-sm font-semibold text-teal-400">— Saralak Kaewkum</footer>
             </blockquote>
@@ -400,11 +396,11 @@ export default function About() {
           อยากรู้ว่าลูกค้าค้นหาบน Google แล้วเจอคุณไหม?
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-2xl text-lg leading-8 text-teal-50">
-          Discovery Audit ช่วยตรวจว่า Google, Google Maps และ AI Search มองเห็นแบรนด์ของคุณอย่างไร
-          และปัญหาอยู่ที่จุดไหน ก่อนที่จะเลือก service
+          ส่งเว็บไซต์และเป้าหมายหลักมาได้ก่อน แล้วค่อยเลือกว่าจะเริ่มจาก SEO, Content,
+          Local Search หรือ AI Search ตามโอกาสที่มีผลต่อธุรกิจมากที่สุด
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+          <CTAButton to="/services" variant="secondary">ดูบริการที่เหมาะ</CTAButton>
           <a
             href="https://www.linkedin.com/in/saralakkaewkum"
             target="_blank"
