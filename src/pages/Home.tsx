@@ -18,7 +18,7 @@ function WorkSnapshot() {
       </div>
       <div className="divide-y divide-neutral-800">
         {[
-          { metric: '20K → 40K+', title: 'Product Listing impressions', text: 'แก้โครงสร้างหน้า, Search Intent และ Internal Linking เพื่อเพิ่มการมองเห็นของหน้าที่มีผลต่อยอดขาย' },
+          { metric: '+180%', title: 'Organic traffic growth', text: 'ปรับโครงสร้างหน้า Product Listing, On-page และ Search Intent เพื่อเพิ่ม Organic visibility จากหน้าที่มีผลต่อธุรกิจ' },
           { metric: '#5 → #1', title: 'Competitive keyword', text: 'ปรับ Landing Page และ On-page ตาม intent จนคีย์เวิร์ดหลักขึ้นอันดับ 1' },
           { metric: 'AI Overview', title: 'Content cited by Google AI', text: 'วางเนื้อหาให้ตอบ intent ชัด มีข้อมูล ตัวเลข การเปรียบเทียบ และ passage ที่ดึงไปตอบได้อย่างอิสระ' },
         ].map((item) => (
