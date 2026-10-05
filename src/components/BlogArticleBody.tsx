@@ -382,11 +382,11 @@ function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร', id }: { 
 function ArticleCTA({ headline, description }: { headline: string; description: string }) {
   return (
     <aside className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white">
-      <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">Discovery Audit</p>
+      <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">Saralak Search Services</p>
       <h3 className="mt-2 break-words text-xl font-semibold text-white">{headline}</h3>
       <p className="thai-readable mt-3 text-teal-100">{description}</p>
       <div className="mt-5">
-        <CTAButton to="/discovery-audit">เริ่มต้นด้วย Discovery Audit</CTAButton>
+        <CTAButton to="/services">ดูบริการที่เหมาะ</CTAButton>
       </div>
     </aside>
   )
@@ -472,7 +472,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-how-it-works" title="GEO ทำงานอย่างไรใน AI Search">
         <P>
           GEO ทำงานโดยทำให้แหล่งข้อมูลของแบรนด์พร้อมสำหรับกระบวนการที่ระบบใช้ค้นพบ ดึงบริบท และสร้างคำตอบ
-          กระบวนการจริงต่างกันในแต่ละแพลตฟอร์ม แต่ในเชิง Content สามารถคิดเป็น 4 ขั้นได้: Discover → Retrieve → Generate → Act
+          กระบวนการจริงต่างกันในแต่ละแพลตฟอร์ม แต่ในเชิง Content สามารถคิดเป็น 4 ขั้นได้: Discover, Retrieve, Generate และ Act
           จุดที่ควร Optimize คือความเข้าถึงได้ ความเกี่ยวข้อง หลักฐาน และเส้นทางที่พาผู้ใช้ต่อจากคำตอบไปยังเว็บไซต์หรือแบรนด์
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -515,7 +515,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
             ['1. พื้นฐาน Search', 'ตรวจ Crawl, Index, Canonical, Rendering, Sitemap และ Internal Link ก่อน ถ้าหน้า owner ยังถูกค้นหรือ index ไม่ถูกต้อง GEO ไม่ควรเป็นงานแรก'],
             ['2. Topic Ownership', 'กำหนด Main Intent ของแต่ละ URL เช่น “GEO คืออะไร” มี owner หนึ่งหน้า และ “วิธีทำ GEO” มี owner อีกหน้า เพื่อลด Cannibalization'],
             ['3. Evidence & Entity', 'เติมข้อมูลจริง ตัวเลข ตัวอย่าง ผู้เขียน แบรนด์ บริการ และแหล่งอ้างอิงที่ช่วยให้ประโยคมี Subject และตรวจสอบย้อนกลับได้'],
-            ['4. Content Path', 'วางเส้นทาง Definition → Comparison → How-to → Checklist → Proof → Service ให้ Internal Link ส่งความเกี่ยวข้องไปยัง LDP ที่ถูกต้อง'],
+            ['4. Content Path', 'วางเส้นทาง Definition, Comparison, How-to, Checklist, Proof และ Service ให้ Internal Link ส่งความเกี่ยวข้องไปยัง LDP ที่ถูกต้อง'],
             ['5. รอบการวัดผล', 'กำหนดชุดคำถามและ KPI ก่อนแก้ Content แล้วติดตามซ้ำเป็นรอบ เพื่อดูการเปลี่ยนแปลงแทนการสรุปจาก Prompt เดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -533,7 +533,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-framework" title="GEO Content Framework ของ Saralak Search">
         <P>
-          Saralak Search ใช้กรอบ <strong>Answer → Evidence → Entity → Context → Retrieval</strong> เพื่อรีวิว Content สำหรับ GEO
+          Saralak Search ใช้กรอบ <strong>Answer, Evidence, Entity, Context และ Retrieval</strong> เพื่อรีวิว Content สำหรับ GEO
           Framework นี้เป็นวิธีทำงานของเรา ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation
           เป้าหมายคือทำให้แต่ละส่วนตอบคำถามได้ตรง มีหลักฐาน มี Subject ชัด และยังเข้าใจได้เมื่อถูกอ่านแยกจากส่วนอื่น
         </P>
@@ -593,8 +593,8 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           {[
             ['Non-brand Query', 'Main query คือ “ขายอะไรดีตลาดนัด” และมี support intent อย่าง “ขายอะไรดีตลาดนัดลงทุนน้อย” ทำให้บทความไม่ได้พึ่ง Brand Search'],
             ['Concrete Examples', 'เนื้อหามีตัวอย่างราคา 19 / 29 / 39 บาท เมนู ต้นทุน และสถานการณ์การเลือก Packaging แทนคำแนะนำกว้าง ๆ'],
-            ['ข้อมูล → บริบทธุรกิจ', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุกส่วนเป็น CTA'],
-            ['เนื้อหาที่อ่านแยกได้', 'แต่ละส่วนมี Subject และคำตอบของตัวเอง เช่น Fried Food → ภาชนะทนร้อน ทำให้ช่วงเนื้อหานั้นยังเข้าใจได้เมื่ออ่านแยก'],
+            ['ข้อมูล ไปยัง บริบทธุรกิจ', 'บทความอธิบายปัญหาและตัวเลือกก่อนเชื่อมสินค้า/Packaging ที่เกี่ยวข้อง จึงไม่เปลี่ยนทุกส่วนเป็น CTA'],
+            ['เนื้อหาที่อ่านแยกได้', 'แต่ละส่วนมี Subject และคำตอบของตัวเอง เช่น Fried Food ไปยัง ภาชนะทนร้อน ทำให้ช่วงเนื้อหานั้นยังเข้าใจได้เมื่ออ่านแยก'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -712,7 +712,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           จากนั้นวัด Search/AI Visibility ควบคู่กับ Lead และ Revenue โดยยอมรับว่าไม่มีวิธีรับประกัน Citation จากแพลตฟอร์มใด
         </P>
         <P>
-          หากต้องการลงมือทำต่อ สามารถอ่านคู่มือวิธีทำ GEO และใช้ GEO Checklist เพื่อตรวจเว็บไซต์เป็นรายข้อ ส่วนธุรกิจที่ยังไม่แน่ใจว่าปัญหาอยู่ที่ Search Foundation, Content หรือ AI Visibility สามารถเริ่มจาก Discovery Audit เพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
+          หากต้องการลงมือทำต่อ สามารถอ่านคู่มือวิธีทำ GEO และใช้ GEO Checklist เพื่อตรวจเว็บไซต์เป็นรายข้อ ส่วนธุรกิจที่ยังไม่แน่ใจว่าปัญหาอยู่ที่ Search Foundation, Content หรือ AI Visibility สามารถเริ่มจากการวิเคราะห์เว็บไซต์และวาง Roadmap เพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
         </P>
       </ArticleSection>
 
@@ -1059,7 +1059,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           และอะไรควรทำต่อในเชิง GEO
         </P>
         <ReadMoreLinks items={[
-          { to: '/discovery-audit', label: 'ตรวจสอบเว็บไซต์ฟรี' },
+          { to: '/services', label: 'ตรวจสอบเว็บไซต์ฟรี' },
           { to: '/services/seo', label: 'บริการ SEO' },
           { to: '/services/geo', label: 'บริการ GEO' },
           { to: '/case-studies', label: 'SEO Case Studies' },
@@ -1161,7 +1161,7 @@ function GeoMeasurementFrameworkVisual() {
             <h3 className="mt-1 text-base font-semibold text-neutral-950">{step.title}</h3>
             <p className="thai-readable mt-2 text-sm leading-6 text-neutral-600">{step.body}</p>
             {index < steps.length - 1 ? (
-              <span aria-hidden="true" className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-lg text-teal-700 md:-right-3 md:bottom-auto md:left-auto md:top-1/2 md:-translate-y-1/2 md:translate-x-0">→</span>
+              <span aria-hidden="true" className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-lg text-teal-700 md:-right-3 md:bottom-auto md:left-auto md:top-1/2 md:-translate-y-1/2 md:translate-x-0"></span>
             ) : null}
           </div>
         ))}
@@ -1301,7 +1301,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       <GeoAgencyTableOfContents />
 
       <ArticleSection id="geo-agency-answer" title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
-        <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน → จะลงมือแก้อะไร → วัดผลด้วยอะไร → ผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
+        <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน ไปยัง จะลงมือแก้อะไร ไปยัง วัดผลด้วยอะไร ไปยัง ผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
         <P>GEO ไม่ใช่บริการที่มี Checklist กลางจาก Google ให้ทำตามแล้วรับประกันว่าจะถูกอ้างอิง สำหรับ Google Search เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่ทำให้ได้ placement โดยอัตโนมัติ ดังนั้นเอเจนซี่ที่น่าเปรียบเทียบควรแข็งแรงทั้ง Search foundation, Content, Entity และ Measurement พร้อมอธิบายข้อจำกัดได้ตรงไปตรงมา</P>
         <P>
           หากต้องการเข้าใจ Definition และขอบเขตของ Generative Engine Optimization ก่อนเปรียบเทียบบริษัท อ่าน{' '}
@@ -1456,7 +1456,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           ถ้าต้องการให้ทีมภายนอกช่วยตั้งแต่ Audit ถึงการลงมือทำ สามารถดูขอบเขต{' '}
           <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
           {' '}ได้ ส่วนกรณีที่ยังไม่รู้ว่าปัญหาอยู่ที่ SEO, Content หรือ AI Visibility ควรเริ่มจาก{' '}
-          <Link to="/discovery-audit" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจสอบเว็บไซต์ฟรี</Link>
+          <Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจสอบเว็บไซต์ฟรี</Link>
           {' '}เพื่อจัดลำดับก่อน
         </P>
       </ArticleSection>
@@ -1628,7 +1628,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         <P>
           AEO ไม่มี Pipeline มาตรฐานเดียวที่ทุก Search Engine หรือ AI ใช้ร่วมกัน
           สำหรับการวาง Content สามารถคิดเป็นกรอบทำงาน 4 ขั้นได้:
-          <strong> Intent → Eligible Source → Clear Answer → User Action</strong>
+          <strong> Intent ไปยัง Eligible Source ไปยัง Clear Answer ไปยัง User Action</strong>
           กรอบนี้เป็น Methodology สำหรับออกแบบหน้า ไม่ใช่คำอธิบาย Algorithm ของ Google
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -1769,7 +1769,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         <P>
           AEO ไม่ควรวัดจากคำว่า “ติดหรือไม่ติด” เพียงตัวเดียว เพราะคำตอบอาจแสดงบนหลาย Surface
           และบางกรณีสร้าง Visibility โดยไม่เกิด Click
-          การวัดผลที่ใช้งานได้จริงควรไล่จาก Search Visibility → Answer / AI Visibility → Engagement → Business Outcome
+          การวัดผลที่ใช้งานได้จริงควรไล่จาก Search Visibility, Answer / AI Visibility, Engagement และ Business Outcome
         </P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[920px] w-full border-collapse text-left text-sm">
@@ -1825,7 +1825,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           Internal Link หรือ Evidence การทำ Audit ก่อนผลิต Content เพิ่มช่วยลดการสร้างหน้าซ้ำ Intent เดิม
           หากต้องการให้ทีม Saralak Search ช่วยวาง Content เป็นระบบ สามารถดู
           {' '}<Link to="/services/content-marketing" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ SEO Content</Link>
-          {' '}หรือใช้ Discovery Audit ด้านล่างเพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
+          {' '}หรือดูบริการของ Saralak Search ด้านล่างเพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
         </P>
       </ArticleSection>
 
@@ -1901,7 +1901,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
     {
       num: '05',
       title: 'วาง Internal Link และ Authority Support',
-      body: 'เชื่อม Definition → Guide → Case → Service ด้วยลิงก์จริงที่ crawl ได้ และใช้ Backlink หรือ Mention เมื่อมีบริบทที่เกี่ยวข้องกับ Topic แทนการไล่จำนวนลิงก์โดยไม่ดูคุณภาพหรือปลายทาง',
+      body: 'เชื่อม Definition ไปยัง Guide ไปยัง Case ไปยัง Service ด้วยลิงก์จริงที่ crawl ได้ และใช้ Backlink หรือ Mention เมื่อมีบริบทที่เกี่ยวข้องกับ Topic แทนการไล่จำนวนลิงก์โดยไม่ดูคุณภาพหรือปลายทาง',
     },
     {
       num: '06',
@@ -1980,7 +1980,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="Google Search ทำงานอย่างไรกับ SEO?" id="seo-how">
         <ArticleImage src="/image/blog/what-is-seo/seo-process.webp" alt="กระบวนการทำงานของ Google Search ตั้งแต่ Crawling Indexing ไปจนถึง Serving Search Results" />
         <P>
-          เอกสารทางการของ Google แบ่งการทำงานของ Search เป็น 3 ขั้นหลัก: <strong>Crawling → Indexing → Serving Search Results</strong>
+          เอกสารทางการของ Google แบ่งการทำงานของ Search เป็น 3 ขั้นหลัก: <strong>Crawling, Indexing และ Serving Search Results</strong>
           คำว่า Ranking ที่ใช้กันในงาน SEO เกิดขึ้นในขั้น Serving เมื่อระบบเลือกและจัดลำดับผลลัพธ์ที่เห็นว่าเกี่ยวข้องและมีคุณภาพสำหรับ Query นั้น
           จึงควรแยก “ถูก Index” ออกจาก “ติดอันดับ” เพราะหน้าอาจอยู่ใน Index แล้วแต่ยังไม่เหมาะกับคำค้นที่ต้องการ
         </P>
@@ -2148,7 +2148,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="วัดผล SEO อย่างไร?" id="seo-measurement">
         <P>
-          SEO ควรวัดจาก Search Visibility → Website Engagement → Business Outcome
+          SEO ควรวัดจาก Search Visibility, Website Engagement และ Business Outcome
           ไม่ควรสรุปจาก Keyword อันดับเดียว เพราะอันดับเปลี่ยนตาม Query, Device, Location และรูปแบบ Search Results
           Google Search Console เองรายงาน Average Position ซึ่งเป็นค่าเฉลี่ยของตำแหน่ง ไม่ใช่อันดับคงที่ที่ทุกคนเห็นเหมือนกัน
         </P>
@@ -2202,10 +2202,10 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             <ArticleImage
               src="/proof/ranking-bangsaen-serp.png"
               alt="ตัวอย่าง SEO Strategy ที่อันดับคำค้นขยับจากอันดับ 5 สู่อันดับ 1"
-              caption="เคส SEO Strategy: อันดับ #5 → #1 ภายใน 3 เดือน"
+              caption="เคส SEO Strategy: อันดับ Rank 5 to Rank 1 ภายใน 3 เดือน"
             />
             <div className="p-5">
-              <h3 className="font-semibold text-neutral-950">เคส 1: Commercial Query จาก #5 → #1</h3>
+              <h3 className="font-semibold text-neutral-950">เคส 1: Commercial Query จาก Rank 5 to Rank 1</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
                 หน้าเป้าหมายเดิมตามหลังคู่แข่งในคำค้นที่มีมูลค่าทางธุรกิจ งานที่ทำร่วมกันประกอบด้วยการปรับ Content ให้ตรง Search Intent,
                 เสริม Internal Link / Supporting Content และ Backlink Support หลังแคมเปญ 3 เดือน อันดับขยับจาก #5 เป็น #1 ตามข้อมูลที่บันทึกในเคส
@@ -2228,7 +2228,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
               </p>
               <p className="thai-readable mt-3 text-sm leading-6 text-neutral-700">
                 จุดสำคัญของเคสนี้ไม่ใช่การอ้างอันดับจาก Screenshot เพียงครั้งเดียว แต่คือ Google เลือกหน้าที่มีหน้าที่เชิงพาณิชย์มาแสดงสำหรับ Query ที่มี Purchase Intent
-                ทำให้เส้นทางจาก <strong>Search → Product Discovery → Website</strong> เกิดขึ้นได้โดยไม่ต้องพึ่ง Brand Keyword
+                ทำให้เส้นทางจาก <strong>Search, Product Discovery และ Website</strong> เกิดขึ้นได้โดยไม่ต้องพึ่ง Brand Keyword
               </p>
             </div>
           </div>
@@ -2236,7 +2236,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
         <P>
           จากสองเคสนี้ สิ่งที่ใช้ซ้ำได้ไม่ใช่ “สูตรดันอันดับ” แต่คือ Workflow:
-          หา Search Intent → ระบุ Owner URL → แก้ Content / Technical / Internal Link / Authority ตาม Bottleneck → วัดผลจากข้อมูลจริง
+          หา Search Intent จากนั้นระบุ Owner URL แก้ Content / Technical / Internal Link / Authority ตาม Bottleneck และวัดผลจากข้อมูลจริง
           สำหรับเคส Generic Keyword ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
           ดูหลักฐานและเคสอื่นได้ที่
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
@@ -2282,7 +2282,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           หากเว็บไซต์มีหลายปัญหาพร้อมกันและยังไม่ชัดว่าควรแก้ Technical, Content, Keyword Mapping หรือ Authority ก่อน
           บริการ
           {' '}<Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO ของ Saralak Search</Link>
-          {' '}และ Discovery Audit ใช้การตรวจข้อมูลจริงเพื่อจัดลำดับงานก่อนเริ่มทำรายเดือน แทนการเริ่มจากจำนวนบทความหรือจำนวนคีย์เวิร์ดเพียงอย่างเดียว
+          {' '}โดยใช้การตรวจข้อมูลจริงเพื่อจัดลำดับงานก่อนเริ่มทำรายเดือน แทนการเริ่มจากจำนวนบทความหรือจำนวนคีย์เวิร์ดเพียงอย่างเดียว
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์' },
@@ -2338,12 +2338,12 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
       num: '03',
       title: 'กำหนด Topic Ownership และ Query Map',
       body: 'GEO ไม่ควรเริ่มจากการสร้างบทความจำนวนมาก แต่เริ่มจากกำหนดว่าแต่ละ URL มีหน้าที่อะไร เช่น “GEO คืออะไร” เป็น Definition Owner, “วิธีทำ GEO” เป็น Implementation Owner และ “รับทำ GEO” เป็น Commercial Owner จากนั้นค่อยแตกคำถามย่อยที่อยู่ใน Intent เดียวกันไว้ในหน้าที่เหมาะสม เพื่อลด Cannibalization และทำให้ Internal Link มีทิศทาง',
-      checks: ['กำหนด Main Intent และ Primary Keyword ต่อ URL', 'รวมคำถามย่อยที่ควรอยู่หน้าเดียวกัน', 'แยก Intent ที่ควรมี owner URL อื่นออก', 'วางเส้นทาง Definition → How-to → Checklist/Case → Service'],
+      checks: ['กำหนด Main Intent และ Primary Keyword ต่อ URL', 'รวมคำถามย่อยที่ควรอยู่หน้าเดียวกัน', 'แยก Intent ที่ควรมี owner URL อื่นออก', 'วางเส้นทาง Definition, How-to, Checklist/Case และ Service'],
     },
     {
       num: '04',
       title: 'ปรับ Content ให้ตอบตรง มี Evidence และอ่านแยกได้',
-      body: 'Saralak Search ใช้กรอบ Answer → Evidence → Entity → Context → Retrieval เป็นวิธีรีวิว Content: เริ่มด้วยคำตอบที่ตรง เติมข้อมูลหรือหลักฐานที่ตรวจสอบได้ ระบุ Entity ให้ชัด อธิบายบริบทที่ทำให้ข้อมูลนั้นเกี่ยวข้อง และทดสอบว่า Section ยังเข้าใจได้เมื่ออ่านแยกจากย่อหน้าก่อนหน้า Framework นี้เป็น Methodology ของ Saralak Search ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
+      body: 'Saralak Search ใช้กรอบ Answer, Evidence, Entity, Context และ Retrieval เป็นวิธีรีวิว Content: เริ่มด้วยคำตอบที่ตรง เติมข้อมูลหรือหลักฐานที่ตรวจสอบได้ ระบุ Entity ให้ชัด อธิบายบริบทที่ทำให้ข้อมูลนั้นเกี่ยวข้อง และทดสอบว่า Section ยังเข้าใจได้เมื่ออ่านแยกจากย่อหน้าก่อนหน้า Framework นี้เป็น Methodology ของ Saralak Search ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
       checks: ['Answer First ภายใน 1–2 ประโยคเมื่อเหมาะกับคำถาม', 'ใช้ตัวเลข ตัวอย่าง Comparison หรือ Case จริงเมื่อมีหลักฐาน', 'หลีกเลี่ยงคำลอย เช่น “วิธีนี้” หรือ “ระบบนี้” โดยไม่มี Subject', 'ไม่เพิ่มหัวข้อเพียงเพื่อให้บทความยาวหรือ “แตก Chunk ให้ AI”'],
     },
     {
@@ -2367,7 +2367,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     {
       num: '08',
       title: 'วัดผล แล้ว Refresh จากข้อมูลจริง',
-      body: 'GEO ควรทำเป็นรอบ: Baseline → Implement → Observe → Refresh ไม่ควรสรุปจากการเห็นหรือไม่เห็นแบรนด์ใน Prompt เดียว ตั้งแต่ 31 สิงหาคม 2026 Google Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode ซึ่งใช้วัด Impression ระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้ ส่วน ChatGPT, Gemini หรือ Perplexity ยังควรติดตามแยกตามแพลตฟอร์มและเชื่อมกลับมาที่ Referral, Engagement และ Conversion เท่าที่ข้อมูลรองรับ',
+      body: 'GEO ควรทำเป็นรอบ: Baseline, Implement, Observe และ Refresh ไม่ควรสรุปจากการเห็นหรือไม่เห็นแบรนด์ใน Prompt เดียว ตั้งแต่ 31 สิงหาคม 2026 Google Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode ซึ่งใช้วัด Impression ระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้ ส่วน ChatGPT, Gemini หรือ Perplexity ยังควรติดตามแยกตามแพลตฟอร์มและเชื่อมกลับมาที่ Referral, Engagement และ Conversion เท่าที่ข้อมูลรองรับ',
       checks: ['เทียบ Search Visibility ก่อนและหลังแก้', 'บันทึก Mention/Citation ด้วย Query Set เดิมเป็นรอบ', 'ดู GA4 Referral/Engagement และ Conversion', 'Refresh หน้าเมื่อข้อมูลเปลี่ยน Intent เปลี่ยน หรือพบ Content Gap ใหม่'],
     },
   ]
@@ -2392,7 +2392,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-how-to-overview" title="วิธีทำ GEO ต้องทำอะไรบ้าง">
         <P>
           <strong>วิธีทำ GEO ที่ใช้ได้จริงควรเริ่มจากฐาน Search และการวัดผล ไม่ใช่เริ่มจากการใส่ Schema หรือเขียนบทความเพิ่มทันที</strong>
-          {' '}ลำดับงานคือเก็บ Baseline → ตรวจ Crawl/Index/Bot Access → กำหนด Topic Ownership → ปรับ Content และ Evidence → เชื่อม Entity/Internal Link → สร้าง External Evidence → วัดผลและ Refresh
+          {' '}ลำดับงานคือเก็บ เริ่มจาก Baseline แล้วตรวจ Crawl/Index/Bot Access กำหนด Topic Ownership ปรับ Content และ Evidence เชื่อม Entity/Internal Link สร้าง External Evidence และวัดผลพร้อม Refresh
           โดยแต่ละแพลตฟอร์มมีระบบค้นหาและอ้างอิงต่างกัน จึงไม่มี Checklist เดียวที่รับประกันการถูกอ้างอิงทุกแห่ง
         </P>
         <P>
@@ -2501,7 +2501,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           {[
             ['Intent ก่อนสินค้า', 'เริ่มจากคำถาม “ขายอะไรดี” แล้วตอบให้จบก่อนเชื่อมไปยังบริบทธุรกิจ'],
             ['หลาย Sub-intent ในหน้าเดียว', 'แยกเมนู ต้นทุน ราคา และ Packaging เป็นคนละ Section ที่เข้าใจได้ในตัวเอง'],
-            ['ข้อมูลเฉพาะ', 'ใช้ตัวอย่างราคา 19 / 29 / 39 บาท และ Mapping ประเภทสินค้า → Packaging แทนคำแนะนำกว้าง ๆ'],
+            ['ข้อมูลเฉพาะ', 'ใช้ตัวอย่างราคา 19 / 29 / 39 บาท และ Mapping ประเภทสินค้าไปยัง Packaging แทนคำแนะนำกว้าง ๆ'],
             ['Commercial Connection ที่มีเหตุผล', 'สินค้า/หมวดหมู่ถูกเชื่อมเมื่อมีปัญหาหรือสถานการณ์ที่ทำให้ลิงก์นั้นมีประโยชน์ ไม่ใช่แทรก CTA ทุกช่วง'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
@@ -2579,7 +2579,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </div>
 
         <P>
-          การอ่านผลควรดูเป็น Funnel: <strong>Search/AI Visibility → Visit/Engagement → Lead/Conversion</strong>
+          การอ่านผลควรดูเป็น Funnel: <strong>Search/AI Visibility, Visit/Engagement และ Lead/Conversion</strong>
           เช่น ถ้า Generative AI Impressions หรือ Organic Visibility เพิ่มขึ้น แต่ Lead ไม่เพิ่ม ควรตรวจต่อว่าหน้าใดถูกแสดง Query เป็น Informational หรือ Commercial Intent และผู้ใช้ทำอะไรหลังเข้าหน้าเว็บ
           Visibility เป็นสัญญาณต้นทาง ไม่ใช่หลักฐานว่ากลยุทธ์สร้างรายได้แล้ว
         </P>
@@ -2619,7 +2619,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย' },
           { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร? พร้อม Case Study จริง' },
           { to: '/case-studies', label: 'SEO และ AI Search Case Studies — Saralak Search' },
-          { to: '/discovery-audit', label: 'Discovery Audit — ตรวจว่าควรแก้อะไรก่อน' },
+          { to: '/services', label: 'การวิเคราะห์เว็บไซต์และวาง Roadmap — ตรวจว่าควรแก้อะไรก่อน' },
         ]} />
       </ArticleSection>
 
@@ -2797,8 +2797,8 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
 
 ## คำถามที่ลูกค้าถามบ่อย
 
-- [คำถาม] → [คำตอบสั้น]
-- [คำถาม] → [คำตอบสั้น]`}
+- [คำถาม] ไปยัง [คำตอบสั้น]
+- [คำถาม] ไปยัง [คำตอบสั้น]`}
             </pre>
           </div>
         </ArticleSubSection>
@@ -2864,7 +2864,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?"
-        description="Discovery Audit ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่"
       />
 
       <ArticleSection title="วิธีทดสอบว่า AI อ่าน llms.txt ได้หรือไม่">
@@ -2980,7 +2980,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
     'มี Information Gain เช่น ข้อมูลจากงานจริง ตัวเลข Screenshot Comparison Workflow หรือ Observation ที่ Generic Content ไม่มี',
     'ข้อเท็จจริงที่เปลี่ยนตามเวลา เช่น Google Search, AI Search หรือ Platform Feature มีแหล่งอ้างอิงและวันที่ตรวจสอบ',
     'แยก Official Documentation ออกจาก Saralak Search Methodology, Observation และ Working Hypothesis อย่างชัดเจน',
-    'วาง Internal Link ตาม Journey: Pillar → Deeper Guide → Proof/Case → Service โดยไม่ใช้ Anchor เดียวกันชี้หลาย Owner URL',
+    'วาง Internal Link ตาม Journey: Pillar, Deeper Guide, Proof/Case และ Service โดยไม่ใช้ Anchor เดียวกันชี้หลาย Owner URL',
     'ใช้ภาพ Screenshot หรือ Diagram เมื่อช่วยอธิบายหลักฐานหรือกระบวนการ พร้อม Alt Text และ Caption ที่บอกว่าภาพแสดงอะไร',
     'เพิ่ม FAQ เฉพาะคำถามที่ยังไม่ถูกตอบในบทความ ไม่กำหนดจำนวนขั้นต่ำ และไม่ทำ FAQ เพียงเพื่อหวัง Ranking หรือ AI Citation',
   ]
@@ -3161,7 +3161,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <CheckList items={measurementItems} />
         <P>
           Visibility ที่เพิ่มขึ้นยังไม่เท่ากับ Lead หรือ Revenue ที่เพิ่มขึ้น การสรุปผลจึงควรแยก
-          <strong> Search Visibility → AI Visibility → Engagement → Business Outcome</strong>
+          <strong> Search Visibility, AI Visibility, Engagement และ Business Outcome</strong>
           และระบุข้อจำกัดด้าน Attribution ทุกครั้ง
         </P>
       </ArticleSection>
@@ -3169,7 +3169,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-checklist-priority" title="GEO Checklist ควรเริ่มจากข้อไหนก่อนถ้าทำพร้อมกันไม่ได้">
         <P>
           ถ้าทรัพยากรจำกัด ให้เริ่มจากสิ่งที่เป็น Dependency ก่อน:
-          <strong> Search Foundation → Topic Ownership / Entity → Content & Evidence → External Mention → Measurement</strong>
+          <strong> Search Foundation, Topic Ownership / Entity, Content & Evidence, External Mention และ Measurement</strong>
           เพราะการเพิ่ม FAQ, Schema หรือ Mention ไม่ช่วยแก้หน้าที่ Canonical ผิด, noindex, Content Render ไม่ครบ หรือมีหลาย URL แย่ง Intent เดียวกัน
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -3201,7 +3201,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           caption="เคสจริงของ Saralak Search: หน้า Non-brand เดียวตอบหลาย Sub-intent และภายหลังปรากฏเป็นแหล่งอ้างอิงหลาย Passage ใน Google AI Overview"
         />
         <P>
-          สิ่งที่ Checklist ใช้อ่านจากเคสนี้คือ <strong>Owner URL ชัด, Passage ตอบคนละ Sub-intent, มี Concrete Detail, Internal Link เชื่อม Informational → Commercial และมี Measurement หลัง Publish</strong>
+          สิ่งที่ Checklist ใช้อ่านจากเคสนี้คือ <strong>Owner URL ชัด, Passage ตอบคนละ Sub-intent, มี Concrete Detail, Internal Link เชื่อม Informational ไปยัง Commercial และมี Measurement หลัง Publish</strong>
           แต่ผลลัพธ์นี้เป็น Observation จากงานจริง ไม่ได้พิสูจน์ว่า Checklist ข้อใดข้อหนึ่งเป็นสาเหตุให้ Google เลือก Citation
           รายละเอียดของผลลัพธ์และข้อจำกัดอยู่ใน
           {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">เคส AI Overview</Link>
@@ -3261,7 +3261,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <P>
           หาก Checklist พบว่าปัญหาอยู่ที่ Search Foundation หรือ Topic Ownership ให้แก้สองส่วนนี้ก่อนผลิต Content เพิ่ม
           หากฐาน Organic Visibility ใช้งานได้แล้วแต่ยังไม่ชัดว่า Content, Entity, Evidence และ AI Visibility ควรแก้ตรงไหน
-          {' '}<Link to="/discovery-audit" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Discovery Audit</Link>
+          {' '}<Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">การวิเคราะห์เว็บไซต์และวาง Roadmap</Link>
           {' '}ช่วยจัดลำดับ Issue ตาม Impact ได้ก่อนเริ่มงานรายเดือน
           ส่วนธุรกิจที่มี Scope ชัดและต้องการลงมือทำต่อสามารถดู
           {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
@@ -3373,7 +3373,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
           <ul className="mt-3 grid gap-2">
             {whatToAskClaude.map((q) => (
               <li key={q} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                <span className="mt-0.5 shrink-0 text-amber-600">→</span>
+                <span className="mt-0.5 shrink-0 text-amber-600"></span>
                 {q}
               </li>
             ))}
@@ -3462,7 +3462,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?"
-        description="Discovery Audit ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้ และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้ และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์"
       />
 
       <ArticleSection title="แล้วเว็บของคุณควรทำอะไร?">
@@ -3517,7 +3517,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
                 'เพิ่ม FAQ section ตาม question ที่กำหนดให้',
               ].map((item) => (
                 <li key={item} className="thai-readable flex items-start gap-2 text-sm text-teal-900 list-none">
-                  <span className="mt-0.5 shrink-0 font-bold text-teal-600">✓</span>{item}
+                  <span className="mt-0.5 shrink-0 font-bold text-teal-600">•</span>{item}
                 </li>
               ))}
             </ul>
@@ -3586,7 +3586,7 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
       num: '01',
       title: 'Google ยังไม่ Index เว็บไซต์',
       body: 'ก่อนที่ Google จะแสดงเว็บไซต์ในผลการค้นหา Googlebot ต้องค้นพบและ Index หน้าเว็บก่อน หากเว็บใหม่มากหรือมีปัญหา Technical เช่น robots.txt ที่ปิดกั้น Crawler หรือไม่มี Sitemap เว็บไซต์อาจไม่ได้รับการ Index เลย — ทำให้ SEO ไม่มีผลไม่ว่าเนื้อหาจะดีแค่ไหน',
-      check: 'พิมพ์ site:yourdomain.com ใน Google ถ้าไม่มีผลออกมาเลย ให้ตรวจ robots.txt, Sitemap และ Google Search Console → Coverage',
+      check: 'พิมพ์ site:yourdomain.com ใน Google ถ้าไม่มีผลออกมาเลย ให้ตรวจ robots.txt, Sitemap และ Google Search Console ในรายงาน Coverage',
     },
     {
       num: '02',
@@ -3604,7 +3604,7 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
       num: '04',
       title: 'Technical SEO ขัดขวาง Crawling',
       body: 'ปัญหา Technical SEO เช่น robots.txt ที่ปิดกั้นหน้าสำคัญ Canonical URL ที่ชี้ไปผิด Duplicate Content ไม่มี Sitemap หรือ Internal Link ที่ขาดหาย สิ่งเหล่านี้ทำให้ Google ไม่สามารถ Crawl และ Index หน้าเว็บได้อย่างถูกต้อง แม้เนื้อหาจะดีก็ไม่มีผล',
-      check: 'เปิด Google Search Console → Coverage ดูว่ามีหน้าใดถูก block, excluded หรือมี Error และตรวจ robots.txt ผ่าน Search Console ด้วย',
+      check: 'เปิด Google Search Console ในรายงาน Coverage ดูว่ามีหน้าใดถูก block, excluded หรือมี Error และตรวจ robots.txt ผ่าน Search Console ด้วย',
     },
     {
       num: '05',
@@ -3634,9 +3634,9 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
 
   const selfCheckItems = [
     'พิมพ์ site:yourdomain.com ใน Google — ถ้าไม่มีผลเลย เว็บยังไม่ได้ Index',
-    'Google Search Console → Performance → ดูว่ามี Impression เพิ่มขึ้นทุกเดือนไหม',
-    'Google Search Console → Coverage → ดูว่ามีหน้าที่มี Error หรือถูก Exclude',
-    'PageSpeed Insights → ทดสอบหน้าหลักทั้ง Mobile และ Desktop',
+    'Google Search Console ในรายงาน Performance ไปยัง ดูว่ามี Impression เพิ่มขึ้นทุกเดือนไหม',
+    'Google Search Console ในรายงาน Coverage ไปยัง ดูว่ามีหน้าที่มี Error หรือถูก Exclude',
+    'PageSpeed Insights แล้ว ทดสอบหน้าหลักทั้ง Mobile และ Desktop',
     'ค้นหา keyword หลักของคุณใน Google แล้วดูว่าเว็บปรากฏในหน้าไหน',
     'เปรียบเทียบเนื้อหาของคุณกับเว็บที่ติดอันดับ 1–3 — ของคุณให้คุณค่ากว่าไหม?',
   ]
@@ -3728,7 +3728,7 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ไม่แน่ใจว่าปัญหา SEO ของเว็บไซต์คุณอยู่ที่ไหน?"
-        description="Discovery Audit วิเคราะห์ภาพรวม SEO ของเว็บไซต์ ระบุสาเหตุที่ทำให้ rank ต่ำหรือไม่มี Organic Traffic พร้อม Roadmap ที่บอกว่าต้องแก้อะไรก่อน"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap วิเคราะห์ภาพรวม SEO ของเว็บไซต์ ระบุสาเหตุที่ทำให้ rank ต่ำหรือไม่มี Organic Traffic พร้อม Roadmap ที่บอกว่าต้องแก้อะไรก่อน"
       />
 
       <ArticleSection title="วิธีตรวจสอบ SEO ด้วยตัวเองเบื้องต้น">
@@ -3739,7 +3739,7 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
         <ArticleImage
           src="/image/blog/seo-not-working/seo-not-working-dashboard.png"
           alt="Google Search Console Dashboard — ตรวจสอบ Coverage, Performance และ Indexing เพื่อวิเคราะห์ปัญหา SEO"
-          caption="Google Search Console: เริ่มตรวจจาก Overview → Coverage → Performance"
+          caption="Google Search Console: เริ่มตรวจจาก Overview ไปยัง Coverage ไปยัง Performance"
         />
         <P>
           ถ้าตรวจแล้วพบว่าเว็บมี Impression ใน Google Search Console แต่คนไม่คลิก
@@ -3784,7 +3784,7 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           เริ่มจากการตรวจสอบ Google Search Console และค้นหาด้วย site:yourdomain.com
-          ถ้ายังไม่เห็นภาพชัด Discovery Audit จะช่วยระบุปัญหาและลำดับความสำคัญ
+          ถ้ายังไม่เห็นภาพชัด การวิเคราะห์เว็บไซต์และวาง Roadmap จะช่วยระบุปัญหาและลำดับความสำคัญ
           เพื่อให้รู้ว่าต้องลงมือแก้อะไรก่อน
         </P>
         <P>
@@ -3884,7 +3884,7 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
                 ['ต้องมีเว็บไซต์?', 'ไม่จำเป็น', 'แนะนำให้มี', 'จำเป็น'],
                 ['ตัวชี้วัดหลัก', 'Call, Direction, Website Click', 'Maps ranking + organic traffic', 'Keyword ranking + traffic'],
                 ['เหมาะกับ', 'ร้านค้า, ร้านอาหาร, คลินิก', 'ธุรกิจหน้าร้านที่อยากเติบโต', 'E-commerce, B2B, Content'],
-                ['Quick Win?', '✓ เร็วมาก', '✓ เร็วกว่า SEO', '✗ ใช้เวลา'],
+                ['Quick Win?', 'เร็วมาก', 'เร็วกว่า SEO', '✗ ใช้เวลา'],
               ].map(([dim, maps, local, seo]) => (
                 <tr key={dim}>
                   <td className="px-4 py-3 font-medium text-neutral-950">{dim}</td>
@@ -4094,7 +4094,7 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
               <ul className="mt-3 grid gap-2">
                 {items.map(item => (
                   <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
-                    <span className="mt-0.5 shrink-0 text-teal-500">✓</span>
+                    <span className="mt-0.5 shrink-0 text-teal-500">•</span>
                     {item}
                   </li>
                 ))}
@@ -4151,19 +4151,19 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
             </thead>
             <tbody className="divide-y divide-neutral-100">
               {[
-                ['ร้านอาหาร / คาเฟ่', '✓ มาก', 'ลูกค้าหิวตัดสินใจเร็ว ค้นหาก่อนไปเสมอ'],
-                ['คลินิก / ทันตกรรม', '✓ มาก', 'ต้องการ trust + location ก่อนนัด'],
-                ['โรงแรม / ที่พัก', '✓ มาก', 'นักท่องเที่ยวค้นหาตาม location ก่อนจอง'],
-                ['ร้านนวด / สปา', '✓ มาก', 'ค้นหา "ใกล้ฉัน" สูงมาก conversion เร็ว'],
-                ['ร้านค้า / Retail', '✓ ดี', 'ลูกค้าอยากดูสินค้าจริงก่อนซื้อ'],
-                ['ช่าง / ซ่อมบำรุง', '✓ ดี', 'ต้องการเร่งด่วน — ติด 3-pack คือชนะ'],
+                ['ร้านอาหาร / คาเฟ่', 'เหมาะมาก', 'ลูกค้าหิวตัดสินใจเร็ว ค้นหาก่อนไปเสมอ'],
+                ['คลินิก / ทันตกรรม', 'เหมาะมาก', 'ต้องการ trust + location ก่อนนัด'],
+                ['โรงแรม / ที่พัก', 'เหมาะมาก', 'นักท่องเที่ยวค้นหาตาม location ก่อนจอง'],
+                ['ร้านนวด / สปา', 'เหมาะมาก', 'ค้นหา "ใกล้ฉัน" สูงมาก conversion เร็ว'],
+                ['ร้านค้า / Retail', 'เหมาะ', 'ลูกค้าอยากดูสินค้าจริงก่อนซื้อ'],
+                ['ช่าง / ซ่อมบำรุง', 'เหมาะ', 'ต้องการเร่งด่วน — ติด 3-pack คือชนะ'],
                 ['E-commerce ไม่มีหน้าร้าน', '✗ ไม่เหมาะ', 'ไม่มี physical location ให้แสดงบน Maps'],
                 ['SaaS / Software', '✗ ไม่เหมาะ', 'ลูกค้าไม่ค้นหาด้วย location keyword'],
                 ['B2B ขายทั่วประเทศ', '△ จำกัด', 'SEO ทั่วไปหรือ GEO เหมาะกว่า'],
               ].map(([type, fit, why]) => (
                 <tr key={type}>
                   <td className="thai-readable px-4 py-3 font-medium text-neutral-950">{type}</td>
-                  <td className={`px-4 py-3 font-semibold ${fit.startsWith('✓') ? 'text-teal-700' : fit.startsWith('✗') ? 'text-neutral-400' : 'text-amber-600'}`}>{fit}</td>
+                  <td className={`px-4 py-3 font-semibold ${fit.startsWith('เหมาะ') ? 'text-teal-700' : fit.startsWith('✗') ? 'text-neutral-400' : 'text-amber-600'}`}>{fit}</td>
                   <td className="thai-readable px-4 py-3 text-neutral-600">{why}</td>
                 </tr>
               ))}
@@ -4221,7 +4221,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         <ArticleImage
           src="/image/blog/local-seo/local-seo-road-map.png"
           alt="Local SEO Roadmap — ขั้นตอนการทำ Local SEO ตั้งแต่ GBP Audit จนถึง Monthly Activities"
-          caption="Local SEO Roadmap: GBP → Keywords → Citations → Reviews → Content → Posts"
+          caption="Local SEO Roadmap: GBP ไปยัง Keywords ไปยัง Citations ไปยัง Reviews ไปยัง Content ไปยัง Posts"
         />
       </ArticleSection>
 
@@ -4253,7 +4253,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         />
         <div className="rounded-xl border border-teal-100 bg-teal-50/60 p-4">
           <p className="thai-readable text-sm leading-6 text-teal-800">
-            ถ้าตอบ "ไม่" มากกว่า 3 ข้อ → <strong>Local SEO Audit ฟรี</strong> จะช่วยให้รู้ว่าควรแก้อะไรก่อนเพื่อเห็นผลเร็วที่สุด
+            ถ้าตอบ "ไม่" มากกว่า 3 ข้อ ไปยัง <strong>Local SEO Audit ฟรี</strong> จะช่วยให้รู้ว่าควรแก้อะไรก่อนเพื่อเห็นผลเร็วที่สุด
           </p>
         </div>
       </ArticleSection>
@@ -4721,7 +4721,7 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection title="วิธีเพิ่มยอดขายร้านอาหาร — เริ่มจากอะไรก่อน?">
-        <P>การ<strong>เพิ่มยอดขายร้านอาหาร</strong>ผ่าน Google Maps ไม่ซับซ้อน แต่ต้องทำให้ครบทุกจุด เพราะลูกค้าตัดสินใจจาก <strong>รูปภาพ → รีวิว → ข้อมูล → โทร/เส้นทาง</strong> ภายในเวลาไม่กี่วินาที</P>
+        <P>การ<strong>เพิ่มยอดขายร้านอาหาร</strong>ผ่าน Google Maps ไม่ซับซ้อน แต่ต้องทำให้ครบทุกจุด เพราะลูกค้าตัดสินใจจาก <strong>รูปภาพ รีวิว ข้อมูล และการโทรหรือขอเส้นทาง</strong> ภายในเวลาไม่กี่วินาที</P>
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="min-w-[480px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
             <thead className="bg-[#fbfaf6]">
@@ -7005,7 +7005,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
     {
       num: '05',
       title: 'Deploy ขึ้น Internet',
-      prompt: 'ไปที่ netlify.com → Drop Zone → ลากโฟลเดอร์ไปวาง → เว็บ live ใน 30 วินาที',
+      prompt: 'ไปที่ netlify.com จากนั้นเปิด Drop Zone ลากโฟลเดอร์ไปวาง แล้วเว็บจะ live ภายในประมาณ 30 วินาที',
       result: 'ได้ URL ฟรี (.netlify.app) หรือ connect domain เองก็ได้',
     },
   ]
@@ -7063,7 +7063,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
                       "{step.prompt}"
                     </p>
                   </div>
-                  <p className="thai-readable mt-2 break-words text-sm text-teal-700">→ {step.result}</p>
+                  <p className="thai-readable mt-2 break-words text-sm text-teal-700">ไปยัง {step.result}</p>
                 </div>
               </div>
             </div>
@@ -7113,7 +7113,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ทำเว็บด้วย Claude แล้ว อยากให้มีคนเจอจริงๆ?"
-        description="Discovery Audit วิเคราะห์ว่าเว็บที่คุณสร้างขาดอะไร และต้องทำ SEO ตรงไหนก่อนให้ลูกค้าเจอ"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap วิเคราะห์ว่าเว็บที่คุณสร้างขาดอะไร และต้องทำ SEO ตรงไหนก่อนให้ลูกค้าเจอ"
       />
 
       <ArticleSection title="Claude ช่วย SEO ได้อะไร — ต้องการ consultant ตรงไหน?">
@@ -7126,7 +7126,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
             <ul className="mt-3 grid gap-2">
               {claudeCanDo.map((item) => (
                 <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                  <span className="mt-0.5 shrink-0 text-teal-600">✓</span>
+                  <span className="mt-0.5 shrink-0 text-teal-600">•</span>
                   {item}
                 </li>
               ))}
@@ -7137,7 +7137,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
             <ul className="mt-3 grid gap-2">
               {needConsultant.map((item) => (
                 <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                  <span className="mt-0.5 shrink-0 text-amber-600">→</span>
+                  <span className="mt-0.5 shrink-0 text-amber-600"></span>
                   {item}
                 </li>
               ))}
@@ -7230,7 +7230,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
                   'สร้าง FAQ และ content template',
                 ].map((i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="shrink-0 text-teal-600">→</span>
+                    <span className="shrink-0 text-teal-600"></span>
                     {i}
                   </li>
                 ))}
@@ -7247,7 +7247,7 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
                   'Local SEO และ AI Search strategy',
                 ].map((i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="shrink-0 text-amber-600">→</span>
+                    <span className="shrink-0 text-amber-600"></span>
                     {i}
                   </li>
                 ))}
@@ -7281,7 +7281,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
       num: '01',
       title: 'ทำ Keyword Research ให้ตรง Search Intent',
       body: 'ก่อนเขียนบทความหรือปรับหน้าเว็บ ต้องรู้ก่อนว่าลูกค้าค้นหาด้วยคำว่าอะไร และคำนั้นมี Search Intent แบบไหน — ต้องการข้อมูล (Informational) กำลังเปรียบเทียบ (Commercial) หรือพร้อมซื้อแล้ว (Transactional) การเลือกคีย์เวิร์ดผิดประเภท ต่อให้มี Traffic เพิ่มขึ้นก็อาจไม่เกิดยอดขาย เพราะพาคนที่ยังไม่พร้อมซื้อเข้ามาในหน้าที่ออกแบบมาสำหรับคนพร้อมซื้อ',
-      tip: 'เริ่มจาก Google Search Console → Performance ดูว่าตอนนี้เว็บไซต์ได้ Impression จากคำค้นไหนอยู่แล้วบ้าง แล้วขยายคีย์เวิร์ดที่ใกล้เคียงจากตรงนั้น จะเร็วกว่าการเริ่มจากศูนย์',
+      tip: 'เริ่มจาก Google Search Console ในรายงาน Performance ดูว่าตอนนี้เว็บไซต์ได้ Impression จากคำค้นไหนอยู่แล้วบ้าง แล้วขยายคีย์เวิร์ดที่ใกล้เคียงจากตรงนั้น จะเร็วกว่าการเริ่มจากศูนย์',
     },
     {
       num: '02',
@@ -7465,7 +7465,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
                 Organic Traffic เติบโตต่อเนื่องและ Product Listing Page ถูก Index ครบถ้วน
               </p>
               <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
               </Link>
             </div>
           </div>
@@ -7483,7 +7483,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
                 พร้อม Backlink Support อันดับขึ้นจาก #5 สู่ #1 ภายใน 3 เดือน
               </p>
               <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
               </Link>
             </div>
           </div>
@@ -7503,7 +7503,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
                 ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
               </p>
               <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
               </Link>
             </div>
           </div>
@@ -7553,7 +7553,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?"
-        description="Discovery Audit ช่วยวิเคราะห์ Keyword โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยวิเคราะห์ Keyword โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด"
       />
 
       <ArticleSection title="ทำครบแล้วแต่ Traffic ยังไม่ขึ้น?">
@@ -7661,7 +7661,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="เช็คแล้วเจอเลข — แต่รู้ไหมว่ามันบอกอะไร?"
-        description="เลขนี้บอกอะไรคุณบ้าง? คู่แข่งที่รู้เลขตัวเองอยู่แล้วกำลังแก้จุดอ่อนไปเรื่อยๆ ในขณะที่คุณเพิ่งจะมาเช็คเป็นครั้งแรก Discovery Audit ช่วยอ่านเลขนี้ให้ว่าดีหรือแย่ และควรแก้จุดไหนก่อน"
+        description="เลขนี้บอกอะไรคุณบ้าง? คู่แข่งที่รู้เลขตัวเองอยู่แล้วกำลังแก้จุดอ่อนไปเรื่อยๆ ในขณะที่คุณเพิ่งจะมาเช็คเป็นครั้งแรก การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยอ่านเลขนี้ให้ว่าดีหรือแย่ และควรแก้จุดไหนก่อน"
       />
 
       <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์คู่แข่ง (ฟรี แต่เป็นตัวเลขประมาณการ)">
@@ -7703,7 +7703,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
               ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
             </p>
             <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-              ดู Case Studies เพิ่มเติม <span aria-hidden="true">→</span>
+              ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
             </Link>
           </div>
         </div>
@@ -7906,7 +7906,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
             'แก้ปัญหา Technical เล็กน้อยของระบบ Ecommerce เช่น Canonical URL และการทำ Indexing ให้เนื้อหาใหม่ถูกเก็บข้อมูลได้เร็วขึ้น',
           ].map((item) => (
             <div key={item} className="flex items-start gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3">
-              <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+              <span className="mt-0.5 shrink-0 font-bold text-teal-500"></span>
               <p className="thai-readable text-sm text-neutral-700">{item}</p>
             </div>
           ))}
@@ -7943,7 +7943,7 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
             <Link to="/services/seo" className="font-semibold underline decoration-teal-400 underline-offset-2 hover:text-teal-700">
               บริการ SEO ของ Saralak Search
             </Link>{' '}
-            หรือขอ Discovery Audit เพื่อดูโอกาสของเว็บไซต์ก่อนเริ่มลงมือ
+            หรือขอให้ทีมช่วยวิเคราะห์เว็บไซต์และวาง Roadmap เพื่อดูโอกาสของเว็บไซต์ก่อนเริ่มลงมือ
           </p>
         </div>
         <ReadMoreLinks items={[
@@ -8145,7 +8145,7 @@ function SalesTechniquesArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="15 เทคนิคการเพิ่มยอดขาย เริ่มจากตรงไหนก่อนดี?">
         <P>
           "เทคนิคเพิ่มยอดขาย" มีให้อ่านเยอะมาก แต่หลายบทความรวมทุกอย่างปนกันจนไม่รู้ว่าควรเริ่มจากอะไรก่อน
-          บทความนี้จัดกลุ่ม 15 เทคนิคออกเป็น 3 ชุดตามลำดับที่ลูกค้าเจอธุรกิจจริง: เจอธุรกิจ → ตัดสินใจซื้อ → กลับมาซื้อซ้ำ
+          บทความนี้จัดกลุ่ม 15 เทคนิคออกเป็น 3 ชุดตามลำดับที่ลูกค้าเจอธุรกิจจริง: เจอธุรกิจ จากนั้นตัดสินใจซื้อ และกลับมาซื้อซ้ำ
           เพื่อให้เห็นว่าธุรกิจของคุณควรโฟกัสกลุ่มไหนก่อนตามสถานการณ์ปัจจุบัน
         </P>
         <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
@@ -8274,7 +8274,7 @@ function AeoChecklistArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ทำ Checklist คนเดียวไม่ไหว? ให้ทีมช่วยตรวจให้"
-        description="Discovery Audit ตรวจสอบ Content Structure, Schema และ Technical ของเว็บไซต์คุณ พร้อมบอกว่าข้อไหนควรแก้ก่อนเพื่อเห็นผลเร็วที่สุด"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ตรวจสอบ Content Structure, Schema และ Technical ของเว็บไซต์คุณ พร้อมบอกว่าข้อไหนควรแก้ก่อนเพื่อเห็นผลเร็วที่สุด"
       />
 
       <ArticleSection title="หมวดที่ 3: Featured Snippet Targeting — เจาะรูปแบบคำตอบที่ถูกต้อง (7 รายการ)">
@@ -8525,7 +8525,7 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ไม่รู้จะเริ่มจัดงบตรงไหนก่อน?"
-        description="Discovery Audit ช่วยดูสถานะปัจจุบันของร้านคุณในแต่ละช่องทาง แล้วแนะนำว่าควรจัดสรรงบไปตรงไหนก่อนเพื่อเห็นผลเร็วที่สุด"
+        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยดูสถานะปัจจุบันของร้านคุณในแต่ละช่องทาง แล้วแนะนำว่าควรจัดสรรงบไปตรงไหนก่อนเพื่อเห็นผลเร็วที่สุด"
       />
 
       <ArticleSection title="ข้อผิดพลาดที่ร้านสปาส่วนใหญ่ทำในการวางแผนการตลาด">
@@ -8664,7 +8664,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         'เชื่อมด้วยเหตุผล เช่น ปัญหานี้ต้องการคุณสมบัติแบบไหน แล้วสินค้าตอบโจทย์อย่างไร',
         'หลีกเลี่ยงคำโฆษณาล้วนๆ เช่น ดีที่สุด คุณภาพเยี่ยม ที่ไม่มีเหตุผลรองรับ',
       ],
-      recommendation: 'Framework ที่เราใช้เมื่อเหมาะกับ Intent คือ Problem → Requirement → Solution → Product โดยไม่จำเป็นต้องยัด Product เข้าไปในทุก Section',
+      recommendation: 'Framework ที่เราใช้เมื่อเหมาะกับ Intent คือ Problem, Requirement, Solution และ Product โดยไม่จำเป็นต้องยัด Product เข้าไปในทุก Section',
     },
     {
       id: 'internal-links',
@@ -8798,14 +8798,14 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
             'Business Relevance — แบรนด์มี Visibility ตั้งแต่ช่วงที่ผู้ค้นยังไม่ได้ค้นหาสินค้าหรือชื่อแบรนด์โดยตรง',
           ].map((item) => (
             <div key={item} className="flex items-start gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3">
-              <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+              <span className="mt-0.5 shrink-0 font-bold text-teal-500"></span>
               <p className="thai-readable text-sm text-neutral-700">{item}</p>
             </div>
           ))}
         </div>
         <P>
           พูดให้ชัดคือ ผลลัพธ์ไม่ได้เป็นแค่ "บทความถูกอ้างอิง" แต่เป็น{' '}
-          <strong>คำค้นแบบ Non-brand → AI Overview → แบรนด์ถูกอ้างอิงในฐานะแหล่งข้อมูล → แนะนำ Packaging → แบรนด์กลายเป็นส่วนหนึ่งของคำตอบ</strong>
+          <strong>คำค้นแบบ Non-brand นำไปสู่ AI Overview จากนั้นแบรนด์ถูกอ้างอิงเป็นแหล่งข้อมูล มีการแนะนำ Packaging และแบรนด์กลายเป็นส่วนหนึ่งของคำตอบ</strong>
           {' '}นี่เป็นหนึ่งในเป้าหมายเชิงธุรกิจของ GEO: ไม่ได้มองเฉพาะ Ranking หรือ Traffic แต่รวมถึงการทำให้แบรนด์และ Solution ถูกค้นพบในคำตอบที่ AI สร้างขึ้นด้วย
         </P>
       </ArticleSection>
@@ -8813,7 +8813,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
       <div className="rounded-xl bg-teal-950 p-6 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">บริการจาก Saralak Search</p>
         <h3 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">วาง Search Strategy ให้ Content ตอบทั้ง Google Search และ AI Search</h3>
-        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">Discovery Audit ช่วยตรวจว่า Content, Technical SEO และเส้นทางจาก Search Intent ไปสู่ Business Context ควรปรับตรงไหนก่อน</p>
+        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยตรวจว่า Content, Technical SEO และเส้นทางจาก Search Intent ไปสู่ Business Context ควรปรับตรงไหนก่อน</p>
         <div className="mt-5 flex flex-col items-center gap-5 sm:flex-row">
           <img src="/image/icon/line-qr-sariahihi.png" alt="สแกน QR Code เพื่อแอด LINE ปรึกษา Saralak Search" width="112" height="112" className="h-28 w-28 shrink-0 rounded-lg bg-white p-2" />
           <div className="flex flex-col gap-3 sm:flex-row">
