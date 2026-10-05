@@ -3301,7 +3301,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
       <SourceBox items={[
         'Google Search Central: Optimizing your website for generative AI features on Google Search — checked 5 October 2026',
         'Google Search Console: Generative AI performance report — checked 5 October 2026',
-        'OpenAI Help Center: ChatGPT Search and OAI-SearchBot guidance — checked 5 October 2026',
+        'OpenAI Publishers and Developers FAQ: OAI-SearchBot and ChatGPT referral guidance — checked 5 October 2026',
         'Saralak Search GEO audit methodology — methodology, not a Google ranking system',
         'Saralak Search AI Overview case observation: non-brand query “ขายอะไรดีตลาดนัด” — observational evidence, not causal proof',
       ]} />
