@@ -211,7 +211,7 @@ export default function Layout() {
                 </NavLink>
               ))}
               <NavLink to="/services" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-semibold text-teal-400" onClick={() => setOpen(false)}>
-                ดูบริการทั้งหมด →
+                ดูบริการทั้งหมด
               </NavLink>
               <div className="my-1 border-t border-neutral-800" />
               {navItems.map((item) => (
@@ -256,7 +256,7 @@ export default function Layout() {
           <div>
             <img src="/logo.svg" alt={brand.name} className="h-8 w-auto" />
             <p className="thai-readable mt-4 max-w-xs text-sm leading-7 text-neutral-500">
-              ที่ปรึกษา SEO, GEO และ AI Search สำหรับธุรกิจไทย
+              Saralak Search คือที่ปรึกษา SEO, GEO และ AI Search สำหรับธุรกิจไทย
               ช่วยให้แบรนด์ถูกเจอบน Google, ChatGPT, Gemini และ Perplexity
             </p>
             <div className="mt-4 flex flex-wrap gap-2">

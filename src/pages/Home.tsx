@@ -19,7 +19,7 @@ function WorkSnapshot() {
       <div className="divide-y divide-neutral-800">
         {[
           { metric: '+180%', title: 'Organic traffic growth', text: 'ปรับโครงสร้างหน้า Product Listing, On-page และ Search Intent เพื่อเพิ่ม Organic visibility จากหน้าที่มีผลต่อธุรกิจ' },
-          { metric: '#5 → #1', title: 'Competitive keyword', text: 'ปรับ Landing Page และ On-page ตาม intent จนคีย์เวิร์ดหลักขึ้นอันดับ 1' },
+          { metric: 'Rank 5 to Rank 1', title: 'Competitive keyword', text: 'ปรับ Landing Page และ On-page ตาม intent จนคีย์เวิร์ดหลักขึ้นอันดับ 1' },
           { metric: 'AI Overview', title: 'Content cited by Google AI', text: 'วางเนื้อหาให้ตอบ intent ชัด มีข้อมูล ตัวเลข การเปรียบเทียบ และ passage ที่ดึงไปตอบได้อย่างอิสระ' },
         ].map((item) => (
           <div key={item.title} className="grid gap-2 px-5 py-5 sm:grid-cols-[110px_1fr] sm:gap-5">
@@ -53,7 +53,7 @@ const industries = [
 
 const proofCaptions = [
   'Organic โตต่อเนื่อง',
-  'อันดับ #5 → #1',
+  'จากอันดับ 5 ขึ้นสู่อันดับ 1',
   'ติด AI Overview',
   'ถูก ChatGPT แนะนำ',
 ]
@@ -477,8 +477,8 @@ export default function Home() {
             {[
               { metric: '+180%', label: 'Organic Traffic Growth', c: 'text-emerald-400' },
               { metric: '#1',    label: 'อันดับในคำค้นหลัก',      c: 'text-teal-400'    },
-              { metric: 'AI ✓',  label: 'ปรากฏใน AI Overview',    c: 'text-blue-400'    },
-              { metric: 'GPT ✓', label: 'ChatGPT แนะนำแบรนด์',   c: 'text-violet-400'  },
+              { metric: 'AI Overview', label: 'ปรากฏใน AI Overview', c: 'text-blue-400' },
+              { metric: 'ChatGPT', label: 'ChatGPT แนะนำแบรนด์', c: 'text-violet-400' }
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <p className={`text-4xl font-black sm:text-5xl ${item.c}`}>{item.metric}</p>

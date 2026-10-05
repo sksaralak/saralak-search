@@ -18,13 +18,13 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'ranking-growth',
-    projectName: 'อันดับ #5 → #1',
+    projectName: 'อันดับ Rank 5 to Rank 1',
     image: '/proof/ranking-bangsaen-serp.png',
     industry: 'Local / Commercial Search',
     service: 'SEO Strategy',
     channel: 'Google Organic Search',
     duration: '3 เดือน',
-    result: '#5 → #1 Ranking',
+    result: 'Rank 5 to Rank 1 Ranking',
     businessImpact: 'เพิ่มโอกาสการเข้าถึงลูกค้าจากคีย์เวิร์ดที่มีการแข่งขันสูง',
     card: {
       challenge:
@@ -119,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'nutrition-content-growth',
-    projectName: 'Clicks 150 → 2,157',
+    projectName: 'Organic Clicks from 150 to 2,157',
     image: '/proof/nutrition-content-growth.png',
     industry: 'E-commerce / สุขภาพและโภชนาการ',
     service: 'Content SEO',
