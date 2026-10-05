@@ -1241,7 +1241,7 @@ export const blogPosts: BlogPost[] = [
     category: 'GEO',
     excerpt:
       'GEO Checklist 40 ข้อสำหรับคนที่กำลังทำ GEO ใช้ตรวจ Search Foundation, Entity, Content, Technical, Evidence และ Measurement พร้อมลำดับว่าควรแก้อะไรก่อน โดยแยก Official Guidance ออกจากวิธีทำงานของ Saralak Search ชัดเจน',
-    readingTime: '16 min read',
+    readingTime: '17 min read',
     publishedDate: '2026-06-15',
     lastModifiedDate: '2026-10-05',
     authorName: 'Saralak Kaewkum',
