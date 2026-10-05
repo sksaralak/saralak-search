@@ -710,7 +710,7 @@ export const proteinSeoFaqs: FAQItem[] = [
       'มักเห็นผลช้ากว่าการยิงโฆษณา แต่ต้นทุนต่อการเข้าชมในระยะยาวต่ำกว่ามาก ตัวชี้วัดที่ควรติดตามคือจำนวนคำค้นหาเฉพาะเจาะจงที่เริ่มมีอันดับดีขึ้น ไม่ใช่แค่ยอดเข้าชมรวม',
   },
   {
-    question: 'ผลลัพธ์ Organic Clicks โต 150 → 2,157 ในบทความนี้เป็นตัวอย่างจริงไหม?',
+    question: 'ผลลัพธ์ Organic Clicks เพิ่มจาก 150 เป็น 2,157 ในบทความนี้เป็นตัวอย่างจริงไหม?',
     answer:
       'เป็นข้อมูลจริงจาก Google Search Console ของลูกค้ากลุ่มสุขภาพและโภชนาการรายหนึ่ง (ไม่เปิดเผยชื่อแบรนด์ตามข้อตกลงความเป็นส่วนตัว) แสดงเพื่อให้เห็นภาพว่าคีย์เวิร์ดกลุ่ม Non-Brand ที่เจาะจงสามารถสร้างผลลัพธ์ได้จริงภายในระยะเวลา 3 เดือน ไม่ได้การันตีว่าทุกธุรกิจจะได้ผลลัพธ์เท่ากัน เพราะขึ้นอยู่กับอุตสาหกรรมและการแข่งขันของแต่ละเว็บไซต์',
   },
@@ -840,7 +840,7 @@ export const blogPosts: BlogPost[] = [
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
     heroImageMobile: '/image/blog/tham-web-claude/tham-web-claude-banner-mweb.png',
-    heroImageAlt: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า — Claude สร้างเว็บ → ได้เว็บแต่ไม่มีคนเข้า → SEO Strategy → มีคนเข้า',
+    heroImageAlt: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า — Claude สร้างเว็บ แต่ยังไม่มีคนเข้า จากนั้นจึงวาง SEO Strategy เพื่อเพิ่ม Organic Traffic',
     ogImage: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
     metaTitle: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า | Saralak Search',
     metaDescription:
@@ -1368,7 +1368,7 @@ export const blogPosts: BlogPost[] = [
     aiSummary: [
       'GEO หรือ Generative Engine Optimization คือการเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงใน Generative AI และ AI Search',
       'Google ระบุในปี 2026 ว่า SEO best practices ยังเป็น foundation ของ Generative AI Search และไม่มี special AI schema หรือ markup ที่ต้องมีเพื่อเข้า AI Overviews หรือ AI Mode',
-      'Saralak Search ใช้ GEO Content Framework: Answer → Evidence → Entity → Context → Retrieval เพื่อทำให้แต่ละ Section ชัด มีหลักฐาน และอ่านแยกได้',
+      'Saralak Search ใช้ GEO Content Framework: Answer, Evidence, Entity, Context และ Retrieval เพื่อทำให้แต่ละ Section ชัด มีหลักฐาน และอ่านแยกได้',
       'เคสจริงคำค้น Non-brand “ขายอะไรดีตลาดนัด” แสดงให้เห็นว่าบทความที่ตอบหลาย Sub-intent พร้อมตัวเลขและ Context สามารถถูก AI Overview อ้างอิงหลาย Passage จากหน้าเดียวได้',
       'การวัด GEO ต้องดู Search Visibility, AI Visibility, Brand Mention, Citation, Non-brand Query Coverage และ Conversion เป็นช่วงเวลา ไม่สรุปจาก Prompt เดียว',
     ],
@@ -1439,7 +1439,7 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'ทำ GEO ที่ไหนดี วิธีเลือก GEO Agency และเปรียบเทียบบริษัทในไทย',
     ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
     aiSummary: [
-      'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ตั้งแต่ Baseline → สิ่งที่จะลงมือทำ → วิธีวัดผล → ผลลัพธ์ทางธุรกิจ ไม่ใช่เลือกจากคำว่า GEO หรือจำนวนบทความเพียงอย่างเดียว',
+      'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ตั้งแต่ Baseline, สิ่งที่จะลงมือทำ, วิธีวัดผล และผลลัพธ์ทางธุรกิจ ไม่ใช่เลือกจากคำว่า GEO หรือจำนวนบทความเพียงอย่างเดียว',
       'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่รับประกันการปรากฏใน AI features',
       'บทความนี้เปรียบเทียบ 6 ผู้ให้บริการที่มีหน้าบริการ GEO หรือ AI Search สาธารณะและตรวจสอบได้ ณ 18 กันยายน 2026 โดยไม่ได้จัดอันดับว่าบริษัทใดดีที่สุดสำหรับทุกธุรกิจ',
       'การวัดผลควรรวม Search visibility, Google Search Console Generative AI impressions, AI Mention/Citation จากชุดคำถามที่กำหนด, GA4 referral/engagement และ Lead หรือ Conversion',
@@ -1476,10 +1476,10 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'วิธีทำ GEO แบบ Step by Step สำหรับ Google AI Search และ ChatGPT',
     ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     aiSummary: [
-      'วิธีทำ GEO ควรเริ่มจาก Baseline → Crawl/Index/Bot Access → Topic Ownership → Content/Evidence → Entity/Internal Link → External Evidence → Measurement ไม่ใช่เริ่มจากการใส่ Schema หรือผลิตบทความเพิ่มทันที',
+      'วิธีทำ GEO ควรเริ่มจาก Baseline, Crawl/Index/Bot Access, Topic Ownership, Content/Evidence, Entity/Internal Link, External Evidence และ Measurement ไม่ใช่เริ่มจากการใส่ Schema หรือผลิตบทความเพิ่มทันที',
       'Google ระบุว่า SEO best practices และ Search index ยังเป็นพื้นฐานของ AI Overviews และ AI Mode และไม่มี special AI schema หรือ llms.txt ที่จำเป็นต่อการปรากฏใน Generative AI Search',
       'สำหรับ ChatGPT Search การอนุญาต OAI-SearchBot ช่วยให้เว็บไซต์มีสิทธิ์ถูกค้นพบ แต่ไม่รับประกันว่า ChatGPT จะกล่าวถึงหรืออ้างอิงเว็บไซต์ในทุกคำถาม',
-      'Saralak Search ใช้กรอบ Answer → Evidence → Entity → Context → Retrieval เพื่อรีวิว Content กรอบนี้เป็น Methodology จากงานจริง ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
+      'Saralak Search ใช้กรอบ Answer, Evidence, Entity, Context และ Retrieval เพื่อรีวิว Content กรอบนี้เป็น Methodology จากงานจริง ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
       'การวัดผลควรรวม Search Console Generative AI visibility, Mention/Citation จาก Query Set เดิม, GA4 Referral/Engagement และ Business Outcome เช่น Lead หรือ Purchase',
     ],
     faqs: howToDoGeoFaqs,
@@ -1579,7 +1579,7 @@ export const blogPosts: BlogPost[] = [
       'คำกว้างอย่าง "เวย์โปรตีน" แข่งขันยากเพราะถูกแบรนด์ใหญ่และมาร์เก็ตเพลสครองพื้นที่ ควรเจาะคีย์เวิร์ดหางยาวแทน',
       'คีย์เวิร์ดหางยาวที่มีเงื่อนไขเฉพาะ เช่น ไม่มีน้ำตาล แพ้แลคโตส คีโต มีปริมาณค้นหาต่ำแต่ใกล้จุดตัดสินใจซื้อมากกว่า',
       'ควรแยกหน้าเว็บระหว่าง Plant Protein กับ Whey Protein เพราะเหตุผลการซื้อของลูกค้าต่างกัน',
-      'ตัวอย่างจริงจากลูกค้ากลุ่มสุขภาพและโภชนาการ: Organic Clicks โต 150 → 2,157 ครั้ง/เดือนภายใน 3 เดือน จากคีย์เวิร์ดหางยาวกลุ่ม Non-Brand',
+      'ตัวอย่างจริงจากลูกค้ากลุ่มสุขภาพและโภชนาการ: Organic Clicks เพิ่มจาก 150 เป็น 2,157 ครั้ง/เดือนภายใน 3 เดือน จากคีย์เวิร์ดหางยาวกลุ่ม Non-Brand',
     ],
     faqs: proteinSeoFaqs,
     bodyVariant: 'protein-seo',
