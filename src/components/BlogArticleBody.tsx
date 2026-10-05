@@ -1833,9 +1833,9 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
 
       <SourceBox
         items={[
-          'Google Search Central — AI features and your website, checked 21 September 2026',
-          'Google Search Console Help — Generative AI performance report, checked 21 September 2026',
-          'Google Search documentation updates — FAQ rich result removal, checked 21 September 2026',
+          'Google Search Central — AI features and your website, checked 5 October 2026',
+          'Google Search Console Help — Generative AI performance report, checked 5 October 2026',
+          'Google Search documentation updates — FAQ rich result removal, checked 5 October 2026',
           'Saralak Search client AI Overview case data (anonymised), checked September 2026',
         ]}
       />
@@ -2990,9 +2990,9 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
     'เนื้อหาหลักเข้าถึงได้ใน Rendered HTML และตรวจเว็บไซต์ JavaScript ว่า Search Crawler เห็น Content จริง โดยไม่ถือว่า CSR ใช้ไม่ได้เสมอไป',
     'Internal Link สำคัญเป็นลิงก์ที่ Crawl ได้จริง เช่น <a href> หรือ React Link ที่ Render เป็น Anchor ไม่พึ่ง Click Handler อย่างเดียว',
     'XML Sitemap ครอบคลุม URL ที่ต้องการ Index และส่ง/ตรวจใน Google Search Console',
-    'robots.txt ไม่บล็อก Crawler ที่จำเป็นต่อเป้าหมาย: Googlebot สำหรับ Google Search และ OAI-SearchBot หากต้องการให้เว็บไซต์มีสิทธิ์ปรากฏใน ChatGPT Search',
-    'Structured Data อธิบาย Visible Content อย่างถูกต้อง และไม่มี Special AI Schema ที่ใส่เพียงเพื่อหวัง AI Overview หรือ AI Mode',
-    'เลือก Article/BlogPosting, Organization, BreadcrumbList หรือ Schema อื่นตามประเภทหน้าจริง; ไม่พึ่ง FAQPage เพราะ Google ยุติ FAQ rich result ตั้งแต่ 7 พฤษภาคม 2026',
+    'robots.txt ไม่บล็อก Crawler ที่จำเป็นต่อเป้าหมาย: Googlebot สำหรับ Google Search และ OAI-SearchBot หากต้องการให้เว็บไซต์ถูกค้นพบและอ้างอิงใน ChatGPT Search',
+    'Search generative AI control ใน Search Console ตั้งเป็น Include หากต้องการให้เว็บไซต์มีสิทธิ์แสดงลิงก์และ Content ใน AI Overviews และ AI Mode',
+    'Structured Data อธิบาย Visible Content อย่างถูกต้อง โดยเลือก Article/BlogPosting, Organization, BreadcrumbList หรือ Schema อื่นตามประเภทหน้าจริง และไม่มี Special AI Schema ที่ต้องเพิ่มเพื่อให้ติด AI Search',
     'มอง llms.txt เป็น Optional Infrastructure สำหรับระบบที่รองรับ ไม่ใช่ Google Ranking Factor เพราะ Google Search ระบุว่าไม่ใช้ไฟล์นี้',
     'HTTPS, Mobile Usability, Page Experience และ Core Web Vitals อยู่ในระดับใช้งานได้ดี เพราะส่งผลต่อประสบการณ์และ Search Foundation แม้ไม่ใช่สูตรรับประกัน AI Citation',
   ]
@@ -3009,9 +3009,9 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
   ]
 
   const measurementItems = [
-    'ตรวจ Search Console Generative AI performance report เพื่อดู Impressions จาก Google AI Overviews และ AI Mode เมื่อ Property มีข้อมูลและรายงานพร้อมใช้งาน',
+    'ตรวจ Search Console Generative AI performance report เพื่อดู Impressions จาก Google AI Overviews และ AI Mode; Google ระบุว่าเปิดใช้ข้อมูลเชิงลึกนี้ทั่วโลกตั้งแต่ 31 สิงหาคม 2026 แต่บาง Property อาจยังไม่เห็นรายงานหากข้อมูลไม่เพียงพอหรือสิทธิ์รายงานยังไม่พร้อม',
     'ดู Search Console ปกติควบคู่กัน: Impressions, Clicks, Queries และ Landing Pages เพื่อไม่แยก AI Visibility ออกจาก Search Foundation',
-    'ตรวจ GA4 Referral Session จาก AI Platform เมื่อมี Referral Data และระวังว่า Attribution อาจไม่ครบทุก Journey',
+    'ตรวจ GA4 Referral Session จาก AI Platform เมื่อมีข้อมูล; สำหรับ ChatGPT OpenAI ระบุว่าลิงก์ Referral จาก ChatGPT Search ใส่ utm_source=chatgpt.com เพื่อช่วยแยก Traffic ได้',
     'ทำ Prompt Set คงที่สำหรับ ChatGPT, Gemini หรือ Perplexity โดยบันทึก Date, Platform, Prompt, Mention, Citation และ URL เพื่อเปรียบเทียบเป็นรอบ',
     'เก็บ Citation/Source Log ว่าหน้าใดและข้อมูลส่วนไหนถูกใช้ แล้วดู Pattern ตามช่วงเวลา แทนการสรุปจาก Prompt เดียว',
     'เชื่อม Visibility กับ Business Outcome เช่น Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion โดยไม่สรุป Causation จาก Mention เพียงอย่างเดียว',
@@ -3027,6 +3027,7 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
 
   const contents = [
     ['geo-checklist-scope', 'GEO Checklist คืออะไร และใช้ตรวจอะไร'],
+    ['geo-checklist-use', 'ทำ GEO จาก Checklist นี้อย่างไร'],
     ['geo-checklist-guidance', 'Official Guidance vs Saralak Methodology'],
     ['geo-checklist-entity', '1. Entity'],
     ['geo-checklist-content', '2. Content'],
@@ -3044,17 +3045,17 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       <ArticleSection id="geo-checklist-scope" title="GEO Checklist คืออะไร และใช้ตรวจอะไร">
         <P>
-          <strong>GEO Checklist คือกรอบ Audit สำหรับตรวจว่าเว็บไซต์มี Search Foundation, Content, Entity, Evidence และ Measurement พร้อมพอสำหรับ Search และ AI Visibility หรือไม่</strong>
-          {' '}หน้านี้ใช้กรอบ 40 ข้อของ Saralak Search แบ่งเป็น 5 หมวด ได้แก่ Entity, Content, Technical, Mention / Evidence และ Measurement
-          โดยไม่ถือว่าเป็น Checklist ทางการของ Google และไม่รับประกันว่า AI จะเลือก Mention หรือ Citation หลังทำครบ
+          <strong>ถ้ากำลังทำ GEO หน้านี้ใช้เป็น QA Checklist เพื่อตรวจว่า Search Foundation, Entity, Content, Technical, Evidence และ Measurement พร้อมพอสำหรับ Search และ AI Visibility หรือยัง</strong>
+          {' '}กรอบของ Saralak Search มี 40 ข้อ แบ่งเป็น 5 หมวด และเรียง Priority ให้แก้สิ่งที่เป็น Blocker ก่อน ไม่ใช่ไล่ทำ Schema, FAQ, llms.txt หรือ External Mention แบบไม่มีลำดับ
         </P>
         <P>
-          หน้านี้มีหน้าที่เป็น <strong>Implementation / QA Checklist</strong> โดยเฉพาะ
-          ถ้าต้องการนิยามและหลักการอ่าน
+          GEO Checklist นี้ไม่ใช่ Checklist ทางการของ Google และทำครบแล้วไม่รับประกัน Ranking, Mention หรือ Citation
+          หน้าที่ของหน้านี้คือช่วยตรวจงานหลังเริ่มทำ GEO และหาว่าอะไรยังขาด
+          ถ้าต้องการนิยามอ่าน
           {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}และถ้าต้องการขั้นตอนลงมือทำแบบเป็นลำดับอ่าน
+          {' '}ส่วนขั้นตอน Implementation แบบตั้งแต่ต้นจนจบให้ไปที่
           {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
-          {' '}แทนการให้หน้านี้แย่ง Intent ของสองหน้าดังกล่าว
+          {' '}เพื่อไม่ให้สองหน้าถือครอง Search Intent เดียวกัน
         </P>
       </ArticleSection>
 
@@ -3079,11 +3080,34 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         </ol>
       </nav>
 
+      <ArticleSection id="geo-checklist-use" title="ทำ GEO จาก Checklist นี้อย่างไร: แก้ Blocker ก่อน แล้วค่อยเพิ่ม Visibility">
+        <P>
+          การใช้ Checklist ให้คุ้มไม่ใช่การนับว่าผ่านกี่ข้อ แต่คือการหา <strong>ข้อที่ขวางขั้นถัดไป</strong>
+          จากงาน Audit เราแบ่งการลงมือเป็น 3 รอบ เพื่อไม่ให้ทีมเสียเวลาไปกับงานที่ยังไม่สร้างผลเพราะ Foundation ไม่พร้อม
+        </P>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            ['รอบ 1: แก้ Blocker', 'ตรวจ Indexability, Canonical, Rendering, Crawlable Link, Googlebot/OAI-SearchBot access และ Search generative AI control ก่อน ถ้าส่วนนี้ผิด งาน Content หรือ Mention ด้านบนจะวัดผลยาก'],
+            ['รอบ 2: จัด Ownership + Content', 'กำหนด Owner URL ต่อ Intent ทำ Entity ให้ชัด ตอบ Main Query ตั้งแต่ต้น และเติม Evidence หรือ Information Gain ที่ Generic Content ไม่มี'],
+            ['รอบ 3: Validate + Measure', 'ค่อยเพิ่ม External Evidence ที่เกี่ยวข้อง ตั้ง Prompt/Citation Log และเชื่อม Search Console, GA4 กับ Lead หรือ Conversion เพื่อดูว่าความเปลี่ยนแปลงมีผลต่อธุรกิจหรือไม่'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-base leading-7 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          Decision rule ง่าย ๆ คือ <strong>ถ้าหน้ายังเข้า Index ไม่ได้หรือ Owner URL ยังไม่ชัด อย่าเริ่มจาก AI-specific tactic</strong>
+          และถ้า Search Foundation ใช้งานได้แล้วแต่ Content ยังไม่มีคำตอบหรือหลักฐานที่เหนือกว่าหน้าทั่วไป ให้ลงทุนกับ Content ก่อนการเพิ่ม Mention ภายนอก
+        </P>
+      </ArticleSection>
+
       <ArticleSection id="geo-checklist-guidance" title="ก่อนใช้ Checklist: อะไรคือ Official Guidance และอะไรคือ Saralak Search Methodology">
         <P>
-          <strong>ข้อเท็จจริงจาก Google:</strong> SEO best practices เดิมยังเป็นพื้นฐานของ AI Overviews และ AI Mode
-          หน้าเว็บยังต้องเข้าถึงและ Index ได้ตามหลัก Search ปกติ Google ไม่กำหนด Special AI Schema และระบุว่า Google Search ไม่ใช้ llms.txt
-          ดังนั้น Schema, FAQ หรือ llms.txt ไม่ควรถูกอธิบายว่าเป็นเงื่อนไขที่ทำให้ติด AI Search
+          <strong>ข้อเท็จจริงจาก Google:</strong> Google ระบุว่า SEO best practices เดิมยังเป็นฐานของ AI Overviews และ AI Mode และมองการ Optimize สำหรับ Generative AI Search ว่ายังอยู่ในกรอบของ SEO
+          หน้าเว็บต้องเข้า Index และมีสิทธิ์แสดง Snippet ตามข้อกำหนดของ Search รวมถึงต้องไม่ถูก Exclude จาก Search generative AI features ใน Search Console
+          Google ยังระบุว่าไม่มี Special AI Schema และ Google Search ไม่ใช้ llms.txt ดังนั้น Schema, FAQ หรือ llms.txt ไม่ควรถูกอธิบายว่าเป็นทางลัดให้ติด AI Search
         </P>
         <P>
           <strong>วิธีทำงานของ Saralak Search:</strong> การแบ่ง Checklist เป็น Entity, Content, Technical, Mention / Evidence และ Measurement
@@ -3091,8 +3115,8 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           และมี Baseline สำหรับวัด Search กับ AI Visibility กรอบนี้เป็น Methodology ไม่ใช่ Ranking Factor ของ Google
         </P>
         <P>
-          สำหรับ ChatGPT Search, OpenAI ระบุว่าเว็บไซต์ที่ต้องการมีสิทธิ์ปรากฏในผลค้นหาควรไม่บล็อก <strong>OAI-SearchBot</strong>
-          แต่การอนุญาต Crawler ไม่ได้รับประกัน Placement หรือ Citation เช่นเดียวกับ Search Engine อื่น
+          สำหรับ ChatGPT Search, OpenAI ระบุว่าเว็บไซต์สาธารณะสามารถปรากฏในผลค้นหาได้ และถ้าต้องการให้ Content ถูกค้นพบ สรุป อ้างอิง และลิงก์ได้ชัด ควรไม่บล็อก <strong>OAI-SearchBot</strong>
+          การอนุญาต Crawler เป็นเพียงเงื่อนไขด้านการเข้าถึง ไม่ได้รับประกัน Placement หรือ Citation
         </P>
         <div className="rounded-lg border border-sky-200 bg-sky-50 p-5">
           <p className="thai-readable text-sm leading-6 text-neutral-700">
@@ -3100,8 +3124,8 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
             {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central: AI optimization guide</a>,
             {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Search Console Generative AI performance report</a>
             {' '}และ
-            {' '}<a href="https://help.openai.com/th-th/articles/9237897-chatgpt-search" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: ChatGPT Search</a>.
-            {' '}ตรวจสอบล่าสุด 21 กันยายน 2026
+            {' '}<a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: Publishers and Developers FAQ</a>.
+            {' '}ตรวจสอบล่าสุด 5 ตุลาคม 2026
           </p>
         </div>
       </ArticleSection>
@@ -3192,8 +3216,8 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <P>
           เคสเว็บไซต์ E-commerce แห่งหนึ่งของ Saralak Search ใช้คำค้น Non-brand “ขายอะไรดีตลาดนัด” เป็น Main Intent
           และแตก Sub-intent เช่น ขายอะไรดีแบบลงทุนน้อย เมนู ต้นทุน ราคา และการเลือกบรรจุภัณฑ์
-          เนื้อหาไม่ได้หยุดที่ Definition แต่มีตัวเลข ตัวอย่างสถานการณ์ และเชื่อม Product Category เฉพาะจุดที่เกี่ยวข้อง
-          ภายหลัง Google AI Overview อ้างอิงหลาย Passage จากหน้าเดียวกัน
+          เนื้อหาใช้รายละเอียดที่ดึงไปใช้ได้จริง เช่น ตัวอย่างราคา 19 / 29 / 39 บาท การเปรียบเทียบเมนู และ Packaging ที่เหมาะกับสินค้าแต่ละประเภท
+          จากนั้นค่อยเชื่อม Product Category ในจุดที่สัมพันธ์กับปัญหาของผู้อ่าน ภายหลัง Google AI Overview อ้างอิงหลาย Passage จากหน้าเดียวกัน
         </P>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
@@ -3260,12 +3284,10 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
       <ArticleSection id="geo-checklist-next" title="อ่านต่อและขั้นถัดไปหลังทำ GEO Checklist">
         <P>
           หาก Checklist พบว่าปัญหาอยู่ที่ Search Foundation หรือ Topic Ownership ให้แก้สองส่วนนี้ก่อนผลิต Content เพิ่ม
-          หากฐาน Organic Visibility ใช้งานได้แล้วแต่ยังไม่ชัดว่า Content, Entity, Evidence และ AI Visibility ควรแก้ตรงไหน
-          {' '}<Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">การวิเคราะห์เว็บไซต์และวาง Roadmap</Link>
-          {' '}ช่วยจัดลำดับ Issue ตาม Impact ได้ก่อนเริ่มงานรายเดือน
-          ส่วนธุรกิจที่มี Scope ชัดและต้องการลงมือทำต่อสามารถดู
-          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
-          {' '}ได้
+          แต่ถ้าฐาน Organic Visibility ใช้งานได้แล้วและต้องการขยาย Content, Entity, Evidence และการวัด AI Visibility เป็นงานต่อเนื่อง
+          สามารถดูขอบเขต
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO ของ Saralak Search</Link>
+          {' '}ซึ่งเชื่อมงาน GEO เข้ากับ SEO Foundation และ Business Outcome แทนการแยกเป็นชุดเทคนิค AI อย่างเดียว
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐาน Generative Engine Optimization' },
@@ -3277,9 +3299,9 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Central: Optimizing your website for generative AI features on Google Search — checked 21 September 2026',
-        'Google Search Console: Generative AI performance report — checked 21 September 2026',
-        'OpenAI Help Center: ChatGPT Search and OAI-SearchBot guidance — checked 21 September 2026',
+        'Google Search Central: Optimizing your website for generative AI features on Google Search — checked 5 October 2026',
+        'Google Search Console: Generative AI performance report — checked 5 October 2026',
+        'OpenAI Help Center: ChatGPT Search and OAI-SearchBot guidance — checked 5 October 2026',
         'Saralak Search GEO audit methodology — methodology, not a Google ranking system',
         'Saralak Search AI Overview case observation: non-brand query “ขายอะไรดีตลาดนัด” — observational evidence, not causal proof',
       ]} />
