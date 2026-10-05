@@ -109,8 +109,8 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen bg-[#fbfaf6] text-neutral-900">
-      {/* Header — dark sticky */}
-      <header className="sticky top-0 z-40 border-b border-neutral-800 bg-neutral-950/96 backdrop-blur-md">
+      {/* Header — fixed */}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-800 bg-neutral-950/96 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
           <NavLink to="/" className="flex shrink-0 items-center gap-2.5">
             <img src="/logo.svg" alt={brand.name} className="h-7 w-auto" />
@@ -230,6 +230,7 @@ export default function Layout() {
         ) : null}
       </header>
 
+      <div aria-hidden="true" className="h-[57px]" />
       <ScrollToTop />
       <Analytics />
       <Outlet />
