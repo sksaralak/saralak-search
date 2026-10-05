@@ -17,10 +17,6 @@ export const brand = {
 
 export const services = [
   {
-    title: 'Discovery Audit',
-    description: 'ค้นหาสิ่งที่กำลังขวางการเติบโตของเว็บไซต์',
-  },
-  {
     title: 'Search Growth Retainer',
     description: 'เพิ่มโอกาสให้ลูกค้าเจอแบรนด์ผ่าน Google และ AI',
   },
@@ -35,24 +31,6 @@ export const services = [
 ]
 
 export const packages = [
-  {
-    title: 'Discovery Audit',
-    price: 'Starting from 5,000 THB',
-    detail:
-      'Understand what is limiting your visibility on Google and AI Search before investing in long-term growth.',
-    sections: [
-      {
-        title: 'Questions we help answer',
-        items: [
-          'How easily can customers discover your brand?',
-          'How visible are you compared to competitors?',
-          'How well do Google and AI platforms understand your business?',
-          'What is limiting your growth potential?',
-          'What should be prioritized first?',
-        ],
-      },
-    ],
-  },
   {
     title: 'Search Growth Retainer',
     price: 'Starting from 25,000 THB/month',
