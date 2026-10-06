@@ -1363,7 +1363,7 @@ export const blogPosts: BlogPost[] = [
     authorUrl: '/about',
     metaTitle: 'GEO คืออะไร? Generative Engine Optimization ต่างจาก SEO | Saralak Search',
     metaDescription:
-      'GEO คือ Generative Engine Optimization แนวทางเพิ่มความพร้อมของเว็บไซต์และแบรนด์สำหรับ AI Search เข้าใจความต่างจาก SEO พร้อม Google guidance ปี 2026 เคสจริง วิธีวัดผล และข้อจำกัด',
+      'GEO คือ Generative Engine Optimization แนวทางเพิ่มความพร้อมของเว็บไซต์และแบรนด์สำหรับ AI Search เข้าใจความต่างจาก SEO พร้อมข้อมูลจาก Google เคสจริง วิธีวัดผล และข้อจำกัดที่ควรรู้',
     heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-geo/what-is-geo-banner-mweb.webp',
     heroImageAlt: 'GEO คืออะไร Generative Engine Optimization สำหรับ Google และ AI Search',
