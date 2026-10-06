@@ -508,7 +508,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           {[
             ['1. Discover', 'หน้าและข้อมูลต้องเข้าถึงได้ผ่านระบบ Search หรือ crawler ที่เกี่ยวข้อง เช่น Googlebot หรือ OAI-SearchBot ตามข้อกำหนดของแต่ละแพลตฟอร์ม'],
             ['2. Retrieve', 'ระบบค้นหรือดึงแหล่งที่เกี่ยวข้องกับ Query และบริบท ไม่จำเป็นต้องเป็นชุด URL เดียวกับ Organic Top 10 เสมอไป'],
-            ['3. Generate', 'ระบบสังเคราะห์คำตอบจากบริบทที่ดึงมา และอาจแสดง Citation หรือ Supporting Links แตกต่างกันตามแพลตฟอร์ม'],
+            ['3. Generate', 'ระบบนำข้อมูลที่ค้นพบมาประกอบเป็นคำตอบ และอาจแสดง Citation หรือ Supporting Links แตกต่างกันตามแพลตฟอร์ม'],
             ['4. Act', 'ผู้ใช้อาจคลิก Citation ค้นชื่อแบรนด์ต่อ เปิดหน้า Service หรือจบ Journey โดยไม่มีคลิก จึงต้องวัดทั้ง Visibility และ Business Outcome'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
