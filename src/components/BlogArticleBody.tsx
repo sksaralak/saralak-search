@@ -757,6 +757,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
   )
 }
 const seoGeoAeoContents = [
+  { id: 'seo-aeo-geo-serp-intent', label: 'คนค้น SEO AEO GEO ต้องการรู้อะไร' },
   { id: 'seo-geo-aeo-meaning', label: 'SEO, AEO และ GEO คืออะไร' },
   { id: 'seo-aeo-geo-comparison', label: 'ตารางเปรียบเทียบ' },
   { id: 'google-official-vs-methodology', label: 'เอกสาร Google vs Methodology' },
@@ -820,11 +821,10 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <section className="grid gap-5" data-speakable>
         <P>
-          SEO, AEO และ GEO คือ 3 ชั้นของการเพิ่มการมองเห็นจาก Search ที่ทำงานต่อกัน
-          ไม่ใช่ 3 งานที่แยกขาดจากกัน SEO ทำให้เว็บไซต์ถูกค้นพบและเข้าใจได้,
-          AEO ทำให้คำตอบบนหน้าเว็บชัดพอสำหรับฟีเจอร์คำตอบ,
-          ส่วน GEO ทำให้แบรนด์มีข้อมูลและความน่าเชื่อถือมากพอสำหรับ AI Search
-          ที่อาจพูดถึง อ้างอิง หรือแนะนำแบรนด์ในบริบทที่เกี่ยวข้อง
+          <strong>SEO, AEO และ GEO เป็น 3 กรอบงานที่มีพื้นที่ทับซ้อนกัน แต่เน้นคนละปัญหา</strong>
+          SEO ดูฐานการค้นพบและ Organic Visibility, AEO เน้นความชัดของคำตอบในระดับหน้าและ Section,
+          ส่วน GEO มองกว้างไปถึง Entity, Evidence, Brand Mention และ Visibility ใน Generative AI / AI Search
+          ทั้งสามจึงควรเชื่อมกัน ไม่ใช่แยกทำเป็นเทคนิคคนละชุด
         </P>
         <P>
           หน้านี้ทำหน้าที่เป็นหน้าเปรียบเทียบและ decision guide สำหรับคำถาม
@@ -835,6 +835,33 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           {' '}แทนการอ่านทุกอย่างซ้ำในบทความเดียว
         </P>
       </section>
+
+      <ArticleSection id="seo-aeo-geo-serp-intent" title="คนค้น “SEO AEO GEO” ต้องการรู้อะไร">
+        <P>
+          Search Intent ของคำว่า <strong>“SEO AEO GEO”</strong> เป็นการเปรียบเทียบและเลือกแนวทาง ไม่ใช่การขอ Definition ของคำใดคำหนึ่ง
+          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> Google AI Overview เปิดด้วยความหมายของ SEO แล้วตามด้วยหัวข้อ
+          “ความแตกต่างระหว่าง SEO, AEO และ GEO” ขณะที่ Organic Results หลักเป็นบทความเปรียบเทียบ 3 แนวทางโดยตรง
+        </P>
+        <P>
+          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>80 ครั้งต่อเดือน</strong> และ Global Volume ประมาณ
+          <strong>1.9K</strong> พร้อมคำใกล้เคียงอย่าง “seo vs aeo vs geo” ประมาณ 70 ครั้งต่อเดือนในไทย,
+          “seo geo aeo” ประมาณ 30 และ “seo aeo geo คือ” ประมาณ 20
+          ตัวเลขเหล่านี้เป็น Snapshot ของ Demand ณ วันที่ตรวจ ไม่ใช่ค่าคงที่
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['Intent หลัก', 'ต้องการรู้ความต่างของ SEO, AEO และ GEO ในภาพเดียว มากกว่าการอ่านนิยามแยกทีละคำ'],
+            ['คำถามถัดไป', 'หลังเข้าใจความต่าง ผู้ค้นมักต้องการรู้ว่าเว็บไซต์ควรเริ่มจาก SEO, AEO หรือ GEO ก่อน'],
+            ['Owner URL', 'หน้านี้ถือ Comparison Intent ส่วนคำว่า SEO คืออะไร, AEO คืออะไร และ GEO คืออะไรมีหน้า Definition แยกอยู่แล้ว'],
+            ['Commercial relevance', 'เป็น Mid-funnel informational query ที่เชื่อมไปบริการได้เมื่อผู้อ่านรู้แล้วว่าปัญหาของเว็บไซต์อยู่ชั้นไหน'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
 
       <ArticleSection id="seo-geo-aeo-meaning" title="SEO, AEO และ GEO คืออะไรเมื่อ Search มี AI features">
         <P>
@@ -902,9 +929,9 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="google-official-vs-methodology" title="เอกสาร Google พูดถึง AEO และ GEO อย่างไร">
         <P>
-          Google Search Central ระบุว่า AEO และ GEO เป็นคำที่ใช้ในกลุ่ม third-party advice หรือ service
-          เพื่ออธิบายงานที่โฟกัส visibility ใน AI search experiences จากมุมของ Google
-          การ optimize สำหรับ generative AI search ยังถือเป็นการ optimize สำหรับ Search experience และยังพึ่งพา SEO fundamentals
+          Google Search Central กล่าวถึงคำ AEO และ GEO โดยตรงใน guidance เรื่อง Generative AI Search
+          แต่จากมุมของ Google การ optimize สำหรับ AI Overviews และ AI Mode ยังอยู่บนฐานของ SEO fundamentals และ Search systems เดิม
+          จึงไม่ควรตีความ AEO หรือ GEO ว่าเป็น ranking system ใหม่ที่แยกขาดจาก SEO
         </P>
         <P>
           สำหรับ Google AI Overviews และ AI Mode เอกสารทางการระบุว่าไม่มี requirement พิเศษ ไม่มี AI text file
@@ -1055,9 +1082,9 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>
-          สำหรับ Google Search เอกสารปี 2026 ระบุว่า Search Console มี Search Generative AI performance reports
-          สำหรับ visibility ใน generative AI features เช่น AI Overviews และ AI Mode โดยดู impressions, pages, countries,
-          devices และ dates ได้ แต่รายงานนี้ไม่ใช่รายงานที่แจกแจงว่า prompt ใด quote ประโยคใดจากหน้าเว็บ
+          สำหรับ Google Search, Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode
+          โดยรายงาน Impressions และแยกมิติ Pages, Countries, Dates และ Devices ได้ Google ระบุว่า rollout ข้อมูลเชิงลึกนี้ทั่วโลกตั้งแต่ 31 สิงหาคม 2026
+          แต่รายงานไม่ได้บอกว่า Prompt ใด Quote ประโยคใดจากหน้าเว็บ จึงยังต้องใช้ Search Performance, GA4 และ Business Outcome ร่วมกัน
         </P>
       </ArticleSection>
 
@@ -1078,7 +1105,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         <P>
           ถ้าเว็บไซต์มีบทความและหน้า service อยู่แล้ว แต่ยังไม่ชัดว่าหน้าใดถือครอง keyword ไหน,
           content cluster ซ้ำกันหรือไม่, passage สำคัญตอบคำถามได้พอไหม หรือแบรนด์มี entity signal พอสำหรับ AI Search หรือยัง
-          การเริ่มจาก audit จะช่วยจัดลำดับว่าอะไรควรแก้ก่อน
+          การตรวจข้อมูลปัจจุบันก่อนจะช่วยจัดลำดับว่าอะไรควรแก้ก่อน โดยไม่ต้องเริ่มจากการเพิ่ม Content หรือเปลี่ยน Package ทันที
         </P>
         <P>
           Saralak Search มักเริ่มจากการตรวจ Search Foundation, Topic Ownership, Internal Link, Content Quality,
@@ -1086,19 +1113,19 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           และอะไรควรทำต่อในเชิง GEO
         </P>
         <ReadMoreLinks items={[
-          { to: '/services', label: 'ตรวจสอบเว็บไซต์ฟรี' },
           { to: '/services/seo', label: 'บริการ SEO' },
-          { to: '/services/geo', label: 'บริการ GEO' },
-          { to: '/case-studies', label: 'SEO Case Studies' },
+          { to: '/services/geo', label: 'บริการ GEO & AI Search' },
+          { to: '/services/content-marketing', label: 'บริการ SEO Content' },
+          { to: '/case-studies', label: 'SEO และ AI Search Case Studies' },
         ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Central — AI features and your website, checked September 2026',
-        'Google Search Central — Optimizing for generative AI features on Google Search, checked September 2026',
-        'Google Search Central — Guidance on third-party SEO tools, services, AEO and GEO advice, checked September 2026',
-        'Google Search Central Blog — Search Generative AI performance reports in Search Console, checked September 2026',
-        'Saralak Search case observation — anonymized E-commerce website, non-brand query “ขายอะไรดีตลาดนัด”, September 2026',
+        'Google Search Central — AI features and your website, checked 6 October 2026',
+        'Google Search Central — Optimizing for generative AI features on Google Search, checked 6 October 2026',
+        'Google Search Central — Guidance on third-party SEO tools, services, AEO and GEO advice, checked 6 October 2026',
+        'Google Search Console Help — Generative AI performance report, checked 6 October 2026',
+        'Saralak Search SERP observation for “seo aeo geo”, Ahrefs keyword snapshot and anonymized E-commerce AI Overview case evidence, checked 6 October 2026',
       ]} />
 
       <ArticleFAQ id="seo-geo-aeo-faq" post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
