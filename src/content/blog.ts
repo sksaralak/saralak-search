@@ -115,17 +115,17 @@ export const geoAgencyFaqs: FAQItem[] = [
   {
     question: 'ทำ GEO ที่ไหนดี ควรเลือกจากอะไร?',
     answer:
-      'ควรเลือกจากวิธีทำงานที่ตรวจสอบได้ ไม่ใช่คำว่า GEO บนหน้าเว็บเพียงอย่างเดียว โดยดูว่าทีมสามารถอธิบาย Baseline, Search Intent, Technical SEO, Content และ Entity, วิธีวัด AI Visibility รวมถึงผลลัพธ์ทางธุรกิจได้หรือไม่ และต้องแยกให้ชัดว่าอะไรคือเอกสารทางการของแพลตฟอร์ม อะไรคือ Methodology ของเอเจนซี่',
+      'ควรเลือกจากวิธีทำงานที่ตรวจสอบได้ ไม่ใช่ดูเพียงคำว่า GEO บนหน้าเว็บ โดยดูว่าทีมอธิบายได้หรือไม่ว่าเว็บไซต์มีปัญหาตรงไหน จะตรวจ Search, Content และข้อมูลแบรนด์อย่างไร วัด AI Visibility แบบไหน และเชื่อมผลไปถึง Lead หรือยอดขายอย่างไร',
   },
   {
     question: 'ควรขอดูอะไรจาก GEO Agency ก่อนจ้าง?',
     answer:
-      'อย่างน้อยควรขอดู Scope งาน, ตัวอย่าง Audit หรือ Reporting, วิธีเก็บ Baseline, ชุด Prompt หรือ Query ที่ใช้ติดตาม, เกณฑ์นับ Mention/Citation, วิธีเชื่อมข้อมูลกับ Google Search Console และ GA4 รวมถึงสิ่งที่ลูกค้าต้องเป็นผู้ลงมือทำเอง เพื่อเปรียบเทียบข้อเสนอได้บนฐานเดียวกัน',
+      'อย่างน้อยควรขอดูขอบเขตงาน ตัวอย่าง Audit หรือรายงาน สถานะก่อนเริ่ม ชุดคำถามที่ใช้ติดตาม เกณฑ์นับ Mention/Citation วิธีเชื่อมข้อมูลกับ Google Search Console และ GA4 รวมถึงสิ่งที่ทีมลูกค้าต้องช่วยลงมือทำ เพื่อให้เปรียบเทียบข้อเสนอจากหลายทีมได้บนฐานเดียวกัน',
   },
   {
     question: 'GEO Agency รับประกันให้ ChatGPT หรือ Google AI อ้างอิงได้ไหม?',
     answer:
-      'ไม่ควรรับประกันการถูกอ้างอิงหรือการจัดอันดับ เพราะแต่ละแพลตฟอร์มมีระบบคัดเลือกแหล่งข้อมูลและคำตอบที่เปลี่ยนแปลงได้ สำหรับ Google เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI features และไม่มี Schema หรือการปรับพิเศษที่รับประกันการปรากฏใน AI Overviews หรือ AI Mode',
+      'ไม่ควรรับประกันการถูกอ้างอิงหรือการจัดอันดับ เพราะแต่ละแพลตฟอร์มเปลี่ยนวิธีเลือกแหล่งข้อมูลและสร้างคำตอบได้ตลอด สำหรับ Google ข้อมูลจาก Search Central ระบุว่าพื้นฐาน SEO เดิมยังสำคัญต่อ AI features และไม่มี Schema หรือการปรับพิเศษที่รับประกันการปรากฏใน AI Overviews หรือ AI Mode',
   },
   {
     question: 'GEO วัดผลอย่างไรในปี 2026?',
@@ -1442,11 +1442,11 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'ทำ GEO ที่ไหนดี วิธีเลือก GEO Agency ที่วัดผลได้และเหมาะกับธุรกิจ',
     ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
     aiSummary: [
-      'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ตั้งแต่ Baseline, Search Foundation, สิ่งที่จะลงมือทำ, วิธีวัดผล และผลลัพธ์ทางธุรกิจ ไม่ใช่เลือกจากคำว่า GEO หรือจำนวนบทความเพียงอย่างเดียว',
-      'Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่รับประกันการปรากฏใน AI features',
-      'ควรเทียบ Proposal ด้วยเกณฑ์เดียวกัน เช่น Owner URL, Content/Evidence, Entity, Technical SEO, Query Set, Reporting และ Business KPI แทนการเทียบจากแพ็กเกจหรือคำโฆษณา',
-      'การวัดผลควรรวม Search visibility, Google Search Console Generative AI impressions, AI Mention/Citation จากชุดคำถามที่กำหนด, GA4 referral/engagement และ Lead หรือ Conversion',
-      'Red Flag สำคัญคือการรับประกัน Citation, ขาย Schema/FAQ เป็นทางลัด หรือวัดผลจาก Screenshot/Prompt เดียวโดยไม่มี Baseline ที่ทำซ้ำได้',
+      'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ชัดว่าก่อนเริ่มเว็บไซต์อยู่ตรงไหน จะลงมือแก้อะไร วัดผลด้วยอะไร และผลลัพธ์เชื่อมกับธุรกิจอย่างไร',
+      'Google ระบุว่าพื้นฐาน SEO เดิมยังสำคัญต่อ AI Overviews และ AI Mode และไม่มี Schema หรือเทคนิคพิเศษที่รับประกันการปรากฏใน AI features',
+      'ก่อนขอ Proposal ควรใช้ Brief เดียวกันกับทุกทีม เพื่อเทียบได้ว่าใครตรวจ Search Foundation, Content, ข้อมูลแบรนด์ และการวัดผลได้ครบกว่ากัน',
+      'การวัด GEO ควรดูทั้ง Search Visibility, AI Mention/Citation, GA4 Referral/Engagement และ Conversion เช่น Lead, LINE, Call หรือ Purchase',
+      'Red Flag สำคัญคือการรับประกัน Citation, ขาย Schema/FAQ เป็นทางลัด หรือวัดผลจาก Screenshot หรือ Prompt เดียวโดยไม่มีข้อมูลก่อนเริ่มให้เทียบ',
     ],
     faqs: geoAgencyFaqs,
     includeFaqSchema: false,
