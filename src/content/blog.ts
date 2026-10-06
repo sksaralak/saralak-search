@@ -67,7 +67,7 @@ export const seoGeoAeoFaqs: FAQItem[] = [
   {
     question: 'SEO GEO AEO คืออะไร',
     answer:
-      'SEO, AEO และ GEO คือกรอบการทำ Search Visibility ที่เชื่อมกัน SEO ทำให้เว็บไซต์ถูกค้นพบและเข้าใจได้ใน Search, AEO จัดคำตอบให้ชัดพอสำหรับฟีเจอร์คำตอบ เช่น Featured Snippet หรือ AI Overview และ GEO ทำให้แบรนด์มีข้อมูล ความน่าเชื่อถือ และบริบทเพียงพอสำหรับ AI Search ที่อาจพูดถึงหรืออ้างอิงแบรนด์ได้',
+      'SEO, AEO และ GEO เป็นกรอบงานที่มีพื้นที่ทับซ้อนกันแต่เน้นคนละปัญหา SEO ครอบคลุมการค้นพบ Crawl, Index, Ranking และ Organic Visibility, AEO เน้นความชัดของคำตอบในระดับหน้าและ Section ส่วน GEO มองกว้างไปถึง Entity, Evidence, Brand Mention และ AI Search Visibility โดยทั้งสามควรทำบนพื้นฐานข้อมูลและ Search Intent เดียวกัน',
   },
   {
     question: 'SEO กับ AEO ต่างกันอย่างไร',
@@ -1388,8 +1388,8 @@ export const blogPosts: BlogPost[] = [
     slug: 'seo-geo-aeo',
     category: 'SEO',
     excerpt:
-      'SEO, AEO และ GEO คือ 3 ชั้นของ Search Visibility ที่ทำงานร่วมกัน: SEO ทำให้เว็บไซต์ถูกค้นพบ, AEO ทำให้คำตอบชัด และ GEO ทำให้แบรนด์มีโอกาสถูกเข้าใจหรือกล่าวถึงใน AI Search',
-    readingTime: '15 min read',
+      'SEO, AEO และ GEO เป็นกรอบงานที่มีพื้นที่ทับซ้อนกัน: SEO วางฐาน Search, AEO เน้นความชัดของคำตอบ และ GEO ขยายไปสู่ Entity, Evidence และ AI Search Visibility พร้อมวิธีเลือกว่าควรเริ่มจากอะไร',
+    readingTime: '16 min read',
     publishedDate: '2026-05-31',
     lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
