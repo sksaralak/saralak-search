@@ -3702,132 +3702,186 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
 }
 
 function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
+  const diagnosticLayers = [
+    {
+      title: '1. Discovery / Indexing',
+      signal: 'URL สำคัญไม่ถูกพบหรือไม่ถูก Index',
+      check: 'URL Inspection, Page indexing report, robots.txt, canonical, sitemap และ crawlable internal links',
+      next: 'แก้ Technical blocker ก่อนทำ Content เพิ่ม',
+    },
+    {
+      title: '2. Visibility',
+      signal: 'หน้า Index แล้ว แต่ Impression หรือ Query coverage ยังไม่โต',
+      check: 'Search Console > Performance แยกตาม Page และ Query แล้วเทียบช่วงเวลาเดียวกัน',
+      next: 'ตรวจ Search Intent, Topic Ownership, Content Gap และการแข่งขันของ SERP',
+    },
+    {
+      title: '3. Click',
+      signal: 'Impression โต แต่ Organic Clicks ไม่โตตาม',
+      check: 'ดู Query, Page, CTR และ Average Position ร่วมกัน ไม่ดู CTR แบบรวมทั้งเว็บ',
+      next: 'ตรวจอันดับ, Title/Snippet, intent match และองค์ประกอบอื่นบน SERP',
+    },
+    {
+      title: '4. Business Outcome',
+      signal: 'Organic Traffic โต แต่ Lead หรือยอดขายไม่โต',
+      check: 'GA4 + Conversion tracking เช่น Form, LINE, Call, Purchase หรือ Assisted Conversion',
+      next: 'ตรวจ Landing Page, Offer, CTA, UX และคุณภาพของ Query ที่พา Traffic เข้ามา',
+    },
+  ]
+
   const causes = [
     {
       num: '01',
-      title: 'Google ยังไม่ Index เว็บไซต์',
-      body: 'ก่อนที่ Google จะแสดงเว็บไซต์ในผลการค้นหา Googlebot ต้องค้นพบและ Index หน้าเว็บก่อน หากเว็บใหม่มากหรือมีปัญหา Technical เช่น robots.txt ที่ปิดกั้น Crawler หรือไม่มี Sitemap เว็บไซต์อาจไม่ได้รับการ Index เลย — ทำให้ SEO ไม่มีผลไม่ว่าเนื้อหาจะดีแค่ไหน',
-      check: 'พิมพ์ site:yourdomain.com ใน Google ถ้าไม่มีผลออกมาเลย ให้ตรวจ robots.txt, Sitemap และ Google Search Console ในรายงาน Coverage',
+      title: 'หน้าเป้าหมายยังไม่ถูก Index หรือ Canonical ผิด',
+      body: 'ถ้าหน้าหลักยังไม่อยู่ใน Google index งาน On-page หรือ Content ที่ทำเพิ่มบนหน้านั้นก็ยังสร้าง Organic Visibility ไม่ได้ สาเหตุอาจมาจาก noindex, robots.txt, canonical ที่ชี้ไป URL อื่น, redirect, soft 404 หรือ Google ยังไม่เลือก URL นั้นเป็น canonical',
+      check: 'ตรวจ URL สำคัญด้วย URL Inspection และ Page indexing report ใน Google Search Console แล้วดูเหตุผลที่ Google แสดงจริง ไม่ใช้ site:domain.com เป็นเครื่องมือหลักในการยืนยันสถานะ Index',
     },
     {
       num: '02',
-      title: 'Keyword ที่เลือกแข่งขันสูงเกินไปสำหรับเว็บใหม่',
-      body: 'เว็บไซต์ที่เพิ่งสร้างไม่มีโอกาสชนะ keyword อย่าง "seo" หรือ "ประกันชีวิต" ที่มีเว็บไซต์ใหญ่ลงทุนมาหลายปีอยู่ก่อนแล้ว การเลือก keyword ที่ตรงกับขนาดและ Authority ของเว็บไซต์คือหัวใจของ Keyword Strategy ที่ดี',
-      check: 'ดูว่าเว็บที่ติดอันดับ 1–3 ของ keyword นั้นมีกี่ Backlink และ Domain Authority เท่าไหร่ — ถ้าห่างกันมาก ให้เปลี่ยน keyword',
+      title: 'หน้า Index แล้ว แต่ไม่ได้ตอบ Search Intent ที่ SERP ต้องการ',
+      body: 'หน้าเว็บอาจเขียนดีแต่เป็นคนละประเภทกับสิ่งที่ผู้ค้นหาต้องการ เช่น Query ต้องการหน้าบริการแต่ส่งบทความ หรือ Query ต้องการ comparison แต่หน้าให้เพียง definition การแก้ Title หรือเพิ่มจำนวนคำจึงไม่ช่วยถ้า Page Type และ Intent ผิดตั้งแต่ต้น',
+      check: 'ค้น Query เป้าหมายและดูรูปแบบหน้าที่ติดอันดับจริง เช่น Guide, Category, Product, Service, Tool หรือ Comparison แล้วเทียบกับหน้า owner URL ของเว็บไซต์',
     },
     {
       num: '03',
-      title: 'เนื้อหาไม่ตรงกับ Search Intent',
-      body: 'คนที่ค้นหา "รับทำบัญชีใกล้ฉัน" ต้องการเบอร์โทรและราคา ไม่ใช่บทความอธิบายว่าการทำบัญชีคืออะไร ถ้าเนื้อหาในหน้าเว็บไม่ตอบสิ่งที่ผู้ค้นหาต้องการจริงๆ Google จะไม่แสดงหน้านั้นในผลลัพธ์ที่ตรงกัน',
-      check: 'ค้นหา keyword ของคุณใน Google แล้วดูว่าหน้าที่ติดอันดับ 1–3 มีเนื้อหาแบบไหน — นั่นคือ Search Intent ที่ Google เชื่อ',
+      title: 'Keyword Demand ต่ำ หรือเลือก Query ที่ไม่สร้าง Traffic จริง',
+      body: 'การติดอันดับไม่ได้แปลว่าจะมี Organic Traffic เสมอไป หาก Query มี Search Demand ต่ำมาก เป็นคำแบรนด์ภายใน หรือมีพฤติกรรมค้นหาเป็นฤดูกาล Traffic อาจนิ่งแม้อันดับดี การวิเคราะห์จึงต้องดู Demand และ Query mix ไม่ใช่ Ranking อย่างเดียว',
+      check: 'ดู Queries ใน Search Console ร่วมกับ keyword data จากเครื่องมือที่ใช้ และแยก Brand / Non-brand เพื่อดูว่าการเติบโตมาจากการค้นหาแบรนด์เดิมหรือการค้นพบใหม่',
     },
     {
       num: '04',
-      title: 'Technical SEO ขัดขวาง Crawling',
-      body: 'ปัญหา Technical SEO เช่น robots.txt ที่ปิดกั้นหน้าสำคัญ Canonical URL ที่ชี้ไปผิด Duplicate Content ไม่มี Sitemap หรือ Internal Link ที่ขาดหาย สิ่งเหล่านี้ทำให้ Google ไม่สามารถ Crawl และ Index หน้าเว็บได้อย่างถูกต้อง แม้เนื้อหาจะดีก็ไม่มีผล',
-      check: 'เปิด Google Search Console ในรายงาน Coverage ดูว่ามีหน้าใดถูก block, excluded หรือมี Error และตรวจ robots.txt ผ่าน Search Console ด้วย',
+      title: 'Topic Ownership และ Internal Link ไม่ชัด',
+      body: 'ถ้ามีหลาย URL พยายามตอบ intent เดียวกัน เว็บไซต์อาจกระจาย relevance และ internal link ไปหลายหน้าแทนที่จะมี owner page ที่ชัด ปัญหานี้พบได้บ่อยเมื่อสร้างบทความจำนวนมากโดยไม่มี keyword mapping หรือสร้างหน้าใหม่จาก template ต่อเนื่อง',
+      check: 'ค้นหา Query เดียวกันใน Search Console แล้วดูว่ามีหลาย Landing Page สลับกันรับ Impression หรือไม่ จากนั้นกำหนด owner URL และปรับ internal link ให้ชัดก่อนสร้างหน้าใหม่',
     },
     {
       num: '05',
-      title: 'เว็บไซต์โหลดช้าหรือ Core Web Vitals ต่ำ',
-      body: 'Google ใช้ Page Experience เป็นส่วนหนึ่งของ Ranking Factor โดยเฉพาะ Core Web Vitals ได้แก่ LCP (Largest Contentful Paint), INP (Interaction to Next Paint) และ CLS (Cumulative Layout Shift) เว็บที่โหลดช้าหรือ Layout กระโดดจะเสียเปรียบคู่แข่งที่ผ่าน threshold เหล่านี้',
-      check: 'ทดสอบที่ PageSpeed Insights (pagespeed.web.dev) โดยใช้ URL ของหน้าสำคัญในเว็บไซต์ ดูทั้ง Mobile และ Desktop',
+      title: 'Technical SEO ทำให้ Google เข้าถึงหรือประมวลผลหน้าได้ไม่เต็มที่',
+      body: 'JavaScript rendering, redirect chain, sitemap ที่ไม่ตรงกับ canonical, navigation ที่ crawler ตามไม่ได้ หรือ status code ผิด สามารถทำให้หน้าที่ควรสร้าง Organic Traffic ถูกค้นพบช้าหรือถูกตีความไม่ตรงตามที่ตั้งใจ',
+      check: 'ตรวจ rendered HTML, HTTP status, canonical, sitemap และลิงก์ภายในของหน้าสำคัญ โดยเฉพาะเว็บไซต์ React/SPA หรือเว็บไซต์ที่เพิ่ง migrate',
     },
     {
       num: '06',
-      title: 'ขาด Backlink จากเว็บภายนอก',
-      body: 'Backlink คือสัญญาณที่บอก Google ว่าเว็บไซต์อื่นไว้วางใจและอ้างอิงเนื้อหาของคุณ เว็บไซต์ที่มีเนื้อหาดีแต่ไม่มีใครลิงก์มาถึงจะสู้กับเว็บไซต์ที่มี Authority สูงกว่าได้ยาก โดยเฉพาะใน keyword ที่มีการแข่งขัน',
-      check: 'ตรวจ Backlink ของคู่แข่งที่ติดอันดับ 1–3 ผ่าน Ahrefs Free หรือ Moz Link Explorer แล้วเปรียบเทียบกับของตัวเอง',
+      title: 'Content มีข้อมูลทั่วไป แต่ไม่มีเหตุผลให้เลือกหน้านี้เหนือคู่แข่ง',
+      body: 'Google ไม่ได้กำหนดจำนวนคำขั้นต่ำสำหรับหน้าเว็บ และเนื้อหาสั้นไม่ได้แปลว่าเป็น Thin Content โดยอัตโนมัติ ปัญหาที่ควรตรวจจริงคือหน้าให้ข้อมูลเพียงพอต่อ intent หรือไม่ มีข้อมูลต้นฉบับ ตัวอย่าง หลักฐาน comparison หรือ first-hand experience ที่เพิ่มคุณค่าหรือยัง',
+      check: 'เทียบหน้าเดียวกันกับผลลัพธ์หลักใน SERP แล้วถามว่าอะไรคือข้อมูลที่หน้านี้มีเพิ่ม ไม่ใช่เพียงว่ายาวกว่าหรือมี keyword มากกว่า',
     },
     {
       num: '07',
-      title: 'Thin Content — เนื้อหาบางเกินไปหรือไม่มีคุณค่า',
-      body: 'หน้าบริการที่มีข้อความแค่ 200–300 คำ บทความที่ copy มาจากที่อื่น หรือเนื้อหาที่ไม่ได้ให้ประโยชน์จริงๆ จะถูก Google มองว่าเป็น Thin Content ซึ่งไม่คู่ควรกับการแสดงในอันดับต้นๆ และยังเสี่ยงโดน Manual Action',
-      check: 'เปิดหน้าบริการหลักของเว็บ แล้วถามตัวเองว่าถ้าลูกค้าอ่านหน้านี้แล้วจะได้รับข้อมูลเพียงพอในการตัดสินใจไหม',
+      title: 'Authority และ External Evidence ยังไม่พอสำหรับ Query ที่แข่งขันสูง',
+      body: 'ลิงก์และการอ้างอิงจากเว็บไซต์อื่นยังมีบทบาทต่อการค้นพบและความน่าเชื่อถือของเว็บ แต่จำนวน Backlink อย่างเดียวไม่ใช่สูตรตัดสินอันดับ หน้าใหม่ในตลาดที่แข่งขันสูงอาจต้องสร้างทั้ง Content quality, topical coverage, brand evidence และลิงก์ที่เกี่ยวข้องร่วมกัน',
+      check: 'เทียบคู่แข่งทั้งคุณภาพหน้า, brand/entity presence, referring domains และความเกี่ยวข้องของลิงก์ ไม่ใช้ Domain Rating หรือจำนวน Backlink เพียงค่าเดียวตัดสินว่า Keyword “ยากเกินไป”',
     },
     {
       num: '08',
-      title: 'Local SEO ขาดหาย สำหรับธุรกิจท้องถิ่น',
-      body: 'ธุรกิจที่มีที่ตั้งและให้บริการในพื้นที่ เช่น คลินิก ร้านอาหาร สำนักงานบัญชี ต้องทำ Local SEO ควบคู่กับ SEO ทั่วไปด้วย ไม่ว่าจะเป็น Google Business Profile ที่ครบถ้วน NAP (ชื่อ ที่อยู่ เบอร์โทร) ที่สม่ำเสมอ และรีวิวจากลูกค้า',
-      check: 'ค้นหาชื่อธุรกิจของคุณใน Google Maps ดูว่า Profile ครบถ้วนและมีรีวิวไหม และ NAP บนเว็บไซต์ตรงกับ Google Business Profile ไหม',
+      title: 'Traffic มีอยู่แล้ว แต่การวัดผลทำให้เข้าใจผิดว่า SEO ไม่โต',
+      body: 'Organic Traffic ใน GA4 และ Clicks ใน Search Console ไม่ใช่ metric เดียวกัน และจะไม่ตรงกันแบบหนึ่งต่อหนึ่ง Search Console วัดการมองเห็นและการคลิกจาก Google Search ส่วน GA4 วัด session และพฤติกรรมหลังเข้ามาในเว็บไซต์ จึงต้องใช้ตามคำถามที่ต้องการตอบ',
+      check: 'ใช้ Search Console วิเคราะห์ Search Visibility และ Query/Page performance แล้วใช้ GA4 วิเคราะห์ Sessions, Engagement และ Conversion อย่าเทียบยอดสองระบบแล้วสรุปว่าข้อมูลผิดเพียงเพราะตัวเลขไม่เท่ากัน',
     },
-  ]
-
-  const selfCheckItems = [
-    'พิมพ์ site:yourdomain.com ใน Google — ถ้าไม่มีผลเลย เว็บยังไม่ได้ Index',
-    'Google Search Console ในรายงาน Performance ไปยัง ดูว่ามี Impression เพิ่มขึ้นทุกเดือนไหม',
-    'Google Search Console ในรายงาน Coverage ไปยัง ดูว่ามีหน้าที่มี Error หรือถูก Exclude',
-    'PageSpeed Insights แล้ว ทดสอบหน้าหลักทั้ง Mobile และ Desktop',
-    'ค้นหา keyword หลักของคุณใน Google แล้วดูว่าเว็บปรากฏในหน้าไหน',
-    'เปรียบเทียบเนื้อหาของคุณกับเว็บที่ติดอันดับ 1–3 — ของคุณให้คุณค่ากว่าไหม?',
-  ]
-
-  const expertSignals = [
-    'ทำ SEO มากกว่า 6 เดือนแล้วยังไม่มี Organic Traffic เลย',
-    'Google Search Console แสดง Error จำนวนมากแต่ไม่รู้จะเริ่มแก้จากไหน',
-    'Rank ขึ้นแต่ไม่มีคนคลิก หรือ Bounce Rate สูงผิดปกติ',
-    'เคยติดอันดับแต่ rank ตกลงมาโดยไม่ทราบสาเหตุ',
-    'คู่แข่งติดอันดับสูงกว่าทั้งที่เนื้อหาดูไม่ได้ดีกว่า',
-    'ต้องการ Scale SEO แต่ไม่มีทรัพยากรภายในเพียงพอ',
   ]
 
   return (
     <article className="grid gap-10">
       {post.aiSummary && <AISummary items={post.aiSummary} />}
 
-      <ArticleSection title="ทำ SEO แล้วไม่เห็นผล — เกิดจากอะไร?">
+      <ArticleSection title="Organic Traffic คืออะไร?">
         <P>
-          ถ้าทำ SEO มาสักระยะแล้วยังไม่เห็นผล อย่าเพิ่งสรุปว่า SEO ไม่ได้ผลสำหรับธุรกิจของคุณ
-          เพราะส่วนใหญ่ปัญหาไม่ได้อยู่ที่ SEO ไม่ work
-          แต่อยู่ที่สิ่งที่ทำอยู่ไม่ถูกจุด หรือมีอะไรบางอย่างขัดขวางโดยที่ไม่รู้ตัว
+          <strong>Organic Traffic คือผู้เข้าชมที่เข้ามายังเว็บไซต์จากผลการค้นหาแบบไม่เสียค่าโฆษณา</strong>
+          เช่น การคลิกจาก Google Search ไปยังบทความ หน้าบริการ หรือหน้าสินค้า
+          แต่การดูแค่จำนวน Traffic ยังไม่พอ เพราะหน้าเว็บอาจมี Impression เพิ่มขึ้นโดย Click ยังไม่มา
+          หรือมี Click เพิ่มขึ้นแต่ไม่สร้าง Lead และยอดขาย
         </P>
         <P>
-          ทำ SEO แล้วไม่เห็นผลมักเกิดจาก 8 สาเหตุหลัก ได้แก่
-          เว็บไซต์ยังไม่ได้รับการ Index, Keyword ที่เลือกแข่งขันสูงเกินไป,
-          เนื้อหาไม่ตรงกับ Search Intent, ปัญหา Technical SEO,
-          เว็บโหลดช้า, ขาด Backlink, Thin Content และ Local SEO ที่ขาดหาย
-        </P>
-        <P>
-          บทความนี้จะช่วยให้คุณวิเคราะห์ได้ว่าปัญหาอยู่ที่ไหน
-          พร้อมวิธีตรวจสอบเบื้องต้นที่ทำได้ด้วยตัวเองก่อนตัดสินใจขั้นต่อไป
+          ถ้า Organic Traffic ไม่โต วิธีวิเคราะห์ที่แม่นกว่าการ “ทำ SEO เพิ่มทุกอย่าง”
+          คือแยกก่อนว่าปัญหาอยู่ที่ <strong>Indexing, Visibility, Click หรือ Conversion</strong>
+          แล้วแก้เฉพาะชั้นที่เป็น bottleneck
         </P>
       </ArticleSection>
 
-      <ArticleSection title="SEO ต้องรอนานแค่ไหนถึงจะเห็นผล?">
+      <ArticleSection title="Organic Traffic ใน 30 วินาที">
+        <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-5">
+          <ul className="grid gap-3">
+            {[
+              'Search Console ใช้ดู Impressions, Clicks, Queries, Pages, CTR และ Average Position จาก Google Search',
+              'GA4 ใช้ดู Sessions, Engagement และ Conversion หลังผู้ใช้เข้ามาในเว็บไซต์',
+              'ถ้าไม่มี Impression ให้เช็ก Indexing, Demand และ owner URL ก่อนแก้ CTR หรือ Conversion',
+              'ถ้ามี Impression แต่ Click ไม่โต ให้แยกดู Query + Page + Position ก่อนสรุปว่า Title หรือ Meta มีปัญหา',
+              'ถ้า Traffic โตแต่ธุรกิจไม่โต ให้กลับไปดู Search Intent, Landing Page และ Conversion tracking',
+              'ไม่มีเส้นตายตายตัวว่า SEO ต้องโตใน 3 หรือ 6 เดือน ควรดู trend และสถานะของแต่ละหน้าแทน',
+            ].map((item) => (
+              <li key={item} className="thai-readable flex gap-3 text-sm leading-6 text-teal-950">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Organic Traffic, Impression และ Click ต่างกันอย่างไร">
         <P>
-          ก่อนจะสรุปว่า SEO ไม่ได้ผล ต้องตั้งเกณฑ์ให้ถูกต้องก่อน
-          เพราะ SEO ไม่ใช่ Google Ads ที่จ่ายเงินแล้วเห็นผลวันเดียวกัน
+          คำสามคำนี้มักถูกใช้แทนกันจนวิเคราะห์ผิดจุด
+          Search Console ระบุว่า Impression คือการที่ลิงก์หรือผลลัพธ์ของเว็บไซต์ปรากฏใน Google Search
+          ส่วน Click คือการที่ผู้ใช้คลิกจากผลค้นหาเข้ามายังเว็บไซต์
+          Organic Traffic ใน Analytics จึงเป็นอีกชั้นหนึ่งที่วัดพฤติกรรมหลังการเข้าชม
         </P>
-        <div className="grid gap-3 sm:grid-cols-3">
-          {[
-            { label: 'เว็บไซต์ใหม่', desc: '3–6 เดือนจึงเริ่มเห็น Organic Traffic ขึ้นมา' },
-            { label: 'เว็บเก่าที่ปรับปรุงใหม่', desc: '1–3 เดือนหลังจากแก้ปัญหาและปรับเนื้อหา' },
-            { label: 'Keyword แข่งขันสูง', desc: '6–12 เดือนหรือมากกว่า ขึ้นกับ Authority ของคู่แข่ง' },
-          ].map((item) => (
-            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <p className="font-semibold text-teal-900">{item.label}</p>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[620px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">Metric</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ตอบคำถามอะไร</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ใช้ดูจากไหน</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['Impressions', 'Google แสดงหน้าเราบ่อยแค่ไหน', 'Google Search Console'],
+                ['Clicks', 'มีคนคลิกจาก Google Search เท่าไร', 'Google Search Console'],
+                ['Queries', 'คนค้นคำอะไรแล้วเจอเว็บไซต์', 'Google Search Console'],
+                ['Organic Sessions', 'มี session จาก Organic Search เท่าไร', 'GA4'],
+                ['Conversion', 'Traffic นั้นสร้าง Form, LINE, Call, Lead หรือ Purchase หรือไม่', 'GA4 / CRM / Conversion tracking'],
+              ].map(([metric, question, source]) => (
+                <tr key={metric}>
+                  <td className="px-4 py-3 font-medium text-neutral-950">{metric}</td>
+                  <td className="thai-readable px-4 py-3">{question}</td>
+                  <td className="thai-readable px-4 py-3">{source}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ถ้า Organic Traffic ไม่โต ให้หา Bottleneck จาก 4 ชั้นนี้ก่อน">
+        <P>
+          Saralak Search ใช้ลำดับนี้เพื่อลดการแก้แบบสุ่ม
+          เพราะแต่ละชั้นต้องใช้วิธีแก้ต่างกัน การเพิ่มบทความใหม่จะไม่ช่วยหากปัญหาจริงคือ canonical ผิด
+          และการแก้ Technical SEO ก็ไม่ช่วยมากถ้าหน้า Index ดีอยู่แล้วแต่ Search Intent ผิด
+        </P>
+        <div className="grid gap-4">
+          {diagnosticLayers.map((item) => (
+            <div key={item.title} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <div className="mt-3 grid gap-2 text-sm leading-6 text-neutral-700">
+                <p className="thai-readable"><strong>สัญญาณ:</strong> {item.signal}</p>
+                <p className="thai-readable"><strong>เช็ก:</strong> {item.check}</p>
+                <p className="thai-readable"><strong>ทำต่อ:</strong> {item.next}</p>
+              </div>
             </div>
           ))}
         </div>
-        <P>
-          ถ้าทำ SEO มายังไม่ถึง 3 เดือนและยังไม่เห็นผลใดๆ นั่นอาจเป็นเรื่องปกติ
-          แต่ถ้าผ่านมา 6 เดือนแล้วยังไม่มี Impression ใน Google Search Console เลย
-          นั่นคือสัญญาณว่ามีปัญหาที่ต้องแก้จริงๆ ไม่ใช่แค่รอ
-        </P>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-        ]} />
       </ArticleSection>
 
-      <ArticleSection title="8 สาเหตุที่ทำให้ SEO ไม่เห็นผล">
+      <ArticleSection title="8 สาเหตุที่ Organic Traffic ไม่โตหรือลดลง">
         <P>
-          นี่คือ 8 สาเหตุที่พบบ่อยที่สุดในการทำ SEO แล้วไม่ได้ผล
-          พร้อมวิธีตรวจสอบเบื้องต้นที่ทำได้ด้วยตัวเอง
+          สาเหตุด้านล่างเรียงจากปัญหาพื้นฐานที่ควรตัดออกก่อน
+          ไปจนถึงเรื่อง Content, Authority และ Measurement
+          ไม่จำเป็นต้องพบครบทุกข้อในเว็บไซต์เดียว
         </P>
         <ArticleImage
           src="/image/blog/seo-not-working/why-seo-not-working.png"
-          alt="ทำไม SEO ไม่ได้ผล — แผนภาพสรุป 8 สาเหตุหลักที่ทำให้เว็บไซต์ไม่ติดอันดับ Google"
+          alt="8 สาเหตุที่ Organic Traffic ไม่โต ตั้งแต่ Indexing, Search Intent, Technical SEO ไปจนถึง Measurement"
         />
         <div className="grid gap-5">
           {causes.map((cause) => (
@@ -3842,93 +3896,118 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
             </div>
           ))}
         </div>
-        <ReadMoreLinks items={[
-          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
-        ]} />
       </ArticleSection>
 
-      <ArticleCTA
-        headline="ไม่แน่ใจว่าปัญหา SEO ของเว็บไซต์คุณอยู่ที่ไหน?"
-        description="การวิเคราะห์เว็บไซต์และวาง Roadmap วิเคราะห์ภาพรวม SEO ของเว็บไซต์ ระบุสาเหตุที่ทำให้ rank ต่ำหรือไม่มี Organic Traffic พร้อม Roadmap ที่บอกว่าต้องแก้อะไรก่อน"
-      />
-
-      <ArticleSection title="วิธีตรวจสอบ SEO ด้วยตัวเองเบื้องต้น">
+      <ArticleSection title="ตัวอย่างการอ่าน Search Console ก่อนตัดสินใจแก้ SEO">
         <P>
-          ก่อนตัดสินใจจ้างผู้เชี่ยวชาญ สามารถเช็ค SEO เบื้องต้นได้ด้วยตัวเองผ่านเครื่องมือฟรีเหล่านี้
+          สมมติหน้า Service หนึ่งมี Impressions เพิ่มขึ้นต่อเนื่อง แต่ Clicks แทบไม่เปลี่ยน
+          ยังไม่ควรรีบสรุปว่า Meta Description แย่ ให้แยก Query และ Page ก่อน
+          เพราะ Impressions ที่เพิ่มอาจมาจากคำค้นใหม่ที่อยู่ตำแหน่งล่าง หรือ Query ที่ intent ไม่ตรงกับหน้า
         </P>
-        <CheckList items={selfCheckItems} />
-        <ArticleImage
-          src="/image/blog/seo-not-working/seo-not-working-dashboard.png"
-          alt="Google Search Console Dashboard — ตรวจสอบ Coverage, Performance และ Indexing เพื่อวิเคราะห์ปัญหา SEO"
-          caption="Google Search Console: เริ่มตรวจจาก Overview ไปยัง Coverage ไปยัง Performance"
-        />
+        <div className="rounded-xl border border-teal-200 bg-[#fbfaf6] p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Decision Rule</p>
+          <div className="mt-3 grid gap-2 text-sm leading-6 text-neutral-700">
+            <p className="thai-readable"><strong>Impression = 0 หรือต่ำมาก:</strong> เช็ก Indexing + Search Demand + owner URL</p>
+            <p className="thai-readable"><strong>Impression โต / Position ยังต่ำ:</strong> เช็ก Content, Intent, Internal Link และ Authority</p>
+            <p className="thai-readable"><strong>Position ดี / CTR ต่ำ:</strong> เช็ก SERP presentation, Title/Snippet และ intent match</p>
+            <p className="thai-readable"><strong>Clicks โต / Conversion ไม่โต:</strong> เช็ก Landing Page, Offer, CTA และ Tracking</p>
+          </div>
+        </div>
         <P>
-          ถ้าตรวจแล้วพบว่าเว็บมี Impression ใน Google Search Console แต่คนไม่คลิก
-          ปัญหามักอยู่ที่ Title Tag หรือ Meta Description ที่ไม่ดึงดูดเมื่อเทียบกับคู่แข่ง
-          หรือ keyword ที่ติดอยู่ยังอยู่ในหน้า 3–5 ซึ่งคนส่วนใหญ่ไม่เลื่อนมาถึง
+          วิธีนี้เป็น methodology ของ Saralak Search ไม่ใช่ Ranking Factor หรือสูตรทางการของ Google
+          จุดประสงค์คือแยกอาการออกจากสาเหตุ เพื่อเลือกงานที่ควรทำต่อได้แม่นขึ้น
         </P>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
-        ]} />
       </ArticleSection>
 
-      <ArticleSection title="เมื่อไหร่ควรให้ผู้เชี่ยวชาญช่วยวิเคราะห์">
+      <ArticleSection title="SEO ต้องใช้กี่เดือนถึง Organic Traffic จะเพิ่ม?">
         <P>
-          การทำ SEO ด้วยตัวเองได้ถึงจุดหนึ่ง
-          แต่มีบางสัญญาณที่บอกว่าถึงเวลาต้องการมุมมองจากภายนอก
+          <strong>ไม่มีตัวเลข 3 เดือน, 6 เดือน หรือ 12 เดือนที่ใช้เป็นกฎกับทุกเว็บไซต์ได้</strong>
+          Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนใน Search ได้เร็ว
+          ขณะที่บางอย่างอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน
+          ขึ้นอยู่กับประเภทการเปลี่ยนแปลงและการ recrawl/reprocessing
         </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {expertSignals.map((item) => (
-            <div key={item} className="flex gap-3">
-              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
-              <p className="thai-readable text-base text-neutral-700 sm:text-lg">{item}</p>
+        <P>
+          แทนที่จะตั้งเส้นตายจากจำนวนเดือนอย่างเดียว ให้ดูสัญญาณเป็นลำดับ:
+          URL Index หรือยัง → Impression เริ่มมาหรือไม่ → Query coverage ขยายหรือไม่ →
+          Clicks โตหรือไม่ → Organic Traffic สร้าง Business Outcome หรือไม่
+        </P>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
+          <p className="font-semibold text-amber-900">ข้อจำกัดที่ควรรู้</p>
+          <p className="thai-readable mt-2 text-sm leading-6 text-amber-900">
+            Seasonality, SERP changes, competitor updates, tracking changes และ demand ของตลาด
+            ทำให้ Traffic ขึ้นลงได้โดยไม่ได้เกิดจากการแก้ SEO เพียงอย่างเดียว
+            correlation หลังการแก้หน้าใดหน้าหนึ่งจึงไม่ควรถูกตีความเป็น causation ทันที
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="Official Google Guidance กับวิธีวิเคราะห์ของ Saralak Search ต่างกันตรงไหน">
+        <P>
+          Google Search Console อธิบายอย่างเป็นทางการว่า Performance report ใช้ดู Clicks, Impressions,
+          CTR, Average Position และแยกข้อมูลตาม Queries, Pages, Countries, Devices และ Search appearance ได้
+          ส่วน Page indexing และ URL Inspection ใช้ตรวจสถานะการ index ของ URL
+        </P>
+        <P>
+          ขณะที่ Framework 4 ชั้นและ Decision Rule ในบทความนี้เป็นวิธีวิเคราะห์ของ Saralak Search
+          เพื่อจัดลำดับงาน ไม่ใช่ระบบ Ranking ของ Google และไม่ได้หมายความว่าการแก้ตามลำดับนี้
+          จะรับประกันอันดับหรือ Organic Traffic ที่เพิ่มขึ้น
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="Organic Traffic โตแล้ว ต้องวัดอะไรต่อ">
+        <P>
+          Traffic เป็นเพียงชั้นกลางของ funnel
+          ถ้าเป้าหมายคือรายได้ ควรวัดตั้งแต่ Search Visibility ไปจนถึง Business Outcome
+          เพื่อรู้ว่า SEO พาคนที่มีคุณภาพเข้ามาหรือเพียงเพิ่มจำนวน session
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            ['Search Visibility', 'Impressions, Clicks, Queries, Landing Pages, Average Position'],
+            ['Traffic Quality', 'Organic Sessions, Engaged Sessions, Landing-page behavior'],
+            ['Commercial Intent', 'Non-brand Query coverage, Service/Product landing page traffic'],
+            ['Business Outcome', 'Form, LINE, Call, Lead, Purchase, Assisted Conversion'],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
             </div>
           ))}
         </div>
-        <P>
-          ในกรณีเหล่านี้ การได้ผู้เชี่ยวชาญมาดู Technical SEO, Keyword Strategy,
-          Content Gap และ Backlink Profile อย่างละเอียดจะช่วยประหยัดเวลาได้มากกว่า
-          การลองผิดลองถูกด้วยตัวเองเป็นเดือนๆ
-        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO หลังรู้แล้วว่า bottleneck อยู่ตรงไหน' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจ Crawl, Index และ Ranking เป็นระบบ' },
+        ]} />
       </ArticleSection>
 
-      <ArticleSection title="สรุป: ทำ SEO แล้วไม่เห็นผล เริ่มจากการวิเคราะห์ก่อน">
+      <ArticleSection title="เมื่อไหร่ควร Audit แทนการทำ SEO เพิ่มแบบเดิม">
+        <P>
+          ถ้ามีข้อมูล Search Console อยู่แล้วแต่ยังตอบไม่ได้ว่า Traffic หายจาก Query ไหน
+          หน้าไหนเสีย Visibility หรือปัญหาอยู่ก่อนหรือหลัง Click
+          การ Audit มักมีประโยชน์กว่าการเพิ่ม Content หรือ Backlink ต่อทันที
+        </P>
+        <P>
+          จุดที่ควรตรวจพร้อมกันคือ Search Demand, Page/Query mapping, Indexing, Technical SEO,
+          Content, Internal Link และ Conversion path แล้วจัดลำดับตามผลกระทบ
+          แทนการทำทุกอย่างพร้อมกันโดยไม่มี baseline
+        </P>
         <ArticleImage
           src="/image/blog/seo-not-working/seo-not-working-how-improve.png"
-          alt="วิธีแก้ปัญหา SEO ไม่เห็นผล — Roadmap วิเคราะห์และแก้ปัญหา SEO อย่างเป็นขั้นตอน"
+          alt="Roadmap วิเคราะห์ Organic Traffic จาก Indexing ไปยัง Visibility, Click และ Conversion"
         />
-        <P>
-          ทำ SEO แล้วไม่เห็นผลไม่ได้แปลว่า SEO ไม่ work
-          แต่แปลว่ายังไม่เจอปัญหาที่แท้จริง
-          8 สาเหตุที่กล่าวมา ล้วนแก้ได้ถ้าวิเคราะห์ถูกจุดและแก้ถูกลำดับ
-        </P>
-        <P>
-          เริ่มจากการตรวจสอบ Google Search Console และค้นหาด้วย site:yourdomain.com
-          ถ้ายังไม่เห็นภาพชัด การวิเคราะห์เว็บไซต์และวาง Roadmap จะช่วยระบุปัญหาและลำดับความสำคัญ
-          เพื่อให้รู้ว่าต้องลงมือแก้อะไรก่อน
-        </P>
-        <P>
-          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยแก้ปัญหาและวางแผน{' '}
-          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
-          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
-        </P>
         <ReadMoreLinks items={[
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+          { to: '/case-studies', label: 'ดู Case Studies ของ Saralak Search' },
+          { to: '/services/seo', label: 'บริการ SEO สำหรับวิเคราะห์และเพิ่ม Organic Visibility' },
         ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Console documentation, checked June 2026',
-        'Google Search Central (SEO best practices), checked June 2026',
-        'PageSpeed Insights documentation, checked June 2026',
-        'Saralak Search internal SEO audit observations, June 2026',
+        'Google Search Console Help: Performance report — Clicks, Impressions, CTR, Average Position and dimensions, checked October 2026',
+        'Google Search Console Help: What are impressions, position, and clicks?, checked October 2026',
+        'Google Search Central: SEO Starter Guide and indexing documentation, checked October 2026',
+        'Saralak Search methodology: Organic Traffic diagnostic framework, updated October 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO ไม่เห็นผล" />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ Organic Traffic" />
     </article>
   )
 }
