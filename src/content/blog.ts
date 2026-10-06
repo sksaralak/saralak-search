@@ -349,29 +349,34 @@ export const aiWebsiteSeoFaqs: FAQItem[] = [
 
 export const seoNotWorkingFaqs: FAQItem[] = [
   {
-    question: 'ทำ SEO กี่เดือนถึงจะเห็นผล?',
+    question: 'Organic Traffic คืออะไร?',
     answer:
-      'เว็บไซต์ใหม่ต้องรอ 3–6 เดือนจึงเริ่มเห็น Organic Traffic เว็บไซต์เก่าที่ปรับปรุงใหม่ใช้เวลา 1–3 เดือน ส่วน Keyword ที่มีการแข่งขันสูงอาจใช้เวลา 6–12 เดือนขึ้นไป ถ้าผ่านมา 6 เดือนแล้วยังไม่มี Impression เลยใน Google Search Console นั่นคือสัญญาณว่ามีปัญหาที่ต้องแก้',
+      'Organic Traffic คือผู้เข้าชมที่เข้ามายังเว็บไซต์จากผลการค้นหาแบบไม่เสียค่าโฆษณา เช่น Google Search ในทางปฏิบัติควรดูร่วมกับ Impressions, Clicks, Queries, Landing Pages และ Conversion เพราะ Traffic เพียงตัวเดียวไม่บอกว่าหน้าใดกำลังโตหรือปัญหาอยู่ตรงไหน',
   },
   {
-    question: 'เว็บไซต์ไม่ขึ้น Google เลย เกิดจากอะไร?',
+    question: 'Organic Traffic ลดลงควรเช็กอะไรก่อน?',
     answer:
-      'สาเหตุที่พบบ่อยคือ Google ยังไม่ได้ Index เว็บไซต์ ตรวจสอบได้โดยพิมพ์ site:yourdomain.com ใน Google ถ้าไม่มีผลออกมาเลย ให้ตรวจ robots.txt, sitemap และ Google Search Console Coverage เพื่อหาสาเหตุที่ขัดขวาง Crawling',
+      'เริ่มจาก Google Search Console โดยเทียบช่วงเวลาก่อนและหลัง แล้วแยกดู Pages, Queries, Countries, Devices และ Search appearance เพื่อหาว่าการลดลงเกิดกับทั้งเว็บไซต์หรือเฉพาะบางหน้า จากนั้นค่อยตรวจ Indexing, Search Intent, Technical SEO, Content และการแข่งขันของ SERP ตามลำดับ',
   },
   {
-    question: 'ทำ SEO แล้ว rank ขึ้นแต่ไม่มีคนคลิก เกิดจากอะไร?',
+    question: 'ทำ SEO กี่เดือนถึงจะเห็น Organic Traffic เพิ่ม?',
     answer:
-      'ถ้ามี Impression แต่ไม่มีคนคลิก มักเกิดจาก 3 สาเหตุ ได้แก่ อันดับยังอยู่หน้า 3–5 ซึ่งคนไม่เลื่อนมาถึง, Title Tag หรือ Meta Description ไม่น่าสนใจพอเมื่อเทียบกับคู่แข่ง หรือ Keyword ที่ติดอยู่ไม่ตรงกับสิ่งที่ลูกค้าค้นหาจริง',
+      'ไม่มีระยะเวลามาตรฐานที่รับประกันได้ Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนเร็ว ขณะที่บางอย่างอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน ระยะเวลาจริงขึ้นอยู่กับการ crawl/index, demand, competition, คุณภาพของหน้าและสถานะเว็บไซต์เดิม จึงควรดู trend ของ Impressions, Queries และ Landing Pages มากกว่ายึดตัวเลขเดือนตายตัว',
   },
   {
-    question: 'รู้ได้ยังไงว่า SEO ที่ทำอยู่ถูกทาง?',
+    question: 'มี Impression แต่ Organic Clicks ไม่โต เกิดจากอะไร?',
     answer:
-      'เช็คจาก Google Search Console เป็นหลัก ถ้า Impression เพิ่มขึ้นทุกเดือนแม้ Clicks ยังน้อย นั่นคือสัญญาณที่ดี ถ้า Impression คงที่หรือลดลง แสดงว่า Content หรือ Technical SEO มีปัญหา นอกจากนี้ให้ดูว่า Keyword หลักเคลื่อนขึ้นหน้า 1 บ้างไหมในแต่ละเดือน',
+      'อาจเกิดจากอันดับเฉลี่ยยังไม่ดีพอ, Query ไม่ตรงกับ intent ที่หน้าอยากได้, SERP มีองค์ประกอบอื่นแย่งความสนใจ หรือ Title/Snippet ยังไม่แข่งขัน ควรแยกดู Query และ Page ใน Search Console ก่อนสรุปว่าเป็นปัญหา CTR เพราะ Average Position และ CTR เป็นค่าเฉลี่ยจากหลายผลการค้นหา',
   },
   {
-    question: 'ควรจ้าง SEO Specialist หรือทำเองดี?',
+    question: 'site:domain.com ใช้เช็ก Index ได้แม่นไหม?',
     answer:
-      'ถ้าเพิ่งเริ่ม หรือเว็บไซต์ไม่ซับซ้อน การเรียนรู้ SEO เบื้องต้นและทำเองได้เลย แต่ถ้าทำมาแล้ว 6 เดือนแล้วยังไม่เห็นผล หรือ rank ตกลงมาโดยไม่ทราบสาเหตุ หรือมีคู่แข่งที่ติดอยู่แล้วและต้องการ scale ขึ้น การได้ผู้เชี่ยวชาญมา audit และวางกลยุทธ์จะประหยัดเวลาและเงินในระยะยาวมากกว่า',
+      'ใช้ดูคร่าว ๆ ได้ แต่ไม่ควรใช้เป็นหลักฐานว่าทุก URL ถูกหรือไม่ถูก Index วิธีที่แม่นกว่าสำหรับ URL สำคัญคือ URL Inspection และ Page indexing report ใน Google Search Console',
+  },
+  {
+    question: 'Organic Traffic เยอะขึ้นแปลว่า SEO สำเร็จไหม?',
+    answer:
+      'ยังสรุปไม่ได้ ควรดูคุณภาพ Traffic และผลทางธุรกิจร่วมด้วย เช่น Non-brand Queries, Landing Pages, Engaged Sessions, Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion เพราะ Traffic ที่โตจากคำค้นไม่เกี่ยวข้องอาจไม่สร้างผลลัพธ์ทางธุรกิจ',
   },
 ]
 
@@ -1116,36 +1121,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุและวิธีแก้',
+    title: 'Organic Traffic คืออะไร? ทำไม Traffic จาก Google ไม่โต และควรเช็กอะไร',
     slug: 'seo-not-working',
     category: 'SEO',
     excerpt:
-      'ทำ SEO มานานแล้วยังไม่เห็นผล? ปัญหาส่วนใหญ่ไม่ได้อยู่ที่ SEO ไม่ work แต่อยู่ที่สิ่งที่ทำอยู่ไม่ถูกจุด บทความนี้วิเคราะห์ 8 สาเหตุหลักพร้อมวิธีตรวจสอบด้วยตัวเองก่อนเสียเวลาเพิ่ม',
-    readingTime: '12 min read',
+      'Organic Traffic คือผู้เข้าชมจากผลการค้นหาแบบไม่เสียค่าโฆษณา หาก Traffic ไม่โตหรือลดลง ควรไล่ตรวจจาก Search Console, Indexing, Query, Landing Page, Search Intent และ Technical SEO ก่อนแก้แบบสุ่ม',
+    readingTime: '14 min read',
     publishedDate: '2026-06-17',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
     heroImageMobile: '/image/blog/seo-not-working/seo-not-working-banner-mweb.png',
-    heroImageAlt: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร วิเคราะห์ 8 สาเหตุหลักและวิธีแก้',
+    heroImageAlt: 'Organic Traffic คืออะไร และวิธีวิเคราะห์สาเหตุที่ Traffic จาก Google ไม่โต',
     ogImage: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
-    metaTitle: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุหลัก | Saralak Search',
+    metaTitle: 'Organic Traffic คืออะไร? Traffic จาก Google ไม่โต เช็กอะไรบ้าง | Saralak Search',
     metaDescription:
-      'ทำ SEO มานานแล้วยังไม่เห็นผล? นี่คือ 8 สาเหตุที่พบบ่อยที่สุด ตั้งแต่ปัญหา Index, Keyword ผิด, Technical SEO ไปจนถึง Thin Content พร้อมวิธีตรวจสอบด้วยตัวเอง',
+      'Organic Traffic คือผู้เข้าชมจากผลค้นหาแบบไม่เสียโฆษณา ดูวิธีอ่าน Search Console และไล่เช็ก Indexing, Query, Landing Page, Intent, Technical SEO เมื่อ Traffic ไม่โตหรือลดลง',
     aiSummary: [
-      'ทำ SEO แล้วไม่เห็นผลมักเกิดจาก 8 ปัญหาหลัก ได้แก่ Indexing, Keyword Competition, Search Intent, Technical SEO, Page Speed, Backlink, Thin Content และ Local SEO',
-      'ถ้าเว็บไซต์ยังไม่มี Impression ใน Google Search Console หลังทำ SEO 6 เดือน ควรตรวจ Technical SEO และ Indexing ก่อน',
-      'การวิเคราะห์ SEO ควรเริ่มจาก Google Search Console, site:domain.com, PageSpeed Insights และการเทียบ Search Intent กับคู่แข่ง',
-      'การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยระบุว่าปัญหาอยู่ที่เทคนิค คีย์เวิร์ด คอนเทนต์ หรือ Authority เพื่อจัดลำดับการแก้ไขให้ถูกต้อง',
+      'Organic Traffic คือผู้เข้าชมที่มาจากผลการค้นหาแบบไม่เสียค่าโฆษณา แต่การวิเคราะห์ไม่ควรดู Sessions หรือ Clicks ตัวเดียว ต้องดู Impressions, Queries, Landing Pages และ Business Outcome ร่วมกัน',
+      'ถ้า Organic Traffic ไม่โต ให้เริ่มจาก Search Console แล้วแยกปัญหาเป็น 4 ชั้น: Discovery/Indexing → Visibility → Click → Conversion เพื่อไม่แก้ผิดจุด',
+      'ไม่มีระยะเวลาตายตัวว่า SEO ต้องเห็นผลใน 3 หรือ 6 เดือน Google ระบุว่าผลจากการเปลี่ยนแปลงอาจใช้เวลาต่างกันตามเว็บไซต์และประเภทการแก้',
+      'site:domain.com ใช้เช็กได้คร่าว ๆ แต่ URL Inspection และ Page indexing report ใน Search Console เหมาะกว่าสำหรับยืนยันสถานะของ URL สำคัญ',
+      'Organic Traffic ที่เพิ่มขึ้นไม่เท่ากับผลลัพธ์ทางธุรกิจ ควรวัด Non-brand visibility, Engagement และ Conversion เช่น Form, LINE, Call, Lead หรือ Purchase เพิ่มด้วย',
     ],
     faqs: seoNotWorkingFaqs,
     bodyVariant: 'seo-not-working',
     cta: {
-      headline: 'ไม่แน่ใจว่าปัญหา SEO ของเว็บไซต์คุณอยู่ที่ไหน?',
+      headline: 'Organic Traffic ไม่โต แต่ยังไม่รู้ว่าปัญหาอยู่ที่จุดไหน?',
       description:
-        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+        'บริการ SEO ของ Saralak Search ช่วยแยกปัญหาจาก Search demand, Indexing, Technical SEO, Content และ Landing Page แล้วจัดลำดับสิ่งที่ควรแก้ก่อนตามข้อมูลจริง',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
