@@ -619,29 +619,34 @@ export const thamWebClaudeFaqs: FAQItem[] = [
 
 export const increaseSeoTrafficFaqs: FAQItem[] = [
   {
-    question: 'เพิ่ม Traffic SEO ต้องรอกี่เดือนถึงจะเห็นผล?',
+    question: 'เพิ่ม Traffic เว็บได้จากช่องทางไหนบ้าง?',
     answer:
-      'ส่วนใหญ่เริ่มเห็นสัญญาณภายใน 3-6 เดือน ขึ้นอยู่กับการแข่งขันของคีย์เวิร์ด อายุโดเมน และความต่อเนื่องในการทำ Content และ Technical SEO เว็บไซต์ใหม่มักใช้เวลานานกว่าเว็บที่มี Authority อยู่แล้ว',
+      'หลัก ๆ มาจาก SEO, Paid Ads, Social Media, Direct/Brand, Referral และช่องทาง AI/Search อื่น ๆ วิธีเลือกควรดูทั้งความเร็ว ต้นทุน ความต่อเนื่อง และคุณภาพของ Traffic ไม่ใช่ดูจำนวน Session อย่างเดียว',
   },
   {
-    question: 'เพิ่ม Traffic SEO โดยไม่ต้องจ่ายค่าโฆษณาได้จริงไหม?',
+    question: 'ถ้าต้องการเพิ่ม Traffic แบบไม่พึ่งค่าโฆษณาควรเริ่มจากอะไร?',
     answer:
-      'ได้จริง เพราะ Organic Traffic จาก SEO ไม่ต้องจ่ายต่อคลิกเหมือน Google Ads แต่ต้องลงทุนเวลาและความสม่ำเสมอในการทำ Keyword Research, Content และ Technical SEO แทน ผลลัพธ์มักยั่งยืนกว่าเพราะไม่หายไปทันทีที่หยุดจ่ายเงิน',
+      'เริ่มจาก SEO โดยตรวจ Search Demand, หน้าเป้าหมาย, Crawl/Index, Search Intent, On-page, Internal Link และ Content Gap ก่อนสร้างบทความเพิ่ม เพราะ Traffic จาก Organic Search ต้องอาศัยทั้ง Demand และหน้าที่ตอบ Intent ได้จริง',
   },
   {
-    question: 'ทำไม Traffic ไม่ขึ้นทั้งที่เขียนบทความไปหลายชิ้นแล้ว?',
+    question: 'เพิ่ม Traffic ด้วย SEO ต้องใช้เวลานานแค่ไหน?',
     answer:
-      'สาเหตุที่พบบ่อยคือคีย์เวิร์ดกว้างเกินไป เนื้อหาไม่ตรง Search Intent ไม่มี Internal Link เชื่อมโยงบทความ หรือเว็บไซต์มีปัญหา Technical SEO ที่ขัดขวางการจัดอันดับ ลองตรวจสอบ Google Search Console เพื่อดูว่าเว็บได้ Impression แต่ไม่ได้คลิก หรือไม่ได้ Impression เลย',
+      'ไม่มีระยะเวลาตายตัว Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนเร็ว ขณะที่บางอย่างอาจใช้หลายสัปดาห์หรือหลายเดือน ระยะเวลาจริงขึ้นอยู่กับการ crawl/index, การแข่งขัน, คุณภาพของหน้า, authority และสถานะเว็บไซต์เดิม',
   },
   {
-    question: 'Internal Link ช่วยเพิ่ม Traffic SEO ได้จริงไหม?',
+    question: 'เขียนบทความเยอะขึ้นแล้ว Traffic จะเพิ่มไหม?',
     answer:
-      'ช่วยได้ เพราะ Internal Link ทำให้ Google เข้าใจโครงสร้างเว็บไซต์ดีขึ้น ส่งต่อความน่าเชื่อถือไปยังหน้าที่สำคัญ และช่วยให้ผู้อ่านอยู่ในเว็บไซต์นานขึ้นด้วยการอ่านบทความที่เกี่ยวข้องต่อ ซึ่งเป็นสัญญาณเชิงบวกต่อการจัดอันดับ',
+      'ไม่จำเป็น ถ้าบทความใหม่ซ้ำ Intent, ไม่มี Search Demand, ไม่มี Internal Link หรือหน้าเดิมยังมี Technical Issue การเพิ่มจำนวน Content อาจไม่ช่วย ควรกำหนด Topic Ownership และแก้ owner page ก่อน scale content',
   },
   {
-    question: 'เพิ่ม Traffic SEO เองได้ไหม หรือต้องจ้างผู้เชี่ยวชาญ?',
+    question: 'ควรวัดผลการเพิ่ม Traffic จากอะไร?',
     answer:
-      'ทำเองได้ในระดับพื้นฐาน เช่น ปรับ Title, Meta Description และเขียนบทความตอบ Search Intent แต่ถ้าต้องการโตเร็วขึ้นหรือเว็บไซต์มีปัญหา Technical SEO ที่ซับซ้อน ผู้เชี่ยวชาญจะช่วยระบุจุดที่ควรแก้ก่อนและลดเวลาลองผิดลองถูก',
+      'สำหรับ SEO ให้ดู Impressions, Clicks, Queries และ Landing Pages ใน Search Console แล้วดู Sessions, Engagement และ Conversion ใน GA4 ต่ออีกชั้น เช่น Form, LINE, Call, Lead หรือ Purchase เพื่อแยกว่า Traffic เพิ่มแล้วสร้างผลทางธุรกิจหรือไม่',
+  },
+  {
+    question: 'เพิ่ม Traffic กับเพิ่ม Organic Traffic ต่างกันอย่างไร?',
+    answer:
+      'เพิ่ม Traffic เป็นโจทย์กว้างที่รวมทุกช่องทาง เช่น SEO, Ads, Social และ Referral ส่วน Organic Traffic หมายถึง Traffic จากผลค้นหาแบบไม่เสียค่าโฆษณา หน้านี้เน้นวิธีเพิ่ม Traffic โดยให้ SEO เป็นกลยุทธ์หลักระยะกลางถึงยาว',
   },
 ]
 
@@ -1487,34 +1492,36 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]',
+    title: 'เพิ่ม Traffic เว็บอย่างไร? วิธีเพิ่มคนเข้าเว็บไซต์ โดยเน้น SEO แบบเป็นระบบ',
     slug: 'increase-seo-traffic',
     heroImageDesktop: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
-    heroImageAlt: 'แดชบอร์ดเว็บไซต์ที่ Traffic SEO เติบโตจากกลยุทธ์หลายด้าน',
+    heroImageAlt: 'วิธีเพิ่ม Traffic เว็บไซต์จากหลายช่องทาง โดยเน้นการเติบโตจาก SEO',
     ogImage: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
     category: 'SEO',
     excerpt:
-      'เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่แค่เขียนบทความให้เยอะขึ้น แต่ต้องทำตั้งแต่ Keyword Research, On-Page SEO, Technical SEO ไปจนถึง Internal Link และการวัดผลอย่างต่อเนื่อง บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริงสำหรับธุรกิจไทย',
-    readingTime: '15 min read',
+      'เพิ่ม Traffic เว็บได้หลายทาง ทั้ง SEO, Ads, Social และ Referral แต่ถ้าต้องการ Traffic ที่ต่อเนื่องโดยไม่จ่ายต่อคลิกทุกครั้ง SEO คือแกนหลักที่ควรวางเป็นระบบตั้งแต่ Search Demand, Technical SEO, Content, Internal Link ไปจนถึง Conversion',
+    readingTime: '18 min read',
     publishedDate: '2026-07-20',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อ] | Saralak Search',
+    metaTitle: 'เพิ่ม Traffic เว็บอย่างไร? 9 วิธีเพิ่มคนเข้าเว็บไซต์ เน้น SEO | Saralak Search',
     metaDescription:
-      'เพิ่ม Traffic SEO ให้เว็บไซต์ด้วยเช็คลิสต์ 8 ข้อที่ใช้ได้จริง ตั้งแต่ Keyword Research, On-Page SEO, Technical SEO, Internal Link ไปจนถึงการวัดผลด้วย Google Search Console',
+      'วิธีเพิ่ม Traffic เว็บไซต์จาก SEO, Ads, Social และ Referral พร้อมแผน SEO แบบลงลึก ตั้งแต่ Search Demand, Technical SEO, Content, Internal Link ไปจนถึงการวัดผลด้วย Search Console และ GA4',
     aiSummary: [
-      'เพิ่ม Traffic SEO ต้องทำหลายด้านร่วมกัน ไม่ใช่แค่เขียนบทความให้เยอะขึ้น',
-      'จุดเริ่มต้นที่สำคัญคือ Keyword Research ที่ตรง Search Intent และ On-Page SEO ที่ครบถ้วน',
-      'Internal Link และ Technical SEO เป็นปัจจัยที่หลายเว็บไซต์มองข้าม แต่ส่งผลต่อการจัดอันดับโดยตรง',
-      'ควรวัดผลด้วย Google Search Console อย่างต่อเนื่องเพื่อรู้ว่าควรปรับจุดไหนต่อ',
+      'การเพิ่ม Traffic มีหลายช่องทาง ได้แก่ SEO, Paid Ads, Social, Referral, Direct/Brand และ AI/Search แต่แต่ละช่องทางต่างกันเรื่องความเร็ว ต้นทุน และความต่อเนื่อง',
+      'ถ้าต้องการ Traffic ที่ไม่ต้องจ่ายต่อคลิกทุกครั้ง SEO ควรเป็นแกนหลัก โดยเริ่มจาก Search Demand, Owner URL, Crawl/Index และ Search Intent ก่อนสร้าง Content เพิ่ม',
+      'การเพิ่มบทความอย่างเดียวไม่รับประกัน Traffic หากหน้าไม่ถูก Index, Keyword ไม่มี Demand, Intent ผิด หรือ Internal Link กระจายไปหลาย owner page',
+      'Saralak Search ใช้กรอบ Demand → Index → Relevance → Authority → Click → Conversion เพื่อหาว่าควรเพิ่ม Traffic จากจุดไหนก่อน',
+      'วัดผลด้วย Search Console สำหรับ Visibility/Clicks และ GA4 สำหรับ Sessions/Engagement/Conversion ไม่ใช้ Traffic เป็น KPI เดียว',
     ],
     faqs: increaseSeoTrafficFaqs,
     bodyVariant: 'increase-seo-traffic',
     cta: {
-      headline: 'อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?',
+      headline: 'อยากเพิ่ม Traffic แต่ยังไม่รู้ว่าควรเริ่มจาก SEO จุดไหน?',
       description:
-        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+        'บริการ SEO ของ Saralak Search ช่วยวิเคราะห์ Search Demand, Technical SEO, Content, Internal Link และ Landing Page แล้วจัดลำดับงานที่ควรทำก่อนตามข้อมูลจริง',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
