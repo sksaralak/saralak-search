@@ -1959,7 +1959,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
     {
       type: 'Content & On-page SEO',
       desc: 'งานที่ทำให้แต่ละ URL มีหน้าที่ชัด ตอบ Search Intent จริง และสื่อสารหัวข้อของหน้าได้ทั้งกับคนอ่านและ Search Engine',
-      items: ['กำหนด Primary Intent และ Keyword ต่อ URL', 'ปรับ Title, H1-H3 และเนื้อหาให้สอดคล้องกัน', 'เพิ่ม Internal Link ไปยัง owner URL ที่ถูกต้อง', 'ใช้รูปภาพและ Alt Text ที่ช่วยอธิบายเนื้อหา', 'สร้างข้อมูลที่มีตัวอย่าง หลักฐาน หรือ Information Gain'],
+      items: ['กำหนด คำค้นหลัก และ Keyword ต่อ URL', 'ปรับ Title, H1-H3 และเนื้อหาให้สอดคล้องกัน', 'เพิ่ม Internal Link ไปยัง หน้าหลัก ที่ถูกต้อง', 'ใช้รูปภาพและ Alt Text ที่ช่วยอธิบายเนื้อหา', 'สร้างข้อมูลที่มีตัวอย่าง หลักฐาน หรือ ข้อมูลที่เพิ่มคุณค่า'],
     },
     {
       type: 'Technical SEO',
@@ -2007,7 +2007,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
     {
       num: '04',
       title: 'ปรับ Content ให้ตอบ Intent และมีข้อมูลที่คู่แข่งไม่มี',
-      body: 'ตอบคำถามหลักให้ตรงก่อน แล้วเติมตัวอย่าง ตัวเลข Comparison, Case Study, Workflow หรือ Decision Rule ที่ตรวจสอบได้ เป้าหมายไม่ใช่ทำบทความให้ยาวที่สุด แต่ทำให้แต่ละ Section มีเหตุผลที่ควรถูกอ่านและอ้างอิง',
+      body: 'ตอบคำถามหลักให้ตรงก่อน แล้วเติมตัวอย่าง ตัวเลข Comparison, Case Study, Workflow หรือ หลักตัดสินใจ ที่ตรวจสอบได้ เป้าหมายไม่ใช่ทำบทความให้ยาวที่สุด แต่ทำให้แต่ละ Section มีเหตุผลที่ควรถูกอ่านและอ้างอิง',
     },
     {
       num: '05',
@@ -2016,7 +2016,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
     },
     {
       num: '06',
-      title: 'วัดผลเป็นรอบและ Refresh จากข้อมูลจริง',
+      title: 'วัดผลเป็นรอบและ อัปเดต จากข้อมูลจริง',
       body: 'ดู Query, Landing Page, Click, Impression และ CTR ใน Search Console ร่วมกับ Engagement และ Conversion ใน GA4 จากนั้นค่อยตัดสินใจว่าจะปรับ Title, Content, Internal Link, Technical หรือ Landing Page จุดไหนต่อ',
     },
   ]
@@ -2025,15 +2025,16 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
     ['Search Visibility', 'Google Search Console', 'Clicks, Impressions, CTR, Average Position, Queries, Pages', 'ดูว่า URL ไหนถูกค้นพบจากคำอะไร และแนวโน้มเพิ่มหรือลดอย่างไร'],
     ['Generative AI Visibility', 'Search Console — Generative AI performance report', 'Impressions จาก AI Overviews / AI Mode แยกตาม Page, Country, Date และ Device', 'ดูว่าเว็บไซต์เริ่มมี Visibility ในฟีเจอร์ Generative AI ของ Google หรือไม่ โดยไม่ใช้แทน Search Performance ปกติ'],
     ['Website Engagement', 'Google Analytics 4', 'Organic sessions, engaged sessions, landing page behavior', 'ดูว่าคนที่มาจาก Organic เข้ามาแล้วทำอะไรต่อบนเว็บไซต์'],
-    ['Business Outcome', 'GA4 / CRM / Form / LINE / Call tracking', 'Leads, qualified leads, calls, purchases, assisted conversions', 'เชื่อม Visibility กับผลลัพธ์ธุรกิจ แทนการสรุปจากอันดับอย่างเดียว'],
+    ['ผลลัพธ์ทางธุรกิจ', 'GA4 / CRM / Form / LINE / Call tracking', 'Leads, qualified leads, calls, purchases, assisted conversions', 'เชื่อม Visibility กับผลลัพธ์ธุรกิจ แทนการสรุปจากอันดับอย่างเดียว'],
     ['Competitive Context', 'Ahrefs / SEMrush หรือเครื่องมือ Rank Tracking', 'Keyword movement, backlinks, competing pages', 'ใช้เป็นข้อมูลเสริมสำหรับการแข่งขัน ไม่แทนข้อมูล First-party จาก Search Console'],
   ]
 
   const tocItems = [
     { id: 'seo-meaning', label: 'SEO คืออะไร?' },
-    { id: 'seo-serp-intent', label: 'คนค้น “SEO คือ” ต้องการรู้อะไรต่อ?' },
+    { id: 'seo-basics', label: 'SEO ย่อมาจากอะไร และมีกี่ประเภท?' },
     { id: 'seo-how', label: 'Google Search ทำงานอย่างไรกับ SEO?' },
     { id: 'seo-workstreams', label: 'SEO ต้องทำอะไรบ้าง?' },
+    { id: 'seo-do-yourself', label: 'SEO ทำเองได้ไหม?' },
     { id: 'seo-business-value', label: 'SEO สำคัญต่อธุรกิจอย่างไร?' },
     { id: 'seo-vs-aeo-geo', label: 'SEO, AEO และ GEO ต่างกันอย่างไร?' },
     { id: 'seo-vs-ads', label: 'SEO ต่างจาก Google Ads / SEM อย่างไร?' },
@@ -2066,7 +2067,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4" data-speakable>
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้น</p>
           <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
-            SEO (Search Engine Optimization) คือการปรับเว็บไซต์และเนื้อหาเพื่อช่วยให้ Search Engine เข้าใจหน้าเว็บ และช่วยให้คนที่กำลังค้นหาเรื่องที่เกี่ยวข้องค้นพบเว็บไซต์ผ่านผลการค้นหาแบบ Organic ได้ง่ายขึ้น
+            SEO (Search Engine Optimization) คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine เข้าใจว่าแต่ละหน้าพูดเรื่องอะไร ตอบคำค้นไหน และควรแสดงให้ใครเห็น เพื่อเพิ่มโอกาสให้เว็บไซต์ถูกค้นพบผ่านผลการค้นหาแบบ Organic โดยไม่ต้องจ่ายค่าโฆษณาต่อคลิกทุกครั้ง
           </p>
         </div>
         <P>
@@ -2081,46 +2082,39 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </P>
         <div className="rounded-lg border border-sky-200 bg-sky-50 p-5">
           <p className="thai-readable text-sm leading-6 text-neutral-700">
-            อ้างอิงทางการ:{' '}
-            <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">
-              Google SEO Starter Guide
-            </a>
-            {' '}— Google ระบุด้วยว่าไม่มี “เคล็ดลับลับ” ที่ทำให้อันดับ 1 ได้อัตโนมัติ และการทำตาม Best Practice ไม่ได้เป็นการรับประกันอันดับ
+            จาก <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">ข้อมูลของ Google Search Central</a>
+            {' '}SEO มีหน้าที่ช่วยให้ Search Engine เข้าใจเนื้อหาและช่วยให้คนค้นพบเว็บไซต์ได้ง่ายขึ้น
+            Google ยังระบุด้วยว่าไม่มีวิธีลัดที่รับประกันอันดับ 1 ได้
           </p>
         </div>
       </ArticleSection>
 
-      <ArticleSection title="คนค้น “SEO คือ” ต้องการรู้อะไรต่อ?" id="seo-serp-intent">
+      <ArticleSection title="SEO ย่อมาจากอะไร และมีกี่ประเภท?" id="seo-basics">
         <P>
-          คำค้น <strong>“SEO คือ”</strong> เป็น Definition Intent แต่ SERP ไทยไม่ได้จบที่ความหมายอย่างเดียว
-          จากการตรวจ Google วันที่ <strong>5 ตุลาคม 2026</strong> คำถามที่แสดงต่อเนื่อง ได้แก่
-          “SEO กับ SEM ต่างกันอย่างไร”, “SEO ทำเองได้ไหม”, “SEO ย่อมาจากอะไร” และ “ตัวอย่างการทำ SEO มีอะไรบ้าง”
-          จึงควรตอบภาพรวมเหล่านี้ในหน้า Definition โดยไม่ขยายจนแย่ง Intent จากหน้าวิธีทำหรือหน้าบริการ
+          <strong>SEO ย่อมาจาก Search Engine Optimization</strong> หรือการปรับเว็บไซต์ให้พร้อมสำหรับการค้นหา
+          ในการทำงานจริง SEO ไม่ได้มีแค่การใส่คีย์เวิร์ด แต่ครอบคลุมทั้งเนื้อหา โครงสร้างเว็บไซต์ เทคนิคหลังบ้าน
+          ลิงก์ภายใน ความน่าเชื่อถือจากเว็บไซต์อื่น และ Local SEO สำหรับธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการ
         </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {[
-            ['ความหมาย', 'SEO ย่อมาจาก Search Engine Optimization และเกี่ยวกับ Organic Search ไม่ใช่การซื้ออันดับ'],
-            ['ความต่าง', 'ผู้อ่านมักเทียบ SEO กับ SEM / Google Ads จึงควรแยก Organic กับ Paid ให้ชัด'],
-            ['การลงมือทำ', 'ผู้ค้นต้องการรู้ว่าทำเองได้หรือไม่และต้องเริ่มตรงไหน แต่รายละเอียดเชิงลึกควรส่งต่อไปหน้า Guide ที่เป็น Owner ของ Intent นั้น'],
-            ['ตัวอย่างจริง', 'เคส Ranking, Generic Keyword และการวัดผลช่วยให้คำว่า SEO ไม่กลายเป็นนิยามเชิงทฤษฎีอย่างเดียว'],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+        <P>
+          ถ้าจะแบ่งให้ง่าย หน้าเว็บส่วนใหญ่ต้องดูอย่างน้อย 4 ด้าน:
+          <strong> On-page SEO, Technical SEO, Off-page SEO และ Local SEO</strong>
+          แต่ทั้ง 4 ด้านต้องทำงานร่วมกัน เพราะหน้าเขียนดีแค่ไหนก็ไม่ช่วยมากถ้า Google เข้าถึงไม่ได้
+          และ Technical SEO ที่สมบูรณ์ก็ไม่ได้ทำให้หน้าติดอันดับถ้าเนื้อหาไม่ตอบสิ่งที่คนค้นต้องการ
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {seoWorkstreams.map((item) => (
+            <div key={item.type} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{item.type}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
             </div>
           ))}
         </div>
-        <P>
-          ฝั่ง Keyword Data ที่ตรวจใน Ahrefs วันที่ 5 ตุลาคม 2026 คำ <strong>“seo คือ”</strong> มี Search Volume ในไทยประมาณ
-          <strong> 8.7K ต่อเดือน</strong> และมี Parent Topic เป็น “seo คืออะไร”
-          ตัวเลขนี้ใช้เป็น Snapshot ของ Demand ณ วันที่ตรวจ ไม่ควรตีความเป็นปริมาณค้นหาคงที่ตลอดเวลา
-        </P>
       </ArticleSection>
-
       <ArticleSection title="Google Search ทำงานอย่างไรกับ SEO?" id="seo-how">
         <ArticleImage src="/image/blog/what-is-seo/seo-process.webp" alt="กระบวนการทำงานของ Google Search ตั้งแต่ Crawling Indexing ไปจนถึง Serving Search Results" />
         <P>
-          เอกสารทางการของ Google แบ่งการทำงานของ Search เป็น 3 ขั้นหลัก: <strong>Crawling, Indexing และ Serving Search Results</strong>
+          จาก <a href="https://developers.google.com/search/docs/fundamentals/how-search-works" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลของ Google Search Central</a>
+          Search ทำงานหลัก ๆ ผ่าน <strong>Crawling, Indexing และ Serving Search Results</strong>
           คำว่า Ranking ที่ใช้กันในงาน SEO เกิดขึ้นในขั้น Serving เมื่อระบบเลือกและจัดลำดับผลลัพธ์ที่เห็นว่าเกี่ยวข้องและมีคุณภาพสำหรับ Query นั้น
           จึงควรแยก “ถูก Index” ออกจาก “ติดอันดับ” เพราะหน้าอาจอยู่ใน Index แล้วแต่ยังไม่เหมาะกับคำค้นที่ต้องการ
         </P>
@@ -2148,7 +2142,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </p>
       </ArticleSection>
 
-      <ArticleSection title="SEO ต้องทำอะไรบ้าง?" id="seo-workstreams">
+      <ArticleSection title="SEO ต้องทำอะไรบ้าง? งานหลักที่มีผลต่อการติดอันดับ" id="seo-workstreams">
         <P>
           Google ไม่ได้กำหนดว่า SEO ต้องมี “4 ประเภท” แบบตายตัว
           สำหรับการทำงานจริง Saralak Search แบ่งงาน SEO เป็น 4 Workstream เพื่อให้ Audit และจัดลำดับงานได้ง่าย: Content & On-page, Technical, Authority & Off-page และ Local SEO
@@ -2177,6 +2171,32 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleSection title="SEO ทำเองได้ไหม?" id="seo-do-yourself">
+        <P>
+          <strong>ทำเองได้ในระดับพื้นฐาน</strong> โดยเฉพาะเว็บไซต์ขนาดเล็กที่โครงสร้างไม่ซับซ้อน
+          งานที่เริ่มเองได้ เช่น ตั้งค่า Google Search Console, ตรวจว่า URL สำคัญถูก Index หรือไม่,
+          ปรับ Title/H1, เขียนเนื้อหาให้ตรงคำค้น และวาง Internal Link ระหว่างบทความกับหน้าบริการ
+        </P>
+        <P>
+          แต่ถ้าเว็บไซต์มี JavaScript, Migration, Canonical ซับซ้อน, หน้าเยอะ, เกิด Cannibalization
+          หรือแข่งขันในคีย์เวิร์ดยาก การวิเคราะห์ <strong>Technical SEO, Search Intent และข้อมูลจาก Search Console</strong>
+          จะสำคัญมากขึ้น เพราะการแก้ผิดจุดอาจทำให้เพิ่ม Content ไปเรื่อย ๆ โดย Traffic ไม่โต
+        </P>
+        <div className="rounded-lg border border-teal-200 bg-teal-50/60 p-5">
+          <p className="font-semibold text-teal-950">Decision rule ง่าย ๆ</p>
+          <p className="thai-readable mt-2 text-sm leading-6 text-teal-900">
+            ถ้ายังไม่มีข้อมูล Search ให้เริ่มจากพื้นฐานก่อน แต่ถ้ามี Impression และ Traffic อยู่แล้ว
+            ให้ดู Query + Landing Page ก่อนตัดสินใจว่าจะเขียนเพิ่ม แก้หน้าเดิม หรือแก้ Technical SEO
+          </p>
+        </div>
+        <P>
+          หากต้องการดูว่าปัญหาของเว็บไซต์อยู่ตรงไหนก่อนลงทุนเพิ่ม สามารถอ่าน
+          {' '}<Link to="/blog/seo-not-working" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Organic Traffic คืออะไร</Link>
+          {' '}หรือดูขอบเขต <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ของ Saralak Search
+        </P>
+      </ArticleSection>
+
       <ArticleSection title="SEO สำคัญต่อธุรกิจอย่างไร?" id="seo-business-value">
         <P>
           คุณค่าของ SEO ไม่ได้อยู่ที่ “อันดับ” เพียงตัวเดียว แต่อยู่ที่การทำให้ธุรกิจปรากฏในช่วงที่ตลาดมี Demand อยู่แล้ว
@@ -2188,7 +2208,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             ['Demand Capture', 'SEO รับ Demand ที่มีอยู่แล้วใน Search และพาผู้ใช้ไปยังหน้าที่ตรงกับช่วงการตัดสินใจ เช่น บทความ หน้าหมวดสินค้า หรือหน้าบริการ'],
             ['Non-brand Discovery', 'ช่วยขยายการค้นพบออกจาก Brand Keyword ไปยังปัญหา หมวดสินค้า และคำถามที่ลูกค้าใช้จริงก่อนตัดสินใจ'],
             ['First-party Search Data', 'Search Console แสดง Query, Page, Click และ Impression ของเว็บไซต์เอง ทำให้ปรับ Strategy จากข้อมูลที่เกิดกับเว็บไซต์จริงได้'],
-            ['Compounding Asset', 'หน้าเว็บที่ยังตอบ Intent และได้รับการดูแลสามารถสร้าง Organic Visibility ต่อได้ แต่ต้อง Refresh เมื่อข้อมูล คู่แข่ง หรือ Search Intent เปลี่ยน'],
+            ['Compounding Asset', 'หน้าเว็บที่ยังตอบ Intent และได้รับการดูแลสามารถสร้าง การมองเห็นบน Organic Search ต่อได้ แต่ต้อง อัปเดต เมื่อข้อมูล คู่แข่ง หรือ Search Intent เปลี่ยน'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-teal-100 bg-teal-50/40 p-5">
               <h3 className="font-semibold text-teal-950">{title}</h3>
@@ -2210,7 +2230,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
       <ArticleSection title="SEO, AEO และ GEO ต่างกันอย่างไร?" id="seo-vs-aeo-geo">
         <P>
           SEO, AEO และ GEO มีพื้นที่ทับซ้อนกัน แต่ใช้เพื่อเน้นคนละมุมของงาน
-          SEO ครอบคลุม Discovery, Crawling, Indexing, Content, Ranking และ Organic Visibility;
+          SEO ครอบคลุม Discovery, Crawling, Indexing, Content, Ranking และ การมองเห็นบน Organic Search;
           AEO ใช้เป็นกรอบทำให้คำตอบในระดับหน้าและ Section ชัดขึ้น; GEO มองกว้างไปถึง Content, Evidence, Entity และ Brand Visibility ใน Generative AI
           Google กล่าวถึงคำ AEO และ GEO ในเอกสาร Generative AI Search แต่ไม่ได้อธิบายว่าเป็น Ranking System แยกจาก SEO
         </P>
@@ -2289,7 +2309,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="วัดผล SEO อย่างไร?" id="seo-measurement">
         <P>
-          SEO ควรวัดจาก Search Visibility, Generative AI Visibility เมื่อเกี่ยวข้อง, Website Engagement และ Business Outcome
+          SEO ควรวัดจาก Search Visibility, Generative AI Visibility เมื่อเกี่ยวข้อง, Website Engagement และ ผลลัพธ์ทางธุรกิจ
           ไม่ควรสรุปจาก Keyword อันดับเดียว เพราะอันดับเปลี่ยนตาม Query, Device, Location และรูปแบบ Search Results
           Google Search Console เองรายงาน Average Position ซึ่งเป็นค่าเฉลี่ยของตำแหน่ง ไม่ใช่อันดับคงที่ที่ทุกคนเห็นเหมือนกัน
         </P>
@@ -2316,7 +2336,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างการอ่านข้อมูล: ถ้า Impression ของหน้าบริการเพิ่ม แต่ Click และ Lead ไม่เพิ่ม
           งานถัดไปอาจไม่ใช่ “เขียนบทความเพิ่ม” แต่ต้องตรวจ Query ที่หน้าแสดง, CTR ของ Title/Snippet, ความตรงของ Landing Page และ Conversion Path
-          หาก Generative AI Impression เพิ่มแต่ Business Outcome ไม่ขยับ ก็ยังไม่ควรสรุปว่า AI Visibility สร้างผลลัพธ์ทางธุรกิจแล้ว
+          หาก Generative AI Impression เพิ่มแต่ ผลลัพธ์ทางธุรกิจ ไม่ขยับ ก็ยังไม่ควรสรุปว่า AI Visibility สร้างผลลัพธ์ทางธุรกิจแล้ว
           นี่คือเหตุผลที่ SEO ต้องเชื่อม Search Console กับ Analytics และข้อมูลธุรกิจ
         </P>
         <p className="thai-readable text-sm leading-6 text-neutral-600">
@@ -2335,7 +2355,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           SEO ไม่ควรถูกอธิบายแค่เป็นรายการเทคนิค เพราะผลลัพธ์ที่มีความหมายเกิดเมื่อหน้าเว็บที่ถูกต้อง
           ไปปรากฏต่อหน้าคนที่กำลังค้นหาสินค้า บริการ หรือคำตอบที่เกี่ยวข้องจริง
-          สองเคสด้านล่างแสดงทั้งมุม Ranking Growth และการค้นพบเว็บไซต์จาก Generic Keyword
+          สองเคสด้านล่างแสดงทั้งมุม Ranking Growth และการค้นพบเว็บไซต์จาก คำค้นทั่วไป
           โดยใช้เพื่ออธิบายวิธีคิด ไม่ใช่รับประกันว่าทุกเว็บไซต์จะได้ผลลัพธ์เหมือนกัน
         </P>
 
@@ -2359,13 +2379,13 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
             <ArticleImage
               src="/image/blog/what-is-seo/seo-nonbrand-packaging-serp.webp"
               alt="ผลการค้นหา Google คำว่ากล่องข้าวพลาสติก แสดงเว็บไซต์ E-commerce ในกลุ่ม Organic Results ด้านบน"
-              caption="เคส Generic Keyword: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
+              caption="เคส คำค้นทั่วไป: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
             />
             <div className="p-5">
-              <h3 className="font-semibold text-neutral-950">เคส 2: ถูกค้นพบจาก Generic Keyword</h3>
+              <h3 className="font-semibold text-neutral-950">เคส 2: ถูกค้นพบจาก คำค้นทั่วไป</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
                 ในงาน SEO สำหรับเว็บไซต์ E-commerce กลุ่ม Packaging เราวางหน้า Category / Product Listing ให้รองรับ Commercial Search Intent
-                ของคำค้นสินค้าโดยตรง ตัวอย่าง Generic Keyword อย่าง <strong>“กล่องข้าวพลาสติก”</strong> ซึ่งผู้ค้นไม่ได้พิมพ์ชื่อแบรนด์
+                ของคำค้นสินค้าโดยตรง ตัวอย่าง คำค้นทั่วไป อย่าง <strong>“กล่องข้าวพลาสติก”</strong> ซึ่งผู้ค้นไม่ได้พิมพ์ชื่อแบรนด์
                 เว็บไซต์สามารถปรากฏในกลุ่ม Organic Results ด้านบนร่วมกับ Marketplace และเว็บไซต์ในหมวดเดียวกัน
               </p>
               <p className="thai-readable mt-3 text-sm leading-6 text-neutral-700">
@@ -2379,7 +2399,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         <P>
           จากสองเคสนี้ สิ่งที่ใช้ซ้ำได้ไม่ใช่ “สูตรดันอันดับ” แต่คือ Workflow:
           หา Search Intent จากนั้นระบุ Owner URL แก้ Content / Technical / Internal Link / Authority ตาม Bottleneck และวัดผลจากข้อมูลจริง
-          สำหรับเคส Generic Keyword ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
+          สำหรับเคส คำค้นทั่วไป ด้านบน Screenshot ยืนยันการปรากฏใน SERP ณ เวลาที่ตรวจ แต่ไม่ได้ใช้เป็นหลักฐานว่าอันดับคงที่หรือเกิดจากปัจจัยเดียว
           ดูหลักฐานและเคสอื่นได้ที่
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
         </P>
@@ -2394,7 +2414,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           'Google ไม่รับประกันว่าจะ Crawl, Index หรือแสดงหน้าเว็บ แม้ทำตาม Search Essentials ครบ',
           'การเปลี่ยนแปลงบางอย่างอาจสะท้อนใน Search ภายในไม่กี่ชั่วโมง แต่บางอย่างอาจใช้เวลาหลายเดือนตามเอกสาร Google',
           'Average Position ใน Search Console เป็นค่าเฉลี่ย ไม่ใช่อันดับคงที่สำหรับผู้ใช้ทุกคน',
-          'Organic Visibility หรือ Traffic ที่เพิ่มขึ้นไม่ได้แปลว่า Lead หรือ Revenue จะเพิ่ม ถ้า Landing Page และ Conversion Path ยังไม่เหมาะ',
+          'การมองเห็นบน Organic Search หรือ Traffic ที่เพิ่มขึ้นไม่ได้แปลว่า Lead หรือ Revenue จะเพิ่ม ถ้า Landing Page และ Conversion Path ยังไม่เหมาะ',
           'Structured Data ช่วยอธิบายข้อมูลและทำให้มีสิทธิ์เข้าร่วม Rich Result บางประเภท แต่ Google ไม่รับประกันการแสดง Rich Result และไม่ควรใช้เป็นคำอธิบายว่าเป็น “ตัวดันอันดับ” แบบตรงไปตรงมา',
           'SEO, AEO และ GEO ช่วยเพิ่มความพร้อมของข้อมูลได้ แต่ไม่มีแนวทางใดรับประกัน AI citation หรืออันดับบน Generative Search',
         ]} />
@@ -2406,7 +2426,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </p>
       </ArticleSection>
 
-      <ArticleSection title="สรุป: SEO คืออะไร และควรทำอะไรต่อ" id="seo-summary-final">
+      <ArticleSection title="สรุป SEO คืออะไร และธุรกิจควรเริ่มทำ SEO จากตรงไหน" id="seo-summary-final">
         <P>
           SEO คือการทำให้เว็บไซต์ค้นพบได้ เข้าใจได้ และมีความเกี่ยวข้องกับ Query ที่ธุรกิจต้องการผ่าน Organic Search
           งานจริงครอบคลุมตั้งแต่ Crawl/Index, Search Intent, Content, Internal Link, Technical และ Authority ไปจนถึงการวัดผลด้วย Search Console, Analytics และ Conversion Data
@@ -2469,7 +2489,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     {
       num: '01',
       title: 'เก็บข้อมูลก่อนเริ่มแก้เว็บไซต์',
-      body: 'ก่อนเปลี่ยน Content หรือ Technical SEO ควรบันทึกสภาพปัจจุบันก่อนว่า URL ไหนได้ Organic Visibility, Query ไหนสร้าง Impression, หน้าใดถูก AI Search กล่าวถึงหรืออ้างอิง และมี Conversion จาก Organic หรือ Referral เท่าไร ข้อมูลก่อนเริ่มช่วยให้เห็นว่าหลังแก้เว็บไซต์แล้วอะไรเปลี่ยนจริง แทนการสรุปจากการลองถาม AI เพียงครั้งเดียว',
+      body: 'ก่อนเปลี่ยน Content หรือ Technical SEO ควรบันทึกสภาพปัจจุบันก่อนว่า URL ไหนได้ การมองเห็นบน Organic Search, Query ไหนสร้าง Impression, หน้าใดถูก AI Search กล่าวถึงหรืออ้างอิง และมี Conversion จาก Organic หรือ Referral เท่าไร ข้อมูลก่อนเริ่มช่วยให้เห็นว่าหลังแก้เว็บไซต์แล้วอะไรเปลี่ยนจริง แทนการสรุปจากการลองถาม AI เพียงครั้งเดียว',
       checks: ['Export Query และ Landing Page จาก Google Search Console', 'บันทึกชุด Prompt/Query สำคัญ 10–20 ข้อ พร้อม Date + Platform + Mention/Citation', 'เก็บ GA4 Organic/Referral และ Conversion ที่เกี่ยวข้อง', 'ระบุหน้า owner ของแต่ละ Topic ก่อนเริ่มแก้'],
     },
     {
@@ -2772,7 +2792,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
         <P>
           การอ่านผลควรดูเป็น Funnel: <strong>Search/AI Visibility, Visit/Engagement และ Lead/Conversion</strong>
-          เช่น ถ้า Generative AI Impressions หรือ Organic Visibility เพิ่มขึ้น แต่ Lead ไม่เพิ่ม ควรตรวจต่อว่าหน้าใดถูกแสดง Query เป็น Informational หรือ Commercial Intent และผู้ใช้ทำอะไรหลังเข้าหน้าเว็บ
+          เช่น ถ้า Generative AI Impressions หรือ การมองเห็นบน Organic Search เพิ่มขึ้น แต่ Lead ไม่เพิ่ม ควรตรวจต่อว่าหน้าใดถูกแสดง Query เป็น Informational หรือ Commercial Intent และผู้ใช้ทำอะไรหลังเข้าหน้าเว็บ
           Visibility เป็นสัญญาณต้นทาง ไม่ใช่หลักฐานว่ากลยุทธ์สร้างรายได้แล้ว
         </P>
       </ArticleSection>
@@ -2891,7 +2911,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
             ['Definition', 'อธิบายให้ชัดว่า llm.txt ในคำค้นหมายถึง llms.txt และชื่อไฟล์ตาม proposal คืออะไร'],
             ['Implementation', 'บอกโครงสร้างขั้นต่ำ วิธีวางไฟล์ และวิธีตรวจว่า URL ใช้งานได้'],
             ['SEO / GEO Context', 'แยกให้ชัดว่า Google Search ไม่ใช้ไฟล์นี้เป็น ranking signal แต่ระบบอื่นอาจเลือกใช้ตามการรองรับ'],
-            ['Decision Rule', 'ถ้า Search Foundation ยังมีปัญหา ให้แก้ Crawl, Index, Content และ Owner URL ก่อน llms.txt'],
+            ['หลักตัดสินใจ', 'ถ้า พื้นฐาน SEO ยังมีปัญหา ให้แก้ Crawl, Index, Content และ Owner URL ก่อน llms.txt'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -2989,7 +3009,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
               'มีเอกสาร คู่มือ API Knowledge Base หรือ Content Library ที่ agent อาจต้องเลือก resource',
               'มีหน้า Owner ชัดและต้องการทำ curated overview ให้ระบบที่รองรับ',
               'ดูแลไฟล์ให้สอดคล้องกับ URL และข้อมูลจริงได้',
-              'Search Foundation หลักทำงานดีแล้วและ llms.txt เป็นงานเสริม ไม่ใช่งานแก้ปัญหาอันดับ',
+              'พื้นฐาน SEO หลักทำงานดีแล้วและ llms.txt เป็นงานเสริม ไม่ใช่งานแก้ปัญหาอันดับ',
             ]} />
           </div>
           <div className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -3043,7 +3063,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
             ['File usage', 'ตรวจ server/CDN logs ว่ามี request มาที่ llms.txt หรือ resource ที่ลิงก์จากไฟล์หรือไม่ เมื่อ user-agent/log รองรับการแยก'],
             ['Google Search', 'ใช้ Search Console วัด Queries, Pages, Impressions, Clicks และ Generative AI visibility ตามรายงานที่ Google รองรับ โดยไม่โยงผลกับ llms.txt โดยอัตโนมัติ'],
             ['AI Referral', 'ดู GA4 referral ที่ตรวจจับได้ เช่น ChatGPT Search ใช้ utm_source=chatgpt.com ตามเอกสาร OpenAI'],
-            ['Business Outcome', 'ดู Lead, LINE, Call, Purchase หรือ Assisted Conversion ต่อ ไม่หยุดที่การเห็น bot fetch ไฟล์'],
+            ['ผลลัพธ์ทางธุรกิจ', 'ดู Lead, LINE, Call, Purchase หรือ Assisted Conversion ต่อ ไม่หยุดที่การเห็น bot fetch ไฟล์'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -3065,7 +3085,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="llms-next-step" title="llms.txt อยู่ตรงไหนในงาน GEO ของเว็บไซต์">
         <P>
-          ในงาน GEO ควรจัด llms.txt ไว้ท้ายลำดับหลัง Search Foundation, Topic Ownership, Content, Entity และ Evidence
+          ในงาน GEO ควรจัด llms.txt ไว้ท้ายลำดับหลัง พื้นฐาน SEO, Topic Ownership, Content, Entity และ Evidence
           ถ้าเว็บไซต์ยังไม่ชัดว่า URL ไหนควรถือ Intent ไหน หรือ AI/Search crawler ยังเข้าถึงหน้าหลักไม่ดี การแก้จุดเหล่านั้นมี Priority สูงกว่า
         </P>
         <P>
@@ -3080,7 +3100,7 @@ function LlmsTxtArticle({ post }: { post: BlogPost }) {
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนทำ Technical GEO' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ลำดับ Implementation ที่ควรทำก่อน llms.txt' },
-          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist — ตรวจ Search Foundation และ AI Search Readiness' },
+          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist — ตรวจ พื้นฐาน SEO และ AI Search Readiness' },
           { to: '/services/geo', label: 'บริการ GEO & AI Search — Saralak Search' },
         ]} />
       </ArticleSection>
