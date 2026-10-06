@@ -2455,7 +2455,8 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     { id: 'geo-serp-intent', label: 'วิธีทำ GEO ควรเริ่มจากอะไร' },
     { id: 'geo-official-vs-method', label: 'ข้อมูลจาก Google และ OpenAI ที่ควรรู้' },
     { id: 'geo-steps', label: 'วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน' },
-    { id: 'geo-case-study', label: 'เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง' },
+    { id: 'geo-case-study', label: 'ตัวอย่างจากงานจริง' },
+    { id: 'geo-avoid', label: 'วิธีทำ GEO แบบไหนที่ไม่ควรทำ' },
     { id: 'geo-30-day-plan', label: 'แผนลงมือทำ GEO ภายใน 30 วัน' },
     { id: 'geo-measurement', label: 'วิธีวัดผล GEO และ Tools ที่ใช้จริง' },
     { id: 'geo-limitations', label: 'ข้อจำกัดของ GEO ที่ควรรู้' },
@@ -2498,7 +2499,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     {
       num: '06',
       title: 'เชื่อม Entity, Internal Link และ Structured Data ให้ตรงเนื้อหา',
-      body: 'หน้า About, Service, Case Study และบทความควรอธิบายความสัมพันธ์ของแบรนด์ ผู้เขียน บริการ และ Topic อย่างสอดคล้องกัน พร้อม Internal Link ไปยัง หน้าหลัก ที่ถูกต้อง Structured Data ใช้เพื่ออธิบายข้อมูลที่แสดงจริงบนหน้าและรองรับ Search feature ที่เกี่ยวข้อง แต่ Google ระบุชัดว่า Structured Data ไม่ใช่ข้อกำหนดพิเศษสำหรับ Generative AI Search และไม่มี special AI schema ที่ต้องใส่',
+      body: 'หน้า About, Service, Case Study และบทความควรอธิบายแบรนด์ ผู้เขียน บริการ และหัวข้อให้สอดคล้องกัน พร้อม Internal Link ไปยังหน้าที่ควรรับผิดชอบเรื่องนั้น เช่น บทความ “GEO คืออะไร” ควรลิงก์ต่อไป “วิธีทำ GEO” หรือ “รับทำ GEO” ตามจังหวะของผู้อ่าน Structured Data ใช้เพื่ออธิบายข้อมูลที่แสดงจริงบนหน้าและรองรับ Search feature ที่เกี่ยวข้อง แต่ Google ระบุชัดว่า Structured Data ไม่ใช่ข้อกำหนดพิเศษสำหรับ Generative AI Search และไม่มี special AI schema ที่ต้องใส่',
       checks: ['ใช้ลิงก์จริงแบบ <a href> หรือ Link ที่ Render เป็น anchor', 'ใช้ Anchor ให้สะท้อนปลายทางและไม่ส่ง exact keyword เดียวไปหลาย หน้าหลัก', 'Article/BlogPosting, BreadcrumbList, Organization หรือ Person ใช้เมื่อข้อมูลตรงกับหน้า', 'ไม่เพิ่ม FAQPage หรือ HowTo เพียงเพื่อหวัง AI Citation หรือ Rich Result'],
     },
     {
@@ -2511,7 +2512,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
       num: '08',
       title: 'วัดผล แล้ว อัปเดต จากข้อมูลจริง',
       body: 'GEO ควรทำเป็นรอบ: Baseline, Implement, Observe และ อัปเดต ไม่ควรสรุปจากการเห็นหรือไม่เห็นแบรนด์ใน Prompt เดียว ตั้งแต่ 31 สิงหาคม 2026 Google Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode ซึ่งใช้วัด Impression ระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้ ส่วน ChatGPT, Gemini หรือ Perplexity ยังควรติดตามแยกตามแพลตฟอร์มและเชื่อมกลับมาที่ Referral, Engagement และ Conversion เท่าที่ข้อมูลรองรับ',
-      checks: ['เทียบ Search Visibility ก่อนและหลังแก้', 'บันทึก Mention/Citation ด้วย Query Set เดิมเป็นรอบ', 'ดู GA4 Referral/Engagement และ Conversion', 'อัปเดต หน้าเมื่อข้อมูลเปลี่ยน Intent เปลี่ยน หรือพบ Content Gap ใหม่'],
+      checks: ['เทียบ Search Visibility ก่อนและหลังแก้', 'บันทึก Mention/Citation ด้วย ชุดคำถาม เดิมเป็นรอบ', 'ดู GA4 Referral/Engagement และ Conversion', 'อัปเดต หน้าเมื่อข้อมูลเปลี่ยน Intent เปลี่ยน หรือพบ ช่องว่างของเนื้อหา ใหม่'],
     },
   ]
 
@@ -2592,7 +2593,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
               <tr>
                 <td className="thai-readable px-4 py-3 font-medium text-neutral-950">ChatGPT Search</td>
                 <td className="thai-readable px-4 py-3 text-neutral-600">OpenAI ระบุว่าเว็บไซต์สาธารณะสามารถปรากฏใน ChatGPT Search ได้ และควรไม่บล็อก OAI-SearchBot หากต้องการให้ Content ถูกค้นพบ สรุป อ้างอิง และลิงก์ได้ชัด แต่ placement ไม่ได้รับประกัน</td>
-                <td className="thai-readable px-4 py-3 text-neutral-600">ตรวจ Bot Access เป็น Technical QA หนึ่งข้อ ไม่ใช้เป็นตัวแทนของ Content, Brand Authority หรือการวัดผล</td>
+                <td className="thai-readable px-4 py-3 text-neutral-600">ตรวจ Bot Access เป็น Technical QA หนึ่งข้อ ไม่ใช้เป็นตัวแทนของ Content, ความน่าเชื่อถือของแบรนด์ หรือการวัดผล</td>
               </tr>
               <tr>
                 <td className="thai-readable px-4 py-3 font-medium text-neutral-950">Answer-first / Standalone passage</td>
@@ -2687,6 +2688,34 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleSection id="geo-avoid" title="วิธีทำ GEO แบบไหนที่ไม่ควรทำ">
+        <P>
+          GEO ไม่ควรถูกทำเป็นชุดเทคนิคแยกจาก SEO และเนื้อหาหลักของเว็บไซต์
+          โดยเฉพาะวิธีที่ดูเหมือนทำได้เร็ว แต่ไม่ได้เพิ่มคุณค่าให้คนอ่านหรือทำให้ข้อมูลของแบรนด์ชัดขึ้นจริง
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            ['สร้างบทความจำนวนมากโดยไม่ดู Intent', 'ถ้าหลายหน้าตอบคำถามเดียวกัน อาจทำให้เนื้อหาชนกันเองและ Internal Link ไม่รู้ว่าควรส่งไปหน้าไหน'],
+            ['ใส่ FAQ หรือ Schema เพื่อหวัง AI Citation', 'ใช้เมื่อช่วยอธิบายข้อมูลจริงบนหน้า ไม่ใช่ใส่เพราะคิดว่าจะทำให้ AI เลือกอ้างอิง'],
+            ['ทำ llms.txt แล้วคิดว่า GEO เสร็จ', 'ไฟล์นี้เป็นเพียงองค์ประกอบเสริมสำหรับระบบที่รองรับ ไม่ได้แทน Crawl, Index, Content, Entity หรือ Evidence'],
+            ['สร้าง Brand Mention หรือ Backlink แบบไม่เกี่ยวข้อง', 'จำนวน Mention ไม่ได้มีความหมายเท่ากับการถูกกล่าวถึงในบริบทที่เกี่ยวข้องและตรวจสอบได้'],
+            ['วัดจาก Prompt เดียว', 'คำตอบ AI เปลี่ยนได้ตามเวลา โมเดล และบริบท ควรใช้ชุดคำถามเดิมและติดตามเป็นรอบ'],
+            ['เขียนเพื่อ AI จนคนอ่านใช้งานไม่ได้', 'คำตอบควรชัดและอ่านง่ายสำหรับคนก่อน ไม่จำเป็นต้องเขียนเป็นภาษาหรือโครงสร้างแปลก ๆ เพื่อหวังให้ AI ดึงไปใช้'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้ายังไม่แน่ใจว่าควรแก้ พื้นฐาน SEO, Content หรือ AI Visibility ก่อน
+          สามารถใช้ <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
+          {' '}ช่วยไล่ดูเป็นรายข้อ หรือดูขอบเขต <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}และ <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link> เพื่อแยกว่างานส่วนไหนควรเริ่มก่อน
+        </P>
+      </ArticleSection>
+
       <ArticleSection id="geo-30-day-plan" title="วิธีทำ GEO ใน 30 วัน ควรแบ่งงานอย่างไร">
         <P>
           ถ้าทีมมีเวลา 1 เดือน ควรใช้เดือนแรกเพื่อสร้าง Baseline และแก้หน้าเดิมที่มี Demand ก่อนผลิต Content ใหม่จำนวนมาก แผนด้านล่างเป็นตัวอย่าง Workflow ของ Saralak Search ไม่ใช่ระยะเวลารับประกันผลลัพธ์
@@ -2703,7 +2732,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             <tbody className="divide-y divide-neutral-200">
               {[
                 ['Week 1', 'Baseline + Technical QA', 'Query/Landing Page baseline, Prompt set, Index/Bot issues, หน้าหลัก map'],
-                ['Week 2', 'Content + Topic Ownership', 'รายการหน้าที่ต้อง อัปเดต, Content Gap, Internal Link Map, Passage ที่ต้องเติม Evidence'],
+                ['Week 2', 'Content + Topic Ownership', 'รายการหน้าที่ต้อง อัปเดต, ช่องว่างของเนื้อหา, Internal Link Map, Passage ที่ต้องเติม Evidence'],
                 ['Week 3', 'ลงมือทำ', 'แก้หน้า Priority, เพิ่ม Case/ข้อมูลจริง, Structured Data ที่ตรงกับ visible content, ลิงก์ไป หน้าหลัก'],
                 ['Week 4', 'หลักฐานจากภายนอก + Measurement Setup', 'แผน Mention/PR ที่เกี่ยวข้อง, AI visibility log, Search Console/GA4 dashboard และรอบ อัปเดต'],
               ].map(([period, work, output]) => (
@@ -2728,10 +2757,10 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             ['Google Search Console', 'ใช้ดู Impressions, Clicks, Queries, Landing Pages, Indexing และ Generative AI performance สำหรับ AI Overviews/AI Mode โดยรายงาน AI แยก Impression ตาม Page, Country, Date และ Device ได้'],
-            ['Ahrefs', 'ใช้ดู Organic Keywords, Position Movement, Backlinks, Referring Domains, Content Gap และหน้า/Topic ที่คู่แข่งมี Visibility มากกว่า หาก Account มี AI Visibility หรือ Brand Radar สามารถใช้เป็น Supplemental Signal เพิ่มได้'],
+            ['Ahrefs', 'ใช้ดู Organic Keywords, Position Movement, Backlinks, Referring Domains, ช่องว่างของเนื้อหา และหน้า/Topic ที่คู่แข่งมี Visibility มากกว่า หาก Account มี AI Visibility หรือ Brand Radar สามารถใช้เป็น Supplemental Signal เพิ่มได้'],
             ['Bing Webmaster Tools', 'ใช้ตรวจ Crawl, Index, URL Inspection และ Search Performance บน Bing เพื่อเช็กว่าเว็บไซต์เข้าถึงได้ดีนอก Google ด้วย ข้อมูลนี้เป็น Search/Technical Signal ไม่ควรตีความว่าเป็น Direct Copilot Attribution'],
             ['GA4', 'ใช้ดู Organic และ Referral Sessions, Engaged Sessions, Landing Page Behavior และ Conversion เช่น Form, LINE, Call หรือ Purchase; สำหรับ ChatGPT Search OpenAI ระบุว่า Referral URL มี utm_source=chatgpt.com เพื่อช่วยแยก Traffic ได้'],
-            ['AI Mention / Citation Tracking', 'ใช้ Query Set เดิมทดสอบ ChatGPT, Gemini และ Perplexity เป็นรอบ พร้อมบันทึก Date, Platform, Mention, Citation URL และบริบทของคำตอบ'],
+            ['AI Mention / Citation Tracking', 'ใช้ ชุดคำถาม เดิมทดสอบ ChatGPT, Gemini และ Perplexity เป็นรอบ พร้อมบันทึก Date, Platform, Mention, Citation URL และบริบทของคำตอบ'],
             ['Manual SERP Review', 'ตรวจ AI Overview, AI Mode และ Search Result จริงใน Query สำคัญเพื่อดูว่าแบรนด์หรือ URL ปรากฏใน Context แบบใด ไม่พึ่ง Dashboard เพียงอย่างเดียว'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -2754,7 +2783,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           'แต่ละแพลตฟอร์มใช้ระบบค้นหา แหล่งข้อมูล และวิธีจัดคำตอบต่างกัน Tactic ที่เห็นผลในระบบหนึ่งอาจไม่เท่ากันในอีกระบบ',
           'Structured Data, FAQ, llms.txt หรือ Bot Access อย่างใดอย่างหนึ่งไม่ใช่ทางลัดที่รับประกัน Citation',
           'Visibility ไม่เท่ากับ Click และ Click ไม่เท่ากับ Conversion ต้องวัด Funnel ต่อจนถึง ผลลัพธ์ทางธุรกิจ',
-          'Prompt Testing มีความผันผวน จึงควรใช้ Query Set เดิมและวัดเป็นรอบมากกว่าสรุปจาก Screenshot เดียว',
+          'Prompt Testing มีความผันผวน จึงควรใช้ ชุดคำถาม เดิมและวัดเป็นรอบมากกว่าสรุปจาก Screenshot เดียว',
           'Correlation จาก Case Study ไม่ควรถูกเขียนเป็นเหตุและผล หากไม่มีการทดลองที่แยกตัวแปรได้',
         ]} />
       </ArticleSection>
