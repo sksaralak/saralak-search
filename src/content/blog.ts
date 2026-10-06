@@ -1357,7 +1357,7 @@ export const blogPosts: BlogPost[] = [
       'GEO คือแนวทางเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับ Generative AI และ AI Search โดยต่อยอดจาก SEO พร้อม Framework, เคสจริง, วิธีวัดผล และข้อจำกัดที่ควรรู้',
     readingTime: '18 min read',
     publishedDate: '2026-05-30',
-    lastModifiedDate: '2026-10-05',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
