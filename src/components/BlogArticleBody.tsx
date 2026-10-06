@@ -1351,6 +1351,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           จาก <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลของ Google Search Central</a>
           พื้นฐาน SEO เดิมยังสำคัญต่อ AI Overviews และ AI Mode และไม่มี Schema พิเศษที่ทำให้เว็บไซต์ได้พื้นที่ใน AI features โดยอัตโนมัติ
           เพราะฉะนั้นทีมที่เลือกควรดูได้ทั้ง Search, Content, ข้อมูลแบรนด์ และการวัดผล ไม่ใช่ขาย GEO เป็นเทคนิคแยกขาดจากเว็บไซต์เดิม
+          หากเว็บไซต์ยังมีปัญหา Crawl, Index, Search Intent หรือหน้า Service ควรแก้ฐาน <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ให้พร้อมก่อนหรือทำควบคู่กับ GEO
         </P>
         <P>
           หากต้องการเข้าใจ Definition และขอบเขตของ Generative Engine Optimization ก่อนเปรียบเทียบบริษัท อ่าน{' '}
@@ -1387,6 +1389,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           ก่อนเทียบราคา ควรให้แต่ละบริษัทตอบคำถามชุดเดียวกันว่าเว็บไซต์มีปัญหาตรงไหน จะลงมือทำอะไร
           สิ่งที่ลูกค้าจะได้รับคืออะไร และจะวัดผลหลังทำอย่างไร
           วิธีนี้ช่วยแยกทีมที่มีแผนงานชัดออกจากข้อเสนอที่เพียงเปลี่ยนชื่อบริการ SEO เดิมให้เป็น GEO
+          ถ้ายังไม่แน่ใจว่าควรเริ่มจาก Search Foundation หรือ AI Visibility ก่อน สามารถดู <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}และ <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link> เพื่อเทียบขอบเขตงานของแต่ละแบบ
         </P>
         <NumberedList items={selectionCriteria} />
         <ArticleImage
@@ -1400,7 +1404,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>
           การถามเพียง “ทำ GEO ราคาเท่าไร” ทำให้เทียบข้อเสนอได้ยาก เพราะแต่ละทีมอาจตีความ Scope ไม่เหมือนกัน
           ก่อนขอ Proposal ควรเตรียม Brief สั้น ๆ ที่ระบุเป้าหมาย เว็บไซต์ กลุ่มบริการหลัก ตลาดที่ต้องการโต และ Conversion ที่ใช้วัดผล
-          เพื่อให้ทุกทีมตอบโจทย์เดียวกัน
+          เพื่อให้ทุกทีมตอบโจทย์เดียวกัน หากยังไม่ชัดว่าหน้าไหนควรเป็นตัวหลักของแต่ละคำค้น อ่าน <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          {' '}และ <Link to="/blog/seo-not-working" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Organic Traffic คืออะไร</Link> ก่อนจะช่วยให้ Brief ชัดขึ้น
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
@@ -1436,8 +1441,10 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           height={675}
         />
         <ReadMoreLinks items={[
-          { to: '/blog/what-is-ai-overview', label: 'ดู Case Study AI Overview และโครงสร้าง Content ที่ใช้จริง' },
-          { to: '/case-studies', label: 'ดู SEO Case Studies จากงานจริง' },
+          { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร — ดูรูปแบบคำตอบและ Case Study จริง' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนเลือกวิธีทำ' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ดูขั้นตอน Implementation' },
+          { to: '/case-studies', label: 'SEO Case Studies — ดูผลงานจากงานจริง' },
         ]} />
       </ArticleSection>
 
@@ -1496,6 +1503,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
           {' '}เป็นจุดเริ่มต้น และอ่าน <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
           {' '}เพื่อดูว่าปัญหาของเว็บไซต์ควรเริ่มจาก Search, Answer หรือ AI Visibility ก่อน
+          หากปัญหาหลักยังอยู่ที่อันดับ, Crawl/Index, Content หรือ Internal Link ให้เริ่มจาก <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link> มากกว่ารีบทำ GEO
         </P>
       </ArticleSection>
 
@@ -1513,7 +1521,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         <P>
           ถ้าต้องการให้ทีมภายนอกช่วยตั้งแต่การวิเคราะห์จนถึงการลงมือทำ สามารถดูขอบเขต{' '}
           <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO และ AI Search</Link>
-          {' '}ได้ ส่วนกรณีที่ยังไม่ชัดว่าปัญหาอยู่ที่ SEO, Content หรือ AI Visibility สามารถดู{' '}
+          {' '}ได้ ส่วนกรณีที่ปัญหาหลักยังเป็น Organic Search สามารถดู <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}และถ้ายังไม่ชัดว่าควรเริ่มจาก SEO, Content หรือ AI Visibility สามารถดู{' '}
           <Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ภาพรวมบริการของ Saralak Search</Link>
           {' '}เพื่อเลือก Scope ตามปัญหาจริง
         </P>
@@ -1541,6 +1550,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ดูขั้นตอน Implementation' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist — ใช้ตรวจ Scope ก่อนเริ่มงาน' },
           { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
+          { to: '/services/seo', label: 'รับทำ SEO — สำหรับเว็บไซต์ที่ Search Foundation ยังไม่พร้อม' },
         ]} />
       </ArticleSection>
     </article>
