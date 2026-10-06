@@ -1167,8 +1167,8 @@ function NumberedList({ items }: { items: string[] }) {
 const geoAgencyContents = [
   { id: 'geo-agency-answer', label: 'ทำ GEO ที่ไหนดี?' },
   { id: 'geo-agency-criteria', label: '8 เกณฑ์เลือก GEO Agency' },
-  { id: 'geo-agency-providers', label: '6 บริษัทที่ควรเปรียบเทียบ' },
-  { id: 'geo-agency-comparison', label: 'ตารางเปรียบเทียบ' },
+  { id: 'geo-agency-providers', label: 'ก่อนขอ Proposal ควรเตรียมอะไร' },
+  { id: 'geo-agency-comparison', label: 'ตารางเทียบ Proposal และ Red Flags' },
   { id: 'geo-agency-case', label: 'ตัวอย่างงานจริง' },
   { id: 'geo-agency-measurement', label: 'วิธีวัดผล GEO' },
   { id: 'geo-agency-limitations', label: 'ข้อจำกัดก่อนเซ็นสัญญา' },
@@ -1265,61 +1265,61 @@ function GeoAgencyDecisionVisual() {
 function GeoAgencyComparisonTable() {
   const rows = [
     {
-      company: 'Saralak Search',
-      approach: 'SEO + GEO + AI Search แบบ Consultant-led ครอบคลุม Audit, Topic Ownership, Content, Entity, Technical และ Internal Link',
-      measurement: 'Search visibility, AI visibility และ Business outcome ตาม Scope ที่ตกลง',
+      criterion: 'Baseline',
+      good: 'มี Query/Prompt Set, วันที่ตรวจ, Search/AI Visibility และ Conversion baseline ก่อนเริ่ม',
+      redFlag: 'เริ่มผลิต Content หรือทำ Schema ทันทีโดยไม่มี Before state',
     },
     {
-      company: 'Primal',
-      approach: 'หน้า AI Search Service ระบุ ElevateSEO™, Semantic/Entity SEO และการทำให้แบรนด์ถูกพบใน AI Search หลายแพลตฟอร์ม',
-      measurement: 'AI visibility/citation, Search performance และ Conversion ตามข้อมูลที่ระบุบนหน้าบริการ',
+      criterion: 'SEO Foundation',
+      good: 'ตรวจ Crawl, Index, Canonical, Rendering, Internal Link และหน้า Commercial ก่อน',
+      redFlag: 'แยก GEO ออกจากปัญหา Technical SEO ทั้งหมด',
     },
     {
-      company: 'Cotactic',
-      approach: 'หน้า GEO Service ระบุ Website Audit, Content/On-page structure และการปรับข้อมูลเพื่อรองรับ Generative AI Search',
-      measurement: 'จำนวนครั้งที่ AI อ้างอิงเว็บไซต์ และ Traffic ที่มาจาก AI sources',
+      criterion: 'Content & Topic Ownership',
+      good: 'ระบุ Owner URL ต่อ Intent และบอกว่าหน้าใดควร Refresh, Merge หรือสร้างใหม่',
+      redFlag: 'เสนอจำนวนบทความต่อเดือนโดยไม่อธิบาย Intent หรือ Cannibalization',
     },
     {
-      company: 'ANGA',
-      approach: 'บริการ AI Search/GEO เชื่อม SEO, Entity, Content และการวัดผลผ่านเครื่องมือของเอเจนซี่',
-      measurement: 'AI Mention, Citation, Brand Visibility, LLM Traffic และ Conversion',
+      criterion: 'Entity & Evidence',
+      good: 'เชื่อมข้อมูลแบรนด์ ผู้เชี่ยวชาญ Service และ Case ที่ตรวจสอบได้',
+      redFlag: 'ใช้คำว่า Entity หรือ Authority กว้าง ๆ แต่ไม่มี Output ที่ตรวจได้',
     },
     {
-      company: 'Minimice Group',
-      approach: 'SEO AI Search ที่วาง KPI เพิ่มจาก SEO เดิม เช่น AI Visibility และ Citation ควบคู่ Content/SEO/CRO',
-      measurement: 'AI Visibility Percentage, Citation, Organic Traffic, Conversion, Ranking และ Brand Keyword',
+      criterion: 'Measurement',
+      good: 'กำหนด Search, AI Visibility, Referral/Engagement และ Business Outcome แยกกัน',
+      redFlag: 'วัดจาก Screenshot, Prompt เดียว หรือจำนวน Citation อย่างเดียว',
     },
     {
-      company: 'NerdOptimize',
-      approach: 'AI Search Service ครอบคลุม Content Structure, Entity, Technical SEO และ Structured Data',
-      measurement: 'Brand Mention/Citation, AI Traffic และ Conversion พร้อมรายงานรายเดือนตามหน้าบริการ',
+      criterion: 'ข้อจำกัด',
+      good: 'ระบุชัดว่าไม่รับประกัน Ranking, Mention หรือ Citation และบอก Dependency ของทีมลูกค้า',
+      redFlag: 'การันตีว่า ChatGPT, Gemini หรือ Google AI จะอ้างอิงหลังทำครบ Checklist',
     },
   ]
 
   return (
     <section>
       <h2 id="geo-agency-comparison" className="scroll-mt-24 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">
-        เปรียบเทียบ 6 GEO / AI Search Agency จากข้อมูลที่เปิดเผยบนเว็บไซต์
+        ตารางเทียบ Proposal GEO Agency ก่อนตัดสินใจ
       </h2>
       <p className="thai-readable mt-4 text-base leading-7 text-neutral-700 sm:text-lg">
-        ตารางนี้เปรียบเทียบเฉพาะสิ่งที่แต่ละบริษัทประกาศบนหน้าบริการสาธารณะ ณ วันที่ 18 กันยายน 2026
-        ไม่ใช่การจัดอันดับคุณภาพ และไม่ควรใช้แทนการขอ Proposal, Scope และตัวอย่าง Reporting ก่อนตัดสินใจ
+        วิธีเทียบผู้ให้บริการที่ใช้ได้จริงคือส่ง Brief เดียวกันและให้แต่ละทีมตอบเกณฑ์เดียวกัน
+        ตารางนี้ใช้ตรวจว่า Proposal มี Methodology, Output และ Measurement ที่ย้อนตรวจได้หรือยัง โดยไม่ต้องอ้างรายชื่อเอเจนซี่รายอื่น
       </p>
       <div className="mt-5 overflow-x-auto rounded-lg border border-neutral-200">
-        <table className="min-w-[820px] divide-y divide-neutral-200 bg-white text-left text-sm">
+        <table className="min-w-[860px] divide-y divide-neutral-200 bg-white text-left text-sm">
           <thead className="bg-[#fbfaf6] text-neutral-950">
             <tr>
-              {['บริษัท', 'แนวทางที่ประกาศบนเว็บไซต์', 'การวัดผลที่ระบุ'].map((h) => (
+              {['เกณฑ์', 'สิ่งที่ควรเห็นใน Proposal', 'Red Flag'].map((h) => (
                 <th key={h} scope="col" className="px-4 py-3 font-semibold">{h}</th>
               ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-neutral-200 text-neutral-700">
             {rows.map((row) => (
-              <tr key={row.company}>
-                <th scope="row" className="whitespace-nowrap px-4 py-4 text-left align-top font-semibold text-neutral-950">{row.company}</th>
-                <td className="thai-readable px-4 py-4 align-top leading-6">{row.approach}</td>
-                <td className="thai-readable px-4 py-4 align-top leading-6">{row.measurement}</td>
+              <tr key={row.criterion}>
+                <th scope="row" className="whitespace-nowrap px-4 py-4 text-left align-top font-semibold text-neutral-950">{row.criterion}</th>
+                <td className="thai-readable px-4 py-4 align-top leading-6">{row.good}</td>
+                <td className="thai-readable px-4 py-4 align-top leading-6">{row.redFlag}</td>
               </tr>
             ))}
           </tbody>
@@ -1328,7 +1328,6 @@ function GeoAgencyComparisonTable() {
     </section>
   )
 }
-
 function GeoAgencyArticle({ post }: { post: BlogPost }) {
   const selectionCriteria = [
     'มี Baseline ก่อนเริ่มงาน: ระบุคำถามหรือ Query, แพลตฟอร์ม, วันที่ตรวจ และสถานะปัจจุบันของ Brand Mention/Citation ให้ย้อนตรวจได้',
@@ -1355,7 +1354,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       <GeoAgencyTableOfContents />
 
       <ArticleSection id="geo-agency-answer" title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
-        <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน ไปยัง จะลงมือแก้อะไร ไปยัง วัดผลด้วยอะไร ไปยัง ผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
+        <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน, จะลงมือแก้อะไร, วัดผลด้วยอะไร และผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
         <P>GEO ไม่ใช่บริการที่มี Checklist กลางจาก Google ให้ทำตามแล้วรับประกันว่าจะถูกอ้างอิง สำหรับ Google Search เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่ทำให้ได้ placement โดยอัตโนมัติ ดังนั้นเอเจนซี่ที่น่าเปรียบเทียบควรแข็งแรงทั้ง Search foundation, Content, Entity และ Measurement พร้อมอธิบายข้อจำกัดได้ตรงไปตรงมา</P>
         <P>
           หากต้องการเข้าใจ Definition และขอบเขตของ Generative Engine Optimization ก่อนเปรียบเทียบบริษัท อ่าน{' '}
@@ -1365,7 +1364,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <ArticleSection id="geo-agency-google-guidance" title="Google ยืนยันอะไรเกี่ยวกับ AI Search และอะไรเป็น Methodology ของเอเจนซี่">
-        <P><strong>ข้อมูลทางการของ Google:</strong> หน้า AI features and your website ระบุว่าแนวทาง SEO พื้นฐานยังใช้กับ AI Overviews และ AI Mode หน้าเว็บต้องถูก Index และมีสิทธิ์แสดง Snippet จึงจะมีสิทธิ์เป็น Supporting Link และไม่มี Technical Requirement เพิ่มเติมเฉพาะสำหรับ AI features นอกจากนี้ Structured Data ควรตรงกับเนื้อหาที่มองเห็น และ Google ระบุว่าไม่ต้องมี Schema พิเศษหรือ AI text file เพื่อให้ปรากฏในฟีเจอร์เหล่านี้</P>
+        <P><strong>ข้อมูลทางการของ Google:</strong> Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และคำแนะนำด้าน AEO/GEO จำนวนมากที่อ้างว่าเป็น “AI hacks” ไม่สอดคล้องกับวิธีทำงานของ Google Search หน้าเว็บยังต้องมี Search Foundation ที่ดี เนื้อหาควรมีคุณค่าและไม่เป็น Commodity Content ส่วน Structured Data ต้องตรงกับเนื้อหาที่มองเห็น และไม่มี Special AI Schema หรือ llms.txt ที่ช่วยเพิ่ม Visibility บน Google Search โดยตรง</P>
         <P>
           ตั้งแต่ 31 สิงหาคม 2026 Google Search Console เปิด <strong>Generative AI performance report</strong> ให้เว็บไซต์ทั่วโลก โดยรายงานแยก Impressions ที่เกิดจาก AI Overviews และ AI Mode พร้อมดูตาม Page, Country, Device และช่วงเวลาได้ อย่างไรก็ตาม รายงานนี้ไม่ได้แจกแจงว่าแต่ละ Prompt อ้างอิงประโยคใดจากหน้าเว็บ
           {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ดูเอกสาร Search Console</a>
@@ -1387,37 +1386,31 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection id="geo-agency-providers" title="6 บริษัทรับทำ GEO และ AI Search ในไทยที่ควรนำไปเปรียบเทียบ">
-        <P>รายชื่อนี้คัดจากผู้ให้บริการที่มีหน้า GEO หรือ AI Search Service สาธารณะและตรวจสอบได้ ณ วันที่ 18 กันยายน 2026 ไม่ใช่อันดับ “ดีที่สุด” และไม่ได้หมายความว่ารายอื่นไม่มีความสามารถ การเลือกจริงควรเทียบ Scope, คนที่จะลงมือทำ, Reporting, เงื่อนไขสัญญา และตัวอย่างงานที่เกี่ยวกับอุตสาหกรรมเดียวกัน</P>
-
-        <ArticleSubSection title="1. Saralak Search">
-          <P>Saralak Search วาง GEO เป็นส่วนหนึ่งของ Search Strategy ไม่แยกออกจาก SEO โดยเริ่มจาก Audit, Topic Ownership, Content, Internal Link, Entity และ Technical foundation ก่อนขยายไปที่ AI Visibility เหมาะกับทีมที่ต้องการ Consultant ช่วยคิด Direction และทำงานร่วมกับ Content/Dev มากกว่าการซื้อแพ็กเกจผลิตบทความอย่างเดียว</P>
-          <P>
-            จุดที่ควรใช้เปรียบเทียบกับ Proposal อื่นคือ Scope จะระบุว่าอะไรเป็น Search issue, อะไรเป็น AI visibility observation และอะไรเป็น Business KPI โดยสามารถดูรายละเอียด{' '}
-            <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการรับทำ GEO</Link>
-            {' '}ก่อนขอ Scope จริง
-          </P>
-        </ArticleSubSection>
-
-        <ArticleSubSection title="2. Primal">
-          <P>Primal มีหน้า AI Search Service โดยตรงและระบุการทำงานผ่าน ElevateSEO™ ซึ่งเชื่อม SEO, Semantic/Entity SEO และการติดตาม AI Search หลายแพลตฟอร์ม หน้า Service ยังพูดถึงการวัด AI visibility/citation ควบคู่ Conversion จึงเป็นตัวเลือกที่ควรนำมาเทียบเมื่อองค์กรต้องการเอเจนซี่ที่ดู Search และ Digital Marketing ในภาพใหญ่</P>
-                  </ArticleSubSection>
-
-        <ArticleSubSection title="3. Cotactic">
-          <P>Cotactic มีหน้า Generative Engine Optimization Service โดยเฉพาะ ระบุงาน Website Audit, การปรับโครงสร้าง Content/On-page และการวัดผลจากจำนวนครั้งที่เว็บไซต์ถูก AI อ้างอิง รวมถึง Traffic ที่มาจาก AI sources จุดที่ควรถามเพิ่มคือวิธีเก็บ Baseline และนิยาม Citation/Traffic ใน Report เพื่อให้เทียบก่อน–หลังได้ตรงกัน</P>
-                  </ArticleSubSection>
-
-        <ArticleSubSection title="4. ANGA">
-          <P>ANGA มีทั้ง AI Search และ GEO Service โดยหน้าเว็บระบุการทำงานด้าน Entity, Content Strategy และการติดตาม AI Mention, Citation, Brand Visibility, LLM Traffic และ Conversion รวมถึงมี ANGA ONE สำหรับดูข้อมูล AI Search และ Google ในระบบของเอเจนซี่</P>
-                  </ArticleSubSection>
-
-        <ArticleSubSection title="5. Minimice Group">
-          <P>Minimice Group มีบริการ SEO AI Search และประกาศ KPI เพิ่มจาก SEO เดิม เช่น AI Visibility Percentage และ Citation ควบคู่ Organic Traffic, Conversion, Ranking และ Brand Keyword ทำให้เหมาะสำหรับการนำมาเทียบในกรณีที่ต้องการผูก AI Search เข้ากับ Content, SEO และ Conversion metric ใน Scope เดียว</P>
-                  </ArticleSubSection>
-
-        <ArticleSubSection title="6. NerdOptimize">
-          <P>NerdOptimize มี AI Search Service ที่ระบุทั้ง Content Structure, Entity, Technical SEO และ Structured Data พร้อม Monitoring ด้าน Brand Mention/Citation, AI Traffic และ Conversion หน้า Service ระบุว่ามีรายงานผลรายเดือน จึงควรถามต่อว่าชุด Query/Prompt และ Attribution ถูกกำหนดอย่างไรในแต่ละโปรเจกต์</P>
-                  </ArticleSubSection>
+      <ArticleSection id="geo-agency-providers" title="ก่อนขอ Proposal จาก GEO Agency ควรเตรียมอะไร">
+        <P>
+          การถามเพียง “ทำ GEO ราคาเท่าไร” ทำให้เทียบข้อเสนอได้ยาก เพราะแต่ละทีมอาจตีความ Scope ไม่เหมือนกัน
+          ก่อนขอ Proposal ควรเตรียม Brief สั้น ๆ ที่ระบุเป้าหมาย เว็บไซต์ กลุ่มบริการหลัก ตลาดที่ต้องการโต และ Conversion ที่ใช้วัดผล
+          เพื่อให้ทุกทีมตอบโจทย์เดียวกัน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['1. Business Goal', 'ระบุว่าเป้าหมายคือ Lead, Call, LINE, Purchase, Brand Visibility หรือการขยาย Non-brand Demand เพื่อไม่ให้ KPI จบที่ Mention/Citation'],
+            ['2. Priority Pages', 'ระบุหน้า Service, Category หรือ Product ที่มีผลต่อธุรกิจ เพื่อให้ Scope ไม่กลายเป็นการทำ Blog อย่างเดียว'],
+            ['3. Search Baseline', 'เตรียม Search Console, GA4 และข้อมูลอันดับ/Query ที่มีอยู่ เพื่อแยกสิ่งที่ต้องแก้จากสิ่งที่กำลังทำงานดี'],
+            ['4. AI Visibility Baseline', 'กำหนด Query/Prompt Set สำคัญและบันทึก Platform, Date, Mention, Citation หรือ Source ก่อนเริ่มงาน'],
+            ['5. Team & Dependency', 'ระบุว่าใครแก้ Dev, Content, PR, CMS และ Tracking ได้ เพราะ GEO ที่ดีมักต้องทำงานข้ามทีม'],
+            ['6. Decision Window', 'กำหนดรอบ Review และ Metric ที่ใช้ตัดสินว่าจะ Scale, Refresh หรือหยุดงานส่วนใด แทนการเซ็น Retainer โดยไม่มีเกณฑ์ตัดสิน'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้า Brief ชุดเดียวถูกส่งให้หลายทีม จะเห็นความต่างของ Methodology ชัดกว่าการอ่านหน้า Service เพราะ Proposal ที่ดีควรบอก
+          <strong> ว่าจะตรวจอะไร, แก้อะไร, Output คืออะไร, ใครรับผิดชอบ และตัดสินผลจากข้อมูลชุดไหน</strong>
+        </P>
       </ArticleSection>
 
       <GeoAgencyComparisonTable />
@@ -1507,26 +1500,26 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>
-          ถ้าต้องการให้ทีมภายนอกช่วยตั้งแต่ Audit ถึงการลงมือทำ สามารถดูขอบเขต{' '}
-          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
-          {' '}ได้ ส่วนกรณีที่ยังไม่รู้ว่าปัญหาอยู่ที่ SEO, Content หรือ AI Visibility ควรเริ่มจาก{' '}
-          <Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตรวจสอบเว็บไซต์ฟรี</Link>
-          {' '}เพื่อจัดลำดับก่อน
+          ถ้าต้องการให้ทีมภายนอกช่วยตั้งแต่การวิเคราะห์จนถึงการลงมือทำ สามารถดูขอบเขต{' '}
+          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO และ AI Search</Link>
+          {' '}ได้ ส่วนกรณีที่ยังไม่ชัดว่าปัญหาอยู่ที่ SEO, Content หรือ AI Visibility สามารถดู{' '}
+          <Link to="/services" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ภาพรวมบริการของ Saralak Search</Link>
+          {' '}เพื่อเลือก Scope ตามปัญหาจริง
         </P>
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Central — AI features and your website, checked 18 September 2026',
-        'Google Search Console Help — Generative AI performance report, rollout noted 31 August 2026',
-        'Primal, Cotactic, ANGA, Minimice Group และ NerdOptimize — public AI Search/GEO service pages, checked 18 September 2026',
-        'Saralak Search — anonymized E-commerce AI Overview case observation และ internal content workflow',
+        'Google Search Central — Optimizing for generative AI features on Google Search, checked 6 October 2026',
+        'Google Search Central — latest documentation updates covering generative AI guidance, checked 6 October 2026',
+        'Google Search Console Help — Generative AI performance report, checked 6 October 2026',
+        'Saralak Search — anonymized E-commerce AI Overview case observation และ internal GEO workflow, checked 6 October 2026',
       ]} />
 
       <ArticleFAQ post={post} heading="คำถามที่ควรถามก่อนเลือก GEO Agency" id="geo-agency-faq" />
 
       <ArticleSection id="geo-agency-conclusion" title="สรุป: ทำ GEO ที่ไหนดี ให้เลือกจากระบบงาน ไม่ใช่คำโฆษณา">
         <P>คำตอบของ “ทำ GEO ที่ไหนดี” จึงไม่ใช่ชื่อบริษัทเดียวสำหรับทุกธุรกิจ แต่เป็นการเลือกทีมที่เข้ากับปัญหาและทรัพยากรจริง พร้อมพิสูจน์ได้ว่าก่อนเริ่มวัดอะไร จะเปลี่ยนอะไร และหลังทำจะตัดสินผลจากข้อมูลชุดไหน</P>
-        <P>ก่อนเซ็นสัญญา ควรขอ Scope, Baseline, Measurement Definition และตัวอย่าง Reporting จากหลายรายมาเทียบบนเกณฑ์เดียวกัน หาก Proposal เน้นจำนวนบทความหรือคำว่า AI-ready แต่ไม่บอกวิธีตรวจ Search foundation, Prompt/Query Set และ Business outcome ยังถือว่าข้อมูลไม่พอสำหรับตัดสินใจ</P>
+        <P>ก่อนเซ็นสัญญา ควรขอ Scope, Baseline, Measurement Definition และตัวอย่าง Reporting แล้วเทียบบนเกณฑ์เดียวกัน หาก Proposal เน้นจำนวนบทความหรือคำว่า AI-ready แต่ไม่บอกวิธีตรวจ Search foundation, Prompt/Query Set, Owner URL และ Business Outcome ยังถือว่าข้อมูลไม่พอสำหรับตัดสินใจ</P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนเลือก Agency' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ดูขั้นตอน Implementation' },
