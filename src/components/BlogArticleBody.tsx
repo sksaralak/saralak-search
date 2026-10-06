@@ -7842,178 +7842,296 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
 }
 
 function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
+  const compareRows = [
+    ['Google Search Console', 'เว็บตัวเอง', 'Clicks, Impressions, Queries, Pages, CTR, Average Position', 'ข้อมูลจาก Google Search โดยตรง'],
+    ['GA4', 'เว็บตัวเอง', 'Sessions, Users, Engagement, Source/Medium, Conversion', 'ข้อมูลพฤติกรรมหลังเข้าเว็บไซต์'],
+    ['SEO / competitor tools', 'เว็บคู่แข่ง', 'Estimated organic traffic, ranking keywords, top pages', 'ค่าประมาณการจากฐานข้อมูลของผู้ให้บริการ'],
+  ]
+
+  const workflow = [
+    {
+      title: '1. ดู Visibility ก่อน',
+      body: 'เปิด Search Console > Performance แล้วดู Clicks, Impressions, Queries และ Pages เพื่อเช็กว่า Google แสดงเว็บไซต์บ่อยขึ้นหรือลดลงจากช่วงก่อน',
+    },
+    {
+      title: '2. แยก Brand กับ Non-brand',
+      body: 'ถ้า property รองรับ ใช้ Branded / Non-branded filter เพื่อดูว่า Traffic โตจากคนที่รู้จักแบรนด์อยู่แล้ว หรือเริ่มมีคำค้นทั่วไปที่พาคนใหม่เข้ามา',
+    },
+    {
+      title: '3. หา Landing Page ที่โตหรือหล่น',
+      body: 'ดู Pages แล้วเทียบช่วงเวลาเดียวกัน จากนั้นเจาะ Query ของหน้าที่เปลี่ยนแปลงเพื่อแยกว่า Demand, Ranking หรือ Search Intent เป็นสาเหตุ',
+    },
+    {
+      title: '4. ต่อด้วย GA4',
+      body: 'ดู Traffic acquisition เพื่อเช็ก Session source / medium, Engaged sessions และ Conversion ว่าคนที่เข้ามาจาก Organic Search ทำอะไรต่อบนเว็บไซต์',
+    },
+    {
+      title: '5. ตัดสินใจว่าจะเพิ่มหรือแก้ Traffic',
+      body: 'ถ้า Visibility ยังต่ำ ให้กลับไปแก้ SEO foundation; ถ้า Clicks มาแล้วแต่ Conversion ไม่มา ให้แก้ Landing Page, Offer, CTA หรือ Tracking แทน',
+    },
+  ]
+
   return (
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
 
+      <ArticleSection title="เช็ค Traffic Website ฟรี ใช้อะไรดู?">
+        <P>
+          <strong>ถ้าเป็นเว็บไซต์ของตัวเอง ให้ใช้ Google Search Console และ GA4 ร่วมกัน</strong>
+          เพราะสองเครื่องมือนี้ตอบคนละคำถาม: Search Console บอกว่าเว็บไซต์ถูกเห็นและถูกคลิกจาก Google Search อย่างไร
+          ส่วน GA4 บอกว่าหลังคนเข้ามาแล้วเกิด Session, Engagement และ Conversion อะไรต่อ
+        </P>
+        <P>
+          ถ้าจะเช็คเว็บไซต์คู่แข่ง เครื่องมือภายนอกช่วยดูแนวโน้มและประมาณการได้
+          แต่ไม่สามารถแทนข้อมูล Search Console หรือ Analytics ภายในของคู่แข่งได้
+          จุดนี้สำคัญมาก เพราะตัวเลข Estimated Traffic ไม่ควรถูกตีความว่าเป็น Click หรือ Session จริง
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="สรุปการเช็ค Traffic Website ใน 30 วินาที">
+        <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-5">
+          <ul className="grid gap-3">
+            {[
+              'Search Console ใช้ดู Organic Search Visibility จาก Google: Clicks, Impressions, Queries และ Pages',
+              'GA4 ใช้ดู Sessions, Engagement, Source/Medium และ Conversion หลังคนเข้าเว็บไซต์',
+              'Traffic คู่แข่งจาก SEO tools เป็นค่าประมาณการ ควรใช้ดู trend และ benchmark ไม่ใช่ตัวเลขจริง',
+              'Search Console กับ GA4 ไม่จำเป็นต้องตรงกัน เพราะวัดคนละช่วงและใช้วิธีนับต่างกัน',
+              'ถ้าจะวิเคราะห์การเติบโต ให้แยก Brand / Non-brand, Page และ Query ก่อนดู Traffic รวม',
+              'Traffic เป็นจุดเริ่มต้น ควรวัดต่อถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion',
+            ].map((item) => (
+              <li key={item} className="thai-readable flex gap-3 text-sm leading-6 text-teal-950">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ArticleSection>
+
       <ArticleImage
         src="/image/blog/check-website-traffic-free/check-website-traffic-free-own-vs-competitor.webp"
-        alt="เปรียบเทียบข้อมูล Traffic จริงของเว็บไซต์ตัวเองกับข้อมูลประมาณการของเว็บไซต์คู่แข่ง"
+        alt="เปรียบเทียบวิธีเช็ค Traffic Website ของตัวเองกับเว็บไซต์คู่แข่ง"
       />
 
-      <ArticleSection title="เช็ค Traffic เว็บไซต์ฟรี ทำได้จริงไหม?">
+      <ArticleSection title="Search Console, GA4 และเครื่องมือคู่แข่ง ต่างกันอย่างไร">
         <P>
-          ทำได้จริง และไม่ต้องเสียเงินเลยสักบาท — แต่มี 2 กรณีที่ต้องแยกให้ออกก่อน
-          คือเช็ค Traffic เว็บไซต์ของตัวเอง (ฟรี 100% และแม่นยำ) กับเช็ค Traffic เว็บไซต์คนอื่นหรือคู่แข่ง
-          (ฟรีเช่นกัน แต่เป็นตัวเลขประมาณการ ไม่ใช่ Click จริง) หลายคนสับสนสองอย่างนี้
-          แล้วเอาตัวเลขประมาณการมาเข้าใจผิดว่าคือ Traffic จริงของตัวเอง
+          เครื่องมือเช็ค Traffic ไม่ได้วัดสิ่งเดียวกันทั้งหมด
+          การเลือกผิดเครื่องมือทำให้ตีความผิดได้ เช่น เอา Estimated Organic Traffic ของคู่แข่ง
+          ไปเทียบตรง ๆ กับ Organic Sessions ใน GA4 ของเว็บไซต์ตัวเอง
         </P>
-        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
-          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
-            เช็ค Traffic เว็บไซต์ตัวเองฟรีผ่าน Google Search Console และ GA4 (แม่นยำ 100%)
-            ส่วนเว็บไซต์คู่แข่งเช็คผ่าน Ubersuggest, Semrush หรือ Ahrefs Free (ประมาณการเท่านั้น)
-          </p>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[760px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">เครื่องมือ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">เหมาะกับ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ดูอะไรได้</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ลักษณะข้อมูล</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {compareRows.map(([tool, fit, metric, data]) => (
+                <tr key={tool}>
+                  <td className="px-4 py-3 font-medium text-neutral-950">{tool}</td>
+                  <td className="thai-readable px-4 py-3">{fit}</td>
+                  <td className="thai-readable px-4 py-3">{metric}</td>
+                  <td className="thai-readable px-4 py-3">{data}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </ArticleSection>
 
-      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเอง (ฟรี 100% แม่นยำ)">
+      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเองด้วย Google Search Console">
         <ArticleImage
           src="/image/blog/check-website-traffic-free/check-website-traffic-free-workflow.webp"
-          alt="ขั้นตอนตรวจ Traffic เว็บไซต์ฟรี ตั้งแต่เชื่อมเว็บไซต์ ดูกราฟ ไปจนถึงสรุปสิ่งที่ควรแก้"
+          alt="Workflow เช็ค Traffic Website ผ่าน Google Search Console และ GA4"
         />
         <P>
-          ถ้าเป็นเว็บไซต์ของตัวเอง ไม่ต้องพึ่งเครื่องมือภายนอกเลย เพราะ Google มีเครื่องมือฟรีที่แม่นยำที่สุดให้ใช้อยู่แล้ว
+          Google Search Console เหมาะกับคำถามว่า
+          <strong> “เว็บไซต์ถูกค้นพบจาก Google Search อย่างไร”</strong>
+          Performance report แสดง Clicks, Impressions, CTR และ Average Position
+          และสามารถแยกตาม Queries, Pages, Countries, Devices, Search appearance และช่วงเวลาได้
         </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">Google Search Console</h3>
-            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-              ดู Clicks, Impressions, CTR และ Average Position จริงจาก Google Search — เข้า Performance Report
-              แล้วเลือกช่วงเวลาที่ต้องการเทียบ (เช่น 3 เดือนล่าสุด เทียบกับ 3 เดือนก่อนหน้า)
-            </p>
-          </div>
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">Google Analytics 4 (GA4)</h3>
-            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-              ดู Session, User และช่องทางที่คนเข้ามา (Organic Search, Direct, Social, Referral, AI)
-              ช่วยให้เห็นภาพกว้างกว่า Search Console ว่า Traffic มาจากไหนบ้าง ไม่ใช่แค่ Google Search
-            </p>
-          </div>
+        <div className="grid gap-4">
+          {[
+            ['ดู Clicks และ Impressions', 'ถ้า Impressions โตแต่ Clicks ไม่โต แปลว่าต้องเจาะต่อที่ Query, Position และ SERP presentation ไม่ควรรีบสรุปว่า Meta Description เป็นสาเหตุทันที'],
+            ['ดู Queries', 'เช็กว่าคำค้นที่สร้าง Visibility ตรงกับสินค้า บริการ หรือหัวข้อที่ต้องการหรือไม่ และแยก Brand / Non-brand เมื่อ property รองรับ'],
+            ['ดู Pages', 'หา Landing Page ที่ Clicks หรือ Impressions เปลี่ยน แล้วค่อยเปิด Query ของหน้านั้นเพื่อหาสาเหตุ'],
+            ['เปรียบเทียบช่วงเวลา', 'ใช้ Compare เช่น 28 วันล่าสุดกับ 28 วันก่อน หรือ Year over Year สำหรับธุรกิจที่มี seasonality เพื่อไม่ตีความจากวันเดียว'],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
+            </div>
+          ))}
         </div>
         <P>
-          ถ้ายังไม่เคยติดตั้งทั้งสองตัว นี่คือสิ่งแรกที่ควรทำก่อนจะพูดถึงเรื่องเพิ่ม Traffic เลย
-          เพราะแก้ไขอะไรก็วัดผลไม่ได้ถ้าไม่มีข้อมูลตั้งต้น
+          ถ้าต้องการเช็กว่า URL สำคัญถูก Index หรือไม่
+          ควรใช้ URL Inspection หรือ Page indexing report แยกต่างหาก
+          เพราะ Performance report มีไว้ดูผลลัพธ์จาก Search ไม่ใช่ใช้ยืนยันสถานะ Index ของทุก URL
         </P>
       </ArticleSection>
 
-      <ArticleCTA
-        headline="เช็คแล้วเจอเลข — แต่รู้ไหมว่ามันบอกอะไร?"
-        description="เลขนี้บอกอะไรคุณบ้าง? คู่แข่งที่รู้เลขตัวเองอยู่แล้วกำลังแก้จุดอ่อนไปเรื่อยๆ ในขณะที่คุณเพิ่งจะมาเช็คเป็นครั้งแรก การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยอ่านเลขนี้ให้ว่าดีหรือแย่ และควรแก้จุดไหนก่อน"
-      />
-
-      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์คู่แข่ง (ฟรี แต่เป็นตัวเลขประมาณการ)">
+      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเองด้วย GA4">
         <P>
-          ถ้าอยากรู้ Traffic ของเว็บไซต์ที่ไม่ใช่ของตัวเอง (เช่น คู่แข่ง) จะเข้า Search Console ของเขาไม่ได้แน่นอน
-          ต้องใช้เครื่องมือภายนอกที่ประมาณการ Traffic จากอันดับคีย์เวิร์ดแทน เช่น Ubersuggest, Semrush
-          (Free Tier) หรือ Ahrefs Free Traffic Checker
+          GA4 เหมาะกับคำถามว่า <strong>“หลังจากคนเข้ามาแล้วเกิดอะไรขึ้น”</strong>
+          โดย Traffic acquisition report สามารถดู Session source / medium และ channel
+          เพื่อแยก Organic Search, Direct, Referral, Social และช่องทางอื่นได้
+        </P>
+        <div className="rounded-xl border border-neutral-200 bg-[#fbfaf6] p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ตัวเลขที่ควรดูต่อจาก Traffic</p>
+          <div className="mt-3 grid gap-2 text-sm leading-6 text-neutral-700">
+            <p className="thai-readable"><strong>Sessions:</strong> มีการเข้าชมจากช่องทางนั้นกี่ session</p>
+            <p className="thai-readable"><strong>Engaged sessions:</strong> Traffic ที่เข้ามามี interaction จริงแค่ไหน</p>
+            <p className="thai-readable"><strong>Landing page:</strong> คนเริ่มต้นจากหน้าใด และ journey ต่อไปเป็นอย่างไร</p>
+            <p className="thai-readable"><strong>Conversion / Key events:</strong> เกิด Form, LINE, Call, Lead หรือ Purchase หรือไม่</p>
+          </div>
+        </div>
+        <P>
+          Search Console กับ GA4 จึงไม่ควรถูกใช้แทนกัน
+          และไม่ควรคาดหวังให้ Clicks กับ Sessions เท่ากัน
+          เพราะจุดเริ่มต้นของการวัด การประมวลผล consent, attribution และ session ต่างกัน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์คู่แข่งฟรี ต้องอ่านตัวเลขอย่างไร">
+        <P>
+          เว็บไซต์คู่แข่งไม่เปิด Search Console หรือ GA4 ให้เข้าถึง
+          ดังนั้นเครื่องมือ SEO ภายนอกจึงใช้ฐานข้อมูล keyword, ranking และโมเดลประมาณการ
+          เพื่อประเมิน Organic Traffic, keyword visibility หรือ top pages
         </P>
         <div className="rounded-xl border-l-4 border-amber-500 bg-amber-50 px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">ข้อควรระวัง</p>
-          <p className="thai-readable mt-2 text-base leading-7 text-neutral-900">
-            ตัวเลขจากเครื่องมือเหล่านี้ไม่ใช่ Click จริง แต่เป็นการ "ประมาณการ" จากอันดับคีย์เวิร์ดคูณกับ CTR เฉลี่ยของตำแหน่งนั้นๆ
-            เคยเจอกรณีจริง — รายงานที่ใช้ตัวเลขประมาณการแบบนี้บอกว่าเว็บไซต์ลูกค้ารายหนึ่งได้ Traffic หลักร้อยต่อเดือน
-            แต่พอดึงข้อมูลจริงจาก Search Console กลับพบว่า Click จริงต่างจากตัวเลขประมาณการหลายเท่าตัว
-            เพราะคนละวิธีวัด — ถ้าเป็นเว็บไซต์ของตัวเอง อย่าเชื่อเครื่องมือประมาณการเพียงอย่างเดียว
-            ใช้ Search Console เป็นหลักเสมอ
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-800">ใช้ตัวเลขประมาณการให้ถูก</p>
+          <p className="thai-readable mt-2 text-sm leading-7 text-amber-950">
+            ใช้เพื่อถามว่า “คู่แข่งโตจาก keyword หรือหน้าไหน” มากกว่า “คู่แข่งมีคนเข้าเว็บจริงกี่คน”
+            และควรดูแนวโน้มหลายเดือนแทนการยึดเลขเดือนเดียว
+            เพราะ estimated traffic ขึ้นกับฐานข้อมูลและวิธีคำนวณของแต่ละ provider
           </p>
+        </div>
+        <P>
+          จากการทำงานจริง Saralak Search เคยพบกรณีที่ตัวเลขจากเครื่องมือภายนอก
+          ต่างจาก Search Console ของเว็บไซต์จริงอย่างมีนัยสำคัญ
+          จึงใช้ competitor tools สำหรับหา pattern และ opportunity
+          แต่ใช้ first-party data เป็นฐานเมื่อตัดสินใจแก้เว็บไซต์ของตัวเอง
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="Workflow เช็ค Traffic แล้วรู้ว่าควรทำอะไรต่อ">
+        <P>
+          การเช็ค Traffic ที่มีประโยชน์ควรจบด้วยการตัดสินใจ
+          ไม่ใช่แค่เปิดกราฟแล้วดูว่าตัวเลขเพิ่มหรือลด
+          ลำดับด้านล่างเป็น methodology ของ Saralak Search สำหรับหา bottleneck
+          ไม่ใช่กฎหรือ Ranking Factor ของ Google
+        </P>
+        <div className="grid gap-4">
+          {workflow.map((item) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
         </div>
       </ArticleSection>
 
-      <ArticleSection title="เช็คแล้วเจอว่า Traffic นิ่งหรือน้อย ต้องทำอย่างไรต่อ">
-        <P>
-          รู้ตัวเลขแล้วเป็นแค่จุดเริ่มต้น — คำถามที่สำคัญกว่าคือ Traffic ที่ได้มาจากคำค้น Brand (ชื่อธุรกิจ)
-          เป็นหลักหรือเปล่า เพราะถ้าใช่ แปลว่าเว็บไซต์ยังเข้าไม่ถึงลูกค้าใหม่ที่ยังไม่รู้จักแบรนด์เลย
-        </P>
+      <ArticleSection title="ตัวอย่างจากงานจริง: Traffic โต แต่สิ่งสำคัญคือโตจาก Non-brand">
         <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
           <ZoomableImage
             src="/proof/nutrition-content-growth.png"
-            alt="ตัวอย่างผลลัพธ์จริง: Organic Clicks โต 14 เท่าใน 3 เดือน จาก Brand Search สู่ Non-Brand และ AI Search"
+            alt="Google Search Console แสดง Organic Clicks เติบโตจากประมาณ 150 เป็นมากกว่า 2,150 ต่อเดือน"
           />
           <div className="px-5 py-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · SEO + GEO · 3 เดือน</p>
-            <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks โต 14 เท่า จาก Brand สู่ Non-Brand + AI Search</h3>
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Content SEO · Non-brand Growth · 3 เดือน</p>
+            <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks จากราว 150 เป็นมากกว่า 2,150 ต่อเดือน</h3>
             <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-              เว็บไซต์กลุ่มสุขภาพและโภชนาการรายหนึ่งเคยถูกค้นพบจากคำค้น Brand เท่านั้น — เหมือนกับที่หลายเว็บไซต์เจอตอนเช็ค Traffic ครั้งแรก
-              หลังทำ Keyword Research 5 คำต่อเดือนและปรับ On-Page SEO ให้ตรง Search Intent (ฝั่ง SEO)
-              พร้อมจัดโครงสร้างเนื้อหาแบบตอบคำถามชัดเจน มี FAQ และตาราง Comparison เพื่อให้ AI Search
-              เข้าใจและอ้างอิงได้ง่ายขึ้น (ฝั่ง GEO) Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150
-              ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
+              เว็บไซต์กลุ่มสุขภาพและโภชนาการรายหนึ่งเคยถูกค้นพบจาก Brand Search เป็นหลัก
+              หลังขยาย Non-brand keyword coverage และปรับ Content ให้เชื่อม informational intent
+              กับหมวดสินค้าอย่างเป็นธรรมชาติ Organic Clicks เพิ่มเป็นมากกว่า 2,150 ครั้งต่อเดือนภายใน 3 เดือน
+              ประเด็นที่ใช้กับการเช็ค Traffic คืออย่าดูแค่ยอดรวม
+              ต้องดูด้วยว่า Traffic ใหม่มาจาก Query และ Landing Page ที่พาธุรกิจไปหาลูกค้าใหม่หรือไม่
             </p>
             <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-              ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
+              ดู SEO Case Studies <span aria-hidden="true"></span>
             </Link>
           </div>
         </div>
-        <P>
-          เว็บไซต์นี้ก็เคยเช็ค Traffic แล้วเจอเลขนิ่งๆ พึ่งพา Brand Search เหมือนกัน — ต่างกันตรงที่มีคนเข้ามาแก้ปัญหาให้ก่อนที่จะเสียโอกาสไปนานกว่านี้
-        </P>
       </ArticleSection>
 
-      <ArticleCTA
-        headline="เช็คแล้วเจอว่า Traffic นิ่งมาหลายเดือน? นั่นคือสัญญาณเตือน ไม่ใช่เรื่องปกติ"
-        description="ยิ่งปล่อยไว้นาน คู่แข่งที่ลงมือทำ SEO และ GEO ก่อนก็ยิ่งทิ้งระยะห่างมากขึ้น ดูวิธีแก้แบบเป็นระบบได้ในเช็คลิสต์นี้"
-      />
-
-      <ReadMoreLinks items={[
-        { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
-      ]} />
-
-      <ArticleSection title="อย่าลืมเช็ค Traffic จาก AI Search ด้วย (GEO)">
-        <P>
-          เครื่องมือเช็ค Traffic ส่วนใหญ่ยังมองแค่ Google Search แบบเดิม แต่ผู้ใช้งานเริ่มถาม ChatGPT, Gemini
-          และ Perplexity เพื่อหาข้อมูลและตัดสินใจซื้อมากขึ้นเรื่อยๆ — ช่องทางนี้ Google Search Console แบบเดิมยังรายงานได้ไม่ครบ
-        </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">ทดสอบด้วยตัวเอง</h3>
-            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-              ลองถามคำถามเกี่ยวกับธุรกิจของคุณใน ChatGPT, Gemini หรือ Perplexity ดูว่าแบรนด์ถูกกล่าวถึงไหม
-              ถ้าไม่ถูกกล่าวถึงเลย นั่นคือจุดที่ต้องเริ่มทำ GEO
-            </p>
-          </div>
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">เช็คใน GA4</h3>
-            <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-              ดู Referral Traffic ว่ามีคนเข้ามาจาก AI Platform บ้างหรือยัง — ถ้ายังไม่มีเลย
-              ไม่ได้แปลว่าไม่มีโอกาส แต่แปลว่ายังไม่ได้เริ่มทำอะไรในฝั่งนี้เลย
-            </p>
-          </div>
+      <ArticleSection title="ถ้าเช็คแล้ว Traffic ลด ควรไล่ดูอะไรตามลำดับ">
+        <div className="grid gap-3">
+          {[
+            ['Search Console ลดทั้ง Impressions และ Clicks', 'ดู Queries, Pages, Indexing, Search demand และการเปลี่ยนแปลงใน SERP'],
+            ['Impressions ทรงตัว แต่ Clicks ลด', 'ดู Position, Query mix, Title/Snippet และ SERP features'],
+            ['Search Console ทรงตัว แต่ GA4 Organic Sessions ลด', 'ตรวจ GA4 tagging, consent, channel attribution และ landing-page tracking'],
+            ['Traffic โต แต่ Conversion ลด', 'ตรวจ Query quality, Landing Page, CTA, Offer และ conversion tracking'],
+          ].map(([signal, action]) => (
+            <div key={signal} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <p className="font-semibold text-neutral-950">{signal}</p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{action}</p>
+            </div>
+          ))}
         </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/seo-not-working', label: 'Organic Traffic คืออะไร และทำไม Traffic จาก Google ไม่โต' },
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic เว็บไซต์ โดยเน้น SEO แบบเป็นระบบ' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="แล้ว Traffic จาก AI Search เช็คอย่างไร">
         <P>
-          อ่านเพิ่มเติมได้ที่{' '}
+          AI Search ควรแยกการวัดออกจาก Organic Search ปกติ
+          เพราะแต่ละแพลตฟอร์มมีวิธีแสดง citation, mention และ referral ต่างกัน
+          การเห็นแบรนด์ถูกกล่าวถึงในคำตอบหนึ่งครั้งจึงไม่ควรถูกเท่ากับ Traffic หรือ Conversion
+        </P>
+        <P>
+          ใน GA4 สามารถดู referral/source ที่เข้ามายังเว็บไซต์ได้เมื่อแพลตฟอร์มส่ง referrer มา
+          ส่วนการวัด AI visibility ควรใช้ query set เดิมเพื่อติดตาม Mention/Citation แยกอีกชุดหนึ่ง
+          และถ้าต้องการเข้าใจหลักการของฝั่งนี้ อ่านต่อที่{' '}
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
         </P>
       </ArticleSection>
 
-      <ArticleSection title="สรุป: เช็ค Traffic ฟรีคือจุดเริ่มต้น ไม่ใช่ปลายทาง">
+      <ArticleSection title="ข้อจำกัดของการเช็ค Traffic ที่ควรรู้">
         <P>
-          เช็ค Traffic เว็บไซต์ตัวเองฟรีผ่าน Search Console และ GA4 ได้แม่นยำ 100% ไม่ต้องเสียเงิน
-          ส่วนเว็บไซต์คู่แข่งเช็คได้ฟรีผ่าน Ubersuggest, Semrush หรือ Ahrefs แต่ต้องเข้าใจว่าเป็นตัวเลขประมาณการ
+          Traffic ไม่ใช่ความจริงชุดเดียวที่ทุกเครื่องมือจะรายงานเหมือนกัน
+          Search Console, GA4 และเครื่องมือประมาณการมี source, scope และวิธีนับต่างกัน
+          จึงควรใช้แต่ละตัวตอบคำถามที่มันออกแบบมาให้ตอบ
         </P>
         <P>
-          แต่รู้ตัวเลขอย่างเดียวไม่พอ — ต้องรู้ด้วยว่าตัวเลขนั้นดีหรือแย่ และควรแก้จุดไหนก่อน
-          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยอ่านตัวเลขและวางแผนต่อ{' '}
-          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
-          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
+          นอกจากนี้ seasonality, campaign, consent, ad blocker, redirect และ tracking configuration
+          สามารถทำให้ข้อมูลเปลี่ยนได้โดยไม่ใช่ผลจาก SEO เพียงอย่างเดียว
+          correlation หลังการแก้หน้าเว็บจึงไม่ควรถูกตีความเป็น causation โดยไม่ดูบริบทอื่น
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: เช็ค Traffic ฟรีให้ได้คำตอบ ไม่ใช่แค่ได้ตัวเลข">
+        <P>
+          ถ้าเป็นเว็บไซต์ของตัวเอง ให้เริ่มจาก Search Console เพื่อดู Search Visibility
+          แล้วต่อด้วย GA4 เพื่อดู Traffic quality และ Conversion
+          ถ้าเป็นคู่แข่ง ให้ใช้ estimated data เพื่อหาแนวโน้มและ opportunity แทนการพยายามตีความเป็นตัวเลขจริง
+        </P>
+        <P>
+          หากเช็คแล้วเห็นว่าหน้าสำคัญมี Impression แต่ Traffic ไม่โต
+          หรือ Traffic โตแต่ไม่สร้างผลทางธุรกิจ
+          การวิเคราะห์ Search Demand, Query/Page mapping, Technical SEO, Content และ Conversion path
+          จะช่วยระบุว่าควรแก้อะไรก่อน
         </P>
         <ReadMoreLinks items={[
-          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์ [เช็คลิสต์ 8 ข้อที่ใช้ได้จริง]' },
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
-          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+          { to: '/services/seo', label: 'บริการ SEO สำหรับวิเคราะห์และเพิ่ม Organic Visibility' },
+          { to: '/blog/increase-seo-traffic', label: 'เพิ่ม Traffic เว็บอย่างไร? ดูแผน SEO แบบเป็นระบบ' },
+          { to: '/case-studies', label: 'ดู SEO Case Studies ของ Saralak Search' },
         ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Console documentation, checked July 2026',
-        'Google Analytics 4 documentation, checked July 2026',
-        'Saralak Search client case studies (anonymised), checked July 2026',
+        'Google Search Console Help: Performance report metrics and dimensions, checked October 2026',
+        'Google Search Console Help: Branded / Non-branded query filter, checked October 2026',
+        'Google Analytics Help: Traffic acquisition and traffic-source dimensions, checked October 2026',
+        'Saralak Search methodology and anonymised client Search Console observations, updated October 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเรื่องเช็ค Traffic เว็บไซต์ฟรี" />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเรื่องเช็ค Traffic Website ฟรี" />
     </article>
   )
 }
