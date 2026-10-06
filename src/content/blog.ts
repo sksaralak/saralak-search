@@ -245,44 +245,34 @@ export const whatIsAeoFaqs: FAQItem[] = [
 
 export const llmsTxtFaqs: FAQItem[] = [
   {
-    question: 'llms.txt คืออะไร',
+    question: 'llm.txt คืออะไร ต่างจาก llms.txt ไหม?',
     answer:
-      'llms.txt คือไฟล์ข้อความที่วางไว้ในโฟลเดอร์หลักของเว็บไซต์ เพื่อบอก AI ว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน คล้ายกับ robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ',
+      'คำค้น “llm.txt” มักใช้เรียกไฟล์ llms.txt แบบย่อหรือพิมพ์ตกตัว s แต่ชื่อไฟล์ตาม proposal คือ llms.txt ไฟล์นี้ใช้ Markdown เพื่อให้ overview และลิงก์ไปยังทรัพยากรสำคัญสำหรับ agent หรือ LLM ที่รองรับ',
   },
   {
     question: 'llms.txt ต่างจาก robots.txt อย่างไร',
     answer:
-      'robots.txt บอก Search Engine Crawler ว่าหน้าไหน "ห้ามเข้า" ส่วน llms.txt บอก AI ว่าเว็บไซต์นี้ "เกี่ยวกับอะไร" และควรอ่านหน้าไหนก่อน robots.txt ใช้ไวยากรณ์เฉพาะ ส่วน llms.txt ใช้ภาษา Markdown ที่อ่านง่ายทั้งสำหรับ AI และมนุษย์',
+      'robots.txt เป็นมาตรฐานสำหรับควบคุมการเข้าถึงของ crawler ผ่านคำสั่งอย่าง User-agent และ Disallow ส่วน llms.txt เป็น proposal สำหรับไฟล์ Markdown ที่ให้ context และรายการลิงก์ ไม่มีหน้าที่แทน robots.txt และไม่ใช่ access-control file',
   },
   {
-    question: 'llms.txt จำเป็นกับ GEO ไหม',
+    question: 'llms.txt จำเป็นกับ Google Search หรือ GEO ไหม',
     answer:
-      'llms.txt ไม่ใช่ปัจจัยเดียวของ GEO แต่ช่วยให้ AI เข้าใจเว็บไซต์ได้เร็วและแม่นยำขึ้น โดยเฉพาะเว็บไซต์ที่มีเนื้อหาหลายหัวข้อ การมี llms.txt ที่ดีช่วยให้ AI รู้ว่าควรนำเนื้อหาของเราไปใช้ตอบคำถามเรื่องอะไร',
+      'ไม่จำเป็นสำหรับ Google Search โดย Google ระบุว่า llms.txt ไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking บน Google Search สำหรับ GEO ควรมองเป็นไฟล์เสริมสำหรับระบบที่รองรับ ไม่ใช่ Ranking Factor หรือข้อบังคับ',
   },
   {
-    question: 'llms.txt ใช้ภาษาอะไร ไทยหรืออังกฤษ',
+    question: 'llms.txt ต้องอยู่ที่ root เสมอไหม',
     answer:
-      'ใช้ได้ทั้งสองภาษา แต่แนะนำให้เขียนภาษาที่สอดคล้องกับ Target Audience และเนื้อหาหลักของเว็บไซต์ สำหรับเว็บไซต์ภาษาไทยที่เน้นตลาดไทย ควรเขียน llms.txt เป็นภาษาไทยเป็นหลัก และอาจเพิ่มคำอธิบายภาษาอังกฤษในส่วนที่ต้องการ',
+      'proposal v2 รองรับทั้ง /llms.txt ที่ root และ llms.txt ใน subpath เช่น /docs/llms.txt โดยไฟล์จะอธิบาย URL ใต้ path นั้น และถ้ามีหลายไฟล์ให้ใช้ไฟล์ที่เจาะจง path มากกว่า',
   },
   {
-    question: 'AI อ่าน llms.txt จริงไหม',
+    question: 'AI ทุกระบบอ่าน llms.txt ไหม',
     answer:
-      'AI บางตัวอ่าน llms.txt เพื่อทำความเข้าใจเว็บไซต์ก่อนประมวลผลเนื้อหา โดยเฉพาะในกรณีที่ AI ต้องการ crawl หรือ index เนื้อหาใหม่ อย่างไรก็ตาม ผลของ llms.txt ยังขึ้นอยู่กับ AI แต่ละระบบว่ารองรับมาตรฐานนี้หรือไม่',
+      'ไม่ควรสมมติว่า AI ทุกระบบรองรับ llms.txt การใช้งานขึ้นอยู่กับแต่ละ agent, tool หรือ platform จึงควรตรวจเอกสารของระบบที่ต้องการรองรับและไม่ใช้ llms.txt แทนการทำเว็บไซต์ให้ crawlable, indexable และมีเนื้อหาชัดเจน',
   },
   {
-    question: 'วางไฟล์ llms.txt ไว้ที่ไหน',
+    question: 'llms.txt ควรอัปเดตเมื่อไร',
     answer:
-      'วางไว้ที่ root directory ของเว็บไซต์ เข้าถึงได้ที่ yourdomain.com/llms.txt เช่นเดียวกับ robots.txt ที่อยู่ที่ yourdomain.com/robots.txt หากใช้ WordPress วางไว้ในโฟลเดอร์ public_html หากใช้ React/Next.js วางไว้ในโฟลเดอร์ public/',
-  },
-  {
-    question: 'llms.txt ควรอัปเดตบ่อยแค่ไหน',
-    answer:
-      'ควรอัปเดต llms.txt ทุกครั้งที่มีการเพิ่มบทความใหม่ บริการใหม่ หรือเปลี่ยนทิศทางของเว็บไซต์ อย่างน้อยปรับปรุงทุก 1-2 เดือน เพื่อให้ AI มีข้อมูลล่าสุดเกี่ยวกับเนื้อหาของเว็บไซต์',
-  },
-  {
-    question: 'เว็บไซต์ที่ไม่มี llms.txt เสียเปรียบไหม',
-    answer:
-      'ในระยะสั้นอาจไม่เห็นความแตกต่างชัดเจน แต่เว็บไซต์ที่มี llms.txt ที่ดีช่วยให้ AI เข้าใจ Context ได้ดีกว่า ซึ่งอาจส่งผลต่อโอกาสถูกอ้างอิงในระยะยาว โดยเฉพาะเมื่อ AI Crawler รองรับมาตรฐานนี้มากขึ้น',
+      'ควรอัปเดตเมื่อข้อมูลในไฟล์ไม่ตรงกับเว็บไซต์ เช่น เปลี่ยนบริการ เพิ่มหรือลบ section สำคัญ เปลี่ยน URL หรือมี resource ใหม่ที่ควรแนะนำ ไม่มีรอบเวลามาตรฐานที่ต้องอัปเดตทุกสัปดาห์หรือทุกเดือน',
   },
 ]
 
@@ -866,9 +856,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'increase-sale-google-maps',
     category: 'Local SEO',
     excerpt: 'เพิ่มยอดขายบน Google Maps ด้วยวิธีที่ได้ผลจริง — ลูกค้ากว่า 2.24 ล้านคน/เดือนหา "ร้านอาหาร ใกล้ฉัน" แต่ร้านส่วนใหญ่พลาดโอกาสเพราะ GBP ไม่สมบูรณ์ เรียนรู้ 3 KPI ที่แปลงเป็นเงินได้จริง',
-    readingTime: '12 min read',
+    readingTime: '14 min read',
     publishedDate: '2026-06-22',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1201,36 +1191,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ',
+    title: 'llm.txt คืออะไร? จริง ๆ คือ llms.txt และควรใช้กับเว็บไซต์อย่างไร',
     slug: 'llms-txt-thailand',
     category: 'GEO',
     excerpt:
-      'llms.txt คือไฟล์ที่บอก AI ว่าเว็บไซต์ของคุณเกี่ยวกับอะไร คล้าย robots.txt แต่ออกแบบมาสำหรับ AI โดยเฉพาะ เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงที่ copy ไปใช้ได้เลย',
-    readingTime: '12 min read',
+      'คำค้น llm.txt มักหมายถึง llms.txt ซึ่งเป็นข้อเสนอสำหรับไฟล์ Markdown ที่สรุปเว็บไซต์และลิงก์ไปยังเนื้อหาสำคัญสำหรับ agent หรือ LLM ที่รองรับ บทความนี้อธิบายรูปแบบไฟล์ วิธีใช้ ข้อจำกัด และข้อเท็จจริงล่าสุดจาก Google',
+    readingTime: '14 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
     heroImageMobile: '/image/blog/llms-txt-how-to/llms-txt-how-banner-mweb.png',
-    heroImageAlt: 'llms.txt คืออะไร วิธีทำ llms.txt สำหรับเว็บไซต์ไทยให้ AI เข้าใจธุรกิจของคุณ',
+    heroImageAlt: 'llm.txt คืออะไร ความหมายของ llms.txt รูปแบบไฟล์ และวิธีใช้กับเว็บไซต์',
     ogImage: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
-    metaTitle: 'llms.txt คืออะไร? วิธีทำ llms.txt สำหรับเว็บไซต์ไทย | Saralak Search',
+    metaTitle: 'llm.txt คืออะไร? llms.txt ใช้ทำอะไร และจำเป็นไหม | Saralak Search',
     metaDescription:
-      'llms.txt คือไฟล์ที่ช่วยให้ AI เข้าใจเว็บไซต์ของคุณได้ดีขึ้น เรียนรู้วิธีทำ llms.txt สำหรับเว็บไซต์ไทย พร้อมตัวอย่างจริงสำหรับธุรกิจหลายประเภท และวิธีทดสอบว่า AI อ่านได้หรือไม่',
+      'llm.txt คือคำค้นที่มักหมายถึง llms.txt ไฟล์ Markdown สำหรับ agent/LLM ที่รองรับ ดูรูปแบบไฟล์ วิธีทำ ความต่างจาก robots.txt ข้อจำกัด และสถานะกับ Google Search ปี 2026',
     aiSummary: [
-      'llms.txt คือไฟล์ที่วางไว้ใน root ของเว็บไซต์เพื่อบอก AI ว่าเว็บไซต์เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง และ AI ควรอ่านหน้าไหนก่อน',
-      'ธุรกิจไทยส่วนใหญ่ยังไม่มี llms.txt ทำก่อนคู่แข่งในอุตสาหกรรมเดียวกันคือข้อได้เปรียบที่ทำได้ทันที',
-      'llms.txt ใช้ภาษา Markdown เขียนง่าย ไม่ต้องมีความรู้ด้าน Code และวางไฟล์ได้ในทุก Platform',
-      'ควรอัปเดต llms.txt ทุกครั้งที่มีบทความหรือบริการใหม่ เพื่อให้ AI มีข้อมูลล่าสุดเสมอ',
+      'คำค้น “llm.txt” มักหมายถึง “llms.txt” ซึ่งเป็นข้อเสนอให้เว็บไซต์เผยแพร่ไฟล์ Markdown ที่สรุปข้อมูลพื้นฐานและลิงก์ไปยังทรัพยากรสำคัญสำหรับ agent หรือ LLM ที่รองรับ',
+      'llms.txt ไม่ใช่มาตรฐานของ Google Search และ Google ระบุชัดว่าไฟล์นี้ไม่จำเป็น รวมถึงไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking บน Google Search',
+      'llms.txt ต่างจาก robots.txt: robots.txt ใช้ควบคุมการเข้าถึงของ crawler ส่วน llms.txt ใช้เป็น overview/guide สำหรับระบบที่เลือกอ่านไฟล์นี้',
+      'ไฟล์ตาม proposal ใช้ Markdown โดยมี H1 เป็นส่วนที่จำเป็น และอาจมี blockquote, รายละเอียด และ H2 ที่รวมรายการลิงก์พร้อมคำอธิบาย',
+      'ถ้าจะทำ llms.txt ให้มองเป็น Supporting Infrastructure สำหรับ agent-friendly content ไม่ใช่ SEO shortcut หรือวิธีรับประกัน AI citation',
     ],
     faqs: llmsTxtFaqs,
     bodyVariant: 'llms-txt',
     cta: {
-      headline: 'ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?',
+      headline: 'ไม่แน่ใจว่าเว็บไซต์ควรให้ Priority กับ llms.txt หรือ GEO จุดไหนก่อน?',
       description:
-        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+        'ดูแนวทางทำ GEO และ AI Search โดยจัดลำดับ Search Foundation, Content, Entity, Evidence และ Measurement ก่อนเลือก Technical Tactic ที่เหมาะกับเว็บไซต์',
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
