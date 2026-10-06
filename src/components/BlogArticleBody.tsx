@@ -1157,8 +1157,8 @@ function NumberedList({ items }: { items: string[] }) {
 
 const geoAgencyContents = [
   { id: 'geo-agency-answer', label: 'ทำ GEO ที่ไหนดี?' },
-  { id: 'geo-agency-criteria', label: '8 เกณฑ์เลือก GEO Agency' },
-  { id: 'geo-agency-providers', label: 'ก่อนขอ Proposal ควรเตรียมอะไร' },
+  { id: 'geo-agency-criteria', label: 'ทำ GEO ที่ไหนดี: 8 เกณฑ์เลือก Agency' },
+  { id: 'geo-agency-providers', label: 'ทำ GEO ที่ไหนดี: ก่อนขอ Proposal' },
   { id: 'geo-agency-comparison', label: 'ตารางเทียบ Proposal และ Red Flags' },
   { id: 'geo-agency-case', label: 'ตัวอย่างงานจริง' },
   { id: 'geo-agency-measurement', label: 'วิธีวัดผล GEO' },
@@ -1346,29 +1346,48 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-agency-answer" title="ทำ GEO ที่ไหนดี? คำตอบสั้นที่สุด">
         <P>ถ้าต้องเลือก GEO Agency ตอนนี้ ให้เลือกทีมที่สามารถอธิบายได้ครบว่า <strong>ก่อนเริ่มแบรนด์มองเห็นแค่ไหน, จะลงมือแก้อะไร, วัดผลด้วยอะไร และผลลัพธ์เชื่อมกับธุรกิจอย่างไร</strong> มากกว่าดูเพียงจำนวนบทความ จำนวน Schema หรือคำว่า “AI-ready” บน Proposal</P>
-        <P>GEO ไม่ใช่บริการที่มี Checklist กลางจาก Google ให้ทำตามแล้วรับประกันว่าจะถูกอ้างอิง สำหรับ Google Search เอกสารทางการระบุว่า SEO best practices เดิมยังเกี่ยวข้องกับ AI Overviews และ AI Mode และไม่มีข้อกำหนดพิเศษหรือ Schema เฉพาะที่ทำให้ได้ placement โดยอัตโนมัติ ดังนั้นเอเจนซี่ที่น่าเปรียบเทียบควรแข็งแรงทั้ง Search foundation, Content, Entity และ Measurement พร้อมอธิบายข้อจำกัดได้ตรงไปตรงมา</P>
+        <P>
+          GEO ไม่มีสูตรกลางที่ทำครบแล้วรับประกันว่าจะถูกอ้างอิงใน AI Search ได้
+          จาก <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลของ Google Search Central</a>
+          พื้นฐาน SEO เดิมยังสำคัญต่อ AI Overviews และ AI Mode และไม่มี Schema พิเศษที่ทำให้เว็บไซต์ได้พื้นที่ใน AI features โดยอัตโนมัติ
+          เพราะฉะนั้นทีมที่เลือกควรดูได้ทั้ง Search, Content, ข้อมูลแบรนด์ และการวัดผล ไม่ใช่ขาย GEO เป็นเทคนิคแยกขาดจากเว็บไซต์เดิม
+        </P>
         <P>
           หากต้องการเข้าใจ Definition และขอบเขตของ Generative Engine Optimization ก่อนเปรียบเทียบบริษัท อ่าน{' '}
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}ซึ่งเป็น Owner Page ของหัวข้อนี้ ส่วนหน้านี้โฟกัสเฉพาะการเลือกผู้ให้บริการและการตรวจ Proposal
+          {' '}เพื่อเข้าใจพื้นฐานก่อน ส่วนหน้านี้เน้นวิธีเลือกผู้ให้บริการและตรวจข้อเสนอให้เทียบกันได้
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-agency-google-guidance" title="Google ยืนยันอะไรเกี่ยวกับ AI Search และอะไรเป็น Methodology ของเอเจนซี่">
-        <P><strong>ข้อมูลทางการของ Google:</strong> Google ระบุว่า SEO best practices เดิมยังใช้กับ AI Overviews และ AI Mode และคำแนะนำด้าน AEO/GEO จำนวนมากที่อ้างว่าเป็น “AI hacks” ไม่สอดคล้องกับวิธีทำงานของ Google Search หน้าเว็บยังต้องมี Search Foundation ที่ดี เนื้อหาควรมีคุณค่าและไม่เป็น Commodity Content ส่วน Structured Data ต้องตรงกับเนื้อหาที่มองเห็น และไม่มี Special AI Schema หรือ llms.txt ที่ช่วยเพิ่ม Visibility บน Google Search โดยตรง</P>
+      <ArticleSection id="geo-agency-google-guidance" title="ข้อมูลจาก Google ที่ควรรู้ก่อนเลือก GEO Agency">
+        <P>
+          <a href="https://developers.google.com/search/docs/fundamentals/third-party-seo" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Google ระบุว่า</a>
+          พื้นฐาน SEO เดิมยังใช้กับ Generative AI Search และเตือนให้ระวังคำแนะนำที่ขาย “AEO/GEO hacks” เหมือนเป็นทางลัด
+          หน้าเว็บยังต้องค้นพบและ Index ได้ เนื้อหาต้องมีคุณค่า และ Structured Data ต้องตรงกับสิ่งที่ผู้ใช้เห็นจริง
+          ส่วน <Link to="/blog/llms-txt-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">llms.txt คืออะไร</Link>
+          {' '}ควรมองเป็นไฟล์เสริมสำหรับระบบที่รองรับ ไม่ใช่ปัจจัยที่ Google ใช้เพิ่มอันดับหรือ AI visibility
+        </P>
         <P>
           ตั้งแต่ 31 สิงหาคม 2026 Google Search Console เปิด <strong>Generative AI performance report</strong> ให้เว็บไซต์ทั่วโลก โดยรายงานแยก Impressions ที่เกิดจาก AI Overviews และ AI Mode พร้อมดูตาม Page, Country, Device และช่วงเวลาได้ อย่างไรก็ตาม รายงานนี้ไม่ได้แจกแจงว่าแต่ละ Prompt อ้างอิงประโยคใดจากหน้าเว็บ
           {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ดูเอกสาร Search Console</a>
         </P>
-        <P><strong>Methodology ของ Saralak Search:</strong> เราใช้ Answer-first, Topic Ownership, Entity Clarity, Internal Linking, Evidence และ Prompt/Query Tracking เพื่อทำให้เนื้อหาชัดขึ้นและวัดการเปลี่ยนแปลงได้ แต่ไม่ได้เรียกองค์ประกอบเหล่านี้ว่า Google ranking factor หรือรับประกันว่า AI จะเลือกอ้างอิง</P>
         <P>
-          เอกสารอ้างอิงหลักจาก Google:{' '}
-          <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI features and your website</a>
+          ในการทำงานของ Saralak Search เราใช้การตอบคำถามให้ชัด วางหน้าหลักของแต่ละหัวข้อ เชื่อม Internal Link
+          เติมข้อมูลแบรนด์และหลักฐานที่ตรวจสอบได้ แล้วติดตามผลด้วยชุดคำถามเดิมเป็นช่วงเวลา
+          วิธีนี้เป็นกรอบการทำงานของเรา ไม่ใช่ Google ranking factor และไม่ใช้เพื่อรับประกันว่า AI จะเลือกอ้างอิงเว็บไซต์
+        </P>
+        <P>
+          หากต้องการอ่านต่อเรื่องการแสดงผลของ Google สามารถดู <Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
+          {' '}ซึ่งอธิบายรูปแบบคำตอบ แหล่งอ้างอิง และสิ่งที่เว็บไซต์ควรเตรียมไว้โดยเฉพาะ
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-agency-criteria" title="8 เกณฑ์เลือกบริษัทรับทำ GEO ที่ตรวจสอบได้จริง">
-        <P>ก่อนเทียบราคา ควรให้แต่ละบริษัทตอบคำถามชุดเดียวกัน เกณฑ์ด้านล่างช่วยแยก Proposal ที่มีระบบวัดผลออกจาก Proposal ที่เพิ่มคำว่า GEO ลงบนงาน SEO เดิมโดยไม่มีวิธีพิสูจน์ผล</P>
+      <ArticleSection id="geo-agency-criteria" title="ทำ GEO ที่ไหนดี? 8 เกณฑ์เลือกบริษัทรับทำ GEO ที่ตรวจสอบได้">
+        <P>
+          ก่อนเทียบราคา ควรให้แต่ละบริษัทตอบคำถามชุดเดียวกันว่าเว็บไซต์มีปัญหาตรงไหน จะลงมือทำอะไร
+          สิ่งที่ลูกค้าจะได้รับคืออะไร และจะวัดผลหลังทำอย่างไร
+          วิธีนี้ช่วยแยกทีมที่มีแผนงานชัดออกจากข้อเสนอที่เพียงเปลี่ยนชื่อบริการ SEO เดิมให้เป็น GEO
+        </P>
         <NumberedList items={selectionCriteria} />
         <ArticleImage
           src="/image/blog/geo-agency-thailand/how-to-choose-geo-agency-thailand.webp"
@@ -1377,7 +1396,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection id="geo-agency-providers" title="ก่อนขอ Proposal จาก GEO Agency ควรเตรียมอะไร">
+      <ArticleSection id="geo-agency-providers" title="ทำ GEO ที่ไหนดี? ก่อนขอ Proposal ควรเตรียมอะไร">
         <P>
           การถามเพียง “ทำ GEO ราคาเท่าไร” ทำให้เทียบข้อเสนอได้ยาก เพราะแต่ละทีมอาจตีความ Scope ไม่เหมือนกัน
           ก่อนขอ Proposal ควรเตรียม Brief สั้น ๆ ที่ระบุเป้าหมาย เว็บไซต์ กลุ่มบริการหลัก ตลาดที่ต้องการโต และ Conversion ที่ใช้วัดผล
@@ -1399,8 +1418,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>
-          ถ้า Brief ชุดเดียวถูกส่งให้หลายทีม จะเห็นความต่างของ Methodology ชัดกว่าการอ่านหน้า Service เพราะ Proposal ที่ดีควรบอก
-          <strong> ว่าจะตรวจอะไร, แก้อะไร, Output คืออะไร, ใครรับผิดชอบ และตัดสินผลจากข้อมูลชุดไหน</strong>
+          ถ้าใช้ Brief ชุดเดียวกันกับทุกทีม จะเทียบข้อเสนอได้ง่ายกว่าดูหน้า Service อย่างเดียว
+          ข้อเสนอที่ดีควรบอกให้ชัดว่า <strong>จะตรวจอะไร แก้อะไร ส่งมอบอะไร ใครรับผิดชอบ และใช้ข้อมูลอะไรตัดสินผล</strong>
         </P>
       </ArticleSection>
 
@@ -1466,7 +1485,7 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         ]} />
       </ArticleSection>
 
-      <ArticleSection id="geo-agency-decision" title="เมื่อไรควรจ้าง GEO Agency และเมื่อไรยังไม่ควร">
+      <ArticleSection id="geo-agency-decision" title="ทำ GEO ที่ไหนดี และเมื่อไรควรจ้าง GEO Agency">
         <GeoAgencyDecisionVisual />
         <P><strong>ควรพิจารณาจ้าง</strong> เมื่อเว็บไซต์มีสินค้า/บริการและ Conversion ชัด มี Organic/Search footprint อยู่แล้ว หรือมีทีม Content/Dev ที่ลงมือทำได้ แต่ยังไม่มีคนวาง Topic Ownership, AI visibility baseline, measurement และลำดับงานข้ามทีม</P>
         <P><strong>ยังไม่ควรเริ่มจาก GEO Retainer</strong> หากเว็บไซต์ยัง Crawl/Index ไม่ได้ หน้า Commercial ยังอธิบายสินค้าไม่ชัด ไม่มี Conversion tracking หรือไม่มีทรัพยากรลงมือแก้ Recommendation ในกรณีนี้การ Audit และแก้ Search foundation ก่อนมักให้ข้อมูลที่ใช้ตัดสินใจได้มากกว่า</P>
@@ -1475,7 +1494,8 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
           <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
           {' '}และ{' '}
           <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
-          {' '}เป็นจุดเริ่มต้น แล้วค่อยตัดสินใจว่าจุดใดต้องใช้ผู้เชี่ยวชาญภายนอก
+          {' '}เป็นจุดเริ่มต้น และอ่าน <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
+          {' '}เพื่อดูว่าปัญหาของเว็บไซต์ควรเริ่มจาก Search, Answer หรือ AI Visibility ก่อน
         </P>
       </ArticleSection>
 
@@ -1510,7 +1530,12 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-agency-conclusion" title="สรุป: ทำ GEO ที่ไหนดี ให้เลือกจากระบบงาน ไม่ใช่คำโฆษณา">
         <P>คำตอบของ “ทำ GEO ที่ไหนดี” จึงไม่ใช่ชื่อบริษัทเดียวสำหรับทุกธุรกิจ แต่เป็นการเลือกทีมที่เข้ากับปัญหาและทรัพยากรจริง พร้อมพิสูจน์ได้ว่าก่อนเริ่มวัดอะไร จะเปลี่ยนอะไร และหลังทำจะตัดสินผลจากข้อมูลชุดไหน</P>
-        <P>ก่อนเซ็นสัญญา ควรขอ Scope, Baseline, Measurement Definition และตัวอย่าง Reporting แล้วเทียบบนเกณฑ์เดียวกัน หาก Proposal เน้นจำนวนบทความหรือคำว่า AI-ready แต่ไม่บอกวิธีตรวจ Search foundation, Prompt/Query Set, Owner URL และ Business Outcome ยังถือว่าข้อมูลไม่พอสำหรับตัดสินใจ</P>
+        <P>
+          ก่อนเซ็นสัญญา ควรขอขอบเขตงาน สถานะก่อนเริ่ม วิธีวัดผล และตัวอย่างรายงาน แล้วเทียบบนเกณฑ์เดียวกัน
+          หากข้อเสนอเน้นจำนวนบทความหรือคำว่า AI-ready แต่ไม่อธิบายว่าจะตรวจพื้นฐาน Search อย่างไร
+          หน้าไหนรับผิดชอบหัวข้อไหน ใช้ชุดคำถามอะไรติดตาม และเชื่อมผลไปถึง Lead หรือยอดขายอย่างไร
+          ข้อมูลยังไม่พอสำหรับตัดสินใจ
+        </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนเลือก Agency' },
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ดูขั้นตอน Implementation' },
