@@ -421,6 +421,9 @@ For SEO-focused articles:
 "เพิ่ม Traffic" / "เพิ่ม Traffic SEO" / "วิธีเพิ่มคนเข้าเว็บไซต์"
 → /blog/increase-seo-traffic
 
+"เช็ค Traffic Website ฟรี" / "เช็ค Traffic เว็บไซต์"
+→ /blog/check-website-traffic-free
+
 "Organic Traffic" / "ทำ SEO แล้ว Traffic ไม่โต"
 → /blog/seo-not-working
 
