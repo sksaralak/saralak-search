@@ -316,39 +316,34 @@ export const geoChecklistFaqs: FAQItem[] = [
 
 export const aiWebsiteSeoFaqs: FAQItem[] = [
   {
-    question: 'Claude ทำ SEO ให้อัตโนมัติได้จริงไหม?',
+    question: 'AI ทำเว็บได้จริงไหม?',
     answer:
-      'Claude implement SEO ได้จริงถ้าคุณรู้ว่าต้องสั่งอะไร dev ที่ทำสำเร็จใน 48 ชั่วโมงคือคนที่รู้แล้วว่าเว็บต้องการ sitemap, JSON-LD, canonical, hreflang และ metadata แยกตาม route เขาใช้ Claude เป็น coding assistant implement สิ่งที่วางแผนไว้แล้ว ไม่ใช่แค่บอกว่า "ทำ SEO ให้หน่อย"',
+      'ได้ เครื่องมือ AI สามารถช่วยสร้างโครงหน้า เขียนโค้ด ทำ component และร่างเนื้อหาได้เร็วขึ้น แต่คำว่า “สร้างเว็บได้” ไม่เท่ากับ “พร้อมติด Google” เว็บไซต์ยังต้องมี URL ที่ crawl และ index ได้, metadata, canonical, internal link, sitemap, เนื้อหาที่ตอบ Search Intent และการตรวจผลหลัง deploy',
   },
   {
-    question: 'ทำไม dev คนนั้นทำสำเร็จแต่ฉันทำตามแล้วไม่ได้ผล?',
+    question: 'เว็บที่สร้างด้วย AI ติด Google ได้ไหม?',
     answer:
-      'เพราะ dev คนนั้นรู้ก่อนว่าจะสั่ง Claude ว่าอะไร เขามีความรู้ SEO อยู่แล้วและใช้ Claude เป็น tool execute ถ้าไม่รู้ว่า schema ประเภทไหนเหมาะกับธุรกิจตัวเอง หรือไม่รู้ว่าจะ verify ว่า Claude ทำถูกไหม ผลลัพธ์ก็จะต่างกันมาก',
+      'ติดได้ เอกสาร Google Search ไม่กำหนดว่าเว็บไซต์ต้องสร้างด้วยแพลตฟอร์มหรือเครื่องมือใด สิ่งที่ต้องตรวจคือ Google เข้าถึงและประมวลผลหน้าได้หรือไม่ เนื้อหามีประโยชน์และเป็นต้นฉบับเพียงพอหรือไม่ รวมถึง Search Essentials และนโยบายสแปมต้องผ่าน',
   },
   {
-    question: 'ถ้าไม่รู้เรื่อง SEO จะสั่ง Claude ว่าอะไร?',
+    question: 'ใช้ AI ทำเว็บแล้วต้องทำ SEO เพิ่มอะไร?',
     answer:
-      'นั่นคือปัญหาจริง Claude ทำตามที่สั่ง แต่ถ้าสั่งว่า "ทำ SEO ให้หน่อย" Claude จะทำตามความเข้าใจทั่วไป ไม่ใช่ตาม context ของธุรกิจคุณ ไม่รู้ว่าลูกค้าของคุณค้นหาคำไหนจริง หน้าไหนควร index และ schema ประเภทไหนที่เหมาะกับธุรกิจนั้นโดยเฉพาะ',
+      'อย่างน้อยควรตรวจ Crawl/Index, HTTP status, canonical, sitemap, robots.txt, title, meta description, H1-H3, internal link, mobile usability, Core Web Vitals และ Search Intent ของหน้าสำคัญ ส่วน structured data ใช้เมื่อเหมาะกับข้อมูลที่แสดงจริง ไม่ใช่เพิ่มเพียงเพื่อหวังอันดับ',
   },
   {
-    question: 'เว็บที่ Claude สร้างติด Google ได้ไหม?',
+    question: 'ใช้ Claude หรือ AI coding assistant ทำ SEO ได้ไหม?',
     answer:
-      'ได้ Google ไม่ได้สนว่าเว็บสร้างด้วยอะไร สนแค่ว่าตอบคำถามผู้ใช้ได้ดีแค่ไหน มี Technical SEO ที่ถูกต้องไหม และมีความน่าเชื่อถือมากพอไหม เว็บที่ Claude สร้างติด Google ได้ถ้ามีกลยุทธ์ SEO ที่ชัดเจนและ implement ถูกต้อง',
+      'ใช้ช่วย implement งาน SEO ได้ดี เช่น metadata, canonical, sitemap, structured data, semantic HTML และ internal link เมื่อมี requirement ชัด แต่การตัดสินว่า keyword ไหนควรเป็น owner page, หน้าใดควร index, intent ไหนมีมูลค่าทางธุรกิจ หรือควรแก้อะไรก่อน ยังต้องอาศัยข้อมูล Search Console, keyword data, SERP และบริบทธุรกิจ',
   },
   {
-    question: 'การตรวจ SEO เว็บไซต์ควรดูอะไรบ้าง?',
+    question: 'Google มองเนื้อหาที่สร้างด้วย AI อย่างไร?',
     answer:
-      'ควรตรวจทั้ง Technical SEO, Indexing, Search Intent, Keyword Data, Content และโครงสร้างเว็บไซต์ เพื่อแยกว่าอะไรควรแก้ก่อนและอะไรควรทำต่อเป็น Roadmap',
+      'Google ระบุว่า Generative AI มีประโยชน์ต่อการค้นคว้าและการจัดโครงเนื้อหา แต่การสร้างหน้าเว็บจำนวนมากโดยไม่เพิ่มคุณค่าให้ผู้ใช้อาจเข้าข่าย scaled content abuse สิ่งสำคัญจึงไม่ใช่ว่าใช้ AI หรือไม่ แต่คือคุณภาพ ความถูกต้อง ความเป็นต้นฉบับ และประโยชน์ของเนื้อหา',
   },
   {
-    question: 'Claude ทำ Keyword Research ให้ได้ไหม?',
+    question: 'หลังเปิดเว็บด้วย AI ควรวัดผลจากอะไร?',
     answer:
-      'Claude แนะนำ keyword ได้แต่ไม่มีข้อมูล search volume จริงจาก Google keyword ที่ Claude แนะนำอาจไม่ตรงกับสิ่งที่ลูกค้าของธุรกิจนั้นค้นหาจริง การทำ keyword research ที่ใช้งานได้ต้องอาศัยข้อมูลจาก Google Search Console, Ahrefs หรือ Google Keyword Planner ร่วมด้วย',
-  },
-  {
-    question: 'ใช้เวลานานแค่ไหนถึง Google จะเจอเว็บ?',
-    answer:
-      'หลัง submit sitemap ใน Google Search Console แล้ว Google มักใช้เวลา 1-4 สัปดาห์ในการ crawl และ index เว็บใหม่ แต่การติดอันดับในคำค้นที่มีการแข่งขันต้องใช้เวลา 3-6 เดือนขึ้นไปพร้อมกับ content และ SEO ที่ต่อเนื่อง',
+      'เริ่มจาก Google Search Console เพื่อตรวจ Indexing, Impressions, Clicks, Queries และ Landing Pages จากนั้นดู GA4 สำหรับ Sessions, Engagement และ Conversion เช่น Form, LINE, Call หรือ Purchase การมีหน้า index เพิ่มขึ้นอย่างเดียวไม่ควรถูกใช้แทนผลลัพธ์ทางธุรกิจ',
   },
 ]
 
@@ -1156,36 +1151,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด',
+    title: 'AI ทำเว็บได้ไหม? วิธีสร้างเว็บไซต์ด้วย AI ให้พร้อม SEO ตั้งแต่วันแรก',
     slug: 'ai-website-seo',
     category: 'SEO',
     excerpt:
-      'มี dev คนหนึ่งใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง — 120 หน้า index ใน 24 ชั่วโมง บทความนี้วิเคราะห์ว่าเขาทำยังไง และทำไมคนอื่นทำตามแล้วมักไม่ได้ผลเหมือนกัน',
-    readingTime: '10 min read',
+      'AI ทำเว็บได้เร็วขึ้น แต่เว็บที่เปิดใช้งานได้ยังไม่เท่ากับเว็บที่พร้อมติด Google บทความนี้สรุปวิธีใช้ AI สร้างเว็บไซต์ พร้อม SEO checklist, workflow ก่อน publish และวิธีวัดผลหลัง deploy',
+    readingTime: '12 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/ai-website/ai-website-banner-web.png',
     heroImageMobile: '/image/blog/ai-website/ai-website-banner-mweb.png',
-    heroImageAlt: 'Claude ทำ SEO ได้จริงไหม? วิเคราะห์จากเคสที่ dev ใช้ Claude Code แล้วสำเร็จ',
+    heroImageAlt: 'AI ทำเว็บได้ไหม วิธีสร้างเว็บไซต์ด้วย AI และตรวจ SEO ก่อนเปิดใช้งาน',
     ogImage: '/image/blog/ai-website/ai-website-banner-web.png',
-    metaTitle: 'Claude ทำ SEO ให้ได้จริงไหม? วิเคราะห์จากเคสที่คนแชร์กันเยอะที่สุด | Saralak Search',
+    metaTitle: 'AI ทำเว็บได้ไหม? วิธีสร้างเว็บไซต์ด้วย AI ให้พร้อม SEO | Saralak Search',
     metaDescription:
-      'วิเคราะห์เคสจริง: dev ใช้ Claude Code ทำ SEO สำเร็จ 120 หน้า index ใน 24 ชั่วโมง — Claude ทำ SEO ได้จริง แต่มีเงื่อนไขที่คนส่วนใหญ่ไม่รู้',
+      'AI ทำเว็บได้ แต่เว็บที่ publish ได้ยังไม่เท่ากับเว็บที่พร้อมติด Google ดู workflow สร้างเว็บด้วย AI, SEO checklist ก่อนเปิดจริง, ข้อจำกัด และวิธีวัดผลหลัง deploy',
     aiSummary: [
-      'dev คนหนึ่งใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง โดยให้ Claude implement dynamic metadata, sitemap, JSON-LD schema และ canonical URL ครบถ้วน',
-      'สิ่งที่ทำให้เขาสำเร็จคือเขารู้ก่อนแล้วว่าต้องสั่งอะไร — เขาใช้ Claude เป็น coding assistant ไม่ใช่ SEO strategist',
-      'claude-seo.md มี 7,000+ GitHub stars เพราะคนต้องการ tool ช่วยสั่ง Claude ให้ถูกต้อง — นั่นคือหลักฐานว่าปัญหานี้จริง',
-      'Claude เป็น tool ที่ดีที่สุดที่เคยมี — แต่ยังเป็นแค่ tool ผู้ที่รู้ว่าต้องสั่งอะไรจะได้ผลลัพธ์ที่ต่างกันอย่างสิ้นเชิง',
+      'AI ทำเว็บได้ทั้งแบบ Website Builder และ Coding Assistant แต่ต้องแยก “สร้างหน้าได้” ออกจาก “Search-ready” เพราะ SEO ยังต้องตรวจ Crawl, Index, URL, Metadata, Canonical, Sitemap, Internal Link และ Search Intent',
+      'Google Search ไม่ได้กำหนดว่าเว็บไซต์ต้องสร้างด้วยแพลตฟอร์มใด แต่หน้าเว็บต้องผ่าน Search Essentials และเนื้อหาที่ใช้ Generative AI ยังต้องมีคุณค่า ความถูกต้อง และไม่สร้างจำนวนมากเพื่อ manipulate ranking',
+      'Structured Data มีหน้าที่อธิบายข้อมูลบนหน้าในรูปแบบที่ Google รองรับ ไม่ใช่การรับประกันอันดับ และควรตรงกับ visible content',
+      'Workflow ที่ใช้กับเว็บสร้างด้วย AI ควรมี 6 Gate: Intent → Architecture → Build → Technical QA → Content QA → Measurement ก่อน scale หน้าเพิ่ม',
+      'หลัง deploy ให้ดู Google Search Console และ GA4 แยกเป็น Indexing, Search Visibility, Engagement และ Business Outcome แทนการวัดจากจำนวนหน้าที่สร้างหรือ index เพียงอย่างเดียว',
     ],
     faqs: aiWebsiteSeoFaqs,
     bodyVariant: 'ai-website-seo',
     cta: {
-      headline: 'อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?',
+      headline: 'เว็บสร้างด้วย AI เปิดใช้งานแล้ว แต่ยังไม่แน่ใจว่า Search-ready หรือยัง?',
       description:
-        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+        'บริการ SEO ของ Saralak Search ตรวจ Search Intent, Crawl/Index, Technical SEO, Content และ Internal Link เพื่อจัดลำดับว่าควรแก้อะไรก่อนหลัง deploy',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
