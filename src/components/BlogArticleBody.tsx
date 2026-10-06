@@ -131,7 +131,7 @@ function ArticleTableOfContents() {
 
 const geoContents = [
   { id: 'geo-what-is', label: 'GEO คืออะไร' },
-  { id: 'geo-serp-intent', label: 'คนค้น “GEO คือ” ต้องการรู้อะไรต่อ' },
+  { id: 'geo-vs-seo', label: 'GEO คืออะไร ต่างจาก SEO อย่างไร' },
   { id: 'geo-why-important', label: 'ทำไม GEO ถึงสำคัญ' },
   { id: 'geo-how-it-works', label: 'GEO ทำงานอย่างไร' },
   { id: 'geo-vs-seo-aeo', label: 'GEO ต่างจาก SEO และ AEO อย่างไร' },
@@ -455,33 +455,31 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection id="geo-serp-intent" title="คนค้น “GEO คือ” ต้องการรู้อะไรต่อ">
+      <ArticleSection id="geo-vs-seo" title="GEO คืออะไร ต่างจาก SEO อย่างไร">
         <P>
-          คำค้น <strong>“GEO คือ”</strong> เป็น Definition Intent แต่ SERP ไทยที่ตรวจวันที่ <strong>5 ตุลาคม 2026</strong>
-          แสดง Comparison Intent ตามมาชัดเจน โดย Google AI Overview อธิบายความหมายของ GEO และตามด้วยหัวข้อเปรียบเทียบ SEO กับ GEO
-          ขณะที่ Organic Results ส่วนใหญ่เป็นบทความ “GEO คืออะไร” จากเว็บไซต์ด้าน SEO / AI Search
+          <strong>GEO คือการต่อยอดจากพื้นฐาน SEO ไปสู่การเพิ่มความชัดเจนของแบรนด์ เนื้อหา และหลักฐานสำหรับ AI Search</strong>
+          ขณะที่ SEO เน้นให้ Search Engine ค้นพบ เข้าใจ จัดอันดับ และส่ง Organic Traffic มายังเว็บไซต์
+          GEO สนใจเพิ่มอีกชั้นว่าเมื่อระบบ Generative AI สร้างคำตอบ แบรนด์หรือข้อมูลของเว็บไซต์ถูกเข้าใจ กล่าวถึง หรืออ้างอิงในบริบทที่เกี่ยวข้องหรือไม่
         </P>
         <P>
-          Ahrefs Snapshot ที่ตรวจวันเดียวกันแสดง Search Volume ในไทยประมาณ <strong>350 ครั้งต่อเดือน</strong>,
-          Keyword Difficulty <strong>0</strong> และ Parent Topic เป็น <strong>“geo”</strong> ที่มี Search Volume ประมาณ 1.3K
-          ตัวเลขนี้ใช้เป็นภาพ Demand ณ วันที่ตรวจ ไม่ใช่ค่าคงที่ และไม่ควรใช้แทนการดู Query จริงใน Search Console หลังหน้าเริ่มมี Impression
+          ความต่างนี้ไม่ได้หมายความว่า GEO มาแทน SEO เพราะถ้าหน้าเว็บยัง Crawl ไม่ได้, Index ไม่ได้,
+          Canonical ผิด หรือ Search Intent ของหน้าไม่ชัด ระบบ Search และ AI ก็มีฐานข้อมูลที่อ่อนลงตามไปด้วย
+          หากต้องการเข้าใจฐาน Search ก่อน สามารถอ่าน <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          {' '}และดูภาพรวมความสัมพันธ์ของทั้งสามแนวทางที่ <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
         </P>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['Definition ต้องชัดก่อน', 'เปิดด้วย Generative Engine Optimization แบบเต็มและตอบความหมายทันที เพราะผู้ค้นยังอยู่ช่วงทำความเข้าใจแนวคิด'],
-            ['Comparison ต้องตามมา', 'SERP แสดงว่าผู้อ่านต้องการรู้ว่า GEO ต่างจาก SEO อย่างไร จึงควรมี Comparison แบบสั้นและส่งต่อไปหน้า SEO GEO AEO สำหรับรายละเอียดเต็ม'],
-            ['อย่าแย่ง Intent วิธีทำ', 'คำว่า “วิธีทำ GEO” มี owner page แยกอยู่แล้ว หน้านี้จึงอธิบายภาพรวมแล้วส่งต่อไปคู่มือ implementation แทน'],
-            ['Commercial ควรอยู่ท้าย Journey', 'หน้าความหมายควรตอบ Definition, Comparison, Case และ Measurement ให้ครบก่อนเชื่อมไปบริการ GEO'],
+            ['SEO', 'เน้น Crawl, Index, Ranking, Search Intent, Internal Link และ Organic Visibility จาก Search Engine'],
+            ['GEO', 'เน้น Entity, Evidence, Brand Mention, Citation Context และ Visibility ใน Generative AI / AI Search โดยยังอาศัย Search Foundation ที่ดี'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+              <p className="thai-readable mt-2 text-base leading-7 text-neutral-700">{copy}</p>
             </div>
           ))}
         </div>
       </ArticleSection>
-
-      <ArticleSection id="geo-why-important" title="ทำไม GEO ถึงสำคัญ">
+      <ArticleSection id="geo-why-important" title="GEO คืออะไร และทำไมถึงสำคัญกับธุรกิจ">
         <P>
           GEO สำคัญเมื่อ Customer Journey เริ่มมี AI Search เป็นจุดค้นข้อมูล เปรียบเทียบ และคัดตัวเลือกก่อนคลิกเว็บไซต์
           ธุรกิจจึงต้องติดตามมากกว่าอันดับ Organic แบบเดิม เช่น แบรนด์ถูกกล่าวถึงหรือไม่ แหล่งใดถูก Citation และ Non-brand Query ใดที่เว็บไซต์มีโอกาสปรากฏ
@@ -490,9 +488,13 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         <P>
           ตัวอย่างเช่น Query “บริษัทรับทำ SEO ที่ไหนดี” อาจเริ่มจาก Google, AI Overview หรือ ChatGPT แล้วจบที่การค้นชื่อแบรนด์ต่อ
           หน้าเว็บจึงต้องเชื่อม Definition, Comparison, Proof และ Service ให้เป็นเส้นทางเดียวกัน
+          เพราะการถูกกล่าวถึงใน AI Search แต่ไม่มีหน้า Service, Case Study หรือข้อมูลแบรนด์ที่ตรวจสอบต่อได้
+          อาจสร้าง Visibility โดยไม่สร้าง Business Outcome ขณะที่เว็บไซต์ที่มี Search Foundation ดีแต่ไม่มี Evidence หรือ Entity ชัด
+          ก็อาจถูกเข้าใจได้เพียงระดับหัวข้อโดยไม่เชื่อมโยงกลับมาที่แบรนด์อย่างแข็งแรง
           หากต้องการเห็นภาพความสัมพันธ์ระหว่างสามแนวทาง สามารถอ่าน
           {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
-          {' '}แบบละเอียดได้
+          {' '}แบบละเอียด และถ้าต้องการดูหลักการจัดคำตอบในแต่ละ Section อ่านต่อที่
+          {' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
         </P>
       </ArticleSection>
 
@@ -580,7 +582,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-google-2026" title="Google มอง GEO และ AI Search อย่างไรในปี 2026">
+      <ArticleSection id="geo-google-2026" title="GEO คืออะไรในมุม Google และ AI Search ปี 2026">
         <P>
           Google ระบุว่า SEO best practices ยังเป็น foundation ของ Generative AI Search เพราะ AI Overviews และ AI Mode
           ใช้ข้อมูลจาก Search index และ core Search systems ในการค้นข้อมูลที่เกี่ยวข้อง
@@ -590,11 +592,12 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           ในเอกสารปี 2026 Google กล่าวถึงคำว่า AEO และ GEO โดยตรงในส่วนที่อธิบายความเข้าใจผิดเกี่ยวกับ Generative AI Search และเตือนว่า “hacks” จำนวนมากไม่สอดคล้องกับวิธีทำงานจริงของ Google Search
           Google ไม่ได้กำหนด special AI schema, special markup หรือไฟล์พิเศษที่ต้องมีเพื่อเข้า AI Overviews / AI Mode
           Structured Data ควรใช้ตามประเภทที่รองรับและต้องสอดคล้องกับ visible content
+          ส่วนไฟล์อย่าง <Link to="/blog/llms-txt-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">llms.txt คืออะไร</Link> ควรมองเป็น optional supporting infrastructure สำหรับระบบที่รองรับ ไม่ใช่เงื่อนไขของ Google AI Overviews หรือ AI Mode
         </P>
         <P>
           ตั้งแต่ 31 สิงหาคม 2026 Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode
           พร้อมมิติ Pages, Countries, Dates และ Devices และมี Search generative AI control สำหรับจัดการ inclusion ของเว็บไซต์
-          หากต้องการอ่านรูปแบบผลลัพธ์ของ Google ต่อ สามารถดู
+          หากต้องการเข้าใจว่าฟีเจอร์นี้แสดงคำตอบและแหล่งอ้างอิงอย่างไร สามารถอ่าน
           {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
           {' '}ได้
         </P>
@@ -684,7 +687,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-priority" title="ธุรกิจแบบไหนควรทำ GEO">
+      <ArticleSection id="geo-priority" title="GEO คืออะไรสำหรับธุรกิจ และธุรกิจแบบไหนควรทำ">
         <P>
           GEO ควรให้ความสำคัญเมื่อธุรกิจมีพื้นฐาน Search ที่ใช้งานได้แล้ว และลูกค้าต้องค้นข้อมูล เปรียบเทียบ หรือขอคำแนะนำก่อนตัดสินใจ
           เช่น B2B Service, SaaS, E-commerce, Education, Travel, Real Estate และ Local Service
@@ -739,7 +742,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           จากนั้นวัด Search/AI Visibility ควบคู่กับ Lead และ Revenue โดยยอมรับว่าไม่มีวิธีรับประกัน Citation จากแพลตฟอร์มใด
         </P>
         <P>
-          หากต้องการลงมือทำต่อ สามารถอ่านคู่มือวิธีทำ GEO และใช้ GEO Checklist เพื่อตรวจเว็บไซต์เป็นรายข้อ ส่วนธุรกิจที่ยังไม่แน่ใจว่าปัญหาอยู่ที่ Search Foundation, Content หรือ AI Visibility สามารถเริ่มจากการวิเคราะห์เว็บไซต์และวาง Roadmap เพื่อจัดลำดับสิ่งที่ควรแก้ก่อน
+          หากต้องการลงมือทำต่อ สามารถอ่าน <Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link> และใช้ <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link> เพื่อตรวจเว็บไซต์เป็นรายข้อ ส่วนธุรกิจที่กำลังเลือกทีมภายนอกสามารถอ่าน <Link to="/blog/geo-agency-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ทำ GEO ที่ไหนดี</Link> ก่อนตัดสินใจ
         </P>
       </ArticleSection>
 
