@@ -2426,6 +2426,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   const tocItems = [
     { id: 'geo-how-to-overview', label: 'วิธีทำ GEO ต้องทำอะไรบ้าง' },
+    { id: 'geo-serp-intent', label: 'คนค้น “วิธีทำ GEO Optimization คืออะไร” ต้องการรู้อะไร' },
     { id: 'geo-official-vs-method', label: 'อะไรคือข้อมูลทางการ และอะไรคือ Methodology ของ Saralak Search' },
     { id: 'geo-steps', label: 'วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน' },
     { id: 'geo-case-study', label: 'เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง' },
@@ -2507,9 +2508,9 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-how-to-overview" title="วิธีทำ GEO ต้องทำอะไรบ้าง">
         <P>
-          <strong>วิธีทำ GEO ที่ใช้ได้จริงควรเริ่มจากฐาน Search และการวัดผล ไม่ใช่เริ่มจากการใส่ Schema หรือเขียนบทความเพิ่มทันที</strong>
-          {' '}ลำดับงานคือเก็บ เริ่มจาก Baseline แล้วตรวจ Crawl/Index/Bot Access กำหนด Topic Ownership ปรับ Content และ Evidence เชื่อม Entity/Internal Link สร้าง External Evidence และวัดผลพร้อม Refresh
-          โดยแต่ละแพลตฟอร์มมีระบบค้นหาและอ้างอิงต่างกัน จึงไม่มี Checklist เดียวที่รับประกันการถูกอ้างอิงทุกแห่ง
+          <strong>วิธีทำ GEO Optimization ที่ใช้ได้จริงควรเริ่มจากฐาน Search และการวัดผล ไม่ใช่เริ่มจาก Schema หรือเพิ่มบทความทันที</strong>
+          {' '}ลำดับงานคือเก็บ Baseline ตรวจ Crawl/Index/Bot Access กำหนด Topic Ownership ปรับ Content และ Evidence เชื่อม Entity/Internal Link สร้าง External Evidence แล้ววัดผลพร้อม Refresh
+          โดยแต่ละแพลตฟอร์มมีระบบค้นหาและอ้างอิงต่างกัน จึงไม่มี Checklist เดียวที่รับประกัน Citation หรือ Mention ทุกแห่ง
         </P>
         <P>
           หน้านี้เป็น Implementation Guide สำหรับคำค้น “วิธีทำ GEO” โดยเฉพาะ หากต้องการความหมายและขอบเขตของแนวคิดก่อน สามารถอ่าน
@@ -2522,6 +2523,35 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           src="/image/blog/how-to-do-geo/how-to-do-geo.webp"
           alt="ลำดับขั้นตอนวิธีทำ GEO สำหรับเว็บไซต์ธุรกิจ"
         />
+      </ArticleSection>
+
+      <ArticleSection id="geo-serp-intent" title="คนค้น “วิธีทำ GEO Optimization คืออะไร” ต้องการรู้อะไร">
+        <P>
+          Search Intent ของคำนี้เป็น <strong>Definition + How-to</strong> ใน Query เดียว
+          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> Google AI Overview เปิดด้วยความหมายของ GEO Optimization
+          แล้วต่อด้วยหัวข้อวิธีทำ เช่น การเขียนคำตอบให้ตรงประเด็น การจัดโครงสร้างเนื้อหา และการทำให้ข้อมูลแตกต่างจากบทความทั่วไป
+          ส่วน Organic Results ส่วนใหญ่ยังเป็นหน้า “GEO คืออะไร” ที่มีวิธีทำอยู่ภายใน
+        </P>
+        <P>
+          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>10 ครั้งต่อเดือน</strong>
+          จึงไม่ใช่ Keyword ที่ควรไล่ Volume อย่างเดียว แต่มีประโยชน์ในฐานะ Long-tail Implementation Intent
+          หน้านี้จึงถือครอง “วิธีทำ GEO” และ “วิธีทำ GEO Optimization” ส่วนความหมายเต็มของ GEO ให้
+          {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}เป็น Owner URL เพื่อไม่ให้สองหน้าชนกัน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['สิ่งที่ต้องตอบทันที', 'GEO Optimization คือการทำให้ Search Foundation, Content, Entity, Evidence และ Measurement พร้อมต่อการค้นพบและการอ้างอิงใน AI Search โดยไม่แทนที่ SEO'],
+            ['สิ่งที่ต้องลงมือทำ', 'ต้องมีลำดับตั้งแต่ Baseline และ Technical Foundation ไปจนถึง Content, External Evidence และ Measurement ไม่ใช่ Checklist แบบทำข้อไหนก่อนก็ได้'],
+            ['สิ่งที่ไม่ควรแย่ง Intent', 'Definition เชิงลึกและการเปรียบเทียบ SEO/AEO/GEO มี owner page แยก หน้านี้จึงโฟกัส Implementation'],
+            ['สิ่งที่ควรวัด', 'ต้องดู Search Visibility, Generative AI Visibility, Referral/Engagement และ Business Outcome ร่วมกัน'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
       </ArticleSection>
 
       <ArticleSection id="geo-official-vs-method" title="อะไรคือข้อมูลทางการ และอะไรคือ Methodology ของ Saralak Search">
@@ -2540,12 +2570,12 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             <tbody className="divide-y divide-neutral-200">
               <tr>
                 <td className="thai-readable px-4 py-3 font-medium text-neutral-950">Google AI Overviews / AI Mode</td>
-                <td className="thai-readable px-4 py-3 text-neutral-600">Google ระบุว่า SEO best practices, Search index และ core ranking/quality systems ยังเป็นพื้นฐาน และไม่มี special AI schema หรือ llms.txt ที่จำเป็นต่อการปรากฏ</td>
+                <td className="thai-readable px-4 py-3 text-neutral-600">Google ระบุว่า SEO best practices และ Search systems เดิมยังเป็นพื้นฐานของ AI Overviews และ AI Mode ไม่มี special AI schema หรือ AI text file ที่ต้องเพิ่ม และเว็บไซต์ต้องไม่ถูก Exclude จาก Search generative AI features หากต้องการมีสิทธิ์แสดง</td>
                 <td className="thai-readable px-4 py-3 text-neutral-600">เริ่มจาก Technical SEO + Content Quality ก่อน แล้วค่อยเพิ่มงานด้าน Entity, Evidence และการวัด Generative AI Visibility</td>
               </tr>
               <tr>
                 <td className="thai-readable px-4 py-3 font-medium text-neutral-950">ChatGPT Search</td>
-                <td className="thai-readable px-4 py-3 text-neutral-600">OpenAI ระบุว่าเว็บไซต์สาธารณะสามารถมีสิทธิ์ปรากฏใน Search ได้ หาก OAI-SearchBot เข้าถึงได้ แต่ placement ไม่ได้รับประกัน</td>
+                <td className="thai-readable px-4 py-3 text-neutral-600">OpenAI ระบุว่าเว็บไซต์สาธารณะสามารถปรากฏใน ChatGPT Search ได้ และควรไม่บล็อก OAI-SearchBot หากต้องการให้ Content ถูกค้นพบ สรุป อ้างอิง และลิงก์ได้ชัด แต่ placement ไม่ได้รับประกัน</td>
                 <td className="thai-readable px-4 py-3 text-neutral-600">ตรวจ Bot Access เป็น Technical QA หนึ่งข้อ ไม่ใช้เป็นตัวแทนของ Content, Brand Authority หรือการวัดผล</td>
               </tr>
               <tr>
@@ -2567,7 +2597,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central: Optimizing for generative AI features</a>,
             {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Generative AI performance report</a>
             {' '}และ
-            {' '}<a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: ChatGPT Search</a>.
+            {' '}<a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: Publishers and Developers FAQ</a>.
           </p>
         </div>
       </ArticleSection>
@@ -2604,10 +2634,10 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-case-study" title="เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง">
+      <ArticleSection id="geo-case-study" title="ตัวอย่างจากงานจริงของ Saralak Search: จาก Non-brand Query สู่ AI Overview">
         <P>
-          <strong>เคสนี้นับเป็นผลลัพธ์ของ GEO เพราะคำค้นแบบ Non-brand นำไปสู่การที่เนื้อหาของเว็บไซต์ถูก Google AI Overview ใช้เป็นแหล่งข้อมูล และ Packaging Solution ของธุรกิจถูกเชื่อมเข้าไปในคำตอบ</strong>
-          {' '}ผลลัพธ์จึงไม่ได้หยุดที่ Ranking หรือ Click แต่เกิด Visibility ในคำตอบที่ AI สร้างขึ้น ซึ่งเป็น Outcome หนึ่งที่งาน GEO ต้องการวัด
+          <strong>เคสนี้เป็นตัวอย่าง Observation จากงานจริง ไม่ใช่หลักฐานว่า GEO Framework ข้อใดข้อหนึ่งเป็นสาเหตุให้ Google เลือกอ้างอิง</strong>
+          {' '}สิ่งที่ยืนยันได้คือบทความจากคำค้น Non-brand ถูก Google AI Overview ใช้เป็นแหล่งข้อมูลหลายช่วง และ Packaging Solution ของธุรกิจถูกเชื่อมเข้าไปในบริบทของคำตอบ
         </P>
         <P>
           Saralak Search วางบทความสำหรับคำค้น Non-brand “ขายอะไรดีตลาดนัด” โดย Search Intent หลักคือหาไอเดียสินค้า ไม่ใช่ค้นหา Packaging โดยตรง
@@ -2632,7 +2662,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           caption="ผลลัพธ์จริงจากงาน Saralak Search: บทความคำค้น Non-brand ถูก Google AI Overview อ้างอิงหลายช่วง และ Packaging Solution ถูกนำไปประกอบคำตอบ"
         />
         <P>
-          เคสนี้พิสูจน์ได้ว่า <strong>Saralak Search ลงมือวาง Content Strategy และเกิดผลลัพธ์จริงใน Google AI Overview</strong>
+          เคสนี้แสดงว่า <strong>Saralak Search ลงมือวาง Content Strategy และเกิด Visibility จริงใน Google AI Overview</strong>
           โดยหน้าเดียวถูกอ้างอิงจากหลายช่วงเนื้อหาและเชื่อมจาก Informational Intent ไปถึง Commercial Context ได้
           อย่างไรก็ตาม ไม่ควรตีความว่า Framework นี้เป็นสาเหตุเดียวของ Citation เพราะ Google ยังใช้ระบบ Search และปัจจัยอื่นร่วมในการเลือกแหล่งข้อมูล
           รายละเอียดของผลลัพธ์ดูต่อได้ที่
@@ -2680,10 +2710,10 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            ['Google Search Console', 'ใช้ดู Impressions, Clicks, Queries, Landing Pages, Indexing และ Generative AI performance สำหรับ AI Overviews/AI Mode เพื่อวัดว่าหน้าใดและ Topic ใดมี Visibility บน Google เพิ่มขึ้น'],
+            ['Google Search Console', 'ใช้ดู Impressions, Clicks, Queries, Landing Pages, Indexing และ Generative AI performance สำหรับ AI Overviews/AI Mode โดยรายงาน AI แยก Impression ตาม Page, Country, Date และ Device ได้'],
             ['Ahrefs', 'ใช้ดู Organic Keywords, Position Movement, Backlinks, Referring Domains, Content Gap และหน้า/Topic ที่คู่แข่งมี Visibility มากกว่า หาก Account มี AI Visibility หรือ Brand Radar สามารถใช้เป็น Supplemental Signal เพิ่มได้'],
             ['Bing Webmaster Tools', 'ใช้ตรวจ Crawl, Index, URL Inspection และ Search Performance บน Bing เพื่อเช็กว่าเว็บไซต์เข้าถึงได้ดีนอก Google ด้วย ข้อมูลนี้เป็น Search/Technical Signal ไม่ควรตีความว่าเป็น Direct Copilot Attribution'],
-            ['GA4', 'ใช้ดู Organic และ Referral Sessions, Engaged Sessions, Landing Page Behavior และ Conversion เช่น Form, LINE, Call หรือ Purchase เพื่อเชื่อม Visibility กลับไปยัง Business Outcome'],
+            ['GA4', 'ใช้ดู Organic และ Referral Sessions, Engaged Sessions, Landing Page Behavior และ Conversion เช่น Form, LINE, Call หรือ Purchase; สำหรับ ChatGPT Search OpenAI ระบุว่า Referral URL มี utm_source=chatgpt.com เพื่อช่วยแยก Traffic ได้'],
             ['AI Mention / Citation Tracking', 'ใช้ Query Set เดิมทดสอบ ChatGPT, Gemini และ Perplexity เป็นรอบ พร้อมบันทึก Date, Platform, Mention, Citation URL และบริบทของคำตอบ'],
             ['Manual SERP Review', 'ตรวจ AI Overview, AI Mode และ Search Result จริงใน Query สำคัญเพื่อดูว่าแบรนด์หรือ URL ปรากฏใน Context แบบใด ไม่พึ่ง Dashboard เพียงอย่างเดียว'],
           ].map(([title, copy]) => (
@@ -2725,7 +2755,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-next-step" title="ควรเริ่มทำ GEO จากจุดไหนต่อ">
         <P>
-          ถ้าเว็บไซต์ยังไม่ชัดว่าปัญหาอยู่ที่ Crawl/Index, Topic Ownership, Content, Entity หรือ AI Visibility ควรเริ่มจากการ Audit เพื่อเรียงลำดับก่อนลงทุนกับ Content หรือ Digital PR เพิ่ม
+          ถ้าเว็บไซต์ยังไม่ชัดว่าปัญหาอยู่ที่ Crawl/Index, Topic Ownership, Content, Entity หรือ AI Visibility ควรเริ่มจากการตรวจข้อมูลปัจจุบันเพื่อเรียงลำดับก่อนลงทุนกับ Content หรือ Digital PR เพิ่ม
           สำหรับเว็บไซต์ที่ฐาน Search ใช้งานได้แล้วและต้องการทำงานต่อเนื่อง สามารถดู
           {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
           {' '}ของ Saralak Search ซึ่งเชื่อม SEO Foundation, Content, Entity, Internal Link, External Evidence และ Measurement เข้าด้วยกัน
@@ -2735,15 +2765,15 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย' },
           { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร? พร้อม Case Study จริง' },
           { to: '/case-studies', label: 'SEO และ AI Search Case Studies — Saralak Search' },
-          { to: '/services', label: 'การวิเคราะห์เว็บไซต์และวาง Roadmap — ตรวจว่าควรแก้อะไรก่อน' },
+          { to: '/services/geo', label: 'บริการ GEO & AI Search — Saralak Search' },
         ]} />
       </ArticleSection>
 
-      <SourceBox heading="Sources & Methodology" items={[
-        'Google Search Central — Optimizing your website for generative AI features on Google Search, checked September 2026',
-        'Google Search Console — Generative AI performance report, checked September 2026',
-        'OpenAI Help Center — ChatGPT Search / website eligibility and OAI-SearchBot, checked September 2026',
-        'Saralak Search internal GEO content workflow and anonymised ecommerce case observation, checked September 2026',
+      <SourceBox heading="Sources & Methodology — checked 6 October 2026" items={[
+        'Google Search Central — Optimizing your website for generative AI features on Google Search, checked 6 October 2026',
+        'Google Search Console Help — Generative AI performance report and Search generative AI control, checked 6 October 2026',
+        'OpenAI Help Center — Publishers and Developers FAQ / OAI-SearchBot and ChatGPT referral guidance, checked 6 October 2026',
+        'Saralak Search SERP observation for “วิธีทำ geo optimization คืออะไร”, Ahrefs keyword snapshot and anonymised ecommerce AI Overview case observation, checked 6 October 2026',
       ]} />
 
       <div id="geo-faq" className="scroll-mt-24">
