@@ -421,7 +421,7 @@ For SEO-focused articles:
 "เพิ่ม Traffic SEO"
 → /blog/increase-seo-traffic
 
-"ทำ SEO แล้วไม่ได้ผล"
+"Organic Traffic" / "ทำ SEO แล้ว Traffic ไม่โต"
 → /blog/seo-not-working
 
 "บริการ SEO"
