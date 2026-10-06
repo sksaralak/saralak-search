@@ -7888,7 +7888,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="สรุปการเช็ค Traffic Website ใน 30 วินาที">
+      <ArticleSection title="เช็ค Traffic Website ฟรี ใน 30 วินาที">
         <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-5">
           <ul className="grid gap-3">
             {[
@@ -7913,7 +7913,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         alt="เปรียบเทียบวิธีเช็ค Traffic Website ของตัวเองกับเว็บไซต์คู่แข่ง"
       />
 
-      <ArticleSection title="Search Console, GA4 และเครื่องมือคู่แข่ง ต่างกันอย่างไร">
+      <ArticleSection title="เช็ค Traffic Website ฟรีด้วย Search Console, GA4 และเครื่องมือคู่แข่ง ต่างกันอย่างไร">
         <P>
           เครื่องมือเช็ค Traffic ไม่ได้วัดสิ่งเดียวกันทั้งหมด
           การเลือกผิดเครื่องมือทำให้ตีความผิดได้ เช่น เอา Estimated Organic Traffic ของคู่แข่ง
@@ -7943,7 +7943,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเองด้วย Google Search Console">
+      <ArticleSection title="วิธีเช็ค Traffic Website ฟรีด้วย Google Search Console">
         <ArticleImage
           src="/image/blog/check-website-traffic-free/check-website-traffic-free-workflow.webp"
           alt="Workflow เช็ค Traffic Website ผ่าน Google Search Console และ GA4"
@@ -7956,9 +7956,9 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
         <div className="grid gap-4">
           {[
-            ['ดู Clicks และ Impressions', 'ถ้า Impressions โตแต่ Clicks ไม่โต แปลว่าต้องเจาะต่อที่ Query, Position และ SERP presentation ไม่ควรรีบสรุปว่า Meta Description เป็นสาเหตุทันที'],
-            ['ดู Queries', 'เช็กว่าคำค้นที่สร้าง Visibility ตรงกับสินค้า บริการ หรือหัวข้อที่ต้องการหรือไม่ และแยก Brand / Non-brand เมื่อ property รองรับ'],
-            ['ดู Pages', 'หา Landing Page ที่ Clicks หรือ Impressions เปลี่ยน แล้วค่อยเปิด Query ของหน้านั้นเพื่อหาสาเหตุ'],
+            ['เช็ค Traffic Website จาก Clicks และ Impressions', 'ถ้า Impressions โตแต่ Clicks ไม่โต แปลว่าต้องเจาะต่อที่ Query, Position และ SERP presentation ไม่ควรรีบสรุปว่า Meta Description เป็นสาเหตุทันที'],
+            ['เช็ค Traffic จาก Queries', 'เช็กว่าคำค้นที่สร้าง Visibility ตรงกับสินค้า บริการ หรือหัวข้อที่ต้องการหรือไม่ และแยก Brand / Non-brand เมื่อ property รองรับ'],
+            ['เช็ค Traffic ตาม Landing Page', 'หา Landing Page ที่ Clicks หรือ Impressions เปลี่ยน แล้วค่อยเปิด Query ของหน้านั้นเพื่อหาสาเหตุ'],
             ['เปรียบเทียบช่วงเวลา', 'ใช้ Compare เช่น 28 วันล่าสุดกับ 28 วันก่อน หรือ Year over Year สำหรับธุรกิจที่มี seasonality เพื่อไม่ตีความจากวันเดียว'],
           ].map(([title, body]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
@@ -7974,7 +7974,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์ตัวเองด้วย GA4">
+      <ArticleSection title="วิธีเช็ค Traffic Website ฟรีด้วย GA4">
         <P>
           GA4 เหมาะกับคำถามว่า <strong>“หลังจากคนเข้ามาแล้วเกิดอะไรขึ้น”</strong>
           โดย Traffic acquisition report สามารถดู Session source / medium และ channel
@@ -7996,7 +7996,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="วิธีเช็ค Traffic เว็บไซต์คู่แข่งฟรี ต้องอ่านตัวเลขอย่างไร">
+      <ArticleSection title="เช็ค Traffic Website คู่แข่งฟรี ต้องอ่านตัวเลขอย่างไร">
         <P>
           เว็บไซต์คู่แข่งไม่เปิด Search Console หรือ GA4 ให้เข้าถึง
           ดังนั้นเครื่องมือ SEO ภายนอกจึงใช้ฐานข้อมูล keyword, ranking และโมเดลประมาณการ
@@ -8018,7 +8018,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="Workflow เช็ค Traffic แล้วรู้ว่าควรทำอะไรต่อ">
+      <ArticleSection title="Workflow หลังเช็ค Traffic Website ฟรี: รู้แล้วควรทำอะไรต่อ">
         <P>
           การเช็ค Traffic ที่มีประโยชน์ควรจบด้วยการตัดสินใจ
           ไม่ใช่แค่เปิดกราฟแล้วดูว่าตัวเลขเพิ่มหรือลด
@@ -8105,7 +8105,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection title="สรุป: เช็ค Traffic ฟรีให้ได้คำตอบ ไม่ใช่แค่ได้ตัวเลข">
+      <ArticleSection title="สรุป: เช็ค Traffic Website ฟรีให้ได้คำตอบ ไม่ใช่แค่ได้ตัวเลข">
         <P>
           ถ้าเป็นเว็บไซต์ของตัวเอง ให้เริ่มจาก Search Console เพื่อดู Search Visibility
           แล้วต่อด้วย GA4 เพื่อดู Traffic quality และ Conversion
