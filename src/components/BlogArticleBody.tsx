@@ -757,7 +757,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
   )
 }
 const seoGeoAeoContents = [
-  { id: 'seo-aeo-geo-serp-intent', label: 'คนค้น SEO AEO GEO ต้องการรู้อะไร' },
+  { id: 'seo-aeo-geo-difference', label: 'SEO, AEO และ GEO ต่างกันอย่างไร' },
   { id: 'seo-geo-aeo-meaning', label: 'SEO, AEO และ GEO คืออะไร' },
   { id: 'seo-aeo-geo-comparison', label: 'ตารางเปรียบเทียบ' },
   { id: 'google-official-vs-methodology', label: 'เอกสาร Google vs Methodology' },
@@ -836,33 +836,20 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
       </section>
 
-      <ArticleSection id="seo-aeo-geo-serp-intent" title="คนค้น “SEO AEO GEO” ต้องการรู้อะไร">
+      <ArticleSection id="seo-aeo-geo-difference" title="SEO, AEO และ GEO ต่างกันอย่างไร">
         <P>
-          Search Intent ของคำว่า <strong>“SEO AEO GEO”</strong> เป็นการเปรียบเทียบและเลือกแนวทาง ไม่ใช่การขอ Definition ของคำใดคำหนึ่ง
-          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> Google AI Overview เปิดด้วยความหมายของ SEO แล้วตามด้วยหัวข้อ
-          “ความแตกต่างระหว่าง SEO, AEO และ GEO” ขณะที่ Organic Results หลักเป็นบทความเปรียบเทียบ 3 แนวทางโดยตรง
+          <strong>SEO, AEO และ GEO ต่างกันที่จุดโฟกัส แต่ทำงานต่อกันบนฐานเดียวกัน</strong>
+          SEO เน้นให้เว็บไซต์ถูกค้นพบ เข้าใจ และจัดอันดับใน Organic Search,
+          AEO เน้นทำให้คำตอบในแต่ละหน้าและแต่ละ Section ชัดเจนขึ้น,
+          ส่วน GEO ขยายไปถึงการทำให้แบรนด์ เนื้อหา และหลักฐานถูกเข้าใจในบริบทของ AI Search
+          และระบบ Generative AI
         </P>
         <P>
-          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>80 ครั้งต่อเดือน</strong> และ Global Volume ประมาณ
-          <strong>1.9K</strong> พร้อมคำใกล้เคียงอย่าง “seo vs aeo vs geo” ประมาณ 70 ครั้งต่อเดือนในไทย,
-          “seo geo aeo” ประมาณ 30 และ “seo aeo geo คือ” ประมาณ 20
-          ตัวเลขเหล่านี้เป็น Snapshot ของ Demand ณ วันที่ตรวจ ไม่ใช่ค่าคงที่
+          ถ้าเว็บไซต์ยังมีปัญหา Crawl, Index, Canonical หรือหน้า Service ยังไม่ตอบ Search Intent
+          ควรแก้ SEO Foundation ก่อน แล้วค่อยต่อยอด AEO และ GEO ตามจุดที่ยังขาด
+          เพราะการทำคำตอบให้ชัดหรือเพิ่ม Entity/Evidence จะมีประโยชน์มากขึ้นเมื่อหน้าพื้นฐานของเว็บไซต์พร้อมใช้งานแล้ว
         </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {[
-            ['Intent หลัก', 'ต้องการรู้ความต่างของ SEO, AEO และ GEO ในภาพเดียว มากกว่าการอ่านนิยามแยกทีละคำ'],
-            ['คำถามถัดไป', 'หลังเข้าใจความต่าง ผู้ค้นมักต้องการรู้ว่าเว็บไซต์ควรเริ่มจาก SEO, AEO หรือ GEO ก่อน'],
-            ['Owner URL', 'หน้านี้ถือ Comparison Intent ส่วนคำว่า SEO คืออะไร, AEO คืออะไร และ GEO คืออะไรมีหน้า Definition แยกอยู่แล้ว'],
-            ['Commercial relevance', 'เป็น Mid-funnel informational query ที่เชื่อมไปบริการได้เมื่อผู้อ่านรู้แล้วว่าปัญหาของเว็บไซต์อยู่ชั้นไหน'],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
-            </div>
-          ))}
-        </div>
       </ArticleSection>
-
       <ArticleSection id="seo-geo-aeo-meaning" title="SEO, AEO และ GEO คืออะไรเมื่อ Search มี AI features">
         <P>
           SEO หรือ Search Engine Optimization คือฐานที่ทำให้เว็บไซต์ถูกค้นพบ เข้าใจ และจัดอันดับได้ใน Search Engine
