@@ -2777,329 +2777,274 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 }
 
 function LlmsTxtArticle({ post }: { post: BlogPost }) {
+  const tocItems = [
+    { id: 'llms-answer', label: 'llm.txt คืออะไร และชื่อที่ถูกคืออะไร' },
+    { id: 'llms-serp-intent', label: 'คนค้น llm.txt ต้องการรู้อะไร' },
+    { id: 'llms-google-status', label: 'Google Search ใช้ llms.txt ไหม' },
+    { id: 'llms-compare', label: 'llms.txt ต่างจาก robots.txt และ sitemap อย่างไร' },
+    { id: 'llms-format', label: 'โครงสร้าง llms.txt ตาม proposal v2' },
+    { id: 'llms-example', label: 'ตัวอย่าง llms.txt ที่ใช้ได้จริง' },
+    { id: 'llms-when-to-use', label: 'เว็บไซต์แบบไหนควรทำ llms.txt' },
+    { id: 'llms-implement', label: 'วิธีเพิ่ม llms.txt ในเว็บไซต์' },
+    { id: 'llms-test', label: 'วิธีทดสอบ llms.txt' },
+    { id: 'llms-measure', label: 'ควรวัดผลอย่างไร' },
+    { id: 'llms-limitations', label: 'ข้อจำกัดที่ควรรู้' },
+    { id: 'llms-next-step', label: 'llms.txt อยู่ตรงไหนใน GEO' },
+    { id: 'llms-faq', label: 'FAQ' },
+  ]
+
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป llm.txt / llms.txt ใน 30 วินาที" id="llms-summary" /> : null}
 
-      <ArticleSection title="llms.txt คืออะไร?">
+      <nav aria-label="สารบัญ llms.txt" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
+        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
+        <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
+          {tocItems.map((item, index) => (
+            <li key={item.id}>
+              <a href={'#' + item.id} className="font-medium text-teal-900 underline-offset-2 hover:underline">
+                {String(index + 1).padStart(2, '0')}. {item.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <ArticleSection id="llms-answer" title="llm.txt คืออะไร และชื่อไฟล์ที่ถูกคืออะไร">
         <P>
-          llms.txt คือไฟล์ข้อความที่วางไว้ในโฟลเดอร์หลักของเว็บไซต์ (root directory) เพื่อบอก AI ว่าเว็บไซต์นี้เกี่ยวกับอะไร มีเนื้อหาอะไรบ้าง ใครเป็นผู้เชี่ยวชาญ และ AI ควรอ่านหน้าไหนก่อน เข้าถึงได้ที่ yourdomain.com/llms.txt
+          <strong>คำค้น “llm.txt” มักหมายถึงไฟล์ llms.txt</strong> ซึ่งเป็น proposal สำหรับไฟล์ Markdown ที่เว็บไซต์ใช้สรุปว่าเว็บนี้คืออะไร
+          และชี้ไปยังหน้าหรือ resource สำคัญสำหรับ agent หรือ LLM ที่เลือกอ่านไฟล์นี้ ชื่อไฟล์ตาม proposal คือ <strong>llms.txt</strong> มีตัว s
+          และสามารถวางที่ /llms.txt หรือใน subpath เช่น /docs/llms.txt ตาม proposal v2
         </P>
         <P>
-          แนวคิดนี้เกิดขึ้นเพราะ AI ต้องการ "คู่มือ" ในการทำความเข้าใจเว็บไซต์ robots.txt บอกว่าหน้าไหนห้าม Crawl แต่ไม่ได้บอกว่าเว็บไซต์นั้นเกี่ยวกับอะไร llms.txt เติมเต็มช่องว่างนี้ด้วยการอธิบายบริบทของเว็บไซต์ให้ AI เข้าใจได้ทันที
-        </P>
-        <P>
-          สำหรับธุรกิจไทย นี่คือโอกาสที่ยังมีน้อยมากทำก่อนคู่แข่ง ลองพิมพ์ URL ของคู่แข่งในอุตสาหกรรมเดียวกันตามด้วย /llms.txt ส่วนใหญ่จะไม่มีไฟล์นี้เลย
-        </P>
-      </ArticleSection>
-
-      <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
-        <p className="text-sm font-semibold text-amber-800">หมายเหตุ</p>
-        <p className="thai-readable mt-1 text-sm leading-6 text-amber-900">
-          llms.txt ไม่ใช่ Google ranking factor และไม่ได้ช่วยให้ติด Google AI Overview โดยตรง แต่มีประโยชน์ในฐานะไฟล์สรุปโครงสร้างเว็บไซต์สำหรับ AI tools, agents หรือ LLM systems อื่น ๆ ที่อาจอ่านไฟล์นี้
-        </p>
-      </div>
-
-      <ArticleImage
-        src="/image/blog/llms-txt-how-to/how-llms-work.png"
-        alt="AI ทำงานอย่างไร และทำไม llms.txt ถึงช่วยให้ AI เข้าใจเว็บไซต์ได้ดีขึ้น"
-      />
-
-      <ArticleSection title="llms.txt ต่างจาก robots.txt อย่างไร?">
-        <ArticleSubSection title="robots.txt — บอกว่าหน้าไหนเข้าได้หรือไม่ได้">
-          <P>
-            robots.txt ใช้ไวยากรณ์เฉพาะ เช่น User-agent, Allow, Disallow เพื่อควบคุมว่า Bot ไหนเข้าถึงหน้าไหนได้บ้าง ออกแบบมาสำหรับ Search Engine Crawler เป็นหลัก ไม่ได้บอกว่าเว็บไซต์เกี่ยวกับอะไร
-          </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="llms.txt — บอกว่าเว็บไซต์เกี่ยวกับอะไรและ AI ควรอ่านอะไรก่อน">
-          <P>
-            llms.txt ใช้ภาษา Markdown ที่อ่านง่ายทั้งสำหรับ AI และมนุษย์ อธิบายว่าเว็บไซต์คือใคร ทำอะไร มีเนื้อหาอะไรบ้าง และลิงก์ไปยังหน้าที่สำคัญ ทำให้ AI เข้าใจ Context ของเว็บไซต์ได้โดยไม่ต้อง Crawl ทุกหน้า
-          </P>
-        </ArticleSubSection>
-      </ArticleSection>
-
-      <ArticleImage
-        src="/image/blog/llms-txt-how-to/llms-robots.png"
-        alt="ความต่างระหว่าง llms.txt และ robots.txt สำหรับเว็บไซต์ไทย"
-      />
-
-      <ArticleSection title="โครงสร้างของ llms.txt ที่ดี">
-        <P>llms.txt ที่มีประสิทธิภาพควรมี 5 ส่วนหลัก:</P>
-        <CheckList
-          items={[
-            'ชื่อและคำอธิบายสั้น (H1 + blockquote) — AI เป็นใคร ทำอะไร ให้ใคร',
-            'ข้อมูลผู้เชี่ยวชาญหรือเจ้าของแบรนด์ — ชื่อ บทบาท ประสบการณ์ LinkedIn',
-            'ข้อมูลธุรกิจ — ประเภท ที่ตั้ง บริการ ภาษา',
-            'รายการบทความหรือเนื้อหาหลัก — ลิงก์ + คำอธิบายสั้นแต่ละหน้า',
-            'คำถามที่เว็บไซต์ตอบได้ — ช่วยให้ AI รู้ว่าควรใช้เนื้อหานี้ตอบคำถามอะไร',
-          ]}
-        />
-      </ArticleSection>
-
-      <ArticleSection title="ตัวอย่าง llms.txt สำหรับธุรกิจไทย 3 ประเภท">
-        <P>
-          ดูตัวอย่างไฟล์ llms.txt ที่ใช้งานจริงของ Saralak Search ได้ที่{' '}
-          <a href="https://saralak-search.com/llms.txt" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline underline-offset-2 hover:text-teal-600">
-            saralak-search.com/llms.txt
-          </a>
-        </P>
-        <ArticleSubSection title="1. ธุรกิจ Consultant / Agency (เช่น SEO, Marketing, Law)">
-          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
-            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-{`# ชื่อแบรนด์
-
-> คำอธิบายสั้น 1-2 ประโยค: แบรนด์นี้คืออะไร ทำอะไร ให้ใคร
-
-## ผู้เชี่ยวชาญ
-
-- ชื่อ: [ชื่อ-นามสกุล]
-- บทบาท: [ตำแหน่ง]
-- ประสบการณ์: [จำนวนปี] ปี
-- ความเชี่ยวชาญ: [หัวข้อหลัก]
-- LinkedIn: [URL]
-
-## เกี่ยวกับธุรกิจ
-
-- ประเภท: [ประเภทธุรกิจ]
-- ที่ตั้ง: [จังหวัด/ประเทศ]
-- บริการ: [บริการหลัก]
-- ภาษา: ไทย และ อังกฤษ
-
-## บทความและ Insights
-
-- [ชื่อบทความ](URL): คำอธิบาย 1 ประโยค
-- [ชื่อบทความ](URL): คำอธิบาย 1 ประโยค
-
-## คำถามที่เราตอบได้
-
-- [คำถามที่ลูกค้ามักถาม]
-- [คำถามที่ลูกค้ามักถาม]`}
-            </pre>
-          </div>
-        </ArticleSubSection>
-
-        <ArticleSubSection title="2. โรงแรมหรือที่พัก">
-          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
-            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-{`# ชื่อโรงแรม
-
-> โรงแรม[ประเภท] ตั้งอยู่ที่[ที่ตั้ง] เหมาะสำหรับ[กลุ่มลูกค้า]
-> มี[จำนวน] ห้อง ราคาเริ่มต้น[ราคา] บาทต่อคืน
-
-## เกี่ยวกับที่พัก
-
-- ประเภท: [Resort / Boutique Hotel / Hostel]
-- ที่ตั้ง: [ที่อยู่ ใกล้ landmark อะไร]
-- จำนวนห้อง: [จำนวน]
-- ราคา: เริ่มต้น [ราคา] บาท/คืน
-- สิ่งอำนวยความสะดวก: [สระน้ำ, ร้านอาหาร, สปา ฯลฯ]
-- เหมาะสำหรับ: [คู่รัก / ครอบครัว / กลุ่มเพื่อน]
-
-## จุดเด่น
-
-- [จุดเด่นที่ 1 พร้อมรายละเอียด]
-- [จุดเด่นที่ 2 พร้อมรายละเอียด]
-
-## ข้อมูลการเดินทาง
-
-- [วิธีเดินทางมาถึง]
-- [ระยะห่างจาก landmark สำคัญ]
-
-## ติดต่อและจอง
-
-- เว็บไซต์: [URL]
-- โทร: [เบอร์]
-- LINE: [LINE ID]`}
-            </pre>
-          </div>
-        </ArticleSubSection>
-
-        <ArticleSubSection title="3. ร้านค้าออนไลน์ / E-commerce">
-          <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
-            <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-{`# ชื่อแบรนด์
-
-> แบรนด์[ประเภทสินค้า] ที่[จุดเด่น] จัดส่งทั่วประเทศไทย
-
-## เกี่ยวกับแบรนด์
-
-- ประเภทสินค้า: [หมวดหมู่สินค้าหลัก]
-- กลุ่มลูกค้า: [Target Audience]
-- ราคา: เริ่มต้น [ราคา] บาท
-- จัดส่ง: [ระยะเวลา] วันทำการ
-- ช่องทางการขาย: เว็บไซต์, Shopee, Lazada, LINE
-
-## สินค้าหลัก
-
-- [หมวดสินค้า 1]: [คำอธิบาย]
-- [หมวดสินค้า 2]: [คำอธิบาย]
-
-## คำถามที่ลูกค้าถามบ่อย
-
-- [คำถาม] ไปยัง [คำตอบสั้น]
-- [คำถาม] ไปยัง [คำตอบสั้น]`}
-            </pre>
-          </div>
-        </ArticleSubSection>
-      </ArticleSection>
-
-      <ArticleSection title="llms.txt ควรเขียนภาษาไทยหรืออังกฤษ?">
-        <P>
-          มาตรฐาน llms.txt จาก <strong>llmstxt.org</strong> ไม่ได้กำหนดว่าต้องใช้ภาษาใด และยังไม่มีงานวิจัยที่พิสูจน์ว่าภาษาไหนให้ผลดีกว่ากัน จากการทดสอบในมิถุนายน 2026 TTB Bank ซึ่งเป็นแบรนด์ไทยเพียงรายเดียวที่มี llms.txt จริง เลือกเขียนเป็น <strong>ภาษาอังกฤษทั้งหมด</strong>
-        </P>
-        <P>
-          ข้อแตกต่างของแต่ละแนวทาง:
-        </P>
-        <ArticleSubSection title="เขียนเป็นภาษาอังกฤษ">
-          <CheckList
-            items={[
-              'AI ระดับโลก (ChatGPT, Perplexity, Claude) trained บน English เป็นหลัก อาจ process ได้แม่นยำกว่า',
-              'TTB Bank และ Expedia ซึ่งมี llms.txt ที่ดีที่สุดในการทดสอบล้วนใช้ English',
-              'เหมาะกับเว็บไซต์ที่มี Target Audience ทั้งไทยและต่างประเทศ',
-            ]}
-          />
-        </ArticleSubSection>
-        <ArticleSubSection title="เขียนเป็นภาษาไทย">
-          <CheckList
-            items={[
-              'Content matching — เนื้อหาสอดคล้องกับภาษาของเว็บไซต์และ Target Audience',
-              'เมื่อ AI ตอบ Query ภาษาไทย context ภาษาไทยอาจ match ได้ตรงกว่า',
-              'ข้อมูลภาษาไทยใน AI Training Data ยังบาง ทำให้ภาษาไทยที่มีโครงสร้างดีมีน้ำหนักสูงกว่า',
-            ]}
-          />
-        </ArticleSubSection>
-        <P>
-          <strong>คำแนะนำของ Saralak Search:</strong> ใช้ทั้งสองภาษาในไฟล์เดียว เริ่มด้วย English 1-2 ประโยคที่บนสุดเพื่อให้ AI ระดับโลกเข้าใจ Brand Identity ทันที จากนั้นเขียนเนื้อหาหลักเป็นภาษาไทย วิธีนี้ยังไม่มีหลักฐานยืนยันแน่ชัดว่าดีกว่า แต่เป็นแนวทางที่สมเหตุสมผลที่สุดจากข้อมูลที่มีในปัจจุบัน
+          จุดสำคัญคือ llms.txt <strong>ไม่ใช่ไฟล์ควบคุม crawler</strong>, ไม่ใช่ replacement ของ robots.txt หรือ sitemap.xml
+          และไม่ใช่เทคนิคที่ทำให้ Google หรือ AI อ้างอิงเว็บไซต์โดยอัตโนมัติ ควรมองเป็น optional interface สำหรับระบบที่รองรับมากกว่า “AI SEO shortcut”
         </P>
       </ArticleSection>
 
-      <ArticleSection title="วิธีเพิ่ม llms.txt ในเว็บไซต์">
-        <ArticleSubSection title="WordPress">
-          <CheckList
-            items={[
-              'เข้า File Manager ใน cPanel หรือ Hosting Control Panel',
-              'ไปที่โฟลเดอร์ public_html (root ของเว็บไซต์)',
-              'สร้างไฟล์ใหม่ชื่อ llms.txt',
-              'วางเนื้อหาตามโครงสร้างด้านบน บันทึกไฟล์',
-              'ทดสอบที่ yourdomain.com/llms.txt',
-            ]}
-          />
-        </ArticleSubSection>
-        <ArticleSubSection title="React / Next.js / Vite">
-          <CheckList
-            items={[
-              'สร้างไฟล์ llms.txt ในโฟลเดอร์ public/ ของ Project',
-              'ไฟล์จะถูก Build และวางไว้ที่ root โดยอัตโนมัติ',
-              'ทดสอบหลัง Deploy ที่ yourdomain.com/llms.txt',
-            ]}
-          />
-        </ArticleSubSection>
-        <ArticleSubSection title="อื่นๆ (Squarespace, Wix, Shopify)">
-          <P>
-            แต่ละ Platform มีวิธีเพิ่มไฟล์ Static ที่แตกต่างกัน Shopify รองรับผ่าน Theme Files, Squarespace ผ่าน Custom File Injection และ Wix ยังไม่รองรับการเพิ่ม Static File ที่ root โดยตรง ควรตรวจสอบ Documentation ของแต่ละ Platform
-          </P>
-        </ArticleSubSection>
-      </ArticleSection>
-
-      <ArticleCTA
-        headline="ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?"
-        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยตรวจสอบว่าเว็บไซต์พร้อมสำหรับ GEO แค่ไหน รวมถึง llms.txt, Schema และ Technical GEO ที่ยังขาดอยู่"
-      />
-
-      <ArticleSection title="วิธีทดสอบว่า AI อ่าน llms.txt ได้หรือไม่">
-        <P>หลัง Deploy แล้ว ทดสอบด้วย 3 วิธีนี้:</P>
-        <CheckList
-          items={[
-            'เปิด Browser พิมพ์ yourdomain.com/llms.txt — ถ้าเห็นเนื้อหาไฟล์แสดงว่าวางถูกที่',
-            'ถาม ChatGPT หรือ Perplexity ว่า "ช่วยอ่าน llms.txt จาก [URL] ให้หน่อย" เพื่อดูว่า AI เข้าถึงได้',
-            'ตรวจสอบ Server Log หรือ Analytics ว่ามี Bot เข้ามาอ่านไฟล์ llms.txt หรือไม่',
-          ]}
-        />
-      </ArticleSection>
-
-      <ArticleSection title="ทดสอบจริง: แบรนด์ไทยที่ปรากฏใน ChatGPT มี llms.txt หรือไม่?">
+      <ArticleSection id="llms-serp-intent" title="คนค้น “llm.txt” ต้องการรู้อะไร">
         <P>
-          ทดสอบในมิถุนายน 2026 โดยนำแบรนด์ไทยที่ปรากฏใน ChatGPT จากการทดสอบ 5 หมวดธุรกิจ มาตรวจสอบว่ามี llms.txt จริงหรือไม่ ผลที่ได้น่าสนใจมาก
+          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> คำค้น “llm.txt” มี Intent หลักเป็น <strong>Definition + How-to</strong>:
+          ผลลัพธ์ส่วนใหญ่ตอบว่าไฟล์คืออะไร, โครงสร้างเป็นอย่างไร, ใช้กับ SEO/AI ได้แค่ไหน และสร้างอย่างไร
+          Google AI Overview เองก็อธิบาย llms.txt ในฐานะไฟล์ Markdown สำหรับสรุปข้อมูลเว็บไซต์และชี้ไปยัง resource สำคัญ
         </P>
+        <P>
+          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>40 ครั้งต่อเดือน</strong> และ Global Volume ประมาณ <strong>4.1K</strong>
+          ขณะที่คำใกล้เคียง “llm.txt for seo” อยู่ราว 50 ครั้งต่อเดือนในไทย ตัวเลขนี้เป็น snapshot ของ demand ไม่ใช่ค่าคงที่
+          และยิ่งตอกย้ำว่าหน้านี้ควรตอบทั้ง “คืออะไร” และ “เกี่ยวกับ SEO แค่ไหน” ให้ชัด
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['Definition', 'อธิบายให้ชัดว่า llm.txt ในคำค้นหมายถึง llms.txt และชื่อไฟล์ตาม proposal คืออะไร'],
+            ['Implementation', 'บอกโครงสร้างขั้นต่ำ วิธีวางไฟล์ และวิธีตรวจว่า URL ใช้งานได้'],
+            ['SEO / GEO Context', 'แยกให้ชัดว่า Google Search ไม่ใช้ไฟล์นี้เป็น ranking signal แต่ระบบอื่นอาจเลือกใช้ตามการรองรับ'],
+            ['Decision Rule', 'ถ้า Search Foundation ยังมีปัญหา ให้แก้ Crawl, Index, Content และ Owner URL ก่อน llms.txt'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="llms-google-status" title="Google Search ใช้ llms.txt ไหมในปี 2026">
+        <P>
+          <strong>Google ระบุชัดในเดือนมิถุนายน 2026 ว่า llms.txt ไม่จำเป็นสำหรับ Google Search และไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking</strong>
+          การมีไฟล์นี้จึงไม่ควรถูกขายเป็นวิธีทำให้ติด AI Overview, AI Mode หรืออันดับ Google
+        </P>
+        <P>
+          สำหรับ ChatGPT Search, เอกสารของ OpenAI แนะนำให้เว็บไซต์ที่ต้องการให้ Content ถูกค้นพบและแสดงในผลค้นหา
+          <strong>ไม่บล็อก OAI-SearchBot</strong> และ OpenAI แยก OAI-SearchBot ออกจาก GPTBot ซึ่งเกี่ยวกับ training
+          เอกสารนี้ไม่ได้ระบุว่า llms.txt เป็น requirement สำหรับการปรากฏใน ChatGPT Search
+        </P>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
+          <p className="text-sm font-semibold text-amber-900">Decision rule</p>
+          <p className="thai-readable mt-1 text-sm leading-6 text-amber-900">
+            ถ้าเป้าหมายคือ Google Search หรือ ChatGPT Search ให้แก้ access, crawl/index, content quality, entity clarity และ measurement ก่อน
+            แล้วค่อยทำ llms.txt เป็น optional supporting file เมื่อมี resource ที่ต้องการ curate ให้ agent ใช้งาน
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="llms-compare" title="llms.txt ต่างจาก robots.txt และ sitemap.xml อย่างไร">
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
-          <table className="min-w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+          <table className="min-w-[820px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
             <thead className="bg-[#fbfaf6]">
               <tr>
-                {['แบรนด์', 'ปรากฏใน ChatGPT', 'มี llms.txt จริง'].map((h) => (
-                  <th key={h} className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
+                {['ไฟล์', 'หน้าที่หลัก', 'ใครใช้', 'ควรใช้แทนกันไหม'].map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 text-neutral-700">
               {[
-                ['TTB Bank', '✅', '✅ มี — เขียนถูกต้อง อัปเดต 2025'],
-                ['Expedia', '✅ (แหล่งอ้างอิง)', '✅ มี — มาตรฐานระดับโลก'],
-                ['AXA Thailand', '✅', '❌ ไม่มี (คืน HTML แทน)'],
-                ['TQM Insurance', '✅', '❌ ไม่มี (คืน HTML แทน)'],
-                ['Flash Express', '✅', '❌ ไม่มี (ไฟล์ว่างเปล่า)'],
-                ['Amari Bangsaen', '✅', '❌ ไม่มี (404)'],
-                ['Kerry Express', '✅', '❌ ไม่มี (ไม่ตอบสนอง)'],
-                ['Thailand Post', '✅', '❌ ไม่มี (ไม่ตอบสนอง)'],
+                ['robots.txt', 'ประกาศ access rules สำหรับ crawler ตาม user-agent', 'Search crawler และ bot ที่เคารพ robots.txt', 'ไม่แทน llms.txt'],
+                ['sitemap.xml', 'ลิสต์ URL ที่ต้องการให้ Search Engine ค้นพบ/ประมวลผล', 'Search Engine', 'ไม่แทน llms.txt'],
+                ['llms.txt', 'overview + curated links สำหรับ agent/LLM ที่รองรับ proposal', 'Agent หรือ tool ที่เลือกอ่าน', 'ไม่แทน robots.txt หรือ sitemap'],
               ].map((row) => (
                 <tr key={row[0]}>
                   {row.map((cell, i) => (
-                    <td key={i} className={`thai-readable px-4 py-3 leading-6 ${i === 0 ? 'font-medium text-neutral-950' : ''}`}>{cell}</td>
+                    <td key={i} className={'thai-readable px-4 py-3 leading-6 ' + (i === 0 ? 'font-semibold text-neutral-950' : '')}>{cell}</td>
                   ))}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      </ArticleSection>
+
+      <ArticleSection id="llms-format" title="โครงสร้าง llms.txt ตาม proposal v2">
         <P>
-          จาก 8 แบรนด์ไทยที่ ChatGPT พูดถึง มีเพียง TTB Bank เท่านั้นที่มี llms.txt จริง ส่วนอีก 7 แบรนด์ไม่มีเลย นั่นหมายความว่า llms.txt ไม่ใช่ปัจจัยหลักที่ทำให้ปรากฏใน ChatGPT ในปัจจุบัน สิ่งที่ทำให้แบรนด์เหล่านี้ปรากฏคือ Brand Authority, Google Business Profile และการถูกอ้างอิงจาก Third-Party Platform
+          llms.txt ใช้ Markdown และมีโครงสร้างค่อนข้างยืดหยุ่น ตาม proposal v2 ส่วนที่จำเป็นจริงมีเพียง <strong>H1 ชื่อโปรเจกต์หรือเว็บไซต์</strong>
+          ส่วน blockquote, รายละเอียด และ section ที่ลิงก์ไปยัง resource เป็นส่วนเสริมที่ใช้เมื่อมีข้อมูลให้จัดหมวด
         </P>
+        <CheckList items={[
+          'H1 — ชื่อเว็บไซต์หรือโปรเจกต์ เป็นส่วนที่จำเป็น',
+          'Blockquote — สรุปสั้นว่าเว็บไซต์หรือโปรเจกต์คืออะไร',
+          'รายละเอียดเพิ่มเติม — ข้อความหรือลิสต์ที่ช่วยอธิบายบริบท โดยไม่ใช้ heading',
+          'H2 sections — ใช้แบ่งหมวดของ resource ที่ต้องการแนะนำ',
+          'ลิงก์แต่ละรายการ — รูปแบบ [ชื่อ](URL): คำอธิบายสั้น ซึ่งช่วยบอกว่า resource นั้นใช้ทำอะไร',
+        ]} />
         <P>
-          แต่นั่นก็หมายความว่า <strong>โอกาส Early Mover ยังเปิดอยู่</strong> เมื่อ AI รองรับ llms.txt มากขึ้น แบรนด์ที่เตรียมไฟล์นี้ไว้ก่อนจะได้เปรียบทันที เหมือนกับแบรนด์ที่ทำ robots.txt ตั้งแต่ยุคแรกของ Search Engine
+          Proposal v2 ยังรองรับ llms.txt ใน subpath และเพิ่มแนวทางการใช้ rel="alternate" สำหรับ Markdown version
+          กับ rel="describedby" เพื่อชี้ไปยัง llms.txt ที่ครอบคลุมหน้า นี่เป็นส่วนของ proposal ไม่ใช่ requirement ของ Google Search
         </P>
+      </ArticleSection>
+
+      <ArticleSection id="llms-example" title="ตัวอย่าง llms.txt สำหรับเว็บไซต์ธุรกิจ">
         <P>
-          ธุรกิจที่ต้องการเริ่มต้น{' '}
-          <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
-          {' '}ควบคู่กับการทำ llms.txt ดูบริการ GEO ของ Saralak Search ได้เลย
+          Saralak Search มีไฟล์จริงที่ <a href="/llms.txt" className="font-medium text-teal-800 underline underline-offset-2">/llms.txt</a>
+          โดยใช้เป็น curated overview ของแบรนด์และ resource สำคัญ ไม่ได้ใช้เป็นหลักฐานว่าไฟล์นี้ทำให้อันดับหรือ AI Citation เพิ่มขึ้น
         </P>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO คืออะไร? ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไรในยุค AI Search' },
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
-          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist สำหรับเว็บไซต์ไทย: 40 รายการก่อน AI อ้างอิงธุรกิจของคุณ' },
-          { to: '/services/geo', label: 'รับทำ GEO — Saralak Search' },
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
+          <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+            {'# Brand Name\\n\\n> Brand Name is a [business type] serving [market/location].\\n\\nCore facts that help explain the business, scope, language, or audience.\\n\\n## Services\\n\\n- [Service A](https://example.com/service-a): What this service covers\\n- [Service B](https://example.com/service-b): Who it is for\\n\\n## Guides\\n\\n- [Topic guide](https://example.com/guide): What the guide explains\\n\\n## Case Studies\\n\\n- [Case study](https://example.com/case): Verified result or observation'}
+          </pre>
+        </div>
+        <P>
+          ไม่จำเป็นต้องยัดทุก URL ลงไฟล์ ถ้าเป้าหมายคือให้ agent หา resource ที่สำคัญได้เร็ว การเลือกเฉพาะหน้า Owner, Service, Guide และ Case ที่มีบทบาทชัด
+          มักมีประโยชน์กว่าการทำซ้ำ sitemap ทั้งเว็บไซต์
+        </P>
+      </ArticleSection>
+
+      <ArticleSection id="llms-when-to-use" title="เว็บไซต์แบบไหนควรทำ llms.txt และเมื่อไรยังไม่ควร">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">เหมาะจะทำเมื่อ</h3>
+            <CheckList items={[
+              'มีเอกสาร คู่มือ API Knowledge Base หรือ Content Library ที่ agent อาจต้องเลือก resource',
+              'มีหน้า Owner ชัดและต้องการทำ curated overview ให้ระบบที่รองรับ',
+              'ดูแลไฟล์ให้สอดคล้องกับ URL และข้อมูลจริงได้',
+              'Search Foundation หลักทำงานดีแล้วและ llms.txt เป็นงานเสริม ไม่ใช่งานแก้ปัญหาอันดับ',
+            ]} />
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-white p-5">
+            <h3 className="font-semibold text-neutral-950">ยังไม่ควรให้ Priority เมื่อ</h3>
+            <CheckList items={[
+              'หน้าเป้าหมายยัง noindex, canonical ผิด, render ไม่ครบ หรือ internal link ขาด',
+              'ยังไม่มี Content Owner ของคำถามหลักและสร้างบทความซ้ำ Intent กัน',
+              'คาดหวังว่าไฟล์เดียวจะทำให้ Google หรือ ChatGPT อ้างอิงทันที',
+              'ไม่มีคนดูแลจนลิงก์หรือข้อมูลในไฟล์จะล้าสมัยเร็ว',
+            ]} />
+          </div>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection id="llms-implement" title="วิธีเพิ่ม llms.txt ในเว็บไซต์">
+        <P>
+          หลักการง่ายที่สุดคือทำให้ไฟล์เข้าถึงได้ผ่าน URL สาธารณะ เช่น https://example.com/llms.txt
+          หรือ path ที่ต้องการครอบคลุม เช่น /docs/llms.txt แล้วเก็บเนื้อหาเป็น Markdown ตาม proposal
+        </P>
+        <ArticleSubSection title="Static site / React / Vite / Next.js">
+          <P>
+            ถ้า framework มีโฟลเดอร์สำหรับ static assets ให้เพิ่ม llms.txt ในตำแหน่งที่ build แล้วถูกเสิร์ฟเป็น URL ที่ต้องการ
+            จากนั้น deploy และเปิด URL จริงเพื่อตรวจว่าไฟล์ไม่ถูก route handler หรือ redirect ทับ
+          </P>
+        </ArticleSubSection>
+        <ArticleSubSection title="WordPress หรือ CMS">
+          <P>
+            ใช้ plugin/extension ที่รองรับ หรือให้ server/CDN เสิร์ฟไฟล์ที่ path ที่ต้องการก็ได้ จุดสำคัญไม่ใช่วิธีสร้างไฟล์
+            แต่คือ URL ต้องเปิดได้ เนื้อหาต้องตรงกับเว็บไซต์ และไม่เผยข้อมูลภายในที่ไม่ควรเป็น public
+          </P>
+        </ArticleSubSection>
+      </ArticleSection>
+
+      <ArticleSection id="llms-test" title="วิธีทดสอบว่า llms.txt ใช้งานได้หรือไม่">
+        <NumberedList items={[
+          'เปิด URL ของไฟล์โดยตรงและตรวจว่าได้เนื้อหา Markdown ที่ตั้งใจไว้ ไม่ใช่ 404, HTML fallback หรือ redirect loop',
+          'กดลิงก์ในไฟล์ทีละรายการเพื่อตรวจว่า URL ยังใช้งานได้และพาไปยัง resource ที่ถูกต้อง',
+          'ตรวจว่าไม่มีข้อมูลลับ, draft URL, admin path หรือข้อมูลที่ไม่ควรเปิดเผยอยู่ในไฟล์',
+          'ถ้าต้องการทดสอบกับ agent ให้ให้ agent เริ่มจาก llms.txt แล้วถามคำถามที่ resource ในไฟล์ควรตอบได้ จากนั้นตรวจว่า agent ตามลิงก์ถูกหรือไม่',
+          'หากต้องการหลักฐานการ fetch ให้ดู server/CDN logs แทนการเดาจากคำตอบของโมเดล',
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="ข้อผิดพลาดที่พบบ่อยใน llms.txt ของธุรกิจไทย">
-        <CheckList
-          items={[
-            'เขียนคำอธิบายกว้างเกินไป เช่น "เว็บไซต์ธุรกิจ" โดยไม่ระบุว่าทำอะไร ให้ใคร ที่ไหน',
-            'ไม่มีลิงก์ไปยังเนื้อหาหลัก ทำให้ AI ไม่รู้ว่าควร Crawl หน้าไหนก่อน',
-            'ไม่อัปเดตเมื่อมีบทความหรือบริการใหม่ ทำให้ข้อมูลล้าสมัย',
-            'ใช้ภาษาที่ไม่สอดคล้องกับเนื้อหาในเว็บไซต์ เช่น llms.txt เป็นอังกฤษแต่เว็บไซต์เป็นไทย',
-            'วางไฟล์ผิดที่ เช่น /blog/llms.txt แทนที่จะเป็น /llms.txt',
-          ]}
-        />
+      <ArticleSection id="llms-measure" title="ทำ llms.txt แล้วควรวัดผลอย่างไร">
+        <P>
+          llms.txt ไม่มี KPI มาตรฐานที่ใช้พิสูจน์ SEO หรือ AI Visibility โดยตรง จึงควรแยก <strong>การใช้งานไฟล์</strong> ออกจาก <strong>ผลลัพธ์ Search/AI</strong>
+          และไม่สรุป Causation เพียงเพราะเพิ่มไฟล์แล้ว Visibility เปลี่ยน
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['File usage', 'ตรวจ server/CDN logs ว่ามี request มาที่ llms.txt หรือ resource ที่ลิงก์จากไฟล์หรือไม่ เมื่อ user-agent/log รองรับการแยก'],
+            ['Google Search', 'ใช้ Search Console วัด Queries, Pages, Impressions, Clicks และ Generative AI visibility ตามรายงานที่ Google รองรับ โดยไม่โยงผลกับ llms.txt โดยอัตโนมัติ'],
+            ['AI Referral', 'ดู GA4 referral ที่ตรวจจับได้ เช่น ChatGPT Search ใช้ utm_source=chatgpt.com ตามเอกสาร OpenAI'],
+            ['Business Outcome', 'ดู Lead, LINE, Call, Purchase หรือ Assisted Conversion ต่อ ไม่หยุดที่การเห็น bot fetch ไฟล์'],
+          ].map(([title, copy]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
+            </div>
+          ))}
+        </div>
       </ArticleSection>
 
-      <ArticleSection title="llms.txt ช่วย SEO โดยตรงไหม?">
-        <P><strong>ไม่ควรมองว่า llms.txt เป็น ranking factor ของ Google</strong> หรือวิธีทำให้ติด AI Overview โดยตรง Google ยืนยันแล้วว่าไฟล์นี้ไม่มีผลต่ออันดับการค้นหา</P>
-        <P>ควรมองว่า llms.txt คือ<strong>ไฟล์สรุปโครงสร้างเว็บไซต์สำหรับ AI tools, agents และ LLM systems อื่น ๆ</strong> ที่อาจอ่านไฟล์นี้เพื่อเข้าใจเว็บไซต์ได้เร็วขึ้น — เช่น Perplexity, Anthropic Claude หรือระบบ AI ที่รองรับการอ่าน llms.txt spec ในอนาคต ทำเพราะเป็น good practice สำหรับ AI era ไม่ใช่เพื่อ SEO</P>
+      <ArticleSection id="llms-limitations" title="ข้อจำกัดของ llms.txt ที่ควรรู้">
+        <CheckList items={[
+          'ไม่ใช่มาตรฐานของ Google Search และไม่มีผลบวกหรือลบต่อ Ranking หรือ Visibility บน Google Search ตามเอกสารปัจจุบัน',
+          'ไม่ใช่ access-control file จึงไม่แทน robots.txt และไม่ควรใช้แทน noindex หรือ crawler directives',
+          'ไม่ควรสมมติว่า ChatGPT, Gemini, Claude, Perplexity หรือ agent ทุกตัวจะค้นหาและอ่านไฟล์นี้เหมือนกัน',
+          'ไฟล์ที่ลิงก์ไปยังเนื้อหาไม่ดี ล้าสมัย หรือซ้ำ Intent กันไม่ได้แก้ปัญหา Content Quality',
+          'การที่ agent fetch llms.txt ไม่ได้พิสูจน์ว่าไฟล์นั้นทำให้เกิด Citation, Ranking หรือ Conversion',
+        ]} />
       </ArticleSection>
 
-      <SourceBox items={[
-        'llms.txt official specification — llmstxt.org, checked June 2026',
-        'Google Search Central (confirmed llms.txt is not a Google ranking factor), checked June 2026',
-        'Manual testing: 8 Thai brands vs ChatGPT presence, June 2026 — Saralak Search',
-        'Saralak Search internal observations, June 2026',
+      <ArticleSection id="llms-next-step" title="llms.txt อยู่ตรงไหนในงาน GEO ของเว็บไซต์">
+        <P>
+          ในงาน GEO ควรจัด llms.txt ไว้ท้ายลำดับหลัง Search Foundation, Topic Ownership, Content, Entity และ Evidence
+          ถ้าเว็บไซต์ยังไม่ชัดว่า URL ไหนควรถือ Intent ไหน หรือ AI/Search crawler ยังเข้าถึงหน้าหลักไม่ดี การแก้จุดเหล่านั้นมี Priority สูงกว่า
+        </P>
+        <P>
+          หากฐานเว็บไซต์พร้อมแล้ว llms.txt สามารถเป็น supporting infrastructure สำหรับระบบที่รองรับ โดยดูขั้นตอนเต็มได้ที่
+          {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
+          {' '}และใช้
+          {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
+          {' '}ตรวจลำดับงานก่อนเชื่อมไปยัง
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ GEO & AI Search</Link>
+          {' '}ของ Saralak Search
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนทำ Technical GEO' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ลำดับ Implementation ที่ควรทำก่อน llms.txt' },
+          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist — ตรวจ Search Foundation และ AI Search Readiness' },
+          { to: '/services/geo', label: 'บริการ GEO & AI Search — Saralak Search' },
+        ]} />
+      </ArticleSection>
+
+      <SourceBox heading="Sources & Methodology — checked 6 October 2026" items={[
+        'llms.txt proposal v2 — llmstxt.org, modified August 2026',
+        'Google Search Central — June 15, 2026 clarification: llms.txt is not needed for Google Search and has no positive or negative impact on visibility or rankings',
+        'OpenAI Help Center — Publishers and Developers FAQ: OAI-SearchBot controls discovery for ChatGPT Search; ChatGPT referrals include utm_source=chatgpt.com',
+        'Saralak Search — live SERP observation for “llm.txt” and Ahrefs keyword snapshot, checked 6 October 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ llms.txt" />
+      <div id="llms-faq" className="scroll-mt-24">
+        <ArticleFAQ post={post} heading="FAQ: llm.txt และ llms.txt" />
+      </div>
     </article>
   )
 }
-
 function GeoChecklistArticle({ post }: { post: BlogPost }) {
   const entityItems = [
     'ระบุชื่อแบรนด์ ประเภทธุรกิจ สินค้า/บริการ และข้อมูล About ให้ชัดใน Visible Content ไม่พึ่ง Schema อย่างเดียว',
