@@ -34,7 +34,7 @@ export const geoIntroFaqs: FAQItem[] = [
   {
     question: 'GEO เป็น Ranking Factor ของ Google หรือไม่?',
     answer:
-      'ไม่ใช่ Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode เอกสาร Google Search Central ปี 2026 ระบุว่า SEO best practices, Search index, crawlability, indexability และ helpful non-commodity content ยังเป็น foundation ของ Generative AI Search',
+      'ไม่ใช่ Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode โดย Google ระบุว่า SEO best practices, Search index, crawlability, indexability และเนื้อหาที่มีคุณค่ายังเป็นพื้นฐานของ Generative AI Search',
   },
   {
     question: 'ทำ GEO ต้องมี FAQ, Schema หรือ llms.txt หรือไม่?',
@@ -49,7 +49,7 @@ export const geoIntroFaqs: FAQItem[] = [
   {
     question: 'SEO ยังจำเป็นเมื่อทำ GEO หรือไม่?',
     answer:
-      'ยังจำเป็น โดยเฉพาะ crawlability, indexability, Search Intent, Internal Link และ Content Quality สำหรับ Google เอกสารปี 2026 ระบุชัดว่า Generative AI features ยังคงใช้ core Search ranking and quality systems และข้อมูลจาก Search index',
+      'ยังจำเป็น โดยเฉพาะ crawlability, indexability, Search Intent, Internal Link และ Content Quality เพราะ Google ระบุว่า Generative AI features ยังคงอาศัย core Search ranking and quality systems และข้อมูลจาก Search index',
   },
   {
     question: 'GEO วัดผลจากอะไร?',
