@@ -1196,9 +1196,9 @@ export const blogPosts: BlogPost[] = [
     category: 'GEO',
     excerpt:
       'คำค้น llm.txt มักหมายถึง llms.txt ซึ่งเป็นข้อเสนอสำหรับไฟล์ Markdown ที่สรุปเว็บไซต์และลิงก์ไปยังเนื้อหาสำคัญสำหรับ agent หรือ LLM ที่รองรับ บทความนี้อธิบายรูปแบบไฟล์ วิธีใช้ ข้อจำกัด และข้อเท็จจริงล่าสุดจาก Google',
-    readingTime: '12 min read',
+    readingTime: '14 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1219,9 +1219,9 @@ export const blogPosts: BlogPost[] = [
     faqs: llmsTxtFaqs,
     bodyVariant: 'llms-txt',
     cta: {
-      headline: 'ต้องการให้ AI เข้าใจธุรกิจของคุณมากขึ้น?',
+      headline: 'ไม่แน่ใจว่าเว็บไซต์ควรให้ Priority กับ llms.txt หรือ GEO จุดไหนก่อน?',
       description:
-        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+        'ดูแนวทางทำ GEO และ AI Search โดยจัดลำดับ Search Foundation, Content, Entity, Evidence และ Measurement ก่อนเลือก Technical Tactic ที่เหมาะกับเว็บไซต์',
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
