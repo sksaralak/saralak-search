@@ -141,7 +141,7 @@ export const geoAgencyFaqs: FAQItem[] = [
 
 export const howToDoGeoFaqs: FAQItem[] = [
   {
-    question: 'วิธีทำ GEO ควรเริ่มจากอะไร?',
+    question: 'วิธีทำ GEO Optimization ควรเริ่มจากอะไร?',
     answer:
       'ควรเริ่มจากเก็บ Baseline และตรวจ Search Foundation ก่อน เช่น Crawl, Index, Canonical, Rendering และ Owner URL ของแต่ละ Topic จากนั้นค่อยปรับ Content, Evidence, Entity, Internal Link และ External Evidence แล้ววัดผลเป็นรอบ วิธีนี้ช่วยแยกปัญหาพื้นฐานออกจากงาน GEO และลดการสร้าง Content ซ้ำ Intent เดิม',
   },
@@ -1457,29 +1457,29 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'วิธีทำ GEO ปี 2026: 8 ขั้นตอนสำหรับ Google AI Search และ ChatGPT',
+    title: 'วิธีทำ GEO Optimization: 8 ขั้นตอนสำหรับ Google และ AI Search',
     slug: 'how-to-do-geo',
     category: 'GEO',
     excerpt:
       'วิธีทำ GEO ควรเริ่มจาก Baseline และ Search Foundation ก่อน แล้วค่อยจัด Topic Ownership, Content, Evidence, Entity, Internal Link, External Evidence และ Measurement คู่มือนี้เรียงขั้นตอนลงมือทำ พร้อมเคสจริง ข้อจำกัด และข้อมูล Google/OpenAI ล่าสุด',
     readingTime: '16 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-09-21',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'วิธีทำ GEO ปี 2026: 8 ขั้นตอน + วัดผล | Saralak Search',
+    metaTitle: 'วิธีทำ GEO Optimization คืออะไร? 8 ขั้นตอนลงมือทำ | Saralak Search',
     metaDescription:
-      'วิธีทำ GEO แบบ Step by Step ตั้งแต่ Baseline, Crawl/Index, Topic Ownership, Content, Entity, Internal Link และ Measurement พร้อมเคสจริง ข้อจำกัด และข้อมูล Google/OpenAI ล่าสุด',
+      'วิธีทำ GEO Optimization แบบ Step by Step ตั้งแต่ Baseline, Crawl/Index, Topic Ownership, Content, Entity, Evidence และ Measurement พร้อมเคสจริง ข้อจำกัด และข้อมูล Google/OpenAI ล่าสุด',
     heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.webp',
     heroImageAlt: 'วิธีทำ GEO แบบ Step by Step สำหรับ Google AI Search และ ChatGPT',
     ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
     aiSummary: [
-      'วิธีทำ GEO ควรเริ่มจาก Baseline, Crawl/Index/Bot Access, Topic Ownership, Content/Evidence, Entity/Internal Link, External Evidence และ Measurement ไม่ใช่เริ่มจากการใส่ Schema หรือผลิตบทความเพิ่มทันที',
-      'Google ระบุว่า SEO best practices และ Search index ยังเป็นพื้นฐานของ AI Overviews และ AI Mode และไม่มี special AI schema หรือ llms.txt ที่จำเป็นต่อการปรากฏใน Generative AI Search',
-      'สำหรับ ChatGPT Search การอนุญาต OAI-SearchBot ช่วยให้เว็บไซต์มีสิทธิ์ถูกค้นพบ แต่ไม่รับประกันว่า ChatGPT จะกล่าวถึงหรืออ้างอิงเว็บไซต์ในทุกคำถาม',
-      'Saralak Search ใช้กรอบ Answer, Evidence, Entity, Context และ Retrieval เพื่อรีวิว Content กรอบนี้เป็น Methodology จากงานจริง ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
+      'วิธีทำ GEO Optimization ควรเริ่มจาก Baseline และ Search Foundation ก่อน แล้วค่อยจัด Topic Ownership, Content/Evidence, Entity/Internal Link, External Evidence และ Measurement',
+      'จาก SERP ไทยของคำ “วิธีทำ geo optimization คืออะไร” ที่ตรวจวันที่ 6 ตุลาคม 2026 Search Intent เป็นทั้ง Definition และ How-to แต่หน้านี้ถือ Implementation Intent ส่วนคำว่า “GEO คืออะไร” มี owner page แยก',
+      'Google ระบุว่า SEO best practices และ Search index ยังเป็นพื้นฐานของ AI Overviews และ AI Mode และไม่มี special AI schema หรือ AI text file ที่จำเป็นต่อการปรากฏ',
+      'สำหรับ ChatGPT Search การอนุญาต OAI-SearchBot ช่วยให้ Content ถูกค้นพบ สรุป และอ้างอิงได้ง่ายขึ้น แต่ไม่รับประกัน Placement หรือ Citation',
       'การวัดผลควรรวม Search Console Generative AI visibility, Mention/Citation จาก Query Set เดิม, GA4 Referral/Engagement และ Business Outcome เช่น Lead หรือ Purchase',
     ],
     faqs: howToDoGeoFaqs,
