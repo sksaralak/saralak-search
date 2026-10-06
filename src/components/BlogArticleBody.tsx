@@ -851,22 +851,27 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         <P>
           ถ้าเว็บไซต์ยังมีปัญหา Crawl, Index, Canonical หรือหน้า Service ยังไม่ตอบ Search Intent
           ควรแก้ SEO Foundation ก่อน แล้วค่อยต่อยอด AEO และ GEO ตามจุดที่ยังขาด
-          เพราะการทำคำตอบให้ชัดหรือเพิ่ม Entity/Evidence จะมีประโยชน์มากขึ้นเมื่อหน้าพื้นฐานของเว็บไซต์พร้อมใช้งานแล้ว
+          เพราะการทำคำตอบให้ชัดหรือเพิ่มข้อมูลแบรนด์และหลักฐานจะมีประโยชน์มากขึ้นเมื่อหน้าพื้นฐานของเว็บไซต์พร้อมใช้งานแล้ว
+          หากฐาน Search ยังไม่พร้อม อ่าน <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          {' '}หรือดูขอบเขต <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link> ก่อน
         </P>
       </ArticleSection>
       <ArticleSection id="seo-geo-aeo-meaning" title="SEO, AEO และ GEO คืออะไรเมื่อ Search มี AI features">
         <P>
-          SEO หรือ Search Engine Optimization คือฐานที่ทำให้เว็บไซต์ถูกค้นพบ เข้าใจ และจัดอันดับได้ใน Search Engine
+          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          {' '}ในทางปฏิบัติคือการทำให้เว็บไซต์ถูกค้นพบ เข้าใจ และแข่งขันใน Search Engine ได้
           งานนี้ครอบคลุม technical SEO, content, internal link, page experience, structured data ที่ตรงกับเนื้อหาจริง
           และ authority จากแหล่งอื่น
         </P>
         <P>
-          AEO หรือ Answer Engine Optimization คือการจัดเนื้อหาให้ตอบคำถามได้ชัดและใช้ต่อได้ง่าย
+          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+          {' '}ในทางปฏิบัติคือการจัดเนื้อหาให้ตอบคำถามได้ชัดและใช้ต่อได้ง่าย
           เช่น คำตอบสั้นในต้น section, ตารางเปรียบเทียบ, checklist, FAQ เฉพาะคำถามที่ยังไม่ได้ตอบ
           และ passage ที่เข้าใจได้โดยไม่ต้องอ่านทั้งบทความ
         </P>
         <P>
-          GEO หรือ Generative Engine Optimization คือการทำให้แบรนด์ เนื้อหา และ entity ถูกเข้าใจในระบบ AI Search
+          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}ในทางปฏิบัติคือการทำให้แบรนด์ เนื้อหา และข้อมูลที่เกี่ยวข้องถูกเข้าใจในระบบ AI Search
           เช่น ChatGPT, Gemini, Perplexity หรือ AI features ใน Search โดยมองทั้งเว็บไซต์ ความเชี่ยวชาญ
           case study, brand mention, citation และความสอดคล้องของข้อมูลนอกเว็บไซต์
         </P>
@@ -918,24 +923,25 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         height={600}
       />
 
-      <ArticleSection id="google-official-vs-methodology" title="เอกสาร Google พูดถึง AEO และ GEO อย่างไร">
+      <ArticleSection id="google-official-vs-methodology" title="ข้อมูลจาก Google เกี่ยวกับ SEO, AEO และ GEO">
         <P>
-          Google Search Central กล่าวถึงคำ AEO และ GEO โดยตรงใน guidance เรื่อง Generative AI Search
-          แต่จากมุมของ Google การ optimize สำหรับ AI Overviews และ AI Mode ยังอยู่บนฐานของ SEO fundamentals และ Search systems เดิม
-          จึงไม่ควรตีความ AEO หรือ GEO ว่าเป็น ranking system ใหม่ที่แยกขาดจาก SEO
+          จาก <a href="https://developers.google.com/search/docs/fundamentals/third-party-seo" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลของ Google Search Central</a>
+          Google กล่าวถึง AEO และ GEO ในบริบทของคำแนะนำสำหรับ Generative AI Search
+          แต่พื้นฐานที่ใช้กับ AI Overviews และ AI Mode ยังต่อเนื่องจาก SEO เดิม
+          จึงไม่ควรมอง AEO หรือ GEO เป็นระบบจัดอันดับใหม่ที่แยกขาดจาก SEO
         </P>
         <P>
-          สำหรับ Google AI Overviews และ AI Mode เอกสารทางการระบุว่าไม่มี requirement พิเศษ ไม่มี AI text file
-          และไม่มี special schema.org markup ที่ต้องเพิ่มเพื่อให้ปรากฏในฟีเจอร์เหล่านี้
+          สำหรับ Google AI Overviews และ AI Mode <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Google ระบุว่า</a>
+          ไม่มีข้อกำหนดพิเศษ ไม่มี AI text file และไม่มี Schema พิเศษที่ต้องเพิ่มเพื่อให้เว็บไซต์มีสิทธิ์ปรากฏในฟีเจอร์เหล่านี้
           สิ่งที่ยังจำเป็นคือหน้าเว็บต้อง eligible ใน Google Search, index ได้, มี snippet ได้,
           เนื้อหาสำคัญอยู่ใน textual form และ structured data ต้องตรงกับเนื้อหาที่ผู้ใช้เห็นจริง
         </P>
         <div className="rounded-lg border border-sky-200 bg-sky-50 px-5 py-4">
-          <p className="text-sm font-semibold text-sky-950">แยกให้ชัดก่อนวางกลยุทธ์</p>
+          <p className="text-sm font-semibold text-sky-950">สิ่งที่ควรแยกให้ออก</p>
           <ul className="mt-2 grid gap-2 text-sm leading-6 text-sky-900">
-            <li>Official guidance: SEO fundamentals, crawlability, indexability, content quality, visible content และ Search Console measurement</li>
-            <li>Saralak Search methodology: answer-first, topic ownership, information gain, internal link map, entity clarity และ information-to-commercial flow</li>
-            <li>ข้อห้าม: ไม่เรียก FAQ, Schema, llms.txt, brand mention หรือ answer-first ว่าเป็น Google ranking factor หากไม่มีเอกสารทางการรองรับ</li>
+            <li>สิ่งที่ Google ระบุชัด: เว็บไซต์ยังต้อง Crawl/Index ได้ เนื้อหาต้องมีคุณค่า และ Structured Data ต้องตรงกับข้อมูลที่ผู้ใช้เห็น</li>
+            <li>สิ่งที่ Saralak Search ใช้ในการทำงาน: ตอบคำถามให้ชัด วางหน้าหลักของแต่ละหัวข้อ เชื่อม Internal Link และเพิ่มข้อมูลแบรนด์หรือหลักฐานที่ตรวจสอบได้</li>
+            <li>สิ่งที่ไม่ควรอ้างเกินหลักฐาน: FAQ, Schema, llms.txt, Brand Mention หรือ Answer-first ไม่ใช่ปุ่มลัดที่รับประกันอันดับหรือ AI Citation</li>
           </ul>
         </div>
         <P>
@@ -958,6 +964,8 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         />
         <P>
           ลำดับที่เหมาะสมขึ้นอยู่กับฐานปัจจุบันของเว็บไซต์ ไม่ใช่ความใหม่ของคำว่า GEO
+          ถ้าปัญหาหลักยังเป็นอันดับ, Crawl/Index, Search Intent หรือ Internal Link ควรเริ่มจาก <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ก่อน แล้วค่อยต่อยอด AEO และ <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link> เมื่อฐานพร้อม
           ถ้าเว็บไซต์ยังมีปัญหา index, canonical, page speed, content thin หรือหน้า service ไม่ชัด
           การเริ่มจาก GEO ก่อนมักทำให้วัดผลยาก เพราะฐานที่ AI และ Search ใช้อ่านข้อมูลยังไม่แข็งแรง
         </P>
@@ -1002,6 +1010,8 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO' },
           { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist' },
           { to: '/blog/aeo-checklist', label: 'AEO Checklist' },
+          { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร' },
+          { to: '/blog/llms-txt-thailand', label: 'llms.txt คืออะไร' },
         ]} />
       </ArticleSection>
 
@@ -1073,9 +1083,9 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
         <P>
-          สำหรับ Google Search, Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode
-          โดยรายงาน Impressions และแยกมิติ Pages, Countries, Dates และ Devices ได้ Google ระบุว่า rollout ข้อมูลเชิงลึกนี้ทั่วโลกตั้งแต่ 31 สิงหาคม 2026
-          แต่รายงานไม่ได้บอกว่า Prompt ใด Quote ประโยคใดจากหน้าเว็บ จึงยังต้องใช้ Search Performance, GA4 และ Business Outcome ร่วมกัน
+          สำหรับ Google Search มี <a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลจาก Search Console</a>
+          สำหรับ AI Overviews และ AI Mode โดยดู Impressions แยกตาม Page, Country, Date และ Device ได้
+          แต่รายงานไม่ได้บอกว่าแต่ละคำถามดึงประโยคใดจากหน้าเว็บ จึงยังต้องดู Search Performance, GA4 และ Conversion ร่วมกัน
         </P>
       </ArticleSection>
 
@@ -1094,19 +1104,19 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="commercial-next-step" title="เมื่อไรควรให้ Saralak Search ช่วยตรวจ SEO, AEO และ GEO">
         <P>
-          ถ้าเว็บไซต์มีบทความและหน้า service อยู่แล้ว แต่ยังไม่ชัดว่าหน้าใดถือครอง keyword ไหน,
-          content cluster ซ้ำกันหรือไม่, passage สำคัญตอบคำถามได้พอไหม หรือแบรนด์มี entity signal พอสำหรับ AI Search หรือยัง
+          ถ้าเว็บไซต์มีบทความและหน้าบริการอยู่แล้ว แต่ยังไม่ชัดว่าหน้าไหนควรรับผิดชอบคำค้นไหน
+          เนื้อหาซ้ำกันหรือไม่ คำตอบในแต่ละส่วนชัดพอไหม หรือข้อมูลแบรนด์พร้อมสำหรับ AI Search หรือยัง
           การตรวจข้อมูลปัจจุบันก่อนจะช่วยจัดลำดับว่าอะไรควรแก้ก่อน โดยไม่ต้องเริ่มจากการเพิ่ม Content หรือเปลี่ยน Package ทันที
         </P>
         <P>
-          Saralak Search มักเริ่มจากการตรวจ Search Foundation, Topic Ownership, Internal Link, Content Quality,
-          Entity Clarity, AI Visibility และ Conversion Path แล้วแยกว่าอะไรเป็นปัญหา SEO, อะไรควรแก้เชิง AEO
-          และอะไรควรทำต่อในเชิง GEO
+          Saralak Search เริ่มจากดูพื้นฐาน Search, หน้าที่ของแต่ละ URL, Internal Link, คุณภาพเนื้อหา
+          ความชัดของข้อมูลแบรนด์, AI Visibility และเส้นทาง Conversion แล้วค่อยแยกว่างานไหนควรแก้ด้วย SEO
+          งานไหนเป็นเรื่องความชัดของคำตอบ และงานไหนควรต่อยอดด้าน GEO
         </P>
         <ReadMoreLinks items={[
-          { to: '/services/seo', label: 'บริการ SEO' },
-          { to: '/services/geo', label: 'บริการ GEO & AI Search' },
-          { to: '/services/content-marketing', label: 'บริการ SEO Content' },
+          { to: '/services/seo', label: 'รับทำ SEO' },
+          { to: '/services/geo', label: 'รับทำ GEO และ AI Search' },
+          { to: '/services/content-marketing', label: 'รับทำ SEO Content' },
           { to: '/case-studies', label: 'SEO และ AI Search Case Studies' },
         ]} />
       </ArticleSection>
@@ -1116,12 +1126,12 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         'Google Search Central — Optimizing for generative AI features on Google Search, checked 6 October 2026',
         'Google Search Central — Guidance on third-party SEO tools, services, AEO and GEO advice, checked 6 October 2026',
         'Google Search Console Help — Generative AI performance report, checked 6 October 2026',
-        'Saralak Search SERP observation for “seo aeo geo”, Ahrefs keyword snapshot and anonymized E-commerce AI Overview case evidence, checked 6 October 2026',
+        'Saralak Search — anonymized E-commerce AI Overview case evidence and internal workflow, updated 6 October 2026',
       ]} />
 
       <ArticleFAQ id="seo-geo-aeo-faq" post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ SEO GEO AEO" />
 
-      <ArticleSection id="summary" title="สรุป">
+      <ArticleSection id="summary" title="สรุป SEO, AEO และ GEO ต่างกันอย่างไร">
         <P>
           SEO, AEO และ GEO ไม่ควรถูกใช้เป็นคำ buzzword แยกกัน แต่ควรมองเป็นระบบเดียว:
           SEO ทำให้เว็บไซต์มีฐานที่ค้นพบได้, AEO ทำให้คำตอบชัดและใช้งานได้,
