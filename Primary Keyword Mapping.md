@@ -18,7 +18,7 @@
 |เพิ่มยอดขาย Google Maps|https://saralak-search.com/blog/increase-sale-google-maps|เพิ่มยอดขายด้วย Google Maps|
 |Local SEO เหมาะกับธุรกิจไหน|https://saralak-search.com/blog/local-seo-customer-intent|Local SEO เหมาะกับธุรกิจไหน|
 |เพิ่มยอดขายร้านอาหาร|https://saralak-search.com/blog/increase-sale-restaurant|เพิ่มยอดขายร้านอาหาร ด้วย Google Maps|
-|ทำ SEO แล้วไม่เห็นผล|https://saralak-search.com/blog/seo-not-working|ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร|
+|Organic Traffic|https://saralak-search.com/blog/seo-not-working|Organic Traffic คืออะไร ทำไม Traffic จาก Google ไม่โต|
 |AI ทำเว็บ|https://saralak-search.com/blog/ai-website-seo|AI ทำเว็บได้ไหม วิธีสร้างเว็บไซต์ด้วย AI ให้พร้อม SEO|
 |llms.txt คืออะไร|https://saralak-search.com/blog/llms-txt-thailand|llms.txt คืออะไร วิธีทำสำหรับเว็บไทย|
 |GEO checklist|https://saralak-search.com/blog/geo-checklist-thailand|GEO Checklist 40 รายการก่อน AI อ้างอิงธุรกิจคุณ|
