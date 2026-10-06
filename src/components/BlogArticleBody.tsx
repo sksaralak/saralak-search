@@ -3395,34 +3395,40 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
   )
 }
 function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
-  const devKnewBefore = [
+  const seoChecks = [
     {
-      term: 'Dynamic Metadata per Route',
-      desc: 'title, description และ OG tags ที่สร้างแยกตามแต่ละหน้า ไม่ใช่ค่าเดียวทั้งเว็บ',
+      title: '1. Crawl และ Index ได้จริง',
+      body: 'หน้าเป้าหมายต้องตอบ 200, ไม่ถูก noindex หรือ robots.txt บล็อกโดยไม่ตั้งใจ และมีลิงก์ภายในที่ crawler ตามไปถึงได้ การมีหน้าอยู่บน production ไม่ได้แปลว่า Google พบและ index แล้ว',
     },
     {
-      term: 'Sitemap ที่ครอบคลุม Multi-locale',
-      desc: 'ถ้าเว็บมีหลายภาษา sitemap ต้องมี hreflang annotations บอก Google ว่าหน้าไหนคือ version อะไร',
+      title: '2. URL และ Canonical ชัด',
+      body: 'แต่ละ Search Intent ควรมี owner URL ที่ชัดเจน ถ้า AI builder สร้าง URL ซ้ำ, query parameter หรือหน้า variant จำนวนมาก ต้องกำหนด canonical และ internal link ให้สอดคล้องกัน',
     },
     {
-      term: 'JSON-LD Schema Markup',
-      desc: 'โครงสร้างข้อมูลที่บอก Google ว่าหน้านี้คืออะไร — Article, Product, FAQ, Organization — ไม่ใช่แค่ text',
+      title: '3. Metadata และ Heading ไม่ใช้ค่าเดียวทั้งเว็บ',
+      body: 'Title, Meta Description และ H1 ต้องอธิบายหน้าของตัวเอง ไม่ควรใช้ข้อความ generic ซ้ำทุก route เพราะทำให้ทั้งคนอ่านและ Search Engine แยกหน้าสำคัญออกจากกันได้ยาก',
     },
     {
-      term: 'Canonical URL',
-      desc: 'กำหนดว่า URL ไหนคือ "ต้นฉบับ" เพื่อไม่ให้ Google นับว่าเว็บมีเนื้อหา duplicate กัน',
+      title: '4. เนื้อหาตอบ Search Intent',
+      body: 'AI สร้าง copy ได้เร็ว แต่ต้องตรวจว่าหน้านั้นตอบคำถามที่คนค้นจริงหรือไม่ มีข้อมูลเฉพาะธุรกิจ ตัวอย่าง หลักฐาน หรือเงื่อนไขที่ generic content ไม่มีหรือยัง',
     },
     {
-      term: 'robots.txt และ crawl budget',
-      desc: 'ควบคุมว่า Googlebot จะ crawl หน้าไหน ข้ามหน้าไหน เพื่อไม่เสีย crawl budget กับหน้าที่ไม่จำเป็น',
+      title: '5. Internal Link พาไปยังหน้าที่สำคัญ',
+      body: 'หน้าใหม่ต้องไม่เป็นเกาะแยกจากเว็บไซต์ ควรมีลิงก์จาก hub หรือหน้าที่เกี่ยวข้อง และส่งต่อไปยัง service, product, guide หรือ case study ที่เป็นขั้นถัดไปของผู้ใช้',
+    },
+    {
+      title: '6. วัดผลหลัง Deploy',
+      body: 'หลังเปิดเว็บให้ตรวจ Indexing และ Performance ใน Google Search Console แล้วดู Sessions, Engagement และ Conversion ใน GA4 เพื่อแยกว่าเว็บถูกค้นพบหรือแค่ถูกสร้างเสร็จ',
     },
   ]
 
-  const whatToAskClaude = [
-    'schema ประเภทไหนเหมาะกับธุรกิจ [ประเภทธุรกิจ] โดยเฉพาะ?',
-    'keyword ไหนที่ลูกค้าของธุรกิจนี้ค้นหาจริงบน Google?',
-    'หน้าไหนควร index และหน้าไหนควร noindex?',
-    'ถ้า Google index เสร็จแล้วแต่ไม่ rank จะ debug ยังไง?',
+  const gates = [
+    ['Intent', 'กำหนดว่าหน้านี้ตอบคำค้นและงานของผู้ใช้เรื่องอะไร'],
+    ['Architecture', 'กำหนด owner URL, navigation และ internal link ก่อนสร้างหลายหน้า'],
+    ['Build', 'ให้ AI สร้าง layout, component, code และ draft ตาม requirement'],
+    ['Technical QA', 'ตรวจ status, indexability, canonical, sitemap, rendering และ mobile'],
+    ['Content QA', 'ตรวจความถูกต้อง Search Intent, originality และ claim ก่อน publish'],
+    ['Measurement', 'เก็บ baseline และติดตาม Search Console, GA4 และ conversion'],
   ]
 
   return (
@@ -3431,257 +3437,266 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
 
       <section className="grid gap-5">
         <P>
-          มีบทความหนึ่งบน Medium ที่แชร์กันเยอะมากในกลุ่ม developer ชื่อว่า{' '}
-          
-            "I Used Claude Code to Add SEO to My Next.js App"
-          {' '}
-          — dev คนนั้นใช้ Claude Code ทำ SEO สำเร็จใน 48 ชั่วโมง 120 หน้า index ภายใน 24 ชั่วโมงหลัง deploy
+          <strong>AI ทำเว็บได้จริง</strong> ทั้งการสร้าง layout, component, code และร่างเนื้อหา
+          แต่เว็บที่เปิดได้บน browser ยังไม่เท่ากับเว็บที่พร้อมติด Google
+          เพราะ Search ยังต้องพึ่ง URL ที่ crawl/index ได้, โครงสร้างหน้า, Search Intent, Internal Link
+          และข้อมูลที่มีประโยชน์จริง
         </P>
         <P>
-          ถ้าอ่านแล้วรู้สึกว่า "ฉันก็ทำแบบนั้นได้สิ" แล้วลองทำตามแต่ไม่ได้ผล — ไม่แปลกเลย
-          เพราะบทความนั้นไม่ได้เล่าส่วนที่สำคัญที่สุด
+          จาก SERP ของคำค้นกลุ่ม “AI ทำเว็บ” ที่ตรวจในเดือนตุลาคม 2026
+          ผลลัพธ์มีทั้ง AI Website Builder, เครื่องมือสร้างหน้าเว็บจาก prompt และ AI coding assistant
+          จึงเห็นชัดว่า intent หลักคือ <strong>อยากสร้างเว็บไซต์ให้เสร็จเร็วด้วย AI</strong>
+          ไม่ใช่ต้องการเรียน Technical SEO อย่างเดียว หน้านี้จึงตอบทั้งสองช่วง:
+          สร้างเว็บให้ได้ก่อน แล้วตรวจให้ Search-ready ก่อน scale
         </P>
       </section>
 
-      <ArticleSection title="dev คนนั้นรู้อะไรก่อนที่จะสั่ง Claude">
+      <ArticleSection title="AI ทำเว็บได้ถึงไหน และอะไรยังต้องตรวจเอง">
         <P>
-          สิ่งที่ทำให้เขาสำเร็จไม่ใช่ prompt — แต่คือสิ่งที่เขารู้อยู่แล้วก่อนจะพิมพ์อะไรก็ตาม
-          เขาเป็น dev ที่มีความรู้ SEO อยู่แล้ว และใช้ Claude เป็น coding assistant implement สิ่งที่วางแผนไว้
+          เครื่องมือ AI ช่วยลดเวลาจาก brief ไปเป็นหน้าเว็บที่ใช้งานได้อย่างมาก
+          แต่ความสามารถในการ “สร้าง” กับความพร้อมด้าน Search เป็นคนละชั้นของงาน
+          จุดที่ควรแยกให้ชัดมี 3 ระดับ
         </P>
-        <div className="grid gap-3">
-          {devKnewBefore.map((item) => (
-            <div key={item.term} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4">
-              <p className="font-semibold text-neutral-950">{item.term}</p>
-              <p className="thai-readable mt-1 text-sm leading-6 text-neutral-600">{item.desc}</p>
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[620px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ระดับงาน</th>
+                <th className="px-4 py-3 font-semibold text-teal-800">AI ช่วยได้ดี</th>
+                <th className="px-4 py-3 font-semibold text-neutral-700">ยังต้องมีการตัดสินใจ/QA</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['Build', 'สร้าง layout, component, code, copy draft', 'Business requirement, UX และข้อมูลจริง'],
+                ['SEO Implementation', 'ใส่ title, canonical, sitemap, structured data ตาม spec', 'เลือก owner URL, Search Intent และ priority'],
+                ['Content', 'สรุปข้อมูลและจัดโครงร่างเร็ว', 'Originality, accuracy, evidence และ information gain'],
+                ['Measurement', 'ช่วยเขียน tracking code หรือ dashboard logic', 'กำหนด KPI และตีความผลจาก Search/Business'],
+              ].map(([level, ai, qa]) => (
+                <tr key={level}>
+                  <td className="px-4 py-3 font-medium text-neutral-950">{level}</td>
+                  <td className="thai-readable px-4 py-3">{ai}</td>
+                  <td className="thai-readable px-4 py-3">{qa}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <P>
+          ดังนั้นคำถามที่ดีกว่า “AI ทำเว็บได้ไหม” คือ
+          <strong> AI ทำส่วนไหนให้เร็วขึ้น และจุดไหนต้องมีข้อมูลหรือคนตรวจเพื่อให้เว็บทำงานเชิงธุรกิจได้จริง</strong>
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="AI สร้างเว็บ ไม่ได้แปลว่า SEO พร้อม">
+        <P>
+          ปัญหาที่พบกับเว็บที่สร้างเร็วด้วย AI มักไม่ใช่ code พัง แต่เป็นชั้น Search ที่ยังไม่ได้กำหนดตั้งแต่ต้น
+          เช่นสร้างหลาย route จาก template เดียวกัน แต่ Title/H1 ซ้ำ, ไม่มี owner page ของแต่ละ intent,
+          canonical ไม่ตรงกับ URL ที่ต้องการ index หรือบทความจำนวนมากมีข้อมูลคล้ายกันจนไม่มีเหตุผลให้ Search เลือกหน้าหนึ่งเหนืออีกหน้า
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              title: 'เว็บเปิดได้ แต่ Google ยังไม่เห็นหน้า',
+              body: 'Production URL ใช้งานได้ แต่ไม่มี crawlable link, sitemap ไม่ครอบคลุม หรือมี noindex/canonical ผิด ทำให้การค้นพบและ index ไม่เป็นไปตามที่คาด',
+            },
+            {
+              title: 'มีหลายหน้า แต่ไม่มี Topic Ownership',
+              body: 'AI สร้าง landing page ได้เร็วมาก หากหลายหน้าตอบ intent เดียวกัน อาจเกิด cannibalization และทำให้ internal link ไม่รู้ว่าควรส่งสัญญาณไปหน้าใด',
+            },
+            {
+              title: 'Content ถูกต้องแบบกว้าง ๆ แต่ไม่มี Information Gain',
+              body: 'ข้อความอ่านได้และดูครบ แต่ไม่มีข้อมูลเฉพาะธุรกิจ ตัวอย่างจริง comparison, methodology หรือ evidence ที่ทำให้หน้าแตกต่างจาก generic AI content',
+            },
+            {
+              title: 'ใส่ Schema แล้วคิดว่า SEO เสร็จ',
+              body: 'Structured Data ช่วยอธิบายข้อมูลบนหน้าในรูปแบบที่ Google รองรับ แต่ไม่ใช่การรับประกันอันดับ และ markup ต้องตรงกับ visible content',
+            },
+          ].map((item) => (
+            <div key={item.title} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="SEO Checklist สำหรับเว็บที่สร้างด้วย AI">
+        <P>
+          ถ้าเว็บถูกสร้างด้วย Claude, Codex, AI Website Builder หรือเครื่องมือใดก็ตาม
+          checklist ก่อนเปิดจริงควรเหมือนกัน เพราะ Search Engine เห็นผลลัพธ์ปลายทางของเว็บไซต์
+          ไม่ได้เห็น prompt ที่ใช้สร้างเว็บ
+        </P>
+        <div className="grid gap-4">
+          {seoChecks.map((item) => (
+            <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
+              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน Search ก่อนตรวจเว็บที่สร้างด้วย AI' },
+          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? ใช้ตรวจหลังเว็บไซต์ขึ้น Production' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="Workflow ของ Saralak Search: 6 Gate ก่อน Scale เว็บด้วย AI">
+        <P>
+          จากการทำงานกับเว็บไซต์ที่มีทั้ง React, WordPress, E-commerce และหน้า Landing Page
+          เราไม่เริ่มจากสั่ง AI ว่า “ทำ SEO ให้ครบ” แต่แยกงานเป็น Gate
+          เพื่อหยุดปัญหาก่อนที่จะถูกทำซ้ำไปหลายสิบหรือหลายร้อยหน้า
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {gates.map(([title, body], index) => (
+            <div key={title} className="rounded-lg border border-teal-100 bg-teal-50/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">Gate {index + 1}</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
             </div>
           ))}
         </div>
         <P>
-          เขารู้คำเหล่านี้ทั้งหมดก่อน เขาแค่ให้ Claude implement ที่เร็วขึ้น
-          ไม่ใช่ให้ Claude "คิด" ว่าต้องทำอะไร
-        </P>
-        <ArticleImage
-          src="/image/blog/ai-website/ai-website-info.png"
-          alt="สิ่งที่ dev รู้ก่อนสั่ง Claude ทำ SEO — Dynamic Metadata, Sitemap, JSON-LD, Canonical, robots.txt"
-        />
-      </ArticleSection>
-
-      <ArticleSection title="ถ้าไม่รู้คำเหล่านั้น จะสั่ง Claude ว่าอะไร?">
-        <P>
-          นี่คือจุดที่ทำให้ผลลัพธ์ต่างกัน ถ้าบอก Claude ว่า "ช่วยทำ SEO ให้หน่อย" Claude จะทำตาม
-          ความเข้าใจทั่วไป ซึ่งมักจะเป็น meta tags พื้นฐาน, alt text บนรูป และ heading structure
-          สิ่งเหล่านั้นไม่ผิด แต่ไม่ตรงกับสิ่งที่เว็บของคุณต้องการโดยเฉพาะ
-        </P>
-        <div className="rounded-lg border border-amber-100 bg-amber-50 p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-800">
-            คำถามที่ไม่รู้จะถามยังไง ถ้าไม่รู้เรื่อง SEO
-          </p>
-          <ul className="mt-3 grid gap-2">
-            {whatToAskClaude.map((q) => (
-              <li key={q} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                <span className="mt-0.5 shrink-0 text-amber-600"></span>
-                {q}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <P>
-          ไม่แปลกที่ไม่รู้จะถามว่าอะไร เพราะข้อมูลที่มีส่วนใหญ่บอกแค่ว่า "ใช้ Claude ได้เลย"
-          โดยไม่ได้บอกว่าต้องรู้อะไรก่อน
+          Decision rule ที่ใช้คือ <strong>อย่า scale หน้าใหม่จนกว่า template แรกผ่าน Crawl/Index, Metadata,
+          Canonical, Content และ Measurement QA</strong> เพราะข้อผิดพลาดหนึ่งจุดใน template
+          จะถูกทำซ้ำตามจำนวนหน้าที่ AI สร้าง
         </P>
       </ArticleSection>
 
-      <ArticleSection title="หลักฐานว่าปัญหานี้จริง: 7,000+ GitHub Stars">
+      <ArticleSection title="Claude หรือ AI Coding Assistant เหมาะกับ SEO ตรงไหน">
         <P>
-          มี repository ชื่อ{' '}
-          
-            claude-seo.md
-          {' '}
-          ที่สร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ
-          เป็นไฟล์ prompt สำเร็จรูปที่บอก Claude ให้ทำ SEO อย่างถูกต้อง
-          มีคน star มากกว่า 7,000 ครั้งในเวลาไม่นาน
+          Claude และ AI coding assistant เหมาะมากกับงาน implementation เมื่อ requirement ชัด
+          เช่นสร้าง metadata component, sitemap, canonical logic, semantic HTML,
+          structured data ที่ตรงกับข้อมูลบนหน้า หรือแก้ internal link ตาม mapping ที่กำหนดไว้
         </P>
-        <div className="rounded-lg border border-neutral-200 bg-white p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ทำไม 7,000 stars ถึงสำคัญ</p>
-          <p className="thai-readable mt-2 text-sm leading-7 text-neutral-700">
-            คนไม่ star repository เพราะความสนใจ เขา star เพราะเจอปัญหาเดิม และรู้สึกว่านี่คือทางออก
-            7,000 stars หมายความว่ามีคนอย่างน้อย 7,000 คน ที่ใช้ Claude ทำ SEO แล้วไม่ได้ผลที่ต้องการ
-            จนต้องหา prompt ช่วยเพิ่มเติม
-          </p>
-          <p className="thai-readable mt-3 text-sm leading-7 text-neutral-700">
-            มีคนสร้าง tool ทั้งชิ้นขึ้นมาเพื่อแก้ปัญหาเดียวนี้ — นั่นคือหลักฐานว่ามันเป็นปัญหาจริง
-            ไม่ใช่ว่าคุณทำอะไรผิด
-          </p>
-        </div>
-        <ArticleImage
-          src="/image/blog/llms-txt-how-to/ai-info.png"
-          alt="claude-seo.md — 7,000+ GitHub stars หลักฐานว่าการสั่ง Claude ทำ SEO ต้องการความรู้ก่อน"
-        />
-      </ArticleSection>
-
-      <ArticleSection title="Claude เป็น tool ที่ดีที่สุดที่เคยมี — แต่ยังเป็นแค่ tool">
-        <P>
-          ไม่มีใครสงสัยว่า Claude เก่งไหม มันเก่งที่สุดในบรรดา coding tools ที่เคยมีมา
-          สามารถสร้างเว็บทั้งชิ้น เขียน component, implement feature ซับซ้อน และ debug ได้เร็วกว่ามนุษย์
-        </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Claude ทำได้ดีมาก</p>
-            <ul className="mt-3 grid gap-2">
-              {[
-                'implement สิ่งที่บอกว่าต้องการให้ทำ',
-                'เขียน schema ตาม spec ที่ระบุ',
-                'สร้าง sitemap, robots.txt ตามโครงสร้างที่กำหนด',
-                'debug technical issues จาก error message',
-                'เขียน code ที่ถูกต้องตาม SEO guidelines ทั่วไป',
-              ].map((item) => (
-                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">ต้องมีคนรู้ก่อน</p>
-            <ul className="mt-3 grid gap-2">
-              {[
-                'keyword ไหนที่ลูกค้าของธุรกิจนี้ค้นหาจริง',
-                'schema ประเภทไหนเหมาะกับ business model นี้',
-                'หน้าไหนมี search intent ที่ควรสู้',
-                'ทำไม rank ไม่ขึ้นแม้ technical ครบแล้ว',
-                'จะวัดผลและ iterate ยังไง',
-              ].map((item) => (
-                <li key={item} className="thai-readable flex gap-2 text-sm text-neutral-700">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <P>
-          dev ที่ทำสำเร็จคือคนที่รู้อยู่แล้วว่าต้องสั่งอะไร เขาใช้ Claude execute ไม่ใช่ให้ Claude คิดแทน
-          ความต่างคือความรู้ SEO ที่อยู่ในหัวเขาก่อนจะพิมพ์ prompt แรก
-        </P>
-      </ArticleSection>
-
-      <ArticleCTA
-        headline="อยากรู้ว่าควรสั่ง Claude ทำอะไรกับเว็บตัวเอง?"
-        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยระบุว่าเว็บไซต์ของคุณขาด SEO อะไร keyword ไหนที่ควรสู้ และควรสั่ง Claude implement อะไรเพิ่ม — ได้ action plan ชัดเจนภายใน 1 สัปดาห์"
-      />
-
-      <ArticleSection title="แล้วเว็บของคุณควรทำอะไร?">
-        <P>
-          ถ้าสร้างเว็บด้วย Claude แล้วและ Google ยังไม่ rank — ปัญหาอาจไม่ใช่ที่ code
-          แต่อยู่ที่กลยุทธ์ก่อน implementation
-        </P>
-        <div className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800 mb-3">สิ่งที่ต้องรู้ก่อนสั่ง Claude</p>
-          <div className="grid gap-3">
-            {[
-              { num: '1', title: 'Keyword ที่ลูกค้าค้นหาจริง', body: 'ไม่ใช่ keyword ที่ดูสมเหตุสมผล แต่คือคำที่มีข้อมูล search volume จาก Google Keyword Planner, Ahrefs หรือ GSC จริง ๆ' },
-              { num: '2', title: 'Search Intent ของแต่ละหน้า', body: 'หน้านี้ตอบคำถามอะไร? คนที่ search เข้ามาต้องการอะไร? ต้องการซื้อ ต้องการเปรียบเทียบ หรือต้องการข้อมูล?' },
-              { num: '3', title: 'Schema ที่เหมาะกับธุรกิจ', body: 'ร้านอาหาร vs agency vs e-commerce ใช้ schema คนละประเภท ต้องรู้ก่อนว่าต้องการ schema อะไร แล้วค่อยสั่ง Claude implement' },
-              { num: '4', title: 'วิธี verify ว่า Claude ทำถูก', body: 'ใช้ Google Rich Results Test, Schema Validator และ PageSpeed Insights เพื่อ verify ว่าสิ่งที่ Claude implement นั้น Google อ่านออกและ valid จริง' },
-            ].map((item) => (
-              <div key={item.num} className="flex gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-bold text-teal-800">
-                  {item.num}
-                </span>
-                <div>
-                  <p className="font-semibold text-sm text-neutral-950">{item.title}</p>
-                  <p className="thai-readable mt-0.5 text-sm leading-6 text-neutral-600">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์ [คู่มือ AI SEO สำหรับธุรกิจ]' },
-          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
-        ]} />
-      </ArticleSection>
-
-      <ArticleSection title="Claude ทำ SEO ได้จริง vs Claude ทำไม่ได้: สรุปให้ชัด">
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-teal-200 bg-teal-50/50 p-5">
-            <p className="mb-3 text-sm font-semibold text-teal-800">Claude ทำได้ดี</p>
-            <ul className="grid gap-2">
+            <p className="font-semibold text-teal-900">เหมาะให้ AI Execute</p>
+            <ul className="mt-3 grid gap-2 text-sm text-teal-900">
               {[
-                'เขียน meta title และ description ที่มี keyword',
-                'สร้าง JSON-LD schema ตาม type ที่กำหนด',
-                'ตรวจและแก้ canonical URL',
-                'สร้าง XML sitemap',
-                'แก้ปัญหา robots.txt',
-                'เพิ่ม heading structure (H1, H2, H3) ที่ถูกต้อง',
-                'ปรับ alt text ของรูปภาพ',
-                'สร้าง internal link ตาม anchor text ที่กำหนด',
-                'Refactor code ให้เป็น Semantic HTML',
-                'เพิ่ม FAQ section ตาม question ที่กำหนดให้',
-              ].map((item) => (
-                <li key={item} className="thai-readable flex items-start gap-2 text-sm text-teal-900 list-none">
-                  <span className="mt-0.5 shrink-0 font-bold text-teal-600">•</span>{item}
-                </li>
-              ))}
+                'สร้าง title/meta จาก rule ที่กำหนด',
+                'เพิ่ม canonical และ hreflang ตาม URL mapping',
+                'สร้าง sitemap จาก route จริง',
+                'เพิ่ม JSON-LD ตาม schema type ที่เลือกแล้ว',
+                'refactor semantic HTML และ internal link',
+                'ช่วยตรวจ code diff และ regression',
+              ].map((item) => <li key={item}>• {item}</li>)}
             </ul>
           </div>
           <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-            <p className="mb-3 text-sm font-semibold text-neutral-700">Claude ทำแทนคุณไม่ได้</p>
-            <ul className="grid gap-2">
+            <p className="font-semibold text-neutral-800">ต้องมีข้อมูลก่อนสั่ง</p>
+            <ul className="mt-3 grid gap-2 text-sm text-neutral-700">
               {[
-                'หา keyword ที่ลูกค้าค้นหาจริง (ต้องใช้ GSC หรือ Ahrefs)',
-                'วิเคราะห์ Search Intent ของแต่ละ keyword',
-                'ตัดสินว่าหน้าไหนควร index หรือ noindex',
-                'วัด Core Web Vitals หรือ PageSpeed จริง',
-                'ตรวจสอบว่า schema valid ใน Google Rich Results Test',
-                'รู้ว่าคู่แข่งมี Backlink จากไหนบ้าง',
-                'วิเคราะห์ว่า rank ตกเพราะอะไรจริงๆ',
-                'สร้าง Content Strategy ที่ตรงกับ Business Goal',
-                'ตัดสินว่า Budget ควรลงที่ keyword ไหนก่อน',
-                'ยืนยันว่าเว็บ index บน Google แล้วหรือยัง',
-              ].map((item) => (
-                <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700 list-none">
-                  <span className="mt-0.5 shrink-0 text-neutral-400">✗</span>{item}
-                </li>
-              ))}
+                'keyword และ Search Demand',
+                'Search Intent และ owner URL',
+                'หน้าที่ควร index/noindex',
+                'Business priority ของแต่ละหน้า',
+                'Content gap เทียบคู่แข่ง',
+                'KPI ที่ใช้ตัดสินว่าการแก้ได้ผลหรือไม่',
+              ].map((item) => <li key={item}>• {item}</li>)}
             </ul>
           </div>
         </div>
-        <P>Claude เก่งที่ implementation ไม่ใช่ strategy ถ้าคุณรู้ว่าต้องทำอะไร Claude ทำให้เร็วมาก แต่ถ้าไม่รู้ Claude จะทำสิ่งที่ดูสมเหตุสมผลแต่อาจไม่ตรงกับปัญหาจริง</P>
+        <P>
+          จุดสำคัญคือ AI coding assistant ไม่ควรถูกใช้แทนข้อมูล Search
+          หากไม่มี Google Search Console, keyword data, SERP และ business context
+          การ implement อาจถูกต้องทาง code แต่ผิดหน้าหรือผิด priority ได้
+        </P>
       </ArticleSection>
 
-      <ArticleSection title="สรุป">
+      <ArticleSection title="Google พูดอะไรอย่างเป็นทางการเกี่ยวกับเว็บและ Content ที่สร้างด้วย AI">
         <P>
-          Claude ทำ SEO ได้จริง — ถ้าคุณรู้ว่าต้องสั่งอะไร
-          dev ที่ทำสำเร็จใน 48 ชั่วโมงไม่ได้เก่งกว่าคุณ เขาแค่มีความรู้ SEO อยู่ก่อนแล้ว
-          และ 7,000 stars บน{' '}
-          
-            claude-seo.md
-          {' '}
-          บอกว่าคุณไม่ใช่คนเดียวที่เจอปัญหานี้
+          Google Search ระบุว่า Generative AI มีประโยชน์ในการค้นคว้าและช่วยจัดโครงเนื้อหา
+          แต่การสร้างหน้าเว็บจำนวนมากโดยไม่เพิ่มคุณค่าให้ผู้ใช้
+          อาจเข้าข่าย scaled content abuse ตามนโยบายสแปม
+          ดังนั้นประเด็นไม่ได้อยู่ที่ “ใช้ AI หรือไม่” แต่อยู่ที่คุณภาพ ความถูกต้อง
+          ความเป็นต้นฉบับ และประโยชน์ของหน้าเว็บ
         </P>
         <P>
-          Claude เป็น tool ที่ดีที่สุดที่เคยมี แต่ tool ดีแค่ไหนก็ต้องการคนรู้ว่าจะใช้ทำอะไร
-          กลยุทธ์ SEO ต้องมาก่อน implementation เสมอ
+          สำหรับ Technical SEO เอกสาร Google ยังเน้นพื้นฐานเดิม:
+          หน้าเว็บต้องเข้าถึงได้, index ได้, canonical ชัด, structured data ต้องตรงกับเนื้อหาที่แสดง
+          และควรตรวจหน้า deployed จริงผ่าน Search Console หรือเครื่องมือทดสอบที่เกี่ยวข้อง
+        </P>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
+          <p className="font-semibold text-amber-900">แยก Official Guidance ออกจาก Methodology</p>
+          <p className="thai-readable mt-2 text-sm leading-6 text-amber-900">
+            Google ไม่ได้ประกาศ “AI Website SEO Framework” หรือบอกว่า workflow 6 Gate เป็น Ranking Factor
+            Framework ด้านบนเป็นวิธี QA ของ Saralak Search เพื่อป้องกันปัญหาที่มักเกิดเมื่อสร้างและ scale หน้าเร็วด้วย AI
+          </p>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="วัดผลเว็บที่สร้างด้วย AI อย่างไรหลัง Deploy">
+        <P>
+          จำนวนหน้าที่สร้างเสร็จหรือจำนวนหน้าที่ index ไม่ควรเป็น KPI สุดท้าย
+          การวัดผลควรแยกเป็น 4 ชั้นเพื่อดูว่า bottleneck อยู่ตรงไหน
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            ['Indexing', 'หน้าเป้าหมาย index หรือไม่, canonical ถูกหรือไม่, มี crawl/index issue อะไร'],
+            ['Search Visibility', 'Impressions, Clicks, Queries, Landing Pages และอันดับของ owner URL'],
+            ['Engagement', 'Sessions, Engaged Sessions, behavior บน landing page และเส้นทางต่อไป'],
+            ['Business Outcome', 'Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion ตามโมเดลธุรกิจ'],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้า Indexing ผ่านแต่ Impression ไม่มา ให้ย้อนดู Search Intent, demand และ content quality
+          ถ้า Impression มาแต่ไม่เกิด Click หรือ Conversion ให้ดู SERP presentation, offer, UX และ landing-page journey ต่อ
+          การวัดเป็นชั้นช่วยไม่ให้สรุปผิดว่า “AI ทำเว็บแล้ว SEO ไม่ได้ผล” ทั้งที่ปัญหาอาจอยู่คนละจุด
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อจำกัดที่ควรรู้ก่อนใช้ AI สร้างเว็บไซต์">
+        <ul className="grid gap-3">
+          {[
+            'AI สามารถสร้างข้อมูลผิดหรือใช้ claim ที่ไม่มีหลักฐานได้ จึงต้อง fact-check ก่อน publish',
+            'การสร้างหน้าได้เร็วทำให้ duplicate intent และ thin content เกิดได้เร็วเช่นกัน',
+            'Structured Data ที่ valid ไม่ได้รับประกัน Rich Result หรืออันดับ',
+            'การ submit sitemap ไม่ได้รับประกันว่าทุก URL จะถูก index',
+            'หน้า index แล้วไม่ได้แปลว่าจะ rank ใน keyword ที่ต้องการ',
+            'ผล SEO ต้องดูตาม Search Demand, competition, authority และคุณภาพของเว็บไซต์เดิมร่วมกัน',
+          ].map((item) => (
+            <li key={item} className="thai-readable flex gap-3 text-base leading-7 text-neutral-700">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-500" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ArticleSection>
+
+      <ArticleSection title="สรุป: AI ทำเว็บได้เร็ว แต่ต้องมี Search QA ก่อน Scale">
+        <P>
+          AI เปลี่ยน bottleneck จาก “สร้างหน้าไม่ทัน” ไปเป็น “ตรวจไม่ทันว่าหน้าที่สร้างมาถูก intent และพร้อม Search หรือยัง”
+          วิธีใช้ AI ที่คุ้มจึงไม่ใช่สร้างให้ได้มากที่สุด แต่คือสร้าง template แรกให้ถูกก่อน
+          แล้วค่อย scale สิ่งที่ผ่าน Technical, Content และ Measurement QA แล้ว
         </P>
         <P>
-          ต้องการทีมช่วยวาง{' '}
-          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
-          {' '}ที่ขับเคลื่อนด้วยกลยุทธ์และข้อมูลจริง ไม่ใช่แค่ใช้ AI เขียนบทความ ดูบริการ SEO ของ Saralak Search
+          หากเว็บไซต์สร้างด้วย AI และมี Organic Visibility อยู่แล้ว แต่ยังไม่ชัดว่า owner URL,
+          Crawl/Index, Content และ Internal Link วางถูกหรือไม่
+          การตรวจ SEO ก่อน scale จะช่วยแยกว่าควรแก้ Technical, Content หรือ Architecture จุดไหนก่อน
         </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/tham-web-claude', label: 'ทำเว็บด้วย Claude: ขั้นตอนสร้างเว็บไซต์และจุดที่ต้องตรวจต่อ' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? พื้นฐานที่เว็บสร้างด้วย AI ยังต้องมี' },
+          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล: วิธีไล่หาสาเหตุหลัง Deploy' },
+          { to: '/services/seo', label: 'บริการ SEO — Saralak Search' },
+        ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Anthropic Claude documentation and capabilities, checked June 2026',
-        'Manual SERP review by Saralak Search, checked June 2026',
-        'Saralak Search internal observations on AI-assisted SEO, June 2026',
-        'หมายเหตุ: ความสามารถของ AI เปลี่ยนแปลงเร็ว ข้อมูลในบทความสะท้อนสถานการณ์ ณ มิถุนายน 2026',
+        'Google Search Central: Guidance about using generative AI content on websites, checked October 2026',
+        'Google Search Central: Creating helpful, reliable, people-first content, checked October 2026',
+        'Google Search Central: Structured data and Search appearance documentation, checked October 2026',
+        'Google Search Central: JavaScript and canonicalization documentation, checked October 2026',
+        'Saralak Search methodology: AI website SEO QA workflow, updated October 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเกี่ยวกับ Claude และ SEO" />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเรื่อง AI ทำเว็บและ SEO" />
     </article>
   )
 }
