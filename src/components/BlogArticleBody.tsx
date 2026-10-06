@@ -7476,73 +7476,60 @@ function ThamWebClaudeArticle({ post }: { post: BlogPost }) {
 }
 
 function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
-  const steps = [
+  const seoSteps = [
     {
       num: '01',
-      title: 'ทำ Keyword Research ให้ตรง Search Intent',
-      body: 'ก่อนเขียนบทความหรือปรับหน้าเว็บ ต้องรู้ก่อนว่าลูกค้าค้นหาด้วยคำว่าอะไร และคำนั้นมี Search Intent แบบไหน — ต้องการข้อมูล (Informational) กำลังเปรียบเทียบ (Commercial) หรือพร้อมซื้อแล้ว (Transactional) การเลือกคีย์เวิร์ดผิดประเภท ต่อให้มี Traffic เพิ่มขึ้นก็อาจไม่เกิดยอดขาย เพราะพาคนที่ยังไม่พร้อมซื้อเข้ามาในหน้าที่ออกแบบมาสำหรับคนพร้อมซื้อ',
-      tip: 'เริ่มจาก Google Search Console ในรายงาน Performance ดูว่าตอนนี้เว็บไซต์ได้ Impression จากคำค้นไหนอยู่แล้วบ้าง แล้วขยายคีย์เวิร์ดที่ใกล้เคียงจากตรงนั้น จะเร็วกว่าการเริ่มจากศูนย์',
+      title: 'หา Search Demand ก่อนสร้างหน้าเพิ่ม',
+      body: 'Traffic จาก SEO เกิดได้เมื่อมีคนค้นหาเรื่องนั้นจริงและเว็บไซต์มีหน้าที่ตอบคำค้นได้ตรง Intent จึงควรเริ่มจาก Google Search Console, Keyword Planner หรือเครื่องมือ keyword research เพื่อดูว่ามี Demand อยู่ตรงไหน แล้วแยก Brand กับ Non-brand ออกจากกัน',
+      tip: 'ถ้าเว็บมี Impression อยู่แล้ว ให้เริ่มจาก Query ที่กำลังได้อันดับ 5–20 ก่อน เพราะมี evidence ว่า Google เข้าใจความเกี่ยวข้องของหน้าอยู่แล้ว',
     },
     {
       num: '02',
-      title: 'ปรับ On-Page SEO ให้ครบ',
-      body: (
-        <>
-          Title Tag, Meta Description, H1-H3 และเนื้อหาในหน้าเว็บต้องสื่อสารตรงกับคีย์เวิร์ดเป้าหมาย
-          รวมถึง URL ที่สั้นและสื่อความหมาย, Alt Text ของรูปภาพ และการจัดโครงสร้างหัวข้อให้ Google อ่านลำดับความสำคัญของเนื้อหาได้ถูกต้อง
-          หากยังไม่แน่ใจว่า On-Page SEO ควรมีอะไรบ้าง อ่านพื้นฐานได้ที่{' '}
-          <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">
-            SEO คืออะไร? เข้าใจพื้นฐาน SEO
-          </Link>
-        </>
-      ),
-      tip: 'หน้าที่มี Impression สูงแต่ Click ต่ำ (ดูได้จาก Search Console) มักเป็นหน้าที่ควรแก้ Title กับ Meta Description ก่อน เพราะอันดับมาแล้วแต่คนยังไม่คลิก',
+      title: 'กำหนด Owner URL ให้แต่ละ Intent',
+      body: 'คีย์เวิร์ดหนึ่งกลุ่มควรมีหน้าหลักที่รับบท owner ชัดเจน เช่น คำเชิงบริการไปหน้าบริการ คำเปรียบเทียบไป comparison และคำ how-to ไปบทความ ถ้าหลายหน้าพยายามตอบ Intent เดียวกัน Internal Link และ relevance จะกระจายจนเกิด cannibalization ได้',
+      tip: 'เปิด Search Console แล้วดู Query เดียวกันว่า Landing Page สลับกันขึ้นหลาย URL หรือไม่ ถ้ามี ให้ตัดสิน owner page ก่อนเพิ่มบทความใหม่',
     },
     {
       num: '03',
-      title: 'สร้าง Content ที่ตอบคำถามลูกค้าจริง',
-      body: 'Google ให้น้ำหนักกับเนื้อหาที่มี E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) เนื้อหาที่ตอบคำถามได้ตรงจุด มีตัวอย่างจริง ข้อมูลอ้างอิง และแสดงความเชี่ยวชาญของผู้เขียน มักได้เปรียบกว่าเนื้อหาที่เขียนกว้างๆ เพื่อใส่คีย์เวิร์ดอย่างเดียว โดยเฉพาะในคีย์เวิร์ดที่มีการแข่งขันสูงซึ่งมีเว็บไซต์ใหญ่ครองอันดับอยู่แล้ว',
-      tip: 'ก่อนเขียน ลองค้นหาคีย์เวิร์ดเป้าหมายใน Google แล้วดูว่าหน้าที่ติดอันดับ 1-3 ตอบคำถามแบบไหน เนื้อหาของคุณต้องให้คุณค่ามากกว่านั้น ไม่ใช่แค่ยาวกว่า',
+      title: 'แก้ Crawl, Index และ Canonical ก่อนทำ Content',
+      body: 'หน้า Search Intent ดีแค่ไหนก็สร้าง Organic Traffic ไม่ได้ถ้า Google ไม่สามารถเข้าถึงหรือเลือก URL นั้นเข้า Index ตรวจ status code, robots.txt, noindex, canonical, sitemap, rendering และ internal link ของหน้าสำคัญก่อนทำงานด้าน Content เพิ่ม',
+      tip: 'ใช้ URL Inspection และ Page indexing report ใน Search Console เป็นหลักสำหรับ URL สำคัญ แทนการใช้ site:domain.com เพื่อยืนยันสถานะ Index',
     },
     {
       num: '04',
-      title: 'แก้ Technical SEO ให้ Google Crawl ได้ง่าย',
-      body: 'ตรวจว่าเว็บไซต์ไม่มีปัญหาที่ขัดขวางการ Crawl และ Index เช่น ความเร็วโหลดหน้าเว็บ Core Web Vitals การรองรับมือถือ Sitemap และ Robots.txt ที่ไม่บล็อกหน้าสำคัญโดยไม่ตั้งใจ เว็บไซต์ที่มีปัญหาทางเทคนิคจะเสียเปรียบคู่แข่งแม้เนื้อหาจะดีกว่า เพราะ Google อาจไม่สามารถเก็บข้อมูลหน้านั้นได้ครบถ้วนตั้งแต่แรก',
-      tip: 'ทดสอบความเร็วเว็บไซต์ที่ PageSpeed Insights (pagespeed.web.dev) และตรวจ Coverage ใน Search Console ว่ามีหน้าใดถูก Exclude หรือมี Error หรือไม่',
+      title: 'ปรับหน้าให้ตรง Search Intent มากกว่าการใส่ Keyword',
+      body: 'On-page SEO ไม่ใช่แค่ใส่คีย์เวิร์ดใน Title และ H1 แต่ต้องทำให้ Page Type, เนื้อหา, heading, ตัวอย่างและ CTA ตรงกับงานที่คนค้นต้องการทำ หน้าอันดับดีมักตอบ intent ได้ครบกว่าหน้ายาวแต่ไม่ตรงโจทย์',
+      tip: 'ดู SERP จริงว่าหน้าอันดับต้นเป็น Guide, Category, Product, Service หรือ Comparison แล้วใช้เป็นข้อมูลเรื่อง intent ไม่ใช่คัดลอกโครงคู่แข่ง',
     },
     {
       num: '05',
-      title: 'เพิ่ม Internal Link อย่างเป็นระบบ',
-      body: 'การลิงก์จากบทความหนึ่งไปยังหน้าที่เกี่ยวข้องภายในเว็บไซต์เดียวกัน ช่วยให้ Google เข้าใจโครงสร้างเว็บไซต์และความสัมพันธ์ระหว่างหน้าได้ดีขึ้น ส่งต่อความน่าเชื่อถือจากหน้าที่มี Traffic สูงไปยังหน้าที่ต้องการดันอันดับ และพาผู้อ่านไปยังเนื้อหาที่เกี่ยวข้องต่อแทนที่จะออกจากเว็บไซต์ทันที — บทความนี้เองก็เชื่อมโยงไปยังบทความอื่นในหมวด SEO และ GEO ด้วยหลักการเดียวกัน',
-      tip: 'เลือกหน้าที่มี Traffic หรือ Authority สูงที่สุดในเว็บไซต์ แล้วลิงก์จากหน้านั้นไปยังหน้าที่อยากดันอันดับ วิธีนี้ส่งต่อคุณค่าได้ตรงจุดกว่าการลิงก์แบบสุ่ม',
+      title: 'อัปเกรด Content ให้มี Information Gain',
+      body: 'บทความ generic ที่สรุปข้อมูลแบบเดียวกับทุกเว็บมีเหตุผลให้ถูกเลือกน้อยลง สิ่งที่เพิ่มคุณค่าได้จริงคือข้อมูลเฉพาะ เช่น workflow, comparison, screenshot, first-hand observation, case study, decision rule หรือข้อมูลจากงานจริงที่ตรวจสอบได้',
+      tip: 'ก่อน publish ถามว่า “ข้อมูลอะไรในหน้านี้ที่คู่แข่ง 5 หน้าแรกไม่มี” ถ้าตอบไม่ได้ ควรเพิ่ม evidence หรือมุมที่เป็นประโยชน์จริงก่อน',
     },
     {
       num: '06',
-      title: 'สร้าง Backlink คุณภาพ',
-      body: 'Backlink คือสัญญาณที่บอก Google ว่าเว็บไซต์อื่นไว้วางใจและอ้างอิงเนื้อหาของคุณ เว็บไซต์ที่มีเนื้อหาดีแต่ไม่มี Backlink สนับสนุนจะสู้กับคู่แข่งที่มี Authority สูงกว่าได้ยาก โดยเฉพาะคีย์เวิร์ดที่มีการแข่งขันสูง Backlink ที่มีคุณภาพควรมาจากเว็บไซต์ที่เกี่ยวข้องกับธุรกิจ มี Authority จริง ไม่ใช่การซื้อลิงก์จำนวนมากจากเว็บไซต์ที่ไม่เกี่ยวข้อง ซึ่งอาจเสี่ยงถูก Google ลงโทษ',
-      tip: 'ตรวจ Backlink ของคู่แข่งที่ติดอันดับ 1-3 ผ่าน Ahrefs Free หรือ Moz Link Explorer เพื่อดูว่าต้องมี Authority ระดับไหนถึงจะแข่งขันได้',
+      title: 'วาง Internal Link ตาม Topic Ownership',
+      body: 'Internal Link ควรพาผู้อ่านและ crawler จากหน้ากว้างไปยังหน้าลึกที่เกี่ยวข้อง และช่วยย้ำว่า URL ไหนเป็น owner ของแต่ละหัวข้อ ไม่ควรลิงก์ keyword เดียวกันไปหลายหน้าที่แข่งขันกันเอง',
+      tip: 'ให้ pillar page ลิงก์ลง supporting content และ supporting content ลิงก์กลับ owner page ด้วย anchor ที่สื่อความหมาย ไม่ใช้ “อ่านเพิ่มเติม” เป็นหลัก',
     },
     {
       num: '07',
-      title: 'เตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search',
-      body: (
-        <>
-          นอกจาก Google Search แบบเดิม ผู้ใช้งานเริ่มค้นหาผ่าน ChatGPT, Gemini และ Perplexity มากขึ้น
-          Traffic ในอนาคตจึงไม่ได้มาจาก Google Search เพียงอย่างเดียว การเตรียมเว็บไซต์ให้พร้อมสำหรับ AI Search
-          ตั้งแต่การตอบคำถามให้ชัดเจน มี FAQ ที่ครอบคลุม และมี Schema Markup ที่ถูกต้อง
-          จะเพิ่มโอกาสให้แบรนด์ถูกอ้างอิงในคำตอบของ AI ด้วย อ่านเพิ่มเติมได้ที่{' '}
-          <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}และ{' '}
-          <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
-        </>
-      ),
-      tip: 'ลองถามคำถามที่เกี่ยวกับธุรกิจของคุณใน ChatGPT หรือ Gemini ดูว่าแบรนด์ถูกกล่าวถึงไหม ถ้าไม่ถูกกล่าวถึงเลย นั่นคือจุดที่ต้องเริ่มทำ GEO',
+      title: 'สร้าง External Evidence และ Backlink แบบมีเหตุผล',
+      body: 'Backlink ยังมีบทบาทต่อการค้นพบและความน่าเชื่อถือ แต่จำนวนลิงก์หรือ Domain Rating ไม่ควรถูกใช้เป็นสูตรเดียวในการตัดสินอันดับ เน้นลิงก์และการกล่าวถึงจากแหล่งที่เกี่ยวข้องกับหัวข้อ ธุรกิจ หรือแบรนด์มากกว่าปริมาณอย่างเดียว',
+      tip: 'เทียบคู่แข่งทั้ง referring domains, คุณภาพหน้า, brand mentions และ topical relevance ไม่ดูแค่จำนวน backlink',
     },
     {
       num: '08',
-      title: 'ติดตามผลด้วย Google Search Console',
-      body: 'Traffic ที่เพิ่มขึ้นต้องวัดผลได้ ไม่ใช่แค่ความรู้สึก เปิด Google Search Console เพื่อดู Impression, Click, CTR และ Average Position ของแต่ละหน้าอย่างสม่ำเสมอ หากหน้าไหนมี Impression สูงแต่ Click ต่ำ มักเป็นสัญญาณว่าอันดับยังต่ำเกินไปหรือ Title/Meta Description ไม่ดึงดูดพอเมื่อเทียบกับคู่แข่งในหน้าผลการค้นหา',
-      tip: 'ตั้งเป้าเช็ค Search Console อย่างน้อยเดือนละครั้ง แล้วเทียบ Impression และ Click กับเดือนก่อนหน้า เพื่อรู้ว่าแนวโน้มกำลังไปทางไหน',
+      title: 'ปรับ Title และ Snippet เมื่อ Visibility มาแล้ว',
+      body: 'ถ้าหน้ามี Impression และอันดับเริ่มดี แต่ Clicks ไม่โต ค่อยตรวจ Title, snippet และ intent match เพราะการแก้ CTR ก่อนที่หน้าจะมี Visibility เพียงพออาจไม่ใช่งานที่คุ้มที่สุด',
+      tip: 'แยกดู Query + Page + Average Position ใน Search Console ก่อนสรุปว่า CTR ต่ำจาก Title เพราะ CTR แบบรวมทั้งเว็บอ่านยากและถูกปนด้วยหลาย Intent',
+    },
+    {
+      num: '09',
+      title: 'วัด Traffic ต่อไปจนถึง Conversion',
+      body: 'Traffic ที่เพิ่มขึ้นยังไม่ใช่ผลลัพธ์สุดท้าย ใช้ Search Console ดู Impressions, Clicks, Queries และ Landing Pages แล้วใช้ GA4 ดู Sessions, Engagement และ Conversion เช่น Form, LINE, Call, Lead หรือ Purchase',
+      tip: 'ถ้า Clicks โตแต่ Conversion ไม่โต ปัญหาอาจอยู่ที่ Landing Page, Offer, CTA หรือ Query quality ไม่ใช่ SEO visibility',
     },
   ]
 
@@ -7550,94 +7537,136 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
     <article className="grid gap-10">
       {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
 
-      <ArticleImage
-        src="/image/blog/increase-seo-traffic/increase-seo-traffic-measure-improve.webp"
-        alt="กระบวนการวัดผล วิเคราะห์ปัญหา แก้ Technical SEO และเพิ่ม Traffic เว็บไซต์"
-      />
+      <ArticleSection title="เพิ่ม Traffic เว็บอย่างไร? เริ่มจากเลือกช่องทางให้ตรงเป้าหมาย">
+        <P>
+          <strong>วิธีเพิ่ม Traffic เว็บไซต์มีหลายทาง ไม่ได้มีแค่ SEO</strong>
+          ทั้ง Paid Ads, Social Media, Referral, Direct/Brand และ Search จากแพลตฟอร์มต่าง ๆ
+          แต่ถ้าเป้าหมายคือสร้าง Traffic ที่ต่อเนื่องโดยไม่ต้องจ่ายต่อคลิกทุกครั้ง
+          SEO คือช่องทางที่ควรวางเป็นแกนหลัก แล้วใช้ช่องทางอื่นช่วยเร่ง Demand หรือ Distribution ตามจังหวะธุรกิจ
+        </P>
+        <P>
+          จุดสำคัญคืออย่าเริ่มจากคำถามว่า “ต้องเขียนกี่บทความ”
+          ให้เริ่มจากว่า <strong>Traffic ที่ต้องการมาจากคนกลุ่มไหน, ค้นหาอะไร, และควรเข้าหน้าไหน</strong>
+          เพราะ Traffic เยอะขึ้นแต่ไม่ตรง Intent อาจไม่สร้าง Lead หรือยอดขายเพิ่มเลย
+        </P>
+      </ArticleSection>
 
-      <ArticleSection title="เพิ่ม Traffic SEO ให้เว็บไซต์ เริ่มจากตรงไหนดี?">
-        <P>
-          หลายธุรกิจอยากเพิ่ม Traffic SEO ให้เว็บไซต์ แต่ไม่รู้จะเริ่มจากตรงไหน
-          บางเว็บไซต์เขียนบทความไปหลายสิบชิ้นแล้ว Traffic ก็ยังไม่ขยับ
-          บางเว็บไซต์มี Impression เพิ่มขึ้นใน Google Search Console แต่ Click แทบไม่ขึ้นเลย
-          เพราะเพิ่ม Traffic SEO ไม่ใช่แค่การเขียนเนื้อหาให้เยอะขึ้น
-          แต่ต้องทำหลายด้านร่วมกันอย่างเป็นระบบ ตั้งแต่การเลือกคีย์เวิร์ด โครงสร้างเว็บไซต์
-          คุณภาพเนื้อหา ไปจนถึงความน่าเชื่อถือของแบรนด์
-        </P>
-        <P>
-          บทความนี้สรุปเป็นเช็คลิสต์ 8 ข้อที่ใช้ได้จริง
-          ตั้งแต่ Keyword Research, On-Page SEO, Technical SEO, Internal Link
-          ไปจนถึงการวัดผล พร้อมตัวอย่างผลลัพธ์จริงจากเว็บไซต์ที่เคยมีปัญหาแบบเดียวกัน
-          เพื่อให้เห็นภาพรวมว่าควรเริ่มจากจุดไหนก่อน
-        </P>
-        <div className="rounded-xl border-l-4 border-teal-500 bg-teal-50 px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">คำตอบสั้นๆ</p>
-          <p className="thai-readable mt-2 text-base font-medium leading-7 text-neutral-900">
-            เพิ่ม Traffic SEO ทำได้โดยทำ Keyword Research ให้ตรง Search Intent
-            ปรับ On-Page และ Technical SEO ให้ครบ สร้างเนื้อหาที่มี E-E-A-T
-            เพิ่ม Internal Link และ Backlink คุณภาพ แล้ววัดผลต่อเนื่องผ่าน Google Search Console
-          </p>
-        </div>
-        <div className="overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm">
-          <ZoomableImage
-            src="/proof/gsc-product-listing-growth.png"
-            alt="ภาพจริงจาก Google Search Console: กราฟ Clicks และ Impressions เติบโตต่อเนื่องหลังทำ SEO ตามเช็คลิสต์นี้"
-          />
-          <div className="px-6 py-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">ภาพจริงจาก Google Search Console</p>
-            <p className="thai-readable mt-2 text-base leading-7 text-neutral-800">
-              กราฟด้านบนคือข้อมูลจริงจาก Google Search Console ของลูกค้ารายหนึ่ง — เส้นสีน้ำเงินคือ Clicks
-              และเส้นสีม่วงคือ Impressions หลังทำ Technical SEO, ปรับ Metadata และเพิ่ม Internal Link
-              ตามเช็คลิสต์ด้านล่างนี้ Traffic เติบโตขึ้นต่อเนื่องภายในไม่กี่เดือน ไม่ใช่ทฤษฎี
-              แต่เป็นผลลัพธ์ที่วัดได้จริงจากบัญชี Search Console ของลูกค้า (ตัวเลขถูกเบลอเพื่อรักษาความลับของลูกค้า)
-            </p>
-          </div>
+      <ArticleSection title="สรุปวิธีเพิ่ม Traffic ใน 30 วินาที">
+        <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-5">
+          <ul className="grid gap-3">
+            {[
+              'SEO เหมาะกับการสร้าง Traffic จาก Search Demand ที่มีอยู่แล้ว และไม่ต้องจ่ายต่อคลิกทุกครั้ง',
+              'Paid Ads เหมาะกับการเร่ง Traffic ทันที แต่หยุดงบแล้ว Traffic จากแคมเปญก็หยุดตาม',
+              'Social ช่วยสร้าง Reach และ Demand แต่ Traffic มักขึ้นกับ distribution ของแต่ละแพลตฟอร์ม',
+              'Referral และ Brand Traffic โตเมื่อแบรนด์ถูกกล่าวถึง อ้างอิง หรือมีฐานผู้ใช้กลับมาเอง',
+              'ถ้าจะโตด้วย SEO ให้ไล่ Demand → Index → Relevance → Authority → Click → Conversion ตามลำดับ',
+              'Traffic เป็น KPI กลางทาง ควรวัดต่อถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion',
+            ].map((item) => (
+              <li key={item} className="thai-readable flex gap-3 text-sm leading-6 text-teal-950">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </ArticleSection>
 
-      <ArticleSection title="เพิ่ม Traffic SEO ต้องรอนานแค่ไหนถึงจะเห็นผล?">
+      <ArticleSection title="ช่องทางเพิ่ม Traffic ต่างกันอย่างไร">
         <P>
-          ก่อนเริ่มลงมือ ต้องตั้งความคาดหวังให้ถูกต้องก่อน เพราะ SEO ไม่ใช่ Google Ads
-          ที่จ่ายเงินแล้วเห็น Traffic เพิ่มวันเดียวกัน ระยะเวลาที่เห็นผลขึ้นอยู่กับอายุโดเมนและระดับการแข่งขันของคีย์เวิร์ด
+          SERP ของคำว่า “เพิ่ม traffic” มีทั้งบทความที่พูดถึง SEO, Ads, Social และ Content
+          แปลว่า Search Intent เป็นโจทย์กว้างเรื่อง “ทำอย่างไรให้คนเข้าเว็บมากขึ้น”
+          หน้านี้จึงอธิบายภาพรวมทุกช่องทางก่อน แล้วลงลึก SEO เป็นหลัก เพราะเป็นส่วนที่ Saralak Search เชี่ยวชาญและวัดผลต่อเนื่องได้
         </P>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="min-w-[700px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
+            <thead className="bg-[#fbfaf6]">
+              <tr>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ช่องทาง</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ความเร็ว</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ต้นทุนต่อ Traffic</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ข้อได้เปรียบ</th>
+                <th className="px-4 py-3 font-semibold text-neutral-950">ข้อจำกัด</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-100 text-neutral-700">
+              {[
+                ['SEO', 'กลาง–ยาว', 'ไม่จ่ายต่อคลิก แต่มีต้นทุนทีม/Content/Technical', 'สะสม Visibility และ Non-brand demand ได้', 'ต้องรอ crawl/index และแข่งขันกับ SERP'],
+                ['Paid Ads', 'เร็ว', 'จ่ายตามระบบโฆษณา', 'เปิด Traffic ได้ทันทีและคุม targeting ได้', 'หยุดงบแล้ว Traffic ลดตาม'],
+                ['Social Media', 'เร็ว–กลาง', 'ขึ้นกับ Organic/Ads', 'สร้าง Reach, Demand และ Distribution', 'Traffic ผันผวนตาม platform/format'],
+                ['Referral / PR', 'กลาง', 'ขึ้นกับ partnership/PR', 'ได้ทั้ง Traffic และ external evidence', 'ควบคุมปริมาณคลิกไม่ได้เสมอ'],
+                ['Direct / Brand', 'สะสมระยะยาว', 'ไม่ได้ซื้อคลิกโดยตรง', 'สะท้อนการจดจำแบรนด์และลูกค้ากลับมา', 'โตยากถ้าไม่มี Demand หรือ Distribution อื่นช่วย'],
+              ].map(([channel, speed, cost, strength, limit]) => (
+                <tr key={channel}>
+                  <td className="px-4 py-3 font-medium text-neutral-950">{channel}</td>
+                  <td className="thai-readable px-4 py-3">{speed}</td>
+                  <td className="thai-readable px-4 py-3">{cost}</td>
+                  <td className="thai-readable px-4 py-3">{strength}</td>
+                  <td className="thai-readable px-4 py-3">{limit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ArticleSection>
+
+      <ArticleSection title="ถ้าจะเพิ่ม Traffic แบบต่อเนื่อง ทำไม SEO ควรเป็นแกนหลัก">
+        <P>
+          SEO เหมาะกับโจทย์ที่มี Search Demand อยู่แล้ว เช่น คนกำลังหาวิธีแก้ปัญหา เปรียบเทียบสินค้า
+          หาบริการ หรือค้นหาข้อมูลก่อนซื้อ หากเว็บไซต์มีหน้าที่ตอบ Intent เหล่านี้ได้
+          Traffic สามารถเกิดจากคำค้นเดิมซ้ำ ๆ โดยไม่ต้องซื้อทุก Click แบบโฆษณา
+        </P>
+        <P>
+          แต่ SEO ไม่ใช่ช่องทางฟรี เพราะยังมีต้นทุนด้าน Strategy, Content, Technical SEO, Internal Link,
+          Design, Development และ External Evidence ความต่างคือการลงทุนส่วนใหญ่สร้าง asset บนเว็บไซต์
+          ที่สามารถสะสม Visibility ต่อได้ หากยังมี Demand และหน้าเว็บยังแข่งขันได้
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจ Crawl, Index และ Ranking ก่อนลงมือเพิ่ม Traffic' },
+          { to: '/blog/seo-not-working', label: 'Organic Traffic คืออะไร และทำไม Traffic จาก Google ไม่โต' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="Framework เพิ่ม Traffic SEO: Demand → Index → Relevance → Authority → Click → Conversion">
+        <P>
+          จากการทำ SEO จริง ปัญหา Traffic ไม่โตมักไม่ได้อยู่ที่ “ทำ Content น้อยไป” อย่างเดียว
+          Saralak Search จึงใช้ลำดับนี้เพื่อหา bottleneck ก่อนเพิ่มงานใหม่
+          Framework นี้เป็น methodology สำหรับวิเคราะห์ ไม่ใช่ Ranking Factor ที่ Google ประกาศ
+        </P>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { label: 'เว็บไซต์ใหม่', desc: '3-6 เดือนจึงเริ่มเห็น Organic Traffic ขยับขึ้นอย่างชัดเจน' },
-            { label: 'เว็บเก่าที่ปรับปรุงใหม่', desc: '1-3 เดือนหลังจากแก้ปัญหา Technical SEO และปรับเนื้อหา' },
-            { label: 'คีย์เวิร์ดแข่งขันสูง', desc: '6-12 เดือนหรือมากกว่า ขึ้นอยู่กับ Authority ของคู่แข่งในตลาด' },
-          ].map((item) => (
-            <div key={item.label} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <p className="font-semibold text-teal-900">{item.label}</p>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.desc}</p>
+            ['Demand', 'มีคนค้นเรื่องนี้จริงหรือไม่ และเป็น Brand หรือ Non-brand'],
+            ['Index', 'หน้า owner URL ถูก crawl/index และ canonical ถูกหรือไม่'],
+            ['Relevance', 'Page Type และ Content ตรง Search Intent หรือไม่'],
+            ['Authority', 'มี Internal Link, topical coverage และ external evidence เพียงพอหรือไม่'],
+            ['Click', 'เมื่อ Visibility มาแล้ว คนเลือกคลิกหน้าหรือไม่'],
+            ['Conversion', 'Traffic ที่ได้สร้าง Lead, LINE, Call หรือ Purchase หรือไม่'],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
             </div>
           ))}
         </div>
-        <P>
-          ถ้าทำ SEO มายังไม่ถึง 3 เดือนแล้วยังไม่เห็น Traffic เพิ่ม นั่นอาจเป็นเรื่องปกติ
-          แต่ถ้าผ่านมา 6 เดือนแล้วยังไม่มี Impression เพิ่มขึ้นเลยใน Google Search Console
-          นั่นคือสัญญาณว่ามีบางจุดในเช็คลิสต์นี้ที่ยังไม่ได้ทำ หรือทำไม่ถูกจุด
-        </P>
       </ArticleSection>
 
-      <ArticleSection title="8 วิธีเพิ่ม Traffic SEO ให้เว็บไซต์">
+      <ArticleSection title="9 วิธีเพิ่ม Traffic ด้วย SEO แบบเป็นระบบ">
         <ArticleImage
           src="/image/blog/increase-seo-traffic/increase-seo-traffic-eight-workstreams.webp"
-          alt="ระบบงาน SEO แปดด้านที่ทำงานร่วมกันเพื่อเพิ่ม Organic Traffic"
+          alt="ระบบงาน SEO หลายด้านที่ทำงานร่วมกันเพื่อเพิ่ม Traffic เว็บไซต์"
         />
-        <P>นี่คือ 8 ขั้นตอนหลักที่ควรทำร่วมกัน เรียงจากพื้นฐานไปถึงขั้นที่ต่อยอดสำหรับยุค AI Search พร้อมวิธีเช็คด้วยตัวเองในแต่ละข้อ</P>
+        <P>
+          ลำดับด้านล่างตั้งใจให้เริ่มจากสิ่งที่ทำให้ Search มองเห็นหน้าได้ก่อน
+          แล้วค่อยไปยัง Content, Authority และ Conversion
+          ไม่จำเป็นต้องทำทุกข้อพร้อมกัน ถ้ารู้ว่า bottleneck อยู่ตรงไหน
+        </P>
         <div className="grid gap-5">
-          {steps.map((step) => (
+          {seoSteps.map((step) => (
             <div key={step.num} className="rounded-lg border border-neutral-200 bg-white p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{step.num}</p>
               <h3 className="mt-1 font-semibold text-neutral-950">{step.title}</h3>
-              <p
-                className="thai-readable mt-2 text-sm leading-6 text-neutral-700"
-                style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-              >
-                {step.body}
-              </p>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{step.body}</p>
               <div className="mt-3 rounded-md bg-teal-50 px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">วิธีเช็คด้วยตัวเอง</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">วิธีเช็ก</p>
                 <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.tip}</p>
               </div>
             </div>
@@ -7645,160 +7674,169 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="ตัวอย่างผลลัพธ์จริงจากการเพิ่ม Traffic SEO">
+      <ArticleSection title="เพิ่ม Traffic จากหน้าเดิมก่อนสร้างบทความใหม่">
         <P>
-          เช็คลิสต์นี้ไม่ใช่แค่ทฤษฎี — นี่คือตัวอย่างผลลัพธ์จริงจากเว็บไซต์ที่เคยมีปัญหา Traffic ไม่โต
-          แล้วนำหลักการเดียวกันไปใช้
+          วิธีที่เร็วกว่าเริ่มจากศูนย์ในหลายกรณีคือหา “หน้าเกือบติด” จาก Search Console
+          เช่นหน้าได้ Impression แล้วและมี Query อยู่ในช่วงอันดับกลาง
+          จากนั้นปรับ owner page, Content Gap, Internal Link และ SERP presentation ให้ดีขึ้นก่อน
+        </P>
+        <div className="rounded-xl border border-teal-200 bg-[#fbfaf6] p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Decision Rule</p>
+          <div className="mt-3 grid gap-2 text-sm leading-6 text-neutral-700">
+            <p className="thai-readable"><strong>ไม่มี Impression:</strong> เช็ก Indexing, Demand และ owner URL</p>
+            <p className="thai-readable"><strong>มี Impression / อันดับยังต่ำ:</strong> ปรับ Relevance, Content, Internal Link และ Authority</p>
+            <p className="thai-readable"><strong>อันดับเริ่มดี / CTR ต่ำ:</strong> ตรวจ Title, Snippet และ intent match</p>
+            <p className="thai-readable"><strong>Clicks โต / Lead ไม่โต:</strong> ตรวจ Landing Page, CTA, Offer และ tracking</p>
+          </div>
+        </div>
+        <P>
+          การทำแบบนี้ช่วยแยกว่าควร “เพิ่มหน้าใหม่” หรือ “อัปเกรดหน้าเดิม”
+          ซึ่งสำคัญมาก เพราะการสร้างบทความเพิ่มโดยไม่มี Topic Ownership
+          อาจทำให้หลาย URL แข่งกันเองและไม่ได้ Traffic เพิ่มตามจำนวน Content
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ตัวอย่างผลลัพธ์จริงจากงาน SEO ของ Saralak Search">
+        <P>
+          ตัวอย่างเหล่านี้ใช้เพื่อแสดงว่า Traffic หรือ Visibility โตจากคนละ bottleneck
+          จึงไม่ควรใช้ tactic เดียวกับทุกเว็บไซต์
         </P>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
             <ZoomableImage
               src="/proof/gsc-product-listing-growth.png"
-              alt="ตัวอย่างผลลัพธ์จริง: Organic Traffic เติบโตต่อเนื่องหลังแก้ Technical SEO และ Internal Link"
+              alt="Google Search Console ของ Product Listing Page ที่ Impressions เพิ่มขึ้นหลังแก้ Technical SEO และโครงสร้างหน้า"
             />
             <div className="px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · Technical SEO · 6 เดือน</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">Organic Traffic โตต่อเนื่องหลังแก้ Technical SEO</h3>
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">E-commerce · Technical SEO</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">PLP จากประมาณ 20K เป็นมากกว่า 40K Impressions</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                เว็บไซต์ที่มีมานานแต่ขาด SEO พื้นฐาน ทำให้ Product Listing Page ไม่ถูก Index อย่างสมบูรณ์
-                หลังทำ Technical Audit ปรับ Metadata, Internal Link และ Information Architecture ให้รองรับ Search Intent
-                Organic Traffic เติบโตต่อเนื่องและ Product Listing Page ถูก Index ครบถ้วน
+                เคสหนึ่งมีปัญหา Product Listing Page และการจัดโครงสร้าง Search
+                หลังแก้ Technical SEO, Metadata, Internal Link และ Information Architecture
+                Impressions ของ PLP ขยับจากราว 20K เป็นมากกว่า 40K
+                บทเรียนคือบางเว็บไม่ต้องเพิ่มบทความก่อน แต่ต้องทำให้หน้าที่มีมูลค่าถูกค้นพบและตีความถูก
               </p>
-              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
-              </Link>
             </div>
           </div>
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
             <ZoomableImage
               src="/proof/ranking-bangsaen-serp.png"
-              alt="ตัวอย่างผลลัพธ์จริง: อันดับขึ้นจาก #5 สู่ #1 หลังปรับ Content และ Internal Link"
+              alt="ผลลัพธ์อันดับคำค้นเชิงพาณิชย์จากอันดับ 5 ขึ้นสู่อันดับ 1"
             />
             <div className="px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Local / Commercial Search · SEO Strategy · 3 เดือน</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">อันดับขึ้นจาก #5 สู่ #1 ในคีย์เวิร์ดที่แข่งขันสูง</h3>
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Commercial Search · 3 เดือน</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">Keyword จาก #5 ขึ้น #1 หลังจัด Intent และ Support ใหม่</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                คำค้นหลักมี Search Demand สูงและมูลค่าทางธุรกิจมาก แต่เว็บไซต์ยังตามหลังคู่แข่งที่อยู่อันดับต้น
-                หลังปรับเนื้อหาให้ตอบ Search Intent เสริม Internal Link และ Supporting Content เพื่อเพิ่ม Topical Authority
-                พร้อม Backlink Support อันดับขึ้นจาก #5 สู่ #1 ภายใน 3 เดือน
+                อีกเคสมี owner page อยู่แล้ว แต่ยังตามคู่แข่ง
+                งานจึงเน้นปรับ Content ให้ตรง Intent, เพิ่ม Internal Link, Supporting Content และ Backlink Support
+                ก่อนอันดับหลักขยับจาก #5 ขึ้น #1 ภายใน 3 เดือน
+                จุดสำคัญคือไม่ได้แก้แค่ Title หรือเพิ่มคำ แต่แก้ทั้ง cluster รอบหน้าเป้าหมาย
               </p>
-              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
-              </Link>
             </div>
           </div>
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-[#fbfaf6]">
             <ZoomableImage
               src="/proof/nutrition-content-growth.png"
-              alt="ตัวอย่างผลลัพธ์จริง: Organic Clicks โต 14 เท่าใน 3 เดือน จาก Brand Search สู่ Non-Brand และ AI Search"
+              alt="Google Search Console แสดง Organic Clicks เติบโตจากประมาณ 150 เป็นมากกว่า 2,150 ต่อเดือน"
             />
             <div className="px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Ecommerce · SEO + GEO · 3 เดือน</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks โต 14 เท่า จาก Brand สู่ Non-Brand + AI Search</h3>
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">Content SEO · Non-brand Growth · 3 เดือน</p>
+              <h3 className="mt-1 font-semibold text-neutral-950">Organic Clicks จากราว 150 เป็นมากกว่า 2,150 ต่อเดือน</h3>
               <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">
-                เว็บไซต์กลุ่มสุขภาพและโภชนาการรายหนึ่งเคยถูกค้นพบจากคำค้น Brand เท่านั้น
-                หลังทำ Keyword Research 5 คำต่อเดือนและปรับ On-Page SEO ให้ตรง Search Intent (ฝั่ง SEO)
-                พร้อมจัดโครงสร้างเนื้อหาแบบตอบคำถามชัดเจน มี FAQ และตาราง Comparison เพื่อให้ AI Search
-                เข้าใจและอ้างอิงได้ง่ายขึ้น (ฝั่ง GEO) Organic Clicks เพิ่มจากประมาณ 150 เป็นกว่า 2,150
-                ครั้งต่อเดือนภายใน 3 เดือน (โต 14 เท่า) พร้อมเริ่มติดอันดับคำค้น Non-Brand อย่าง "โปรตีนจากพืช"
+                เว็บไซต์กลุ่มสุขภาพและโภชนาการเคยพึ่ง Brand Search เป็นหลัก
+                หลังขยาย Non-brand keyword coverage และปรับ Content ให้เชื่อม informational intent
+                กับหมวดสินค้าอย่างเป็นธรรมชาติ Organic Clicks เพิ่มเป็นมากกว่า 2,150 ครั้งต่อเดือนภายใน 3 เดือน
+                เคสนี้แสดงว่าการเพิ่ม Traffic ที่มีคุณค่าต้องขยาย Demand coverage ไม่ใช่เพิ่ม pageview แบบกว้าง ๆ
               </p>
-              <Link to="/case-studies" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal-700 hover:text-teal-600">
-                ดู Case Studies เพิ่มเติม <span aria-hidden="true"></span>
-              </Link>
             </div>
           </div>
         </div>
-        <P>
-          ทั้งสามกรณีใช้หลักการเดียวกับเช็คลิสต์ 8 ข้อด้านบน — ไม่มีทางลัด แต่เห็นผลจริงเมื่อทำครบทุกด้านและวัดผลต่อเนื่อง
-          กรณีล่าสุดยังแสดงให้เห็นว่า SEO และ GEO ไม่ใช่คนละเรื่องกัน แต่เสริมกันได้ในเนื้อหาชุดเดียว
-        </P>
-      </ArticleSection>
-
-      <ArticleSection title="ข้อผิดพลาดที่พบบ่อย ทำให้ Traffic SEO ไม่โตสักที">
-        <P>
-          นอกจากเช็คลิสต์ 8 ข้อด้านบน หลายเว็บไซต์ที่ทำ SEO มานานแต่ Traffic ไม่ขยับ
-          มักติดกับดักเดิมๆ ที่ดูเผินๆ เหมือนไม่ใช่เรื่องใหญ่ แต่ส่งผลต่อผลลัพธ์โดยตรง
-        </P>
-        <div className="grid gap-4">
-          {[
-            {
-              title: 'เขียนบทความเยอะ แต่ไม่ตรง Search Intent',
-              body: 'ตีพิมพ์เนื้อหาจำนวนมากเพื่อให้ครบตามแผน แต่ไม่ได้เช็คก่อนว่าคนที่ค้นคำนั้นต้องการอะไรจริงๆ ผลคือมี Impression ขึ้นบ้างแต่ Click แทบไม่มี เพราะเนื้อหาไม่ตรงกับสิ่งที่ผู้ค้นหาคาดหวังเห็นในหน้าผลลัพธ์',
-            },
-            {
-              title: 'เจาะคีย์เวิร์ดที่แข่งขันสูงเกินไปตั้งแต่แรก',
-              body: 'เว็บไซต์ใหม่หรือ Authority ยังต่ำ แต่เลือกเขียนแข่งกับคีย์เวิร์ดที่มีเว็บไซต์ใหญ่ครองอันดับอยู่แล้ว ทำให้ไม่ติดหน้าแรกเลยแม้เนื้อหาจะดี ควรเริ่มจากคีย์เวิร์ดหางยาว (Long-tail) ที่แข่งขันน้อยกว่าก่อน แล้วค่อยขยับไปคีย์เวิร์ดที่ยากขึ้นเมื่อ Authority สูงขึ้น',
-            },
-            {
-              title: 'ลืมทำ Internal Link ระหว่างบทความ',
-              body: 'เขียนบทความแยกกันเป็นเกาะๆ โดยไม่เชื่อมโยงถึงกัน ทำให้ Google ไม่เข้าใจว่าหน้าไหนสำคัญที่สุดในเว็บไซต์ และผู้อ่านก็ไม่ถูกพาไปอ่านเนื้อหาอื่นต่อ ทำให้ Bounce Rate สูงและเสียโอกาสในการส่งต่อ Authority ระหว่างหน้า',
-            },
-            {
-              title: 'โฟกัสแต่เนื้อหา ไม่แก้ปัญหา Technical SEO',
-              body: 'ทุ่มเวลาเขียนเนื้อหาคุณภาพดี แต่เว็บไซต์โหลดช้า ไม่รองรับมือถือ หรือมีหน้าที่ Google Crawl ไม่ได้ ต่อให้เนื้อหาดีแค่ไหนก็อาจไม่ถูก Index หรือได้อันดับต่ำกว่าที่ควรจะเป็น',
-            },
-            {
-              title: 'ไม่เช็ค Search Console อย่างสม่ำเสมอ',
-              body: 'ทำ SEO แล้วปล่อยผ่าน ไม่ได้กลับมาดูว่าคำไหนได้ Impression แต่ Click ต่ำ หน้าไหนหลุดอันดับ หรือมี Error ใน Coverage ทำให้พลาดโอกาสแก้ไขจุดที่ใกล้จะเห็นผลอยู่แล้ว',
-            },
-          ].map((item, i) => (
-            <div key={item.title} className="rounded-lg border border-neutral-200 bg-white p-5">
-              <p aria-hidden="true" className="text-xs font-semibold uppercase tracking-wide text-teal-800">{i + 1}</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">{item.title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </ArticleSection>
-
-      <ArticleCTA
-        headline="อยากรู้ว่าเว็บไซต์ควรเพิ่ม Traffic จากจุดไหนก่อน?"
-        description="การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยวิเคราะห์ Keyword โครงสร้างเนื้อหา และ Technical SEO ของเว็บไซต์ พร้อมระบุ Quick Wins ที่ทำให้เพิ่ม Traffic ได้เร็วที่สุด"
-      />
-
-      <ArticleSection title="ทำครบแล้วแต่ Traffic ยังไม่ขึ้น?">
-        <P>
-          ถ้าทำตามเช็คลิสต์นี้แล้วแต่ Traffic ยังไม่ขยับ ปัญหาอาจซับซ้อนกว่าที่คิด
-          เช่น เว็บไซต์ยังไม่ถูก Index, คีย์เวิร์ดแข่งขันสูงเกินไปสำหรับ Authority ปัจจุบัน
-          หรือมีปัญหา Technical SEO ที่มองไม่เห็นด้วยตาเปล่า
-        </P>
         <ReadMoreLinks items={[
-          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? วิเคราะห์ 8 สาเหตุและวิธีแก้' },
+          { to: '/case-studies', label: 'ดู SEO Case Studies และผลลัพธ์จากงานจริง' },
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="สรุป: เพิ่ม Traffic SEO ต้องทำต่อเนื่องและวัดผลสม่ำเสมอ">
+      <ArticleSection title="AI Search ช่วยเพิ่ม Traffic ได้ไหม">
         <P>
-          เพิ่ม Traffic SEO ให้เว็บไซต์ไม่ใช่งานที่ทำครั้งเดียวแล้วจบ
-          แต่ต้องทำ Keyword Research, On-Page SEO, Technical SEO, Internal Link และ Backlink ร่วมกัน
-          พร้อมวัดผลผ่าน Google Search Console อย่างต่อเนื่อง เพื่อรู้ว่าควรปรับจุดไหนต่อ
+          AI Search และ Generative Search สามารถสร้าง Visibility, Mention, Citation หรือ Referral เพิ่มได้
+          แต่ไม่ควรถูกใช้แทน SEO foundation โดยเฉพาะ Google Search ซึ่งยังอาศัยข้อมูลจาก Search index
+          และระบบคุณภาพของ Search สำหรับ AI features
         </P>
         <P>
-          อย่างที่เห็นจากตัวอย่างผลลัพธ์จริงด้านบน ทั้งการแก้ Technical SEO และการปรับ Content
-          ร่วมกับ Internal Link ล้วนใช้เวลาหลักเดือน ไม่ใช่หลักวัน — ความสม่ำเสมอคือปัจจัยสำคัญที่สุด
-        </P>
-        <P>
-          ธุรกิจที่ต้องการผู้เชี่ยวชาญช่วยวางแผนและเร่งผลลัพธ์{' '}
-          <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
-          {' '}ดูบริการ SEO ของ Saralak Search ได้เลย
+          วิธีที่เหมาะกว่าคือทำ Content ให้ตอบคำถามชัด มี Evidence, Entity และ Topic Ownership ที่ดี
+          แล้ววัด AI visibility แยกจาก Organic Search ไม่ควรสรุปว่า FAQ, Schema หรือรูปแบบ Content ใด
+          “ทำให้ AI เลือก” โดยไม่มีหลักฐานจากแพลตฟอร์ม
         </P>
         <ReadMoreLinks items={[
-          { to: '/blog/check-website-traffic-free', label: 'เช็ค Traffic เว็บไซต์ฟรี ไม่ต้องเสียเงิน [เช็คเองได้ใน 5 นาที]' },
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน SEO และวิธีทำให้เว็บไซต์ติด Google' },
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? รู้จัก Generative Engine Optimization ยุค AI Search' },
-          { to: '/blog/what-is-aeo', label: 'AEO คืออะไร? ทำยังไงให้เว็บไซต์ติดคำตอบในยุค AI Search' },
-          { to: '/services/seo', label: 'รับทำ SEO — Saralak Search' },
+          { to: '/blog/what-is-geo', label: 'GEO คืออะไร? เข้าใจ AI Search Visibility แยกจาก SEO' },
+          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO หลัง Search Foundation พร้อมแล้ว' },
+        ]} />
+      </ArticleSection>
+
+      <ArticleSection title="วัดผลการเพิ่ม Traffic อย่างไร ไม่ให้จบที่ตัวเลข Session">
+        <P>
+          Traffic ที่เพิ่มขึ้นควรตอบได้ว่าโตจากหน้าไหน คำค้นไหน และสร้างผลลัพธ์ทางธุรกิจหรือไม่
+          จึงควรแบ่ง KPI เป็น 4 ชั้น
+        </P>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            ['Search Visibility', 'Impressions, Queries, Landing Pages, Average Position'],
+            ['Traffic', 'Clicks จาก Search Console และ Organic Sessions ใน GA4'],
+            ['Engagement', 'Engaged Sessions, Landing-page behavior และเส้นทางต่อ'],
+            ['Business Outcome', 'Form, LINE, Call, Lead, Purchase และ Assisted Conversion'],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
+              <h3 className="font-semibold text-neutral-950">{title}</h3>
+              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
+            </div>
+          ))}
+        </div>
+        <P>
+          ถ้ายังไม่รู้ว่า Traffic ปัจจุบันมาจากไหน
+          ให้เริ่มจากการ <Link to="/blog/check-website-traffic-free" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">เช็ค Traffic เว็บไซต์</Link>
+          {' '}ก่อน แล้วค่อยตัดสินว่าจะเพิ่มช่องทางไหน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ข้อจำกัด: Traffic เพิ่ม ไม่ได้แปลว่าธุรกิจโตเสมอ">
+        <P>
+          การเพิ่ม Traffic มีข้อจำกัดที่ต้องเผื่อไว้
+          Search Demand อาจมี seasonality, SERP เปลี่ยนได้, คู่แข่งปรับหน้าได้
+          และ Conversion อาจไม่โตตาม Traffic หากคนที่เข้ามาไม่ใช่กลุ่มเป้าหมาย
+        </P>
+        <P>
+          อีกจุดที่สำคัญคือ correlation ไม่เท่ากับ causation
+          ถ้า Traffic โตหลังแก้ Content ไม่ควรสรุปทันทีว่าเกิดจาก Heading หรือ Schema จุดเดียว
+          ควรดูช่วงเวลา, Query mix, URL ที่โต, External changes และ Conversion ร่วมกัน
+        </P>
+      </ArticleSection>
+
+      <ArticleSection title="ถ้าต้องเลือกทำอะไรเป็นอันดับแรก">
+        <P>
+          ถ้าเว็บไซต์ยังไม่มี Search data ให้เริ่มจาก Search Demand และ Technical foundation
+          แต่ถ้ามี Search Console อยู่แล้ว ให้หา URL ที่มี Impression และ Business Value ก่อน
+          จากนั้นไล่ Framework Demand → Index → Relevance → Authority → Click → Conversion
+          เพื่อเลือกงานที่มีโอกาสสร้างผลลัพธ์เร็วที่สุดจากฐานที่มีอยู่
+        </P>
+        <P>
+          หากยังไม่ชัดว่า bottleneck อยู่จุดไหน
+          การวิเคราะห์ Search Demand, Technical SEO, Content, Internal Link และ Landing Page
+          ก่อนเพิ่ม Content หรือ Backlink ต่อ จะช่วยลดการลองผิดลองถูก
+        </P>
+        <ReadMoreLinks items={[
+          { to: '/services/seo', label: 'บริการ SEO สำหรับเพิ่ม Organic Visibility และ Traffic' },
+          { to: '/blog/seo-not-working', label: 'Organic Traffic ไม่โต ควรตรวจอะไรเป็นลำดับแรก' },
         ]} />
       </ArticleSection>
 
       <SourceBox items={[
-        'Google Search Central documentation, checked July 2026',
-        'Google Search Console documentation, checked July 2026',
-        'Saralak Search client case studies (anonymised), checked July 2026',
-        'Saralak Search internal SEO audit observations, July 2026',
+        'Google Search Central: SEO Starter Guide and crawling/indexing documentation, checked October 2026',
+        'Google Search Console Help: Performance report metrics and dimensions, checked October 2026',
+        'Google Search Central: Guidance for AI features in Search, checked October 2026',
+        'Saralak Search case studies and internal SEO methodology, updated October 2026',
       ]} />
 
-      <ArticleFAQ post={post} heading="FAQ: คำถามที่พบบ่อยเรื่องเพิ่ม Traffic SEO" />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเรื่องเพิ่ม Traffic เว็บไซต์" />
     </article>
   )
 }
