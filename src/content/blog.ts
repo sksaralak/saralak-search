@@ -176,12 +176,12 @@ export const whatIsSeoFaqs: FAQItem[] = [
   {
     question: 'ทำ SEO ใช้เวลานานแค่ไหนถึงจะเห็นผล?',
     answer:
-      'ไม่มีระยะเวลาตายตัว Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนใน Search ภายในไม่กี่ชั่วโมง ขณะที่บางอย่างอาจใช้เวลาหลายเดือน ควรดูสัญญาณเป็นลำดับตั้งแต่ Crawl/Index, Impression และ Query ไปจนถึง Click, Lead และ Conversion แทนการยึดตัวเลข 3 หรือ 6 เดือนเป็นกฎเดียวกับทุกเว็บไซต์',
+      'ไม่มีระยะเวลาตายตัว Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจเห็นผลเร็ว ขณะที่บางอย่างอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน ควรดูแนวโน้มตั้งแต่การ Index, Impressions, Queries และ Clicks ไปจนถึง Lead หรือ Conversion แทนการยึดตัวเลข 3 หรือ 6 เดือนกับทุกเว็บไซต์',
   },
   {
     question: 'ทำ SEO เองได้ไหม?',
     answer:
-      'ทำเองได้ในระดับพื้นฐาน เช่น ตั้งค่า Search Console, ตรวจ Index, ปรับ Title/H1, เขียน Content ให้ตรง Search Intent และวาง Internal Link แต่เว็บไซต์ที่มี JavaScript, Migration, Duplicate URL, Canonical หรือการแข่งขันสูงอาจต้องใช้ Technical SEO และการวิเคราะห์ข้อมูลเชิงลึกมากขึ้น',
+      'ทำเองได้ในระดับพื้นฐาน เช่น ตั้งค่า Search Console, ตรวจว่า URL สำคัญถูก Index หรือไม่, ปรับ Title/H1, เขียนเนื้อหาให้ตรงสิ่งที่คนค้น และวาง Internal Link แต่เว็บไซต์ที่มี JavaScript, Migration, Duplicate URL หรือการแข่งขันสูงอาจต้องใช้ Technical SEO และการวิเคราะห์ข้อมูลมากขึ้น',
   },
   {
     question: 'SEO ยังจำเป็นไหมในยุค AI Search?',
@@ -1317,26 +1317,26 @@ export const blogPosts: BlogPost[] = [
     slug: 'what-is-seo',
     category: 'SEO',
     excerpt:
-      'SEO คือการปรับเว็บไซต์และเนื้อหาเพื่อช่วยให้ Search Engine เข้าใจหน้าเว็บ และช่วยให้คนค้นพบเว็บไซต์ผ่าน Organic Search พร้อมพื้นฐาน Crawling, Indexing, การวัดผล และข้อจำกัดที่ควรรู้',
+      'SEO คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine เข้าใจว่าแต่ละหน้าพูดเรื่องอะไรและตอบคำค้นไหน เพื่อเพิ่มโอกาสให้คนค้นพบเว็บไซต์จาก Organic Search บทความนี้อธิบายตั้งแต่ SEO คืออะไร มีกี่ประเภท ทำอะไรบ้าง ไปจนถึงการวัดผลและตัวอย่างจากงานจริง',
     readingTime: '18 min read',
     publishedDate: '2026-06-01',
-    lastModifiedDate: '2026-10-05',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     metaTitle: 'SEO คืออะไร? Search Engine Optimization ฉบับเข้าใจง่าย | Saralak Search',
     metaDescription:
-      'SEO คืออะไร เข้าใจ Search Engine Optimization ตั้งแต่ Crawling, Indexing, Search Intent, Content และ Technical SEO ไปจนถึงการวัดผลด้วย Search Console และผลลัพธ์ทางธุรกิจ',
+      'SEO คืออะไร ย่อมาจากอะไร มีกี่ประเภท ทำอะไรบ้าง และต่างจาก SEM อย่างไร พร้อมวิธีเริ่มทำ SEO ตัวอย่างจากงานจริง และการวัดผลด้วย Search Console',
     heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
     heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.webp',
     heroImageAlt: 'SEO คืออะไร การทำ SEO ตั้งแต่ Crawling Indexing ไปจนถึงการวัดผล',
     ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
     aiSummary: [
-      'SEO ย่อมาจาก Search Engine Optimization คือการปรับเว็บไซต์และเนื้อหาเพื่อช่วยให้ Search Engine เข้าใจหน้าเว็บ และช่วยให้คนค้นพบเว็บไซต์ผ่าน Organic Search',
-      'Google อธิบาย Search เป็น 3 ขั้นหลัก: Crawling, Indexing และ Serving Search Results โดยการถูก Index ไม่ได้หมายความว่าจะติดอันดับในทุกคำค้น',
-      'จาก SERP ไทยของคำ “seo คือ” ที่ตรวจวันที่ 5 ตุลาคม 2026 คำถามที่ Google แสดงต่อเนื่องครอบคลุม SEO vs SEM, ทำ SEO เองได้ไหม, SEO ย่อมาจากอะไร และตัวอย่างการทำ SEO ซึ่งสะท้อนว่าหน้า Definition ควรตอบทั้งความหมายและบริบทการใช้งาน',
-      'Google ระบุว่า SEO best practices เดิมยังเป็นพื้นฐานของ AI Overviews และ AI Mode และการ Optimize สำหรับ Generative AI Search ยังอยู่ในกรอบ SEO',
-      'การวัด SEO ควรดู Search Visibility, Website Engagement, Generative AI Visibility เมื่อเกี่ยวข้อง และ Business Outcome ไม่ใช่อันดับคำเดียว',
+      'SEO ย่อมาจาก Search Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine เข้าใจว่าแต่ละหน้าพูดเรื่องอะไร ตอบคำค้นไหน และควรแสดงให้ใครเห็น เพื่อเพิ่มโอกาสให้เว็บไซต์ถูกค้นพบผ่าน Organic Search',
+      'SEO มีหลายส่วนที่ต้องทำร่วมกัน ทั้ง On-page SEO, Technical SEO, Off-page SEO และ Local SEO สำหรับธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการ',
+      'ถ้า Google ยังเข้าถึงหน้าไม่ได้ หน้าไม่ถูก Index หรือเนื้อหาไม่ตอบสิ่งที่คนค้นต้องการ การเพิ่มบทความอย่างเดียวมักไม่ช่วย จึงควรตรวจพื้นฐานเว็บไซต์ก่อน',
+      'SEO ทำเองได้ในระดับพื้นฐาน เช่น ตั้งค่า Search Console ปรับ Title/H1 เขียนเนื้อหาและวาง Internal Link แต่เว็บไซต์ที่ซับซ้อนหรือแข่งขันสูงอาจต้องวิเคราะห์ Technical SEO และข้อมูลเชิงลึกมากขึ้น',
+      'การวัด SEO ไม่ควรดูแค่อันดับ แต่ควรดู Impressions, Clicks, Queries, Landing Pages, Engagement และผลลัพธ์ทางธุรกิจ เช่น Lead, LINE, Call หรือ Purchase',
     ],
     faqs: whatIsSeoFaqs,
     includeFaqSchema: false,
