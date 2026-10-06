@@ -2452,8 +2452,8 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   const tocItems = [
     { id: 'geo-how-to-overview', label: 'วิธีทำ GEO ต้องทำอะไรบ้าง' },
-    { id: 'geo-serp-intent', label: 'คนค้น “วิธีทำ GEO Optimization คืออะไร” ต้องการรู้อะไร' },
-    { id: 'geo-official-vs-method', label: 'อะไรคือข้อมูลทางการ และอะไรคือ Methodology ของ Saralak Search' },
+    { id: 'geo-serp-intent', label: 'วิธีทำ GEO ควรเริ่มจากอะไร' },
+    { id: 'geo-official-vs-method', label: 'ข้อมูลจาก Google และ OpenAI ที่ควรรู้' },
     { id: 'geo-steps', label: 'วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน' },
     { id: 'geo-case-study', label: 'เคสที่พิสูจน์ว่า Saralak Search ทำ GEO แล้วเกิดผลลัพธ์จริง' },
     { id: 'geo-30-day-plan', label: 'แผนลงมือทำ GEO ภายใน 30 วัน' },
@@ -2467,8 +2467,8 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   const steps = [
     {
       num: '01',
-      title: 'เก็บ Baseline ก่อนแก้เว็บไซต์',
-      body: 'ก่อนเปลี่ยน Content หรือ Technical SEO ควรบันทึกสภาพปัจจุบันก่อนว่า URL ไหนได้ Organic Visibility, Query ไหนสร้าง Impression, หน้าใดถูก AI Search กล่าวถึงหรืออ้างอิง และมี Conversion จาก Organic หรือ Referral เท่าไร Baseline ทำให้การวัดผลหลังแก้แยกออกจากความรู้สึกหรือการทดสอบ Prompt เพียงครั้งเดียวได้',
+      title: 'เก็บข้อมูลก่อนเริ่มแก้เว็บไซต์',
+      body: 'ก่อนเปลี่ยน Content หรือ Technical SEO ควรบันทึกสภาพปัจจุบันก่อนว่า URL ไหนได้ Organic Visibility, Query ไหนสร้าง Impression, หน้าใดถูก AI Search กล่าวถึงหรืออ้างอิง และมี Conversion จาก Organic หรือ Referral เท่าไร ข้อมูลก่อนเริ่มช่วยให้เห็นว่าหลังแก้เว็บไซต์แล้วอะไรเปลี่ยนจริง แทนการสรุปจากการลองถาม AI เพียงครั้งเดียว',
       checks: ['Export Query และ Landing Page จาก Google Search Console', 'บันทึกชุด Prompt/Query สำคัญ 10–20 ข้อ พร้อม Date + Platform + Mention/Citation', 'เก็บ GA4 Organic/Referral และ Conversion ที่เกี่ยวข้อง', 'ระบุหน้า owner ของแต่ละ Topic ก่อนเริ่มแก้'],
     },
     {
@@ -2479,39 +2479,39 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
     },
     {
       num: '03',
-      title: 'กำหนด Topic Ownership และ Query Map',
-      body: 'GEO ไม่ควรเริ่มจากการสร้างบทความจำนวนมาก แต่เริ่มจากกำหนดว่าแต่ละ URL มีหน้าที่อะไร เช่น “GEO คืออะไร” เป็น Definition Owner, “วิธีทำ GEO” เป็น Implementation Owner และ “รับทำ GEO” เป็น Commercial Owner จากนั้นค่อยแตกคำถามย่อยที่อยู่ใน Intent เดียวกันไว้ในหน้าที่เหมาะสม เพื่อลด Cannibalization และทำให้ Internal Link มีทิศทาง',
-      checks: ['กำหนด Main Intent และ Primary Keyword ต่อ URL', 'รวมคำถามย่อยที่ควรอยู่หน้าเดียวกัน', 'แยก Intent ที่ควรมี owner URL อื่นออก', 'วางเส้นทาง Definition, How-to, Checklist/Case และ Service'],
+      title: 'กำหนดว่าหน้าไหนรับผิดชอบหัวข้ออะไร',
+      body: 'GEO ไม่ควรเริ่มจากการสร้างบทความจำนวนมาก แต่เริ่มจากกำหนดว่าแต่ละ URL มีหน้าที่อะไร เช่น “GEO คืออะไร” เป็น Definition Owner, “วิธีทำ GEO” เป็น ลงมือทำ Owner และ “รับทำ GEO” เป็น Commercial Owner จากนั้นค่อยแตกคำถามย่อยที่อยู่ใน Intent เดียวกันไว้ในหน้าที่เหมาะสม เพื่อลด Cannibalization และทำให้ Internal Link มีทิศทาง',
+      checks: ['กำหนด Main Intent และ Primary Keyword ต่อ URL', 'รวมคำถามย่อยที่ควรอยู่หน้าเดียวกัน', 'แยก Intent ที่ควรมี หน้าหลัก อื่นออก', 'วางเส้นทาง Definition, How-to, Checklist/Case และ Service'],
     },
     {
       num: '04',
       title: 'ปรับ Content ให้ตอบตรง มี Evidence และอ่านแยกได้',
-      body: 'Saralak Search ใช้กรอบ Answer, Evidence, Entity, Context และ Retrieval เป็นวิธีรีวิว Content: เริ่มด้วยคำตอบที่ตรง เติมข้อมูลหรือหลักฐานที่ตรวจสอบได้ ระบุ Entity ให้ชัด อธิบายบริบทที่ทำให้ข้อมูลนั้นเกี่ยวข้อง และทดสอบว่า Section ยังเข้าใจได้เมื่ออ่านแยกจากย่อหน้าก่อนหน้า Framework นี้เป็น Methodology ของ Saralak Search ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
+      body: 'Saralak Search ใช้กรอบ Answer, Evidence, Entity, Context และ Retrieval เป็นวิธีรีวิว Content: เริ่มด้วยคำตอบที่ตรง เติมข้อมูลหรือหลักฐานที่ตรวจสอบได้ ระบุ Entity ให้ชัด อธิบายบริบทที่ทำให้ข้อมูลนั้นเกี่ยวข้อง และทดสอบว่า Section ยังเข้าใจได้เมื่ออ่านแยกจากย่อหน้าก่อนหน้า Framework นี้เป็น วิธีทำงานของ Saralak Search ไม่ใช่ Google Ranking Factor และไม่รับประกัน Citation',
       checks: ['Answer First ภายใน 1–2 ประโยคเมื่อเหมาะกับคำถาม', 'ใช้ตัวเลข ตัวอย่าง Comparison หรือ Case จริงเมื่อมีหลักฐาน', 'หลีกเลี่ยงคำลอย เช่น “วิธีนี้” หรือ “ระบบนี้” โดยไม่มี Subject', 'ไม่เพิ่มหัวข้อเพียงเพื่อให้บทความยาวหรือ “แตก Chunk ให้ AI”'],
     },
     {
       num: '05',
-      title: 'เติม Information Gain ที่ Generic AI Article ไม่มี',
+      title: 'เติม ข้อมูลที่เพิ่มคุณค่า ที่ บทความทั่วไปที่ AI ก็สรุปได้ ไม่มี',
       body: 'ข้อมูลที่สร้างจากประสบการณ์จริงช่วยให้หน้าแตกต่างจากบทความสรุปความรู้ทั่วไป เช่น Screenshot จาก Search Console, Before/After, เกณฑ์ตัดสินใจที่ใช้กับลูกค้า, Workflow ภายใน, ตารางจากข้อมูลจริง หรือข้อผิดพลาดที่พบระหว่าง Audit Google เองแนะนำให้สร้างเนื้อหาที่มีมุมมองและประสบการณ์เฉพาะ ไม่ใช่เพียงรีไซเคิลสิ่งที่มีอยู่แล้วบนอินเทอร์เน็ต',
       checks: ['เพิ่ม Case Study หรือ Observation ที่ตรวจสอบที่มาได้', 'ระบุวันที่ตรวจข้อมูลที่เปลี่ยนตามเวลา', 'ถ้าไม่มีข้อมูลจริง ให้ใช้ตัวอย่างสมมติและติดป้ายให้ชัด', 'ไม่สร้างตัวเลข Ranking, Traffic, CTR หรือ Revenue ขึ้นมาเอง'],
     },
     {
       num: '06',
       title: 'เชื่อม Entity, Internal Link และ Structured Data ให้ตรงเนื้อหา',
-      body: 'หน้า About, Service, Case Study และบทความควรอธิบายความสัมพันธ์ของแบรนด์ ผู้เขียน บริการ และ Topic อย่างสอดคล้องกัน พร้อม Internal Link ไปยัง owner URL ที่ถูกต้อง Structured Data ใช้เพื่ออธิบายข้อมูลที่แสดงจริงบนหน้าและรองรับ Search feature ที่เกี่ยวข้อง แต่ Google ระบุชัดว่า Structured Data ไม่ใช่ข้อกำหนดพิเศษสำหรับ Generative AI Search และไม่มี special AI schema ที่ต้องใส่',
-      checks: ['ใช้ลิงก์จริงแบบ <a href> หรือ Link ที่ Render เป็น anchor', 'ใช้ Anchor ให้สะท้อนปลายทางและไม่ส่ง exact keyword เดียวไปหลาย owner URL', 'Article/BlogPosting, BreadcrumbList, Organization หรือ Person ใช้เมื่อข้อมูลตรงกับหน้า', 'ไม่เพิ่ม FAQPage หรือ HowTo เพียงเพื่อหวัง AI Citation หรือ Rich Result'],
+      body: 'หน้า About, Service, Case Study และบทความควรอธิบายความสัมพันธ์ของแบรนด์ ผู้เขียน บริการ และ Topic อย่างสอดคล้องกัน พร้อม Internal Link ไปยัง หน้าหลัก ที่ถูกต้อง Structured Data ใช้เพื่ออธิบายข้อมูลที่แสดงจริงบนหน้าและรองรับ Search feature ที่เกี่ยวข้อง แต่ Google ระบุชัดว่า Structured Data ไม่ใช่ข้อกำหนดพิเศษสำหรับ Generative AI Search และไม่มี special AI schema ที่ต้องใส่',
+      checks: ['ใช้ลิงก์จริงแบบ <a href> หรือ Link ที่ Render เป็น anchor', 'ใช้ Anchor ให้สะท้อนปลายทางและไม่ส่ง exact keyword เดียวไปหลาย หน้าหลัก', 'Article/BlogPosting, BreadcrumbList, Organization หรือ Person ใช้เมื่อข้อมูลตรงกับหน้า', 'ไม่เพิ่ม FAQPage หรือ HowTo เพียงเพื่อหวัง AI Citation หรือ Rich Result'],
     },
     {
       num: '07',
-      title: 'สร้าง External Evidence และ Brand Mention แบบมีบริบท',
+      title: 'สร้าง หลักฐานจากภายนอก และ Brand Mention แบบมีบริบท',
       body: 'Off-site work ควรเน้นการทำให้แบรนด์มีหลักฐานจากแหล่งภายนอกที่เกี่ยวข้อง เช่น บทความอ้างอิง Digital PR พาร์ตเนอร์ รีวิวที่ตรวจสอบได้ หรือ Expert Contribution มากกว่าการสร้าง Mention ปริมาณมากแบบไม่มีบริบท Google เตือนว่าการไล่สร้าง inauthentic mentions ไม่ใช่แนวทางที่ควรใช้กับ Generative AI Search',
       checks: ['เลือกแหล่งที่เกี่ยวข้องกับ Topic และกลุ่มลูกค้าจริง', 'ใช้ข้อมูลแบรนด์ ชื่อบริการ และ URL ให้สอดคล้องกัน', 'ให้ความสำคัญกับ Coverage ที่มีเนื้อหา ไม่ใช่เพียงจำนวนโดเมน', 'แยก Brand Mention, Backlink และ Referral เป็นคนละ KPI'],
     },
     {
       num: '08',
-      title: 'วัดผล แล้ว Refresh จากข้อมูลจริง',
-      body: 'GEO ควรทำเป็นรอบ: Baseline, Implement, Observe และ Refresh ไม่ควรสรุปจากการเห็นหรือไม่เห็นแบรนด์ใน Prompt เดียว ตั้งแต่ 31 สิงหาคม 2026 Google Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode ซึ่งใช้วัด Impression ระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้ ส่วน ChatGPT, Gemini หรือ Perplexity ยังควรติดตามแยกตามแพลตฟอร์มและเชื่อมกลับมาที่ Referral, Engagement และ Conversion เท่าที่ข้อมูลรองรับ',
-      checks: ['เทียบ Search Visibility ก่อนและหลังแก้', 'บันทึก Mention/Citation ด้วย Query Set เดิมเป็นรอบ', 'ดู GA4 Referral/Engagement และ Conversion', 'Refresh หน้าเมื่อข้อมูลเปลี่ยน Intent เปลี่ยน หรือพบ Content Gap ใหม่'],
+      title: 'วัดผล แล้ว อัปเดต จากข้อมูลจริง',
+      body: 'GEO ควรทำเป็นรอบ: Baseline, Implement, Observe และ อัปเดต ไม่ควรสรุปจากการเห็นหรือไม่เห็นแบรนด์ใน Prompt เดียว ตั้งแต่ 31 สิงหาคม 2026 Google Search Console มี Generative AI performance report สำหรับ AI Overviews และ AI Mode ซึ่งใช้วัด Impression ระดับหน้า ประเทศ อุปกรณ์ และช่วงเวลาได้ ส่วน ChatGPT, Gemini หรือ Perplexity ยังควรติดตามแยกตามแพลตฟอร์มและเชื่อมกลับมาที่ Referral, Engagement และ Conversion เท่าที่ข้อมูลรองรับ',
+      checks: ['เทียบ Search Visibility ก่อนและหลังแก้', 'บันทึก Mention/Citation ด้วย Query Set เดิมเป็นรอบ', 'ดู GA4 Referral/Engagement และ Conversion', 'อัปเดต หน้าเมื่อข้อมูลเปลี่ยน Intent เปลี่ยน หรือพบ Content Gap ใหม่'],
     },
   ]
 
@@ -2534,16 +2534,19 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-how-to-overview" title="วิธีทำ GEO ต้องทำอะไรบ้าง">
         <P>
-          <strong>วิธีทำ GEO Optimization ที่ใช้ได้จริงควรเริ่มจากฐาน Search และการวัดผล ไม่ใช่เริ่มจาก Schema หรือเพิ่มบทความทันที</strong>
-          {' '}ลำดับงานคือเก็บ Baseline ตรวจ Crawl/Index/Bot Access กำหนด Topic Ownership ปรับ Content และ Evidence เชื่อม Entity/Internal Link สร้าง External Evidence แล้ววัดผลพร้อม Refresh
-          โดยแต่ละแพลตฟอร์มมีระบบค้นหาและอ้างอิงต่างกัน จึงไม่มี Checklist เดียวที่รับประกัน Citation หรือ Mention ทุกแห่ง
+          <strong>วิธีทำ GEO ควรเริ่มจากพื้นฐานเว็บไซต์และข้อมูลที่มีอยู่ก่อน ไม่ใช่เริ่มจาก Schema หรือเร่งเพิ่มบทความทันที</strong>
+          {' '}ลำดับที่แนะนำคือดูสถานะก่อนเริ่ม ตรวจว่า Google และ AI crawler เข้าถึงหน้าได้หรือไม่
+          กำหนดว่าแต่ละหน้ารับผิดชอบหัวข้ออะไร ปรับเนื้อหาและหลักฐาน เชื่อม Internal Link
+          แล้วค่อยติดตามว่าการมองเห็นบน Search และ AI Search เปลี่ยนอย่างไร
+          ไม่มี Checklist เดียวที่ทำครบแล้วรับประกันว่าจะถูกอ้างอิงทุกแพลตฟอร์ม
         </P>
         <P>
-          หน้านี้เป็น Implementation Guide สำหรับคำค้น “วิธีทำ GEO” โดยเฉพาะ หากต้องการความหมายและขอบเขตของแนวคิดก่อน สามารถอ่าน
+          บทความนี้เน้นขั้นตอนลงมือทำ หากต้องการปูพื้นฐานก่อน สามารถอ่าน
           {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}ส่วนการเปรียบเทียบกับ SEO และ AEO อยู่ที่
-          {' '}<Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO คืออะไรและต่างกันอย่างไร</Link>
-          {' '}เพื่อไม่ให้บทความนี้ซ้ำกับหน้า owner เหล่านั้น
+          {' '}และ <Link to="/blog/seo-geo-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO GEO AEO</Link>
+          {' '}เพื่อดูความต่างของแต่ละแนวทาง
+          ถ้าเว็บไซต์ยังมีปัญหา Crawl, Index, Search Intent หรือ Internal Link ควรเริ่มจาก <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
+          {' '}ก่อนหรือทำควบคู่กับ GEO
         </P>
         <ArticleImage
           src="/image/blog/how-to-do-geo/how-to-do-geo.webp"
@@ -2551,38 +2554,25 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
-      <ArticleSection id="geo-serp-intent" title="คนค้น “วิธีทำ GEO Optimization คืออะไร” ต้องการรู้อะไร">
+      <ArticleSection id="geo-serp-intent" title="วิธีทำ GEO ควรเริ่มจากอะไร">
         <P>
-          Search Intent ของคำนี้เป็น <strong>Definition + How-to</strong> ใน Query เดียว
-          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> Google AI Overview เปิดด้วยความหมายของ GEO Optimization
-          แล้วต่อด้วยหัวข้อวิธีทำ เช่น การเขียนคำตอบให้ตรงประเด็น การจัดโครงสร้างเนื้อหา และการทำให้ข้อมูลแตกต่างจากบทความทั่วไป
-          ส่วน Organic Results ส่วนใหญ่ยังเป็นหน้า “GEO คืออะไร” ที่มีวิธีทำอยู่ภายใน
+          ถ้าจะเริ่มทำ GEO ให้เริ่มจากคำถามง่าย ๆ ว่า <strong>หน้าไหนสำคัญกับธุรกิจ และตอนนี้ Search กับ AI เข้าถึงข้อมูลของหน้านั้นได้ดีแค่ไหน</strong>
+          จากนั้นค่อยไล่ดูว่าเนื้อหาตอบคำถามชัดหรือยัง มีข้อมูลจริงรองรับหรือไม่
+          และมี Internal Link พาผู้อ่านไปยังหน้าบริการหรือหน้าที่เกี่ยวข้องอย่างเป็นธรรมชาติหรือไม่
         </P>
         <P>
-          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>10 ครั้งต่อเดือน</strong>
-          จึงไม่ใช่ Keyword ที่ควรไล่ Volume อย่างเดียว แต่มีประโยชน์ในฐานะ Long-tail Implementation Intent
-          หน้านี้จึงถือครอง “วิธีทำ GEO” และ “วิธีทำ GEO Optimization” ส่วนความหมายเต็มของ GEO ให้
-          {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}เป็น Owner URL เพื่อไม่ให้สองหน้าชนกัน
+          ในทางปฏิบัติ หน้า Definition, How-to, Checklist และ Service ควรมีหน้าที่คนละแบบ
+          เช่น <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
+          {' '}ใช้ตอบความหมาย, หน้านี้ใช้สอน <strong>วิธีทำ GEO</strong>,
+          <Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700"> GEO Checklist</Link>
+          {' '}ใช้ตรวจความพร้อม และ <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
+          {' '}เป็นหน้าสำหรับธุรกิจที่ต้องการทีมช่วยลงมือทำ
         </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {[
-            ['สิ่งที่ต้องตอบทันที', 'GEO Optimization คือการทำให้ Search Foundation, Content, Entity, Evidence และ Measurement พร้อมต่อการค้นพบและการอ้างอิงใน AI Search โดยไม่แทนที่ SEO'],
-            ['สิ่งที่ต้องลงมือทำ', 'ต้องมีลำดับตั้งแต่ Baseline และ Technical Foundation ไปจนถึง Content, External Evidence และ Measurement ไม่ใช่ Checklist แบบทำข้อไหนก่อนก็ได้'],
-            ['สิ่งที่ไม่ควรแย่ง Intent', 'Definition เชิงลึกและการเปรียบเทียบ SEO/AEO/GEO มี owner page แยก หน้านี้จึงโฟกัส Implementation'],
-            ['สิ่งที่ควรวัด', 'ต้องดู Search Visibility, Generative AI Visibility, Referral/Engagement และ Business Outcome ร่วมกัน'],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
-            </div>
-          ))}
-        </div>
       </ArticleSection>
-
-      <ArticleSection id="geo-official-vs-method" title="อะไรคือข้อมูลทางการ และอะไรคือ Methodology ของ Saralak Search">
+      <ArticleSection id="geo-official-vs-method" title="ข้อมูลจาก Google และ OpenAI ที่ควรรู้ก่อนทำ GEO">
         <P>
-          การทำ GEO ควรแยก “สิ่งที่แพลตฟอร์มยืนยัน” ออกจาก “วิธีทำงานที่ใช้ในงานจริง” ให้ชัด เพื่อไม่เปลี่ยน Observation หรือ Best Practice ภายในให้กลายเป็น Ranking Factor ที่ไม่มีการประกาศ
+          ก่อนลงมือควรแยกให้ชัดว่าอะไรคือข้อมูลจากแพลตฟอร์ม และอะไรคือวิธีทำงานที่เราใช้เอง
+          เพื่อไม่ทำให้เทคนิคภายในถูกเข้าใจผิดว่าเป็น Ranking Factor หรือเงื่อนไขที่ Google หรือ OpenAI รับรอง
         </P>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="min-w-[760px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
@@ -2619,18 +2609,18 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </div>
         <div className="rounded-lg border border-sky-200 bg-sky-50 p-5">
           <p className="thai-readable text-sm leading-6 text-neutral-700">
-            Primary sources:
-            {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central: Optimizing for generative AI features</a>,
-            {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Generative AI performance report</a>
+            อ่านข้อมูลต้นทางได้จาก
+            {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Central</a>,
+            {' '}<a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">Google Search Console</a>
             {' '}และ
-            {' '}<a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">OpenAI: Publishers and Developers FAQ</a>.
+            {' '}<a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2">ข้อมูลจาก OpenAI</a>.
           </p>
         </div>
       </ArticleSection>
 
-      <ArticleSection id="geo-steps" title="วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน">
+      <ArticleSection id="geo-steps" title="วิธีทำ GEO แบบ Step by Step: 8 ขั้นตอนลงมือทำ">
         <P>
-          8 ขั้นตอนด้านล่างเรียงตาม Dependency ของงานจริง เพราะการเขียน Content เพิ่มก่อนตรวจ Index, Owner URL และ Baseline อาจทำให้เพิ่มหน้าใหม่บนโครงสร้างที่ยังมีปัญหาเดิมอยู่
+          8 ขั้นตอนด้านล่างเรียงตาม Dependency ของงานจริง เพราะการเขียน Content เพิ่มก่อนตรวจ Index, หน้าหลัก และ Baseline อาจทำให้เพิ่มหน้าใหม่บนโครงสร้างที่ยังมีปัญหาเดิมอยู่
         </P>
         <div className="grid gap-5">
           {steps.map((step) => (
@@ -2656,7 +2646,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         <P>
           เมื่อลงมือทำครบแล้ว สามารถใช้
           {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
-          {' '}เป็น QA รายข้อ แต่ Checklist ไม่ควรแทนการวิเคราะห์ Search Intent, Topic Ownership หรือ Business Context ของแต่ละเว็บไซต์
+          {' '}ใช้ตรวจเป็นรายข้อ แต่ Checklist ไม่ควรแทนการวิเคราะห์ Search Intent, Topic Ownership หรือ Business Context ของแต่ละเว็บไซต์
         </P>
       </ArticleSection>
 
@@ -2674,7 +2664,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             ['Intent ก่อนสินค้า', 'เริ่มจากคำถาม “ขายอะไรดี” แล้วตอบให้จบก่อนเชื่อมไปยังบริบทธุรกิจ'],
             ['หลาย Sub-intent ในหน้าเดียว', 'แยกเมนู ต้นทุน ราคา และ Packaging เป็นคนละ Section ที่เข้าใจได้ในตัวเอง'],
             ['ข้อมูลเฉพาะ', 'ใช้ตัวอย่างราคา 19 / 29 / 39 บาท และ Mapping ประเภทสินค้าไปยัง Packaging แทนคำแนะนำกว้าง ๆ'],
-            ['Commercial Connection ที่มีเหตุผล', 'สินค้า/หมวดหมู่ถูกเชื่อมเมื่อมีปัญหาหรือสถานการณ์ที่ทำให้ลิงก์นั้นมีประโยชน์ ไม่ใช่แทรก CTA ทุกช่วง'],
+            ['การเชื่อมไปยังสินค้าและบริการ ที่มีเหตุผล', 'สินค้า/หมวดหมู่ถูกเชื่อมเมื่อมีปัญหาหรือสถานการณ์ที่ทำให้ลิงก์นั้นมีประโยชน์ ไม่ใช่แทรก CTA ทุกช่วง'],
           ].map(([title, copy]) => (
             <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h3 className="font-semibold text-neutral-950">{title}</h3>
@@ -2692,11 +2682,12 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           โดยหน้าเดียวถูกอ้างอิงจากหลายช่วงเนื้อหาและเชื่อมจาก Informational Intent ไปถึง Commercial Context ได้
           อย่างไรก็ตาม ไม่ควรตีความว่า Framework นี้เป็นสาเหตุเดียวของ Citation เพราะ Google ยังใช้ระบบ Search และปัจจัยอื่นร่วมในการเลือกแหล่งข้อมูล
           รายละเอียดของผลลัพธ์ดูต่อได้ที่
-          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร พร้อม Case Study จริง</Link>.
+          {' '}<Link to="/blog/what-is-ai-overview" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AI Overview คืออะไร</Link>
+          {' '}และถ้าต้องการดูงานจริงเพิ่มเติมสามารถดู <Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>.
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-30-day-plan" title="แผนลงมือทำ GEO ภายใน 30 วัน">
+      <ArticleSection id="geo-30-day-plan" title="วิธีทำ GEO ใน 30 วัน ควรแบ่งงานอย่างไร">
         <P>
           ถ้าทีมมีเวลา 1 เดือน ควรใช้เดือนแรกเพื่อสร้าง Baseline และแก้หน้าเดิมที่มี Demand ก่อนผลิต Content ใหม่จำนวนมาก แผนด้านล่างเป็นตัวอย่าง Workflow ของ Saralak Search ไม่ใช่ระยะเวลารับประกันผลลัพธ์
         </P>
@@ -2711,10 +2702,10 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
             </thead>
             <tbody className="divide-y divide-neutral-200">
               {[
-                ['Week 1', 'Baseline + Technical QA', 'Query/Landing Page baseline, Prompt set, Index/Bot issues, owner URL map'],
-                ['Week 2', 'Content + Topic Ownership', 'รายการหน้าที่ต้อง Refresh, Content Gap, Internal Link Map, Passage ที่ต้องเติม Evidence'],
-                ['Week 3', 'Implementation', 'แก้หน้า Priority, เพิ่ม Case/ข้อมูลจริง, Structured Data ที่ตรงกับ visible content, ลิงก์ไป Owner URL'],
-                ['Week 4', 'External Evidence + Measurement Setup', 'แผน Mention/PR ที่เกี่ยวข้อง, AI visibility log, Search Console/GA4 dashboard และรอบ Refresh'],
+                ['Week 1', 'Baseline + Technical QA', 'Query/Landing Page baseline, Prompt set, Index/Bot issues, หน้าหลัก map'],
+                ['Week 2', 'Content + Topic Ownership', 'รายการหน้าที่ต้อง อัปเดต, Content Gap, Internal Link Map, Passage ที่ต้องเติม Evidence'],
+                ['Week 3', 'ลงมือทำ', 'แก้หน้า Priority, เพิ่ม Case/ข้อมูลจริง, Structured Data ที่ตรงกับ visible content, ลิงก์ไป หน้าหลัก'],
+                ['Week 4', 'หลักฐานจากภายนอก + Measurement Setup', 'แผน Mention/PR ที่เกี่ยวข้อง, AI visibility log, Search Console/GA4 dashboard และรอบ อัปเดต'],
               ].map(([period, work, output]) => (
                 <tr key={period}>
                   <td className="px-4 py-3 font-semibold text-teal-800">{period}</td>
@@ -2727,7 +2718,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection id="geo-measurement" title="วิธีวัดผล GEO และ Tools ที่ใช้จริง">
+      <ArticleSection id="geo-measurement" title="วิธีทำ GEO แล้ววัดผลอย่างไร">
         <P>
           GEO ไม่ควรวัดจาก “ถาม ChatGPT แล้วเจอแบรนด์หรือไม่” เพียงตัวเดียว เพราะคำตอบเปลี่ยนตาม Query, เวลา และแพลตฟอร์ม
           ในงานจริง Saralak Search ใช้ข้อมูลจาก <strong>Google Search Console, Ahrefs, Bing Webmaster Tools, GA4</strong> และการติดตาม AI Mention/Citation ร่วมกัน
@@ -2762,7 +2753,7 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           'ไม่มีวิธีรับประกันว่า Google AI Overviews, AI Mode, ChatGPT, Gemini หรือ Perplexity จะอ้างอิงเว็บไซต์ในทุกคำถาม',
           'แต่ละแพลตฟอร์มใช้ระบบค้นหา แหล่งข้อมูล และวิธีจัดคำตอบต่างกัน Tactic ที่เห็นผลในระบบหนึ่งอาจไม่เท่ากันในอีกระบบ',
           'Structured Data, FAQ, llms.txt หรือ Bot Access อย่างใดอย่างหนึ่งไม่ใช่ทางลัดที่รับประกัน Citation',
-          'Visibility ไม่เท่ากับ Click และ Click ไม่เท่ากับ Conversion ต้องวัด Funnel ต่อจนถึง Business Outcome',
+          'Visibility ไม่เท่ากับ Click และ Click ไม่เท่ากับ Conversion ต้องวัด Funnel ต่อจนถึง ผลลัพธ์ทางธุรกิจ',
           'Prompt Testing มีความผันผวน จึงควรใช้ Query Set เดิมและวัดเป็นรอบมากกว่าสรุปจาก Screenshot เดียว',
           'Correlation จาก Case Study ไม่ควรถูกเขียนเป็นเหตุและผล หากไม่มีการทดลองที่แยกตัวแปรได้',
         ]} />
@@ -2770,8 +2761,8 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="geo-summary" title="สรุป: วิธีทำ GEO ให้ได้ผลต้องทำมากกว่าแค่ปรับ Content">
         <P>
-          วิธีทำ GEO ที่ครบไม่ใช่การเพิ่มคำว่า AI, ใส่ Schema หรือสร้าง FAQ จำนวนมาก แต่เป็นการทำให้ <strong>Search Foundation, Content, Entity, Evidence และ Measurement ทำงานเชื่อมกัน</strong>
-          เริ่มจากให้ Search Engine และ AI crawler เข้าถึงหน้าได้ กำหนด Owner URL ของแต่ละ Intent เขียนคำตอบที่มีข้อมูลจริงและอ่านแยกได้ เชื่อม Topic ไปยัง Brand/Service อย่างมีเหตุผล แล้วสร้างหลักฐานจากภายนอกที่เกี่ยวข้อง
+          วิธีทำ GEO ที่ครบไม่ใช่การเพิ่มคำว่า AI ใส่ Schema หรือสร้าง FAQ จำนวนมาก แต่คือการทำให้ <strong>พื้นฐาน SEO เนื้อหา ข้อมูลแบรนด์ หลักฐาน และการวัดผลทำงานต่อกัน</strong>
+          เริ่มจากให้ Search Engine และ AI crawler เข้าถึงหน้าได้ กำหนด หน้าหลัก ของแต่ละ Intent เขียนคำตอบที่มีข้อมูลจริงและอ่านแยกได้ เชื่อม Topic ไปยัง Brand/Service อย่างมีเหตุผล แล้วสร้างหลักฐานจากภายนอกที่เกี่ยวข้อง
         </P>
         <P>
           เป้าหมายของ GEO จึงไม่ใช่แค่ “ให้ ChatGPT รู้จักแบรนด์” แต่คือการเพิ่มโอกาสให้ธุรกิจถูกค้นพบ ถูกกล่าวถึง หรือถูกอ้างอิงในช่วงที่ผู้ใช้กำลังหาข้อมูล เปรียบเทียบ และตัดสินใจ
@@ -2779,12 +2770,12 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="geo-next-step" title="ควรเริ่มทำ GEO จากจุดไหนต่อ">
+      <ArticleSection id="geo-next-step" title="วิธีทำ GEO ต่อจากนี้ ควรเริ่มตรงไหน">
         <P>
           ถ้าเว็บไซต์ยังไม่ชัดว่าปัญหาอยู่ที่ Crawl/Index, Topic Ownership, Content, Entity หรือ AI Visibility ควรเริ่มจากการตรวจข้อมูลปัจจุบันเพื่อเรียงลำดับก่อนลงทุนกับ Content หรือ Digital PR เพิ่ม
           สำหรับเว็บไซต์ที่ฐาน Search ใช้งานได้แล้วและต้องการทำงานต่อเนื่อง สามารถดู
           {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link>
-          {' '}ของ Saralak Search ซึ่งเชื่อม SEO Foundation, Content, Entity, Internal Link, External Evidence และ Measurement เข้าด้วยกัน
+          {' '}ของ Saralak Search ซึ่งเชื่อม SEO Foundation, Content, Entity, Internal Link, หลักฐานจากภายนอก และ Measurement เข้าด้วยกัน
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/what-is-geo', label: 'GEO คืออะไร? Generative Engine Optimization สำหรับ Google และ AI Search' },
