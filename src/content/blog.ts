@@ -1427,7 +1427,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'geo-agency-thailand',
     category: 'GEO',
     excerpt:
-      'ทำ GEO ที่ไหนดีควรตัดสินจาก Methodology, Baseline, SEO Foundation, วิธีวัดผล และความสามารถเชื่อม AI Visibility เข้ากับ Business Outcome มากกว่าคำโฆษณา บทความนี้สรุปเกณฑ์เลือก GEO Agency, วิธีเทียบ Proposal และ Red Flags ก่อนจ้าง',
+      'ถ้ากำลังเลือกว่าจะทำ GEO ที่ไหนดี ควรดูว่าทีมนั้นตรวจเว็บไซต์อย่างไร วางแผนแก้อะไรบ้าง วัดผลได้ชัดแค่ไหน และเชื่อมผลจาก AI Search ไปถึง Lead หรือยอดขายได้หรือไม่ บทความนี้สรุปวิธีเลือก GEO Agency สิ่งที่ควรถามก่อนจ้าง และสัญญาณที่ควรระวัง',
     readingTime: '14 min read',
     publishedDate: '2026-05-31',
     lastModifiedDate: '2026-10-06',
