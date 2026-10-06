@@ -418,7 +418,7 @@ For SEO-focused articles:
 "SEO คืออะไร"
 → /blog/what-is-seo
 
-"เพิ่ม Traffic SEO"
+"เพิ่ม Traffic" / "เพิ่ม Traffic SEO" / "วิธีเพิ่มคนเข้าเว็บไซต์"
 → /blog/increase-seo-traffic
 
 "Organic Traffic" / "ทำ SEO แล้ว Traffic ไม่โต"
