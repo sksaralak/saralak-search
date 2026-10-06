@@ -589,7 +589,8 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           หน้าเว็บจึงยังต้อง crawlable, indexable และมีสิทธิ์แสดงพร้อม snippet ขณะเดียวกัน Google เน้น unique, valuable, non-commodity content มากกว่าการทำ “AEO/GEO hack”
         </P>
         <P>
-          ในเอกสารปี 2026 Google กล่าวถึงคำว่า AEO และ GEO โดยตรงในส่วนที่อธิบายความเข้าใจผิดเกี่ยวกับ Generative AI Search และเตือนว่า “hacks” จำนวนมากไม่สอดคล้องกับวิธีทำงานจริงของ Google Search
+          จาก <a href="https://developers.google.com/search/docs/fundamentals/third-party-seo" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลจาก Google Search Central</a>
+          Google กล่าวถึงคำว่า AEO และ GEO ในบริบทของคำแนะนำจากผู้ให้บริการ SEO ภายนอก และเตือนว่าหลาย “hacks” สำหรับ Generative AI Search ไม่สอดคล้องกับวิธีทำงานจริงของ Google Search
           Google ไม่ได้กำหนด special AI schema, special markup หรือไฟล์พิเศษที่ต้องมีเพื่อเข้า AI Overviews / AI Mode
           Structured Data ควรใช้ตามประเภทที่รองรับและต้องสอดคล้องกับ visible content
           ส่วนไฟล์อย่าง <Link to="/blog/llms-txt-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">llms.txt คืออะไร</Link> ควรมองเป็น optional supporting infrastructure สำหรับระบบที่รองรับ ไม่ใช่เงื่อนไขของ Google AI Overviews หรือ AI Mode
