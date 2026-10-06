@@ -20,6 +20,7 @@
 |เพิ่มยอดขายร้านอาหาร|https://saralak-search.com/blog/increase-sale-restaurant|เพิ่มยอดขายร้านอาหาร ด้วย Google Maps|
 |Organic Traffic|https://saralak-search.com/blog/seo-not-working|Organic Traffic คืออะไร ทำไม Traffic จาก Google ไม่โต|
 |เพิ่ม Traffic|https://saralak-search.com/blog/increase-seo-traffic|เพิ่ม Traffic เว็บ วิธีเพิ่มคนเข้าเว็บไซต์|
+|เช็ค traffic website ฟรี|https://saralak-search.com/blog/check-website-traffic-free|เช็ค Traffic Website ฟรี ดูคนเข้าเว็บจาก Search Console และ GA4|
 |AI ทำเว็บ|https://saralak-search.com/blog/ai-website-seo|AI ทำเว็บได้ไหม วิธีสร้างเว็บไซต์ด้วย AI ให้พร้อม SEO|
 |llms.txt คืออะไร|https://saralak-search.com/blog/llms-txt-thailand|llms.txt คืออะไร วิธีทำสำหรับเว็บไทย|
 |GEO checklist|https://saralak-search.com/blog/geo-checklist-thailand|GEO Checklist 40 รายการก่อน AI อ้างอิงธุรกิจคุณ|
