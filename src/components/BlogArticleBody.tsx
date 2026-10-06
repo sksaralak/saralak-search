@@ -825,55 +825,52 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
 
       <section className="grid gap-5" data-speakable>
         <P>
-          <strong>SEO, AEO และ GEO เป็น 3 กรอบงานที่มีพื้นที่ทับซ้อนกัน แต่เน้นคนละปัญหา</strong>
-          SEO ดูฐานการค้นพบและ Organic Visibility, AEO เน้นความชัดของคำตอบในระดับหน้าและ Section,
-          ส่วน GEO มองกว้างไปถึง Entity, Evidence, Brand Mention และ Visibility ใน Generative AI / AI Search
-          ทั้งสามจึงควรเชื่อมกัน ไม่ใช่แยกทำเป็นเทคนิคคนละชุด
+          <strong>SEO, AEO และ GEO ต่างกันที่สิ่งที่เน้น แต่ควรทำงานต่อกัน</strong>
+          SEO ช่วยให้เว็บไซต์ถูกค้นพบและมีโอกาสติดอันดับบน Google,
+          AEO ช่วยให้คำตอบในหน้าเว็บชัดและอ่านง่ายขึ้น,
+          ส่วน GEO ช่วยให้ข้อมูลของแบรนด์พร้อมสำหรับการค้นหาและคำตอบจาก AI
         </P>
         <P>
-          หน้านี้ทำหน้าที่เป็นหน้าเปรียบเทียบและ decision guide สำหรับคำถาม
-          “SEO GEO AEO ต่างกันอย่างไร” หากต้องการอ่านความหมายเชิงลึกของแต่ละแนวทาง
-          ควรไปยังหน้า owner เฉพาะเรื่อง เช่น <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>,
+          ถ้าต้องการอ่านแยกทีละเรื่อง สามารถเริ่มจาก <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>,
           {' '}<Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
           {' '}และ <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}แทนการอ่านทุกอย่างซ้ำในบทความเดียว
+          {' '}ส่วนบทความนี้สรุปว่าทั้งสามแบบต่างกันตรงไหน และธุรกิจควรเริ่มจากอะไรก่อน
         </P>
       </section>
 
       <ArticleSection id="seo-aeo-geo-difference" title="SEO, AEO และ GEO ต่างกันอย่างไร">
         <P>
-          <strong>SEO, AEO และ GEO ต่างกันที่จุดโฟกัส แต่ทำงานต่อกันบนฐานเดียวกัน</strong>
-          SEO เน้นให้เว็บไซต์ถูกค้นพบ เข้าใจ และจัดอันดับใน Organic Search,
-          AEO เน้นทำให้คำตอบในแต่ละหน้าและแต่ละ Section ชัดเจนขึ้น,
-          ส่วน GEO ขยายไปถึงการทำให้แบรนด์ เนื้อหา และหลักฐานถูกเข้าใจในบริบทของ AI Search
-          และระบบ Generative AI
+          <strong>SEO, AEO และ GEO ต่างกันที่หน้าที่หลัก</strong>
+          SEO เน้นให้เว็บไซต์ถูกค้นพบและแข่งขันในผลการค้นหา,
+          AEO เน้นทำให้คำตอบในแต่ละส่วนของหน้าเว็บชัดขึ้น,
+          ส่วน GEO เน้นทำให้ข้อมูลของแบรนด์และหลักฐานที่เกี่ยวข้องพร้อมสำหรับ AI Search
         </P>
         <P>
-          ถ้าเว็บไซต์ยังมีปัญหา Crawl, Index, Canonical หรือหน้า Service ยังไม่ตอบ Search Intent
-          ควรแก้ SEO Foundation ก่อน แล้วค่อยต่อยอด AEO และ GEO ตามจุดที่ยังขาด
+          ถ้า Google ยังเข้าถึงหน้าได้ไม่ดี หน้าไม่ถูกจัดเก็บในผลค้นหา หรือหน้าบริการยังตอบคำค้นไม่ชัด
+          ควรแก้พื้นฐาน SEO ก่อน แล้วค่อยต่อยอด AEO และ GEO ตามจุดที่ยังขาด
           เพราะการทำคำตอบให้ชัดหรือเพิ่มข้อมูลแบรนด์และหลักฐานจะมีประโยชน์มากขึ้นเมื่อหน้าพื้นฐานของเว็บไซต์พร้อมใช้งานแล้ว
-          หากฐาน Search ยังไม่พร้อม อ่าน <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
+          หากพื้นฐาน SEO ยังไม่พร้อม อ่าน <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
           {' '}หรือดูขอบเขต <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link> ก่อน
         </P>
       </ArticleSection>
       <ArticleSection id="seo-geo-aeo-meaning" title="SEO, AEO และ GEO คืออะไรเมื่อ Search มี AI features">
         <P>
           <Link to="/blog/what-is-seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO คืออะไร</Link>
-          {' '}ในทางปฏิบัติคือการทำให้เว็บไซต์ถูกค้นพบ เข้าใจ และแข่งขันใน Search Engine ได้
-          งานนี้ครอบคลุม technical SEO, content, internal link, page experience, structured data ที่ตรงกับเนื้อหาจริง
-          และ authority จากแหล่งอื่น
+          {' '}ในทางปฏิบัติคือการทำให้เว็บไซต์ถูกค้นพบ เข้าใจ และแข่งขันในผลการค้นหาได้
+          งานนี้ครอบคลุม Technical SEO, เนื้อหา, Internal Link, ประสบการณ์ใช้งาน
+          และ Structured Data ที่ตรงกับข้อมูลจริงบนหน้า
         </P>
         <P>
           <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
-          {' '}ในทางปฏิบัติคือการจัดเนื้อหาให้ตอบคำถามได้ชัดและใช้ต่อได้ง่าย
-          เช่น คำตอบสั้นในต้น section, ตารางเปรียบเทียบ, checklist, FAQ เฉพาะคำถามที่ยังไม่ได้ตอบ
-          และ passage ที่เข้าใจได้โดยไม่ต้องอ่านทั้งบทความ
+          {' '}ในทางปฏิบัติคือการจัดเนื้อหาให้ตอบคำถามได้ตรงและอ่านง่าย
+          เช่น ตอบประเด็นสำคัญตั้งแต่ต้น ใช้ตาราง รายการ หรือ FAQ เท่าที่จำเป็น
+          และทำให้แต่ละส่วนเข้าใจได้แม้ไม่ได้อ่านทั้งบทความ
         </P>
         <P>
           <Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
-          {' '}ในทางปฏิบัติคือการทำให้แบรนด์ เนื้อหา และข้อมูลที่เกี่ยวข้องถูกเข้าใจในระบบ AI Search
-          เช่น ChatGPT, Gemini, Perplexity หรือ AI features ใน Search โดยมองทั้งเว็บไซต์ ความเชี่ยวชาญ
-          case study, brand mention, citation และความสอดคล้องของข้อมูลนอกเว็บไซต์
+          {' '}ในทางปฏิบัติคือการทำให้ข้อมูลของแบรนด์ เนื้อหา และหลักฐานที่เกี่ยวข้องพร้อมสำหรับ AI Search
+          เช่น ChatGPT, Gemini, Perplexity หรือฟีเจอร์ AI ใน Search โดยดูทั้งเว็บไซต์ ความเชี่ยวชาญ
+          เคสจริง การกล่าวถึงแบรนด์ แหล่งอ้างอิง และความสอดคล้องของข้อมูลในแต่ละช่องทาง
         </P>
       </ArticleSection>
 
@@ -1110,7 +1107,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           Saralak Search เริ่มจากดูพื้นฐาน Search, หน้าที่ของแต่ละ URL, Internal Link, คุณภาพเนื้อหา
-          ความชัดของข้อมูลแบรนด์, AI Visibility และเส้นทาง Conversion แล้วค่อยแยกว่างานไหนควรแก้ด้วย SEO
+          ความชัดของข้อมูลแบรนด์, การมองเห็นบน AI Search และเส้นทาง Conversion แล้วค่อยแยกว่างานไหนควรแก้ด้วย SEO
           งานไหนเป็นเรื่องความชัดของคำตอบ และงานไหนควรต่อยอดด้าน GEO
         </P>
         <ReadMoreLinks items={[
