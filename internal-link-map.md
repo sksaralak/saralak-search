@@ -100,7 +100,7 @@ GEO Checklist
 llms.txt คืออะไร
 → /blog/llms-txt-thailand
 
-AI ทำ SEO ได้จริงไหม
+AI ทำเว็บได้ไหม / สร้างเว็บไซต์ด้วย AI ให้พร้อม SEO
 → /blog/ai-website-seo
 
 AEO Checklist
