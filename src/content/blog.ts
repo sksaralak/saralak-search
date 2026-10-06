@@ -652,29 +652,34 @@ export const increaseSeoTrafficFaqs: FAQItem[] = [
 
 export const checkTrafficFreeFaqs: FAQItem[] = [
   {
-    question: 'เช็ค Traffic เว็บไซต์ตัวเองฟรีได้จากไหน?',
+    question: 'เช็ค Traffic Website ฟรี ใช้เครื่องมืออะไรดีที่สุด?',
     answer:
-      'เช็คได้ฟรี 100% ผ่าน Google Search Console (ดู Clicks, Impressions, CTR, Average Position) และ Google Analytics 4 (ดู Session, User, ช่องทางที่คนเข้ามา) ทั้งสองตัวใช้ฟรีไม่จำกัด ไม่มีเงื่อนไข ขอแค่เว็บไซต์ยืนยันความเป็นเจ้าของแล้ว',
+      'ถ้าเป็นเว็บไซต์ของตัวเอง ให้ใช้ Google Search Console เพื่อดู Clicks, Impressions, Queries และ Pages จาก Google Search และใช้ GA4 เพื่อดู Sessions, Engagement และ Traffic source หลังผู้ใช้เข้ามาในเว็บไซต์ ส่วนเว็บไซต์คู่แข่งใช้เครื่องมือภายนอกได้ แต่ข้อมูลเป็นค่าประมาณการ ไม่ใช่ข้อมูล Analytics ภายในของคู่แข่ง',
+  },
+  {
+    question: 'Google Search Console กับ GA4 ต่างกันอย่างไร?',
+    answer:
+      'Search Console ตอบคำถามว่าเว็บไซต์ถูกเห็นและถูกคลิกจาก Google Search อย่างไร ส่วน GA4 ตอบว่าหลังเข้ามาแล้วเกิด Session, Engagement และ Conversion อย่างไร ตัวเลขจึงไม่ควรถูกคาดหวังให้ตรงกันแบบหนึ่งต่อหนึ่ง เพราะสองระบบวัดคนละช่วงของ journey และใช้วิธีประมวลผลต่างกัน',
   },
   {
     question: 'เช็ค Traffic เว็บไซต์คู่แข่งฟรีได้ไหม?',
     answer:
-      'ได้ ผ่าน Free Tier ของเครื่องมืออย่าง Ubersuggest, Semrush หรือ Ahrefs Free Traffic Checker แต่ตัวเลขที่ได้เป็น "ค่าประมาณการ" จากการวิเคราะห์อันดับคีย์เวิร์ด ไม่ใช่ตัวเลข Click จริงเหมือนที่เจ้าของเว็บไซต์เห็นใน Search Console ของตัวเอง',
+      'เช็คได้ในระดับประมาณการผ่านเครื่องมือ SEO หรือ competitive research บางราย แต่ควรใช้เพื่อดูแนวโน้ม, keyword visibility และหน้าเด่นของคู่แข่ง มากกว่านำตัวเลขมาเทียบตรง ๆ กับ Search Console หรือ GA4 ของเว็บไซต์ตัวเอง',
   },
   {
-    question: 'ทำไมตัวเลข Traffic จาก Ahrefs หรือ Semrush ไม่ตรงกับ Google Search Console?',
+    question: 'ดูได้ไหมว่า Traffic มาจาก Brand หรือ Non-brand?',
     answer:
-      'เพราะเป็นคนละวิธีวัด เครื่องมือภายนอกอย่าง Ahrefs/Semrush ประมาณการ Traffic จากอันดับคีย์เวิร์ดคูณกับ CTR เฉลี่ยของตำแหน่งนั้นๆ ส่วน Google Search Console รายงาน Click จริงที่เกิดขึ้น ตัวเลขจึงต่างกันได้เป็นหลักเท่าตัว โดยเฉพาะเว็บไซต์ขนาดเล็กหรือคีย์เวิร์ดเฉพาะทาง',
+      'Google Search Console มี Branded / Non-branded query filter ใน Performance report สำหรับ property ที่รองรับ โดยข้อมูลส่วนนี้ช่วยแยกว่าการเติบโตมาจากคนที่รู้จักแบรนด์อยู่แล้ว หรือมาจากคำค้นทั่วไปที่พาคนใหม่เข้าสู่เว็บไซต์',
   },
   {
-    question: 'เช็ค Traffic แล้วรู้ได้อย่างไรว่าตัวเลขดีหรือแย่?',
+    question: 'เช็ค Traffic แล้วควรดูช่วงเวลาเท่าไร?',
     answer:
-      'ดูจากแนวโน้ม (Trend) มากกว่าตัวเลขเดี่ยวๆ — เทียบเดือนต่อเดือนว่าขึ้นหรือลง และดูว่า Traffic มาจากคำค้น Brand (ชื่อธุรกิจ) เป็นหลัก หรือเริ่มมีคำค้น Non-Brand ที่เกี่ยวกับสินค้า/บริการเข้ามาด้วย เว็บไซต์ที่พึ่งพา Brand Search อย่างเดียวมักมีความเสี่ยงเพราะไม่ได้เข้าถึงลูกค้าใหม่ที่ยังไม่รู้จักแบรนด์',
+      'ใช้ช่วงเวลาที่สะท้อนธุรกิจและ seasonality ได้ เช่น เทียบ 28 วันล่าสุดกับ 28 วันก่อน หรือเทียบปีต่อปีเมื่อธุรกิจมีฤดูกาล ไม่ควรตัดสินจากวันเดียว เพราะวันหยุด แคมเปญ และ demand ของตลาดทำให้ Traffic แกว่งได้',
   },
   {
-    question: 'นอกจาก Traffic ปกติ ต้องเช็คอะไรเพิ่มสำหรับ AI Search (GEO)?',
+    question: 'ถ้า Traffic ลดลงควรทำอะไรต่อ?',
     answer:
-      'ควรลองถามคำถามเกี่ยวกับธุรกิจของคุณใน ChatGPT, Gemini หรือ Perplexity ดูว่าแบรนด์ถูกกล่าวถึงไหม และเช็ค GA4 ว่ามี Referral Traffic จาก AI Platform เข้ามาหรือยัง เพราะ Traffic จาก AI Search เป็นช่องทางใหม่ที่ Google Search Console แบบเดิมยังรายงานได้ไม่ครบ',
+      'เริ่มจากแยกก่อนว่าลดใน Search Console หรือ GA4 ถ้า Search Visibility ลด ให้ดู Queries, Pages, Indexing และ Search Intent หาก Search Console ยังทรงตัวแต่ GA4 ลด ให้ตรวจ tracking, channel attribution, landing page และ conversion path ต่อ',
   },
 ]
 
@@ -1527,34 +1532,36 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เช็ค Traffic เว็บไซต์ฟรี ไม่ต้องเสียเงิน [เช็คเองได้ใน 5 นาที]',
+    title: 'เช็ค Traffic Website ฟรี: ดูคนเข้าเว็บจาก Google, GA4 และคู่แข่งอย่างไร',
     slug: 'check-website-traffic-free',
     heroImageDesktop: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
-    heroImageAlt: 'การตรวจสอบ Traffic เว็บไซต์ฟรีผ่านแดชบอร์ดข้อมูลบนคอมพิวเตอร์และมือถือ',
+    heroImageAlt: 'วิธีเช็ค Traffic Website ฟรีด้วย Google Search Console และ GA4',
     ogImage: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
     category: 'SEO',
     excerpt:
-      'เช็ค Traffic เว็บไซต์ตัวเองฟรี 100% ผ่าน Google Search Console และ GA4 พร้อมวิธีเช็ค Traffic คู่แข่งแบบประมาณการ และสิ่งที่ต้องรู้ก่อนเชื่อตัวเลขจากเครื่องมือฟรีทุกตัว',
-    readingTime: '10 min read',
+      'เช็ค Traffic Website ฟรีได้ด้วย Google Search Console และ GA4 สำหรับเว็บตัวเอง ส่วนเว็บคู่แข่งดูได้ในระดับประมาณการ บทความนี้สรุปว่าแต่ละเครื่องมือวัดอะไร ตัวเลขต่างกันเพราะอะไร และควรอ่านข้อมูลแบบไหนก่อนตัดสินใจทำ SEO ต่อ',
+    readingTime: '13 min read',
     publishedDate: '2026-07-27',
+    lastModifiedDate: '2026-10-06',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'เช็ค Traffic เว็บไซต์ฟรี [เช็คเองได้ใน 5 นาที] | Saralak Search',
+    metaTitle: 'เช็ค Traffic Website ฟรี ใช้อะไรดู? Search Console + GA4 | Saralak Search',
     metaDescription:
-      'วิธีเช็ค Traffic เว็บไซต์ฟรี ทั้งเว็บไซต์ตัวเอง (Google Search Console, GA4) และเว็บไซต์คู่แข่ง (Ubersuggest, Semrush, Ahrefs) พร้อมวิธีอ่านตัวเลขให้ถูกต้อง',
+      'วิธีเช็ค Traffic Website ฟรีสำหรับเว็บตัวเองด้วย Search Console และ GA4 พร้อมวิธีดู Traffic คู่แข่งแบบประมาณการ แยก Brand/Non-brand และอ่านตัวเลขก่อนทำ SEO ต่อ',
     aiSummary: [
-      'เช็ค Traffic เว็บไซต์ตัวเองได้ฟรี 100% และแม่นยำผ่าน Google Search Console และ GA4',
-      'เช็ค Traffic เว็บไซต์คู่แข่งทำได้ฟรีผ่าน Ubersuggest, Semrush หรือ Ahrefs แต่เป็นตัวเลขประมาณการ ไม่ใช่ Click จริง',
-      'ตัวเลขจากเครื่องมือภายนอกกับ Search Console มักไม่ตรงกัน เพราะคนละวิธีวัด',
-      'นอกจาก Traffic ปกติ ควรเช็ค AI Search Visibility (GEO) ด้วย เพราะเป็นช่องทางที่กำลังโตขึ้นเรื่อยๆ',
+      'เช็ค Traffic Website ฟรีสำหรับเว็บไซต์ตัวเองควรใช้ Google Search Console และ GA4 ร่วมกัน เพราะ Search Console วัดการมองเห็นและการคลิกจาก Google Search ส่วน GA4 วัด Sessions, Engagement และ Conversion หลังเข้าเว็บไซต์',
+      'เว็บไซต์คู่แข่งไม่มีทางดูข้อมูล Analytics ภายในได้จากเครื่องมือฟรีทั่วไป ตัวเลขจากเครื่องมือ SEO ภายนอกจึงควรถูกใช้เป็นค่าประมาณการและแนวโน้ม ไม่ใช่ Click หรือ Session จริง',
+      'Search Console สามารถแยกข้อมูลตาม Queries, Pages, Countries, Devices และ Search appearance และรองรับ Branded / Non-branded query filter ใน property ที่มีสิทธิ์ใช้',
+      'ตัวเลข Search Console กับ GA4 ไม่จำเป็นต้องตรงกัน เพราะวัดคนละช่วงของ user journey และมีวิธีนับ/ประมวลผลต่างกัน',
+      'หลังรู้ Traffic แล้วควรดูต่อว่า Visibility โตจากหน้าไหน คำค้นแบบ Brand หรือ Non-brand และ Traffic นั้นสร้าง Engagement, Lead, LINE, Call หรือ Purchase หรือไม่',
     ],
     faqs: checkTrafficFreeFaqs,
     bodyVariant: 'check-website-traffic-free',
     cta: {
-      headline: 'เช็คแล้วเจอว่า Traffic นิ่งหรือน้อยกว่าที่ควร?',
+      headline: 'เช็ค Traffic แล้ว แต่ยังไม่รู้ว่าควรแก้อะไรก่อน?',
       description:
-        'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+        'บริการ SEO ของ Saralak Search ช่วยอ่าน Search Visibility, Query, Landing Page, Technical SEO และ Conversion path เพื่อจัดลำดับสิ่งที่ควรแก้จากข้อมูลจริง',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
