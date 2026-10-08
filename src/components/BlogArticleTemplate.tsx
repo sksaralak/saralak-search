@@ -6,6 +6,7 @@ import BlogCard from './BlogCard'
 import { brand } from '../content/site'
 import { BlogArticleBodyContext } from './BlogArticleBodyContext'
 import { trackLineClick } from './Analytics'
+import { ArticleHeader, BlogProse, CTABox } from './blog/BlogUI'
 
 // This file must never statically import BlogArticleBody — doing so would pull
 // its ~800KB into the client's main bundle regardless of the lazy() call below.
@@ -20,110 +21,21 @@ type BlogArticleTemplateProps = {
   relatedPosts: BlogPost[]
 }
 
-function formatThaiDate(value: string) {
-  const date = new Date(`${value}T00:00:00+07:00`)
-  if (Number.isNaN(date.getTime())) return value
-  return new Intl.DateTimeFormat('th-TH-u-ca-gregory', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'Asia/Bangkok',
-  }).format(date)
-}
-
-function formatThaiReadingTime(value: string) {
-  const minutes = Number.parseInt(value, 10)
-  return Number.isNaN(minutes) ? value : `ใช้เวลาอ่าน ${minutes} นาที`
-}
-
 export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleTemplateProps) {
   const ssrResolvedBody = useContext(BlogArticleBodyContext)
   const BlogArticleBody = ssrResolvedBody ?? LazyBlogArticleBody
 
   return (
     <main className="overflow-x-hidden">
-      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-24 lg:px-8">
-        <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500">
-            <li>
-              <Link to="/" className="hover:text-teal-800">หน้าแรก</Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <Link to="/blog" className="hover:text-teal-800">บทความ</Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li className="font-medium text-neutral-950">{post.title}</li>
-          </ol>
-        </nav>
-        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-teal-800">
-          {post.category}
-        </p>
-        <h1
-          className="text-2xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl"
-          style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-        >
-          {post.title}
-        </h1>
-        <p
-          data-speakable
-          className="mt-5 max-w-3xl text-base leading-7 text-neutral-700 sm:mt-6 sm:text-lg sm:leading-8"
-          style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-        >
-          {post.excerpt}
-        </p>
-        <dl className="mt-8 grid gap-4 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-700 sm:grid-cols-3 sm:p-5">
-          <div>
-            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
-              เผยแพร่
-            </dt>
-            <dd className="mt-1 font-semibold text-neutral-950">{formatThaiDate(post.publishedDate)}</dd>
-            {post.lastModifiedDate && post.lastModifiedDate !== post.publishedDate && (
-              <dd className="mt-0.5 text-xs text-neutral-500">อัปเดต {formatThaiDate(post.lastModifiedDate)}</dd>
-            )}
-          </div>
-          <div>
-            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
-              เวลาอ่าน
-            </dt>
-            <dd className="mt-1 font-semibold text-neutral-950">{formatThaiReadingTime(post.readingTime)}</dd>
-          </div>
-          <div>
-            <dt className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
-              ผู้เขียน
-            </dt>
-            <dd className="mt-1 font-semibold text-neutral-950">
-              <Link to={post.authorUrl} className="text-teal-900 hover:text-teal-700">
-                {post.authorName}
-              </Link>
-            </dd>
-          </div>
-        </dl>
-      </section>
-
-      {post.heroImageDesktop ? (
-        <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 md:pb-16 lg:px-8">
-          <picture className="block overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm shadow-neutral-950/5">
-            {post.heroImageMobile ? (
-              <source media="(max-width: 767px)" srcSet={post.heroImageMobile} />
-            ) : null}
-            <img
-              src={post.heroImageDesktop}
-              alt={post.heroImageAlt ?? post.title}
-              width="1280"
-              height="720"
-              fetchPriority="high"
-              className="aspect-[4/5] w-full object-cover object-center sm:aspect-[16/9]"
-            />
-          </picture>
-        </section>
-      ) : null}
+      <ArticleHeader post={post} />
 
       <section className="overflow-x-hidden border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
-          <Suspense fallback={null}>
-            <BlogArticleBody post={post} />
-          </Suspense>
+          <BlogProse>
+            <Suspense fallback={null}>
+              <BlogArticleBody post={post} />
+            </Suspense>
+          </BlogProse>
         </div>
       </section>
 
@@ -148,32 +60,12 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
       <section className="border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16 lg:px-8">
           {post.cta ? (
-            <div className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white sm:p-8 md:p-10">
-              <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
-                <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">
-                    Discovery Audit
-                  </p>
-                  <h2
-                    className="mt-2 text-2xl font-semibold leading-tight text-white sm:text-3xl"
-                    style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-                  >
-                    {post.cta.headline}
-                  </h2>
-                  <p className="thai-readable mt-4 max-w-3xl text-base text-teal-100 sm:text-lg">
-                    {post.cta.description}
-                  </p>
-                </div>
-                <div className="min-w-0 md:justify-self-end">
-                  <CTAButton
-                    to={post.cta.href}
-                    className="w-full max-w-full whitespace-normal px-4 sm:w-auto sm:px-5"
-                  >
-                    {post.cta.buttonText}
-                  </CTAButton>
-                </div>
-              </div>
-            </div>
+            <CTABox
+              headline={post.cta.headline}
+              description={post.cta.description}
+              href={post.cta.href}
+              buttonText={post.cta.buttonText}
+            />
           ) : post.ctaPlaceholderOnly ? (
             <div className="rounded-lg border border-dashed border-neutral-300 bg-[#fbfaf6] p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">

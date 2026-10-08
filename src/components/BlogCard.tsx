@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { BlogPost } from '../content/blog'
+import { ArticleMeta, CategoryBadge } from './blog/BlogUI'
 
 type BlogCardProps = {
   post: BlogPost
@@ -20,7 +21,7 @@ export default function BlogCard({ post, compact = false }: BlogCardProps) {
         </Link>
       ) : null}
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{post.category}</p>
+        <CategoryBadge>{post.category}</CategoryBadge>
         <h3
           className="mt-2 break-words text-xl font-semibold leading-tight text-neutral-950"
           style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
@@ -35,20 +36,11 @@ export default function BlogCard({ post, compact = false }: BlogCardProps) {
             {post.excerpt}
           </p>
         ) : null}
-        <dl className="mt-4 grid gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 sm:grid-cols-2">
-          <div>
-            <dt>Published</dt>
-            <dd className="mt-1 text-sm font-semibold uppercase tracking-normal text-neutral-900">
-              {post.publishedDate}
-            </dd>
-          </div>
-          <div>
-            <dt>Reading time</dt>
-            <dd className="mt-1 text-sm font-semibold uppercase tracking-normal text-neutral-900">
-              {post.readingTime}
-            </dd>
-          </div>
-        </dl>
+        <ArticleMeta
+          publishedDate={post.publishedDate}
+          readingTime={post.readingTime}
+          compact
+        />
         <div className="mt-auto pt-5">
           <Link
             to={`/blog/${post.slug}`}

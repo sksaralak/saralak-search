@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
 import { brand } from '../content/site'
+import {
+  BulletList as CheckList,
+  CTABox as ArticleCTA,
+  FAQSection as ArticleFAQ,
+  FigureImage as ArticleImage,
+  DoDontBox,
+  RelatedLinks as ReadMoreLinks,
+  ResponsiveTable,
+  SourceBox,
+  StepList as NumberedList,
+  SummaryBox as AISummary,
+  TableOfContents,
+} from './blog/BlogUI'
 
 type BlogArticleBodyProps = {
   post: BlogPost
@@ -25,25 +38,6 @@ function ArticleSection({ title, children, id }: SectionProps) {
   )
 }
 
-function ReadMoreLinks({ items }: { items: { to: string; label: string }[] }) {
-  return (
-    <div className="grid gap-2">
-      {items.map((item) => (
-        <Link
-          key={item.to}
-          to={item.to}
-          className="group flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800 transition hover:border-teal-300 hover:bg-teal-50 hover:text-teal-900"
-        >
-          <span className="min-w-0 truncate">{item.label}</span>
-          <svg className="ml-3 h-4 w-4 shrink-0 text-teal-500 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </Link>
-      ))}
-    </div>
-  )
-}
-
 function P({ children }: { children: ReactNode }) {
   return (
     <p
@@ -52,27 +46,6 @@ function P({ children }: { children: ReactNode }) {
     >
       {children}
     </p>
-  )
-}
-
-function AISummary({ items, heading = 'สรุป AI Overview ใน 30 วินาที', id = 'ai-overview-summary' }: { items: string[]; heading?: string; id?: string }) {
-  return (
-    <section className="rounded-lg border border-teal-100 bg-[#fbfaf6] p-3 sm:p-6">
-      <h2 id={id} className="scroll-mt-24 text-xl font-semibold text-neutral-950">{heading}</h2>
-      <ul className="mt-4 grid gap-3">
-        {items.map((item) => (
-          <li key={item} className="thai-readable flex gap-3 text-neutral-700">
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
-            <span
-              className="min-w-0"
-              style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-            >
-              {item}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </section>
   )
 }
 
@@ -101,31 +74,7 @@ const aiOverviewContents = [
 ] as const
 
 function ArticleTableOfContents() {
-  return (
-    <nav aria-label="สารบัญบทความ" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700">
-        {aiOverviewContents.map((item, index) => (
-          <li key={item.id}>
-            <a href={`#${item.id}`} className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
-              {String(index + 1).padStart(2, '0')}. {item.label}
-            </a>
-            {'children' in item ? (
-              <ol className="mt-1 ml-6 grid list-[lower-alpha] gap-1 text-sm leading-6 text-neutral-600">
-                {item.children.map((child) => (
-                  <li key={child.id}>
-                    <a href={`#${child.id}`} className="hover:text-teal-800 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
-                      {child.label}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            ) : null}
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
+  return <TableOfContents items={aiOverviewContents} />
 }
 
 
@@ -147,45 +96,7 @@ const geoContents = [
 ] as const
 
 function GeoTableOfContents() {
-  return (
-    <nav aria-label="สารบัญบทความ GEO" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
-        {geoContents.map((item, index) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            >
-              {String(index + 1).padStart(2, '0')}. {item.label}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
-}
-
-type ArticleImageProps = {
-  src: string
-  alt: string
-  caption?: string
-  className?: string
-  width?: number
-  height?: number
-}
-
-function ArticleImage({ src, alt, caption, className = 'bg-[#fbfaf6]', width = 900, height = 507 }: ArticleImageProps) {
-  return (
-    <figure className={`overflow-hidden rounded-lg border border-neutral-200 ${className}`}>
-      <img src={src} alt={alt} loading="lazy" width={width} height={height} className="h-auto w-full" />
-      {caption ? (
-        <figcaption className="thai-readable border-t border-neutral-200 bg-white px-3 py-3 text-sm leading-6 text-neutral-600 sm:px-5 sm:py-4">
-          {caption}
-        </figcaption>
-      ) : null}
-    </figure>
-  )
+  return <TableOfContents items={geoContents} />
 }
 
 function ZoomableImage({ src, alt, className = 'w-full' }: { src: string; alt: string; className?: string }) {
@@ -265,52 +176,12 @@ function ComparisonTable() {
         AEO เน้นการจัดคำตอบให้ชัดสำหรับ Answer Surfaces, ส่วน GEO ติดตามการกล่าวถึง การอ้างอิง และการนำข้อมูลไปใช้ใน Generative AI
         ทั้งสามแนวทางใช้พื้นฐานร่วมกันหลายส่วน แต่ไม่ได้มีระบบจัดอันดับหรือ KPI เดียวกัน และ GEO ไม่ได้แทน SEO
       </p>
-      <div aria-hidden="true" className="mt-5 grid gap-3 lg:hidden">
-        {rows.map((row) => (
-          <article key={row[0]} className="rounded-lg border border-neutral-200 bg-white p-3">
-            <h3 className="thai-readable font-semibold leading-7 text-neutral-950">{row[0]}</h3>
-            <div className="mt-3 grid gap-3">
-              {row.slice(1).map((cell, index) => (
-                <div key={`${row[0]}-${headings[index + 1]}`}>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">
-                    {headings[index + 1]}
-                  </p>
-                  <p className="thai-readable mt-1 text-sm leading-6 text-neutral-700">{cell}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className="mt-5 hidden overflow-x-auto rounded-lg border border-neutral-200 lg:block">
-        <table className="min-w-[760px] divide-y divide-neutral-200 bg-white text-left text-sm">
-          <thead className="bg-[#fbfaf6] text-neutral-950">
-            <tr>
-              {headings.map((heading) => (
-                <th key={heading} scope="col" className="px-4 py-3 font-semibold">
-                  {heading}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-neutral-200 text-neutral-700">
-            {rows.map((row) => (
-              <tr key={row[0]}>
-                {row.map((cell, index) => (
-                  <td
-                    key={cell}
-                    className={`thai-readable px-4 py-4 align-top leading-6 ${
-                      index === 0 ? 'font-semibold text-neutral-950' : ''
-                    }`}
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ResponsiveTable
+        headers={headings}
+        rows={rows}
+        label="ตารางเปรียบเทียบ GEO, SEO และ AEO"
+        minWidth="760px"
+      />
     </section>
   )
 }
@@ -320,91 +191,6 @@ function ArticleSubSection({ title, children, id }: SectionProps) {
     <div>
       <h3 id={id} className={`break-words text-xl font-semibold text-neutral-950 ${id ? 'scroll-mt-24' : ''}`}>{title}</h3>
       <div className="mt-3 grid gap-4">{children}</div>
-    </div>
-  )
-}
-
-function CheckList({ items }: { items: string[] }) {
-  return (
-    <ul className="grid gap-2">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3">
-          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
-          <span
-            className="thai-readable text-base text-neutral-700 sm:text-lg"
-            style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-          >
-            {item}
-          </span>
-        </li>
-      ))}
-    </ul>
-  )
-}
-
-function ArticleFAQ({ post, heading = 'FAQ: GEO คืออะไร', id }: { post: BlogPost; heading?: string; id?: string }) {
-  if (!post.faqs) {
-    return null
-  }
-
-  return (
-    <section>
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">FAQ</p>
-      <h2 id={id} className={`mt-2 break-words text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl ${id ? 'scroll-mt-24' : ''}`}>
-        {heading}
-      </h2>
-      <div className="mt-5 grid gap-3">
-        {post.faqs.map((item) => (
-          <details
-            key={item.question}
-            className="group rounded-lg border border-neutral-200 bg-[#fbfaf6] p-3 sm:p-5"
-          >
-            <summary className="cursor-pointer list-none font-semibold text-neutral-950">
-              <span className="flex min-w-0 items-start justify-between gap-4">
-                <span className="min-w-0 break-words">{item.question}</span>
-                <span className="shrink-0 text-xl leading-none text-teal-800 group-open:rotate-45">
-                  +
-                </span>
-              </span>
-            </summary>
-            <p
-              className="thai-readable mt-3 text-base text-neutral-700"
-              style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-            >
-              {item.answer}
-            </p>
-          </details>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function ArticleCTA({ headline, description }: { headline: string; description: string }) {
-  return (
-    <aside className="rounded-xl border border-teal-800/50 bg-teal-950 p-6 text-white">
-      <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">Saralak Search Services</p>
-      <h3 className="mt-2 break-words text-xl font-semibold text-white">{headline}</h3>
-      <p className="thai-readable mt-3 text-teal-100">{description}</p>
-      <div className="mt-5">
-        <CTAButton to="/services">ดูบริการที่เหมาะ</CTAButton>
-      </div>
-    </aside>
-  )
-}
-
-function SourceBox({ items, heading = 'แหล่งข้อมูล / Data Checked' }: { items: string[]; heading?: string }) {
-  return (
-    <div className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">{heading}</p>
-      <ul className="mt-3 grid gap-1.5">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm text-neutral-600">
-            <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400" />
-            {item}
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }
@@ -775,23 +561,7 @@ const seoGeoAeoContents = [
 ] as const
 
 function SeoGeoAeoTableOfContents() {
-  return (
-    <nav aria-label="สารบัญบทความ SEO GEO AEO" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
-        {seoGeoAeoContents.map((item, index) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            >
-              {String(index + 1).padStart(2, '0')}. {item.label}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
+  return <TableOfContents items={seoGeoAeoContents} />
 }
 
 function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
@@ -879,34 +649,18 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           วิธีแยกให้ง่ายที่สุดคือดูว่าแต่ละแนวทางตอบคำถามอะไร SEO ตอบว่า “เว็บไซต์ถูกค้นพบและจัดอันดับได้ไหม”
           AEO ตอบว่า “คำตอบของหน้านี้ชัดพอไหม” ส่วน GEO ตอบว่า “แบรนด์ถูกเข้าใจและถูกกล่าวถึงในบริบทที่เกี่ยวข้องไหม”
         </P>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-white">
-          <table className="min-w-[760px] divide-y divide-neutral-200 text-left text-sm">
-            <thead className="bg-[#fbfaf6] text-neutral-950">
-              <tr>
-                {['มิติเปรียบเทียบ', 'SEO', 'AEO', 'GEO'].map((heading) => (
-                  <th key={heading} scope="col" className="px-4 py-3 font-semibold">{heading}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-200 text-neutral-700">
-              {[
-                ['เป้าหมายหลัก', 'เพิ่ม visibility, ranking และ organic traffic จาก Search', 'ทำให้คำตอบบนหน้าเว็บชัดและ extract ได้ง่าย', 'ทำให้แบรนด์/เว็บไซต์ถูกเข้าใจ กล่าวถึง หรืออ้างอิงใน AI Search'],
-                ['หน่วยที่ optimize', 'หน้าเว็บ, site structure, internal link, technical foundation', 'ย่อหน้า, H2/H3, FAQ, table, checklist, short answer', 'brand entity, topic cluster, case study, citation, mention ecosystem'],
-                ['ตัวอย่างผลลัพธ์', 'ติดอันดับบน Google Search และได้ clicks', 'ได้ Featured Snippet, People Also Ask, AI Overview supporting link หรือ passage ที่ตอบคำถามชัด', 'แบรนด์ถูกพูดถึงใน ChatGPT, Gemini, Perplexity หรือ generative AI features'],
-                ['ข้อมูลที่ต้องใช้', 'Keyword, Search Console, crawl data, SERP, technical audit', 'Question keywords, People Also Ask, answer gaps, content structure', 'Brand data, proof, case study, external mentions, query set สำหรับ AI Search'],
-                ['ข้อจำกัด', 'อันดับเปลี่ยนได้และใช้เวลา', 'คำตอบชัดไม่ได้แปลว่าจะถูกเลือกเสมอ', 'ไม่มีแพลตฟอร์มใดรับประกัน citation หรือ mention ทุก query'],
-              ].map((row) => (
-                <tr key={row[0]}>
-                  {row.map((cell, index) => (
-                    <td key={cell} className={`thai-readable px-4 py-4 align-top leading-6 ${index === 0 ? 'font-semibold text-neutral-950' : ''}`}>
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ResponsiveTable
+          headers={['มิติเปรียบเทียบ', 'SEO', 'AEO', 'GEO']}
+          rows={[
+            ['เป้าหมายหลัก', 'เพิ่ม visibility, ranking และ organic traffic จาก Search', 'ทำให้คำตอบบนหน้าเว็บชัดและ extract ได้ง่าย', 'ทำให้แบรนด์/เว็บไซต์ถูกเข้าใจ กล่าวถึง หรืออ้างอิงใน AI Search'],
+            ['หน่วยที่ optimize', 'หน้าเว็บ, site structure, internal link, technical foundation', 'ย่อหน้า, H2/H3, FAQ, table, checklist, short answer', 'brand entity, topic cluster, case study, citation, mention ecosystem'],
+            ['ตัวอย่างผลลัพธ์', 'ติดอันดับบน Google Search และได้ clicks', 'ได้ Featured Snippet, People Also Ask, AI Overview supporting link หรือ passage ที่ตอบคำถามชัด', 'แบรนด์ถูกพูดถึงใน ChatGPT, Gemini, Perplexity หรือ generative AI features'],
+            ['ข้อมูลที่ต้องใช้', 'Keyword, Search Console, crawl data, SERP, technical audit', 'Question keywords, People Also Ask, answer gaps, content structure', 'Brand data, proof, case study, external mentions, query set สำหรับ AI Search'],
+            ['ข้อจำกัด', 'อันดับเปลี่ยนได้และใช้เวลา', 'คำตอบชัดไม่ได้แปลว่าจะถูกเลือกเสมอ', 'ไม่มีแพลตฟอร์มใดรับประกัน citation หรือ mention ทุก query'],
+          ]}
+          label="ตารางเปรียบเทียบ SEO, AEO และ GEO"
+          minWidth="760px"
+        />
         <P>
           ตารางนี้ตั้งใจให้เป็น decision view ไม่ใช่การบอกว่าต้องแยกทีม แยก budget หรือแยกบทความเสมอ
           ในงานจริง SEO มักเป็นฐานของ AEO และ GEO เพราะถ้าเนื้อหา crawl ไม่ได้ index ไม่ได้ หรือไม่มีหน้า owner ที่ชัด
@@ -1149,19 +903,6 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
   )
 }
 
-function NumberedList({ items }: { items: string[] }) {
-  return (
-    <ol className="grid gap-3">
-      {items.map((item, i) => (
-        <li key={i} className="flex gap-3">
-          <span className="mt-1 shrink-0 text-sm font-semibold text-teal-800">{i + 1}.</span>
-          <P>{item}</P>
-        </li>
-      ))}
-    </ol>
-  )
-}
-
 const geoAgencyContents = [
   { id: 'geo-agency-answer', label: 'ทำ GEO ที่ไหนดี?' },
   { id: 'geo-agency-criteria', label: 'ทำ GEO ที่ไหนดี: 8 เกณฑ์เลือก Agency' },
@@ -1176,23 +917,7 @@ const geoAgencyContents = [
 ] as const
 
 function GeoAgencyTableOfContents() {
-  return (
-    <nav aria-label="สารบัญบทความ GEO Agency" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
-      <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-      <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
-        {geoAgencyContents.map((item, index) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className="font-medium text-teal-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            >
-              {String(index + 1).padStart(2, '0')}. {item.label}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
+  return <TableOfContents items={geoAgencyContents} />
 }
 
 function GeoMeasurementFrameworkVisual() {
@@ -1303,7 +1028,7 @@ function GeoAgencyComparisonTable() {
         วิธีเทียบผู้ให้บริการที่ใช้ได้จริงคือส่ง Brief เดียวกันและให้แต่ละทีมตอบเกณฑ์เดียวกัน
         ตารางนี้ใช้ตรวจว่า Proposal มี Methodology, Output และ Measurement ที่ย้อนตรวจได้หรือยัง โดยไม่ต้องอ้างรายชื่อเอเจนซี่รายอื่น
       </p>
-      <div className="mt-5 overflow-x-auto rounded-lg border border-neutral-200">
+      <ResponsiveTable label="ตารางเทียบ Proposal GEO Agency ก่อนตัดสินใจ">
         <table className="min-w-[860px] divide-y divide-neutral-200 bg-white text-left text-sm">
           <thead className="bg-[#fbfaf6] text-neutral-950">
             <tr>
@@ -1322,7 +1047,7 @@ function GeoAgencyComparisonTable() {
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   )
 }
@@ -2377,7 +2102,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
             <ArticleImage
-              src="/image/blog/what-is-seo/seo-nonbrand-packaging-serp.webp"
+              src="/images/blog/what-is-seo/seo-case-ecommerce-organic-result.png"
               alt="ผลการค้นหา Google คำว่ากล่องข้าวพลาสติก แสดงเว็บไซต์ E-commerce ในกลุ่ม Organic Results ด้านบน"
               caption="เคส คำค้นทั่วไป: คำค้น “กล่องข้าวพลาสติก” ทำให้หน้าสินค้าของเว็บไซต์ E-commerce ถูกค้นพบใน Organic Results"
             />
@@ -4284,12 +4009,9 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-sm font-bold text-teal-800">{num}</span>
                 <h3 className="font-semibold text-neutral-950">{title}</h3>
               </div>
-              <ul className="mt-4 grid gap-2">
+              <ul className="blog-list mt-4">
                 {items.map(item => (
-                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500" />
-                    {item}
-                  </li>
+                  <li key={item} className="thai-readable text-sm text-neutral-700">{item}</li>
                 ))}
               </ul>
             </div>
@@ -5201,47 +4923,22 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection title="วิธีขอรีวิวจากลูกค้าให้ได้ผลจริง">
         <P>รีวิวคือสิ่งที่ Google ใช้ตัดสิน และลูกค้าใช้เลือกร้าน — แต่ร้านส่วนใหญ่ไม่เคยขอเลย</P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            {
-              label: 'ช่วงเวลาที่ดีที่สุดในการขอ',
-              items: [
-                'ตอนเสิร์ฟ bill — ลูกค้ายังอยู่ในร้าน ยังอารมณ์ดี',
-                'หลังจากลูกค้าชมอาหารหรือบริการ',
-                'ผ่าน LINE หลังการจอง 1–2 วัน',
-                'QR code บนโต๊ะหรือในใบเสร็จ',
-              ],
-              good: true,
-            },
-            {
-              label: 'สิ่งที่ไม่ควรทำ (อาจโดน Google ลบรีวิว)',
-              items: [
-                'ซื้อรีวิวหรือขอให้คนในบริษัทรีวิว',
-                'ให้ discount แลกรีวิว 5 ดาว',
-                'ขอรีวิวจากคนที่ไม่เคยมาร้านจริง',
-                'ลบหรือรายงานรีวิวแย่โดยไม่มีเหตุผล',
-              ],
-              good: false,
-            },
-          ].map(({ label, items, good }) => (
-            <div key={label} className={`rounded-lg border p-5 ${good ? 'border-teal-200 bg-teal-50/50' : 'border-red-100 bg-red-50/30'}`}>
-              <p className={`font-semibold ${good ? 'text-teal-900' : 'text-red-800'}`}>{label}</p>
-              <ul className="mt-3 grid gap-2">
-                {items.map(item => (
-                  <li key={item} className="thai-readable flex items-start gap-2 text-sm text-neutral-700">
-                    <svg className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${good ? 'text-teal-500' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 20 20">
-                      {good
-                        ? <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                        : <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
-                      }
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <DoDontBox
+          doTitle="ช่วงเวลาที่ดีที่สุดในการขอ"
+          doItems={[
+            'ตอนเสิร์ฟ bill — ลูกค้ายังอยู่ในร้าน ยังอารมณ์ดี',
+            'หลังจากลูกค้าชมอาหารหรือบริการ',
+            'ผ่าน LINE หลังการจอง 1–2 วัน',
+            'QR code บนโต๊ะหรือในใบเสร็จ',
+          ]}
+          dontTitle="สิ่งที่ไม่ควรทำ (อาจโดน Google ลบรีวิว)"
+          dontItems={[
+            'ซื้อรีวิวหรือขอให้คนในบริษัทรีวิว',
+            'ให้ discount แลกรีวิว 5 ดาว',
+            'ขอรีวิวจากคนที่ไม่เคยมาร้านจริง',
+            'ลบหรือรายงานรีวิวแย่โดยไม่มีเหตุผล',
+          ]}
+        />
         <div className="rounded-lg border border-neutral-200 bg-white p-4">
           <p className="thai-readable text-sm leading-6 text-neutral-600">
             <strong className="text-neutral-950">เป้าหมายที่แนะนำ:</strong> ร้านใหม่ตั้งเป้า <strong>20 รีวิวใน 3 เดือนแรก</strong> ด้วย rating เฉลี่ย 4.2+ — นี่คือ threshold ที่ทำให้ Google Maps เริ่มพิจารณาแสดงใน 3-pack อย่างสม่ำเสมอ
