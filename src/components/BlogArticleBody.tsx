@@ -8867,7 +8867,8 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         <P>เรียงจากพื้นฐานของการเขียนเนื้อหาไปจนถึงการเชื่อมโยงสู่สินค้า — ไม่มีวิธีใดรับประกันการแสดงผลหรือการถูกอ้างอิงใน AI Overview</P>
         <div className="grid gap-8">
           {nineSteps.map((step) => (
-            <ArticleSubSection key={step.title} id={step.id} title={step.title}>
+            <div key={step.id} className="blog-step-group">
+              <ArticleSubSection key={step.title} id={step.id} title={step.title}>
               <P>{step.body}</P>
               <CheckList items={step.bullets} />
               <div className="rounded-lg border-l-4 border-teal-600 bg-teal-50 px-4 py-3">
@@ -8875,6 +8876,19 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
                 <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.recommendation}</p>
               </div>
             </ArticleSubSection>
+            {step.id === 'problem-to-product' ? (
+              <ArticleCTA
+                eyebrow="SEO + AI SEARCH"
+                headingTag="p"
+                headline="รับทำ SEO ที่เชื่อมการค้นหากับโอกาสทางธุรกิจ"
+                description="Saralak Search ช่วยวางกลยุทธ์ SEO และคอนเทนต์ให้ตอบ Search Intent เพิ่มการมองเห็นบน Google และเตรียมความพร้อมสำหรับ AI Search โดยเริ่มจากเป้าหมายของธุรกิจ ไม่ใช่จำนวนบทความเพียงอย่างเดียว"
+                href="/services/seo"
+                buttonText="ดูบริการรับทำ SEO"
+              >
+                <Link to="/case-studies" className="blog-cta__secondary-link">ดูตัวอย่างผลงาน</Link>
+              </ArticleCTA>
+            ) : null}
+          </div>
           ))}
         </div>
       </ArticleSection>
