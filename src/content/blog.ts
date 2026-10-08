@@ -805,27 +805,34 @@ export const spaMarketingPlanFaqs: FAQItem[] = [
 
 export const aiOverviewFaqs: FAQItem[] = [
   {
-    question: 'AI Overview คืออะไร?',
-    answer:
-      'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา โดยรวบรวมและสรุปข้อมูลที่เกี่ยวข้อง พร้อมแสดงลิงก์ไปยังแหล่งข้อมูลที่ใช้ประกอบคำตอบ',
+    question: 'AI Overview คืออะไร',
+    answer: 'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา เพื่อสรุปข้อมูลที่เกี่ยวข้องกับคำค้น และอาจแสดงลิงก์ไปยังเว็บไซต์ที่สนับสนุนคำตอบ',
   },
   {
-    question: 'ต้องเป็นคำค้นเฉพาะทางแบบมีแบรนด์เท่านั้นถึงจะติด AI Overview ได้ไหม?',
-    answer:
-      'ไม่จำเป็น AI Overview สามารถแสดงบนคำค้นแบบ Non-brand เช่น "ขายอะไรดีตลาดนัด" ได้ โดยไม่จำเป็นต้องเป็นคำค้นที่มีชื่อแบรนด์',
+    question: 'Google AI Overview ใช้งานฟรีไหม',
+    answer: 'AI Overview เป็นฟีเจอร์ที่อาจปรากฏใน Google Search สำหรับผู้ใช้ที่อยู่ในพื้นที่ ภาษา และเงื่อนไขที่รองรับ โดยการแสดงผลขึ้นอยู่กับระบบของ Google ไม่ใช่บริการซื้อพื้นที่แสดงคำตอบ',
   },
   {
-    question: 'ทำ AI Overview แล้วรับประกันติดไหม?',
-    answer:
-      'ไม่มีวิธีรับประกันว่าเว็บไซต์จะถูกอ้างอิงใน AI Overview เพราะ Google เป็นผู้ตัดสินใจว่าจะแสดง AI Overview สำหรับคำค้นใดและเลือกแหล่งข้อมูลใดมาใช้ สิ่งที่ทำได้คือสร้างเนื้อหาที่ตอบ Search Intent ชัดเจน มีข้อมูลที่ตรวจสอบได้ โครงสร้างอ่านง่าย และทำ Technical SEO ให้ Search Engine เข้าถึงเนื้อหาได้ตามปกติ',
+    question: 'AI Overview กับ Google AI Mode เหมือนกันไหม',
+    answer: 'ไม่เหมือนกัน AI Overview เป็นคำตอบสรุปบนหน้าผลการค้นหาปกติ ส่วน AI Mode เป็นประสบการณ์ค้นหาด้วย AI ที่รองรับการถามต่อและการสำรวจหัวข้อซับซ้อน',
   },
   {
-    question: 'AI Overview กับ Featured Snippet ต่างกันอย่างไร?',
-    answer:
-      'Featured Snippet ดึงข้อความจากเว็บไซต์เดียวมาแสดงเป็นคำตอบ ส่วน AI Overview ใช้ AI สรุปและรวมข้อมูลจากหลายเว็บไซต์เข้าด้วยกัน มักมีความยาวและความซับซ้อนมากกว่า และสามารถอ้างอิงแหล่งที่มาได้มากกว่าหนึ่งเว็บไซต์ในคำตอบเดียว',
+    question: 'AI Overview กับ Featured Snippet ต่างกันอย่างไร',
+    answer: 'Featured Snippet นำข้อความจากหน้าเว็บที่ Google เลือกมาแสดงเป็นคำตอบเด่น ส่วน AI Overview ใช้โมเดล AI สังเคราะห์คำตอบและอาจมีหลายแหล่งข้อมูลประกอบ',
+  },
+  {
+    question: 'เว็บไซต์ต้องอยู่อันดับ 1 ถึงจะถูกอ้างอิงใน AI Overview หรือไม่',
+    answer: 'Google ไม่ได้ระบุข้อกำหนดว่าต้องอยู่อันดับ 1 แต่หน้าที่มีสิทธิเป็นลิงก์สนับสนุนต้องได้รับการจัดทำดัชนีและมีสิทธิแสดง Snippet ตามข้อกำหนด Search การถูกเลือกเป็น Citation ขึ้นอยู่กับระบบ Google',
+  },
+  {
+    question: 'ทำ SEO อย่างไรให้มีโอกาสปรากฏใน AI Overview',
+    answer: 'เริ่มจาก Technical SEO, เนื้อหาที่มีประโยชน์และตรวจสอบได้, การตอบ Search Intent ชัดเจน, Internal Links และ Page Experience ไม่มีวิธีที่รับประกันการแสดงผล หรือ Schema พิเศษที่ต้องติดตั้งสำหรับ AI Overview',
+  },
+  {
+    question: 'AI Overview ส่งผลให้เว็บไซต์ Traffic ลดลงเสมอหรือไม่',
+    answer: 'ไม่จำเป็น ผลขึ้นอยู่กับประเภทคำค้น พฤติกรรมผู้ค้น และลักษณะเนื้อหา ควรดู Clicks, Impressions, Engagement และ Conversion จากข้อมูลของเว็บไซต์เองก่อนสรุปผล',
   },
 ]
-
 export const blogPosts: BlogPost[] = [
   {
     title: 'ทำเว็บด้วย Claude ยังไงให้มีคนเข้า',
@@ -1724,26 +1731,27 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AI Overview คืออะไร? 9 วิธีเตรียม Content ให้พร้อมสำหรับ AI Overview พร้อม Case Study จริง',
+    title: 'AI Overview คืออะไร? ทำงานอย่างไร ต่างจาก AI Mode อย่างไร',
     slug: 'what-is-ai-overview',
     category: 'AEO',
     excerpt:
-      'AI Overview คือคำตอบที่ Google สร้างด้วย AI บนหน้าผลการค้นหา บทความนี้สรุป 9 แนวทางที่ช่วยเตรียม Content ให้เหมาะกับ Search และ AI-generated answers พร้อม Case Study จริงจาก Saralak Search',
-    readingTime: '12 min read',
+      'AI Overview คือระบบสรุปคำตอบด้วย AI บน Google Search เรียนรู้วิธีทำงาน ความต่างจาก AI Mode และ Featured Snippet พร้อมแนวทาง SEO และเคสจริง',
+    readingTime: '15 min read',
     publishedDate: '2026-09-15',
-    lastModifiedDate: '2026-09-18',
+    lastModifiedDate: '2026-10-08',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     ogImage: '/image/blog/what-is-ai-overview/what-is-ai-overview-case.png',
-    metaTitle: 'AI Overview คืออะไร? 9 เทคนิคและ Case Study | Saralak Search',
+    metaTitle: 'AI Overview คืออะไร? ทำงานอย่างไร ต่างจาก AI Mode | Saralak Search',
     metaDescription:
-      'AI Overview คืออะไร และวิธีทำให้เว็บไซต์พร้อมสำหรับ AI Overview ด้วย 9 แนวทาง พร้อม Case Study จริงจาก Saralak Search บนคำค้น Non-brand "ขายอะไรดีตลาดนัด"',
+      'AI Overview คือระบบสรุปคำตอบด้วย AI บน Google Search เรียนรู้วิธีทำงาน ความต่างจาก AI Mode และ Featured Snippet พร้อมแนวทาง SEO และเคสจริง',
     aiSummary: [
-      'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา พร้อมลิงก์ไปยังแหล่งข้อมูลที่ใช้ประกอบคำตอบ',
-      'AI Overview สามารถแสดงบนคำค้นแบบ Non-brand ได้ ไม่จำเป็นต้องเป็นคำค้นที่มีชื่อแบรนด์',
-      'บทความของลูกค้า Saralak Search ถูก Google AI Overview อ้างอิงบนคำค้น "ขายอะไรดีตลาดนัด" และ Packaging Solution ของแบรนด์ถูกนำไปประกอบคำตอบ',
-      '9 แนวทางเตรียม Content สำหรับ AI Overview ครอบคลุมตั้งแต่การตอบคำถามให้จบ การใช้ Entity และตัวเลขที่เจาะจง ไปจนถึงการเชื่อมปัญหาสู่สินค้าอย่างมีเหตุผล',
+      'AI Overview คือฟีเจอร์ใน Google Search ที่ใช้ Generative AI สร้างคำตอบภาพรวมจากข้อมูลที่เกี่ยวข้องกับคำค้น พร้อมลิงก์เว็บไซต์ให้เข้าไปอ่านต่อ',
+      'AI Overview ไม่ได้ปรากฏทุกคำค้น และแหล่งข้อมูลที่แสดงอาจต่างกันตามคำค้น เวลา ประเทศ และบริบท',
+      'AI Overview ต่างจาก AI Mode ซึ่งรองรับการค้นหาเชิงสนทนา และต่างจาก Featured Snippet ซึ่งนำข้อความจากหน้าเว็บมาแสดงเด่น',
+      'SEO ยังเป็นพื้นฐานสำคัญ และ Google ระบุว่าไม่มี Schema พิเศษหรือไฟล์ AI พิเศษที่รับประกันการปรากฏใน AI Overview',
+      'การวัดผลควรแยก Visibility, Traffic และ Business Impact เพราะการถูกอ้างอิงไม่ได้แปลว่าจะได้ Click หรือ Conversion เสมอไป',
     ],
     faqs: aiOverviewFaqs,
     bodyVariant: 'what-is-ai-overview',
@@ -1754,7 +1762,6 @@ export const blogPosts: BlogPost[] = [
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
-  },
 ]
 
 export function getBlogPostBySlug(slug: string) {
