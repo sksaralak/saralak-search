@@ -547,3 +547,65 @@ h1, h2, h3, h4, h5, h6 {
 .animate-pulse-dot {
   animation: pulse-dot 1.8s ease-in-out infinite;
 }
+
+/* Reusable blog recommendation and contact CTA styles */
+.blog-recommendation {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #0d9488;
+  border-radius: 0.5rem;
+  background: #f0fdfa;
+}
+.blog-prose .blog-recommendation__label {
+  margin: 0;
+  color: #115e59;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+.blog-prose .blog-recommendation__text {
+  margin: 0.25rem 0 0;
+  color: #134e4a;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.blog-contact-cta {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: #042f2e;
+  color: #fff;
+}
+.blog-prose .blog-contact-cta__eyebrow {
+  margin: 0;
+  color: #5eead4;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.blog-prose .blog-contact-cta__title {
+  margin: 0.5rem 0 0;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.blog-prose .blog-contact-cta__description {
+  margin: 0.75rem 0 0;
+  color: #f0fdfa;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.blog-contact-cta__body { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; margin-top: 1.25rem; }
+.blog-contact-cta__qr { width: 7rem; height: 7rem; flex-shrink: 0; padding: 0.5rem; border-radius: 0.5rem; background: #fff; }
+.blog-contact-cta__actions { display: flex; flex-direction: column; gap: 0.75rem; }
+.blog-contact-cta__link { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; text-align: center; text-decoration: none; }
+.blog-contact-cta__link--primary { background: #fff; color: #115e59; }
+.blog-contact-cta__link--primary:hover { background: #f0fdfa; }
+.blog-contact-cta__link--outline { border: 1px solid #0d9488; color: #fff; }
+.blog-contact-cta__link--outline:hover { background: #0f766e; }
+@media (min-width: 640px) {
+  .blog-contact-cta { padding: 2rem; }
+  .blog-prose .blog-contact-cta__title { font-size: 1.5rem; }
+  .blog-contact-cta__body, .blog-contact-cta__actions { flex-direction: row; }
+}
