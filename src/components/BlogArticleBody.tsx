@@ -8871,9 +8871,9 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
               <ArticleSubSection key={step.title} id={step.id} title={step.title}>
               <P>{step.body}</P>
               <CheckList items={step.bullets} />
-              <div className="rounded-lg border-l-4 border-teal-600 bg-teal-50 px-4 py-3">
-                <p className="text-xs font-bold uppercase tracking-wide text-teal-800">Saralak Search แนะนำ</p>
-                <p className="thai-readable mt-1 text-sm leading-6 text-teal-900">{step.recommendation}</p>
+              <div className="blog-recommendation">
+                <p className="blog-recommendation__label">Saralak Search แนะนำ</p>
+                <p className="blog-recommendation__text">{step.recommendation}</p>
               </div>
             </ArticleSubSection>
             {step.id === 'problem-to-product' ? (
@@ -8950,19 +8950,18 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <div className="rounded-xl bg-teal-950 p-6 sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">บริการจาก Saralak Search</p>
-        <h3 className="mt-2 text-xl font-semibold leading-snug text-white sm:text-2xl">วาง Search Strategy ให้ Content ตอบทั้ง Google Search และ AI Search</h3>
-        <p className="thai-readable mt-3 text-sm leading-7 text-teal-100 sm:text-base">การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยตรวจว่า Content, Technical SEO และเส้นทางจาก Search Intent ไปสู่ Business Context ควรปรับตรงไหนก่อน</p>
-        <div className="mt-5 flex flex-col items-center gap-5 sm:flex-row">
-          <img src="/image/icon/line-qr-sariahihi.png" alt="สแกน QR Code เพื่อแอด LINE ปรึกษา Saralak Search" width="112" height="112" className="h-28 w-28 shrink-0 rounded-lg bg-white p-2" />
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a href={brand.lineUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-teal-800 transition hover:bg-teal-50">ทักผ่าน LINE: {brand.line.replace('LINE: ', '')}</a>
-            <a href={brand.phoneUrl} className="inline-flex items-center justify-center rounded-lg border border-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-700">โทร {brand.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}</a>
+      <aside className="blog-contact-cta">
+        <p className="blog-contact-cta__eyebrow">บริการจาก Saralak Search</p>
+        <h3 className="blog-contact-cta__title">วาง Search Strategy ให้ Content ตอบทั้ง Google Search และ AI Search</h3>
+        <p className="blog-contact-cta__description">การวิเคราะห์เว็บไซต์และวาง Roadmap ช่วยตรวจว่า Content, Technical SEO และเส้นทางจาก Search Intent ไปสู่ Business Context ควรปรับตรงไหนก่อน</p>
+        <div className="blog-contact-cta__body">
+          <img src="/image/icon/line-qr-sariahihi.png" alt="สแกน QR Code เพื่อแอด LINE ปรึกษา Saralak Search" width="112" height="112" className="blog-contact-cta__qr" />
+          <div className="blog-contact-cta__actions">
+            <a href={brand.lineUrl} target="_blank" rel="noopener noreferrer" className="blog-contact-cta__link blog-contact-cta__link--primary">ทักผ่าน LINE: {brand.line.replace('LINE: ', '')}</a>
+            <a href={brand.phoneUrl} className="blog-contact-cta__link blog-contact-cta__link--outline">โทร {brand.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}</a>
           </div>
         </div>
-      </div>
-
+      </aside>
       <ArticleSection id="business-impact" title="ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น">
         <P>
           คำถามหนึ่งที่มักเกิดขึ้นเมื่อวางกลยุทธ์ GEO คือ ต้องเริ่มจากคีย์เวิร์ดที่เกี่ยวกับแบรนด์หรือสินค้าหรือไม่
