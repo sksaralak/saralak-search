@@ -15,8 +15,8 @@ export default function Contact() {
   return (
     <main>
       <SEO
-        title="ติดต่อ Saralak Search | Discovery Audit และ SEO Consulting"
-        description="ติดต่อ Saralak Search ผ่าน LINE สำหรับ Discovery Audit, Search Growth Retainer, SEO, Google Maps หรือ Monthly SEO Advisor"
+        title="ติดต่อ Saralak Search | SEO, GEO และ Search Consulting"
+        description="ติดต่อ Saralak Search ผ่าน LINE สำหรับบริการ SEO, GEO, Local SEO, Google Maps, Content Marketing หรือ Monthly SEO Advisor"
         path="/contact"
         image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
@@ -57,8 +57,8 @@ export default function Contact() {
             คุยเรื่อง Search Visibility ของเว็บไซต์คุณ
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ยังไม่รู้ว่าปัญหาอยู่ที่ SEO, Google Maps หรือ AI Search? เริ่มจาก Discovery Audit —
-            ส่ง URL เว็บไซต์มาและเล่าให้ฟังว่าธุรกิจทำอะไรและอยากได้อะไรจาก Search
+            ยังไม่รู้ว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search? ส่ง URL เว็บไซต์มาและเล่าให้ฟังว่า
+            ธุรกิจทำอะไรและอยากได้อะไรจาก Search แล้วเราจะช่วยแนะนำบริการที่เหมาะ
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function Contact() {
               'งบประมาณคร่าวๆ ถ้าสะดวกแจ้ง',
             ].map((item) => (
               <div key={item} className="flex items-start gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700">
-                <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                 <span className="thai-readable">{item}</span>
               </div>
             ))}

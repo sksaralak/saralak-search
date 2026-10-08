@@ -207,12 +207,10 @@ export default function ServiceLocalSEO() {
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CTAButton to="/contact">ดูแผน Local SEO</CTAButton>
-              <CTAButton to="/contact" variant="secondary">ขอ Google Maps Quick Check</CTAButton>
+              <CTAButton to="/services/google-maps" variant="secondary">ดูบริการ Google Maps</CTAButton>
             </div>
             <p className="mt-3 text-xs leading-5 text-neutral-500">
-              Google Maps Quick Check คือการดูภาพรวม GBP เบื้องต้นฟรี ·{' '}
-              <a href="/discovery-audit" className="underline hover:text-teal-300">Discovery Audit</a>
-              {' '}คือการวิเคราะห์เต็มรูปแบบ เริ่มต้น 5,000 THB
+              เลือก Local SEO สำหรับการมองเห็นทั้ง Search และ Maps หรือดูบริการ Google Maps สำหรับการดูแล Profile โดยตรง
             </p>
           </div>
         </div>
@@ -291,7 +289,7 @@ export default function ServiceLocalSEO() {
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact">ปรึกษา Local SEO</CTAButton>
             </div>
           </div>
         </div>
@@ -341,7 +339,7 @@ export default function ServiceLocalSEO() {
                 <ul className="mt-4 grid gap-2.5">
                   {items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                       <span className="thai-readable">{item}</span>
                     </li>
                   ))}
@@ -398,49 +396,49 @@ export default function ServiceLocalSEO() {
               to="/blog/local-seo-customer-intent"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               ลูกค้าใกล้ฉันรอคุณอยู่ — ทำไม [บริการ+ย่าน] คือ Search ที่พร้อมซื้อที่สุด
             </Link>
             <Link
               to="/blog/increase-sale-restaurant"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายร้านอาหารด้วย Google
             </Link>
             <Link
               to="/blog/increase-sale-massage-spa"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายร้านนวดและสปาด้วย Google Maps
             </Link>
             <Link
               to="/blog/increase-sale-pet-grooming"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายร้านอาบน้ำตัดขนสุนัขด้วย Google Maps
             </Link>
             <Link
               to="/blog/increase-sale-pet-shop"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายร้านขายสัตว์เลี้ยงด้วย Google Maps
             </Link>
             <Link
               to="/blog/increase-sale-pet-hospital"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายโรงพยาบาลสัตว์ด้วย Google Maps
             </Link>
             <Link
               to="/blog/increase-sale-pet-hotel"
               className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
             >
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               เพิ่มยอดขายโรงแรมสัตว์เลี้ยงด้วย Google Maps
             </Link>
           </div>
@@ -455,8 +453,7 @@ export default function ServiceLocalSEO() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold">ลูกค้าในย่านคุณกำลังหาคู่แข่งอยู่</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-teal-100">
-            เริ่มจาก Discovery Audit เพื่อดูว่า Google Maps มองเห็น Profile ของคุณอย่างไร
-            และ Local SEO ช่วยดึงลูกค้าในย่านได้แค่ไหน
+            คุยกับทีมเพื่อวางแผนให้ Google Maps และ Local Search ช่วยดึงลูกค้าในย่านได้มากขึ้น
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-teal-100">
             {[
@@ -465,14 +462,14 @@ export default function ServiceLocalSEO() {
               'มี Citation ที่ผิดพลาดทำให้ Google สับสนไหม',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 text-teal-400">→</span>
+                <span className="mt-0.5 shrink-0 text-teal-400">•</span>
                 <span className="thai-readable text-sm">{item}</span>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CTAButton to="/contact">ตรวจโอกาสบน Google Maps และ Local Search</CTAButton>
-            <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+            <CTAButton to="/contact">ปรึกษา Local SEO</CTAButton>
+            <CTAButton to="/services/google-maps" variant="secondary">ดูบริการ Google Maps</CTAButton>
           </div>
         </div>
       </section>

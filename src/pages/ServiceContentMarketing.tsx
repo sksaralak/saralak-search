@@ -311,7 +311,7 @@ export default function ServiceContentMarketing() {
                     <ul className="grid gap-2.5">
                       {tier.features.map((f) => (
                         <li key={f} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                          <span className={`mt-0.5 shrink-0 font-bold ${tier.color.arrow}`}>→</span>
+                          <span className={`mt-0.5 shrink-0 font-bold ${tier.color.arrow}`}>•</span>
                           <span className="thai-readable">{f}</span>
                         </li>
                       ))}
@@ -348,7 +348,7 @@ export default function ServiceContentMarketing() {
                 <ul className="mt-4 grid gap-2">
                   {items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
-                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                       <span className="thai-readable">{item}</span>
                     </li>
                   ))}
@@ -432,7 +432,7 @@ export default function ServiceContentMarketing() {
               <p className="text-lg font-semibold text-white">ทุกเดือนที่รอ คือ Traffic ที่คู่แข่งได้ไปฟรีๆ</p>
               <p className="thai-readable mt-1 text-sm text-teal-200">บทความที่ดีสะสม Traffic ไปเรื่อยๆ ยิ่งเริ่มเร็ว ยิ่งได้เปรียบ</p>
             </div>
-            <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+            <CTAButton to="/contact" variant="secondary">ปรึกษา Content Strategy</CTAButton>
           </div>
         </div>
       </section>
@@ -452,7 +452,7 @@ export default function ServiceContentMarketing() {
                 to={to}
                 className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
               >
-                <span className="shrink-0 text-teal-500">→</span>
+                <span className="shrink-0 text-teal-500">•</span>
                 <span className="thai-readable">{label}</span>
               </Link>
             ))}
@@ -465,7 +465,7 @@ export default function ServiceContentMarketing() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold">ยังไม่รู้ว่าควรเขียนบทความเรื่องอะไร?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-teal-100">
-            เริ่มจาก Discovery Audit เพื่อดูว่า keyword ไหนที่ลูกค้ากำลังค้นหา และ content gap ที่ทำให้เว็บไซต์ยังไม่ได้ traffic ที่ควรได้
+            คุยกับทีมเพื่อวาง Keyword Strategy และหา Content Gap ที่ทำให้เว็บไซต์ยังไม่ได้ Traffic ที่ควรได้
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-teal-100">
             {[
@@ -474,7 +474,7 @@ export default function ServiceContentMarketing() {
               'บทความทุกชิ้น Structured ให้ AI อ้างอิงได้ทันที',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 text-teal-400">→</span>
+                <span className="mt-0.5 shrink-0 text-teal-400">•</span>
                 <span className="thai-readable text-sm">{item}</span>
               </li>
             ))}

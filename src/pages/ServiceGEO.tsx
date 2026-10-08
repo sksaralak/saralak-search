@@ -174,7 +174,7 @@ function AIBrandScan() {
         </div>
         <div className="mt-6 border-t border-neutral-800 pt-5">
           <p className="font-mono text-xs text-neutral-600">Result: 3 platforms have visibility gaps</p>
-          <p className="mt-2 font-mono text-xs text-teal-400">→ GEO Add-on เพิ่มโอกาสให้แบรนด์ถูกพบใน AI Search</p>
+          <p className="mt-2 font-mono text-xs text-teal-400">• GEO Add-on เพิ่มโอกาสให้แบรนด์ถูกพบใน AI Search</p>
         </div>
       </div>
     </div>
@@ -335,7 +335,7 @@ export default function ServiceGEO() {
               <p className="text-sm font-semibold uppercase tracking-wide text-violet-600">ผลลัพธ์จริง</p>
               <h2 className="mt-1 text-3xl font-semibold text-neutral-950">Case Studies จากงานจริง</h2>
             </div>
-            <Link to="/case-studies" className="shrink-0 text-sm font-semibold text-violet-600 hover:underline">ดูทั้งหมด →</Link>
+            <Link to="/case-studies" className="shrink-0 text-sm font-semibold text-violet-600 hover:underline">ดูทั้งหมด</Link>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {caseStudies
@@ -358,7 +358,7 @@ export default function ServiceGEO() {
                     <ul className="mt-2 grid gap-1.5">
                       {study.card.results.map(r => (
                         <li key={r} className="flex items-start gap-2 text-sm text-neutral-700">
-                          <span className="mt-0.5 shrink-0 font-bold text-violet-500">→</span>
+                          <span className="mt-0.5 shrink-0 font-bold text-violet-500">•</span>
                           <span className="thai-readable">{r}</span>
                         </li>
                       ))}
@@ -382,7 +382,7 @@ export default function ServiceGEO() {
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact" variant="secondary">ปรึกษา GEO &amp; AI Search</CTAButton>
             </div>
           </div>
         </div>
@@ -432,7 +432,7 @@ export default function ServiceGEO() {
                 <ul className="mt-4 grid gap-2.5">
                   {items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                       <span className="thai-readable">{item}</span>
                     </li>
                   ))}
@@ -495,7 +495,7 @@ export default function ServiceGEO() {
                 <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-bold ${item.badge}`}>{item.label}</span>
                 <p className="mt-3 font-semibold text-neutral-950">{item.goal}</p>
                 <p className="mt-1 text-xs text-neutral-500">วิธี: {item.how}</p>
-                <p className="mt-3 text-sm font-semibold text-neutral-700">→ {item.result}</p>
+                <p className="mt-3 text-sm font-semibold text-neutral-700">• {item.result}</p>
               </div>
             ))}
           </div>
@@ -514,11 +514,11 @@ export default function ServiceGEO() {
           <p className="text-sm font-semibold uppercase tracking-wide text-neutral-400">อ่านเพิ่มเติม</p>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
             <Link to="/blog/what-is-geo" className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md">
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               GEO คืออะไร และทำงานอย่างไร
             </Link>
             <Link to="/blog/seo-geo-aeo" className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md">
-              <span className="text-teal-500">→</span>
+              <span className="text-teal-500">•</span>
               SEO, AEO และ GEO ต่างกันอย่างไร
             </Link>
           </div>
@@ -533,8 +533,7 @@ export default function ServiceGEO() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-semibold">อยากรู้ว่าแบรนด์ปรากฏบน AI Search อย่างไร?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-neutral-400">
-            เริ่มจาก Discovery Audit เพื่อดูว่า ChatGPT, Gemini และ AI Overview
-            กล่าวถึง อ้างอิง หรือไม่พบแบรนด์ในคำถามสำคัญอย่างไร
+            คุยกับทีมเพื่อวางแผนให้แบรนด์มีโอกาสถูกกล่าวถึงหรืออ้างอิงใน ChatGPT, Gemini และ AI Overview
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-neutral-300">
             {[
@@ -543,18 +542,18 @@ export default function ServiceGEO() {
               'ต้องปรับข้อมูลแบรนด์ Entity หรือ Search Foundation จุดไหนบ้าง',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 text-teal-400">→</span>
+                <span className="mt-0.5 shrink-0 text-teal-400">•</span>
                 <span className="thai-readable text-sm">{item}</span>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CTAButton to="/contact">ตรวจ AI Visibility เบื้องต้น</CTAButton>
+            <CTAButton to="/contact">ปรึกษา GEO &amp; AI Search</CTAButton>
             <Link
-              to="/discovery-audit"
+              to="/case-studies"
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              เริ่ม Discovery Audit
+              ดู Case Studies
             </Link>
           </div>
         </div>

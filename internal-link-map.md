@@ -19,11 +19,11 @@ Preferred flow:
 
 ```text
 Current Question
-→ Pillar / Definition
-→ Related / Next Intent
-→ Relevant Service
-→ Proof
-→ Conversion
+• Pillar / Definition
+• Related / Next Intent
+• Relevant Service
+• Proof
+• Conversion
 ```
 
 ---
@@ -34,7 +34,7 @@ Old rule:
 
 ```text
 บริการ SEO GEO AEO
-→ /services
+• /services
 ```
 
 Do not use this as the default anymore.
@@ -43,19 +43,19 @@ Use the most relevant commercial LDP instead.
 
 ```text
 SEO
-→ /services/seo
+• /services/seo
 
 GEO / AI Search
-→ /services/geo
+• /services/geo
 
 Local SEO
-→ /services/local-seo
+• /services/local-seo
 
 Google Maps
-→ /services/google-maps
+• /services/google-maps
 
 SEO Content / Content Strategy
-→ /services/content-marketing
+• /services/content-marketing
 ```
 
 Use `/services` only when the page discusses multiple services or broad Search Visibility.
@@ -74,72 +74,72 @@ Do not force exact match on every link.
 
 ```text
 SEO คืออะไร
-→ /blog/what-is-seo
+• /blog/what-is-seo
 
 GEO คืออะไร
-→ /blog/what-is-geo
+• /blog/what-is-geo
 
 AEO คืออะไร
-→ /blog/what-is-aeo
+• /blog/what-is-aeo
 
 AI Overview คืออะไร
-→ /blog/what-is-ai-overview
+• /blog/what-is-ai-overview
 
 SEO GEO AEO ต่างกันอย่างไร
-→ /blog/seo-geo-aeo
+• /blog/seo-geo-aeo
 
 วิธีทำ GEO
-→ /blog/how-to-do-geo
+• /blog/how-to-do-geo
 
 GEO Checklist
-→ /blog/geo-checklist-thailand
+• /blog/geo-checklist-thailand
 
 ทำ GEO ที่ไหนดี
-→ /blog/geo-agency-thailand
+• /blog/geo-agency-thailand
 
 llms.txt คืออะไร
-→ /blog/llms-txt-thailand
+• /blog/llms-txt-thailand
 
 AI ทำเว็บได้ไหม / สร้างเว็บไซต์ด้วย AI ให้พร้อม SEO
-→ /blog/ai-website-seo
+• /blog/ai-website-seo
 
 AEO Checklist
-→ /blog/aeo-checklist
+• /blog/aeo-checklist
 ```
 
 ### Commercial pages
 
 ```text
 บริการ SEO
-→ /services/seo
+• /services/seo
 
 รับทำ GEO
-→ /services/geo
+• /services/geo
 
 Local SEO
-→ /services/local-seo
+• /services/local-seo
 
 Google Maps SEO
-→ /services/google-maps
+• /services/google-maps
 
 SEO Content
-→ /services/content-marketing
+• /services/content-marketing
 ```
 
 ### Proof / conversion
 
 ```text
-ตรวจสอบเว็บไซต์ฟรี
-→ /discovery-audit
+ปรึกษาเรื่อง SEO, GEO หรือ Local Search
+• /contact
 
 SEO Case Studies
-→ /case-studies
+• /case-studies
 
 ติดต่อ Saralak Search
-→ /contact
+• /contact
 
 Saralak Search
-→ /
+• /
 ```
 
 ---
@@ -196,28 +196,28 @@ Other pages should link to them instead of competing for the same intent.
 
 ```text
 "SEO คืออะไร"
-Owner → /blog/what-is-seo
+Owner • /blog/what-is-seo
 
 "GEO คืออะไร"
-Owner → /blog/what-is-geo
+Owner • /blog/what-is-geo
 
 "AEO คืออะไร"
-Owner → /blog/what-is-aeo
+Owner • /blog/what-is-aeo
 
 "AI Overview คืออะไร"
-Owner → /blog/what-is-ai-overview
+Owner • /blog/what-is-ai-overview
 
 "วิธีทำ GEO"
-Owner → /blog/how-to-do-geo
+Owner • /blog/how-to-do-geo
 
 "GEO Checklist"
-Owner → /blog/geo-checklist-thailand
+Owner • /blog/geo-checklist-thailand
 
 "Local SEO"
-Owner → /blog/local-seo-customer-intent
+Owner • /blog/local-seo-customer-intent
 
 "เพิ่มยอดขาย Google Maps"
-Owner → /blog/increase-sale-google-maps
+Owner • /blog/increase-sale-google-maps
 ```
 
 Do not create another page targeting the same main intent unless the intent is clearly different.
@@ -232,19 +232,19 @@ Examples:
 
 ```text
 SEO article
-→ /services/seo
+• /services/seo
 
 GEO / AI Search article
-→ /services/geo
+• /services/geo
 
 Local SEO article
-→ /services/local-seo
+• /services/local-seo
 
 Google Maps article
-→ /services/google-maps
+• /services/google-maps
 
 Content Strategy article
-→ /services/content-marketing
+• /services/content-marketing
 ```
 
 Do not link to multiple service pages unless more than one service is genuinely relevant.
@@ -261,13 +261,13 @@ Guideline:
 
 ```text
 Short article
-→ 3–5 contextual links
+• 3–5 contextual links
 
 Standard article
-→ 4–8 contextual links
+• 4–8 contextual links
 
 Long-form / Pillar article
-→ 6–12 contextual links if genuinely useful
+• 6–12 contextual links if genuinely useful
 ```
 
 Do not add links just to hit a number.
@@ -280,22 +280,22 @@ Important pillars:
 
 ```text
 SEO
-→ /blog/what-is-seo
+• /blog/what-is-seo
 
 GEO
-→ /blog/what-is-geo
+• /blog/what-is-geo
 
 AEO
-→ /blog/what-is-aeo
+• /blog/what-is-aeo
 
 Local SEO
-→ /blog/local-seo-customer-intent
+• /blog/local-seo-customer-intent
 
 Google Maps
-→ /blog/increase-sale-google-maps
+• /blog/increase-sale-google-maps
 
 Online Sales
-→ /blog/increase-online-sales
+• /blog/increase-online-sales
 ```
 
 Supporting articles should normally link back to the relevant pillar when contextually useful.
@@ -337,25 +337,25 @@ Each link should have a role.
 
 ```text
 PARENT
-→ link supporting page to pillar
+• link supporting page to pillar
 
 CHILD / DEEP DIVE
-→ link broad topic to detailed article
+• link broad topic to detailed article
 
 RELATED
-→ connect closely related concepts
+• connect closely related concepts
 
 NEXT STEP
-→ move reader to implementation
+• move reader to implementation
 
 COMMERCIAL
-→ relevant service page
+• relevant service page
 
 PROOF
-→ /case-studies
+• /case-studies
 
 CONVERSION
-→ /discovery-audit or /contact
+• relevant service page or /contact
 ```
 
 ---
@@ -372,38 +372,38 @@ Preferred internal links:
 
 ```text
 "AEO คืออะไร"
-→ /blog/what-is-aeo
+• /blog/what-is-aeo
 
 "AEO Checklist"
-→ /blog/aeo-checklist
+• /blog/aeo-checklist
 
 "GEO คืออะไร"
-→ /blog/what-is-geo
+• /blog/what-is-geo
 
 "วิธีทำ GEO"
-→ /blog/how-to-do-geo
+• /blog/how-to-do-geo
 
 "รับทำ GEO"
-→ /services/geo
+• /services/geo
 
 "SEO Case Studies"
 or
 "ดูผลลัพธ์จริง"
-→ /case-studies
+• /case-studies
 ```
 
 Primary commercial destination:
 
 ```text
 รับทำ GEO
-→ /services/geo
+• /services/geo
 ```
 
 Do not use:
 
 ```text
 บริการ SEO GEO AEO
-→ /services
+• /services
 ```
 
 as the main commercial link on this page.
@@ -416,22 +416,22 @@ For SEO-focused articles:
 
 ```text
 "SEO คืออะไร"
-→ /blog/what-is-seo
+• /blog/what-is-seo
 
 "เพิ่ม Traffic" / "เพิ่ม Traffic SEO" / "วิธีเพิ่มคนเข้าเว็บไซต์"
-→ /blog/increase-seo-traffic
+• /blog/increase-seo-traffic
 
 "เช็ค Traffic Website ฟรี" / "เช็ค Traffic เว็บไซต์"
-→ /blog/check-website-traffic-free
+• /blog/check-website-traffic-free
 
 "Organic Traffic" / "ทำ SEO แล้ว Traffic ไม่โต"
-→ /blog/seo-not-working
+• /blog/seo-not-working
 
 "บริการ SEO"
-→ /services/seo
+• /services/seo
 
 "SEO Case Studies"
-→ /case-studies
+• /case-studies
 ```
 
 ---
@@ -442,18 +442,18 @@ For local business content:
 
 ```text
 "Local SEO"
-→ /blog/local-seo-customer-intent
+• /blog/local-seo-customer-intent
 
 "เพิ่มยอดขาย Google Maps"
-→ /blog/increase-sale-google-maps
+• /blog/increase-sale-google-maps
 
 "บริการ Local SEO"
 or
 "Local SEO"
-→ /services/local-seo
+• /services/local-seo
 
 "Google Maps SEO"
-→ /services/google-maps
+• /services/google-maps
 ```
 
 Do not force GEO or AEO links unless the section genuinely discusses them.
@@ -466,7 +466,7 @@ When discussing SEO Content, Topic Clusters, Content Strategy, or Content Produc
 
 ```text
 "SEO Content"
-→ /services/content-marketing
+• /services/content-marketing
 ```
 
 Possible variations:
@@ -512,15 +512,20 @@ Do not force Case Study links into basic definitions.
 
 ---
 
-## 16. Discovery Audit rule
+## 16. Commercial CTA rule
 
-Use:
+Use the service route that matches the page intent:
 
 ```text
-/discovery-audit
+/services/seo
+/services/geo
+/services/local-seo
+/services/google-maps
+/services/content-marketing
+/contact
 ```
 
-for diagnostic intent.
+Use `/contact` when the reader needs help choosing a service or wants to discuss a project.
 
 Good sources:
 
@@ -530,16 +535,17 @@ geo-agency-thailand
 services pages
 ```
 
-Preferred anchors:
+Preferred anchors should describe the actual service or conversation:
 
 ```text
-ตรวจสอบเว็บไซต์ฟรี
-Discovery Audit
-วิเคราะห์เว็บไซต์
-เช็ก Search Visibility
+บริการ SEO
+บริการ GEO และ AI Search
+บริการ Local SEO
+บริการ Google Maps
+ปรึกษาทีม Saralak Search
 ```
 
-Do not add this to every informational article.
+Do not create a standalone audit offer or add the same conversion CTA to every informational article.
 
 ---
 
@@ -636,34 +642,34 @@ If auditing the whole site, prioritize these first:
 
 ```text
 GEO คืออะไร
-→ /blog/what-is-geo
+• /blog/what-is-geo
 
 SEO คืออะไร
-→ /blog/what-is-seo
+• /blog/what-is-seo
 
 AEO คืออะไร
-→ /blog/what-is-aeo
+• /blog/what-is-aeo
 
 AI Overview คืออะไร
-→ /blog/what-is-ai-overview
+• /blog/what-is-ai-overview
 
 วิธีทำ GEO
-→ /blog/how-to-do-geo
+• /blog/how-to-do-geo
 
 รับทำ GEO
-→ /services/geo
+• /services/geo
 
 บริการ SEO
-→ /services/seo
+• /services/seo
 
 Local SEO
-→ /services/local-seo
+• /services/local-seo
 
 Google Maps SEO
-→ /services/google-maps
+• /services/google-maps
 
 SEO Content
-→ /services/content-marketing
+• /services/content-marketing
 ```
 
 These should have the clearest sitewide anchor-to-LDP relationship.
@@ -676,20 +682,20 @@ Do not make every article follow:
 
 ```text
 SEO คืออะไร
-→ GEO คืออะไร
-→ AEO คืออะไร
-→ /services
+• GEO คืออะไร
+• AEO คืออะไร
+• /services
 ```
 
 Instead use:
 
 ```text
 Current Intent
-→ Best Relevant Pillar
-→ Next Useful Intent
-→ Most Relevant Service
-→ Proof
-→ Conversion
+• Best Relevant Pillar
+• Next Useful Intent
+• Most Relevant Service
+• Proof
+• Conversion
 ```
 
 Internal linking should behave like a knowledge graph, not a checklist.
@@ -745,13 +751,13 @@ Default rule:
 
 ```text
 Official / Primary Source
-→ allowed when useful
+• allowed when useful
 
 Competitor / Agency / Consultant
-→ no outbound link
+• no outbound link
 
 Third-party blog
-→ avoid when a primary source exists
+• avoid when a primary source exists
 ```
 
 External links should support factual verification, not send authority or referral traffic to competing commercial pages.

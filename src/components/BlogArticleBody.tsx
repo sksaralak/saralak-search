@@ -2,7 +2,6 @@ import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
-import { brand } from '../content/site'
 import {
   BulletList as CheckList,
   CTABox as ArticleCTA,
@@ -48,35 +47,6 @@ function P({ children }: { children: ReactNode }) {
     </p>
   )
 }
-
-const aiOverviewContents = [
-  { id: 'what-is-ai-overview', label: 'AI Overview คืออะไร' },
-  { id: 'google-ai-overview-guidelines', label: 'Google บอกอะไรเกี่ยวกับการแสดงผลใน AI Overview?' },
-  {
-    id: 'ai-overview-content-tips',
-    label: '9 วิธีทำให้ Content พร้อมสำหรับ AI Overview',
-    children: [
-      { id: 'direct-answer', label: 'ตอบคำถามหลักให้จบในย่อหน้าแรก' },
-      { id: 'search-intent-headings', label: 'ใช้ H2/H3 ให้ตรงกับคำถามและ Search Intent ที่คนค้น' },
-      { id: 'sub-intent', label: 'แตกหลาย Sub-intent ไว้ในหน้าเดียว' },
-      { id: 'entities-and-numbers', label: 'ใช้ Entity และตัวเลขที่เจาะจง' },
-      { id: 'standalone-sections', label: 'เขียนแต่ละ Section ให้ยืนได้ด้วยตัวเอง' },
-      { id: 'structured-data', label: 'ใช้ Structured Data ให้ตรงกับเนื้อหาที่มีอยู่จริง' },
-      { id: 'problem-to-product', label: 'เชื่อมปัญหาไปสู่สินค้าอย่างมีเหตุผล' },
-      { id: 'internal-links', label: 'ใส่ Internal Link เชื่อม Content ไปหาหมวดสินค้าจริง' },
-      { id: 'credible-sources', label: 'ห้ามใส่สถิติที่ไม่มีแหล่งอ้างอิง' },
-    ],
-  },
-  { id: 'ai-overview-measurement', label: 'วัดผลว่าเว็บไซต์ปรากฏใน AI Overview ได้อย่างไร' },
-  { id: 'ai-overview-case-study', label: 'Case Study: จากคำค้น Non-brand สู่การถูกอ้างอิงใน Google AI Overview' },
-  { id: 'business-impact', label: 'ทำไม Case Study นี้ถึงสำคัญสำหรับธุรกิจอื่น' },
-  { id: 'ai-overview-faq', label: 'FAQ: AI Overview คืออะไร' },
-] as const
-
-function ArticleTableOfContents() {
-  return <TableOfContents items={aiOverviewContents} />
-}
-
 
 const geoContents = [
   { id: 'geo-what-is', label: 'GEO คืออะไร' },
@@ -959,10 +929,10 @@ function GeoAgencyDecisionVisual() {
         <div className="rounded-lg border border-neutral-200 bg-white p-4">
           <p className="font-semibold text-neutral-950">Search Foundation ยังมีปัญหา</p>
           <ul className="thai-readable mt-3 grid gap-2 text-sm leading-6 text-neutral-600">
-            <li>• Crawl / Index ยังไม่เสถียร</li>
-            <li>• หน้า Service หรือ Commercial intent ยังไม่ชัด</li>
-            <li>• ยังไม่มี Conversion tracking</li>
-            <li>• ไม่มีทีมลงมือแก้ Recommendation</li>
+            <li>Crawl / Index ยังไม่เสถียร</li>
+            <li>หน้า Service หรือ Commercial intent ยังไม่ชัด</li>
+            <li>ยังไม่มี Conversion tracking</li>
+            <li>ไม่มีทีมลงมือแก้ Recommendation</li>
           </ul>
           <p className="mt-4 rounded-md bg-neutral-100 px-3 py-2 text-sm font-semibold text-neutral-800">เริ่มจาก Audit + แก้ Search Foundation ก่อน</p>
         </div>
@@ -970,10 +940,10 @@ function GeoAgencyDecisionVisual() {
         <div className="rounded-lg border border-teal-200 bg-white p-4">
           <p className="font-semibold text-neutral-950">พร้อมเริ่ม GEO</p>
           <ul className="thai-readable mt-3 grid gap-2 text-sm leading-6 text-neutral-600">
-            <li>• สินค้า/บริการและ Conversion ชัด</li>
-            <li>• มี Search footprint หรือ Content เดิม</li>
-            <li>• มี Content/Dev resource รองรับ</li>
-            <li>• ต้องการ Topic Ownership + AI Visibility + Measurement</li>
+            <li>สินค้า/บริการและ Conversion ชัด</li>
+            <li>มี Search footprint หรือ Content เดิม</li>
+            <li>มี Content/Dev resource รองรับ</li>
+            <li>ต้องการ Topic Ownership + AI Visibility + Measurement</li>
           </ul>
           <p className="mt-4 rounded-md bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-900">เริ่ม GEO Scope พร้อม Baseline และ Measurement ได้</p>
         </div>
@@ -3471,7 +3441,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
                 'เพิ่ม JSON-LD ตาม schema type ที่เลือกแล้ว',
                 'refactor semantic HTML และ internal link',
                 'ช่วยตรวจ code diff และ regression',
-              ].map((item) => <li key={item}>• {item}</li>)}
+              ].map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
           <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
@@ -3484,7 +3454,7 @@ function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
                 'Business priority ของแต่ละหน้า',
                 'Content gap เทียบคู่แข่ง',
                 'KPI ที่ใช้ตัดสินว่าการแก้ได้ผลหรือไม่',
-              ].map((item) => <li key={item}>• {item}</li>)}
+              ].map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
         </div>
@@ -3819,8 +3789,8 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
         </P>
         <P>
           แทนที่จะตั้งเส้นตายจากจำนวนเดือนอย่างเดียว ให้ดูสัญญาณเป็นลำดับ:
-          URL Index หรือยัง → Impression เริ่มมาหรือไม่ → Query coverage ขยายหรือไม่ →
-          Clicks โตหรือไม่ → Organic Traffic สร้าง Business Outcome หรือไม่
+          ตรวจตามลำดับว่า URL Index หรือยัง, Impression เริ่มมาหรือไม่, Query coverage ขยายหรือไม่,
+          Clicks โตหรือไม่ และ Organic Traffic สร้าง Business Outcome หรือไม่
         </P>
         <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
           <p className="font-semibold text-amber-900">ข้อจำกัดที่ควรรู้</p>
@@ -4167,7 +4137,9 @@ function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ไม่แน่ใจว่า GBP ของคุณดึงยอดโทร-เส้นทาง-เว็บได้ดีแค่ไหน?"
-        description="Google Maps Visibility Audit ตรวจ GBP ทีละจุด วิเคราะห์ว่าตรงไหนทำให้ลูกค้าหลุดออกไปก่อนโทรหรือมาถึงร้าน พร้อม action plan ที่ทำได้จริง"
+        description="บริการ Google Maps ช่วยปรับ Google Business Profile ให้ข้อมูลครบ น่าเชื่อถือ และพาลูกค้าไปสู่การโทร ขอเส้นทาง หรือเข้าเว็บไซต์ได้ง่ายขึ้น"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="Checklist เพิ่ม KPI บน Google Maps">
@@ -4341,7 +4313,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         />
         <div className="rounded-xl border border-teal-100 bg-teal-50/60 p-4">
           <p className="thai-readable text-sm leading-6 text-teal-800">
-            ถ้าตอบ "ไม่" มากกว่า 3 ข้อ ไปยัง <strong>Local SEO Audit ฟรี</strong> จะช่วยให้รู้ว่าควรแก้อะไรก่อนเพื่อเห็นผลเร็วที่สุด
+            ถ้าตอบ "ไม่" มากกว่า 3 ข้อ ลองดู <Link to="/services/local-seo"><strong>บริการ Local SEO</strong></Link> เพื่อวางแผนว่าควรแก้อะไรก่อน
           </p>
         </div>
       </ArticleSection>
@@ -4742,7 +4714,9 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ลูกค้าในย่านคุณกำลังหาคู่แข่งอยู่"
-        description="ขอ Local SEO Audit ฟรี ตรวจว่าธุรกิจคุณ show up ต่อลูกค้าในย่านได้ดีแค่ไหน และอะไรทำให้พลาดลูกค้าที่พร้อมซื้ออยู่ทุกวัน"
+        description="บริการ Local SEO ช่วยให้ธุรกิจปรากฏต่อลูกค้าในย่านบน Google Search และ Google Maps ในจังหวะที่พร้อมติดต่อหรือซื้อ"
+        href="/services/local-seo"
+        buttonText="ดูบริการ Local SEO"
       />
 
       <P>
@@ -5132,7 +5106,9 @@ function IncreaseSaleRestaurantArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ลูกค้า 2.24 ล้านคนกำลังหาร้านอาหารอยู่ตอนนี้"
-        description="Google Maps Audit ตรวจว่าร้านคุณได้รับ Call, Direction และ Website Clicks จากคนกลุ่มนี้มากแค่ไหน และตรงไหนที่พลาดอยู่"
+        description="บริการ Google Maps ช่วยปรับ Profile ของร้านให้พร้อมรับ Call, Direction และ Website Clicks จากลูกค้าที่กำลังค้นหาร้านอาหาร"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <P>
@@ -5332,7 +5308,9 @@ function MassageSpaArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline='คนค้นหา "นวด ใกล้ฉัน" 1.3 ล้านครั้งต่อเดือน — ร้านคุณอยู่ตรงไหน'
-        description="Google Maps Audit ตรวจว่าร้านนวดหรือสปาของคุณได้ Call, Direction และ Booking จากคนกลุ่มนี้มากแค่ไหน และจุดไหนที่ทำให้ลูกค้าเลือกร้านข้างๆ แทน"
+        description="บริการ Google Maps ช่วยให้ร้านนวดหรือสปาพร้อมรับ Call, Direction และ Booking จากลูกค้าในพื้นที่ที่กำลังค้นหาบริการ"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="ปัญหาเฉพาะของธุรกิจนวด: ทำให้ Google และลูกค้าเข้าใจถูกว่าคุณคือร้านแบบไหน">
@@ -5752,7 +5730,9 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="คู่แข่งในกลุ่มกรูมมิ่งยังน้อย — ช่วงนี้คือจังหวะที่ติดง่ายที่สุด"
-        description="Google Maps Audit ตรวจว่าร้านคุณติด 3-pack ในย่านตัวเองหรือยัง และต้องแก้อะไรก่อนคู่แข่งเริ่มทำจริงจัง"
+        description="บริการ Google Maps ช่วยปรับ Profile และสัญญาณพื้นที่ให้ร้านกรูมมิ่งมีโอกาสปรากฏใน Local Pack เมื่อคนใกล้ร้านค้นหา"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="ร้านมีหน้าร้าน vs กรูมมิ่งเคลื่อนที่ — ตั้ง GBP คนละแบบ">
@@ -6149,7 +6129,9 @@ function PetShopArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ลูกค้าที่ต้องการของวันนี้กำลังค้นหาร้านใกล้บ้านอยู่"
-        description="Google Maps Audit ตรวจว่าร้านคุณโผล่ในคำค้นหา “ใกล้ฉัน” ของย่านตัวเองหรือยัง และตรงไหนที่ทำให้ลูกค้าเลือกสั่งออนไลน์แทน"
+        description="บริการ Google Maps ช่วยให้ร้านขายสัตว์เลี้ยงพร้อมปรากฏในคำค้นหาใกล้ฉัน และพาลูกค้าไปสู่การโทร ขอเส้นทาง หรือเข้าร้าน"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="ข้อควรระวังเฉพาะของร้านที่ขายสัตว์มีชีวิต">
@@ -6520,7 +6502,9 @@ function PetHospitalArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="เคสฉุกเฉินกำลังค้นหาคลินิกที่ใกล้และว่างที่สุดอยู่"
-        description="Google Maps Audit ตรวจว่าคลินิกหรือโรงพยาบาลสัตว์ของคุณโผล่ในคำค้นหา “ใกล้ฉัน” หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน"
+        description="บริการ Google Maps ช่วยให้ข้อมูลคลินิกหรือโรงพยาบาลสัตว์ครบและพร้อมปรากฏต่อเจ้าของสัตว์ที่กำลังค้นหาบริการใกล้ฉัน"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="ความน่าเชื่อถือคือสัญญาณที่สำคัญที่สุดของธุรกิจสายสุขภาพ">
@@ -6889,7 +6873,9 @@ function PetHotelArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headline="ช่วงหยุดยาวลูกค้ากำลังหาที่ฝากสัตว์เลี้ยงที่ไว้ใจได้อยู่"
-        description="Google Maps Audit ตรวจว่าโรงแรมหรือบริการรับฝากเลี้ยงของคุณโผล่ในคำค้นหา “ใกล้ฉัน” หรือไม่ และจุดไหนที่ทำให้เจ้าของสัตว์เลือกที่อื่นแทน"
+        description="บริการ Google Maps ช่วยให้โรงแรมสัตว์เลี้ยงหรือบริการรับฝากเลี้ยงมี Profile ที่ครบและน่าเชื่อถือเมื่อลูกค้าค้นหาบริการใกล้ฉัน"
+        href="/services/google-maps"
+        buttonText="ดูบริการ Google Maps"
       />
 
       <ArticleSection title="วิธีขอรีวิวจากเจ้าของสัตว์เลี้ยง">
@@ -7422,7 +7408,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
               'Paid Ads เหมาะกับการเร่ง Traffic ทันที แต่หยุดงบแล้ว Traffic จากแคมเปญก็หยุดตาม',
               'Social ช่วยสร้าง Reach และ Demand แต่ Traffic มักขึ้นกับ distribution ของแต่ละแพลตฟอร์ม',
               'Referral และ Brand Traffic โตเมื่อแบรนด์ถูกกล่าวถึง อ้างอิง หรือมีฐานผู้ใช้กลับมาเอง',
-              'ถ้าจะโตด้วย SEO ให้ไล่ Demand → Index → Relevance → Authority → Click → Conversion ตามลำดับ',
+              'ถ้าจะโตด้วย SEO ให้ไล่ Demand, Index, Relevance, Authority, Click และ Conversion ตามลำดับ',
               'Traffic เป็น KPI กลางทาง ควรวัดต่อถึง Lead, LINE, Call, Purchase หรือ Assisted Conversion',
             ].map((item) => (
               <li key={item} className="thai-readable flex gap-3 text-sm leading-6 text-teal-950">
@@ -7489,7 +7475,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         ]} />
       </ArticleSection>
 
-      <ArticleSection title="Framework เพิ่ม Traffic SEO: Demand → Index → Relevance → Authority → Click → Conversion">
+      <ArticleSection title="Framework เพิ่ม Traffic SEO จาก Demand ถึง Conversion">
         <P>
           จากการทำ SEO จริง ปัญหา Traffic ไม่โตมักไม่ได้อยู่ที่ “ทำ Content น้อยไป” อย่างเดียว
           Saralak Search จึงใช้ลำดับนี้เพื่อหา bottleneck ก่อนเพิ่มงานใหม่
@@ -7678,7 +7664,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
         <P>
           ถ้าเว็บไซต์ยังไม่มี Search data ให้เริ่มจาก Search Demand และ Technical foundation
           แต่ถ้ามี Search Console อยู่แล้ว ให้หา URL ที่มี Impression และ Business Value ก่อน
-          จากนั้นไล่ Framework Demand → Index → Relevance → Authority → Click → Conversion
+          จากนั้นไล่ Framework ตามลำดับ Demand, Index, Relevance, Authority, Click และ Conversion
           เพื่อเลือกงานที่มีโอกาสสร้างผลลัพธ์เร็วที่สุดจากฐานที่มีอยู่
         </P>
         <P>

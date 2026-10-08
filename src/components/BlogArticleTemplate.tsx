@@ -85,8 +85,8 @@ export default function BlogArticleTemplate({ post, relatedPosts }: BlogArticleT
                   </p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
-                    <CTAButton to="/discovery-audit" variant="secondary">
-                      เริ่มต้นด้วย Discovery Audit
+                    <CTAButton to="/contact" variant="secondary">
+                      ปรึกษาทีม Saralak Search
                     </CTAButton>
                   </div>
                 </div>

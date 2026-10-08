@@ -24,7 +24,6 @@ function getPageType(pathname: string): string {
   if (pathname.startsWith('/blog')) return 'blog'
   if (pathname === '/services') return 'services'
   if (pathname === '/case-studies') return 'case_studies'
-  if (pathname === '/discovery-audit') return 'discovery_audit'
   if (pathname === '/contact') return 'contact'
   if (pathname === '/about') return 'about'
   if (pathname === '/proof') return 'case_studies'

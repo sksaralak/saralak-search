@@ -1,7 +1,7 @@
-const sharp = require('sharp');
-const path = require('path');
+import path from 'node:path';
+import sharp from 'sharp';
 
-const OUT = 'D:/SARAH-AGENCY/website/public/image/blog/tham-web-claude';
+const OUT = path.join(process.cwd(), 'public', 'image', 'blog', 'tham-web-claude');
 
 const desktopSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1440" height="810" viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +175,7 @@ const desktopSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <text x="720" y="698" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="20" font-weight="700" fill="white">Claude Execute  •  SEO Strategy  •  Google Traffic</text>
   <text x="720" y="728" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="14" fill="#5EEAD4">Build fast with Claude — then let Saralak Search drive organic traffic through SEO</text>
   <rect x="575" y="746" width="290" height="40" rx="20" fill="#0D9488"/>
-  <text x="720" y="771" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="14" font-weight="700" fill="white">Start with Discovery Audit</text>
+  <text x="720" y="771" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="14" font-weight="700" fill="white">Explore SEO &amp; GEO Services</text>
   <circle cx="1390" cy="710" r="22" fill="#0D9488"/>
   <text x="1390" y="718" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="white">S</text>
 </svg>`;
@@ -267,7 +267,7 @@ const mobileSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <!-- Bottom -->
   <rect x="0" y="840" width="800" height="60" fill="#0D3B38"/>
   <text x="400" y="866" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="12" font-weight="700" fill="white">Claude Execute  •  SEO Strategy  •  Google Traffic</text>
-  <text x="400" y="884" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="10" fill="#5EEAD4">Saralak Search — Discovery Audit</text>
+  <text x="400" y="884" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="10" fill="#5EEAD4">Saralak Search — SEO, GEO &amp; AI Search</text>
 </svg>`;
 
 async function generate() {

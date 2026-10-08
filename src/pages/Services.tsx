@@ -122,8 +122,8 @@ function Step01Visual() {
           ))}
         </div>
         <div className="mt-5 border-t border-neutral-800 pt-4">
-          <p className="text-teal-400">→ Report ready: 14 findings, 8 quick wins</p>
-          <p className="mt-1 text-teal-400">→ Roadmap: prioritized 90-day plan</p>
+          <p className="text-teal-400">• Report ready: 14 findings, 8 quick wins</p>
+          <p className="mt-1 text-teal-400">• Roadmap: prioritized 90-day plan</p>
         </div>
       </div>
     </div>
@@ -201,8 +201,8 @@ function Step04Visual() {
         ))}
       </div>
       <div className="mt-5 border-t border-neutral-800 pt-4 font-mono text-xs">
-        <p className="text-teal-400">→ Monthly reporting + strategy review</p>
-        <p className="mt-1 text-teal-400">→ Continuous optimization cycle</p>
+        <p className="text-teal-400">• Monthly reporting + strategy review</p>
+        <p className="mt-1 text-teal-400">• Continuous optimization cycle</p>
       </div>
     </div>
   )
@@ -250,7 +250,7 @@ function AiBrandMonitor() {
         </div>
         <div className="mt-6 border-t border-neutral-800 pt-5">
           <p className="font-mono text-xs text-neutral-600">Result: 3 platforms have visibility gaps</p>
-          <p className="mt-2 font-mono text-xs text-teal-400">→ ใช้ข้อมูลจริงเพื่อจัดลำดับว่าควรทำอะไรก่อน</p>
+          <p className="mt-2 font-mono text-xs text-teal-400">• ใช้ข้อมูลจริงเพื่อจัดลำดับว่าควรทำอะไรก่อน</p>
         </div>
       </div>
     </div>
@@ -652,7 +652,7 @@ export default function Services() {
                   <ul className="mt-4 grid gap-1.5">
                     {card.outcomes.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
-                        <span className={`mt-0.5 shrink-0 font-bold ${c.iconText}`} aria-hidden="true">→</span>
+                        <span className={`mt-0.5 shrink-0 font-bold ${c.iconText}`} aria-hidden="true">•</span>
                         <span>{item}</span>
                       </li>
                     ))}

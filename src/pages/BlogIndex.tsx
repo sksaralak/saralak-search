@@ -52,8 +52,8 @@ export default function BlogIndex() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton to="/services">ดูบริการทั้งหมด</CTAButton>
-            <CTAButton to="/discovery-audit" variant="secondary">
-              เริ่มต้นด้วย Discovery Audit
+            <CTAButton to="/contact" variant="secondary">
+              ปรึกษาทีม Saralak Search
             </CTAButton>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function BlogIndex() {
           {[
             ['เกี่ยวกับ Saralak Search', '/about', 'รู้จักผู้เชี่ยวชาญด้าน SEO, AEO และ GEO เบื้องหลัง Saralak Search'],
             ['บริการ', '/services', 'ดูว่า SEO, AEO และ GEO Service มีโครงสร้างอย่างไร'],
-            ['Discovery Audit', '/discovery-audit', 'เริ่มต้นด้วยการค้นหาโอกาสเพิ่มการมองเห็น'],
+            ['ปรึกษาเรื่อง Search', '/contact', 'คุยกับทีมเรื่อง SEO, GEO, Local SEO หรือ Google Maps'],
           ].map(([title, href, description]) => (
             <article key={href} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
               <h2 className="text-lg font-semibold text-neutral-950">{title}</h2>

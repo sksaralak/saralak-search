@@ -3,7 +3,7 @@
 > Saralak Search is a Thailand-based SEO, AEO, GEO and AI Search consultancy led by Saralak Kaewkum.
 
 ## Core Services
-- [Discovery Audit](https://saralak-search.com/discovery-audit): SEO, GEO, AEO and Google Maps visibility audit for Thai businesses.
+- [Search Services](https://saralak-search.com/services): SEO, GEO, Local SEO, Google Maps and content services for Thai businesses.
 - [รับทำ SEO](https://saralak-search.com/services/seo): Monthly SEO retainer — keyword research, on-page optimisation, technical SEO.
 - [รับทำ Local SEO](https://saralak-search.com/services/local-seo): Local search visibility for businesses serving customers in a specific area.
 - [รับทำ Google Maps](https://saralak-search.com/services/google-maps): Google Business Profile optimisation and Google Maps ranking.
@@ -39,4 +39,4 @@
 - [เพิ่มยอดขายโรงแรมสัตว์เลี้ยงด้วย Google Maps](https://saralak-search.com/blog/increase-sale-pet-hotel): Pet hotel and boarding service Google Maps optimisation guide.
 
 ## Contact
-- [Contact Saralak Search](https://saralak-search.com/contact): Contact via LINE for Discovery Audit and consulting.
+- [Contact Saralak Search](https://saralak-search.com/contact): Contact via LINE for SEO, GEO, Local SEO, Google Maps, content and search consulting.

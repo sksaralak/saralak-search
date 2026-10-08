@@ -489,7 +489,7 @@ export function RelatedLinks({ items }: { items: readonly { to: string; label: R
           <li key={item.to}>
             <Link to={item.to}>
               <span>{item.label}</span>
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">•</span>
             </Link>
           </li>
         ))}

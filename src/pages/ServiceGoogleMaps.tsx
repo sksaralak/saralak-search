@@ -186,7 +186,7 @@ function GBPMockup() {
             </div>
           </div>
         ))}
-        <p className="mt-3 font-mono text-[10px] text-teal-600">→ ตัวอย่างผลลัพธ์เฉลี่ย 6 เดือน</p>
+        <p className="mt-3 font-mono text-[10px] text-teal-600">• ตัวอย่างผลลัพธ์เฉลี่ย 6 เดือน</p>
       </div>
     </div>
   )
@@ -253,7 +253,7 @@ export default function ServiceGoogleMaps() {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CTAButton to="/contact">ขอ Google Maps Quick Check</CTAButton>
+              <CTAButton to="/contact">ปรึกษา Google Maps</CTAButton>
               <CTAButton to="/services/local-seo" variant="secondary">ดูแผน Local SEO</CTAButton>
             </div>
           </div>
@@ -333,7 +333,7 @@ export default function ServiceGoogleMaps() {
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact" variant="secondary">ปรึกษา Google Maps</CTAButton>
             </div>
           </div>
         </div>
@@ -425,7 +425,7 @@ export default function ServiceGoogleMaps() {
                 <ul className="mt-4 grid gap-2">
                   {items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
-                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                      <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                       <span className="thai-readable">{item}</span>
                     </li>
                   ))}
@@ -614,7 +614,7 @@ export default function ServiceGoogleMaps() {
 
           </div>
           <div className="mt-8 text-center">
-            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+            <CTAButton to="/contact">คุยเรื่อง Google Maps</CTAButton>
           </div>
         </div>
       </section>
@@ -627,8 +627,7 @@ export default function ServiceGoogleMaps() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold">ยังไม่รู้ว่า Google Maps ของคุณพร้อมแค่ไหน?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-teal-100">
-            เริ่มจาก Discovery Audit เพื่อดูว่า Google Maps มองเห็น Profile ของคุณอย่างไร
-            และอะไรที่ทำให้ลูกค้าเลือกคู่แข่งแทน
+            คุยกับทีมเพื่อวางแผนปรับ Google Business Profile ให้ลูกค้าในพื้นที่ค้นพบและตัดสินใจเลือกธุรกิจคุณได้ง่ายขึ้น
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-teal-100">
             {[
@@ -637,13 +636,13 @@ export default function ServiceGoogleMaps() {
               'รีวิวและรูปภาพส่งผลต่อ Ranking อย่างไร',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 text-teal-400">→</span>
+                <span className="mt-0.5 shrink-0 text-teal-400">•</span>
                 <span className="thai-readable text-sm">{item}</span>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CTAButton to="/contact">ขอ Google Maps Quick Check</CTAButton>
+            <CTAButton to="/contact">ปรึกษา Google Maps</CTAButton>
             <CTAButton to="/services/local-seo" variant="secondary">ดูแผน Local SEO</CTAButton>
           </div>
         </div>

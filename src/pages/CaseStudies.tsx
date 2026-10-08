@@ -124,11 +124,11 @@ export default function CaseStudies() {
         <div className="mx-auto max-w-4xl px-4 py-12 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-neutral-950">อยากรู้ว่าเว็บไซต์ของคุณมีโอกาสแบบนี้ไหม?</h2>
           <p className="thai-readable mx-auto mt-3 max-w-xl text-base leading-7 text-neutral-600">
-            Discovery Audit จะช่วยดูว่าโอกาสที่ใกล้ที่สุดอยู่ตรงไหน และควรเริ่มจากงาน SEO, Content, GEO หรือ Google Maps
+            คุยกับทีมเพื่อดูว่าโอกาสที่ใกล้ที่สุดอยู่ตรงไหน และควรเริ่มจากบริการ SEO, Content, GEO หรือ Google Maps
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
-            <CTAButton to="/contact" variant="secondary">พูดคุยเบื้องต้น</CTAButton>
+            <CTAButton to="/contact">ปรึกษาแนวทางสำหรับธุรกิจคุณ</CTAButton>
+            <CTAButton to="/services" variant="secondary">ดูบริการทั้งหมด</CTAButton>
           </div>
         </div>
       </section>
@@ -164,14 +164,14 @@ export default function CaseStudies() {
       {/* Section 5: FAQ */}
       <FAQSection faqs={caseStudiesFaqs} />
 
-      {/* Section 6: Discovery Audit CTA — pb-28 clears mobile floating bar */}
+      {/* Section 6: Service consultation CTA — pb-28 clears mobile floating bar */}
       <section className="bg-teal-950 px-4 pb-28 pt-16 text-center text-white sm:px-6 lg:px-8 lg:pb-16">
         <h2 className="text-3xl font-semibold md:text-4xl">
           ผลลัพธ์ที่ดีเริ่มจากการรู้ว่าควรแก้อะไรก่อน
         </h2>
         <p className="thai-readable mx-auto mt-4 max-w-xl text-lg leading-8 text-teal-50">
           ถ้าคุณอยากรู้ว่าเว็บไซต์ของคุณมีโอกาสโตจาก Google, Google Maps หรือ AI Search ตรงไหน
-          เริ่มจาก Discovery Audit เพื่อจัดลำดับ priority ก่อนลงทุนต่อ
+          คุยกับทีมเพื่อเลือกบริการและจัดลำดับ priority ก่อนลงทุนต่อ
         </p>
         <ul className="mx-auto mt-5 max-w-xs space-y-2 text-left text-teal-100">
           {[
@@ -182,15 +182,15 @@ export default function CaseStudies() {
           ].map((item) => (
             <li key={item} className="flex items-start gap-2">
               <span className="mt-0.5 shrink-0 text-teal-400" aria-hidden="true">
-                →
+                •
               </span>
               <span className="thai-readable">{item}</span>
             </li>
           ))}
         </ul>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <CTAButton to="/discovery-audit" variant="secondary">
-            เริ่ม Discovery Audit
+          <CTAButton to="/contact" variant="secondary">
+            ปรึกษาทีม Saralak Search
           </CTAButton>
           <Link
             to="/contact"

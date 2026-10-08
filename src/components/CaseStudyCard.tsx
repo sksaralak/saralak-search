@@ -83,7 +83,7 @@ export default function CaseStudyCard({ study }: Props) {
               <ul className="mt-2 grid gap-1.5">
                 {study.card.actions.map((action) => (
                   <li key={action} className="thai-readable flex items-start gap-2 text-sm leading-6 text-neutral-700">
-                    <span className={`mt-0.5 shrink-0 font-bold ${c.arrow}`} aria-hidden="true">→</span>
+                    <span className={`mt-0.5 shrink-0 font-bold ${c.arrow}`} aria-hidden="true">•</span>
                     <span>{action}</span>
                   </li>
                 ))}

@@ -90,14 +90,14 @@ Avoid repeating "GEO คืออะไร" in every H2 if it makes the page sou
 When a relevant Saralak Search owner page exists, use a descriptive or exact-match anchor naturally.
 
 Examples:
-- SEO คืออะไร → /blog/what-is-seo
-- AEO คืออะไร → /blog/what-is-aeo
-- GEO คืออะไร → /blog/what-is-geo
-- AI Overview คืออะไร → /blog/what-is-ai-overview
-- วิธีทำ GEO → /blog/how-to-do-geo
-- GEO Checklist → /blog/geo-checklist-thailand
-- llms.txt คืออะไร → /blog/llms-txt-thailand
-- ทำ GEO ที่ไหนดี → /blog/geo-agency-thailand
+- SEO คืออะไร: /blog/what-is-seo
+- AEO คืออะไร: /blog/what-is-aeo
+- GEO คืออะไร: /blog/what-is-geo
+- AI Overview คืออะไร: /blog/what-is-ai-overview
+- วิธีทำ GEO: /blog/how-to-do-geo
+- GEO Checklist: /blog/geo-checklist-thailand
+- llms.txt คืออะไร: /blog/llms-txt-thailand
+- ทำ GEO ที่ไหนดี: /blog/geo-agency-thailand
 
 Do not link the same primary keyword to multiple competing URLs.
 

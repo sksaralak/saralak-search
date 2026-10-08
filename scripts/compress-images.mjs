@@ -53,7 +53,7 @@ async function main() {
       const origKB = Math.round((await import('node:fs')).statSync(file).size / 1024)
       const newKB = Math.round(size / 1024)
       saved += origKB - newKB
-      console.log(`  ✓ ${name.padEnd(52)} ${origKB.toString().padStart(5)}KB → ${newKB.toString().padStart(4)}KB  (${width}×${height})`)
+      console.log(`  ✓ ${name.padEnd(52)} ${origKB.toString().padStart(5)}KB to ${newKB.toString().padStart(4)}KB  (${width}×${height})`)
     } catch (e) {
       console.error(`  ✗ ${name}: ${e.message}`)
     }

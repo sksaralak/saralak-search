@@ -131,7 +131,7 @@ function RankingMockup() {
         ))}
       </div>
       <div className="border-t border-neutral-100 px-5 py-3.5">
-        <p className="font-mono text-[10px] text-teal-600">→ ตัวอย่างผลลัพธ์หลัง 6 เดือน (Pro Package)</p>
+        <p className="font-mono text-[10px] text-teal-600">• ตัวอย่างผลลัพธ์หลัง 6 เดือน (Pro Package)</p>
       </div>
     </div>
   )
@@ -200,7 +200,7 @@ export default function ServiceSEO() {
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <CTAButton to="/contact">ดู SEO Package</CTAButton>
-                <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit ก่อน</CTAButton>
+                <CTAButton to="/contact" variant="secondary">ปรึกษา SEO ก่อนเริ่ม</CTAButton>
               </div>
             </div>
             <div className="relative">
@@ -244,7 +244,7 @@ export default function ServiceSEO() {
               to="/case-studies"
               className="shrink-0 text-sm font-semibold text-teal-600 hover:underline"
             >
-              ดูทั้งหมด →
+              ดูทั้งหมด
             </Link>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -272,7 +272,7 @@ export default function ServiceSEO() {
                     <ul className="mt-2 grid gap-1.5">
                       {study.card.results.map(r => (
                         <li key={r} className="flex items-start gap-2 text-sm text-neutral-700">
-                          <span className="mt-0.5 shrink-0 font-bold text-teal-500">→</span>
+                          <span className="mt-0.5 shrink-0 font-bold text-teal-500">•</span>
                           <span className="thai-readable">{r}</span>
                         </li>
                       ))}
@@ -296,7 +296,7 @@ export default function ServiceSEO() {
               </p>
             </div>
             <div className="shrink-0">
-              <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact" variant="secondary">คุยเรื่อง SEO</CTAButton>
             </div>
           </div>
         </div>
@@ -360,7 +360,7 @@ export default function ServiceSEO() {
                     <ul className="grid gap-2.5">
                       {tier.gets.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                          <span className={`mt-0.5 shrink-0 font-bold ${tier.color.arrow}`}>→</span>
+                          <span className={`mt-0.5 shrink-0 font-bold ${tier.color.arrow}`}>•</span>
                           <span className="thai-readable">{item}</span>
                         </li>
                       ))}
@@ -556,7 +556,7 @@ export default function ServiceSEO() {
                   <ul className="relative z-10 mt-5 grid gap-3">
                     {items.map(item => (
                       <li key={item} className="flex items-center gap-3">
-                        <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${border} ${color} text-[10px] font-bold`}>→</span>
+                        <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${border} ${color} text-[10px] font-bold`}>•</span>
                         <span className={`thai-readable text-base ${color} opacity-90`}>{item}</span>
                       </li>
                     ))}
@@ -565,7 +565,7 @@ export default function ServiceSEO() {
               ))}
             </div>
             <div className="mt-10 text-center">
-              <CTAButton to="/discovery-audit">เริ่ม Discovery Audit</CTAButton>
+              <CTAButton to="/contact">ดู SEO Package</CTAButton>
             </div>
           </div>
         </div>
@@ -584,7 +584,7 @@ export default function ServiceSEO() {
               {[
                 {
                   step: '01',
-                  title: 'Discovery Audit',
+                  title: 'SEO Baseline & Opportunity Review',
                   desc: 'วิเคราะห์ Technical SEO, Keyword Gaps, Competitor Landscape และ Content Opportunity ก่อนเริ่มงาน เพื่อให้รู้ว่าควรแก้อะไรก่อน',
                   color: 'bg-teal-900 text-teal-300',
                 },
@@ -670,7 +670,7 @@ export default function ServiceSEO() {
                         'Schema markup สำหรับ FAQ pages',
                       ].map(item => (
                         <div key={item} className="flex items-start gap-2 text-xs text-neutral-500">
-                          <span className="mt-0.5 shrink-0 text-sky-400">→</span>
+                          <span className="mt-0.5 shrink-0 text-sky-400">•</span>
                           <span className="thai-readable">{item}</span>
                         </div>
                       ))}
@@ -694,14 +694,14 @@ export default function ServiceSEO() {
                   to="/blog/what-is-seo"
                   className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
                 >
-                  <span className="text-teal-500">→</span>
+                  <span className="text-teal-500">•</span>
                   SEO คืออะไร และทำงานอย่างไร
                 </Link>
                 <Link
                   to="/blog/seo-geo-aeo"
                   className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
                 >
-                  <span className="text-teal-500">→</span>
+                  <span className="text-teal-500">•</span>
                   SEO, AEO และ GEO ต่างกันอย่างไร
                 </Link>
               </div>
@@ -737,8 +737,7 @@ export default function ServiceSEO() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold">ยังไม่รู้ว่า SEO จะช่วยธุรกิจคุณได้แค่ไหน?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-teal-100">
-            เริ่มจาก Discovery Audit เพื่อดูว่า Google มองเว็บไซต์ของคุณอย่างไร
-            คู่แข่งได้เปรียบตรงไหน และควรเริ่มแก้จากจุดใดก่อน
+            คุยกับทีมเพื่อเลือกแพ็กเกจ SEO ที่เหมาะกับสถานะเว็บไซต์ เป้าหมาย และการแข่งขันของธุรกิจคุณ
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-teal-100">
             {[
@@ -747,14 +746,14 @@ export default function ServiceSEO() {
               'ได้ Roadmap ที่ชัดเจนพร้อม Quick Wins',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-0.5 shrink-0 text-teal-400">→</span>
+                <span className="mt-0.5 shrink-0 text-teal-400">•</span>
                 <span className="thai-readable text-sm">{item}</span>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CTAButton to="/contact">ส่งเว็บไซต์ให้ประเมินเบื้องต้น</CTAButton>
-            <CTAButton to="/discovery-audit" variant="secondary">เริ่ม Discovery Audit</CTAButton>
+            <CTAButton to="/contact">ปรึกษา SEO สำหรับเว็บไซต์คุณ</CTAButton>
+            <CTAButton to="/case-studies" variant="secondary">ดู SEO Case Studies</CTAButton>
           </div>
         </div>
       </section>
