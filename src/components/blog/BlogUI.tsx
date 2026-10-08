@@ -349,6 +349,7 @@ export function CTABox({
   href = '/services',
   buttonText = 'ดูบริการที่เหมาะ',
   eyebrow = 'Saralak Search Services',
+  headingTag = 'h2',
   children,
 }: {
   headline: ReactNode
@@ -356,12 +357,13 @@ export function CTABox({
   href?: string
   buttonText?: string
   eyebrow?: ReactNode
+  headingTag?: 'h2' | 'h3' | 'p'
   children?: ReactNode
 }) {
   return (
     <aside className="blog-cta">
       <p className="blog-cta__eyebrow">{eyebrow}</p>
-      <h2>{headline}</h2>
+      {headingTag === 'h2' ? <h2>{headline}</h2> : headingTag === 'h3' ? <h3>{headline}</h3> : <p className="blog-cta__heading">{headline}</p>}
       <p>{description}</p>
       <div className="blog-cta__actions">
         <CTAButton to={href}>{buttonText}</CTAButton>
