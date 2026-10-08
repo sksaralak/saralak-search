@@ -41,7 +41,7 @@ The final rendered-content comparison returned:
 - Static regression scans: no merge markers, duplicated ordered-list numbers, raw Markdown table separators, or `.png.png` paths found.
 - Local browser smoke test: the blog listing and five priority articles had no page-level horizontal overflow, no raw pipe tables, and no loaded broken images; the repaired SEO case image loaded at 868 × 843.
 - `git diff --check`: passed (line-ending notices only).
-- Standard `npm run build`: passed, including TypeScript, the client build, the SSR build, and prerendering all 40 static routes. Earlier `EPERM` failures were caused by the restricted filesystem sandbox rather than a dev server or other process: Windows Restart Manager reported no lock owner for the failing files, and the unchanged build succeeded outside that restriction. No process was terminated.
+- Standard `npm run build`: passed, including TypeScript, the client build, the SSR build, and all static routes configured by the active branch. Earlier `EPERM` failures were caused by the restricted filesystem sandbox rather than a dev server or other process: Windows Restart Manager reported no lock owner for the failing files, and the unchanged build succeeded outside that restriction. No process was terminated.
 
 ## Reconciled material rewrites
 
