@@ -1762,6 +1762,7 @@ export const blogPosts: BlogPost[] = [
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
+  },
 ]
 
 export function getBlogPostBySlug(slug: string) {
