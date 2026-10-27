@@ -759,24 +759,34 @@ export const salesTechniquesFaqs: FAQItem[] = [
 
 export const aeoChecklistFaqs: FAQItem[] = [
   {
+    question: 'AEO Checklist ต่างจาก SEO Checklist อย่างไร?',
+    answer:
+      'SEO Checklist ตรวจพื้นฐานการเข้าถึง การจัดทำดัชนี คุณภาพหน้า และโอกาสติดอันดับ ส่วน AEO Checklist ตรวจเพิ่มว่าคำตอบชัด มีหลักฐาน แยกไปอ้างอิงได้ และวัดการมองเห็นในระบบคำตอบได้หรือไม่ AEO จึงต่อยอดจาก SEO ไม่ได้ใช้แทนกัน',
+  },
+  {
     question: 'AEO Checklist ต่างจาก GEO Checklist อย่างไร?',
     answer:
-      'AEO เน้นการติด Featured Snippet, People Also Ask และ Google AI Overview บน Google Search โดยเฉพาะ ส่วน GEO ครอบคลุมกว้างกว่า คือการถูกอ้างอิงโดย Generative AI เช่น ChatGPT, Gemini และ Perplexity ทั้งสองใช้หลักการ Answer-First และ FAQ Schema ร่วมกัน แต่ AEO Checklist จะเจาะจงไปที่รูปแบบคำตอบที่ Google เลือกไปแสดงมากกว่า',
+      'AEO เน้นความพร้อมของคำตอบในระดับหน้าและพื้นผิวคำตอบของระบบค้นหา ส่วน GEO มองกว้างขึ้นถึงแบรนด์ Entity แหล่งอ้างอิงนอกเว็บไซต์ และการปรากฏตัวข้ามแพลตฟอร์ม AI ในการทำงานจริงทั้งสองส่วนทับซ้อนกันมาก แต่ขอบเขตการตรวจไม่เท่ากัน',
   },
   {
-    question: 'ต้องทำ AEO Checklist ครบทุกข้อก่อนถึงจะเห็นผลไหม?',
+    question: 'ต้องมี FAQPage Schema เพื่อทำ AEO ไหม?',
     answer:
-      'ไม่จำเป็น ควรเริ่มจากหมวด Content Structure ก่อน เพราะเป็นพื้นฐานที่ทุกข้ออื่นต่อยอดจาก จากนั้นค่อยทำ Schema และ Technical แล้วปิดท้ายด้วยการวัดผล การทำบางส่วนให้ดีมีผลมากกว่าการทำครบทุกข้อแบบผิวเผิน',
+      'ไม่จำเป็น FAQ ที่มองเห็นบนหน้ามีประโยชน์เมื่อช่วยตอบคำถามต่อเนื่องจริง แต่ Google ระบุว่า AI Overviews และ AI Mode ไม่ต้องใช้ Schema พิเศษ และ Structured Data ที่ใส่ต้องตรงกับเนื้อหาที่ผู้ใช้มองเห็น',
   },
   {
-    question: 'ธุรกิจขนาดเล็กในไทยควรเริ่ม AEO จากตรงไหนก่อน?',
+    question: 'llms.txt อยู่ใน AEO Checklist ไหม?',
     answer:
-      'เริ่มจากเลือกคำถามที่ลูกค้าถามบ่อยที่สุด 5 คำถาม แล้วเขียนคำตอบแบบ Answer-First ในบทความหรือหน้าเว็บที่มีอยู่แล้ว พร้อมใส่ FAQ Schema ให้ครบ ไม่ต้องเริ่มจากการเขียนบทความใหม่ทั้งหมด',
+      'llms.txt เป็นองค์ประกอบเสริมสำหรับระบบหรือเครื่องมือที่รองรับ แต่ไม่ใช่ข้อกำหนดของ Google Search และไม่ได้รับประกันว่าจะถูกอ้างอิงในคำตอบ AI งานหลักยังเป็นการเปิดให้ระบบเข้าถึงเนื้อหา ทำข้อมูลให้ชัด และสร้างหลักฐานที่ตรวจสอบได้',
   },
   {
-    question: 'วัดผลว่า AEO ได้ผลหรือไม่ ดูจากอะไร?',
+    question: 'ต้องทำครบ 24 ข้อก่อนเผยแพร่ไหม?',
     answer:
-      'ดูจาก Google Search Console ว่าคำค้นที่เป็นคำถามเริ่มมี Impression เพิ่มขึ้นหรือไม่ และลองค้นหาคำถามเป้าหมายใน Google เพื่อดูว่าเว็บไซต์ถูกดึงไปแสดงใน Featured Snippet หรือ AI Overview หรือยัง ควรเช็คอย่างน้อยเดือนละครั้งเพราะตำแหน่ง Snippet เปลี่ยนแปลงได้ตลอดเวลา',
+      'ไม่จำเป็น ให้แก้สิ่งที่ขวางการเข้าถึงและการจัดทำดัชนีก่อน จากนั้นดูความชัดของคำตอบ หลักฐาน และการวัดผล การทำข้อสำคัญให้ครบและตรวจซ้ำได้มีประโยชน์กว่าการติ๊กทุกข้อแบบผิวเผิน',
+  },
+  {
+    question: 'ควรตรวจ AEO Checklist บ่อยแค่ไหน?',
+    answer:
+      'ควรตรวจก่อนเผยแพร่ หลังแก้เนื้อหาหรือระบบครั้งใหญ่ และตรวจหน้าสำคัญทุกเดือนหรือทุกไตรมาสตามความเร็วที่ข้อมูลเปลี่ยน ใช้ชุดคำถามเดิมในการตรวจซ้ำเพื่อให้เปรียบเทียบแนวโน้มได้',
   },
 ]
 
@@ -1665,32 +1675,33 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AEO Checklist สำหรับเว็บไซต์ไทย: เช็คลิสต์ก่อนติด Featured Snippet และ AI Overview',
+    title: 'AEO Checklist สำหรับเว็บไซต์ไทย: 24 จุดตรวจ Answer Engine Optimization',
     slug: 'aeo-checklist',
     category: 'AEO',
     excerpt:
-      'AEO Checklist ครอบคลุม 4 หมวดหลัก ได้แก่ Content Structure, Schema และ Technical, Featured Snippet Targeting และ Measurement รวมกว่า 27 รายการ เพื่อเพิ่มโอกาสให้เนื้อหาติด Featured Snippet, People Also Ask และ Google AI Overview',
-    readingTime: '13 min read',
+      'AEO Checklist สำหรับเว็บไซต์ไทย 24 จุด ครอบคลุมคำตอบ หลักฐาน การเข้าถึง และการวัดผล พร้อมวิธีจัดลำดับงานและ Case Study จากงานจริงของ Saralak Search',
+    readingTime: '15 min read',
     publishedDate: '2026-09-07',
-    lastModifiedDate: '2026-09-07',
+    lastModifiedDate: '2026-10-27',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'AEO Checklist สำหรับเว็บไซต์ไทย [27 รายการ] | Saralak Search',
+    metaTitle: 'AEO Checklist: 24 จุดตรวจเว็บไซต์ก่อน AI นำไปตอบ',
     metaDescription:
-      'AEO Checklist ครบจบสำหรับธุรกิจไทย 27 รายการใน 4 หมวด ได้แก่ Content Structure, Schema, Featured Snippet Targeting และ Measurement เพื่อติด Featured Snippet, People Also Ask และ Google AI Overview',
+      'AEO Checklist สำหรับเว็บไซต์ไทย 24 จุด ตรวจคำตอบ หลักฐาน การเข้าถึง และการวัดผล พร้อมลำดับแก้ก่อน–หลังและตัวอย่างจากงานจริง',
     aiSummary: [
-      'AEO Checklist ครอบคลุม 4 หมวด: Content Structure, Schema และ Technical, Featured Snippet Targeting และ Measurement รวม 27 รายการ',
-      'AEO เจาะจงที่ Google Search โดยเฉพาะ (Featured Snippet, People Also Ask, AI Overview) ต่างจาก GEO ที่ครอบคลุม ChatGPT, Gemini และ Perplexity ด้วย',
-      'ควรเริ่มจากหมวด Content Structure ก่อน เพราะเป็นพื้นฐานที่หมวดอื่นต่อยอดจาก',
-      'ตำแหน่ง Featured Snippet เปลี่ยนแปลงได้ตลอดเวลา ควรวัดผลอย่างน้อยเดือนละครั้ง',
+      'AEO Checklist ฉบับนี้มี 24 จุดตรวจ แบ่งเป็นคำตอบ หลักฐาน การเข้าถึง และการวัดผล',
+      'Google ไม่ได้กำหนดจำนวนคำตายตัว Schema พิเศษ หรือไฟล์พิเศษสำหรับ AI Overviews และ AI Mode',
+      'ควรให้สถานะแต่ละข้อเป็น ผ่าน ต้องแก้ หรือใช้ไม่ได้กับหน้านี้ พร้อมบันทึกหลักฐาน',
+      'ถ้าหน้าไม่ถูกจัดทำดัชนี ให้แก้การเข้าถึงก่อน แล้วจึงปรับคำตอบและหลักฐาน',
+      'Case Study จากงานจริงแสดงให้เห็นว่าเนื้อหาที่ตอบครบและแบ่งส่วนชัดสามารถถูก AI Overview อ้างอิงได้ แต่ไม่ใช่ผลรับประกัน',
     ],
     faqs: aeoChecklistFaqs,
     bodyVariant: 'aeo-checklist',
     cta: {
-      headline: 'อยากรู้ว่าเว็บไซต์ผ่าน AEO Checklist ข้อไหนแล้วบ้าง?',
+      headline: 'อยากรู้ว่าเว็บไซต์ติดตรงคำตอบ เนื้อหา หรือเทคนิค?',
       description:
-        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+        'ตรวจหน้าที่มีโอกาสสร้างลูกค้า แยกปัญหาเป็นคำตอบ หลักฐาน และการเข้าถึง พร้อมเรียงลำดับงานที่ควรแก้ก่อน',
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
