@@ -8803,87 +8803,66 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
     { id: 'what-is-ai-overview', label: 'AI Overview คืออะไร แบบเข้าใจง่าย' },
     { id: 'ai-overview-how-it-works', label: 'AI Overview ทำงานอย่างไร' },
     { id: 'ai-overview-comparison', label: 'AI Overview, AI Mode และ Featured Snippet ต่างกันอย่างไร' },
+    { id: 'ai-overview-availability', label: 'ทำไม AI Overview ไม่ขึ้น หายไป หรือปิดไม่ได้' },
     { id: 'ai-overview-benefits-limitations', label: 'AI Overview มีประโยชน์และข้อจำกัดอะไรบ้าง' },
-    { id: 'ai-overview-seo-impact', label: 'AI Overview ส่งผลต่อ SEO และการทำคอนเทนต์อย่างไร' },
-    { id: 'ai-overview-content-tips', label: '9 แนวทางเตรียม Content ให้พร้อมสำหรับ Google AI Overview' },
+    { id: 'ai-overview-seo-impact', label: 'AI Overview ส่งผลต่อ SEO และธุรกิจอย่างไร' },
+    { id: 'ai-overview-content-tips', label: '9 แนวทางเตรียมเนื้อหาฉบับ Saralak Search' },
     { id: 'ai-overview-case-study', label: 'ตัวอย่างจริงจากงานลูกค้า Saralak Search' },
-    { id: 'ai-overview-measurement', label: 'จะรู้ได้อย่างไรว่าเว็บไซต์ได้รับ Visibility จาก AI Overview' },
+    { id: 'ai-overview-measurement', label: 'จะรู้ได้อย่างไรว่าเว็บไซต์ติด AI Overview' },
     { id: 'ai-overview-faq', label: 'คำถามที่พบบ่อยเกี่ยวกับ AI Overview' },
     { id: 'ai-overview-summary', label: 'สรุป AI Overview' },
   ]
 
   return (
     <article className="grid gap-10">
+      <P>
+        AI Overview คือคำตอบสรุปที่สร้างด้วย Generative AI บนหน้าค้นหา Google พร้อมลิงก์ไปยังเว็บไซต์ต้นทาง
+        ผู้ค้นจึงเห็นภาพรวมได้ก่อนเปิดอ่านรายละเอียด แต่ AI Overview ไม่ได้แสดงทุกคำค้น
+        และการที่เว็บไซต์ถูกอ้างอิงไม่ได้แปลว่าจะได้ยอดคลิกหรือยอดขายเสมอไป
+      </P>
+
       {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป AI Overview ใน 30 วินาที" /> : null}
 
-      <nav aria-label="สารบัญ AI Overview" className="rounded-xl border border-neutral-200 bg-[#fbfaf6] p-5 sm:p-6">
-        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-        <ol className="mt-4 grid gap-2 text-sm leading-6 sm:grid-cols-2">
-          {tocItems.map((item) => (
-            <li key={item.id}>
-              <a href={'#' + item.id} className="font-medium text-teal-900 underline decoration-teal-300 underline-offset-4 hover:text-teal-700">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <TableOfContents items={tocItems} />
 
       <ArticleSection id="what-is-ai-overview" title="AI Overview คืออะไร แบบเข้าใจง่าย">
         <P>
-          AI Overview คือฟีเจอร์ใน Google Search Result Page ที่ใช้ Generative AI สร้างคำตอบภาพรวมจากข้อมูลที่เกี่ยวข้องกับคำค้น
-          พร้อมลิงก์เว็บไซต์ให้เข้าไปอ่านต่อ ไม่ใช่แชตบอตแยกต่างหากและไม่ได้ปรากฏทุกคำค้น
-          ที่น่าสนใจมากที่สุดคือ AI Overview ส่วนมากจะอยู่ก่อน SEO อันดับ 1 อีก เหมือนกับ SEO Rank 0 ที่เคยมีเมื่อหลายปีก่อน
-          ทั้งนี้ AI Overview ช่วยให้ผู้ค้นหาได้คำตอบเร็วขึ้นก็จริง แต่ก็ทำให้ SEO Traffic ลดลงด้วยเหมือนกัน
-          เพราะฉะนั้นสิ่งที่ทำได้ก็คือต้อง Optimize เนื้อหาบนเว็บไซต์เราให้ AI Overview ใส่ลิงก์ของเราในนั้น
+          AI Overview คือส่วนหนึ่งของ Google Search ที่ใช้ Generative AI สรุปข้อมูลซึ่งเกี่ยวข้องกับคำค้น
+          คำตอบอาจอยู่ในรูปย่อหน้า รายการ ขั้นตอน รูปภาพ หรือตาราง และมักมีลิงก์ให้เปิดอ่านเว็บไซต์ต้นทางเพิ่มเติม
         </P>
         <P>
-          AI Overview ไม่ได้ปรากฏทุกครั้งที่ค้นหา Google จะเลือกแสดงเมื่อระบบพิจารณาว่าคำตอบแบบ AI ช่วยเพิ่มเติมประโยชน์จากผลการค้นหาปกติได้
-          และแหล่งข้อมูลที่แสดงอาจแตกต่างกันตามคำค้น เวลา ประเทศ และบริบท
+          ชื่อที่ Google ใช้อย่างเป็นทางการคือ AI Overviews แต่คนไทยมักค้นคำว่า “AI Overview” ในรูปเอกพจน์
+          ทั้งสองคำหมายถึงฟีเจอร์เดียวกัน ไม่ใช่แชตบอตแยกจาก Google Search และไม่ใช่พื้นที่โฆษณาที่ธุรกิจจ่ายเงินเพื่อซื้อการอ้างอิงได้
         </P>
         <P>
-          AI Overview หรือภาพรวมที่สร้างโดย AI เป็นส่วนหนึ่งของ Google Search ที่สรุปข้อมูลและแสดงคำตอบโดยตรงบนหน้าผลการค้นหา (SERP)
-          คำตอบอาจประกอบด้วยข้อความสรุป หัวข้อย่อย คำแนะนำ และลิงก์อ้างอิงไปยังเว็บไซต์ที่เกี่ยวข้อง รูปแบบการแสดงผลขึ้นอยู่กับลักษณะของคำถาม
-        </P>
-        <P>
-          ตัวอย่างเช่น เมื่อค้นหา “AI Overview คือ” ผู้ค้นอาจเห็นคำอธิบายความหมาย ลักษณะการทำงาน และความแตกต่างจากการค้นหาแบบเดิมในคำตอบเดียว
-          จากนั้นสามารถกดแหล่งข้อมูลประกอบเพื่ออ่านรายละเอียดต่อได้
-        </P>
-        <P>
-          AI Overview จึงต่างจากการจัดอันดับลิงก์สีน้ำเงินทั่วไป แม้จะอยู่บนหน้า Google Search เดียวกัน
-          แต่คำตอบถูกสร้างขึ้นด้วยระบบ AI และมีลิงก์แหล่งข้อมูลประกอบ ไม่ใช่เพียงดึงย่อหน้าหนึ่งจากเว็บไซต์มาแสดงเสมอไป
+          ตำแหน่งและรูปแบบคำตอบเปลี่ยนได้ตามคำค้น เวลา ประเทศ ภาษา อุปกรณ์ และบริบทของผู้ค้น
+          บางครั้ง Google แสดง AI Overview เหนือผลค้นหาปกติ บางครั้งแสดงผลค้นหาแบบเดิมโดยไม่มีกล่องคำตอบจาก AI
         </P>
       </ArticleSection>
 
       <ArticleSection id="ai-overview-how-it-works" title="AI Overview ทำงานอย่างไร">
         <P>
-          โดยภาพรวม ระบบเริ่มจากการทำความเข้าใจคำค้น ค้นหาข้อมูลที่เกี่ยวข้องจาก Search แล้วใช้โมเดล AI สร้างคำตอบที่สรุปประเด็นสำคัญพร้อมลิงก์ประกอบ
-          Google อธิบายว่า AI Overviews และ AI Mode สามารถใช้กระบวนการค้นหาหลายประเด็นย่อย (query fan-out) เพื่อรวบรวมข้อมูลที่เกี่ยวข้องในบางกรณีได้
+          จาก <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ข้อมูลของ Google Search Central</a>
+          {' '}AI Overview ใช้ระบบของ Google Search ร่วมกับโมเดล AI เพื่อค้นและสรุปข้อมูลที่เกี่ยวข้อง โดยแบ่งการทำงานให้เข้าใจง่ายได้ 3 ขั้น
         </P>
-        <ArticleSubSection title="1. วิเคราะห์คำถามและความต้องการของผู้ค้น">
+        <ArticleSubSection title="1. Google ทำความเข้าใจสิ่งที่ผู้ค้นต้องการ">
           <P>
-            คำค้นที่เป็นคำถามเชิงอธิบาย เปรียบเทียบ หรือมีหลายองค์ประกอบอาจเหมาะกับคำตอบที่สังเคราะห์จากหลายแหล่ง
-            ทั้งนี้ไม่มีรายการประเภทคีย์เวิร์ดที่รับประกันว่า AI Overview จะปรากฏ
+            คำว่า “AI Overview คือ” ต้องการคำนิยาม ส่วนคำว่า “AI Overview ต่างจาก AI Mode” ต้องการการเปรียบเทียบ
+            Google จะแสดงคำตอบจาก AI เมื่อระบบประเมินว่าคำตอบดังกล่าวเพิ่มประโยชน์จากผลค้นหาปกติได้
           </P>
         </ArticleSubSection>
-        <ArticleSubSection title="2. ค้นหาและประมวลผลข้อมูลที่เกี่ยวข้อง">
+        <ArticleSubSection title="2. ระบบค้นข้อมูลที่เกี่ยวข้อง">
           <P>
-            ระบบ Google Search ใช้การจัดอันดับและการดึงข้อมูลที่เกี่ยวข้องร่วมกับเทคนิค AI เพื่อสนับสนุนคำตอบ
-            การที่หน้าเว็บถูกค้นพบ จัดทำดัชนี และมีสิทธิแสดง Snippet ตามข้อกำหนดของ Google จึงยังมีความสำคัญ
+            Google Search ค้นหน้าเว็บและข้อมูลที่เกี่ยวข้องกับคำถาม สำหรับคำถามซับซ้อน ระบบอาจแบ่งคำถามออกเป็นประเด็นย่อยแล้วค้นหลายชุดพร้อมกัน
+            กระบวนการนี้ช่วยรวบรวมข้อมูลคนละมุมก่อนนำมาสร้างคำตอบเดียว
           </P>
         </ArticleSubSection>
-        <ArticleSubSection title="3. สร้างคำตอบและแสดงแหล่งข้อมูล">
+        <ArticleSubSection title="3. AI สรุปคำตอบพร้อมลิงก์ให้อ่านต่อ">
           <P>
-            ผู้ค้นจะได้รับคำตอบสังเคราะห์ซึ่งอาจมีลิงก์สนับสนุนจากหลายเว็บไซต์ การแสดงลิงก์และเนื้อหาขึ้นอยู่กับระบบของ Google
-            และอาจเปลี่ยนเมื่อค้นหาซ้ำ
+            ระบบนำข้อมูลที่พบมาสังเคราะห์เป็นคำตอบและแสดงลิงก์ประกอบ ผู้ค้นจึงเปิดอ่านรายละเอียด เปรียบเทียบบริการ ดูราคา
+            หรือทำสิ่งที่คำตอบสรุปให้จบไม่ได้ คำตอบและเว็บไซต์ที่อ้างอิงอาจเปลี่ยนเมื่อค้นซ้ำ จึงไม่ควรสรุปจากการพบเว็บไซต์เพียงครั้งเดียว
           </P>
         </ArticleSubSection>
-        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
-          <p className="thai-readable text-sm leading-6 text-neutral-700">
-            <strong>ข้อควรรู้:</strong> AI-generated answers อาจผิดพลาด ตีความข้อมูลคลาดเคลื่อน หรือไม่ครอบคลุมรายละเอียดที่จำเป็น
-            สำหรับข้อมูลสุขภาพ การเงิน กฎหมาย หรือเรื่องที่มีผลกระทบสูง ควรตรวจสอบแหล่งข้อมูลต้นทางเพิ่มเติม
-          </p>
-        </div>
       </ArticleSection>
 
       <ArticleSection id="ai-overview-comparison" title="AI Overview, AI Mode และ Featured Snippet ต่างกันอย่างไร">
@@ -8899,69 +8878,96 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleSection id="ai-overview-availability" title="ทำไม AI Overview ไม่ขึ้น หายไป หรือปิดไม่ได้">
+        <P>
+          AI Overview ไม่ได้แสดงทุกคำค้น Google จะเลือกแสดงเมื่อระบบเห็นว่าคำตอบจาก Generative AI มีประโยชน์เพิ่มจากผลค้นหาปกติ
+          คำเดียวกันจึงอาจแสดงต่างกันตามเวลา ภาษา พื้นที่ อุปกรณ์ และบริบทของบัญชี
+        </P>
+        <P>
+          ผู้ใช้ไม่ต้องเปิด AI Overview เองในพื้นที่และภาษาที่ Google รองรับ เพราะเป็นฟีเจอร์หลักของ Search
+          แต่ฟีเจอร์ทดลองใน Search Labs อาจมีสวิตช์แยกต่างหาก การปิด “AI in Search” ใน Labs จึงไม่ได้หมายความว่า AI Overview หลักจะหายไปทั้งหมด
+        </P>
+        <P>
+          <a href="https://support.google.com/websearch/answer/14901683" target="_blank" rel="noreferrer" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Google Search Help ระบุว่า</a>
+          {' '}AI Overview ซึ่งเป็นฟีเจอร์หลักของ Search ปิดโดยตรงไม่ได้ หากต้องการดูเฉพาะลิงก์เว็บไซต์ ให้เลือกตัวกรอง “เว็บ” หลังค้นหา
+        </P>
+      </ArticleSection>
+
       <ArticleSection id="ai-overview-benefits-limitations" title="AI Overview มีประโยชน์และข้อจำกัดอะไรบ้าง">
         <P>
-          สำหรับผู้ค้น AI Overview ช่วยให้เห็นภาพรวมได้รวดเร็วและมีจุดเริ่มต้นในการอ่านต่อ โดยเฉพาะคำถามที่ต้องสรุปหลายประเด็น
-          อย่างไรก็ตาม คำตอบ AI ไม่ใช่หลักฐานยืนยันความถูกต้องของทุกข้อความเสมอไป
+          AI Overview ช่วยให้ผู้ค้นเข้าใจเรื่องที่มีหลายประเด็นได้เร็วขึ้น พร้อมเปิดทางไปยังเว็บไซต์ที่ให้รายละเอียดเพิ่มเติม
+          ธุรกิจจึงมีโอกาสถูกพบจากคำค้นที่ผู้ใช้ยังไม่รู้จักชื่อแบรนด์มาก่อน
         </P>
         <P>
-          สำหรับเจ้าของเว็บไซต์ ฟีเจอร์นี้เปิดโอกาสให้ข้อมูลจากเว็บไซต์ถูกค้นพบผ่านลิงก์ประกอบในคำตอบ AI แม้ผู้ใช้จะยังไม่รู้จักแบรนด์มาก่อน
-          แต่การถูกอ้างอิงไม่ได้รับประกันทราฟฟิกหรือยอดขาย และอัตราการคลิกลิงก์อาจแตกต่างจากผลการค้นหาแบบเดิม
+          ข้อจำกัดคือคำตอบจาก AI อาจผิด ตีความข้อมูลคลาดเคลื่อน หรือขาดเงื่อนไขสำคัญ ข้อมูลเกี่ยวกับสุขภาพ การเงิน กฎหมาย
+          หรือเรื่องที่มีผลต่อการตัดสินใจควรตรวจสอบจากแหล่งต้นทางมากกว่าหนึ่งแห่ง
+        </P>
+        <ResponsiveTable
+          headers={['ถ้าเจอสถานการณ์นี้', 'ควรทำอย่างไร']}
+          rows={[
+            ['คำตอบมีผลต่อสุขภาพ การเงิน หรือกฎหมาย', 'เปิดแหล่งข้อมูลต้นทางและเทียบข้อมูลมากกว่าหนึ่งแห่ง'],
+            ['เว็บไซต์ถูกอ้างอิงแต่ยอดคลิกไม่เพิ่ม', 'ตรวจหน้าปลายทาง ข้อเสนอ และเส้นทางให้คนทักหรือซื้อ'],
+            ['ยอดแสดงผลหรืออัตราการคลิกเปลี่ยน', 'แยกดูตามคำค้น หน้า และช่วงเวลาก่อนสรุปสาเหตุ'],
+            ['พบข้อมูลผิดใน AI Overview', 'ส่งความคิดเห็นให้ Google และแก้ข้อมูลต้นทางของเว็บไซต์ให้ชัด'],
+          ]}
+          label="ตารางวิธีรับมือกับข้อจำกัดของ AI Overview"
+          minWidth="640px"
+        />
+      </ArticleSection>
+
+      <ArticleSection id="ai-overview-seo-impact" title="AI Overview ส่งผลต่อ SEO และธุรกิจอย่างไร">
+        <P>
+          AI Overview เพิ่มพื้นที่คำตอบก่อนผลค้นหาแบบเดิม ผู้ใช้บางส่วนอาจได้คำตอบครบโดยไม่คลิกเว็บไซต์
+          ขณะที่บางคำค้นยังต้องเปิดเว็บเพื่อดูรายละเอียด เปรียบเทียบราคา จองบริการ หรือซื้อสินค้า ผลกระทบจึงไม่เหมือนกันทุกธุรกิจและทุกคำค้น
+        </P>
+        <P>
+          เจ้าของธุรกิจควรแยกผลออกเป็น 3 ระดับ ได้แก่ <strong>การมองเห็น</strong> เว็บไซต์ได้รับการอ้างอิงหรือไม่
+          <strong> การเข้าชม</strong> มีคนคลิกลิงก์เข้าหน้าเว็บหรือไม่ และ <strong>ผลทางธุรกิจ</strong> มีคนทัก โทร จอง หรือซื้อหรือไม่
+          การดูเพียงจำนวนครั้งที่ถูกอ้างอิงอาจทำให้ประเมินผลงานสูงเกินจริง
+        </P>
+        <P>
+          ตัวอย่างเช่น คลินิกสัตว์อาจมีบทความตอบคำถามเรื่องค่าใช้จ่ายหรืออาการเบื้องต้น หาก AI Overview นำข้อมูลไปสรุป
+          ชื่อคลินิกอาจถูกพบก่อนที่ผู้ค้นจะรู้จักแบรนด์ แต่คนจะนัดหมายต่อหรือไม่ยังขึ้นอยู่กับข้อมูลแพทย์ สถานที่ เวลาเปิด ราคาโดยประมาณ และปุ่มติดต่อในหน้าปลายทาง
         </P>
       </ArticleSection>
 
-      <ArticleSection id="ai-overview-seo-impact" title="AI Overview ส่งผลต่อ SEO และการทำคอนเทนต์อย่างไร">
+      <ArticleSection id="ai-overview-content-tips" title="9 แนวทางเตรียมเนื้อหาให้พร้อมสำหรับ Google AI Overview ฉบับ Saralak Search">
         <P>
-          SEO ยังคงเป็นพื้นฐานของการแสดงผลใน Google Search รวมถึงฟีเจอร์ AI เว็บไซต์ควรให้ Googlebot เข้าถึงหน้าได้
-          เนื้อหาหลักอ่านได้จริง เป็นข้อมูลที่มีคุณค่า และตรงกับเจตนาของผู้ค้น
-        </P>
-        <P>
-          Google ระบุว่าไม่มี Schema พิเศษ ไฟล์ AI พิเศษ หรือเทคนิค GEO เฉพาะที่ต้องทำเพื่อมีสิทธิปรากฏเป็นลิงก์สนับสนุนใน AI Overview หรือ AI Mode
-          หน้าเว็บต้องผ่านข้อกำหนดทางเทคนิคของ Search รวมถึงได้รับการจัดทำดัชนีและมีสิทธิแสดง Snippet
-          แต่การผ่านข้อกำหนดไม่ได้หมายความว่าจะได้รับ Citation
-        </P>
-        <P>
-          สิ่งที่ควรเพิ่มจากบทความ SEO แบบเดิมจึงไม่ใช่แค่จำนวนคำ แต่เป็นคุณภาพของคำตอบ ความชัดเจนของข้อมูล หลักฐาน ตัวอย่าง
-          และเส้นทางไปสู่ข้อมูลเชิงลึกที่ผู้ค้นต้องการ
-        </P>
-      </ArticleSection>
-
-      <ArticleSection id="ai-overview-content-tips" title="9 แนวทางเตรียม Content ให้พร้อมสำหรับ Google AI Overview ฉบับ Saralak Search">
-        <P>
-          แนวทางต่อไปนี้เป็นหลักการปรับคุณภาพ Content และ SEO ไม่ใช่สูตรรับประกันว่าเว็บไซต์จะได้รับการอ้างอิง
+          แนวทางต่อไปนี้เป็นวิธีที่ Saralak Search ใช้ตรวจและปรับเนื้อหา ไม่ใช่ปัจจัยจัดอันดับที่ Google ประกาศ
+          และไม่ใช่สูตรรับประกันว่าเว็บไซต์จะถูกอ้างอิง
         </P>
         <div className="grid gap-8">
           <ArticleSubSection id="direct-answer" title="1. ตอบคำถามหลักให้ชัดตั้งแต่ต้น">
             <P>เปิดแต่ละหัวข้อด้วยคำตอบที่ตรงกับหัวเรื่อง ก่อนขยายรายละเอียด ตัวอย่าง ข้อจำกัด และข้อยกเว้น ไม่จำเป็นต้องกำหนดจำนวนคำตายตัว</P>
           </ArticleSubSection>
-          <ArticleSubSection id="search-intent-headings" title="2. ตั้ง H2/H3 ตาม Search Intent จริง">
-            <P>ให้แต่ละหัวข้อทำหน้าที่ชัด เช่น “AI Overview ทำงานอย่างไร” หรือ “AI Overview ต่างจาก AI Mode อย่างไร” ไม่ต้องใส่คำถามทุกหัวข้อเพื่อหวังอันดับ</P>
+          <ArticleSubSection id="search-intent-headings" title="2. ตั้งหัวข้อตามสิ่งที่คนค้นต้องการจริง">
+            <P>ให้แต่ละหัวข้อทำหน้าที่ชัด เช่น “AI Overview ทำงานอย่างไร” หรือ “AI Overview ปิดได้ไหม” หลีกเลี่ยงหัวข้อกว้างที่อ่านแล้วไม่รู้ว่าจะได้คำตอบอะไร</P>
           </ArticleSubSection>
           <ArticleSubSection id="sub-intent" title="3. ครอบคลุมคำถามย่อยที่สัมพันธ์กัน">
             <P>
               หน้าเกี่ยวกับ AI Overview ควรตอบนิยาม วิธีทำงาน ความต่าง ข้อดีข้อจำกัด และผลต่อเว็บไซต์
-              ส่วนบทความ “GEO คืออะไร” ควรรับบทบาทหัวข้อวิธีสร้างการมองเห็นแบรนด์ใน AI Search ที่กว้างกว่า เพื่อลดการแย่ง Intent กันเอง
+              ส่วนบทความ “GEO คืออะไร” ควรรับบทบาทเรื่องการสร้างการมองเห็นแบรนด์ใน AI Search ที่กว้างกว่า เพื่อไม่ให้หลายหน้าแย่งคำค้นเดียวกัน
             </P>
           </ArticleSubSection>
-          <ArticleSubSection id="entities-and-numbers" title="4. ใช้ชื่อ Entity และตัวอย่างที่ตรวจสอบได้">
+          <ArticleSubSection id="entities-and-numbers" title="4. ใช้ชื่อ ตัวเลข และตัวอย่างที่ตรวจสอบได้">
             <P>
               อธิบายความแตกต่างระหว่าง Google Search, AI Overview, AI Mode, Featured Snippet และ Google Search Console อย่างเจาะจง
               ใช้ตัวเลขเฉพาะกรณีที่มีหลักฐานและระบุวันที่ของข้อมูล
             </P>
           </ArticleSubSection>
-          <ArticleSubSection id="standalone-sections" title="5. เขียน Section ให้อ่านแยกแล้วเข้าใจ">
+          <ArticleSubSection id="standalone-sections" title="5. เขียนแต่ละส่วนให้อ่านแยกแล้วเข้าใจ">
             <P>
-              แทนการเขียนว่า “ฟีเจอร์นี้ทำให้ดีขึ้น” ให้ระบุว่า “AI Overview ช่วยผู้ค้นเห็นคำตอบสรุปได้เร็วขึ้น”
-              เพื่อให้ประโยคมี Subject และความหมายครบ
+              หลีกเลี่ยงคำลอย เช่น “ระบบนี้” หรือ “วิธีดังกล่าว” เมื่อย่อหน้าถูกแยกไปแสดง
+              ผู้อ่านควรยังรู้ว่าประโยคนั้นพูดถึงอะไรและมีเงื่อนไขแบบไหน
             </P>
           </ArticleSubSection>
           <ArticleSubSection id="structured-data" title="6. ใช้ Structured Data ให้ตรงเนื้อหาจริง">
             <P>
               BlogPosting หรือ Article และ BreadcrumbList ใช้เมื่อสัมพันธ์กับหน้าที่เผยแพร่
-              ส่วน FAQPage ต้องทำตามแนวทางของ Google และไม่ใช่เครื่องมือรับประกัน AI Citation
+              ส่วน FAQPage ต้องทำตามข้อกำหนดของ Google และไม่ใช่เครื่องมือรับประกันการถูกอ้างอิง
             </P>
           </ArticleSubSection>
-          <ArticleSubSection id="problem-to-product" title="7. เชื่อมคำถามของผู้อ่านกับทางเลือกเชิงธุรกิจอย่างมีเหตุผล">
+          <ArticleSubSection id="problem-to-product" title="7. เชื่อมคำถามกับสินค้าและบริการอย่างมีเหตุผล">
             <P>
               บทความให้ความรู้สามารถเชื่อมไปสู่บริการหรือสินค้าที่เกี่ยวข้องได้ เมื่อผู้อ่านเข้าใจปัญหา วิธีเลือก และข้อจำกัดแล้ว
               โดยไม่ต้องเปลี่ยนบทความให้กลายเป็นหน้าขายของ ตัวอย่างจากเคสของ Saralak Search: บทความ “ขายอะไรดีตลาดนัด”
@@ -8973,63 +8979,60 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
             eyebrow="SEO + AI SEARCH"
             headingTag="p"
             headline="รับทำ SEO ที่เชื่อมการค้นหากับโอกาสทางธุรกิจ"
-            description="Saralak Search ช่วยวางกลยุทธ์ SEO และคอนเทนต์ให้ตอบ Search Intent สร้างการมองเห็นบน Google และต่อยอดความพร้อมสำหรับ AI Search โดยเริ่มจากเป้าหมายของธุรกิจ ไม่ใช่จำนวนบทความเพียงอย่างเดียว"
+            description="Saralak Search ช่วยวางกลยุทธ์ SEO และเนื้อหาจากคำถามที่ลูกค้าค้นจริง สร้างการมองเห็นบน Google และต่อยอดความพร้อมสำหรับ AI Search โดยเริ่มจากเป้าหมายของธุรกิจ ไม่ใช่จำนวนบทความเพียงอย่างเดียว"
             href="/services/seo"
             buttonText="ดูบริการรับทำ SEO"
           >
             <Link to="/case-studies" className="blog-cta__secondary-link">ดูตัวอย่างผลงาน</Link>
           </ArticleCTA>
-          <ArticleSubSection id="internal-links" title="8. เชื่อม Internal Link ไปหน้าที่มีบทบาทต่อเนื่อง">
+          <ArticleSubSection id="internal-links" title="8. เชื่อมลิงก์ภายในไปยังเรื่องที่ผู้อ่านต้องรู้ต่อ">
             <P>
-              บทความนี้ควรลิงก์ไปยัง <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>,
+              อ่านต่อเรื่อง <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>,
               {' '}<Link to="/blog/what-is-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO คืออะไร</Link>
               {' '}และ <Link to="/blog/aeo-checklist" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO Checklist</Link>
-              {' '}ในจุดที่ผู้อ่านต้องการศึกษาเชิงลึก ไม่จำเป็นต้องใช้ Exact Match ทุกครั้ง
+              {' '}เมื่อต้องการศึกษาเชิงลึกขึ้น ลิงก์ควรอยู่ในย่อหน้าที่เกี่ยวข้อง ไม่ควรรวมหลายลิงก์โดยไม่มีบริบท
             </P>
           </ArticleSubSection>
-          <ArticleSubSection id="credible-sources" title="9. อ้างอิงข้อเท็จจริงและแยกข้อสังเกตออกจากคำแนะนำ Google">
+          <ArticleSubSection id="credible-sources" title="9. แยกคำแนะนำของ Google ออกจากข้อสังเกตของ Saralak Search">
             <P>
-              ข้อมูลทางเทคนิคควรเชื่อมกับ Google Search Central โดยตรง ส่วนประสบการณ์หรือ Case Study ให้ระบุว่าเป็นผลที่พบในโครงการจริง
-              ไม่ขยายเป็นผลลัพธ์ที่รับประกันได้สำหรับทุกเว็บไซต์
+              ข้อมูลทางเทคนิคควรเชื่อมกับ Google Search Central โดยตรง ส่วนสิ่งที่พบจากงานจริงต้องระบุว่าเป็นข้อสังเกตจากโครงการ
+              ไม่ขยายผลเป็นกฎของ Google หรือผลลัพธ์ที่ทุกเว็บไซต์จะได้รับ
             </P>
           </ArticleSubSection>
         </div>
       </ArticleSection>
 
-      <ArticleSection id="ai-overview-case-study" title="ตัวอย่างจริง: Content ของลูกค้า Saralak Search ถูกอ้างอิงใน Google AI Overview">
+      <ArticleSection id="ai-overview-case-study" title="ตัวอย่างจริง: เนื้อหาของลูกค้า Saralak Search ถูกอ้างอิงใน Google AI Overview">
         <P>
-          จาก Case Study ที่ Saralak Search บทความของลูกค้าเกี่ยวกับไอเดียขายของตลาดนัดปรากฏเป็นแหล่งข้อมูลใน Google AI Overview
-          สำหรับคำค้น “ขายอะไรดีตลาดนัด” ซึ่งเป็นคำค้นแบบ Non-brand ผู้ค้นไม่ได้ระบุชื่อแบรนด์หรือคำว่าบรรจุภัณฑ์
-          ตัวบทความมีข้อมูลไอเดียสินค้า อาหาร เครื่องดื่ม ต้นทุน วิธีขาย รวมถึงตัวอย่างราคาขาย 19/29/39 บาทตามหลักฐานของเคสเดิม
+          บทความของลูกค้าเกี่ยวกับคำค้น “ขายอะไรดีตลาดนัด” ปรากฏเป็นแหล่งข้อมูลใน Google AI Overview
+          คำค้นนี้ไม่ระบุชื่อแบรนด์ และผู้ค้นยังอยู่ในช่วงหาไอเดียว่าจะขายอะไร ใช้ต้นทุนเท่าไร และตั้งราคาแบบไหน
         </P>
         <P>
-          เนื้อหาต้นทางเริ่มจากปัญหาของผู้ค้น เช่น จะขายสินค้าอะไร ราคาแบบไหน และควรเตรียมสิ่งใด
-          ก่อนเชื่อมถึงการเลือกบรรจุภัณฑ์สำหรับสินค้าที่เหมาะสม ในภาพประกอบที่ Saralak Search เก็บไว้
-          คำตอบ AI อ้างอิงข้อมูลจากหลายช่วงของบทความและนำ Packaging Solution ไปอยู่ในบริบทของคำแนะนำที่เกี่ยวข้องกับสินค้า
-          ทั้งนี้ต้องคงภาพต้นฉบับพร้อมการปิดบังชื่อแบรนด์ตามข้อกำหนดลูกค้า
+          เนื้อหาต้นทางตอบทั้งไอเดียสินค้า อาหาร เครื่องดื่ม ต้นทุน วิธีขาย และตัวอย่างราคา 19/29/39 บาท
+          ก่อนเชื่อมไปยังการเลือกบรรจุภัณฑ์ที่เหมาะกับสินค้าแต่ละแบบ คำตอบจาก AI อ้างอิงข้อมูลหลายช่วง
+          และนำเรื่องบรรจุภัณฑ์ไปวางในบริบทของการเริ่มขายของ
         </P>
         <ArticleImage
           src="/image/blog/what-is-ai-overview/what-is-ai-overview-case.png"
-          alt="ภาพจริงจาก Google AI Overview สำหรับคำค้น ขายอะไรดีตลาดนัด แสดงจุดที่คำตอบอ้างอิงข้อมูลและ Packaging Solution จากบทความลูกค้า"
+          alt="ภาพจริงจาก Google AI Overview สำหรับคำค้นขายอะไรดีตลาดนัด แสดงจุดที่คำตอบอ้างอิงข้อมูลจากบทความลูกค้า"
           caption='ภาพจริงจาก Google AI Overview สำหรับคำค้น "ขายอะไรดีตลาดนัด" — ชื่อแบรนด์ถูกปิดบังไว้'
         />
         <P>
-          จะเห็นว่า Content ที่ตอบคำถามเชิงข้อมูลได้ครบและเชื่อมกับบริบทธุรกิจอย่างสมเหตุสมผล
-          อาจสร้าง Brand Visibility ตั้งแต่ก่อนที่ผู้ค้นจะเริ่มค้นหาสินค้าโดยตรง
-          อย่างไรก็ตาม นี่คือผลที่สังเกตได้จากกรณีศึกษา ไม่ใช่หลักฐานว่าทุกบทความที่ใช้วิธีเดียวกันจะถูกอ้างอิง
+          จุดสำคัญไม่ใช่การใส่สินค้าให้มากที่สุด แต่เป็นการตอบปัญหาที่คนค้นต้องการก่อน แล้วจึงเชื่อมสินค้าเมื่อช่วยให้คำแนะนำสมบูรณ์ขึ้น
+          เคสนี้เป็นหลักฐานจากโครงการหนึ่ง ไม่ได้หมายความว่าบทความที่ใช้โครงเดียวกันจะถูก AI Overview อ้างอิงทุกหน้า
         </P>
       </ArticleSection>
 
-      <ArticleSection id="ai-overview-measurement" title="จะรู้ได้อย่างไรว่าเว็บไซต์ได้รับ Visibility จาก AI Overview">
+      <ArticleSection id="ai-overview-measurement" title="จะรู้ได้อย่างไรว่าเว็บไซต์ติด AI Overview">
         <P>
-          การประเมินควรแยกระหว่างการพบ Citation ในหน้าค้นหาจริง กับข้อมูลภาพรวมการค้นหาที่มีอยู่ใน Google Search Console
-          เพราะความละเอียดของรายงานและการแยกฟีเจอร์อาจเปลี่ยนไปตามเครื่องมือและช่วงเวลา
+          การตรวจผลควรใช้ทั้งหน้าค้นหาจริง Search Console และข้อมูลพฤติกรรมบนเว็บไซต์ร่วมกัน
+          เพราะการพบลิงก์ใน AI Overview ไม่ได้บอกว่ามีคนคลิกหรือเกิดยอดขายแล้ว
         </P>
         <NumberedList items={[
-          'ใช้ Generative AI performance reports ใน Google Search Console ซึ่ง Google ประกาศในเดือนมิถุนายน 2026 เพื่อดูข้อมูลการปรากฏของเว็บไซต์ในฟีเจอร์ Generative AI ตามมิติที่รายงานรองรับ และอ่านคำอธิบายตัวชี้วัดให้ถูกต้อง',
-          'เก็บหลักฐาน SERP เพิ่มเติม โดยบันทึกคำค้น ประเทศ วันเวลา อุปกรณ์ ภาพหน้าจอ และ URL ที่ถูกอ้างอิง เนื่องจากหน้าค้นหาเปลี่ยนแปลงได้',
-          'วิเคราะห์ Organic Visibility ใน GSC ควบคู่ Engagement และ Conversion ใน GA4 เพื่อประเมินคุณภาพผู้เข้าชม ไม่สรุปจาก Citation อย่างเดียว',
-          'แยกผลลัพธ์ 3 ระดับ: Visibility (ปรากฏ), Traffic (เกิดคลิก), Business Impact (เกิด Lead/Conversion) เพราะทั้งสามไม่ใช่สิ่งเดียวกัน',
+          'ตรวจคำค้นเป้าหมายบน Google แล้วบันทึกคำค้น ประเทศ วันเวลา อุปกรณ์ ภาพหน้าจอ และ URL ที่ถูกอ้างอิง เพื่อให้เทียบผลแต่ละเดือนได้ด้วยเงื่อนไขใกล้เคียงกัน',
+          'หากบัญชีมีรายงาน Generative AI ใน Search Console ให้ดูยอดแสดงผลแยกตามหน้า ประเทศ วันที่ และอุปกรณ์ พร้อมอ่านคำอธิบายตัวชี้วัดก่อนสรุปผล',
+          'เทียบ Search Console กับการอ่านหน้าเว็บและการติดต่อใน GA4 เพื่อดูว่าคนที่เข้ามาทำอะไรต่อ',
+          'แยกรายงานเป็น 3 ระดับ ได้แก่ การมองเห็น การเข้าชม และผลทางธุรกิจ เช่น คนทัก โทร จอง หรือซื้อ',
         ]} />
         <P>
           สำหรับธุรกิจที่ต้องการต่อยอดการมองเห็นใน AI Search นอกเหนือจาก Google AI Overview สามารถอ่าน
@@ -9042,23 +9045,30 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
 
       <ArticleSection id="ai-overview-summary" title="สรุป: AI Overview เป็นทั้งรูปแบบคำตอบใหม่และโอกาสให้เว็บไซต์ถูกค้นพบ">
         <P>
-          AI Overview เปลี่ยน user behavior บน Google Search จากการแสดงรายการลิงก์เป็นคำตอบที่สรุปข้อมูลพร้อมแหล่งอ้างอิง
-          สำหรับผู้อ่าน สิ่งสำคัญคือใช้คำตอบเป็นจุดเริ่มต้นแล้วตรวจสอบที่มาหากข้อมูลมีผลต่อการตัดสินใจ
-          สำหรับธุรกิจ สิ่งที่ควรทำคือรักษาพื้นฐาน SEO ให้แข็งแรง และผลิต Content ที่มีคุณค่า เจาะจง และน่าเชื่อถือ
+          AI Overview คือคำตอบสรุปจาก Generative AI บน Google Search ซึ่งช่วยให้คนเห็นภาพรวมพร้อมลิงก์ไปยังเว็บไซต์ที่เกี่ยวข้อง
+          สำหรับธุรกิจ โอกาสไม่ได้อยู่ที่การถูกอ้างอิงอย่างเดียว แต่อยู่ที่การพาคนจากคำตอบสรุปไปยังข้อมูล การติดต่อ และการตัดสินใจซื้อที่ชัดเจน
         </P>
         <P>
-          Saralak Search ใช้แนวทาง SEO, AEO และ GEO ร่วมกันเพื่อวางบทบาทของหน้าเว็บ ตั้งแต่การถูกค้นพบ การให้คำตอบ
-          ไปจนถึงการเชื่อม Search Intent กับธุรกิจอย่างเป็นธรรมชาติ ดูรายละเอียด
+          สิ่งที่ควรทำคือรักษาพื้นฐาน SEO ให้ Google เข้ามาอ่านและเก็บหน้าได้ ตอบคำถามให้ตรง ใช้ข้อมูลที่ตรวจสอบได้
+          เชื่อมหน้าที่เกี่ยวข้อง และวัดผลตั้งแต่การมองเห็นไปจนถึงคนทักหรือยอดขาย ดูรายละเอียด
           {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ GEO และ AI Search</Link>
           {' '}หรือ <Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ตัวอย่างผลงาน</Link>
         </P>
       </ArticleSection>
 
+      <ReadMoreLinks items={[
+        { to: '/blog/what-is-aeo', label: 'AEO คืออะไร' },
+        { to: '/blog/aeo-checklist', label: 'AEO Checklist' },
+        { to: '/blog/what-is-geo', label: 'GEO คืออะไร' },
+        { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO' },
+      ]} />
+
       <SourceBox items={[
-        'Google Search Central — AI features and your website, checked 8 October 2026',
-        'Google Search Central — Optimizing for generative AI features, checked 8 October 2026',
-        'Google Search Central Blog — Generative AI performance reports, June 2026',
-        'Saralak Search client case study “ขายอะไรดีตลาดนัด” (ภาพหลักฐานเดิม)',
+        <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer">Google Search Central: AI features and your website</a>,
+        <a href="https://support.google.com/websearch/answer/14901683" target="_blank" rel="noreferrer">Google Search Help: ข้อมูลภาพรวมโดย AI ใน Google Search</a>,
+        <a href="https://support.google.com/websearch/answer/16011537?hl=th" target="_blank" rel="noreferrer">Google Search Help: โหมด AI ใน Google Search</a>,
+        <a href="https://blog.google/products-and-platforms/products/search/new-controls-website-owners/" target="_blank" rel="noreferrer">Google: เครื่องมือและข้อมูลสำหรับเจ้าของเว็บไซต์ ปี 2026</a>,
+        'ภาพหลักฐานจากเคสลูกค้า Saralak Search สำหรับคำค้น “ขายอะไรดีตลาดนัด”',
       ]} />
     </article>
   )

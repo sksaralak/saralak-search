@@ -805,32 +805,28 @@ export const spaMarketingPlanFaqs: FAQItem[] = [
 
 export const aiOverviewFaqs: FAQItem[] = [
   {
-    question: 'AI Overview คืออะไร',
-    answer: 'AI Overview คือคำตอบที่ Google สร้างด้วย Generative AI บนหน้าผลการค้นหา เพื่อสรุปข้อมูลที่เกี่ยวข้องกับคำค้น และอาจแสดงลิงก์ไปยังเว็บไซต์ที่สนับสนุนคำตอบ',
-  },
-  {
     question: 'Google AI Overview ใช้งานฟรีไหม',
-    answer: 'AI Overview เป็นฟีเจอร์ที่อาจปรากฏใน Google Search สำหรับผู้ใช้ที่อยู่ในพื้นที่ ภาษา และเงื่อนไขที่รองรับ โดยการแสดงผลขึ้นอยู่กับระบบของ Google ไม่ใช่บริการซื้อพื้นที่แสดงคำตอบ',
+    answer: 'AI Overview เป็นส่วนหนึ่งของ Google Search ในพื้นที่ ภาษา และเงื่อนไขที่รองรับ ผู้ใช้ไม่ต้องจ่ายเงินเพื่อดูคำตอบ และเว็บไซต์ไม่สามารถซื้อพื้นที่อ้างอิงในคำตอบได้',
   },
   {
-    question: 'AI Overview กับ Google AI Mode เหมือนกันไหม',
-    answer: 'ไม่เหมือนกัน AI Overview เป็นคำตอบสรุปบนหน้าผลการค้นหาปกติ ส่วน AI Mode เป็นประสบการณ์ค้นหาด้วย AI ที่รองรับการถามต่อและการสำรวจหัวข้อซับซ้อน',
+    question: 'AI Overview แสดงผลกับภาษาไทยแล้วหรือยัง',
+    answer: 'Google รองรับประเทศไทยและภาษาไทยสำหรับฟีเจอร์ค้นหาด้วย AI แล้ว แต่ AI Overview ไม่ได้แสดงทุกคำค้น และผลที่เห็นอาจต่างกันตามบัญชี พื้นที่ อุปกรณ์ และช่วงเวลา',
   },
   {
-    question: 'AI Overview กับ Featured Snippet ต่างกันอย่างไร',
-    answer: 'Featured Snippet นำข้อความจากหน้าเว็บที่ Google เลือกมาแสดงเป็นคำตอบเด่น ส่วน AI Overview ใช้โมเดล AI สังเคราะห์คำตอบและอาจมีหลายแหล่งข้อมูลประกอบ',
+    question: 'AI Overview ใช้ Gemini หรือไม่',
+    answer: 'Google ใช้โมเดล Gemini และระบบของ Google Search ร่วมกันในการสร้างประสบการณ์ค้นหาด้วย AI รุ่นและวิธีทำงานอาจเปลี่ยนเมื่อ Google อัปเดตบริการ',
   },
   {
     question: 'เว็บไซต์ต้องอยู่อันดับ 1 ถึงจะถูกอ้างอิงใน AI Overview หรือไม่',
-    answer: 'Google ไม่ได้ระบุข้อกำหนดว่าต้องอยู่อันดับ 1 แต่หน้าที่มีสิทธิเป็นลิงก์สนับสนุนต้องได้รับการจัดทำดัชนีและมีสิทธิแสดง Snippet ตามข้อกำหนด Search การถูกเลือกเป็น Citation ขึ้นอยู่กับระบบ Google',
+    answer: 'Google ไม่ได้กำหนดว่าหน้าต้องอยู่อันดับ 1 แต่หน้าที่จะเป็นลิงก์สนับสนุนต้องได้รับการจัดเก็บในระบบค้นหาและมีสิทธิแสดงข้อความตัวอย่าง การผ่านเงื่อนไขพื้นฐานไม่ได้รับประกันว่าจะถูกเลือก',
   },
   {
-    question: 'ทำ SEO อย่างไรให้มีโอกาสปรากฏใน AI Overview',
-    answer: 'เริ่มจาก Technical SEO, เนื้อหาที่มีประโยชน์และตรวจสอบได้, การตอบ Search Intent ชัดเจน, Internal Links และ Page Experience ไม่มีวิธีที่รับประกันการแสดงผล หรือ Schema พิเศษที่ต้องติดตั้งสำหรับ AI Overview',
+    question: 'การถูกอ้างอิงใน AI Overview ทำให้ยอดขายเพิ่มแน่นอนไหม',
+    answer: 'ไม่แน่นอน การอ้างอิงช่วยเพิ่มโอกาสให้แบรนด์ถูกเห็น แต่ยอดขายยังขึ้นอยู่กับจำนวนคลิก ความน่าเชื่อถือของหน้า ข้อเสนอ ราคา และเส้นทางติดต่อหรือสั่งซื้อ',
   },
   {
-    question: 'AI Overview ส่งผลให้เว็บไซต์ Traffic ลดลงเสมอหรือไม่',
-    answer: 'ไม่จำเป็น ผลขึ้นอยู่กับประเภทคำค้น พฤติกรรมผู้ค้น และลักษณะเนื้อหา ควรดู Clicks, Impressions, Engagement และ Conversion จากข้อมูลของเว็บไซต์เองก่อนสรุปผล',
+    question: 'ต้องติดตั้ง Schema พิเศษสำหรับ AI Overview ไหม',
+    answer: 'ไม่ต้อง Google ระบุว่าไม่มี Schema หรือไฟล์ AI พิเศษสำหรับการปรากฏใน AI Overview ควรใช้ Structured Data ประเภทที่รองรับและให้ตรงกับเนื้อหาที่แสดงจริง',
   },
 ]
 export const blogPosts: BlogPost[] = [
@@ -1731,34 +1727,34 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'AI Overview คืออะไร? ทำงานอย่างไร ต่างจาก AI Mode อย่างไร',
+    title: 'AI Overview คืออะไร? ทำงานอย่างไร กระทบ SEO แบบไหน',
     slug: 'what-is-ai-overview',
     category: 'AEO',
     excerpt:
-      'AI Overview คือระบบสรุปคำตอบด้วย AI บน Google Search เรียนรู้วิธีทำงาน ความต่างจาก AI Mode และ Featured Snippet พร้อมแนวทาง SEO และเคสจริง',
+      'AI Overview คือคำตอบสรุปจาก AI บน Google Search ดูวิธีทำงาน ความต่างจาก AI Mode ผลต่อ SEO และเคสจริงของ Saralak Search',
     readingTime: '15 min read',
     publishedDate: '2026-09-15',
-    lastModifiedDate: '2026-10-08',
+    lastModifiedDate: '2026-10-27',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     ogImage: '/image/blog/what-is-ai-overview/what-is-ai-overview-case.png',
-    metaTitle: 'AI Overview คืออะไร? ทำงานอย่างไร ต่างจาก AI Mode | Saralak Search',
+    metaTitle: 'AI Overview คืออะไร? ทำงานอย่างไร กระทบ SEO แบบไหน',
     metaDescription:
-      'AI Overview คือระบบสรุปคำตอบด้วย AI บน Google Search เรียนรู้วิธีทำงาน ความต่างจาก AI Mode และ Featured Snippet พร้อมแนวทาง SEO และเคสจริง',
+      'AI Overview คือคำตอบสรุปด้วย AI บน Google Search ดูวิธีทำงาน ความต่างจาก AI Mode ผลต่อ SEO และวิธีเพิ่มโอกาสให้เว็บไซต์ถูกอ้างอิง',
     aiSummary: [
-      'AI Overview คือฟีเจอร์ใน Google Search ที่ใช้ Generative AI สร้างคำตอบภาพรวมจากข้อมูลที่เกี่ยวข้องกับคำค้น พร้อมลิงก์เว็บไซต์ให้เข้าไปอ่านต่อ',
-      'AI Overview ไม่ได้ปรากฏทุกคำค้น และแหล่งข้อมูลที่แสดงอาจต่างกันตามคำค้น เวลา ประเทศ และบริบท',
-      'AI Overview ต่างจาก AI Mode ซึ่งรองรับการค้นหาเชิงสนทนา และต่างจาก Featured Snippet ซึ่งนำข้อความจากหน้าเว็บมาแสดงเด่น',
-      'SEO ยังเป็นพื้นฐานสำคัญ และ Google ระบุว่าไม่มี Schema พิเศษหรือไฟล์ AI พิเศษที่รับประกันการปรากฏใน AI Overview',
-      'การวัดผลควรแยก Visibility, Traffic และ Business Impact เพราะการถูกอ้างอิงไม่ได้แปลว่าจะได้ Click หรือ Conversion เสมอไป',
+      'AI Overview คือคำตอบสรุปจาก Generative AI บน Google Search พร้อมลิงก์ให้เปิดอ่านเว็บไซต์ต้นทาง',
+      'Google ไม่ได้แสดง AI Overview ทุกคำค้น และคำตอบอาจต่างกันตามเวลา ประเทศ ภาษา อุปกรณ์ และบริบท',
+      'AI Overview สรุปคำตอบบนหน้าค้นหาปกติ ส่วน AI Mode รองรับการถามต่อและสำรวจหัวข้อได้ลึกกว่า',
+      'SEO ยังเป็นพื้นฐานสำคัญ และไม่มี Schema หรือไฟล์ AI พิเศษที่รับประกันการถูกอ้างอิง',
+      'ควรวัดผลแยกเป็นการมองเห็น การเข้าชม และผลทางธุรกิจ เพราะการถูกอ้างอิงไม่ได้แปลว่าจะได้ยอดขายเสมอไป',
     ],
     faqs: aiOverviewFaqs,
     bodyVariant: 'what-is-ai-overview',
     cta: {
-      headline: 'อยากรู้ว่า Content ของธุรกิจมีความพร้อมต่อ AI Overview แค่ไหน?',
+      headline: 'อยากรู้ว่าเนื้อหาของธุรกิจพร้อมสำหรับ AI Overview แค่ไหน?',
       description:
-        'ดูแนวทางปรับเว็บไซต์และ Content สำหรับ AI Search, AI Overview และการถูกอ้างอิง โดยวางพื้นฐาน SEO, Entity และโครงสร้างคำตอบให้ทำงานร่วมกัน',
+        'ดูแนวทางปรับเว็บไซต์และเนื้อหาสำหรับ AI Search โดยวางพื้นฐาน SEO ข้อมูลแบรนด์ และโครงสร้างคำตอบให้ทำงานร่วมกัน',
       buttonText: 'ดูบริการ GEO & AI Search',
       href: '/services/geo',
     },
