@@ -4,6 +4,8 @@ import CTAButton from './CTAButton'
 import type { BlogPost } from '../content/blog'
 import PetHospitalMapsArticle from './blog/PetHospitalMapsArticle'
 import PetHotelMapsArticle from './blog/PetHotelMapsArticle'
+import PetGroomingMapsSeoArticle from './blog/PetGroomingMapsSeoArticle'
+import PetShopMarketingArticle from './blog/PetShopMarketingArticle'
 import SpaSalesArticle from './blog/SpaSalesArticle'
 import {
   BulletList as CheckList,
@@ -8552,8 +8554,14 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   if (post.bodyVariant === 'increase-sale-massage-spa') {
     return <MassageSpaArticle post={post} />
   }
+  if (post.bodyVariant === 'increase-sale-pet-grooming-seo') {
+    return <PetGroomingMapsSeoArticle post={post} />
+  }
   if (post.bodyVariant === 'increase-sale-pet-grooming') {
     return <PetGroomingArticle post={post} />
+  }
+  if (post.bodyVariant === 'increase-sale-pet-shop-marketing') {
+    return <PetShopMarketingArticle post={post} />
   }
   if (post.bodyVariant === 'increase-sale-pet-shop') {
     return <PetShopArticle post={post} />
