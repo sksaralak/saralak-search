@@ -871,7 +871,7 @@ export const blogPosts: BlogPost[] = [
     category: 'SEO',
     excerpt:
       'Claude ทำเว็บได้จริง — แต่ "ทำเว็บเสร็จ" กับ "มีคนเข้าเว็บ" คือคนละขั้นตอนกันทั้งหมด บทความนี้บอก 5 ขั้นตอนสร้างเว็บด้วย Claude และสิ่งที่ต้องทำต่อให้ Google พาลูกค้ามาเจอ',
-    readingTime: '8 min read',
+    readingTime: '10 min read',
     publishedDate: '2026-06-28',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
