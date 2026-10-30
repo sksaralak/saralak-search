@@ -613,34 +613,29 @@ export const thamWebClaudeFaqs: FAQItem[] = [
 
 export const increaseSeoTrafficFaqs: FAQItem[] = [
   {
-    question: 'เพิ่ม Traffic เว็บได้จากช่องทางไหนบ้าง?',
+    question: 'เพิ่ม SEO Traffic ใช้เวลานานแค่ไหน?',
     answer:
-      'หลัก ๆ มาจาก SEO, Paid Ads, Social Media, Direct/Brand, Referral และช่องทาง AI/Search อื่น ๆ วิธีเลือกควรดูทั้งความเร็ว ต้นทุน ความต่อเนื่อง และคุณภาพของ Traffic ไม่ใช่ดูจำนวน Session อย่างเดียว',
+      'ไม่มีเวลาตายตัว Google แนะนำให้รอหลายสัปดาห์ก่อนประเมินผลการเปลี่ยนแปลง และบางงานอาจใช้เวลานานกว่านั้น ขึ้นอยู่กับการเก็บข้อมูล การแข่งขัน และสิ่งที่แก้ไป ควรติดตามจำนวนคลิกและการแสดงผลของหน้าเป้าหมายเป็นระยะ',
   },
   {
-    question: 'ถ้าต้องการเพิ่ม Traffic แบบไม่พึ่งค่าโฆษณาควรเริ่มจากอะไร?',
+    question: 'ควรเขียนบทความใหม่หรือปรับหน้าเดิมก่อน?',
     answer:
-      'เริ่มจาก SEO โดยตรวจ Search Demand, หน้าเป้าหมาย, Crawl/Index, Search Intent, On-page, Internal Link และ Content Gap ก่อนสร้างบทความเพิ่ม เพราะ Traffic จาก Organic Search ต้องอาศัยทั้ง Demand และหน้าที่ตอบ Intent ได้จริง',
+      'ถ้าหน้าเดิมมีการแสดงผลและคำค้นตรงกับธุรกิจ ให้ตรวจเนื้อหา ชื่อหน้า และลิงก์ภายในก่อน ถ้ายังไม่มีหน้าที่ตอบความต้องการนั้นจริง ค่อยสร้างหน้าใหม่ โดยเช็กไม่ให้ซ้ำกับหน้าเดิม',
   },
   {
-    question: 'เพิ่ม Traffic ด้วย SEO ต้องใช้เวลานานแค่ไหน?',
+    question: 'มีคนเห็นหน้าเว็บแต่คลิกน้อย ควรแก้อะไรก่อน?',
     answer:
-      'ไม่มีระยะเวลาตายตัว Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนเร็ว ขณะที่บางอย่างอาจใช้หลายสัปดาห์หรือหลายเดือน ระยะเวลาจริงขึ้นอยู่กับการ crawl/index, การแข่งขัน, คุณภาพของหน้า, authority และสถานะเว็บไซต์เดิม',
+      'ดูคำค้นและหน้าแยกกันก่อน แล้วเทียบชื่อหน้ากับสิ่งที่คนค้นและผลลัพธ์อื่นใน Google หากอันดับยังอยู่ลึก การปรับข้อความอย่างเดียวอาจไม่พอ ต้องปรับเนื้อหาและความเกี่ยวข้องของหน้าไปพร้อมกัน',
   },
   {
-    question: 'เขียนบทความเยอะขึ้นแล้ว Traffic จะเพิ่มไหม?',
+    question: 'เพิ่มคนเข้าเว็บจาก Google แล้วทำไมยอดขายยังไม่เพิ่ม?',
     answer:
-      'ไม่จำเป็น ถ้าบทความใหม่ซ้ำ Intent, ไม่มี Search Demand, ไม่มี Internal Link หรือหน้าเดิมยังมี Technical Issue การเพิ่มจำนวน Content อาจไม่ช่วย ควรกำหนด Topic Ownership และแก้ owner page ก่อน scale content',
+      'ผู้เข้าชมอาจมาจากคำค้นที่ยังไม่พร้อมซื้อ หรือหน้าเว็บยังไม่ช่วยให้ติดต่อหรือสั่งซื้อสะดวก ตรวจคำค้น หน้าที่คนเข้า และขั้นตอนหลังเข้าเว็บ รวมถึงการตั้งค่าบันทึกผู้ติดต่อหรือยอดขาย',
   },
   {
-    question: 'ควรวัดผลการเพิ่ม Traffic จากอะไร?',
+    question: 'ซื้อลิงก์จากเว็บอื่นช่วยเพิ่มคนเข้าเว็บจาก Google ได้ไหม?',
     answer:
-      'สำหรับ SEO ให้ดู Impressions, Clicks, Queries และ Landing Pages ใน Search Console แล้วดู Sessions, Engagement และ Conversion ใน GA4 ต่ออีกชั้น เช่น Form, LINE, Call, Lead หรือ Purchase เพื่อแยกว่า Traffic เพิ่มแล้วสร้างผลทางธุรกิจหรือไม่',
-  },
-  {
-    question: 'เพิ่ม Traffic กับเพิ่ม Organic Traffic ต่างกันอย่างไร?',
-    answer:
-      'เพิ่ม Traffic เป็นโจทย์กว้างที่รวมทุกช่องทาง เช่น SEO, Ads, Social และ Referral ส่วน Organic Traffic หมายถึง Traffic จากผลค้นหาแบบไม่เสียค่าโฆษณา หน้านี้เน้นวิธีเพิ่ม Traffic โดยให้ SEO เป็นกลยุทธ์หลักระยะกลางถึงยาว',
+      'การซื้อหรือแลกลิงก์เพื่อเพิ่มอันดับเข้าข่ายแนวปฏิบัติที่ Google จัดเป็นสแปม ควรสร้างเนื้อหาหรือข้อมูลที่มีเหตุผลให้แหล่งอื่นอ้างถึง และทำเครื่องหมายลิงก์โฆษณาหรือผู้สนับสนุนให้เหมาะสม',
   },
 ]
 
@@ -1529,36 +1524,35 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เพิ่ม Traffic เว็บอย่างไร? วิธีเพิ่มคนเข้าเว็บไซต์ โดยเน้น SEO แบบเป็นระบบ',
+    title: 'เพิ่ม SEO Traffic อย่างไร? วิธีเพิ่มคนเข้าเว็บจาก Google แบบวัดผลได้',
     slug: 'increase-seo-traffic',
     heroImageDesktop: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
-    heroImageAlt: 'วิธีเพิ่ม Traffic เว็บไซต์จากหลายช่องทาง โดยเน้นการเติบโตจาก SEO',
+    heroImageAlt: 'วิธีเพิ่ม SEO Traffic ด้วยการตรวจข้อมูลและปรับเว็บไซต์เป็นลำดับ',
     ogImage: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
     category: 'SEO',
     excerpt:
-      'เพิ่ม Traffic เว็บได้หลายทาง ทั้ง SEO, Ads, Social และ Referral แต่ถ้าต้องการ Traffic ที่ต่อเนื่องโดยไม่จ่ายต่อคลิกทุกครั้ง SEO คือแกนหลักที่ควรวางเป็นระบบตั้งแต่ Search Demand, Technical SEO, Content, Internal Link ไปจนถึง Conversion',
-    readingTime: '18 min read',
+      'เพิ่ม SEO Traffic เริ่มจากดูว่าคนเห็นหน้าเว็บหรือคลิกจาก Google มากน้อยแค่ไหน แล้วเลือกแก้จุดที่ติด ตั้งแต่การเก็บหน้า เนื้อหา ชื่อหน้า ลิงก์ภายใน ไปจนถึงขั้นตอนติดต่อหรือซื้อ',
+    readingTime: '10 min read',
     publishedDate: '2026-07-20',
-    lastModifiedDate: '2026-10-06',
+    lastModifiedDate: '2026-10-29',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'เพิ่ม Traffic เว็บอย่างไร? 9 วิธีเพิ่มคนเข้าเว็บไซต์ เน้น SEO | Saralak Search',
+    metaTitle: 'เพิ่ม SEO Traffic อย่างไร? วิธีเพิ่มคนเข้าเว็บจาก Google | Saralak Search',
     metaDescription:
-      'วิธีเพิ่ม Traffic เว็บไซต์จาก SEO, Ads, Social และ Referral พร้อมแผน SEO แบบลงลึก ตั้งแต่ Search Demand, Technical SEO, Content, Internal Link ไปจนถึงการวัดผลด้วย Search Console และ GA4',
+      'รวมวิธีเพิ่ม SEO Traffic ตั้งแต่ตรวจจำนวนคลิกและการแสดงผลใน Search Console ปรับหน้าเดิม เลือกคำค้น แก้ปัญหาการเก็บหน้า และวัดผลต่อถึงการติดต่อหรือยอดขาย',
     aiSummary: [
-      'การเพิ่ม Traffic มีหลายช่องทาง ได้แก่ SEO, Paid Ads, Social, Referral, Direct/Brand และ AI/Search แต่แต่ละช่องทางต่างกันเรื่องความเร็ว ต้นทุน และความต่อเนื่อง',
-      'ถ้าต้องการ Traffic ที่ไม่ต้องจ่ายต่อคลิกทุกครั้ง SEO ควรเป็นแกนหลัก โดยเริ่มจาก Search Demand, Owner URL, Crawl/Index และ Search Intent ก่อนสร้าง Content เพิ่ม',
-      'การเพิ่มบทความอย่างเดียวไม่รับประกัน Traffic หากหน้าไม่ถูก Index, Keyword ไม่มี Demand, Intent ผิด หรือ Internal Link กระจายไปหลาย owner page',
-      'Saralak Search ใช้กรอบ Demand, Index, Relevance, Authority, Click และ Conversion เพื่อหาว่าควรเพิ่ม Traffic จากจุดไหนก่อน',
-      'วัดผลด้วย Search Console สำหรับ Visibility/Clicks และ GA4 สำหรับ Sessions/Engagement/Conversion ไม่ใช้ Traffic เป็น KPI เดียว',
+      'เพิ่ม SEO Traffic โดยเริ่มจากข้อมูลของหน้าและคำค้นใน Search Console แล้วแยกปัญหาว่าเกิดจากคนยังไม่เห็นหน้า ไม่คลิก หรือเข้ามาแล้วไม่ติดต่อ',
+      'ปรับหน้าเดิมก่อนเมื่อมีคำค้นและการแสดงผลที่ตรงกับธุรกิจ ส่วนหน้าใหม่ควรตอบความต้องการที่หน้าเดิมยังไม่มี',
+      'ตรวจการเก็บหน้า เนื้อหา ชื่อหน้า และลิงก์ภายในตามอาการ ไม่ใช้การเพิ่มบทความหรือลิงก์จากเว็บอื่นเป็นคำตอบเดียว',
+      'วัดจำนวนคลิกและการแสดงผลควบคู่กับจำนวนผู้ติดต่อหรือยอดขาย เพื่อดูว่าการเติบโตมีประโยชน์ต่อธุรกิจหรือไม่',
     ],
     faqs: increaseSeoTrafficFaqs,
     bodyVariant: 'increase-seo-traffic',
     cta: {
-      headline: 'อยากเพิ่ม Traffic แต่ยังไม่รู้ว่าควรเริ่มจาก SEO จุดไหน?',
+      headline: 'อยากเพิ่ม SEO Traffic แต่ยังไม่รู้ว่าหน้าติดตรงไหน?',
       description:
-        'บริการ SEO ของ Saralak Search ช่วยวิเคราะห์ Search Demand, Technical SEO, Content, Internal Link และ Landing Page แล้วจัดลำดับงานที่ควรทำก่อนตามข้อมูลจริง',
+        'ส่งเว็บไซต์มาให้เราช่วยดูคำค้นและหน้าที่มีโอกาสเติบโต แล้วรับรายการจุดที่ควรตรวจต่อ ทั้งเนื้อหา การเก็บหน้า และเส้นทางติดต่อ',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
