@@ -2,7 +2,6 @@ import type { BlogPost } from '../../content/blog'
 import {
   BlogProse,
   CaseStudyBox,
-  CTABox as ArticleCTA,
   FAQSection as ArticleFAQ,
   RelatedLinks as ReadMoreLinks,
   ResponsiveTable,
@@ -141,7 +140,6 @@ export default function RestaurantSalesArticle({ post }: { post: BlogPost }) {
         </div>
       </section>
 
-      <ArticleCTA headline="อยากให้ลูกค้าในพื้นที่ค้นหาร้านเจอและติดต่อได้ง่ายขึ้น?" description="เริ่มจากตรวจข้อมูลร้านบน Google Maps และเว็บไซต์ แล้ววางแนวทางวัดสายโทร การจอง และยอดขายให้เหมาะกับร้าน" buttonText="ดูบริการ Google Maps" href="/services/google-maps" />
       <ReadMoreLinks items={[
         { to: '/blog/increase-sale-google-maps', label: 'เพิ่มยอดขายจาก Google Maps' },
         { to: '/blog/local-seo-customer-intent', label: 'Local SEO กับความตั้งใจค้นหาของลูกค้า' },
