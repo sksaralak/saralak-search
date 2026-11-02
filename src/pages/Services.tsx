@@ -314,6 +314,11 @@ const decisionGuide = [
     service: 'Monthly SEO Advisor',
     to: '/contact',
   },
+  {
+    condition: 'อยากทำ SEO เองหรือให้ทีมทำเป็น',
+    service: 'คอร์สสอน SEO (เริ่ม 9,900)',
+    to: '/services/seo-training',
+  },
 ]
 
 const trustPoints = [
@@ -449,6 +454,7 @@ export default function Services() {
               { label: 'Local SEO', to: '/services/local-seo', desc: 'ลูกค้าในย่าน' },
               { label: 'Google Maps', to: '/services/google-maps', desc: 'GBP & Maps' },
               { label: 'GEO', to: '/services/geo', desc: 'AI Search' },
+              { label: 'สอน SEO', to: '/services/seo-training', desc: 'คอร์สเรียน' },
             ].map(({ label, to, desc }) => (
               <Link
                 key={to}
