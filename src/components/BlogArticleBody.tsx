@@ -3266,308 +3266,132 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
   )
 }
 function AiWebsiteSeoArticle({ post }: { post: BlogPost }) {
-  const seoChecks = [
-    {
-      title: '1. Crawl และ Index ได้จริง',
-      body: 'หน้าเป้าหมายต้องตอบ 200, ไม่ถูก noindex หรือ robots.txt บล็อกโดยไม่ตั้งใจ และมีลิงก์ภายในที่ crawler ตามไปถึงได้ การมีหน้าอยู่บน production ไม่ได้แปลว่า Google พบและ index แล้ว',
-    },
-    {
-      title: '2. URL และ Canonical ชัด',
-      body: 'แต่ละ Search Intent ควรมี owner URL ที่ชัดเจน ถ้า AI builder สร้าง URL ซ้ำ, query parameter หรือหน้า variant จำนวนมาก ต้องกำหนด canonical และ internal link ให้สอดคล้องกัน',
-    },
-    {
-      title: '3. Metadata และ Heading ไม่ใช้ค่าเดียวทั้งเว็บ',
-      body: 'Title, Meta Description และ H1 ต้องอธิบายหน้าของตัวเอง ไม่ควรใช้ข้อความ generic ซ้ำทุก route เพราะทำให้ทั้งคนอ่านและ Search Engine แยกหน้าสำคัญออกจากกันได้ยาก',
-    },
-    {
-      title: '4. เนื้อหาตอบ Search Intent',
-      body: 'AI สร้าง copy ได้เร็ว แต่ต้องตรวจว่าหน้านั้นตอบคำถามที่คนค้นจริงหรือไม่ มีข้อมูลเฉพาะธุรกิจ ตัวอย่าง หลักฐาน หรือเงื่อนไขที่ generic content ไม่มีหรือยัง',
-    },
-    {
-      title: '5. Internal Link พาไปยังหน้าที่สำคัญ',
-      body: 'หน้าใหม่ต้องไม่เป็นเกาะแยกจากเว็บไซต์ ควรมีลิงก์จาก hub หรือหน้าที่เกี่ยวข้อง และส่งต่อไปยัง service, product, guide หรือ case study ที่เป็นขั้นถัดไปของผู้ใช้',
-    },
-    {
-      title: '6. วัดผลหลัง Deploy',
-      body: 'หลังเปิดเว็บให้ตรวจ Indexing และ Performance ใน Google Search Console แล้วดู Sessions, Engagement และ Conversion ใน GA4 เพื่อแยกว่าเว็บถูกค้นพบหรือแค่ถูกสร้างเสร็จ',
-    },
-  ]
-
-  const gates = [
-    ['Intent', 'กำหนดว่าหน้านี้ตอบคำค้นและงานของผู้ใช้เรื่องอะไร'],
-    ['Architecture', 'กำหนด owner URL, navigation และ internal link ก่อนสร้างหลายหน้า'],
-    ['Build', 'ให้ AI สร้าง layout, component, code และ draft ตาม requirement'],
-    ['Technical QA', 'ตรวจ status, indexability, canonical, sitemap, rendering และ mobile'],
-    ['Content QA', 'ตรวจความถูกต้อง Search Intent, originality และ claim ก่อน publish'],
-    ['Measurement', 'เก็บ baseline และติดตาม Search Console, GA4 และ conversion'],
-  ]
-
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} /> : null}
+      <BlogProse>
+        {post.aiSummary && <AISummary title="สรุป AI ทำเว็บใน 30 วินาที" items={post.aiSummary} />}
 
-      <section className="grid gap-5">
-        <P>
-          <strong>AI ทำเว็บได้จริง</strong> ทั้งการสร้าง layout, component, code และร่างเนื้อหา
-          แต่เว็บที่เปิดได้บน browser ยังไม่เท่ากับเว็บที่พร้อมติด Google
-          เพราะ Search ยังต้องพึ่ง URL ที่ crawl/index ได้, โครงสร้างหน้า, Search Intent, Internal Link
-          และข้อมูลที่มีประโยชน์จริง
-        </P>
-        <P>
-          จาก SERP ของคำค้นกลุ่ม “AI ทำเว็บ” ที่ตรวจในเดือนตุลาคม 2026
-          ผลลัพธ์มีทั้ง AI Website Builder, เครื่องมือสร้างหน้าเว็บจาก prompt และ AI coding assistant
-          จึงเห็นชัดว่า intent หลักคือ <strong>อยากสร้างเว็บไซต์ให้เสร็จเร็วด้วย AI</strong>
-          ไม่ใช่ต้องการเรียน Technical SEO อย่างเดียว หน้านี้จึงตอบทั้งสองช่วง:
-          สร้างเว็บให้ได้ก่อน แล้วตรวจให้ Search-ready ก่อน scale
-        </P>
-      </section>
-
-      <ArticleSection title="AI ทำเว็บได้ถึงไหน และอะไรยังต้องตรวจเอง">
-        <P>
-          เครื่องมือ AI ช่วยลดเวลาจาก brief ไปเป็นหน้าเว็บที่ใช้งานได้อย่างมาก
-          แต่ความสามารถในการ “สร้าง” กับความพร้อมด้าน Search เป็นคนละชั้นของงาน
-          จุดที่ควรแยกให้ชัดมี 3 ระดับ
-        </P>
-        <div className="overflow-x-auto rounded-xl border border-neutral-200">
-          <table className="min-w-[620px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
-            <thead className="bg-[#fbfaf6]">
-              <tr>
-                <th className="px-4 py-3 font-semibold text-neutral-950">ระดับงาน</th>
-                <th className="px-4 py-3 font-semibold text-teal-800">AI ช่วยได้ดี</th>
-                <th className="px-4 py-3 font-semibold text-neutral-700">ยังต้องมีการตัดสินใจ/QA</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-100 text-neutral-700">
-              {[
-                ['Build', 'สร้าง layout, component, code, copy draft', 'Business requirement, UX และข้อมูลจริง'],
-                ['SEO Implementation', 'ใส่ title, canonical, sitemap, structured data ตาม spec', 'เลือก owner URL, Search Intent และ priority'],
-                ['Content', 'สรุปข้อมูลและจัดโครงร่างเร็ว', 'Originality, accuracy, evidence และ information gain'],
-                ['Measurement', 'ช่วยเขียน tracking code หรือ dashboard logic', 'กำหนด KPI และตีความผลจาก Search/Business'],
-              ].map(([level, ai, qa]) => (
-                <tr key={level}>
-                  <td className="px-4 py-3 font-medium text-neutral-950">{level}</td>
-                  <td className="thai-readable px-4 py-3">{ai}</td>
-                  <td className="thai-readable px-4 py-3">{qa}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <P>
-          ดังนั้นคำถามที่ดีกว่า “AI ทำเว็บได้ไหม” คือ
-          <strong> AI ทำส่วนไหนให้เร็วขึ้น และจุดไหนต้องมีข้อมูลหรือคนตรวจเพื่อให้เว็บทำงานเชิงธุรกิจได้จริง</strong>
-        </P>
-      </ArticleSection>
-
-      <ArticleSection title="AI สร้างเว็บ ไม่ได้แปลว่า SEO พร้อม">
-        <P>
-          ปัญหาที่พบกับเว็บที่สร้างเร็วด้วย AI มักไม่ใช่ code พัง แต่เป็นชั้น Search ที่ยังไม่ได้กำหนดตั้งแต่ต้น
-          เช่นสร้างหลาย route จาก template เดียวกัน แต่ Title/H1 ซ้ำ, ไม่มี owner page ของแต่ละ intent,
-          canonical ไม่ตรงกับ URL ที่ต้องการ index หรือบทความจำนวนมากมีข้อมูลคล้ายกันจนไม่มีเหตุผลให้ Search เลือกหน้าหนึ่งเหนืออีกหน้า
-        </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            {
-              title: 'เว็บเปิดได้ แต่ Google ยังไม่เห็นหน้า',
-              body: 'Production URL ใช้งานได้ แต่ไม่มี crawlable link, sitemap ไม่ครอบคลุม หรือมี noindex/canonical ผิด ทำให้การค้นพบและ index ไม่เป็นไปตามที่คาด',
-            },
-            {
-              title: 'มีหลายหน้า แต่ไม่มี Topic Ownership',
-              body: 'AI สร้าง landing page ได้เร็วมาก หากหลายหน้าตอบ intent เดียวกัน อาจเกิด cannibalization และทำให้ internal link ไม่รู้ว่าควรส่งสัญญาณไปหน้าใด',
-            },
-            {
-              title: 'Content ถูกต้องแบบกว้าง ๆ แต่ไม่มี Information Gain',
-              body: 'ข้อความอ่านได้และดูครบ แต่ไม่มีข้อมูลเฉพาะธุรกิจ ตัวอย่างจริง comparison, methodology หรือ evidence ที่ทำให้หน้าแตกต่างจาก generic AI content',
-            },
-            {
-              title: 'ใส่ Schema แล้วคิดว่า SEO เสร็จ',
-              body: 'Structured Data ช่วยอธิบายข้อมูลบนหน้าในรูปแบบที่ Google รองรับ แต่ไม่ใช่การรับประกันอันดับ และ markup ต้องตรงกับ visible content',
-            },
-          ].map((item) => (
-            <div key={item.title} className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </ArticleSection>
-
-      <ArticleSection title="SEO Checklist สำหรับเว็บที่สร้างด้วย AI">
-        <P>
-          ถ้าเว็บถูกสร้างด้วย Claude, Codex, AI Website Builder หรือเครื่องมือใดก็ตาม
-          checklist ก่อนเปิดจริงควรเหมือนกัน เพราะ Search Engine เห็นผลลัพธ์ปลายทางของเว็บไซต์
-          ไม่ได้เห็น prompt ที่ใช้สร้างเว็บ
-        </P>
-        <div className="grid gap-4">
-          {seoChecks.map((item) => (
-            <div key={item.title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{item.title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? เข้าใจพื้นฐาน Search ก่อนตรวจเว็บที่สร้างด้วย AI' },
-          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร? ใช้ตรวจหลังเว็บไซต์ขึ้น Production' },
+        <TableOfContents items={[
+          { id: 'ai-web-capability', label: 'AI ทำเว็บได้จริงไหม และช่วยทำส่วนไหนได้บ้าง' },
+          { id: 'ai-web-fit', label: 'AI ทำเว็บแบบไหนเหมาะกับธุรกิจ' },
+          { id: 'ai-web-prepare', label: 'ก่อนให้ AI ทำเว็บ ต้องเตรียมข้อมูลอะไร' },
+          { id: 'ai-web-build', label: 'สร้างเว็บไซต์ด้วย AI ยังไง ตั้งแต่เริ่มจนเปิดใช้งาน' },
+          { id: 'ai-web-check', label: 'ก่อนเปิดเว็บที่ AI ทำ ต้องตรวจอะไรบ้าง' },
+          { id: 'ai-web-google', label: 'เว็บที่สร้างด้วย AI ติด Google ได้ไหม' },
+          { id: 'ai-web-case', label: 'ตัวอย่างงานจริง: เว็บไซต์ที่หน้ารวมสินค้าถูก Google เก็บไม่ครบ' },
+          { id: 'ai-web-summary', label: 'สรุป AI ทำเว็บให้ธุรกิจเริ่มตรงไหน' },
         ]} />
-      </ArticleSection>
 
-      <ArticleSection title="Workflow ของ Saralak Search: 6 Gate ก่อน Scale เว็บด้วย AI">
-        <P>
-          จากการทำงานกับเว็บไซต์ที่มีทั้ง React, WordPress, E-commerce และหน้า Landing Page
-          เราไม่เริ่มจากสั่ง AI ว่า “ทำ SEO ให้ครบ” แต่แยกงานเป็น Gate
-          เพื่อหยุดปัญหาก่อนที่จะถูกทำซ้ำไปหลายสิบหรือหลายร้อยหน้า
-        </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {gates.map(([title, body], index) => (
-            <div key={title} className="rounded-lg border border-teal-100 bg-teal-50/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">Gate {index + 1}</p>
-              <h3 className="mt-1 font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
-            </div>
-          ))}
-        </div>
-        <P>
-          Decision rule ที่ใช้คือ <strong>อย่า scale หน้าใหม่จนกว่า template แรกผ่าน Crawl/Index, Metadata,
-          Canonical, Content และ Measurement QA</strong> เพราะข้อผิดพลาดหนึ่งจุดใน template
-          จะถูกทำซ้ำตามจำนวนหน้าที่ AI สร้าง
-        </P>
-      </ArticleSection>
+        <ArticleSection id="ai-web-capability" title="AI ทำเว็บได้จริงไหม และช่วยทำส่วนไหนได้บ้าง?">
+          <P><strong>AI ทำเว็บเริ่มต้นได้เร็ว</strong> โดยช่วยร่างโครงหน้า เลย์เอาต์ ข้อความ หรือโค้ดบางส่วนตามเครื่องมือที่ใช้ แต่เจ้าของธุรกิจยังต้องเลือกว่าหน้าควรทำอะไร ใส่ข้อมูลจริง และทดลองการใช้งานก่อนเปิดให้ลูกค้าเข้ามา</P>
+          <P>ตัวอย่างเช่น ร้านนวดอาจให้ AI ร่างหน้าแนะนำบริการและช่องทางจองได้ แต่ต้องตรวจราคา ระยะเวลาให้บริการ พื้นที่ร้าน และเงื่อนไขการยกเลิกด้วยตัวเอง เพราะข้อมูลเหล่านี้กระทบทั้งการตัดสินใจและการจองจริง</P>
+          <ResponsiveTable label="AI ช่วยสร้างเว็บส่วนไหน และธุรกิจควรตรวจอะไร" headers={['งานบนเว็บไซต์', 'AI ช่วยเริ่มต้นได้', 'สิ่งที่ต้องตรวจ']} rows={[
+            ['หน้าตาและโครงหน้า', 'ร่างเลย์เอาต์ ส่วนเนื้อหา และองค์ประกอบหน้า', 'ลำดับข้อมูลเหมาะกับลูกค้าและมือถือหรือไม่'],
+            ['ข้อความ', 'ร่างคำอธิบายบริการ หัวข้อ หรือปุ่ม', 'ราคา เงื่อนไข และจุดเด่นตรงกับธุรกิจจริงหรือไม่'],
+            ['ภาพประกอบ', 'เสนอภาพหรือสร้างภาพประกอบตามคำสั่ง', 'ภาพสื่อถึงบริการจริงและมีสิทธิ์ใช้งานหรือไม่'],
+            ['ฟังก์ชัน', 'ช่วยตั้งต้นแบบฟอร์ม เมนู หรือส่วนโต้ตอบ', 'ข้อมูลส่งถึงทีมและขั้นตอนทำงานได้จริงหรือไม่'],
+          ]} />
+        </ArticleSection>
 
-      <ArticleSection title="Claude หรือ AI Coding Assistant เหมาะกับ SEO ตรงไหน">
-        <P>
-          Claude และ AI coding assistant เหมาะมากกับงาน implementation เมื่อ requirement ชัด
-          เช่นสร้าง metadata component, sitemap, canonical logic, semantic HTML,
-          structured data ที่ตรงกับข้อมูลบนหน้า หรือแก้ internal link ตาม mapping ที่กำหนดไว้
-        </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-teal-200 bg-teal-50/50 p-5">
-            <p className="font-semibold text-teal-900">เหมาะให้ AI Execute</p>
-            <ul className="mt-3 grid gap-2 text-sm text-teal-900">
-              {[
-                'สร้าง title/meta จาก rule ที่กำหนด',
-                'เพิ่ม canonical และ hreflang ตาม URL mapping',
-                'สร้าง sitemap จาก route จริง',
-                'เพิ่ม JSON-LD ตาม schema type ที่เลือกแล้ว',
-                'refactor semantic HTML และ internal link',
-                'ช่วยตรวจ code diff และ regression',
-              ].map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-          <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-            <p className="font-semibold text-neutral-800">ต้องมีข้อมูลก่อนสั่ง</p>
-            <ul className="mt-3 grid gap-2 text-sm text-neutral-700">
-              {[
-                'keyword และ Search Demand',
-                'Search Intent และ owner URL',
-                'หน้าที่ควร index/noindex',
-                'Business priority ของแต่ละหน้า',
-                'Content gap เทียบคู่แข่ง',
-                'KPI ที่ใช้ตัดสินว่าการแก้ได้ผลหรือไม่',
-              ].map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        </div>
-        <P>
-          จุดสำคัญคือ AI coding assistant ไม่ควรถูกใช้แทนข้อมูล Search
-          หากไม่มี Google Search Console, keyword data, SERP และ business context
-          การ implement อาจถูกต้องทาง code แต่ผิดหน้าหรือผิด priority ได้
-        </P>
-      </ArticleSection>
+        <ArticleSection id="ai-web-fit" title="AI ทำเว็บแบบไหนเหมาะกับธุรกิจของเรา?">
+          <P>เริ่มจากฟังก์ชันที่ลูกค้าต้องใช้ แล้วค่อยเลือกเครื่องมือ เว็บแนะนำบริการกับระบบจองหรือร้านค้าออนไลน์มีความต้องการต่างกัน การเลือกจากหน้าตาหรือคำว่า “ทำเว็บได้” อย่างเดียวอาจทำให้ต้องเปลี่ยนระบบภายหลัง</P>
+          <ResponsiveTable label="เลือกวิธีทำเว็บไซต์ด้วย AI ตามงานของธุรกิจ" headers={['เป้าหมายเว็บ', 'วิธีเริ่มที่ควรพิจารณา', 'จุดที่ต้องตรวจ']} rows={[
+            ['แนะนำบริษัทหรือบริการ', 'เครื่องมือสร้างเว็บไซต์สำเร็จรูปหรือระบบจัดการเว็บไซต์', 'เพิ่มบริการ รูปผลงาน และช่องทางติดต่อได้หรือไม่'],
+            ['หน้าแคมเปญหรือเก็บรายชื่อลูกค้า', 'เครื่องมือทำหน้าแคมเปญ', 'แบบฟอร์มส่งข้อมูลถึงทีมและวัดการส่งสำเร็จได้หรือไม่'],
+            ['ขายสินค้าออนไลน์', 'ระบบที่รองรับสินค้า ตะกร้า และการชำระเงิน', 'ค่าธรรมเนียม การจัดการสต็อก การส่ง และข้อมูลลูกค้า'],
+            ['จองคิวหรือมีสมาชิก', 'แพลตฟอร์มที่มีฟังก์ชันจอง หรือระบบที่พัฒนาต่อได้', 'การยืนยันนัด การชำระเงิน สิทธิ์ผู้ใช้ และการดูแลข้อมูล'],
+          ]} />
+          <P>ก่อนตัดสินใจ ให้ตรวจค่าใช้จ่ายรวมเมื่อใช้โดเมนของธุรกิจเอง เพิ่มพื้นที่ หรือเชื่อมฟังก์ชันที่จำเป็น รวมถึงตรวจว่าสามารถนำข้อมูลหรือเว็บไซต์ออกได้แค่ไหน เงื่อนไขของแต่ละแพลตฟอร์มต่างกันและอาจเปลี่ยนได้</P>
+          <P>ถ้าต้องการทำเว็บด้วย Claude โดยใช้แนวทางสั่งสร้างและปรับโค้ด อ่านต่อที่ <Link to="/blog/build-website-with-claude">วิธีทำเว็บด้วย Claude</Link></P>
+        </ArticleSection>
 
-      <ArticleSection title="Google พูดอะไรอย่างเป็นทางการเกี่ยวกับเว็บและ Content ที่สร้างด้วย AI">
-        <P>
-          Google Search ระบุว่า Generative AI มีประโยชน์ในการค้นคว้าและช่วยจัดโครงเนื้อหา
-          แต่การสร้างหน้าเว็บจำนวนมากโดยไม่เพิ่มคุณค่าให้ผู้ใช้
-          อาจเข้าข่าย scaled content abuse ตามนโยบายสแปม
-          ดังนั้นประเด็นไม่ได้อยู่ที่ “ใช้ AI หรือไม่” แต่อยู่ที่คุณภาพ ความถูกต้อง
-          ความเป็นต้นฉบับ และประโยชน์ของหน้าเว็บ
-        </P>
-        <P>
-          สำหรับ Technical SEO เอกสาร Google ยังเน้นพื้นฐานเดิม:
-          หน้าเว็บต้องเข้าถึงได้, index ได้, canonical ชัด, structured data ต้องตรงกับเนื้อหาที่แสดง
-          และควรตรวจหน้า deployed จริงผ่าน Search Console หรือเครื่องมือทดสอบที่เกี่ยวข้อง
-        </P>
-        <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
-          <p className="font-semibold text-amber-900">แยก Official Guidance ออกจาก Methodology</p>
-          <p className="thai-readable mt-2 text-sm leading-6 text-amber-900">
-            Google ไม่ได้ประกาศ “AI Website SEO Framework” หรือบอกว่า workflow 6 Gate เป็น Ranking Factor
-            Framework ด้านบนเป็นวิธี QA ของ Saralak Search เพื่อป้องกันปัญหาที่มักเกิดเมื่อสร้างและ scale หน้าเร็วด้วย AI
-          </p>
-        </div>
-      </ArticleSection>
+        <ArticleSection id="ai-web-prepare" title="ก่อนให้ AI ทำเว็บ ต้องเตรียมข้อมูลอะไร?">
+          <P>ยิ่งให้ข้อมูลธุรกิจชัด หน้าเริ่มต้นก็ยิ่งใกล้กับงานที่ต้องการ ก่อนพิมพ์คำสั่งให้รวบรวมข้อมูลเหล่านี้ไว้</P>
+          <CheckList items={[
+            'ชื่อธุรกิจ ประเภทธุรกิจ และพื้นที่ให้บริการ',
+            'สินค้า/บริการ ราคา จุดเด่น และเงื่อนไขที่ลูกค้าควรรู้',
+            'กลุ่มลูกค้าหลักและคำถามที่มักถามก่อนซื้อหรือจอง',
+            'เป้าหมายของเว็บ เช่น โทร ขอราคา จองคิว หรือสั่งซื้อ',
+            'เบอร์โทร LINE ที่อยู่ เวลาเปิด และช่องทางติดต่อที่ใช้งานจริง',
+            'ภาพสินค้า สถานที่ ทีมงาน หรือผลงานที่มีสิทธิ์ใช้งาน',
+          ]} />
+          <P>คำสั่งเริ่มต้นอาจบอกประเภทธุรกิจ กลุ่มลูกค้า ส่วนที่ต้องการ และการกระทำหลัก เช่น “ทำหน้าเว็บสำหรับคลินิกกายภาพในเชียงใหม่ มีข้อมูลบริการ เวลาเปิด แผนที่ และปุ่มจองประเมินอาการ” จากนั้นเติมรายละเอียดที่ถูกต้องของคลินิกก่อนเผยแพร่</P>
+        </ArticleSection>
 
-      <ArticleSection title="วัดผลเว็บที่สร้างด้วย AI อย่างไรหลัง Deploy">
-        <P>
-          จำนวนหน้าที่สร้างเสร็จหรือจำนวนหน้าที่ index ไม่ควรเป็น KPI สุดท้าย
-          การวัดผลควรแยกเป็น 4 ชั้นเพื่อดูว่า bottleneck อยู่ตรงไหน
-        </P>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            ['Indexing', 'หน้าเป้าหมาย index หรือไม่, canonical ถูกหรือไม่, มี crawl/index issue อะไร'],
-            ['Search Visibility', 'Impressions, Clicks, Queries, Landing Pages และอันดับของ owner URL'],
-            ['Engagement', 'Sessions, Engaged Sessions, behavior บน landing page และเส้นทางต่อไป'],
-            ['Business Outcome', 'Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion ตามโมเดลธุรกิจ'],
-          ].map(([title, body]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-white p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{body}</p>
-            </div>
-          ))}
-        </div>
-        <P>
-          ถ้า Indexing ผ่านแต่ Impression ไม่มา ให้ย้อนดู Search Intent, demand และ content quality
-          ถ้า Impression มาแต่ไม่เกิด Click หรือ Conversion ให้ดู SERP presentation, offer, UX และ landing-page journey ต่อ
-          การวัดเป็นชั้นช่วยไม่ให้สรุปผิดว่า “AI ทำเว็บแล้ว SEO ไม่ได้ผล” ทั้งที่ปัญหาอาจอยู่คนละจุด
-        </P>
-      </ArticleSection>
+        <ArticleSection id="ai-web-build" title="สร้างเว็บไซต์ด้วย AI ยังไง ตั้งแต่เริ่มจนเปิดใช้งาน?">
+          <P>ใช้ AI เป็นจุดเริ่มของงาน แล้วตรวจแต่ละช่วงก่อนส่งเว็บให้ลูกค้า วิธีนี้ช่วยจับข้อผิดพลาดตั้งแต่ยังแก้ได้ง่าย</P>
+          <NumberedList variant="plain" items={[
+            { title: 'กำหนดงานที่เว็บต้องทำ', description: 'เลือกว่าเว็บมีไว้แนะนำบริการ รับสาย เก็บคำขอราคา จอง หรือขายสินค้า เพื่อเลือกแพลตฟอร์มและส่วนที่ต้องมี' },
+            { title: 'เตรียมข้อมูลธุรกิจและลูกค้า', description: 'ใส่ข้อมูลจริงแทนข้อความตัวอย่าง รวมราคา พื้นที่ให้บริการ เงื่อนไข และช่องทางติดต่อ' },
+            { title: 'ให้ AI ร่างโครงและหน้าเริ่มต้น', description: 'ระบุหน้าและส่วนที่ต้องการ เช่น บริการ ผลงาน รีวิวที่ได้รับอนุญาต แผนที่ และปุ่มติดต่อ' },
+            { title: 'ปรับข้อความ ภาพ และการแสดงผล', description: 'ตรวจว่าเนื้อหาตรงกับแบรนด์และอ่านง่ายทั้งบนมือถือและคอมพิวเตอร์' },
+            { title: 'ทดลองใช้งานก่อนเผยแพร่', description: 'กดปุ่ม ส่งแบบฟอร์ม ทดลองจองหรือสั่งซื้อ และตรวจว่าอีเมลหรือระบบหลังบ้านได้รับข้อมูลครบ' },
+            { title: 'ตั้งโดเมนและเผยแพร่', description: 'ตรวจแพ็กเกจ การต่ออายุ สิทธิ์เข้าถึง และสำรองข้อมูลก่อนเปิดเว็บไซต์จริง' },
+          ]} />
+          <P>ตัวอย่างเช่น ร้านนวดที่ต้องการรับจองควรทดสอบว่าลูกค้าเลือกช่วงเวลา ส่งคำขอ แล้วมีคนในร้านได้รับข้อมูลครบ ก่อนนำลิงก์เว็บไปใส่ในโฆษณาหรือ Google Business Profile</P>
+        </ArticleSection>
 
-      <ArticleSection title="ข้อจำกัดที่ควรรู้ก่อนใช้ AI สร้างเว็บไซต์">
-        <ul className="grid gap-3">
-          {[
-            'AI สามารถสร้างข้อมูลผิดหรือใช้ claim ที่ไม่มีหลักฐานได้ จึงต้อง fact-check ก่อน publish',
-            'การสร้างหน้าได้เร็วทำให้ duplicate intent และ thin content เกิดได้เร็วเช่นกัน',
-            'Structured Data ที่ valid ไม่ได้รับประกัน Rich Result หรืออันดับ',
-            'การ submit sitemap ไม่ได้รับประกันว่าทุก URL จะถูก index',
-            'หน้า index แล้วไม่ได้แปลว่าจะ rank ใน keyword ที่ต้องการ',
-            'ผล SEO ต้องดูตาม Search Demand, competition, authority และคุณภาพของเว็บไซต์เดิมร่วมกัน',
-          ].map((item) => (
-            <li key={item} className="thai-readable flex gap-3 text-base leading-7 text-neutral-700">
-              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-500" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </ArticleSection>
+        <ArticleSection id="ai-web-check" title="ก่อนเปิดเว็บที่ AI ทำ ต้องตรวจอะไรบ้าง?">
+          <P>ก่อนส่งเว็บให้ลูกค้า ให้ทดลองใช้เหมือนลูกค้าจริงตั้งแต่หน้าแรกจนถึงการติดต่อหรือชำระเงิน</P>
+          <ResponsiveTable label="รายการตรวจเว็บไซต์ที่สร้างด้วย AI ก่อนเปิดใช้งาน" headers={['ถ้าพบว่า…', 'ให้ตรวจหรือทำต่อ']} rows={[
+            ['ชื่อ ราคา หรือรายละเอียดไม่ตรงกับธุรกิจ', 'เทียบกับข้อมูลที่ธุรกิจอนุมัติและแก้ทุกจุดที่ถูกนำไปใช้ซ้ำ'],
+            ['ปุ่มโทร LINE หรือแบบฟอร์มใช้งานไม่ได้', 'ทดลองส่งจริงและตรวจว่าข้อมูลถึงผู้รับที่ถูกต้อง'],
+            ['หน้าอ่านยากบนโทรศัพท์', 'ทดสอบหลายขนาดจอ ปุ่ม เมนู ข้อความ และภาพ'],
+            ['เว็บขายของหรือรับจอง', 'ทดลองคำสั่งซื้อ/จอง การแจ้งเตือน การยกเลิก และการคืนเงิน'],
+            ['ใช้ภาพหรือข้อมูลส่วนบุคคล', 'ตรวจสิทธิ์การใช้ภาพ ความยินยอม และผู้ที่เข้าถึงข้อมูลลูกค้าได้'],
+            ['จะใช้โดเมนหรือเปลี่ยนแพลตฟอร์ม', 'ตรวจราคา เงื่อนไขการย้าย ข้อมูลที่ส่งออกได้ และการต่ออายุ'],
+          ]} />
+          <P>ถ้าเว็บเก็บชื่อ เบอร์โทร หรือข้อมูลการสั่งซื้อ ให้ตรวจว่าข้อมูลถูกส่งและเก็บที่ใด ใครเข้าถึงได้ และมีข้อความแจ้งการใช้ข้อมูลตามความเหมาะสม อย่าใช้เว็บจริงเก็บข้อมูลลูกค้าจนกว่าจะทดลองเส้นทางดังกล่าวครบ</P>
+        </ArticleSection>
 
-      <ArticleSection title="สรุป: AI ทำเว็บได้เร็ว แต่ต้องมี Search QA ก่อน Scale">
-        <P>
-          AI เปลี่ยน bottleneck จาก “สร้างหน้าไม่ทัน” ไปเป็น “ตรวจไม่ทันว่าหน้าที่สร้างมาถูก intent และพร้อม Search หรือยัง”
-          วิธีใช้ AI ที่คุ้มจึงไม่ใช่สร้างให้ได้มากที่สุด แต่คือสร้าง template แรกให้ถูกก่อน
-          แล้วค่อย scale สิ่งที่ผ่าน Technical, Content และ Measurement QA แล้ว
-        </P>
-        <P>
-          หากเว็บไซต์สร้างด้วย AI และมี Organic Visibility อยู่แล้ว แต่ยังไม่ชัดว่า owner URL,
-          Crawl/Index, Content และ Internal Link วางถูกหรือไม่
-          การตรวจ SEO ก่อน scale จะช่วยแยกว่าควรแก้ Technical, Content หรือ Architecture จุดไหนก่อน
-        </P>
+        <ArticleCTA
+          headline="เว็บที่ AI สร้างพร้อมให้ลูกค้าติดต่อหรือยัง?"
+          description="Saralak Search ช่วยตรวจหน้าเว็บ เนื้อหา และการเข้าถึงจาก Google พร้อมจัดลำดับจุดที่ควรแก้ก่อนเปิดหรือขยายเว็บ"
+          href="/services/seo"
+          buttonText="ดูบริการ SEO"
+        />
+
+        <ArticleSection id="ai-web-google" title="เว็บที่สร้างด้วย AI ติด Google ได้ไหม?">
+          <P>เว็บไซต์ที่สร้างด้วย AI อาจปรากฏใน Google ได้ แต่การเผยแพร่เว็บไม่ได้รับประกันว่าจะถูกจัดทำดัชนีหรือขึ้นอันดับ ให้ตรวจว่าหน้าสำคัญเปิดให้เข้าถึงได้ มีลิงก์ภายใน และอธิบายสินค้า/บริการตรงกับสิ่งที่ลูกค้าค้น</P>
+          <P><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer">Google Search Central แนะนำให้ตรวจว่า Google พบและเข้าถึงหน้าได้หรือไม่</a> พร้อมจัดเนื้อหาให้มีประโยชน์และอ่านง่าย หากใช้ AI ร่างข้อความ ควรตรวจความถูกต้อง เติมข้อมูลเฉพาะของธุรกิจ และไม่สร้างหน้าเหมือนกันจำนวนมากโดยไม่มีประโยชน์เพิ่มเติม</P>
+          <P><a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=en" target="_blank" rel="noreferrer">นโยบายสแปมของ Google อธิบายว่า</a> การสร้างหน้าเป็นจำนวนมากโดยมีจุดประสงค์เพื่อจัดอันดับ แต่ไม่ได้เพิ่มคุณค่าให้ผู้อ่าน อาจเข้าข่ายการใช้เนื้อหาในวงกว้างที่ไม่เป็นประโยชน์ ไม่ได้ตัดสินจากการใช้ AI เพียงอย่างเดียว</P>
+          <P>หลังเปิดเว็บ ตรวจ URL สำคัญใน Google Search Console และติดตามการแสดงผลตามคำค้น ถ้าพบปัญหาว่าเว็บไซต์ไม่ติดอันดับ อ่านต่อที่ <Link to="/blog/seo-not-working">วิธีตรวจเว็บไซต์ไม่ติดอันดับ Google</Link></P>
+        </ArticleSection>
+
+        <ArticleSection id="ai-web-case" title="ตัวอย่างงานจริง: เว็บไซต์ที่หน้ารวมสินค้าถูก Google เก็บไม่ครบ">
+          <CaseStudyBox title="กรณีศึกษา Organic Growth ของ Saralak Search">
+            <P>เว็บไซต์อีคอมเมิร์ซแห่งหนึ่งมีหน้ารวมสินค้าที่ Google เก็บไว้ไม่ครบ ทีมตรวจปัญหาทางเทคนิค แล้วปรับชื่อและข้อมูลกำกับหน้า ลิงก์ภายใน และโครงสร้างหน้าสินค้าให้รองรับการค้นหา</P>
+            <P>ข้อมูลเคสบันทึกว่าหน้ารวมสินค้าถูกจัดทำดัชนีครบและผู้เข้าชมจากผลค้นหาทั่วไปเติบโตต่อเนื่องหลังปรับโครงสร้างเว็บไซต์ ในช่วงทำงาน 6 เดือน ไม่มีตัวเลขเปอร์เซ็นต์การเติบโตในข้อมูลเคส จึงไม่ระบุจำนวนเพิ่มขึ้นหรือใช้ผลนี้รับประกันกับเว็บไซต์อื่น</P>
+            <P>เคสนี้ไม่ได้ระบุว่าเว็บไซต์สร้างด้วย AI แต่แสดงให้เห็นว่าหลังสร้างเว็บแล้ว ยังต้องตรวจว่า Google เข้าถึงและจัดทำดัชนีหน้าสำคัญได้หรือไม่</P>
+            <p><Link to="/case-studies">ดูกรณีศึกษา SEO ของ Saralak Search</Link></p>
+          </CaseStudyBox>
+        </ArticleSection>
+
+        <ArticleSection id="ai-web-summary" title="สรุป AI ทำเว็บให้ธุรกิจเริ่มตรงไหน?">
+          <P>เลือกแพลตฟอร์มตามงานที่เว็บต้องทำ เตรียมข้อมูลจริงก่อนสั่งสร้าง แล้วตรวจเนื้อหา ปุ่มติดต่อ แบบฟอร์ม และการใช้งานบนมือถือก่อนเผยแพร่ หลังเปิดเว็บค่อยตรวจใน Search Console ว่า Google เข้าถึงหน้าสำคัญได้หรือไม่</P>
+          <P>ถ้าต้องการให้ช่วยตรวจความพร้อมของเว็บไซต์และวางลำดับงานก่อนขยายหน้า Saralak Search มี <Link to="/services/seo">บริการ SEO สำหรับเว็บไซต์ธุรกิจ</Link></P>
+        </ArticleSection>
+
         <ReadMoreLinks items={[
           { to: '/blog/build-website-with-claude', label: 'ทำเว็บด้วย Claude: ขั้นตอนสร้างเว็บไซต์และจุดที่ต้องตรวจต่อ' },
-          { to: '/blog/what-is-seo', label: 'SEO คืออะไร? พื้นฐานที่เว็บสร้างด้วย AI ยังต้องมี' },
-          { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล: วิธีไล่หาสาเหตุหลัง Deploy' },
-          { to: '/services/seo', label: 'บริการ SEO — Saralak Search' },
+          { to: '/blog/what-is-seo', label: 'SEO คืออะไร และเริ่มให้ Google เข้าใจหน้าเว็บอย่างไร' },
+          { to: '/blog/seo-not-working', label: 'เว็บไซต์ไม่ติดอันดับ Google: ตรวจสาเหตุจากจุดไหน' },
+          { to: '/case-studies', label: 'กรณีศึกษา SEO ของ Saralak Search' },
         ]} />
-      </ArticleSection>
+      </BlogProse>
 
-      <SourceBox items={[
-        'Google Search Central: Guidance about using generative AI content on websites, checked October 2026',
-        'Google Search Central: Creating helpful, reliable, people-first content, checked October 2026',
-        'Google Search Central: Structured data and Search appearance documentation, checked October 2026',
-        'Google Search Central: JavaScript and canonicalization documentation, checked October 2026',
-        'Saralak Search methodology: AI website SEO QA workflow, updated October 2026',
+      <SourceBox heading="แหล่งข้อมูลจาก Google" items={[
+        <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer">คู่มือ SEO สำหรับมือใหม่จาก Google Search Central</a>,
+        <a href="https://developers.google.com/search/docs/fundamentals/using-gen-ai-content?hl=en" target="_blank" rel="noreferrer">แนวทาง Google Search Central เรื่องเนื้อหาที่สร้างด้วย Generative AI</a>,
+        <a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=en" target="_blank" rel="noreferrer">นโยบายสแปมของ Google Search</a>,
       ]} />
-
-      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเรื่อง AI ทำเว็บและ SEO" />
+      <ArticleCTA
+        headline="อยากให้เว็บไซต์ช่วยพาลูกค้ามาจาก Google?"
+        description="ส่งลิงก์เว็บไซต์ให้ Saralak Search ช่วยประเมินว่า Google เข้าถึงหน้าและข้อมูลบริการสำคัญได้หรือไม่ พร้อมรับลำดับจุดที่ควรปรับต่อ"
+        href="/services/seo"
+        buttonText="ดูบริการ SEO"
+      />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ AI ทำเว็บ" />
     </article>
   )
 }
