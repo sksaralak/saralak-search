@@ -19,10 +19,14 @@
 - [ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร](https://saralak-search.com/blog/seo-not-working): 8 root causes of SEO failure with diagnostic steps.
 - [ทำเว็บด้วย Claude ยังไงให้มีคนเข้า](https://saralak-search.com/blog/build-website-with-claude): How to build a website with Claude AI and what SEO steps are needed to get traffic.
 - [Claude ทำ SEO ให้ได้จริงไหม](https://saralak-search.com/blog/ai-website-seo): Analysis of whether Claude can replace an SEO specialist, with real case evidence.
+- [เพิ่ม SEO Traffic อย่างไร](https://saralak-search.com/blog/increase-seo-traffic): How to grow organic traffic from Google by auditing data and fixing the site in priority order.
+- [เช็ค Traffic Website ฟรี](https://saralak-search.com/blog/check-website-traffic-free): How to check website traffic for free with Google Search Console and GA4.
 
 ## GEO & AEO Guides
 - [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): Definition of Generative Engine Optimisation for Thai businesses.
 - [AEO คืออะไร](https://saralak-search.com/blog/what-is-aeo): Definition and implementation guide for Answer Engine Optimisation.
+- [AI Overview คืออะไร](https://saralak-search.com/blog/what-is-ai-overview): How Google AI Overview works, how it differs from AI Mode, and its effect on SEO.
+- [AEO Checklist](https://saralak-search.com/blog/aeo-checklist): 24-point AEO checklist for Thai websites covering answers, evidence, accessibility and measurement.
 - [SEO GEO AEO คืออะไร](https://saralak-search.com/blog/seo-geo-aeo): Comparison of SEO, GEO and AEO — differences and which to start with.
 - [วิธีทำ GEO ให้ ChatGPT อ้างอิงเว็บไซต์](https://saralak-search.com/blog/how-to-do-geo): Practical GEO implementation guide for Thai businesses.
 - [ทำ GEO ที่ไหนดี](https://saralak-search.com/blog/geo-agency-thailand): How to choose a GEO agency in Thailand.
@@ -38,6 +42,16 @@
 - [เพิ่มยอดขายร้านขายสัตว์เลี้ยงด้วย Google Maps](https://saralak-search.com/blog/increase-sale-pet-shop): Pet shop and pet food retail Google Maps optimisation guide.
 - [เพิ่มยอดขายโรงพยาบาลสัตว์ด้วย Google Maps](https://saralak-search.com/blog/increase-sale-pet-hospital): Veterinary clinic and animal hospital Google Maps optimisation guide.
 - [เพิ่มยอดขายโรงแรมสัตว์เลี้ยงด้วย Google Maps](https://saralak-search.com/blog/increase-sale-pet-hotel): Pet hotel and boarding service Google Maps optimisation guide.
+- [วางแผนการตลาดสปาและร้านนวด](https://saralak-search.com/blog/spa-marketing-plan): 5-part marketing plan for spas and massage shops, from target customers to AI Search and repeat visits.
+
+## Sales Growth Guides
+- [เพิ่มยอดขายอย่างไรให้กำไรโต](https://saralak-search.com/blog/increase-online-sales): Diagnose whether the sales problem is traffic, conversion, order value or repeat purchase, with a 30-day action plan.
+- [15 เทคนิคการเพิ่มยอดขายออนไลน์](https://saralak-search.com/blog/sales-techniques): 15 sales techniques for shops and service businesses, with how-to steps and metrics.
+- [เพิ่มยอดขายเวย์โปรตีน](https://saralak-search.com/blog/seo-whey-plant-protein): 9 ways to grow whey and plant protein sales, from product pages to repeat purchase, with a real case study.
+
+## More
+- [Blog](https://saralak-search.com/blog): All SEO, GEO, AEO and Local SEO articles.
+- [Case Studies](https://saralak-search.com/case-studies): Client results from SEO, GEO and Google Maps work.
 
 ## Contact
 - [Contact Saralak Search](https://saralak-search.com/contact): Contact via LINE for SEO, GEO, Local SEO, Google Maps, content and search consulting.
