@@ -16,7 +16,7 @@ export default function BlogCard({ post, compact = false }: BlogCardProps) {
             src={post.heroImageDesktop}
             alt={post.heroImageAlt ?? post.title}
             loading="lazy"
-            className="aspect-[16/9] w-full object-cover transition hover:opacity-90"
+            className="aspect-[40/21] w-full object-cover transition hover:opacity-90"
           />
         </Link>
       ) : null}

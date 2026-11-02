@@ -216,6 +216,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-figure--hero img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
+.blog-figure--hero.blog-figure--cover img { aspect-ratio: 40 / 21; }
 
 .blog-prose {
   color: #404040;

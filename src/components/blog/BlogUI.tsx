@@ -137,6 +137,8 @@ export function FigureImage({
 }
 
 export function ArticleHeader({ post }: { post: BlogPost }) {
+  const isCoverImage = post.heroImageDesktop?.startsWith('/image/blog/covers/') ?? false
+
   return (
     <>
       <section className="blog-article-header">
@@ -158,8 +160,9 @@ export function ArticleHeader({ post }: { post: BlogPost }) {
             src={post.heroImageDesktop}
             mobileSrc={post.heroImageMobile}
             alt={post.heroImageAlt ?? post.title}
-            width={1280}
-            height={720}
+            className={isCoverImage ? 'blog-figure--cover' : ''}
+            width={isCoverImage ? 1200 : 1280}
+            height={isCoverImage ? 630 : 720}
             priority
             hero
           />

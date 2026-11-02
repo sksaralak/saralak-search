@@ -435,24 +435,28 @@ export const localSeoCustomerIntentFaqs: FAQItem[] = [
 ]
 export const restaurantSalesFaqs: FAQItem[] = [
   {
-    question: 'ร้านอาหารเล็กๆ ไม่มีเว็บไซต์ ทำ Google Maps ได้ไหม?',
-    answer: 'ได้เลย GBP ไม่จำเป็นต้องมีเว็บไซต์ แค่มีที่อยู่จริงและเบอร์โทรก็สมัครได้ เว็บไซต์ช่วยเพิ่ม Website Clicks แต่ไม่ใช่เงื่อนไขบังคับ',
+    question: 'ร้านอาหารยอดขายตก ควรเริ่มแก้จากจุดไหน?',
+    answer: 'แยกยอดขายตามวัน ช่วงเวลา เมนู และช่องทาง แล้วดูว่าปัญหาอยู่ที่ลูกค้าใหม่ ยอดต่อบิล หรือการกลับมาซื้อซ้ำ จากนั้นเลือกแก้จุดที่กระทบยอดมากที่สุดก่อนทำโปรโมชันใหม่',
   },
   {
-    question: 'ร้านอาหาร Delivery อย่างเดียว ไม่มีหน้าร้าน ทำได้ไหม?',
-    answer: 'GBP มีตัวเลือก "Service area business" สำหรับธุรกิจที่ไม่มีหน้าร้าน แต่ผลลัพธ์จะน้อยกว่าร้านที่มีที่ตั้งชัดเจน เพราะ Google Maps เน้น local presence',
+    question: 'เพิ่มยอดขายร้านอาหารโดยไม่ลดราคาทำได้อย่างไร?',
+    answer: 'ทำเมนูชุดหรือเมนูเสริมที่เหมาะกับรายการหลัก ปรับเมนูให้อ่านง่าย ทำให้จองหรือสั่งสะดวก และสื่อสารกับลูกค้าเดิมเมื่อมีเมนูใหม่ โดยตรวจต้นทุนและผลจากยอดขายจริง',
   },
   {
-    question: 'รีวิวปลอมจากคู่แข่งทำยังไงดี?',
-    answer: 'Report ผ่าน GBP Dashboard ได้เลย Google จะตรวจสอบและลบถ้าพบว่าผิด guidelines วิธีป้องกันระยะยาวคือมีรีวิวจริงจำนวนมากพอที่รีวิวปลอมไม่สามารถเปลี่ยนภาพรวมได้',
+    question: 'Google Maps ช่วยให้ร้านอาหารได้ลูกค้าเพิ่มอย่างไร?',
+    answer: 'Google Maps แสดงข้อมูลร้าน เช่น ที่อยู่ เวลาเปิด เมนู รูปภาพ และช่องทางติดต่อ เมื่อลูกค้าเห็นข้อมูลครบและตรงกับความจริง เขาจะตรวจสอบร้านและเลือกโทร จอง หรือดูเส้นทางต่อได้ง่ายขึ้น แต่ไม่รับประกันยอดขาย',
   },
   {
-    question: 'ต้องมีรีวิวกี่อันถึงจะติด Google Maps 3-pack?',
-    answer: 'ไม่มีตัวเลขตายตัว ปัจจัยหลักคือ ความใกล้เคียง (proximity), ความเกี่ยวข้อง (relevance) และความโดดเด่น (prominence) รีวิวเป็นส่วนหนึ่งของ prominence — คุณภาพสำคัญกว่าจำนวน',
+    question: 'ควรทำโปรโมชันร้านอาหารแบบไหนให้คุ้มต้นทุน?',
+    answer: 'ตั้งเป้าหมายก่อน เช่น เพิ่มบิลช่วงร้านเงียบหรือแนะนำเมนูใหม่ แล้วคำนวณต้นทุนอาหาร ส่วนลด ค่าธรรมเนียม และกำลังครัว ใช้รหัสหรือบันทึกแหล่งที่มาเพื่อเทียบยอดสุทธิหลังจบแคมเปญ',
   },
   {
-    question: 'เปิดร้านใหม่ ต้องรอนานไหมกว่า Google จะเห็น?',
-    answer: 'หลัง verify GBP แล้ว Google จะ index ภายใน 1–2 สัปดาห์ แต่การติด 3-pack สำหรับคำค้นหาที่มีการแข่งขันสูงอาจใช้เวลา 1–3 เดือน ขึ้นอยู่กับความครบถ้วนของ GBP และจำนวนรีวิว',
+    question: 'ร้านอาหารควรวัดผลการตลาดจากตัวเลขอะไร?',
+    answer: 'ติดตามจำนวนบิล ยอดเฉลี่ยต่อบิล ยอดขายแยกช่องทาง การจอง และกำไรหลังหักต้นทุน เสริมด้วยข้อมูลการค้นหาและการกระทำบน Google Business Profile เพื่อดูว่าลูกค้าพบร้านและไปต่ออย่างไร',
+  },
+  {
+    question: 'ทำอย่างไรให้ลูกค้าเก่ากลับมาซื้อซ้ำ?',
+    answer: 'ดูแลคุณภาพอาหารและบริการให้สม่ำเสมอ ขอความยินยอมก่อนส่งข่าวสาร แล้วแจ้งเมนูใหม่หรือข้อเสนอที่เกี่ยวข้อง พร้อมติดตามว่าลูกค้ากลับมาซื้อจากช่องทางใด',
   },
 ]
 
@@ -878,10 +882,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
-    heroImageMobile: '/image/blog/tham-web-claude/tham-web-claude-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/build-website-with-claude.webp',
+    heroImageMobile: '/image/blog/covers/build-website-with-claude.webp',
     heroImageAlt: 'ทำเว็บด้วย Claude ตั้งแต่เลือกเครื่องมือและวางโครงหน้า ไปจนถึงตรวจ SEO ก่อนเปิดเว็บไซต์',
-    ogImage: '/image/blog/tham-web-claude/tham-web-claude-banner-web.png',
+    ogImage: '/image/blog/covers/build-website-with-claude.webp',
     metaTitle: 'ทำเว็บด้วย Claude: ขั้นตอนสร้างเว็บและตรวจ SEO | Saralak Search',
     metaDescription:
       'วิธีทำเว็บด้วย Claude ตั้งแต่วางโครง เลือกเครื่องมือ สร้างหน้าเว็บ ทดสอบก่อนเผยแพร่ และตรวจ SEO ให้ Google เข้าถึงเว็บไซต์ได้',
@@ -912,10 +916,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-desktop.png',
-    heroImageMobile: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-mobile.png',
+    heroImageDesktop: '/image/blog/covers/increase-sale-google-maps.webp',
+    heroImageMobile: '/image/blog/covers/increase-sale-google-maps.webp',
     heroImageAlt: 'เพิ่มยอดขายจาก Google Maps ด้วยข้อมูลธุรกิจที่ถูกต้อง ช่องทางติดต่อ และการวัดผลลูกค้าจริง',
-    ogImage: '/image/blog/Increase-sale-gbp/increase-sale-google-maps-banner-desktop.png',
+    ogImage: '/image/blog/covers/increase-sale-google-maps.webp',
     metaTitle: 'เพิ่มยอดขายจาก Google Maps ยังไง? วัดลูกค้าจริง | Saralak Search',
     metaDescription: 'วิธีเพิ่มยอดขายจาก Google Maps: ปรับข้อมูลธุรกิจ รีวิว รูปและช่องทางจอง แยกโฆษณาออกจากอันดับปกติ พร้อมวัดผลถึงยอดขายจริง',
     aiSummary: [
@@ -945,10 +949,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/local-seo/local-seo-banner-web.png',
-    heroImageMobile: '/image/blog/local-seo/local-seo-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/local-seo-customer-intent.webp',
+    heroImageMobile: '/image/blog/covers/local-seo-customer-intent.webp',
     heroImageAlt: 'Local SEO สำหรับธุรกิจที่ต้องการให้ลูกค้าในพื้นที่ค้นพบผ่าน Maps และเว็บไซต์',
-    ogImage: '/image/blog/local-seo/local-seo-banner-web.png',
+    ogImage: '/image/blog/covers/local-seo-customer-intent.webp',
     metaTitle: 'Local SEO คืออะไร? วิธีเริ่มทำสำหรับธุรกิจในพื้นที่ | Saralak Search',
     metaDescription: 'เข้าใจ Local SEO และเลือกจุดเริ่มต้นให้ธุรกิจในพื้นที่ ตั้งแต่ Google Maps และหน้าเว็บไซต์ ไปจนถึงการวัดผลสายโทร การจอง และ lead',
     aiSummary: [
@@ -968,32 +972,32 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps ลูกค้ากำลังหิวกำลังหาคุณอยู่',
+    title: 'เพิ่มยอดขายร้านอาหาร: 8 วิธีเพิ่มออร์เดอร์และกำไรให้คุ้ม',
     slug: 'increase-sale-restaurant',
     category: 'Local SEO',
-    excerpt: 'ลูกค้า 2.24 ล้านคนหา "ร้านอาหาร ใกล้ฉัน" ทุกเดือน แต่ร้านส่วนใหญ่พลาดลูกค้าเหล่านี้เพราะ Google Maps ไม่สมบูรณ์ เรียนรู้ 6 สิ่งที่เพิ่มยอดโทร ยอดเส้นทาง และยอดคลิกได้จริง',
+    excerpt: 'แนวทางเพิ่มยอดขายร้านอาหาร เริ่มจากหาคอขวด ปรับ Google Maps และเมนู เพิ่มยอดต่อบิล ทำโปรโมชันอย่างคุมต้นทุน และวัดผลจากออร์เดอร์กับกำไรจริง',
     readingTime: '8 min read',
     publishedDate: '2026-06-22',
-    lastModifiedDate: '2026-06-24',
+    lastModifiedDate: '2026-11-02',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner.png',
-    heroImageMobile: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner-mweb.png',
-    heroImageAlt: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps — ลูกค้า 2.24 ล้านคนค้นหาร้านอาหารใกล้ฉันทุกเดือน',
-    ogImage: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner.png',
-    metaTitle: 'เพิ่มยอดขายร้านอาหาร ด้วย Google Maps: ลูกค้าหิวหาคุณอยู่ | Saralak Search',
-    metaDescription: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps — "ร้านอาหาร ใกล้ฉัน" มีคนค้นหา 2,240,000 ครั้ง/เดือน เรียนรู้ 6 เทคนิคเพิ่ม Call, Direction และ Website Clicks โดยไม่ต้องซื้อโฆษณา',
+    heroImageDesktop: '/image/blog/covers/increase-sale-restaurant.webp',
+    heroImageMobile: '/image/blog/covers/increase-sale-restaurant.webp',
+    heroImageAlt: 'แนวทางเพิ่มยอดขายร้านอาหาร ตั้งแต่ปรับข้อมูล Google Maps ไปจนถึงวัดผลออร์เดอร์และกำไร',
+    ogImage: '/image/blog/covers/increase-sale-restaurant.webp',
+    metaTitle: 'เพิ่มยอดขายร้านอาหาร: 8 วิธีเพิ่มออร์เดอร์และกำไร | Saralak Search',
+    metaDescription: 'รวมวิธีเพิ่มยอดขายร้านอาหาร ตั้งแต่หาคอขวด ปรับ Google Maps และเมนู เพิ่มยอดต่อบิล ทำโปรโมชัน ไปจนถึงวัดผลจากออร์เดอร์และกำไรหลังหักต้นทุน',
     aiSummary: [
-      '"ร้านอาหาร ใกล้ฉัน" มีคนค้นหา 2,240,000 ครั้ง/เดือน — คนเหล่านี้หิวข้าวและพร้อมจ่ายทันที',
-      'ตัวชี้วัดที่แปลงเป็นเงินได้คือ Call, Direction Requests และ Website Clicks — ไม่ใช่อันดับ',
-      '6 สิ่งที่ร้านอาหารต้องทำ: รูปภาพ, เมนู, ชั่วโมงทำการ, ลิงก์จอง, ตอบรีวิว, GBP Posts',
-      'AI เช่น Gemini, ChatGPT และ Perplexity แนะนำร้านอาหารจาก GBP ที่ครบและรีวิวดี',
+      'เริ่มจากดูจำนวนบิล ยอดเฉลี่ยต่อบิล เมนู และช่วงเวลาขาย เพื่อหาว่ายอดติดตรงจุดใด',
+      'ปรับ Google Business Profile และเมนูให้ข้อมูลถูกต้อง เพื่อให้ลูกค้าในพื้นที่ตรวจสอบร้านและติดต่อได้สะดวก',
+      'ทดลองชุดอาหาร โปรโมชัน และช่องทางขายโดยคำนวณต้นทุน ค่าธรรมเนียม และกำลังครัวก่อน',
+      'วัดผลจากออร์เดอร์ ยอดขาย และกำไรหลังหักต้นทุน ไม่ใช้ยอดเห็นหรือคลิกแทนยอดซื้อ',
     ],
     faqs: restaurantSalesFaqs,
     bodyVariant: 'increase-sale-restaurant',
     cta: {
-      headline: 'ลูกค้า 2.24 ล้านคนกำลังหาร้านอาหารอยู่ตอนนี้',
+      headline: 'อยากเพิ่มยอดขายร้านอาหาร เริ่มจากตัวเลขของร้านคุณ',
       description:
         'เริ่มจากดูว่าลูกค้าค้นหาผ่าน Maps หรือเว็บไซต์ และวัดผลสายโทร การจอง หรือ lead อย่างไร',
       buttonText: 'ดูบริการ Local SEO',
@@ -1003,9 +1007,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่มยอดขายสปา: เพิ่มยอดต่อบิล ลูกค้ากลับมาซ้ำ และลูกค้าใหม่',
     slug: 'increase-sale-massage-spa',
-    heroImageDesktop: '/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-sale-massage-spa.webp',
     heroImageAlt: 'ลูกค้าค้นหาร้านสปาและจองบริการผ่าน Google Maps',
-    ogImage: '/image/blog/increase-sale-massage-spa/increase-sale-massage-spa-hero.webp',
+    ogImage: '/image/blog/covers/increase-sale-massage-spa.webp',
     category: 'Local SEO',
     excerpt:
       'แนวทางเพิ่มยอดขายสปาด้วยแพ็กเกจที่เหมาะ เพิ่มลูกค้ากลับมาซ้ำ และใช้ Google Maps หาลูกค้าใหม่ พร้อมวัดผลจากยอดจองและกำไรจริง',
@@ -1037,9 +1041,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'การตลาดอาบน้ำสัตว์เลี้ยง เพิ่มยอดขายด้วย Google Maps และ SEO',
     slug: 'increase-sale-pet-grooming',
-    heroImageDesktop: '/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-sale-pet-grooming.webp',
     heroImageAlt: 'ร้านอาบน้ำตัดขนสัตว์เลี้ยงที่ลูกค้าค้นพบผ่าน Google Maps',
-    ogImage: '/image/blog/increase-sale-pet-grooming/increase-sale-pet-grooming-hero.webp',
+    ogImage: '/image/blog/covers/increase-sale-pet-grooming.webp',
     category: 'Local SEO',
     excerpt:
       'เชื่อม Google Maps กับ SEO เว็บไซต์ให้ลูกค้าในพื้นที่ค้นหาร้านอาบน้ำสัตว์เลี้ยง เห็นบริการ ราคา และจองคิวได้ง่ายขึ้น พร้อมแนวทางวัดผลจากยอดจองจริง',
@@ -1071,9 +1075,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'การตลาด Pet Shop เพิ่มยอดขายด้วย Google Maps และการซื้อซ้ำ',
     slug: 'increase-sale-pet-shop',
-    heroImageDesktop: '/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-sale-pet-shop.webp',
     heroImageAlt: 'Pet Shop ใกล้บ้านที่ลูกค้าค้นพบและมาซื้อสินค้าได้ทันทีผ่าน Google Maps',
-    ogImage: '/image/blog/increase-sale-pet-shop/increase-sale-pet-shop-hero.webp',
+    ogImage: '/image/blog/covers/increase-sale-pet-shop.webp',
     category: 'Local SEO',
     excerpt:
       'เพิ่มยอดขาย Pet Shop ด้วย Google Maps รายการสินค้าที่เช็กสต็อกได้ ช่องทางรับสินค้า และวิธีทำให้ลูกค้ากลับมาซื้อซ้ำ โดยติดตามยอดขายและกำไรจริง',
@@ -1105,9 +1109,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'การตลาดโรงพยาบาลสัตว์เลี้ยงด้วย Google Maps เพิ่มสายโทรและนัดหมาย',
     slug: 'increase-sale-pet-hospital',
-    heroImageDesktop: '/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-sale-pet-hospital.webp',
     heroImageAlt: 'โรงพยาบาลสัตว์และคลินิกสัตวแพทย์ที่เจ้าของสัตว์ค้นพบผ่าน Google Maps',
-    ogImage: '/image/blog/increase-sale-pet-hospital/increase-sale-pet-hospital-hero.webp',
+    ogImage: '/image/blog/covers/increase-sale-pet-hospital.webp',
     category: 'Local SEO',
     excerpt:
       'การตลาดโรงพยาบาลสัตว์เลี้ยงบน Google Maps เริ่มจากทำข้อมูลบริการ เวลาทำการ เบอร์ติดต่อ และเส้นทางให้ถูกต้อง หากรับเคสฉุกเฉินต้องมีคนรับสายตามเวลาที่แจ้ง ส่วนบริการที่ต้องนัดควรบอกวิธีจองให้ชัด',
@@ -1139,9 +1143,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'การตลาดฝากเลี้ยงสุนัขบน Google Maps เพิ่มยอดจองให้โรงแรมสุนัข',
     slug: 'increase-sale-pet-hotel',
-    heroImageDesktop: '/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-sale-pet-hotel.webp',
     heroImageAlt: 'โรงแรมรับฝากเลี้ยงสุนัขที่เจ้าของค้นพบผ่าน Google Maps',
-    ogImage: '/image/blog/increase-sale-pet-hotel/increase-sale-pet-hotel-hero.webp',
+    ogImage: '/image/blog/covers/increase-sale-pet-hotel.webp',
     category: 'Local SEO',
     excerpt:
       'แนวทางการตลาดฝากเลี้ยงสุนัขบน Google Maps ตั้งแต่ปรับ Google Business Profile รูปห้องพัก ราคาและเงื่อนไข ไปจนถึงวัดผลจากการโทรและยอดจองจริง',
@@ -1182,10 +1186,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
-    heroImageMobile: '/image/blog/seo-not-working/seo-not-working-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/seo-not-working.webp',
+    heroImageMobile: '/image/blog/covers/seo-not-working.webp',
     heroImageAlt: 'Organic Traffic คืออะไร และวิธีวิเคราะห์สาเหตุที่ Traffic จาก Google ไม่โต',
-    ogImage: '/image/blog/seo-not-working/seo-not-working-banner-web.png',
+    ogImage: '/image/blog/covers/seo-not-working.webp',
     metaTitle: 'Organic Traffic คืออะไร? Traffic จาก Google ไม่โต เช็กอะไรบ้าง | Saralak Search',
     metaDescription:
       'Organic Traffic คือผู้เข้าชมจากผลค้นหาแบบไม่เสียโฆษณา ดูวิธีอ่าน Search Console และไล่เช็ก Indexing, Query, Landing Page, Intent, Technical SEO เมื่อ Traffic ไม่โตหรือลดลง',
@@ -1218,10 +1222,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/ai-website/ai-website-banner-web.png',
-    heroImageMobile: '/image/blog/ai-website/ai-website-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/ai-website-seo.webp',
+    heroImageMobile: '/image/blog/covers/ai-website-seo.webp',
     heroImageAlt: 'AI ทำเว็บได้ไหม วิธีสร้างเว็บไซต์ด้วย AI และตรวจ SEO ก่อนเปิดใช้งาน',
-    ogImage: '/image/blog/ai-website/ai-website-banner-web.png',
+    ogImage: '/image/blog/covers/ai-website-seo.webp',
     metaTitle: 'AI ทำเว็บได้ไหม? วิธีสร้างเว็บไซต์ด้วย AI ให้พร้อม SEO | Saralak Search',
     metaDescription:
       'AI ทำเว็บได้ แต่เว็บที่ publish ได้ยังไม่เท่ากับเว็บที่พร้อมติด Google ดู workflow สร้างเว็บด้วย AI, SEO checklist ก่อนเปิดจริง, ข้อจำกัด และวิธีวัดผลหลัง deploy',
@@ -1254,10 +1258,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
-    heroImageMobile: '/image/blog/llms-txt-how-to/llms-txt-how-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/llms-txt-thailand.webp',
+    heroImageMobile: '/image/blog/covers/llms-txt-thailand.webp',
     heroImageAlt: 'llm.txt คืออะไร ความหมายของ llms.txt รูปแบบไฟล์ และวิธีใช้กับเว็บไซต์',
-    ogImage: '/image/blog/llms-txt-how-to/llms-txt-how-banner-web.png',
+    ogImage: '/image/blog/covers/llms-txt-thailand.webp',
     metaTitle: 'llm.txt คืออะไร? llms.txt ใช้ทำอะไร และจำเป็นไหม | Saralak Search',
     metaDescription:
       'llm.txt คือคำค้นที่มักหมายถึง llms.txt ไฟล์ Markdown สำหรับ agent/LLM ที่รองรับ ดูรูปแบบไฟล์ วิธีทำ ความต่างจาก robots.txt ข้อจำกัด และสถานะกับ Google Search ปี 2026',
@@ -1293,10 +1297,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'ทำ GEO ต้องเช็กอะไรบ้าง? GEO Checklist 40 ข้อ | Saralak Search',
     metaDescription:
       'ทำ GEO แบบไม่ไล่ตามเทคนิคสุ่ม ๆ ด้วย GEO Checklist 40 ข้อ ครอบคลุม Search Foundation, Entity, Content, Technical, Evidence และ Measurement พร้อมลำดับแก้ก่อนหลังและข้อจำกัดที่ควรรู้',
-    heroImageDesktop: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
-    heroImageMobile: '/image/blog/chatgpt-mention/chatgpt-mention-banner-mweb.png',
+    heroImageDesktop: '/image/blog/covers/geo-checklist-thailand.webp',
+    heroImageMobile: '/image/blog/covers/geo-checklist-thailand.webp',
     heroImageAlt: 'GEO Checklist 40 ข้อสำหรับตรวจเว็บไซต์ไทยด้าน Search และ AI Visibility',
-    ogImage: '/image/blog/chatgpt-mention/chatgpt-mention-banner-web.png',
+    ogImage: '/image/blog/covers/geo-checklist-thailand.webp',
     aiSummary: [
       'ถ้ากำลังทำ GEO ให้เริ่มจาก Search Foundation ก่อนเทคนิคเฉพาะ AI: หน้าเป้าหมายต้อง Index ได้ Canonical ถูก Content Render ครบ และ Internal Link พา Crawler ไปถึงได้',
       'Google ระบุว่า SEO best practices เดิมยังเป็นฐานของ AI Overviews และ AI Mode ไม่มี Special AI Schema ที่ต้องเพิ่ม และ Google Search ไม่ใช้ llms.txt',
@@ -1330,10 +1334,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'AEO คืออะไร? ต่างจาก SEO และ GEO อย่างไร | Saralak Search',
     metaDescription:
       'AEO คือ Answer Engine Optimization แนวทางจัดคำตอบบนเว็บให้ชัดและใช้งานได้ เข้าใจความต่างจาก SEO และ GEO พร้อม Google guidance ปี 2026 เคสจริง วิธีวัดผล และข้อจำกัด',
-    heroImageDesktop: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
-    heroImageMobile: '/image/blog/what-is-aeo/what-is-aeo-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/what-is-aeo.webp',
+    heroImageMobile: '/image/blog/covers/what-is-aeo.webp',
     heroImageAlt: 'AEO คืออะไร Answer Engine Optimization สำหรับ Search และ AI',
-    ogImage: '/image/blog/what-is-aeo/what-is-aeo-banner-web.webp',
+    ogImage: '/image/blog/covers/what-is-aeo.webp',
     aiSummary: [
       'AEO หรือ Answer Engine Optimization คือแนวทางจัดคำตอบบนหน้าเว็บให้ตรง ชัด และมีบริบทเพียงพอสำหรับผู้ใช้ รวมถึงระบบ Search หรือ AI ที่อาจนำข้อมูลไปแสดงเป็นคำตอบ',
       'ใน Search ภาษาไทยคำว่า AEO มีความกำกวม เพราะยังหมายถึง Authorized Economic Operator ได้ด้วย จึงควรระบุ Answer Engine Optimization ให้ชัดใน Title, H1 และ Opening ของหน้า',
@@ -1367,10 +1371,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'SEO คืออะไร? Search Engine Optimization ฉบับเข้าใจง่าย | Saralak Search',
     metaDescription:
       'SEO คืออะไร ย่อมาจากอะไร มีกี่ประเภท ทำอะไรบ้าง และต่างจาก SEM อย่างไร พร้อมวิธีเริ่มทำ SEO ตัวอย่างจากงานจริง และการวัดผลด้วย Search Console',
-    heroImageDesktop: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
-    heroImageMobile: '/image/blog/what-is-seo/what-is-seo-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/what-is-seo.webp',
+    heroImageMobile: '/image/blog/covers/what-is-seo.webp',
     heroImageAlt: 'SEO คืออะไร การทำ SEO ตั้งแต่ Crawling Indexing ไปจนถึงการวัดผล',
-    ogImage: '/image/blog/what-is-seo/what-is-seo-banner-web.webp',
+    ogImage: '/image/blog/covers/what-is-seo.webp',
     aiSummary: [
       'SEO ย่อมาจาก Search Engine Optimization คือการปรับเว็บไซต์และเนื้อหาให้ Search Engine เข้าใจว่าแต่ละหน้าพูดเรื่องอะไร ตอบคำค้นไหน และควรแสดงให้ใครเห็น เพื่อเพิ่มโอกาสให้เว็บไซต์ถูกค้นพบผ่าน Organic Search',
       'SEO มีหลายส่วนที่ต้องทำร่วมกัน ทั้ง On-page SEO, Technical SEO, Off-page SEO และ Local SEO สำหรับธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการ',
@@ -1404,10 +1408,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'GEO คืออะไร? Generative Engine Optimization ต่างจาก SEO | Saralak Search',
     metaDescription:
       'GEO คือ Generative Engine Optimization แนวทางเพิ่มความพร้อมของเว็บไซต์และแบรนด์สำหรับ AI Search เข้าใจความต่างจาก SEO พร้อมข้อมูลจาก Google เคสจริง วิธีวัดผล และข้อจำกัดที่ควรรู้',
-    heroImageDesktop: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
-    heroImageMobile: '/image/blog/what-is-geo/what-is-geo-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/what-is-geo.webp',
+    heroImageMobile: '/image/blog/covers/what-is-geo.webp',
     heroImageAlt: 'GEO คืออะไร Generative Engine Optimization สำหรับ Google และ AI Search',
-    ogImage: '/image/blog/what-is-geo/what-is-geo-banner-web.webp',
+    ogImage: '/image/blog/covers/what-is-geo.webp',
     aiSummary: [
       'GEO หรือ Generative Engine Optimization คือแนวทางเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์ เพื่อเพิ่มโอกาสให้ข้อมูลถูกค้นพบ กล่าวถึง หรืออ้างอิงใน Generative AI และ AI Search',
       'GEO ไม่ได้มาแทน SEO แต่ต่อยอดจาก Search Foundation เดิม โดยเพิ่มมุม Entity, Evidence, Brand Mention, Citation Context และ AI Search Visibility',
@@ -1441,10 +1445,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'SEO vs AEO vs GEO ต่างกันอย่างไร? | Saralak Search',
     metaDescription:
       'SEO, AEO และ GEO ต่างกันอย่างไร เข้าใจหน้าที่ของแต่ละแนวทาง วิธีเลือกว่าจะเริ่มจากอะไรก่อน พร้อมตารางเปรียบเทียบ เคสจริง การวัดผล และข้อจำกัด',
-    heroImageDesktop: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
-    heroImageMobile: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/seo-geo-aeo.webp',
+    heroImageMobile: '/image/blog/covers/seo-geo-aeo.webp',
     heroImageAlt: 'SEO GEO AEO คืออะไร ต่างกันอย่างไร และธุรกิจควรเริ่มจากอะไร',
-    ogImage: '/image/blog/seo-aeo-geo/seo-aeo-geo-is-difference-banner-web.webp',
+    ogImage: '/image/blog/covers/seo-geo-aeo.webp',
     aiSummary: [
       'SEO, AEO และ GEO ทำหน้าที่ต่างกันแต่เชื่อมกันอยู่ SEO ช่วยให้เว็บไซต์ถูกค้นพบและมีโอกาสติดอันดับ AEO ช่วยให้คำตอบบนหน้าเว็บชัดและอ่านง่าย ส่วน GEO ช่วยให้ข้อมูลของแบรนด์พร้อมสำหรับการค้นหาผ่าน AI',
       'ถ้า Google ยังเข้าถึงหน้าได้ไม่ดี หน้าไม่ถูกจัดเก็บในผลค้นหา หรือหน้าบริการยังอธิบายไม่ชัด ควรแก้พื้นฐาน SEO ก่อน แล้วค่อยต่อยอด AEO และ GEO',
@@ -1477,10 +1481,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'ทำ GEO ที่ไหนดี? วิธีเลือก GEO Agency ที่วัดผลได้ | Saralak Search',
     metaDescription:
       'ทำ GEO ที่ไหนดี? เช็ก 8 เกณฑ์เลือก GEO Agency, วิธีเทียบ Proposal, Red Flags, KPI, ข้อจำกัด และเคสจริงของ Saralak Search ก่อนตัดสินใจจ้าง',
-    heroImageDesktop: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
-    heroImageMobile: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/geo-agency-thailand.webp',
+    heroImageMobile: '/image/blog/covers/geo-agency-thailand.webp',
     heroImageAlt: 'ทำ GEO ที่ไหนดี วิธีเลือก GEO Agency ที่วัดผลได้และเหมาะกับธุรกิจ',
-    ogImage: '/image/blog/geo-agency-thailand/geo-agency-thailand-banner-web.webp',
+    ogImage: '/image/blog/covers/geo-agency-thailand.webp',
     aiSummary: [
       'ถ้ากำลังตัดสินใจว่าทำ GEO ที่ไหนดี ให้เลือกทีมที่อธิบายได้ชัดว่าก่อนเริ่มเว็บไซต์อยู่ตรงไหน จะลงมือแก้อะไร วัดผลด้วยอะไร และผลลัพธ์เชื่อมกับธุรกิจอย่างไร',
       'Google ระบุว่าพื้นฐาน SEO เดิมยังสำคัญต่อ AI Overviews และ AI Mode และไม่มี Schema หรือเทคนิคพิเศษที่รับประกันการปรากฏใน AI features',
@@ -1514,10 +1518,10 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'วิธีทำ GEO Optimization คืออะไร? 8 ขั้นตอนลงมือทำ | Saralak Search',
     metaDescription:
       'วิธีทำ GEO แบบ Step by Step 8 ขั้นตอน ตั้งแต่ตรวจ Crawl/Index วางหน้าหลัก ปรับ Content และ Internal Link ไปจนถึงการวัดผล พร้อมเคสจริงและข้อมูลจาก Google/OpenAI',
-    heroImageDesktop: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
-    heroImageMobile: '/image/blog/how-to-do-geo/how-to-do-geo-banner-mweb.webp',
+    heroImageDesktop: '/image/blog/covers/how-to-do-geo.webp',
+    heroImageMobile: '/image/blog/covers/how-to-do-geo.webp',
     heroImageAlt: 'วิธีทำ GEO แบบ Step by Step สำหรับ Google AI Search และ ChatGPT',
-    ogImage: '/image/blog/how-to-do-geo/how-to-do-geo-banner-web.webp',
+    ogImage: '/image/blog/covers/how-to-do-geo.webp',
     aiSummary: [
       'วิธีทำ GEO ควรเริ่มจากตรวจพื้นฐานเว็บไซต์และเก็บข้อมูลก่อน แล้วค่อยปรับเนื้อหา Internal Link ข้อมูลแบรนด์ หลักฐาน และการวัดผล',
       'ถ้า Google ยังเข้าถึงหน้าได้ไม่ดี หน้าไม่ถูกจัดเก็บในผลค้นหา หรือหน้าสำคัญยังตอบคำค้นไม่ชัด ควรแก้พื้นฐาน SEO ก่อน แล้วค่อยต่อยอด GEO',
@@ -1539,9 +1543,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เพิ่ม SEO Traffic อย่างไร? วิธีเพิ่มคนเข้าเว็บจาก Google แบบวัดผลได้',
     slug: 'increase-seo-traffic',
-    heroImageDesktop: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
+    heroImageDesktop: '/image/blog/covers/increase-seo-traffic.webp',
     heroImageAlt: 'วิธีเพิ่ม SEO Traffic ด้วยการตรวจข้อมูลและปรับเว็บไซต์เป็นลำดับ',
-    ogImage: '/image/blog/increase-seo-traffic/increase-seo-traffic-hero.webp',
+    ogImage: '/image/blog/covers/increase-seo-traffic.webp',
     category: 'SEO',
     excerpt:
       'เพิ่ม SEO Traffic เริ่มจากดูว่าคนเห็นหน้าเว็บหรือคลิกจาก Google มากน้อยแค่ไหน แล้วเลือกแก้จุดที่ติด ตั้งแต่การเก็บหน้า เนื้อหา ชื่อหน้า ลิงก์ภายใน ไปจนถึงขั้นตอนติดต่อหรือซื้อ',
@@ -1573,9 +1577,9 @@ export const blogPosts: BlogPost[] = [
   {
     title: 'เช็ค Traffic Website ฟรี: ดูคนเข้าเว็บจาก Google, GA4 และคู่แข่งอย่างไร',
     slug: 'check-website-traffic-free',
-    heroImageDesktop: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
+    heroImageDesktop: '/image/blog/covers/check-website-traffic-free.webp',
     heroImageAlt: 'วิธีเช็ค Traffic Website ฟรีด้วย Google Search Console และ GA4',
-    ogImage: '/image/blog/check-website-traffic-free/check-website-traffic-free-hero.webp',
+    ogImage: '/image/blog/covers/check-website-traffic-free.webp',
     category: 'SEO',
     excerpt:
       'เช็ค Traffic Website ฟรีได้ด้วย Google Search Console และ GA4 สำหรับเว็บตัวเอง ส่วนเว็บคู่แข่งดูได้ในระดับประมาณการ บทความนี้สรุปว่าแต่ละเครื่องมือวัดอะไร ตัวเลขต่างกันเพราะอะไร และควรอ่านข้อมูลแบบไหนก่อนตัดสินใจทำ SEO ต่อ',
@@ -1617,7 +1621,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    ogImage: '/proof/nutrition-content-growth.png',
+    heroImageDesktop: '/image/blog/covers/seo-whey-plant-protein.webp',
+    ogImage: '/image/blog/covers/seo-whey-plant-protein.webp',
     metaTitle: 'เพิ่มยอดขายเวย์โปรตีน: 9 วิธีตั้งแต่หน้าสินค้าถึงซื้อซ้ำ',
     metaDescription:
       'วิธีเพิ่มยอดขายเวย์โปรตีนและโปรตีนจากพืช ตั้งแต่เลือกกลุ่มลูกค้า ทำหน้าสินค้า ใช้ SEO และแพลตฟอร์มตลาดกลาง ไปจนถึงซื้อซ้ำ พร้อมตัวเลขวัดผลและเคสจริง',
@@ -1650,7 +1655,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    ogImage: '/proof/nutrition-content-growth.png',
+    heroImageDesktop: '/image/blog/covers/increase-online-sales.webp',
+    ogImage: '/image/blog/covers/increase-online-sales.webp',
     metaTitle: 'เพิ่มยอดขายอย่างไรให้กำไรโต พร้อมแผนลงมือทำ 30 วัน',
     metaDescription:
       'วิธีเพิ่มยอดขายสำหรับธุรกิจ เริ่มจากเช็กว่าปัญหาอยู่ที่ลูกค้าน้อย ปิดการขายต่ำ ยอดต่อบิลต่ำ หรือซื้อซ้ำน้อย พร้อมตารางเลือกวิธีและแผน 30 วัน',
@@ -1683,7 +1689,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    ogImage: '/proof/ranking-bangsaen-serp.png',
+    heroImageDesktop: '/image/blog/covers/sales-techniques.webp',
+    ogImage: '/image/blog/covers/sales-techniques.webp',
     metaTitle: '15 เทคนิคการเพิ่มยอดขายออนไลน์ พร้อมวิธีทำและวัดผล',
     metaDescription:
       'รวม 15 เทคนิคการเพิ่มยอดขายสำหรับร้านค้าและธุรกิจบริการ ตั้งแต่หาลูกค้า ปิดการขาย เพิ่มยอดต่อบิล ไปจนถึงซื้อซ้ำ พร้อมวิธีทำ ตัวเลขวัดผล และเคสจริง',
@@ -1716,6 +1723,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
+    heroImageDesktop: '/image/blog/covers/aeo-checklist.webp',
+    ogImage: '/image/blog/covers/aeo-checklist.webp',
     metaTitle: 'AEO Checklist: 24 จุดตรวจเว็บไซต์ก่อน AI นำไปตอบ',
     metaDescription:
       'AEO Checklist สำหรับเว็บไซต์ไทย 24 จุด ตรวจคำตอบ หลักฐาน การเข้าถึง และการวัดผล พร้อมลำดับแก้ก่อน–หลังและตัวอย่างจากงานจริง',
@@ -1748,6 +1757,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
+    heroImageDesktop: '/image/blog/covers/spa-marketing-plan.webp',
+    ogImage: '/image/blog/covers/spa-marketing-plan.webp',
     metaTitle: 'วางแผนการตลาดสปาและร้านนวด [5 ขั้นตอน] | Saralak Search',
     metaDescription:
       'วิธีวางแผนการตลาดสปาและร้านนวด 5 ขั้นตอน ตั้งแต่กำหนดกลุ่มเป้าหมาย ทำ Google Maps และ SEO ให้ลูกค้าเจอร้าน สร้างความน่าเชื่อถือ เตรียมพร้อม AI Search ไปจนถึงรักษาลูกค้าเดิม พร้อมตัวอย่างแผน 3 เดือนแรก',
@@ -1779,7 +1790,8 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    ogImage: '/image/blog/what-is-ai-overview/what-is-ai-overview-case.png',
+    heroImageDesktop: '/image/blog/covers/what-is-ai-overview.webp',
+    ogImage: '/image/blog/covers/what-is-ai-overview.webp',
     metaTitle: 'AI Overview คืออะไร? ทำงานอย่างไร กระทบ SEO แบบไหน',
     metaDescription:
       'AI Overview คือคำตอบสรุปด้วย AI บน Google Search ดูวิธีทำงาน ความต่างจาก AI Mode ผลต่อ SEO และวิธีเพิ่มโอกาสให้เว็บไซต์ถูกอ้างอิง',
