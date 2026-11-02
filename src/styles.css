@@ -224,8 +224,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.8;
 }
 
+/*
+  Heading color sits in a layer so `text-*` utilities can override it. Unlayered
+  CSS beats @layer utilities regardless of specificity, which made `text-white`
+  headings in dark CTA boxes render near-black.
+*/
+@layer components {
+  .blog-prose :where(h1, h2, h3) { color: #171717; }
+}
+
 .blog-prose :where(h1, h2, h3) {
-  color: #171717;
   font-weight: 600;
   overflow-wrap: break-word;
 }
