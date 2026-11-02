@@ -982,10 +982,10 @@ export const blogPosts: BlogPost[] = [
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    heroImageDesktop: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner.png',
-    heroImageMobile: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner.png',
+    heroImageDesktop: '/image/blog/covers/increase-sale-restaurant.webp',
+    heroImageMobile: '/image/blog/covers/increase-sale-restaurant.webp',
     heroImageAlt: 'แนวทางเพิ่มยอดขายร้านอาหาร ตั้งแต่ปรับข้อมูล Google Maps ไปจนถึงวัดผลออร์เดอร์และกำไร',
-    ogImage: '/image/blog/increase-sale-resturant/resturant-increase-sale-banner.png',
+    ogImage: '/image/blog/covers/increase-sale-restaurant.webp',
     metaTitle: 'เพิ่มยอดขายร้านอาหาร: 7 วิธีเพิ่มออร์เดอร์และกำไร | Saralak Search',
     metaDescription: 'รวมวิธีเพิ่มยอดขายร้านอาหาร ตั้งแต่หาคอขวด ปรับ Google Maps และเมนู เพิ่มยอดต่อบิล ทำโปรโมชัน ไปจนถึงวัดผลจากออร์เดอร์และกำไรหลังหักต้นทุน',
     aiSummary: [
