@@ -3886,6 +3886,116 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
 function IncreaseSaleGoogleMapsArticle({ post }: { post: BlogPost }) {
   return <GoogleMapsSalesArticle post={post} />
 }
+
+function SeoNotWorkingRankingArticle({ post }: { post: BlogPost }) {
+  return (
+    <article className="grid gap-10">
+      <BlogProse>
+        {post.aiSummary && <AISummary title="สรุปเว็บไซต์ไม่ติดอันดับ Google ใน 30 วินาที" items={post.aiSummary} />}
+
+        <TableOfContents items={[
+          { id: 'seo-ranking-index', label: 'เว็บไซต์ไม่ติดอันดับ Google เพราะยังไม่ Index หรืออันดับต่ำ' },
+          { id: 'seo-ranking-check', label: 'ตรวจสถานะหน้าเว็บใน Google Search Console' },
+          { id: 'seo-ranking-technical', label: 'เช็กปัญหา Technical SEO ที่ขวาง Google' },
+          { id: 'seo-ranking-content', label: 'ถ้า Index แล้ว ทำไมอันดับยังต่ำ' },
+          { id: 'seo-ranking-actions', label: 'เริ่มแก้จากสัญญาณที่พบอย่างไร' },
+          { id: 'seo-ranking-case', label: 'เคสจริง: แก้หน้าสินค้าที่ Index ไม่ครบ' },
+          { id: 'seo-ranking-timeline', label: 'ใช้เวลานานแค่ไหนกว่าจะเห็นอันดับเปลี่ยน' },
+          { id: 'seo-ranking-summary', label: 'สรุปเว็บไซต์ไม่ติดอันดับ Google' },
+        ]} />
+
+        <ArticleSection id="seo-ranking-index" title="เว็บไซต์ไม่ติดอันดับ Google เพราะยังไม่ Index หรืออันดับต่ำ">
+          <P><strong>เริ่มจากตรวจว่า Google จัดทำดัชนีหน้าเว็บแล้วหรือยัง</strong> เพราะคำว่า “ไม่ติดอันดับ” อาจหมายถึง Google ยังไม่พบหน้า หรือพบแล้วแต่ยังไม่เลือกแสดงในตำแหน่งที่มองเห็นง่าย สองกรณีนี้ต้องแก้คนละจุด</P>
+          <ResponsiveTable label="แยกอาการเว็บไซต์ไม่ติดอันดับ Google" headers={['อาการที่เห็น', 'จุดที่ควรตรวจ', 'แนวทางถัดไป']} rows={[
+            ['ค้น URL แล้วไม่พบหน้า', 'URL Inspection และ Page indexing', 'ตรวจสาเหตุที่ Google ยังไม่จัดทำดัชนี'],
+            ['Index แล้ว แต่แทบไม่มี Impression', 'Query ความต้องการค้นหา และเนื้อหาหน้า', 'ตรวจว่าหน้าตอบสิ่งที่ผู้ค้นต้องการหรือไม่'],
+            ['มี Impression แต่อันดับเฉลี่ยต่ำ', 'Query และหน้าที่ปรากฏในผลค้นหา', 'เทียบรูปแบบหน้าและข้อมูลที่ยังขาด'],
+            ['มี Impression แต่ Click น้อย', 'คำค้น Title และองค์ประกอบในหน้าผลค้นหา', 'ปรับชื่อให้ตรงกับเนื้อหาแล้วติดตามผล'],
+            ['มี Click แต่ไม่มีคนติดต่อ', 'หน้า Landing Page ข้อเสนอ และช่องทางติดต่อ', 'ตรวจความชัดเจนของบริการและขั้นตอนถัดไป'],
+          ]} />
+          <P>Google Search ทำงานผ่านการค้นพบหน้า การ Crawl การจัดทำดัชนี และการแสดงผลตามคำค้น ขั้นตอนเหล่านี้ไม่ได้เกิดพร้อมกัน และการมีเว็บไซต์ไม่ได้รับประกันว่าทุกหน้าจะปรากฏในผลค้นหา</P>
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-check" title="ตรวจสถานะหน้าเว็บใน Google Search Console อย่างไร">
+          <P>เปิด Google Search Console แล้วใช้ <a href="https://support.google.com/webmasters/answer/9012289?hl=th" target="_blank" rel="noreferrer">URL Inspection</a> ตรวจ URL แบบเต็มของหน้าที่มีปัญหา เครื่องมือนี้แสดงข้อมูลว่า Google พบหน้าและจัดทำดัชนีหรือไม่ รวมถึงปัญหาที่ตรวจพบในการเข้าถึงหรือประมวลผล</P>
+          <P>จากนั้นดูรายงาน Page indexing เพื่อเห็นภาพรวม URL ในเว็บไซต์ หากพบหน้าที่ไม่อยู่ในดัชนี ให้อ่านเหตุผลราย URL ก่อนแก้ เช่น Google ยังไม่พบหน้า มีคำสั่ง noindex หรือเลือก URL หลักเป็นหน้าอื่น</P>
+          <P>คำสั่งค้นหา <code>site:ชื่อโดเมน</code> ใช้ดูตัวอย่างหน้าที่ Google แสดงได้ แต่ไม่ควรใช้ยืนยันว่า URL ทุกหน้าถูก Index ครบแล้ว สำหรับหน้าสำคัญให้ยึด URL Inspection และรายงานใน Search Console</P>
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-technical" title="เช็กปัญหา Technical SEO ที่ขวาง Google">
+          <P>ถ้าหน้ายังไม่ถูกจัดทำดัชนี ให้ตรวจจุดพื้นฐานก่อนเพิ่มเนื้อหา โดยไล่ดูเฉพาะ URL ที่มีปัญหาและการตั้งค่าที่เกี่ยวข้อง</P>
+          <ResponsiveTable label="รายการตรวจ Technical SEO สำหรับหน้าเว็บที่ไม่ถูก Index" headers={['สิ่งที่พบ', 'วิธีตรวจเบื้องต้น', 'แนวทางแก้']} rows={[
+            ['หน้าแสดง 404 หรือ 5xx', 'เปิด URL และตรวจสถานะใน Search Console', 'กู้หน้า แก้เซิร์ฟเวอร์ หรือ Redirect เมื่อมีหน้าทดแทนที่เกี่ยวข้อง'],
+            ['มี noindex ในหน้าที่ควรแสดง', 'ตรวจ HTML หรือการตั้งค่า CMS', 'เอาคำสั่งออกเฉพาะหน้าที่ต้องการให้ปรากฏ'],
+            ['Canonical ชี้ไปหน้าอื่น', 'ตรวจ canonical และ URL Inspection', 'กำหนด URL หลักให้ตรงกับหน้าที่ต้องการ'],
+            ['Robots.txt บล็อกทรัพยากรสำคัญ', 'ตรวจ robots.txt และการแสดงผลหน้า', 'เปิดการเข้าถึงสิ่งที่จำเป็นต่อการอ่านเนื้อหาหลัก'],
+            ['หน้าสำคัญไม่มีลิงก์ภายใน', 'ไล่เส้นทางจากเมนู หมวดหมู่ และหน้าที่เกี่ยวข้อง', 'เพิ่มลิงก์ที่ช่วยทั้งผู้ใช้และ Google ไปถึงหน้า'],
+            ['Sitemap มี URL เสียหรือซ้ำ', 'ตรวจ URL ที่ส่งใน Sitemap', 'คงไว้เฉพาะ URL หลักที่ใช้งานได้และต้องการให้พิจารณา'],
+          ]} />
+          <P><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=th" target="_blank" rel="noreferrer">Sitemap ช่วยบอก Google ว่ามี URL ใดสำคัญ</a> แต่การส่ง Sitemap ไม่ได้บังคับให้ Google จัดทำดัชนีหรือจัดอันดับหน้านั้น อย่าเปลี่ยน Redirect, Canonical หรือ robots.txt ทั้งเว็บไซต์ก่อนทราบว่าหน้าใดได้รับผล</P>
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-content" title="ถ้า Index แล้ว ทำไมเว็บไซต์ยังไม่ติดอันดับ">
+          <P>เมื่อยืนยันแล้วว่าหน้าอยู่ในดัชนี ให้เปิด Performance report ใน Search Console แล้วแยกดูตาม Query และ Page อย่าดูค่าเฉลี่ยทั้งเว็บไซต์อย่างเดียว เพราะอาการอาจเกิดเฉพาะบางหน้า คำค้น หรืออุปกรณ์</P>
+          <h3>เนื้อหาตรงกับสิ่งที่คนค้นหาหรือไม่</h3>
+          <P>ค้นคำหลักแล้วดูว่าผลส่วนใหญ่เป็นคู่มือ หน้าบริการ ราคา หรือหน้าสินค้า จากนั้นเทียบกับชนิดของหน้าบนเว็บไซต์ เช่น หากผลค้นหาแสดงหน้าบริการที่มีขอบเขตงานและวิธีติดต่อ แต่หน้าเว็บมีเพียงบทความอธิบายแนวคิด หน้าอาจไม่ตรงกับสิ่งที่ผู้ค้นต้องการ</P>
+          <h3>หน้ามีข้อมูลช่วยให้ตัดสินใจครบหรือยัง</h3>
+          <P>ตรวจว่าหน้าตอบคำถามที่เกี่ยวข้องกับบริการ เช่น เหมาะกับใคร ทำอะไรให้บ้าง ต้องเตรียมอะไร และมีหลักฐานหรือผลงานใดช่วยให้เข้าใจงาน Google ระบุว่าไม่มีจำนวนคำวิเศษที่ทำให้อันดับดีขึ้น จึงควรเติมข้อมูลที่ช่วยผู้อ่าน แทนการยืดบทความให้ยาวกว่าคู่แข่ง</P>
+          <h3>มีหน้าอื่นในเว็บไซต์แย่งหัวข้อเดียวกันหรือไม่</h3>
+          <P>ถ้าหลายหน้าตอบคำถามใกล้กัน ให้แยกบทบาทให้ชัด เช่น หน้าหนึ่งอธิบายบริการ อีกหน้าสอนวิธีทำ และอีกหน้าตอบคำถามเฉพาะ ปรับลิงก์ภายในให้ส่งผู้อ่านไปยังหน้าที่ตรงกับความต้องการ</P>
+          <P>หากต้องการทบทวนพื้นฐานเรื่องการค้นพบและจัดอันดับ อ่านต่อที่ <Link to="/blog/what-is-seo">SEO คืออะไร</Link> และเมื่อรู้แล้วว่าปัญหาอยู่ที่อันดับหรือความครอบคลุมของคำค้น ให้ดู <Link to="/blog/increase-seo-traffic">วิธีเพิ่ม SEO Traffic</Link></P>
+        </ArticleSection>
+      </BlogProse>
+
+        <ArticleCTA
+          headline="ยังไม่แน่ใจว่าปัญหาอยู่ที่ Indexing หรือเนื้อหา?"
+          description="บริการ SEO ของ Saralak Search ช่วยตรวจสถานะหน้าเว็บและจัดลำดับจุดที่ควรแก้จากข้อมูลจริง"
+          href="/services/seo"
+          buttonText="ดูบริการ SEO"
+        />
+
+      <BlogProse>
+        <ArticleSection id="seo-ranking-actions" title="เริ่มแก้จากสัญญาณใน Search Console อย่างไร">
+          <P>แก้ตามสัญญาณที่เห็น และเปลี่ยนทีละกลุ่มเพื่อประเมินผลได้ชัดขึ้น</P>
+          <ResponsiveTable label="แนวทางแก้เว็บไซต์ไม่ติดอันดับตามสัญญาณ Search Console" headers={['สัญญาณ', 'ตรวจต่อ', 'งานถัดไป']} rows={[
+            ['URL Inspection แจ้งว่าไม่อยู่ในดัชนี', 'สาเหตุ Crawl/Index, Canonical, robots และสถานะหน้า', 'แก้สาเหตุเฉพาะ URL แล้วตรวจซ้ำ'],
+            ['Index แล้ว แต่ Impression แทบไม่มี', 'Query ความต้องการค้นหา และความเกี่ยวข้องของหน้า', 'ปรับหน้าให้ตอบความต้องการจริง หรือทบทวนว่ามีคนค้นหาหัวข้อนี้หรือไม่'],
+            ['Impression มี แต่อันดับเฉลี่ยต่ำ', 'Query และหน้าที่แข่งขันในผลค้นหา', 'เติมข้อมูลที่ช่วยผู้ค้นและเชื่อมหน้าที่เกี่ยวข้อง'],
+            ['Impression มี แต่ Click น้อย', 'คำค้น ชื่อผลลัพธ์ และองค์ประกอบอื่นใน SERP', 'ปรับชื่อให้สะท้อนเนื้อหาและติดตาม Query เดิม'],
+            ['Click มี แต่ไม่มีการติดต่อ', 'Landing Page ข้อเสนอ และช่องทางติดต่อ', 'ทำขั้นตอนถัดไปให้ชัดและตรวจการวัดผล'],
+          ]} />
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-case" title="เคสจริง: แก้หน้าสินค้าที่ Index ไม่ครบ">
+          <CaseStudyBox title="กรณีศึกษา Organic Growth ของ Saralak Search">
+            <P>เว็บไซต์อีคอมเมิร์ซมีหน้ารวมสินค้าที่ถูกจัดทำดัชนีไม่ครบ ทีมทำ Technical Audit แล้วปรับ Metadata, Internal Link และโครงสร้างข้อมูลสินค้าให้รองรับการค้นหา</P>
+            <P>เคสนี้ทำงานต่อเนื่อง 6 เดือน ผลที่บันทึกไว้คือหน้า Product Listing ถูกจัดทำดัชนีครบ และ Organic Traffic เติบโตต่อเนื่องหลังปรับโครงสร้างเว็บไซต์ ไม่มีตัวเลขเปอร์เซ็นต์การเติบโตในข้อมูลเคส จึงไม่ระบุจำนวนเพิ่มขึ้นหรือใช้ระยะเวลาเป็นคำรับประกันสำหรับเว็บไซต์อื่น</P>
+            <p><Link to="/case-studies">ดูกรณีศึกษา SEO ของ Saralak Search</Link></p>
+          </CaseStudyBox>
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-timeline" title="ใช้เวลานานแค่ไหนกว่าจะเห็นอันดับเปลี่ยน">
+          <P>ไม่มีระยะเวลาที่ใช้ได้กับทุกเว็บไซต์ Google Search Central อธิบายว่าการเปลี่ยนแปลงบางอย่างอาจปรากฏในผลค้นหาได้ภายในไม่กี่ชั่วโมง ขณะที่บางอย่างอาจใช้เวลาหลายเดือน และโดยทั่วไปควรรอหลายสัปดาห์เพื่อประเมินว่างานที่ทำเริ่มส่งผลหรือไม่</P>
+          <P>ติดตามเป็นลำดับว่า Google เข้าถึงหน้าได้หรือยัง หน้าอยู่ในดัชนีหรือไม่ มี Impression จาก Query ที่เกี่ยวข้องหรือยัง และ Click หรือการติดต่อเปลี่ยนไปอย่างไร การส่งคำขอจัดทำดัชนีไม่ได้รับประกันว่าจะได้อันดับตามต้องการ</P>
+          <P><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer">Google Search Central ระบุว่าไม่มีวิธีอัตโนมัติที่ทำให้อันดับหนึ่งได้</a> จึงควรระวังคำรับประกันอันดับและกำหนดเวลาที่ใช้สูตรเดียวกับทุกเว็บไซต์</P>
+        </ArticleSection>
+
+        <ArticleSection id="seo-ranking-summary" title="สรุปเว็บไซต์ไม่ติดอันดับ Google ควรเริ่มตรงไหน">
+          <P>เริ่มจาก URL Inspection และรายงาน Page indexing ถ้าหน้าอยู่ในดัชนีแล้ว ค่อยตรวจ Query, Impression, เนื้อหา และหน้าที่แข่งขัน ส่วนปัญหา Technical SEO ควรแก้ตาม URL ที่ได้รับผล ไม่เปลี่ยนทั้งเว็บไซต์โดยยังไม่รู้สาเหตุ</P>
+          <P>หากยังแยกไม่ออกว่าปัญหาอยู่ที่ Indexing, Technical SEO หรือเนื้อหา <Link to="/services/seo">บริการ SEO ของ Saralak Search</Link> ช่วยตรวจข้อมูลเว็บไซต์และจัดลำดับจุดที่ควรแก้ก่อน</P>
+        </ArticleSection>
+      </BlogProse>
+
+      <SourceBox heading="แหล่งข้อมูลจาก Google" items={[
+        <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=th" target="_blank" rel="noreferrer">คู่มือ SEO สำหรับมือใหม่จาก Google Search Central</a>,
+        <a href="https://support.google.com/webmasters/answer/9012289?hl=th" target="_blank" rel="noreferrer">เครื่องมือตรวจสอบ URL ใน Google Search Console</a>,
+        <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=th" target="_blank" rel="noreferrer">เอกสาร Google Search Central เรื่อง Sitemap</a>,
+      ]} />
+      <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับเว็บไซต์ไม่ติดอันดับ Google" />
+    </article>
+  )
+}
+
 function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
@@ -7034,6 +7144,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'seo-not-working') {
     return <SeoNotWorkingArticle post={post} />
+  }
+  if (post.bodyVariant === 'seo-not-working-ranking') {
+    return <SeoNotWorkingRankingArticle post={post} />
   }
   if (post.bodyVariant === 'increase-sale-google-maps') {
     return <IncreaseSaleGoogleMapsArticle post={post} />

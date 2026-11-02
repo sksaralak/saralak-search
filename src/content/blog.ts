@@ -20,7 +20,7 @@ export type BlogPost = {
   aiSummary?: string[]
   faqs?: FAQItem[]
   includeFaqSchema?: boolean
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
   cta?: {
     headline: string
     description: string
@@ -349,34 +349,34 @@ export const aiWebsiteSeoFaqs: FAQItem[] = [
 
 export const seoNotWorkingFaqs: FAQItem[] = [
   {
-    question: 'Organic Traffic คืออะไร?',
+    question: 'เว็บเพิ่งทำใหม่ ทำไมยังค้นใน Google ไม่เจอ?',
     answer:
-      'Organic Traffic คือผู้เข้าชมที่เข้ามายังเว็บไซต์จากผลการค้นหาแบบไม่เสียค่าโฆษณา เช่น Google Search ในทางปฏิบัติควรดูร่วมกับ Impressions, Clicks, Queries, Landing Pages และ Conversion เพราะ Traffic เพียงตัวเดียวไม่บอกว่าหน้าใดกำลังโตหรือปัญหาอยู่ตรงไหน',
+      'Google อาจยังไม่พบหรือยังไม่ได้ Crawl และจัดทำดัชนีหน้าสำคัญ ตรวจ URL Inspection, Sitemap, ลิงก์ภายใน และการตั้งค่าไม่ให้ Index ก่อน ไม่มีเวลาตายตัวว่าเว็บใหม่ทุกเว็บจะปรากฏเมื่อใด',
   },
   {
-    question: 'Organic Traffic ลดลงควรเช็กอะไรก่อน?',
+    question: 'หน้าอยู่ใน Google แล้ว แต่ค้นคีย์เวิร์ดยังไม่เจอ เกิดจากอะไร?',
     answer:
-      'เริ่มจาก Google Search Console โดยเทียบช่วงเวลาก่อนและหลัง แล้วแยกดู Pages, Queries, Countries, Devices และ Search appearance เพื่อหาว่าการลดลงเกิดกับทั้งเว็บไซต์หรือเฉพาะบางหน้า จากนั้นค่อยตรวจ Indexing, Search Intent, Technical SEO, Content และการแข่งขันของ SERP ตามลำดับ',
+      'การอยู่ในดัชนีไม่ได้รับประกันว่าจะขึ้นในตำแหน่งที่เห็นได้ง่าย ตรวจ Impression และ Query ใน Search Console แล้วเทียบว่าเนื้อหาตรงกับสิ่งที่คนค้นหรือไม่และแข่งขันกับหน้าแบบใด',
   },
   {
-    question: 'ทำ SEO กี่เดือนถึงจะเห็น Organic Traffic เพิ่ม?',
+    question: 'ใช้ site: เช็กได้ไหมว่าเว็บถูก Index ครบแล้ว?',
     answer:
-      'ไม่มีระยะเวลามาตรฐานที่รับประกันได้ Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจสะท้อนเร็ว ขณะที่บางอย่างอาจใช้เวลาหลายสัปดาห์หรือหลายเดือน ระยะเวลาจริงขึ้นอยู่กับการ crawl/index, demand, competition, คุณภาพของหน้าและสถานะเว็บไซต์เดิม จึงควรดู trend ของ Impressions, Queries และ Landing Pages มากกว่ายึดตัวเลขเดือนตายตัว',
+      'ใช้ดูตัวอย่างหน้าได้ แต่ไม่ควรใช้ยืนยันสถานะของทุก URL ให้ตรวจหน้าสำคัญผ่าน URL Inspection และรายงาน Page indexing ใน Search Console',
   },
   {
-    question: 'มี Impression แต่ Organic Clicks ไม่โต เกิดจากอะไร?',
+    question: 'ส่ง Sitemap แล้ว Google จะจัดอันดับให้เลยไหม?',
     answer:
-      'อาจเกิดจากอันดับเฉลี่ยยังไม่ดีพอ, Query ไม่ตรงกับ intent ที่หน้าอยากได้, SERP มีองค์ประกอบอื่นแย่งความสนใจ หรือ Title/Snippet ยังไม่แข่งขัน ควรแยกดู Query และ Page ใน Search Console ก่อนสรุปว่าเป็นปัญหา CTR เพราะ Average Position และ CTR เป็นค่าเฉลี่ยจากหลายผลการค้นหา',
+      'ไม่ การส่ง Sitemap ช่วยให้ Google รู้จัก URL ที่ต้องการให้พิจารณา แต่ไม่ได้รับประกันว่าจะ Crawl, Index หรือจัดอันดับทุกหน้า',
   },
   {
-    question: 'site:domain.com ใช้เช็ก Index ได้แม่นไหม?',
+    question: 'แก้ SEO แล้วต้องรอกี่วันถึงจะเห็นอันดับเปลี่ยน?',
     answer:
-      'ใช้ดูคร่าว ๆ ได้ แต่ไม่ควรใช้เป็นหลักฐานว่าทุก URL ถูกหรือไม่ถูก Index วิธีที่แม่นกว่าสำหรับ URL สำคัญคือ URL Inspection และ Page indexing report ใน Google Search Console',
+      'Google ระบุว่าผลจากการเปลี่ยนแปลงอาจใช้เวลาตั้งแต่ไม่กี่ชั่วโมงไปจนถึงหลายเดือน โดยทั่วไปควรรอหลายสัปดาห์ก่อนประเมิน และติดตาม Impression, Query และ Click ควบคู่กัน',
   },
   {
-    question: 'Organic Traffic เยอะขึ้นแปลว่า SEO สำเร็จไหม?',
+    question: 'มีใครรับประกันให้เว็บไซต์ติดหน้าแรก Google ได้ไหม?',
     answer:
-      'ยังสรุปไม่ได้ ควรดูคุณภาพ Traffic และผลทางธุรกิจร่วมด้วย เช่น Non-brand Queries, Landing Pages, Engaged Sessions, Form, LINE, Call, Lead, Purchase หรือ Assisted Conversion เพราะ Traffic ที่โตจากคำค้นไม่เกี่ยวข้องอาจไม่สร้างผลลัพธ์ทางธุรกิจ',
+      'ไม่มีใครควรรับประกันตำแหน่ง เพราะผลค้นหาขึ้นกับหลายปัจจัยและเปลี่ยนแปลงได้ Google เองระบุว่าไม่มีวิธีอัตโนมัติที่ทำให้อันดับหนึ่งได้',
   },
 ]
 
@@ -1175,37 +1175,37 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'Organic Traffic คืออะไร? ทำไม Traffic จาก Google ไม่โต และควรเช็กอะไร',
+    title: 'เว็บไซต์ไม่ติดอันดับ Google? เช็กสาเหตุและเริ่มแก้ให้ตรงจุด',
     slug: 'seo-not-working',
     category: 'SEO',
     excerpt:
-      'Organic Traffic คือผู้เข้าชมจากผลการค้นหาแบบไม่เสียค่าโฆษณา หาก Traffic ไม่โตหรือลดลง ควรไล่ตรวจจาก Search Console, Indexing, Query, Landing Page, Search Intent และ Technical SEO ก่อนแก้แบบสุ่ม',
-    readingTime: '14 min read',
+      'เว็บไซต์ไม่ติดอันดับ Google อาจเกิดจากหน้ายังไม่ถูก Index, เนื้อหาไม่ตรงกับคำค้น หรือมีปัญหาเทคนิค เริ่มตรวจด้วย Search Console แล้วเลือกแก้ตามอาการ',
+    readingTime: '11 min read',
     publishedDate: '2026-06-17',
-    lastModifiedDate: '2026-10-06',
+    lastModifiedDate: '2026-11-02',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/covers/seo-not-working.webp',
     heroImageMobile: '/image/blog/covers/seo-not-working.webp',
-    heroImageAlt: 'Organic Traffic คืออะไร และวิธีวิเคราะห์สาเหตุที่ Traffic จาก Google ไม่โต',
+    heroImageAlt: 'เว็บไซต์ไม่ติดอันดับ Google พร้อมแนวทางตรวจปัญหา Indexing เนื้อหา และ Technical SEO',
     ogImage: '/image/blog/covers/seo-not-working.webp',
-    metaTitle: 'Organic Traffic คืออะไร? Traffic จาก Google ไม่โต เช็กอะไรบ้าง | Saralak Search',
+    metaTitle: 'เว็บไซต์ไม่ติดอันดับ Google? เช็กสาเหตุและวิธีแก้ | Saralak Search',
     metaDescription:
-      'Organic Traffic คือผู้เข้าชมจากผลค้นหาแบบไม่เสียโฆษณา ดูวิธีอ่าน Search Console และไล่เช็ก Indexing, Query, Landing Page, Intent, Technical SEO เมื่อ Traffic ไม่โตหรือลดลง',
+      'เว็บไซต์ไม่ติดอันดับ Google ให้เริ่มตรวจ URL Inspection และ Page indexing ใน Search Console จากนั้นเช็ก Search Intent เนื้อหา และ Technical SEO ตามอาการ',
     aiSummary: [
-      'Organic Traffic คือผู้เข้าชมที่มาจากผลการค้นหาแบบไม่เสียค่าโฆษณา แต่การวิเคราะห์ไม่ควรดู Sessions หรือ Clicks ตัวเดียว ต้องดู Impressions, Queries, Landing Pages และ Business Outcome ร่วมกัน',
-      'ถ้า Organic Traffic ไม่โต ให้เริ่มจาก Search Console แล้วแยกปัญหาเป็น 4 ชั้นตามลำดับ: Discovery/Indexing, Visibility, Click และ Conversion เพื่อไม่แก้ผิดจุด',
-      'ไม่มีระยะเวลาตายตัวว่า SEO ต้องเห็นผลใน 3 หรือ 6 เดือน Google ระบุว่าผลจากการเปลี่ยนแปลงอาจใช้เวลาต่างกันตามเว็บไซต์และประเภทการแก้',
-      'site:domain.com ใช้เช็กได้คร่าว ๆ แต่ URL Inspection และ Page indexing report ใน Search Console เหมาะกว่าสำหรับยืนยันสถานะของ URL สำคัญ',
-      'Organic Traffic ที่เพิ่มขึ้นไม่เท่ากับผลลัพธ์ทางธุรกิจ ควรวัด Non-brand visibility, Engagement และ Conversion เช่น Form, LINE, Call, Lead หรือ Purchase เพิ่มด้วย',
+      'ถ้าค้นหน้าเว็บไม่เจอ ให้ตรวจ URL Inspection และ Page indexing ใน Google Search Console ก่อน เพื่อแยกปัญหาการค้นพบหรือ Index ออกจากปัญหาอันดับ',
+      'ถ้าหน้าอยู่ในดัชนีแล้วแต่ Impression น้อย ให้ตรวจ Query ความต้องการค้นหา และความตรงกันระหว่างเนื้อหากับสิ่งที่ผู้ค้นต้องการ',
+      'ถ้ามี Impression แต่อันดับต่ำ ให้เทียบรูปแบบหน้า เนื้อหา และข้อมูลที่ช่วยตัดสินใจกับผลการค้นหาที่เกี่ยวข้อง',
+      'Technical SEO ที่ควรตรวจ ได้แก่สถานะหน้า noindex, canonical, robots.txt, sitemap, ลิงก์ภายใน และเนื้อหาที่ Google อ่านได้',
+      'ไม่มีระยะเวลาหรือวิธีใดรับประกันอันดับหนึ่ง Google แนะนำให้รอหลายสัปดาห์เพื่อประเมินผลการเปลี่ยนแปลงส่วนใหญ่',
     ],
     faqs: seoNotWorkingFaqs,
-    bodyVariant: 'seo-not-working',
+    bodyVariant: 'seo-not-working-ranking',
     cta: {
-      headline: 'Organic Traffic ไม่โต แต่ยังไม่รู้ว่าปัญหาอยู่ที่จุดไหน?',
+      headline: 'เว็บไซต์ยังไม่ติดอันดับ และยังไม่รู้ว่าควรเริ่มแก้ตรงไหน?',
       description:
-        'บริการ SEO ของ Saralak Search ช่วยแยกปัญหาจาก Search demand, Indexing, Technical SEO, Content และ Landing Page แล้วจัดลำดับสิ่งที่ควรแก้ก่อนตามข้อมูลจริง',
+        'Saralak Search ช่วยตรวจสถานะ Indexing, Technical SEO, เนื้อหา และหน้าที่ต้องการให้ลูกค้าพบ เพื่อจัดลำดับสิ่งที่ควรแก้จากข้อมูลเว็บไซต์',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
