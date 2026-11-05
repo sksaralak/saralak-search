@@ -2267,6 +2267,241 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
   )
 }
 
+function DoSeoYourselfArticle({ post }: { post: BlogPost }) {
+  const tocItems = [
+    { id: 'diy-seo-fit', label: 'ทำ SEO เองได้ไหม และเหมาะกับธุรกิจแบบไหน' },
+    { id: 'diy-seo-baseline', label: 'ก่อนเริ่มทำ SEO ควรตั้งเป้าหมายและเก็บข้อมูลอะไร' },
+    { id: 'diy-seo-steps', label: '8 ขั้นตอนทำ SEO เอง เริ่มจากงานไหนก่อน' },
+    { id: 'diy-seo-tools', label: 'เครื่องมือ SEO ฟรีมีอะไรบ้าง' },
+    { id: 'diy-seo-measure', label: 'ทำ SEO เองใช้เวลาเท่าไร และวัดผลยังไง' },
+    { id: 'diy-seo-or-hire', label: 'ทำ SEO เองหรือจ้าง แบบไหนเหมาะกว่า' },
+    { id: 'diy-seo-boundaries', label: 'งานไหนทำเองได้ และงานไหนควรขอความช่วยเหลือ' },
+    { id: 'diy-seo-plan', label: 'แผนเริ่มทำ SEO เองใน 30 วัน' },
+    { id: 'diy-seo-faq', label: 'คำถามที่พบบ่อยเกี่ยวกับการทำ SEO เอง' },
+  ]
+
+  const steps = [
+    {
+      title: 'ยืนยันเว็บไซต์ใน Google Search Console',
+      description: 'เพิ่มเว็บไซต์และยืนยันสิทธิ์ เพื่อดูว่าคนค้นคำไหนแล้วเห็นหรือคลิกหน้าใดใน Google',
+    },
+    {
+      title: 'ตรวจว่าหน้าสำคัญเปิดได้และค้นเจอ',
+      description: 'เริ่มจากหน้าแรก หน้าบริการ และหน้าสินค้า ตรวจด้วย URL Inspection ว่าหน้าเปิดได้ ไม่มี noindex โดยไม่ตั้งใจ และ Google เข้าถึงเนื้อหาหลักได้',
+    },
+    {
+      title: 'เลือกหน้าที่ใกล้กับรายได้หรือการติดต่อ',
+      description: 'เริ่มจากหน้าบริการหรือสินค้าที่ธุรกิจต้องการให้คนเจอ ไม่จำเป็นต้องแก้ทุกหน้าในครั้งเดียว',
+    },
+    {
+      title: 'รวบรวมคำถามและคำที่ลูกค้าใช้จริง',
+      description: 'จดคำถามจากการโทร แชต ใบเสนอราคา และรายงาน Search Console แล้วแยกว่าแต่ละคำควรพาไปหน้าใด',
+    },
+    {
+      title: 'ปรับชื่อหน้าและคำตอบให้ตรงสิ่งที่คนค้น',
+      description: 'ตั้งชื่อหน้าให้บอกชัดว่าขายอะไรหรือช่วยเรื่องใด ใช้หัวข้อหลักหนึ่งหัวข้อ และตอบคำถามสำคัญด้วยข้อมูลจริงของธุรกิจ',
+    },
+    {
+      title: 'เชื่อมหน้าที่เกี่ยวข้องเข้าหากัน',
+      description: 'จากบทความให้ลิงก์ไปหน้าบริการที่เกี่ยวข้อง และจากหน้าบริการให้ลิงก์ไปข้อมูลประกอบ เพื่อให้ลูกค้าไปต่อได้สะดวก',
+    },
+    {
+      title: 'ตรวจการใช้งานบนมือถือและเส้นทางติดต่อ',
+      description: 'ลองเปิดหน้า กดโทร แชต กรอกฟอร์ม หรือสั่งซื้อด้วยมือถือจริง ตรวจว่าข้อมูล ราคา และปุ่มทำงานถูกต้อง',
+    },
+    {
+      title: 'บันทึกสิ่งที่เปลี่ยนแล้วติดตามผล',
+      description: 'จดวันที่และหน้าที่แก้ จากนั้นดูการแสดงผล คลิก คำค้น และการติดต่อเป็นช่วง ๆ ก่อนเลือกงานรอบถัดไป',
+    },
+  ]
+
+  return (
+    <article className="grid gap-10">
+      <BlogProse>
+        <P>
+          <strong>ทำ SEO เองได้ โดยเริ่มจากหน้าสำคัญของธุรกิจ ตรวจข้อมูลใน Google Search Console แล้วค่อยปรับเนื้อหาและวัดผลทีละรอบ</strong>
+          {' '}งานพื้นฐานอย่างการตอบคำถามลูกค้าและแก้ข้อมูลหน้าเว็บทำเองได้ หากต้องย้ายเว็บไซต์หรือแก้ระบบที่กระทบหลายหน้า ควรให้ผู้ดูแลเว็บช่วยตรวจแผนก่อน
+        </P>
+        <P>
+          ถ้ายังต้องการทำความเข้าใจภาพรวมก่อน เริ่มจากบทความ
+          {' '}<Link to="/blog/what-is-seo">SEO คืออะไร</Link>
+          {' '}แล้วใช้คู่มือนี้เป็นลำดับลงมือทำสำหรับเว็บไซต์ธุรกิจ
+        </P>
+
+        {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุปการทำ SEO เองใน 30 วินาที" id="diy-seo-summary" /> : null}
+        <TableOfContents items={tocItems} />
+
+        <ArticleSection id="diy-seo-fit" title="ทำ SEO เองได้ไหม และเหมาะกับธุรกิจแบบไหน">
+          <P>
+            ธุรกิจเล็กทำงาน SEO พื้นฐานเองได้ หากมีคนรู้รายละเอียดสินค้าและลูกค้า พร้อมแบ่งเวลาปรับหน้าเว็บกับดูผลเป็นระยะ
+            {' '}Google เองแนะนำว่าเจ้าของธุรกิจท้องถิ่นขนาดเล็กมักทำงานหลายอย่างได้ด้วยตัวเอง ส่วนการจ้างผู้เชี่ยวชาญเป็นทางเลือกเมื่อจำเป็นต้องใช้ความรู้เฉพาะหรือช่วยประหยัดเวลา
+            {' '}อ่าน{' '}<a href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo" target="_blank" rel="noreferrer">คำแนะนำของ Google เรื่องการจ้าง SEO</a>
+          </P>
+          <ResponsiveTable
+            label="ประเมินความพร้อมก่อนทำ SEO เอง"
+            headers={['สถานการณ์', 'จุดเริ่มต้นที่เหมาะ']}
+            rows={[
+              ['มีเว็บไซต์ไม่กี่หน้าและแก้ข้อความเองได้', 'เริ่มจาก Search Console, หน้าบริการหลัก และคำถามที่ลูกค้าถามบ่อย'],
+              ['มีสินค้า/บริการหลายหมวดและหลายคนช่วยกัน', 'กำหนดคนรับผิดชอบข้อมูลแต่ละหมวด แล้วเลือกหน้าที่สำคัญมาทำก่อน'],
+              ['เว็บไซต์เพิ่งย้าย ระบบซับซ้อน หรือหน้าหายจาก Google', 'ให้ผู้ดูแลเว็บหรือผู้เชี่ยวชาญตรวจสาเหตุก่อนแก้หน้าอื่น'],
+              ['ไม่มีเวลาทำและติดตามต่อเนื่อง', 'แบ่งงานให้ทีมภายในกับผู้เชี่ยวชาญ โดยกำหนดคนอนุมัติและสิทธิ์เข้าถึงให้ชัด'],
+            ]}
+          />
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-baseline" title="ก่อนเริ่มทำ SEO ควรตั้งเป้าหมายและเก็บข้อมูลอะไร">
+          <P>
+            ก่อนเปลี่ยนหน้าเว็บ ให้กำหนดก่อนว่าต้องการให้ลูกค้าทำอะไร เช่น โทร จอง กรอกแบบฟอร์ม หรือซื้อสินค้า แล้วบันทึกข้อมูลปัจจุบันไว้เทียบภายหลัง
+            {' '}ถ้าเริ่มจากอันดับอย่างเดียว อาจไม่เห็นว่าคนค้นแล้วติดต่อธุรกิจจริงหรือไม่
+          </P>
+          <CheckList items={[
+            'รายชื่อหน้าที่ทำให้เกิดการโทร จอง ซื้อ หรือสอบถาม',
+            'คำค้น การแสดงผล จำนวนคลิก และหน้า Landing Page จาก Search Console',
+            'การเข้าชมและเหตุการณ์สำคัญใน GA4 หากตั้งค่าการวัดผลไว้แล้ว',
+            'ปัญหาที่ลูกค้าถามซ้ำและข้อมูลที่ทีมขายต้องอธิบายบ่อย',
+            'วันที่แก้หน้าเว็บและรายละเอียดที่เปลี่ยนในแต่ละรอบ',
+          ]} />
+          <P>
+            ใช้ Search Console ดูการค้นหาบน Google ส่วนการเช็ก Traffic Website และ GA4 อ่านต่อที่{' '}
+            <Link to="/blog/check-website-traffic-free">วิธีเช็ก Traffic Website ฟรี</Link>
+            {' '}จำนวนการแสดงผลหรือคลิกช่วยบอกแนวโน้มจาก Search แต่ไม่เท่ากับยอดขายโดยตรง
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-steps" title="8 ขั้นตอนทำ SEO เอง เริ่มจากงานไหนก่อน">
+          <P>
+            ลำดับนี้ช่วยให้เริ่มจากข้อมูลและหน้าที่มีความหมายกับธุรกิจก่อน ไม่จำเป็นต้องทำครบทุกข้อในวันเดียว
+          </P>
+          <NumberedList items={steps} variant="plain" />
+          <P>
+            เวลาปรับหน้า ให้เริ่มจากประโยชน์ที่ลูกค้าต้องการรู้ เช่น ราคา พื้นที่ให้บริการ วิธีใช้ เงื่อนไข และขั้นตอนติดต่อ
+            {' '}อย่าเพิ่มคำค้นซ้ำ ๆ จนอ่านไม่เป็นธรรมชาติ และอย่าเขียนคำรับรองหรือข้อมูลที่ธุรกิจยืนยันไม่ได้
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-tools" title="เครื่องมือ SEO ฟรีมีอะไรบ้าง และใช้ดูอะไร">
+          <ResponsiveTable
+            label="เครื่องมือพื้นฐานสำหรับทำ SEO เอง"
+            headers={['เครื่องมือ', 'ใช้ตรวจ', 'ข้อจำกัด']}
+            rows={[
+              ['Google Search Console', 'คำค้นที่ทำให้หน้าแสดง จำนวนคลิก และปัญหาการจัดทำดัชนีบางประเภท', 'ไม่ใช่เครื่องมือวัดยอดขาย ต้องเชื่อมกับข้อมูลธุรกิจ'],
+              ['Google Analytics 4', 'การเข้าชมและการกระทำบนเว็บไซต์ตามการตั้งค่าที่ติดตั้งไว้', 'ข้อมูลเหตุการณ์อาจไม่ครบ หากไม่ได้ตั้งค่าและตรวจการวัดผล'],
+              ['Google Trends', 'เปรียบเทียบความสนใจของคำค้นตามพื้นที่และช่วงเวลา', 'ค่าความสนใจเป็นดัชนีเปรียบเทียบ ไม่ใช่จำนวนค้นหาที่แน่นอน'],
+              ['PageSpeed Insights', 'ตรวจประสบการณ์และตัวชี้วัดด้านความเร็วของหน้า', 'คะแนนเครื่องมืออย่างเดียวไม่บอกว่าควรแก้ส่วนใดก่อนเสมอ'],
+            ]}
+          />
+          <P>
+            เริ่มจากเครื่องมือที่ตอบคำถามที่กำลังตัดสินใจ ไม่ต้องสมัครทุกบริการหรือซื้อเครื่องมือเสริมก่อนรู้ว่าข้อมูลใดขาด
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-measure" title="ทำ SEO เองใช้เวลาเท่าไร และวัดผลยังไง">
+          <P>
+            ไม่มีเวลาตายตัวที่ทุกเว็บไซต์จะเห็นผลเหมือนกัน Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจใช้เวลาหลายชั่วโมง ขณะที่บางอย่างอาจใช้เวลาหลายเดือน และแนะนำให้รอหลายสัปดาห์ก่อนประเมินผลของงานที่ทำ
+            {' '}รายละเอียดอยู่ใน{' '}<a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noreferrer">คู่มือ SEO เริ่มต้นของ Google</a>
+          </P>
+          <P>
+            สำหรับทีมเล็ก อาจกันเวลาสัปดาห์ละหนึ่งช่วงเพื่อดูรายงาน เลือกหนึ่งหน้ามาปรับ และบันทึกสิ่งที่เปลี่ยน ตัวอย่างนี้เป็นเพียงจังหวะทำงานที่ปรับได้ตามกำลังคน ไม่ใช่สูตรหรือข้อกำหนดจาก Google
+          </P>
+          <P>
+            ติดตามทั้งการค้นพบหน้า จำนวนการแสดงผล คลิก และการติดต่อ หากทำต่อเนื่องแล้วยังไม่เห็นทิศทาง ให้ตรวจว่าปัญหาอยู่ที่การเข้าถึงเว็บ ความตรงของหน้า หรือสิ่งที่ลูกค้าเห็นในผลค้นหา อ่านแนวทางต่อที่{' '}
+            <Link to="/blog/seo-not-working">เว็บไซต์ไม่ติดอันดับ Google และสาเหตุที่ควรตรวจ</Link>
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-or-hire" title="ทำ SEO เองหรือจ้างผู้เชี่ยวชาญ แบบไหนเหมาะกว่า">
+          <P>
+            เลือกจากเวลาที่ทีมมี ทักษะที่ขาด และความเสี่ยงของงาน ไม่จำเป็นต้องให้คนเดียวทำทุกอย่าง
+          </P>
+          <ResponsiveTable
+            label="เปรียบเทียบทำ SEO เอง ทำร่วมกัน และจ้างผู้เชี่ยวชาญ"
+            headers={['รูปแบบ', 'เหมาะเมื่อ', 'ขอบเขตงาน']}
+            rows={[
+              ['ทำเอง', 'เว็บไม่ซับซ้อน มีเวลาและรู้ข้อมูลลูกค้าดี', 'เก็บคำถาม ปรับเนื้อหา ดู Search Console และติดตามการติดต่อ'],
+              ['ทำร่วมกัน', 'ทีมรู้ธุรกิจแต่ขาดทักษะบางด้าน', 'ทีมให้ข้อมูลและอนุมัติ ผู้เชี่ยวชาญช่วยวิเคราะห์หรือแนะนำการแก้'],
+              ['จ้างผู้เชี่ยวชาญ', 'เว็บมีปัญหาระบบ แข่งขันสูง หรือไม่มีคนดูแลงาน', 'กำหนดผลส่งมอบ ผู้รับผิดชอบ วิธีวัดผล และสิทธิ์เข้าถึงก่อนเริ่ม'],
+            ]}
+          />
+          <P>
+            หากมีผู้เชี่ยวชาญเข้ามาดูเว็บ ให้ขอคำอธิบายการเปลี่ยนแปลงและอย่าอนุมัติการรับประกันอันดับหนึ่ง Google แนะนำให้ตรวจประสบการณ์ วิธีวัดผล และผลกระทบของงานก่อนตัดสินใจจ้าง
+          </P>
+          <ArticleCTA
+            headline="ยังไม่แน่ใจว่าควรลงมือแก้หน้าไหนก่อน?"
+            description="เริ่มจากประเมินข้อมูลและปัญหาของเว็บไซต์ แล้วเลือกงานที่เหมาะกับทีมและเป้าหมายธุรกิจ"
+            href="/services/seo"
+            buttonText="ดูบริการ SEO"
+            headingTag="h3"
+          />
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-boundaries" title="งาน SEO ไหนทำเองได้ และงานไหนควรขอความช่วยเหลือ">
+          <ResponsiveTable
+            label="แบ่งงาน SEO ตามระดับความเสี่ยง"
+            headers={['ทำเองได้เมื่อเข้าใจหน้าเว็บ', 'ขอผู้ดูแลเว็บหรือผู้เชี่ยวชาญช่วยตรวจ']}
+            rows={[
+              ['เขียนข้อมูลธุรกิจจากข้อเท็จจริงและคำถามลูกค้า', 'ย้ายเว็บไซต์หรือเปลี่ยนโครงสร้าง URL จำนวนมาก'],
+              ['ปรับหัวข้อและข้อความในระบบจัดการเว็บไซต์', 'แก้ robots.txt, canonical, redirect หรือ noindex โดยไม่รู้ผลกระทบ'],
+              ['เพิ่มลิงก์ไปหน้าที่เกี่ยวข้องและทดสอบปุ่มติดต่อ', 'หน้าเว็บหายจาก Google หลายหน้า หรือจำนวนคลิกลดลงรวดเร็ว'],
+              ['ตรวจรายงานและจดสิ่งที่เปลี่ยน', 'แก้ระบบที่มีหลายภาษา ตัวกรอง หรือหน้าที่สร้างจากฐานข้อมูล'],
+            ]}
+          />
+          <CaseStudyBox title="กรณีศึกษาจากงานจริง: Organic Clicks เติบโตจากงานที่แบ่งกันทำ">
+            <P>
+              ในเคสเว็บไซต์ด้านโภชนาการ คลิกจาก Google เพิ่มจากประมาณ 150 เป็นมากกว่า 2,150 ครั้งต่อเดือนภายใน 3 เดือน
+              {' '}งานที่บันทึกไว้ประกอบด้วยการวิจัยคำค้นและส่งทิศทางให้ทีมลูกค้าผลิตเนื้อหา การปรับหน้า และแก้ปัญหาทางเทคนิคบางส่วน
+              {' '}นี่เป็นผลจากงานร่วมกันของลูกค้ากับ Saralak Search ไม่ใช่คำรับประกันผลสำหรับการทำ SEO เอง
+            </P>
+            <P>
+              <Link to="/case-studies">อ่านกรณีศึกษาจาก Saralak Search</Link>
+            </P>
+          </CaseStudyBox>
+          <P>
+            หากลองปรับพื้นฐานแล้วแต่ยังไม่รู้ว่าควรเดินต่อจากจุดไหน ให้ใช้บริการ{' '}
+            <Link to="/services/seo">SEO ของ Saralak Search</Link>
+            {' '}เพื่อช่วยวิเคราะห์และเรียงลำดับงาน
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="diy-seo-plan" title="แผนเริ่มทำ SEO เองใน 30 วัน">
+          <ResponsiveTable
+            label="ตัวอย่างแผนทำ SEO เองสี่สัปดาห์"
+            headers={['ช่วงเวลา', 'งานตัวอย่าง']}
+            rows={[
+              ['สัปดาห์ที่ 1', 'ตั้งเป้าหมาย ยืนยัน Search Console และเลือกหน้าสำคัญ'],
+              ['สัปดาห์ที่ 2', 'รวบรวมคำถามลูกค้าและปรับข้อมูลในหนึ่งถึงสองหน้า'],
+              ['สัปดาห์ที่ 3', 'เชื่อมลิงก์ภายในและตรวจการใช้งานบนมือถือ'],
+              ['สัปดาห์ที่ 4', 'บันทึกผล ตรวจว่าหน้าเข้าถึงได้ และกำหนดงานรอบถัดไป'],
+            ]}
+          />
+          <P>
+            ปรับจำนวนหน้าและช่วงเวลาให้พอดีกับทีม หากพบปัญหาที่เสี่ยงกระทบหลายหน้า ให้หยุดการเปลี่ยนระบบแล้วขอคนดูแลเว็บช่วยตรวจ
+          </P>
+          <ReadMoreLinks items={[
+            { to: '/blog/what-is-seo', label: 'SEO คืออะไร: ทำความเข้าใจพื้นฐานก่อนเริ่ม' },
+            { to: '/blog/check-website-traffic-free', label: 'เช็ก Traffic Website ฟรีด้วย Search Console และ GA4' },
+            { to: '/blog/seo-not-working', label: 'เว็บไซต์ไม่ติดอันดับ Google: สาเหตุและสิ่งที่ควรตรวจ' },
+            { to: '/services/seo', label: 'บริการ SEO จาก Saralak Search' },
+          ]} />
+        </ArticleSection>
+
+        <SourceBox heading="แหล่งอ้างอิง" items={[
+          <a key="starter" href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noreferrer">Google Search Central: SEO Starter Guide</a>,
+          <a key="need" href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo" target="_blank" rel="noreferrer">Google Search Central: Do You Need an SEO?</a>,
+        ]} />
+        <div id="diy-seo-faq" className="scroll-mt-24">
+          <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับการทำ SEO เอง" />
+        </div>
+        <ArticleCTA
+          headline="อยากจัดลำดับงาน SEO ให้เหมาะกับธุรกิจ?"
+          description="ดูบริการ SEO ของ Saralak Search เพื่อประเมินเว็บไซต์และกำหนดงานที่ควรเริ่มก่อน"
+          href="/services/seo"
+          buttonText="ดูบริการ SEO"
+        />
+      </BlogProse>
+    </article>
+  )
+}
+
 function HowToDoGeoArticle({ post }: { post: BlogPost }) {
   const tocItems = [
     { id: 'geo-how-to-overview', label: 'วิธีทำ GEO ต้องทำอะไรบ้าง' },
@@ -2649,270 +2884,209 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
 
 function LlmsTxtArticle({ post }: { post: BlogPost }) {
   const tocItems = [
-    { id: 'llms-answer', label: 'llm.txt คืออะไร และชื่อที่ถูกคืออะไร' },
-    { id: 'llms-serp-intent', label: 'คนค้น llm.txt ต้องการรู้อะไร' },
-    { id: 'llms-google-status', label: 'Google Search ใช้ llms.txt ไหม' },
-    { id: 'llms-compare', label: 'llms.txt ต่างจาก robots.txt และ sitemap อย่างไร' },
-    { id: 'llms-format', label: 'โครงสร้าง llms.txt ตาม proposal v2' },
-    { id: 'llms-example', label: 'ตัวอย่าง llms.txt ที่ใช้ได้จริง' },
-    { id: 'llms-when-to-use', label: 'เว็บไซต์แบบไหนควรทำ llms.txt' },
-    { id: 'llms-implement', label: 'วิธีเพิ่ม llms.txt ในเว็บไซต์' },
-    { id: 'llms-test', label: 'วิธีทดสอบ llms.txt' },
-    { id: 'llms-measure', label: 'ควรวัดผลอย่างไร' },
-    { id: 'llms-limitations', label: 'ข้อจำกัดที่ควรรู้' },
-    { id: 'llms-next-step', label: 'llms.txt อยู่ตรงไหนใน GEO' },
-    { id: 'llms-faq', label: 'FAQ' },
+    { id: 'llms-summary', label: 'สรุป llms.txt ใน 30 วินาที' },
+    { id: 'llms-meaning', label: 'llms.txt คืออะไร และใช้ทำอะไร' },
+    { id: 'llms-compare', label: 'llms.txt ต่างจาก robots.txt และ sitemap.xml อย่างไร' },
+    { id: 'llms-google', label: 'Google ใช้ llms.txt ไหม และมีผลกับ SEO หรือ AI Overview หรือไม่' },
+    { id: 'llms-fit', label: 'เว็บไซต์แบบไหนควรทำ llms.txt' },
+    { id: 'llms-format', label: 'โครงสร้าง llms.txt ตามข้อเสนอ v2' },
+    { id: 'llms-example', label: 'ตัวอย่าง llms.txt สำหรับเว็บไซต์ธุรกิจ' },
+    { id: 'llms-create', label: 'สร้างและตรวจ llms.txt ยังไง' },
+    { id: 'llms-measure', label: 'ทำแล้วจะรู้ได้ไหมว่าไฟล์ถูกอ่านหรือช่วยให้ AI กล่าวถึงเว็บไซต์' },
+    { id: 'llms-conclusion', label: 'สรุป: llms.txt ควรทำเมื่อไร' },
+    { id: 'llms-faq', label: 'คำถามที่พบบ่อย' },
   ]
 
   return (
     <article className="grid gap-10">
-      {post.aiSummary ? <AISummary items={post.aiSummary} heading="สรุป llm.txt / llms.txt ใน 30 วินาที" id="llms-summary" /> : null}
-
-      <nav aria-label="สารบัญ llms.txt" className="rounded-lg border border-neutral-200 bg-white p-4 sm:p-5">
-        <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">สารบัญบทความ</p>
-        <ol className="mt-3 grid gap-2 text-base leading-7 text-neutral-700 sm:grid-cols-2 sm:gap-x-6">
-          {tocItems.map((item, index) => (
-            <li key={item.id}>
-              <a href={'#' + item.id} className="font-medium text-teal-900 underline-offset-2 hover:underline">
-                {String(index + 1).padStart(2, '0')}. {item.label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
-
-      <ArticleSection id="llms-answer" title="llm.txt คืออะไร และชื่อไฟล์ที่ถูกคืออะไร">
-        <P>
-          <strong>คำค้น “llm.txt” มักหมายถึงไฟล์ llms.txt</strong> ซึ่งเป็น proposal สำหรับไฟล์ Markdown ที่เว็บไซต์ใช้สรุปว่าเว็บนี้คืออะไร
-          และชี้ไปยังหน้าหรือ resource สำคัญสำหรับ agent หรือ LLM ที่เลือกอ่านไฟล์นี้ ชื่อไฟล์ตาม proposal คือ <strong>llms.txt</strong> มีตัว s
-          และสามารถวางที่ /llms.txt หรือใน subpath เช่น /docs/llms.txt ตาม proposal v2
-        </P>
-        <P>
-          จุดสำคัญคือ llms.txt <strong>ไม่ใช่ไฟล์ควบคุม crawler</strong>, ไม่ใช่ replacement ของ robots.txt หรือ sitemap.xml
-          และไม่ใช่เทคนิคที่ทำให้ Google หรือ AI อ้างอิงเว็บไซต์โดยอัตโนมัติ ควรมองเป็น optional interface สำหรับระบบที่รองรับมากกว่า “AI SEO shortcut”
-        </P>
-      </ArticleSection>
-
-      <ArticleSection id="llms-serp-intent" title="คนค้น “llm.txt” ต้องการรู้อะไร">
-        <P>
-          จาก SERP ไทยที่ตรวจวันที่ <strong>6 ตุลาคม 2026</strong> คำค้น “llm.txt” มี Intent หลักเป็น <strong>Definition + How-to</strong>:
-          ผลลัพธ์ส่วนใหญ่ตอบว่าไฟล์คืออะไร, โครงสร้างเป็นอย่างไร, ใช้กับ SEO/AI ได้แค่ไหน และสร้างอย่างไร
-          Google AI Overview เองก็อธิบาย llms.txt ในฐานะไฟล์ Markdown สำหรับสรุปข้อมูลเว็บไซต์และชี้ไปยัง resource สำคัญ
-        </P>
-        <P>
-          Ahrefs Snapshot วันที่เดียวกันแสดง Search Volume ในไทยประมาณ <strong>40 ครั้งต่อเดือน</strong> และ Global Volume ประมาณ <strong>4.1K</strong>
-          ขณะที่คำใกล้เคียง “llm.txt for seo” อยู่ราว 50 ครั้งต่อเดือนในไทย ตัวเลขนี้เป็น snapshot ของ demand ไม่ใช่ค่าคงที่
-          และยิ่งตอกย้ำว่าหน้านี้ควรตอบทั้ง “คืออะไร” และ “เกี่ยวกับ SEO แค่ไหน” ให้ชัด
-        </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {[
-            ['Definition', 'อธิบายให้ชัดว่า llm.txt ในคำค้นหมายถึง llms.txt และชื่อไฟล์ตาม proposal คืออะไร'],
-            ['Implementation', 'บอกโครงสร้างขั้นต่ำ วิธีวางไฟล์ และวิธีตรวจว่า URL ใช้งานได้'],
-            ['SEO / GEO Context', 'แยกให้ชัดว่า Google Search ไม่ใช้ไฟล์นี้เป็น ranking signal แต่ระบบอื่นอาจเลือกใช้ตามการรองรับ'],
-            ['หลักตัดสินใจ', 'ถ้า พื้นฐาน SEO ยังมีปัญหา ให้แก้ Crawl, Index, Content และ Owner URL ก่อน llms.txt'],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
-            </div>
-          ))}
-        </div>
-      </ArticleSection>
-
-      <ArticleSection id="llms-google-status" title="Google Search ใช้ llms.txt ไหมในปี 2026">
-        <P>
-          <strong>Google ระบุชัดในเดือนมิถุนายน 2026 ว่า llms.txt ไม่จำเป็นสำหรับ Google Search และไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking</strong>
-          การมีไฟล์นี้จึงไม่ควรถูกขายเป็นวิธีทำให้ติด AI Overview, AI Mode หรืออันดับ Google
-        </P>
-        <P>
-          สำหรับ ChatGPT Search, เอกสารของ OpenAI แนะนำให้เว็บไซต์ที่ต้องการให้ Content ถูกค้นพบและแสดงในผลค้นหา
-          <strong>ไม่บล็อก OAI-SearchBot</strong> และ OpenAI แยก OAI-SearchBot ออกจาก GPTBot ซึ่งเกี่ยวกับ training
-          เอกสารนี้ไม่ได้ระบุว่า llms.txt เป็น requirement สำหรับการปรากฏใน ChatGPT Search
-        </P>
-        <div className="rounded-lg border border-amber-200 bg-amber-50 px-5 py-4">
-          <p className="text-sm font-semibold text-amber-900">Decision rule</p>
-          <p className="thai-readable mt-1 text-sm leading-6 text-amber-900">
-            ถ้าเป้าหมายคือ Google Search หรือ ChatGPT Search ให้แก้ access, crawl/index, content quality, entity clarity และ measurement ก่อน
-            แล้วค่อยทำ llms.txt เป็น optional supporting file เมื่อมี resource ที่ต้องการ curate ให้ agent ใช้งาน
-          </p>
-        </div>
-      </ArticleSection>
-
-      <ArticleSection id="llms-compare" title="llms.txt ต่างจาก robots.txt และ sitemap.xml อย่างไร">
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
-          <table className="min-w-[820px] w-full divide-y divide-neutral-200 bg-white text-left text-sm">
-            <thead className="bg-[#fbfaf6]">
-              <tr>
-                {['ไฟล์', 'หน้าที่หลัก', 'ใครใช้', 'ควรใช้แทนกันไหม'].map((h) => (
-                  <th key={h} scope="col" className="px-4 py-3 font-semibold text-neutral-950">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-200 text-neutral-700">
-              {[
-                ['robots.txt', 'ประกาศ access rules สำหรับ crawler ตาม user-agent', 'Search crawler และ bot ที่เคารพ robots.txt', 'ไม่แทน llms.txt'],
-                ['sitemap.xml', 'ลิสต์ URL ที่ต้องการให้ Search Engine ค้นพบ/ประมวลผล', 'Search Engine', 'ไม่แทน llms.txt'],
-                ['llms.txt', 'overview + curated links สำหรับ agent/LLM ที่รองรับ proposal', 'Agent หรือ tool ที่เลือกอ่าน', 'ไม่แทน robots.txt หรือ sitemap'],
-              ].map((row) => (
-                <tr key={row[0]}>
-                  {row.map((cell, i) => (
-                    <td key={i} className={'thai-readable px-4 py-3 leading-6 ' + (i === 0 ? 'font-semibold text-neutral-950' : '')}>{cell}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </ArticleSection>
-
-      <ArticleSection id="llms-format" title="โครงสร้าง llms.txt ตาม proposal v2">
-        <P>
-          llms.txt ใช้ Markdown และมีโครงสร้างค่อนข้างยืดหยุ่น ตาม proposal v2 ส่วนที่จำเป็นจริงมีเพียง <strong>H1 ชื่อโปรเจกต์หรือเว็บไซต์</strong>
-          ส่วน blockquote, รายละเอียด และ section ที่ลิงก์ไปยัง resource เป็นส่วนเสริมที่ใช้เมื่อมีข้อมูลให้จัดหมวด
-        </P>
-        <CheckList items={[
-          'H1 — ชื่อเว็บไซต์หรือโปรเจกต์ เป็นส่วนที่จำเป็น',
-          'Blockquote — สรุปสั้นว่าเว็บไซต์หรือโปรเจกต์คืออะไร',
-          'รายละเอียดเพิ่มเติม — ข้อความหรือลิสต์ที่ช่วยอธิบายบริบท โดยไม่ใช้ heading',
-          'H2 sections — ใช้แบ่งหมวดของ resource ที่ต้องการแนะนำ',
-          'ลิงก์แต่ละรายการ — รูปแบบ [ชื่อ](URL): คำอธิบายสั้น ซึ่งช่วยบอกว่า resource นั้นใช้ทำอะไร',
-        ]} />
-        <P>
-          Proposal v2 ยังรองรับ llms.txt ใน subpath และเพิ่มแนวทางการใช้ rel="alternate" สำหรับ Markdown version
-          กับ rel="describedby" เพื่อชี้ไปยัง llms.txt ที่ครอบคลุมหน้า นี่เป็นส่วนของ proposal ไม่ใช่ requirement ของ Google Search
-        </P>
-      </ArticleSection>
-
-      <ArticleSection id="llms-example" title="ตัวอย่าง llms.txt สำหรับเว็บไซต์ธุรกิจ">
-        <P>
-          Saralak Search มีไฟล์จริงที่ <a href="/llms.txt" className="font-medium text-teal-800 underline underline-offset-2">/llms.txt</a>
-          โดยใช้เป็น curated overview ของแบรนด์และ resource สำคัญ ไม่ได้ใช้เป็นหลักฐานว่าไฟล์นี้ทำให้อันดับหรือ AI Citation เพิ่มขึ้น
-        </P>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-[#fbfaf6] p-4 sm:p-5">
-          <pre className="thai-readable whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-            {'# Brand Name\\n\\n> Brand Name is a [business type] serving [market/location].\\n\\nCore facts that help explain the business, scope, language, or audience.\\n\\n## Services\\n\\n- [Service A](https://example.com/service-a): What this service covers\\n- [Service B](https://example.com/service-b): Who it is for\\n\\n## Guides\\n\\n- [Topic guide](https://example.com/guide): What the guide explains\\n\\n## Case Studies\\n\\n- [Case study](https://example.com/case): Verified result or observation'}
-          </pre>
-        </div>
-        <P>
-          ไม่จำเป็นต้องยัดทุก URL ลงไฟล์ ถ้าเป้าหมายคือให้ agent หา resource ที่สำคัญได้เร็ว การเลือกเฉพาะหน้า Owner, Service, Guide และ Case ที่มีบทบาทชัด
-          มักมีประโยชน์กว่าการทำซ้ำ sitemap ทั้งเว็บไซต์
-        </P>
-      </ArticleSection>
-
-      <ArticleSection id="llms-when-to-use" title="เว็บไซต์แบบไหนควรทำ llms.txt และเมื่อไรยังไม่ควร">
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">เหมาะจะทำเมื่อ</h3>
-            <CheckList items={[
-              'มีเอกสาร คู่มือ API Knowledge Base หรือ Content Library ที่ agent อาจต้องเลือก resource',
-              'มีหน้า Owner ชัดและต้องการทำ curated overview ให้ระบบที่รองรับ',
-              'ดูแลไฟล์ให้สอดคล้องกับ URL และข้อมูลจริงได้',
-              'พื้นฐาน SEO หลักทำงานดีแล้วและ llms.txt เป็นงานเสริม ไม่ใช่งานแก้ปัญหาอันดับ',
-            ]} />
-          </div>
-          <div className="rounded-lg border border-neutral-200 bg-white p-5">
-            <h3 className="font-semibold text-neutral-950">ยังไม่ควรให้ Priority เมื่อ</h3>
-            <CheckList items={[
-              'หน้าเป้าหมายยัง noindex, canonical ผิด, render ไม่ครบ หรือ internal link ขาด',
-              'ยังไม่มี Content Owner ของคำถามหลักและสร้างบทความซ้ำ Intent กัน',
-              'คาดหวังว่าไฟล์เดียวจะทำให้ Google หรือ ChatGPT อ้างอิงทันที',
-              'ไม่มีคนดูแลจนลิงก์หรือข้อมูลในไฟล์จะล้าสมัยเร็ว',
-            ]} />
-          </div>
-        </div>
-      </ArticleSection>
-
-      <ArticleSection id="llms-implement" title="วิธีเพิ่ม llms.txt ในเว็บไซต์">
-        <P>
-          หลักการง่ายที่สุดคือทำให้ไฟล์เข้าถึงได้ผ่าน URL สาธารณะ เช่น https://example.com/llms.txt
-          หรือ path ที่ต้องการครอบคลุม เช่น /docs/llms.txt แล้วเก็บเนื้อหาเป็น Markdown ตาม proposal
-        </P>
-        <ArticleSubSection title="Static site / React / Vite / Next.js">
+      <BlogProse>
+        <section className="grid gap-5">
           <P>
-            ถ้า framework มีโฟลเดอร์สำหรับ static assets ให้เพิ่ม llms.txt ในตำแหน่งที่ build แล้วถูกเสิร์ฟเป็น URL ที่ต้องการ
-            จากนั้น deploy และเปิด URL จริงเพื่อตรวจว่าไฟล์ไม่ถูก route handler หรือ redirect ทับ
+            <strong>llms.txt เป็นข้อเสนอสำหรับไฟล์ Markdown ที่สรุปข้อมูลของเว็บไซต์และชี้ไปยังหน้าสำคัญ</strong>
+            {' '}ระบบ AI หรือเอเจนต์ AI ต้องเลือกอ่านไฟล์นี้เอง จึงไม่มีอะไรรับประกันว่าจะถูกนำไปใช้ ถ้าทำเพื่อให้ติด Google Search ก็ยังไม่ต้องทำ เพราะ Google Search ระบุว่าไม่ได้ใช้ llms.txt
           </P>
-        </ArticleSubSection>
-        <ArticleSubSection title="WordPress หรือ CMS">
           <P>
-            ใช้ plugin/extension ที่รองรับ หรือให้ server/CDN เสิร์ฟไฟล์ที่ path ที่ต้องการก็ได้ จุดสำคัญไม่ใช่วิธีสร้างไฟล์
-            แต่คือ URL ต้องเปิดได้ เนื้อหาต้องตรงกับเว็บไซต์ และไม่เผยข้อมูลภายในที่ไม่ควรเป็น public
+            ถ้าเว็บไซต์มีเอกสาร คู่มือ หรือฐานความรู้จำนวนมาก ไฟล์นี้อาจช่วยจัดทางเข้าของข้อมูลให้เป็นระเบียบ แต่เว็บไซต์ทั่วไปควรดูว่ามีหน้าที่ต้องรวบรวมหรือมีคนคอยดูแลลิงก์ในไฟล์หรือไม่ก่อนเริ่มทำ
           </P>
-        </ArticleSubSection>
-      </ArticleSection>
+        </section>
 
-      <ArticleSection id="llms-test" title="วิธีทดสอบว่า llms.txt ใช้งานได้หรือไม่">
-        <NumberedList items={[
-          'เปิด URL ของไฟล์โดยตรงและตรวจว่าได้เนื้อหา Markdown ที่ตั้งใจไว้ ไม่ใช่ 404, HTML fallback หรือ redirect loop',
-          'กดลิงก์ในไฟล์ทีละรายการเพื่อตรวจว่า URL ยังใช้งานได้และพาไปยัง resource ที่ถูกต้อง',
-          'ตรวจว่าไม่มีข้อมูลลับ, draft URL, admin path หรือข้อมูลที่ไม่ควรเปิดเผยอยู่ในไฟล์',
-          'ถ้าต้องการทดสอบกับ agent ให้ให้ agent เริ่มจาก llms.txt แล้วถามคำถามที่ resource ในไฟล์ควรตอบได้ จากนั้นตรวจว่า agent ตามลิงก์ถูกหรือไม่',
-          'หากต้องการหลักฐานการ fetch ให้ดู server/CDN logs แทนการเดาจากคำตอบของโมเดล',
+        {post.aiSummary ? (
+          <AISummary
+            heading="สรุป llms.txt ใน 30 วินาที"
+            id="llms-summary"
+            items={post.aiSummary}
+          />
+        ) : null}
+
+        <TableOfContents items={tocItems} />
+
+        <ArticleSection id="llms-meaning" title="llms.txt คืออะไร และใช้ทำอะไร">
+          <P>
+            llms.txt คือไฟล์ข้อความที่เขียนด้วย Markdown เพื่ออธิบายว่าเว็บไซต์หรือโปรเจกต์เกี่ยวกับอะไร และรวบรวมลิงก์ไปยังเนื้อหาที่ควรรู้ก่อน ข้อเสนอนี้ตั้งใจให้เอเจนต์ AI ใช้เป็นจุดเริ่มต้น แล้วเปิดอ่านหน้าที่เกี่ยวข้องต่อ ไม่ได้บรรจุรายละเอียดทั้งหมดของเว็บไซต์ไว้ในไฟล์เดียว
+          </P>
+          <P>
+            คำว่า “ข้อเสนอ” สำคัญ เพราะ llms.txt ยังไม่ใช่มาตรฐานที่ทุกระบบต้องทำตาม การวางไฟล์ไว้ที่เว็บจึงไม่ได้สั่งให้บอตเข้าเว็บไซต์ ไม่ได้บล็อกการเข้าถึง และไม่ได้รับประกันว่าจะมีการอ้างอิงเว็บไซต์ในคำตอบ
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-compare" title="llms.txt ต่างจาก robots.txt และ sitemap.xml อย่างไร">
+          <P>
+            ทั้งสามไฟล์มีหน้าที่คนละแบบ ถ้าต้องการกำหนดคำสั่งให้บอตที่ทำตามข้อกำหนด ให้ดู robots.txt ถ้าต้องการส่งรายการที่อยู่เว็บให้ระบบค้นหาใช้ sitemap ส่วน llms.txt เป็นเพียงแนวทางสรุปและคัดลิงก์สำหรับระบบที่เลือกอ่าน
+          </P>
+          <ResponsiveTable
+            label="เปรียบเทียบ llms.txt, robots.txt และ sitemap.xml"
+            headers={['ไฟล์', 'หน้าที่', 'ใช้เมื่อ']}
+            rows={[
+              ['llms.txt', 'สรุปเว็บไซต์และชี้ไปยังเนื้อหาที่คัดเลือกไว้', 'ต้องการจัดทางเข้าของเอกสารหรือข้อมูลจำนวนมากให้เป็นหมวดหมู่'],
+              ['robots.txt', 'ระบุคำสั่งเกี่ยวกับการเข้าถึงของบอตที่ทำตามข้อกำหนด', 'ต้องการแจ้งบอตที่ทำตามคำสั่งว่าควรหรือไม่ควรเข้าถึงส่วนใด'],
+              ['sitemap.xml', 'แจ้งรายการที่อยู่เว็บของหน้าที่ต้องการให้ระบบค้นพบ', 'ต้องการช่วยให้ระบบค้นหาพบหน้าที่เกี่ยวข้องกับเว็บไซต์'],
+            ]}
+          />
+          <P>
+            เช่น เว็บไซต์มีคู่มือสินค้าและเอกสารจำนวนมาก อาจทำ llms.txt เป็นรายการหน้าแนะนำ แต่ถ้าต้องการห้าม crawler เข้าส่วนหลังบ้าน ต้องตั้งค่าการควบคุมการเข้าถึงที่เหมาะสม ไฟล์ llms.txt ไม่ได้ใช้แทน robots.txt หรือระบบรักษาความปลอดภัย
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-google" title="Google ใช้ llms.txt ไหม และมีผลกับ SEO หรือ AI Overview หรือไม่">
+          <P>
+            Google Search ไม่ใช้ llms.txt และการมีหรือไม่มีไฟล์นี้ไม่ช่วยหรือทำร้ายการมองเห็นและอันดับใน Google Search รวมถึงฟีเจอร์ AI ใน Search ด้วย ตามที่
+            {' '}<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google Search Central อธิบายไว้</a>
+            {' '}ในแนวทางสำหรับ generative AI features
+          </P>
+          <P>
+            ข้อสรุปนี้ใช้กับ Google Search ไม่ควรขยายไปแทนทุกแพลตฟอร์ม หากต้องการให้ระบบอื่นอ่านข้อมูล ให้ตรวจเอกสารของระบบนั้นโดยตรง และอย่าคาดว่าเพียงเพิ่มไฟล์จะทำให้ถูกอ้างอิงหรือมีผู้เข้าชมเพิ่ม
+          </P>
+          <P>
+            สำหรับการค้นหาบน Google ให้ดูแลหน้าที่สำคัญ เนื้อหาที่มีประโยชน์ และการเข้าถึงหน้าเว็บตามปกติก่อน ไฟล์ llms.txt ไม่ใช่เงื่อนไขสำหรับการปรากฏใน Search หรือ AI Overview
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-fit" title="เว็บไซต์แบบไหนควรทำ llms.txt">
+          <P>
+            ไฟล์นี้เหมาะกับเว็บที่มีข้อมูลเยอะจนผู้อ่านหรือเอเจนต์ AI ต้องการแผนที่นำทาง เช่น คู่มือผลิตภัณฑ์ เอกสาร API หรือฐานความรู้หลายหมวด ส่วนเว็บไซต์ธุรกิจที่มีหน้าบริการไม่มากและหาเมนูได้ชัด อาจยังไม่มีเหตุผลต้องเพิ่มไฟล์นี้เป็นงานเร่งด่วน
+          </P>
+          <ResponsiveTable
+            label="เลือกว่าจะทำ llms.txt หรือจัดการงานอื่นก่อน"
+            headers={['ถ้าเว็บไซต์เป็นแบบนี้', 'แนวทางเริ่มต้น']}
+            rows={[
+              ['มีคู่มือ เอกสาร API หรือฐานความรู้จำนวนมาก', 'คัดหน้าหลักเป็นหมวด แล้วพิจารณาทำ llms.txt เพื่อให้มีจุดเริ่มอ่านที่ชัดเจน'],
+              ['มีสินค้าและข้อมูลหลายประเภท', 'เลือกเฉพาะหน้าหมวด คู่มือ และนโยบายที่ยังเป็นปัจจุบัน ไม่ต้องใส่ทุก URL'],
+              ['มีหน้าเว็บไซต์ไม่มากและข้อมูลอ่านง่ายอยู่แล้ว', 'ดูแลเนื้อหาและการเชื่อมโยงภายในให้ชัดก่อน ยังไม่ต้องเร่งทำไฟล์เพิ่ม'],
+              ['ยังมีหน้าเข้าไม่ได้ ลิงก์เสีย หรือข้อมูลไม่ตรงกัน', 'แก้ปัญหาหน้าเว็บและข้อมูลต้นทางก่อน เพราะ llms.txt ไม่ได้แก้ปัญหาเหล่านี้'],
+            ]}
+          />
+          <ArticleCTA
+            headline="ยังไม่แน่ใจว่าควรเริ่มจาก llms.txt หรือแก้พื้นฐานเว็บไซต์ก่อน?"
+            description="Saralak Search ช่วยตรวจโครงสร้างหน้า เนื้อหา และการเข้าถึงเว็บไซต์ เพื่อจัดลำดับงาน SEO และ GEO ให้เหมาะกับธุรกิจ"
+            href="/services/geo"
+            buttonText="ดูบริการ GEO & AI Search"
+            headingTag="h3"
+          />
+        </ArticleSection>
+
+        <ArticleSection id="llms-format" title="โครงสร้าง llms.txt ตามข้อเสนอ v2 มีอะไรบ้าง">
+          <P>
+            ข้อเสนอฉบับ v2 ระบุรูปแบบ Markdown โดยมีหัวข้อ H1 เป็นส่วนเดียวที่จำเป็น ส่วนข้อความสรุป บริบทเพิ่มเติม และหมวด H2 ที่รวมรายการลิงก์เป็นส่วนที่เลือกใส่ได้ ดูรายละเอียดได้จาก
+            {' '}<a href="https://llmstxt.org/">ข้อเสนอ llms.txt ฉบับ v2</a>
+          </P>
+          <NumberedList
+            items={[
+              { title: 'ตั้ง H1 เป็นชื่อเว็บไซต์หรือโปรเจกต์', description: 'ใช้ชื่อที่ตรงกับแบรนด์หรือระบบที่อธิบายอยู่' },
+              { title: 'เพิ่มคำอธิบายสั้น ๆ', description: 'บอกว่าเว็บไซต์นี้ให้ข้อมูลเรื่องอะไร โดยไม่ใส่คำโฆษณาที่ไม่มีหลักฐาน' },
+              { title: 'จัดลิงก์ตามหมวดด้วย H2', description: 'เช่น บริการ คู่มือ สินค้า หรือเอกสาร แล้วใส่ชื่อและ URL ของหน้า' },
+              { title: 'เลือกเฉพาะหน้าที่ช่วยให้เข้าใจเว็บไซต์', description: 'เขียนคำอธิบายหลังลิงก์เมื่อช่วยแยกได้ว่าหน้านั้นมีข้อมูลอะไร' },
+            ]}
+          />
+          <P>
+            ปกติวางไฟล์ที่ /llms.txt หากต้องการให้ครอบคลุมเฉพาะส่วน เช่น เอกสารที่อยู่ใต้ /docs/ ข้อเสนอนี้รองรับไฟล์ /docs/llms.txt ด้วย และให้ใช้ไฟล์ที่อยู่ใกล้กับ path นั้นที่สุด
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-example" title="ตัวอย่าง llms.txt สำหรับเว็บไซต์ธุรกิจ">
+          <P>
+            ตัวอย่างด้านล่างแสดงวิธีแบ่งหน้าให้บริการ ความรู้ และผลงานออกเป็นหมวด ที่อยู่เว็บต้องเปิดได้จริงและข้อความกำกับต้องตรงกับหน้าเว็บ
+          </P>
+          <pre><code>{'# Saralak Search\n\n> เว็บไซต์ให้คำแนะนำ SEO, AEO และ GEO สำหรับธุรกิจไทย\n\n## Services\n- [บริการ SEO](https://saralak-search.com/services/seo): วางแผนและปรับปรุง SEO\n- [บริการ GEO & AI Search](https://saralak-search.com/services/geo): วางแผนการมองเห็นใน AI Search\n\n## Guides\n- [SEO คืออะไร](https://saralak-search.com/blog/what-is-seo): พื้นฐานการทำ SEO\n- [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): ความหมายและขอบเขตของ GEO\n\n## Case Studies\n- [กรณีศึกษาผลงาน](https://saralak-search.com/case-studies): ตัวอย่างงาน SEO และ AI Search'}</code></pre>
+          <P>
+            ไม่จำเป็นต้องใส่ทุกบทความหรือทุกหน้าสินค้า เลือกหน้าเริ่มต้นที่ช่วยให้เข้าใจบริการและข้อมูลสำคัญก่อน จากนั้นตรวจทีละลิงก์ว่าเปิดได้และยังมีเนื้อหาตามคำอธิบาย
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-create" title="สร้างและตรวจ llms.txt ยังไง">
+          <P>
+            ไม่ว่าจะใช้ WordPress, ระบบจัดการเว็บไซต์ หรือเว็บที่พัฒนาขึ้นเอง หลักการคือสร้างไฟล์ข้อความชื่อ llms.txt แล้วเผยแพร่ให้เปิดผ่าน URL ที่ต้องการได้ การใช้ปลั๊กอินเป็นเพียงทางเลือก ไม่ใช่ข้อกำหนด
+          </P>
+          <NumberedList
+            items={[
+              { title: 'คัดหน้าที่ควรแนะนำ', description: 'เริ่มจากหน้าบริการ คู่มือ นโยบาย หรือเอกสารที่ยังใช้จริง' },
+              { title: 'จัดกลุ่มตามสิ่งที่ผู้อ่านต้องการหา', description: 'ตั้งชื่อหมวดให้ตรงไปตรงมาและไม่ซ้ำความหมายกัน' },
+              { title: 'เขียนไฟล์ด้วย Markdown', description: 'ระบุชื่อเว็บ สรุปสั้น ๆ และลิงก์พร้อมคำอธิบายเท่าที่จำเป็น' },
+              { title: 'เผยแพร่ที่อยู่เว็บสาธารณะ', description: 'เปิดที่อยู่จริง เช่น https://example.com/llms.txt แล้วตรวจว่าแสดงไฟล์ ไม่ใช่หน้า 404 หรือหน้าเว็บทั่วไป' },
+              { title: 'ทวนข้อมูลและลิงก์', description: 'เอาลิงก์ที่เสีย หน้าที่ลบแล้ว หรือข้อมูลที่ไม่ควรเผยแพร่ออก' },
+            ]}
+          />
+          <P>
+            ถ้าใช้ WordPress ให้ตรวจว่าไฟล์จากปลั๊กอินหรือวิธีอัปโหลดอยู่ที่ URL ที่ต้องการจริง และไม่ได้สร้างเนื้อหาที่ล้าสมัยหรือรวบรวมหน้าอัตโนมัติโดยไม่คัดเลือก
+          </P>
+        </ArticleSection>
+
+        <ArticleSection id="llms-measure" title="ทำแล้วจะรู้ได้ไหมว่าไฟล์ถูกอ่านหรือช่วยให้ AI กล่าวถึงเว็บไซต์">
+          <P>
+            ตรวจได้ว่าไฟล์เปิดได้และดูบันทึกคำขอเข้าถึงจากเซิร์ฟเวอร์หรือ CDN ได้ หากมีการเก็บข้อมูลเหล่านี้ แต่การเห็นคำขอไม่ได้พิสูจน์ว่าเนื้อหาในไฟล์ทำให้เกิดอันดับ การอ้างอิง หรือยอดขาย
+          </P>
+          <P>
+            แยกผลลัพธ์เป็นคนละเรื่อง: ความพร้อมของไฟล์ดูจากที่อยู่และลิงก์ ส่วน Google Search ดูข้อมูลใน Search Console และดูผู้เข้าชมจากระบบ AI ที่แยกแหล่งที่มาได้ อย่าสรุปว่า llms.txt เป็นสาเหตุเพียงเพราะตัวเลขเปลี่ยนหลังเพิ่มไฟล์
+          </P>
+          <CaseStudyBox title="เคสจริง: แบรนด์ถูก ChatGPT กล่าวถึงหลังทำ GEO หลายด้าน">
+            <P>
+              กรณีศึกษาของ Saralak Search ใช้เวลา 6 เดือน โดยเน้นสร้างความเชี่ยวชาญของหัวข้อ เชื่อมเนื้อหาเป็นกลุ่ม และทำข้อมูลแบรนด์กับบริบทสินค้าให้ชัด ผลที่รายงานคือแบรนด์ถูก ChatGPT กล่าวถึง
+            </P>
+            <P>
+              ผลนี้เป็นผลงานจากงาน GEO หลายด้าน ไม่ได้แยกผลของ llms.txt จึงไม่ใช่หลักฐานว่าไฟล์นี้ทำให้เกิดการกล่าวถึง
+              {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ดูกรณีศึกษาของ Saralak Search</Link>
+            </P>
+          </CaseStudyBox>
+          <ReadMoreLinks
+            items={[
+              { to: '/blog/what-is-geo', label: 'GEO คืออะไร' },
+              { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO' },
+              { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist' },
+              { to: '/blog/what-is-ai-overview', label: 'AI Overview คืออะไร' },
+            ]}
+          />
+        </ArticleSection>
+
+        <ArticleSection id="llms-conclusion" title="สรุป: llms.txt ควรทำเมื่อไร">
+          <P>
+            ถ้าเว็บไซต์มีเอกสารหรือข้อมูลจำนวนมากที่จัดกลุ่มยาก llms.txt อาจเป็นแผนที่เสริมให้ระบบที่เลือกอ่านไฟล์นี้ แต่ถ้าเป้าหมายคือ Google Search การมีไฟล์ไม่ได้ช่วยอันดับหรือการมองเห็น ให้จัดการหน้าเว็บและเนื้อหาที่ลูกค้าใช้ก่อน
+          </P>
+          <P>
+            หากต้องการจัดลำดับงาน SEO หรือ GEO ของเว็บไซต์ Saralak Search ช่วยตรวจว่าอะไรควรแก้ก่อนและส่วนไหนยังไม่จำเป็น
+          </P>
+        </ArticleSection>
+
+        <SourceBox heading="แหล่งอ้างอิง" items={[
+          <span key="google">
+            <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google Search Central: แนวทางสำหรับ generative AI features</a>
+            {' '}— ระบุว่า Google Search ไม่ใช้ llms.txt; อัปเดต 10 กรกฎาคม 2026
+          </span>,
+          <span key="proposal">
+            <a href="https://llmstxt.org/">ข้อเสนอ llms.txt ฉบับ v2</a>
+            {' '}— แก้ไข 10 สิงหาคม 2026
+          </span>,
         ]} />
-      </ArticleSection>
 
-      <ArticleSection id="llms-measure" title="ทำ llms.txt แล้วควรวัดผลอย่างไร">
-        <P>
-          llms.txt ไม่มี KPI มาตรฐานที่ใช้พิสูจน์ SEO หรือ AI Visibility โดยตรง จึงควรแยก <strong>การใช้งานไฟล์</strong> ออกจาก <strong>ผลลัพธ์ Search/AI</strong>
-          และไม่สรุป Causation เพียงเพราะเพิ่มไฟล์แล้ว Visibility เปลี่ยน
-        </P>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {[
-            ['File usage', 'ตรวจ server/CDN logs ว่ามี request มาที่ llms.txt หรือ resource ที่ลิงก์จากไฟล์หรือไม่ เมื่อ user-agent/log รองรับการแยก'],
-            ['Google Search', 'ใช้ Search Console วัด Queries, Pages, Impressions, Clicks และ Generative AI visibility ตามรายงานที่ Google รองรับ โดยไม่โยงผลกับ llms.txt โดยอัตโนมัติ'],
-            ['AI Referral', 'ดู GA4 referral ที่ตรวจจับได้ เช่น ChatGPT Search ใช้ utm_source=chatgpt.com ตามเอกสาร OpenAI'],
-            ['ผลลัพธ์ทางธุรกิจ', 'ดู Lead, LINE, Call, Purchase หรือ Assisted Conversion ต่อ ไม่หยุดที่การเห็น bot fetch ไฟล์'],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-lg border border-neutral-200 bg-[#fbfaf6] p-5">
-              <h3 className="font-semibold text-neutral-950">{title}</h3>
-              <p className="thai-readable mt-2 text-sm leading-6 text-neutral-700">{copy}</p>
-            </div>
-          ))}
+        <div id="llms-faq" className="scroll-mt-24">
+          <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับ llms.txt" />
         </div>
-      </ArticleSection>
-
-      <ArticleSection id="llms-limitations" title="ข้อจำกัดของ llms.txt ที่ควรรู้">
-        <CheckList items={[
-          'ไม่ใช่มาตรฐานของ Google Search และไม่มีผลบวกหรือลบต่อ Ranking หรือ Visibility บน Google Search ตามเอกสารปัจจุบัน',
-          'ไม่ใช่ access-control file จึงไม่แทน robots.txt และไม่ควรใช้แทน noindex หรือ crawler directives',
-          'ไม่ควรสมมติว่า ChatGPT, Gemini, Claude, Perplexity หรือ agent ทุกตัวจะค้นหาและอ่านไฟล์นี้เหมือนกัน',
-          'ไฟล์ที่ลิงก์ไปยังเนื้อหาไม่ดี ล้าสมัย หรือซ้ำ Intent กันไม่ได้แก้ปัญหา Content Quality',
-          'การที่ agent fetch llms.txt ไม่ได้พิสูจน์ว่าไฟล์นั้นทำให้เกิด Citation, Ranking หรือ Conversion',
-        ]} />
-      </ArticleSection>
-
-      <ArticleSection id="llms-next-step" title="llms.txt อยู่ตรงไหนในงาน GEO ของเว็บไซต์">
-        <P>
-          ในงาน GEO ควรจัด llms.txt ไว้ท้ายลำดับหลัง พื้นฐาน SEO, Topic Ownership, Content, Entity และ Evidence
-          ถ้าเว็บไซต์ยังไม่ชัดว่า URL ไหนควรถือ Intent ไหน หรือ AI/Search crawler ยังเข้าถึงหน้าหลักไม่ดี การแก้จุดเหล่านั้นมี Priority สูงกว่า
-        </P>
-        <P>
-          หากฐานเว็บไซต์พร้อมแล้ว llms.txt สามารถเป็น supporting infrastructure สำหรับระบบที่รองรับ โดยดูขั้นตอนเต็มได้ที่
-          {' '}<Link to="/blog/how-to-do-geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">วิธีทำ GEO</Link>
-          {' '}และใช้
-          {' '}<Link to="/blog/geo-checklist-thailand" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO Checklist</Link>
-          {' '}ตรวจลำดับงานก่อนเชื่อมไปยัง
-          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ GEO & AI Search</Link>
-          {' '}ของ Saralak Search
-        </P>
-        <ReadMoreLinks items={[
-          { to: '/blog/what-is-geo', label: 'GEO คืออะไร — พื้นฐานก่อนทำ Technical GEO' },
-          { to: '/blog/how-to-do-geo', label: 'วิธีทำ GEO — ลำดับ Implementation ที่ควรทำก่อน llms.txt' },
-          { to: '/blog/geo-checklist-thailand', label: 'GEO Checklist — ตรวจ พื้นฐาน SEO และ AI Search Readiness' },
-          { to: '/services/geo', label: 'บริการ GEO & AI Search — Saralak Search' },
-        ]} />
-      </ArticleSection>
-
-      <SourceBox heading="Sources & Methodology — checked 6 October 2026" items={[
-        'llms.txt proposal v2 — llmstxt.org, modified August 2026',
-        'Google Search Central — June 15, 2026 clarification: llms.txt is not needed for Google Search and has no positive or negative impact on visibility or rankings',
-        'OpenAI Help Center — Publishers and Developers FAQ: OAI-SearchBot controls discovery for ChatGPT Search; ChatGPT referrals include utm_source=chatgpt.com',
-        'Saralak Search — live SERP observation for “llm.txt” and Ahrefs keyword snapshot, checked 6 October 2026',
-      ]} />
-
-      <div id="llms-faq" className="scroll-mt-24">
-        <ArticleFAQ post={post} heading="FAQ: llm.txt และ llms.txt" />
-      </div>
+        <ArticleCTA
+          headline="อยากรู้ว่างาน SEO หรือ GEO ของเว็บไซต์ควรเริ่มตรงไหน?"
+          description="ปรึกษา Saralak Search เพื่อดูโครงสร้างเว็บไซต์ เนื้อหา และโอกาสที่ควรจัดลำดับสำหรับธุรกิจ"
+          href="/services/geo"
+          buttonText="ดูบริการ GEO & AI Search"
+          headingTag="h2"
+        />
+      </BlogProse>
     </article>
   )
 }
@@ -6956,6 +7130,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'what-is-seo') {
     return <WhatIsSeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'do-seo-yourself') {
+    return <DoSeoYourselfArticle post={post} />
   }
   if (post.bodyVariant === 'geo-checklist') {
     return <GeoChecklistArticle post={post} />

@@ -20,7 +20,7 @@ export type BlogPost = {
   aiSummary?: string[]
   faqs?: FAQItem[]
   includeFaqSchema?: boolean
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'do-seo-yourself' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
   cta?: {
     headline: string
     description: string
@@ -205,6 +205,34 @@ export const whatIsSeoFaqs: FAQItem[] = [
   },
 ]
 
+export const doSeoYourselfFaqs: FAQItem[] = [
+  {
+    question: 'ทำ SEO เองได้ไหมถ้าไม่มีพื้นฐาน?',
+    answer:
+      'เริ่มทำงานพื้นฐานได้ เช่น ตรวจข้อมูลใน Google Search Console ปรับข้อมูลหน้าเว็บ และเขียนคำตอบจากความรู้จริงของธุรกิจ หากต้องแก้ระบบเว็บ ย้ายเว็บไซต์ หรือจัดการ URL จำนวนมาก ควรให้ผู้ดูแลเว็บหรือผู้เชี่ยวชาญช่วยตรวจแผนก่อน',
+  },
+  {
+    question: 'ทำ SEO เองต้องเสียเงินหรือใช้เครื่องมืออะไร?',
+    answer:
+      'เริ่มต้นได้ด้วยเครื่องมือฟรี เช่น Google Search Console, Google Analytics 4, Google Trends และ PageSpeed Insights ค่าใช้จ่ายอาจเกิดจากเวลาของทีม การปรับเว็บไซต์ หรือเครื่องมือเสริมเมื่อมีความจำเป็น',
+  },
+  {
+    question: 'ทำ SEO เองนานแค่ไหนถึงเห็นผล?',
+    answer:
+      'ไม่มีระยะเวลาที่ใช้ได้กับทุกเว็บไซต์ Google ระบุว่าการเปลี่ยนแปลงบางอย่างอาจใช้เวลาหลายชั่วโมง ขณะที่บางอย่างอาจใช้หลายเดือน ควรติดตามแนวโน้มเป็นระยะและแยกผลค้นหาออกจากยอดติดต่อหรือยอดขาย',
+  },
+  {
+    question: 'ธุรกิจเล็กควรทำ SEO เองหรือจ้างบริษัท?',
+    answer:
+      'ธุรกิจเล็กมักเริ่มทำงานพื้นฐานเองได้ หากมีเวลารวบรวมข้อมูลและแก้หน้าเว็บ ส่วนงานที่ต้องใช้ทักษะเฉพาะหรือกระทบโครงสร้างทั้งเว็บอาจแบ่งให้ผู้เชี่ยวชาญช่วย โดยกำหนดขอบเขตและสิทธิ์เข้าถึงให้ชัด',
+  },
+  {
+    question: 'ใช้ AI ช่วยทำ SEO เองได้แค่ไหน?',
+    answer:
+      'ใช้ AI ช่วยจัดกลุ่มคำถาม ร่างโครง หรือสรุปข้อมูลได้ แต่ควรตรวจข้อเท็จจริง ตัวอย่าง ราคา และคำแนะนำกับข้อมูลจริงของธุรกิจทุกครั้ง เนื้อหาที่เผยแพร่ควรเพิ่มความรู้และประสบการณ์ที่หาไม่ได้จากการสรุปข้อมูลทั่วไป',
+  },
+]
+
 export const whatIsAeoFaqs: FAQItem[] = [
   {
     question: 'AEO คืออะไร?',
@@ -245,34 +273,29 @@ export const whatIsAeoFaqs: FAQItem[] = [
 
 export const llmsTxtFaqs: FAQItem[] = [
   {
-    question: 'llm.txt คืออะไร ต่างจาก llms.txt ไหม?',
+    question: 'llm.txt กับ llms.txt เป็นไฟล์เดียวกันไหม?',
     answer:
-      'คำค้น “llm.txt” มักใช้เรียกไฟล์ llms.txt แบบย่อหรือพิมพ์ตกตัว s แต่ชื่อไฟล์ตาม proposal คือ llms.txt ไฟล์นี้ใช้ Markdown เพื่อให้ overview และลิงก์ไปยังทรัพยากรสำคัญสำหรับ agent หรือ LLM ที่รองรับ',
+      'ชื่อไฟล์ตามข้อเสนอคือ llms.txt ที่มี s สองตัว ส่วน llm.txt มักเป็นการพิมพ์ตกตัว s หรือใช้ชื่อเรียกคลาดเคลื่อน',
   },
   {
-    question: 'llms.txt ต่างจาก robots.txt อย่างไร',
+    question: 'ถ้าไม่มี llms.txt AI จะอ่านเว็บไซต์ไม่ได้เลยไหม?',
     answer:
-      'robots.txt เป็นมาตรฐานสำหรับควบคุมการเข้าถึงของ crawler ผ่านคำสั่งอย่าง User-agent และ Disallow ส่วน llms.txt เป็น proposal สำหรับไฟล์ Markdown ที่ให้ context และรายการลิงก์ ไม่มีหน้าที่แทน robots.txt และไม่ใช่ access-control file',
+      'ไม่ใช่ การมีหรือไม่มีไฟล์นี้ไม่ได้ตัดสินว่าระบบ AI จะเข้าถึงเว็บไซต์ได้หรือไม่ แต่ละระบบมีวิธีค้นหาและเลือกข้อมูลต่างกัน ควรตรวจข้อกำหนดของระบบที่ต้องการรองรับและดูแลให้หน้าเว็บสำคัญเข้าถึงได้',
   },
   {
-    question: 'llms.txt จำเป็นกับ Google Search หรือ GEO ไหม',
+    question: 'WordPress ต้องติดตั้งปลั๊กอินเพื่อทำ llms.txt ไหม?',
     answer:
-      'ไม่จำเป็นสำหรับ Google Search โดย Google ระบุว่า llms.txt ไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking บน Google Search สำหรับ GEO ควรมองเป็นไฟล์เสริมสำหรับระบบที่รองรับ ไม่ใช่ Ranking Factor หรือข้อบังคับ',
+      'ไม่จำเป็น หากระบบโฮสต์หรือวิธีจัดการเว็บไซต์รองรับการเผยแพร่ไฟล์ที่ URL สาธารณะ ก็วางไฟล์ llms.txt ได้ จุดสำคัญคือเปิด URL ได้จริงและเนื้อหาตรงกับเว็บไซต์',
   },
   {
-    question: 'llms.txt ต้องอยู่ที่ root เสมอไหม',
+    question: 'llms.txt ต้องเขียนเป็นภาษาอังกฤษไหม?',
     answer:
-      'proposal v2 รองรับทั้ง /llms.txt ที่ root และ llms.txt ใน subpath เช่น /docs/llms.txt โดยไฟล์จะอธิบาย URL ใต้ path นั้น และถ้ามีหลายไฟล์ให้ใช้ไฟล์ที่เจาะจง path มากกว่า',
+      'ข้อเสนอไม่ได้กำหนดว่าต้องใช้ภาษาอังกฤษ เลือกภาษาที่ตรงกับเว็บไซต์และผู้อ่านเป้าหมาย แล้วเขียนชื่อหมวดกับคำอธิบายให้เข้าใจง่าย',
   },
   {
-    question: 'AI ทุกระบบอ่าน llms.txt ไหม',
+    question: 'ควรอัปเดต llms.txt บ่อยแค่ไหน?',
     answer:
-      'ไม่ควรสมมติว่า AI ทุกระบบรองรับ llms.txt การใช้งานขึ้นอยู่กับแต่ละ agent, tool หรือ platform จึงควรตรวจเอกสารของระบบที่ต้องการรองรับและไม่ใช้ llms.txt แทนการทำเว็บไซต์ให้ crawlable, indexable และมีเนื้อหาชัดเจน',
-  },
-  {
-    question: 'llms.txt ควรอัปเดตเมื่อไร',
-    answer:
-      'ควรอัปเดตเมื่อข้อมูลในไฟล์ไม่ตรงกับเว็บไซต์ เช่น เปลี่ยนบริการ เพิ่มหรือลบ section สำคัญ เปลี่ยน URL หรือมี resource ใหม่ที่ควรแนะนำ ไม่มีรอบเวลามาตรฐานที่ต้องอัปเดตทุกสัปดาห์หรือทุกเดือน',
+      'อัปเดตเมื่อหน้าเว็บที่ลิงก์ไว้เปลี่ยน ถูกลบ หรือมีข้อมูลสำคัญเพิ่มเข้ามา ไม่มีรอบเวลาตายตัว หากหน้าและลิงก์ยังตรงกับเว็บไซต์ก็ไม่จำเป็นต้องแก้ตามตารางเวลา',
   },
 ]
 
@@ -1247,30 +1270,30 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'llm.txt คืออะไร? จริง ๆ คือ llms.txt และควรใช้กับเว็บไซต์อย่างไร',
+    title: 'llms.txt คืออะไร? เว็บไซต์จำเป็นต้องทำไหม และวิธีสร้างไฟล์',
     slug: 'llms-txt-thailand',
     category: 'GEO',
     excerpt:
-      'คำค้น llm.txt มักหมายถึง llms.txt ซึ่งเป็นข้อเสนอสำหรับไฟล์ Markdown ที่สรุปเว็บไซต์และลิงก์ไปยังเนื้อหาสำคัญสำหรับ agent หรือ LLM ที่รองรับ บทความนี้อธิบายรูปแบบไฟล์ วิธีใช้ ข้อจำกัด และข้อเท็จจริงล่าสุดจาก Google',
-    readingTime: '14 min read',
+      'llms.txt เป็นข้อเสนอไฟล์ Markdown สำหรับสรุปเว็บไซต์และลิงก์ไปยังหน้าสำคัญ แต่ Google Search ไม่ใช้ไฟล์นี้ ดูวิธีตัดสินใจ โครงสร้างตัวอย่าง และขั้นตอนสร้างสำหรับเว็บไซต์ธุรกิจ',
+    readingTime: '9 min read',
     publishedDate: '2026-06-15',
-    lastModifiedDate: '2026-10-06',
+    lastModifiedDate: '2026-11-03',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
     heroImageDesktop: '/image/blog/covers/llms-txt-thailand.webp',
     heroImageMobile: '/image/blog/covers/llms-txt-thailand.webp',
-    heroImageAlt: 'llm.txt คืออะไร ความหมายของ llms.txt รูปแบบไฟล์ และวิธีใช้กับเว็บไซต์',
+    heroImageAlt: 'llms.txt คืออะไร โครงสร้างตัวอย่างและวิธีสร้างไฟล์สำหรับเว็บไซต์',
     ogImage: '/image/blog/covers/llms-txt-thailand.webp',
-    metaTitle: 'llm.txt คืออะไร? llms.txt ใช้ทำอะไร และจำเป็นไหม | Saralak Search',
+    metaTitle: 'llms.txt คืออะไร? จำเป็นไหม และวิธีสร้างไฟล์ | Saralak Search',
     metaDescription:
-      'llm.txt คือคำค้นที่มักหมายถึง llms.txt ไฟล์ Markdown สำหรับ agent/LLM ที่รองรับ ดูรูปแบบไฟล์ วิธีทำ ความต่างจาก robots.txt ข้อจำกัด และสถานะกับ Google Search ปี 2026',
+      'llms.txt คือข้อเสนอไฟล์ Markdown สำหรับสรุปเว็บไซต์ แต่ Google Search ไม่ใช้ไฟล์นี้ อ่านเกณฑ์ตัดสินใจ ตัวอย่างโครงสร้าง และวิธีสร้างสำหรับเว็บไซต์',
     aiSummary: [
-      'คำค้น “llm.txt” มักหมายถึง “llms.txt” ซึ่งเป็นข้อเสนอให้เว็บไซต์เผยแพร่ไฟล์ Markdown ที่สรุปข้อมูลพื้นฐานและลิงก์ไปยังทรัพยากรสำคัญสำหรับ agent หรือ LLM ที่รองรับ',
-      'llms.txt ไม่ใช่มาตรฐานของ Google Search และ Google ระบุชัดว่าไฟล์นี้ไม่จำเป็น รวมถึงไม่มีผลบวกหรือลบต่อ Visibility หรือ Ranking บน Google Search',
-      'llms.txt ต่างจาก robots.txt: robots.txt ใช้ควบคุมการเข้าถึงของ crawler ส่วน llms.txt ใช้เป็น overview/guide สำหรับระบบที่เลือกอ่านไฟล์นี้',
-      'ไฟล์ตาม proposal ใช้ Markdown โดยมี H1 เป็นส่วนที่จำเป็น และอาจมี blockquote, รายละเอียด และ H2 ที่รวมรายการลิงก์พร้อมคำอธิบาย',
-      'ถ้าจะทำ llms.txt ให้มองเป็น Supporting Infrastructure สำหรับ agent-friendly content ไม่ใช่ SEO shortcut หรือวิธีรับประกัน AI citation',
+      'llms.txt เป็นข้อเสนอสำหรับไฟล์ Markdown ที่สรุปเว็บไซต์และคัดลิงก์ไปยังข้อมูลสำคัญให้ระบบที่เลือกอ่านไฟล์นี้',
+      'Google Search ระบุว่าไม่ใช้ llms.txt และการมีหรือไม่มีไฟล์นี้ไม่ช่วยหรือทำร้ายอันดับและการมองเห็นบน Google Search',
+      'llms.txt ไม่ใช่ robots.txt และไม่ควบคุมว่าบอตเข้าเว็บไซต์ได้หรือไม่',
+      'เว็บไซต์ที่มีเอกสารหรือฐานความรู้ขนาดใหญ่อาจทำเป็นแผนที่เสริม ส่วนเว็บไซต์ทั่วไปไม่จำเป็นต้องทำเป็นงานแรก',
+      'ถ้าจะทำ ให้เลือกเฉพาะหน้าสำคัญ ตรวจ URL และอัปเดตเมื่อข้อมูลเปลี่ยน โดยไม่คาดหวังว่าจะได้ AI citation จากไฟล์นี้',
     ],
     faqs: llmsTxtFaqs,
     bodyVariant: 'llms-txt',
@@ -1389,6 +1412,39 @@ export const blogPosts: BlogPost[] = [
       headline: 'ยังไม่ชัดว่าเว็บไซต์ควรแก้ SEO จุดไหนก่อน?',
       description:
         'ดูบริการ SEO สำหรับวิเคราะห์ Search demand, Technical SEO, Content และหน้าที่มีผลต่อธุรกิจ แล้วจัดลำดับงานตามโอกาสที่วัดผลได้',
+      buttonText: 'ดูบริการ SEO',
+      href: '/services/seo',
+    },
+  },
+  {
+    title: 'ทำ SEO เองได้ไหม? 8 ขั้นตอนเริ่มต้นสำหรับเจ้าของธุรกิจ',
+    slug: 'do-seo-yourself',
+    category: 'SEO',
+    excerpt:
+      'เริ่มทำ SEO เองได้ตั้งแต่ตรวจ Search Console เลือกหน้าสำคัญ ปรับเนื้อหา ไปจนถึงวัดผล พร้อมเกณฑ์แบ่งงานที่ทำเองได้และงานที่ควรขอผู้เชี่ยวชาญช่วย',
+    readingTime: '12 min read',
+    publishedDate: '2026-11-05',
+    lastModifiedDate: '2026-11-05',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'ทำ SEO เองได้ไหม? 8 ขั้นตอนเริ่มต้นและเครื่องมือฟรี | Saralak Search',
+    metaDescription:
+      'ทำ SEO เองได้ เริ่มจาก Search Console เลือกหน้าสำคัญ ปรับเนื้อหาและวัดผล พร้อมเกณฑ์ดูว่างานไหนทำเองได้และเมื่อไรควรขอผู้เชี่ยวชาญช่วย',
+    aiSummary: [
+      'ธุรกิจขนาดเล็กเริ่มทำ SEO เองได้ โดยเริ่มจากข้อมูลใน Search Console และหน้าที่สำคัญต่อธุรกิจ',
+      'ลำดับพื้นฐานคือ ตั้งเป้าหมาย ตรวจการค้นพบหน้า เลือกคำถามลูกค้า ปรับหน้าเว็บ เชื่อมลิงก์ และวัดผล',
+      'Search Console, Google Analytics 4, Google Trends และ PageSpeed Insights มีเครื่องมือใช้ฟรีสำหรับตรวจข้อมูลคนละด้าน',
+      'การเปลี่ยนแปลง SEO ไม่มีเวลาที่เห็นผลตายตัว และไม่มีวิธีรับประกันอันดับหนึ่ง',
+      'งานที่แตะโครงสร้างเว็บ การย้ายเว็บไซต์ หรือ URL จำนวนมากควรให้ผู้ดูแลระบบหรือผู้เชี่ยวชาญช่วยตรวจ',
+    ],
+    faqs: doSeoYourselfFaqs,
+    includeFaqSchema: false,
+    bodyVariant: 'do-seo-yourself',
+    cta: {
+      headline: 'อยากรู้ว่างาน SEO ส่วนไหนควรทำเองก่อน?',
+      description:
+        'ดูบริการ SEO เพื่อประเมินปัญหาของเว็บไซต์และจัดลำดับงานให้เหมาะกับเวลา ทีม และเป้าหมายของธุรกิจ',
       buttonText: 'ดูบริการ SEO',
       href: '/services/seo',
     },
