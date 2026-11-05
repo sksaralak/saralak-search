@@ -2317,7 +2317,7 @@ function DoSeoYourselfArticle({ post }: { post: BlogPost }) {
 
   return (
     <article className="grid gap-10">
-      <BlogProse>
+      <BlogProse className="blog-prose--relaxed">
         <P>
           <strong>ทำ SEO เองได้ โดยเริ่มจากหน้าสำคัญของธุรกิจ ตรวจข้อมูลใน Google Search Console แล้วค่อยปรับเนื้อหาและวัดผลทีละรอบ</strong>
           {' '}งานพื้นฐานอย่างการตอบคำถามลูกค้าและแก้ข้อมูลหน้าเว็บทำเองได้ หากต้องย้ายเว็บไซต์หรือแก้ระบบที่กระทบหลายหน้า ควรให้ผู้ดูแลเว็บช่วยตรวจแผนก่อน

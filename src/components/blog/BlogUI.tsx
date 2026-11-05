@@ -172,8 +172,8 @@ export function ArticleHeader({ post }: { post: BlogPost }) {
   )
 }
 
-export function BlogProse({ children }: { children: ReactNode }) {
-  return <div className="blog-prose">{children}</div>
+export function BlogProse({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return <div className={`blog-prose ${className}`.trim()}>{children}</div>
 }
 
 export function SummaryBox({
