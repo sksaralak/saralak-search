@@ -2426,10 +2426,10 @@ function DoSeoYourselfArticle({ post }: { post: BlogPost }) {
             หากมีผู้เชี่ยวชาญเข้ามาดูเว็บ ให้ขอคำอธิบายการเปลี่ยนแปลงและอย่าอนุมัติการรับประกันอันดับหนึ่ง Google แนะนำให้ตรวจประสบการณ์ วิธีวัดผล และผลกระทบของงานก่อนตัดสินใจจ้าง
           </P>
           <ArticleCTA
-            headline="ยังไม่แน่ใจว่าควรลงมือแก้หน้าไหนก่อน?"
-            description="เริ่มจากประเมินข้อมูลและปัญหาของเว็บไซต์ แล้วเลือกงานที่เหมาะกับทีมและเป้าหมายธุรกิจ"
-            href="/services/seo"
-            buttonText="ดูบริการ SEO"
+            headline="อยากทำ SEO เอง แต่ยังไม่มั่นใจว่าเริ่มตรงไหน?"
+            description="เรียนโดยใช้เว็บไซต์จริงเป็นโจทย์ ตั้งแต่เลือกคีย์เวิร์ด ปรับหน้าเว็บ วางเนื้อหา และอ่านผล Search Console เพื่อกลับไปทำต่อได้เอง"
+            href="/services/seo-training"
+            buttonText="ดูคอร์สสอน SEO"
             headingTag="h3"
           />
         </ArticleSection>
@@ -2492,10 +2492,10 @@ function DoSeoYourselfArticle({ post }: { post: BlogPost }) {
           <ArticleFAQ post={post} heading="คำถามที่พบบ่อยเกี่ยวกับการทำ SEO เอง" />
         </div>
         <ArticleCTA
-          headline="อยากจัดลำดับงาน SEO ให้เหมาะกับธุรกิจ?"
-          description="ดูบริการ SEO ของ Saralak Search เพื่อประเมินเว็บไซต์และกำหนดงานที่ควรเริ่มก่อน"
-          href="/services/seo"
-          buttonText="ดูบริการ SEO"
+          headline="อยากเรียน SEO แล้วกลับไปดูแลเว็บไซต์ของตัวเอง?"
+          description="เลือกเรียนแบบตัวต่อตัว กลุ่มเล็ก หรืออบรมองค์กร โดยใช้เว็บไซต์ของผู้เรียนเป็นโจทย์และปรับบทเรียนตามพื้นฐานกับเป้าหมาย"
+          href="/services/seo-training"
+          buttonText="ดูรายละเอียดคอร์สสอน SEO"
         />
       </BlogProse>
     </article>
