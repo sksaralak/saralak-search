@@ -112,8 +112,8 @@ export default function About() {
   return (
     <main>
       <SEO
-        title="เกี่ยวกับ Saralak Search | SEO, GEO และ AI Search Consultancy"
-        description="Saralak Search คือที่ปรึกษาด้าน SEO, GEO และ AI Search ที่ช่วยธุรกิจเพิ่มการมองเห็นบน Google Search, Google Maps และ AI Search ก่อตั้งและดูแลโดย Saralak Kaewkum"
+        title="เกี่ยวกับ Saralak Search | ฟรีแลนซ์ SEO, GEO และ AI Search"
+        description="Saralak Search คือฟรีแลนซ์และที่ปรึกษาอิสระด้าน SEO, GEO และ AI Search ที่ช่วยธุรกิจเพิ่มการมองเห็นบน Google Search, Google Maps และ AI Search ก่อตั้งและดูแลโดย Saralak Kaewkum"
         path="/about"
         image="/saralak-profile.png"
         jsonLd={{
@@ -150,7 +150,7 @@ export default function About() {
               name: 'Saralak Search',
               url: 'https://saralak-search.com',
               logo: { '@type': 'ImageObject', url: 'https://saralak-search.com/logo.svg' },
-              description: 'SEO, GEO and AI Search Consultancy founded and operated by Saralak Kaewkum.',
+              description: 'Independent (freelance) SEO, GEO and AI Search consultant practice run by Saralak Kaewkum.',
               sameAs: ['https://www.linkedin.com/company/saralak-search','https://www.linkedin.com/in/saralakkaewkum'],
             },
             {
@@ -181,7 +181,7 @@ export default function About() {
                   ผ่าน SEO, AEO และ GEO
                 </p>
                 <p>
-                  ก่อตั้งและดูแลโดย Saralak Kaewkum ผู้มีประสบการณ์ด้าน SEO มากกว่า 9 ปี
+                  ดูแลโดย Saralak Kaewkum ฟรีแลนซ์ SEO และที่ปรึกษาอิสระ ประสบการณ์ด้าน SEO มากกว่า 9 ปี
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">

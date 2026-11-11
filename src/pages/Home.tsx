@@ -112,7 +112,7 @@ export default function Home() {
     <main>
       <SEO
         title="Saralak Search | SEO, GEO และ AI Search สำหรับธุรกิจ"
-        description="Saralak Search ช่วยธุรกิจเพิ่มโอกาสให้ลูกค้าค้นเจอ ติดต่อ และซื้อ ผ่าน Google, Google Maps และ AI Search ด้วยแผนที่เชื่อมกับการเติบโตของธุรกิจ"
+        description="ฟรีแลนซ์ SEO และที่ปรึกษาอิสระ ช่วยธุรกิจให้ลูกค้าค้นเจอ ติดต่อ และซื้อ ผ่าน Google, Google Maps และ AI Search"
         image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
           '@context': 'https://schema.org',
