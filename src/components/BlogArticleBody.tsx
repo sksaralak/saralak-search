@@ -1829,7 +1829,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
   const tocItems = [
     { id: 'seo-meaning', label: 'SEO คืออะไร?' },
-    { id: 'seo-basics', label: 'SEO ย่อมาจากอะไร และมีกี่ประเภท?' },
+    { id: 'seo-basics', label: 'SEO ย่อมาจากอะไร แปลว่าอะไร และมีกี่ประเภท?' },
     { id: 'seo-how', label: 'Google Search ทำงานอย่างไรกับ SEO?' },
     { id: 'seo-workstreams', label: 'SEO ต้องทำอะไรบ้าง?' },
     { id: 'seo-do-yourself', label: 'SEO ทำเองได้ไหม?' },
@@ -1887,10 +1887,10 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
-      <ArticleSection title="SEO ย่อมาจากอะไร และมีกี่ประเภท?" id="seo-basics">
+      <ArticleSection title="SEO ย่อมาจากอะไร แปลว่าอะไร และมีกี่ประเภท?" id="seo-basics">
         <P>
-          <strong>SEO ย่อมาจาก Search Engine Optimization</strong> หรือการปรับเว็บไซต์ให้พร้อมสำหรับการค้นหา
-          ในการทำงานจริง SEO ไม่ได้มีแค่การใส่คีย์เวิร์ด แต่ครอบคลุมทั้งเนื้อหา โครงสร้างเว็บไซต์ เทคนิคหลังบ้าน
+          <strong>SEO ย่อมาจาก Search Engine Optimization</strong> แปลตรงตัวว่า การปรับให้เหมาะกับเครื่องมือค้นหา
+          ส่วนในการใช้งานจริง SEO หมายถึงการปรับเว็บไซต์ให้พร้อมสำหรับการค้นหา และในการทำงานจริง SEO ไม่ได้มีแค่การใส่คีย์เวิร์ด แต่ครอบคลุมทั้งเนื้อหา โครงสร้างเว็บไซต์ เทคนิคหลังบ้าน
           ลิงก์ภายใน ความน่าเชื่อถือจากเว็บไซต์อื่น และ Local SEO สำหรับธุรกิจที่มีหน้าร้านหรือพื้นที่ให้บริการ
         </P>
         <P>
@@ -5760,7 +5760,7 @@ function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
     { id: 'find-sales-bottleneck', label: 'เพิ่มยอดขายทำยังไง เริ่มจากหาจุดรั่ว' },
     { id: 'existing-customers', label: 'วิธีเพิ่มยอดขายจากลูกค้าเก่า' },
     { id: 'new-customers', label: 'วิธีเพิ่มยอดขายจากลูกค้าใหม่' },
-    { id: 'online-sales', label: 'เทคนิคเพิ่มยอดขายออนไลน์' },
+    { id: 'online-sales', label: 'วิธีเพิ่มยอดขายออนไลน์' },
     { id: 'profitable-promotion', label: 'โปรโมชั่นแบบไหนไม่ทำให้กำไรหาย' },
     { id: 'choose-channel', label: 'ควรเลือกช่องทางไหน' },
     { id: 'sales-case-study', label: 'กรณีศึกษาจากงานจริง' },
@@ -5773,7 +5773,7 @@ function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
     <article>
       <BlogProse>
         <p>
-          การเพิ่มยอดขายมี 4 ทางหลัก ได้แก่ เพิ่มจำนวนลูกค้า เพิ่มสัดส่วนคนที่ตัดสินใจซื้อ
+          การเพิ่มยอดขาย ทั้งยอดขายออนไลน์และยอดขายหน้าร้าน มี 4 ทางหลัก ได้แก่ เพิ่มจำนวนลูกค้า เพิ่มสัดส่วนคนที่ตัดสินใจซื้อ
           เพิ่มยอดเฉลี่ยต่อบิล และทำให้ลูกค้ากลับมาซื้อซ้ำ ถ้ายังไม่รู้ว่าตัวเลขไหนเป็นจุดรั่ว
           อย่าเพิ่งเริ่มด้วยการลดราคาหรือเพิ่มงบโฆษณา เพราะยอดขายอาจโตช้ากว่าต้นทุน
         </p>
@@ -5851,7 +5851,7 @@ function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
         </section>
 
         <section>
-          <h2 id="online-sales">เทคนิคเพิ่มยอดขายออนไลน์ ทำให้คนเจอแล้วตัดสินใจได้ง่าย</h2>
+          <h2 id="online-sales">วิธีเพิ่มยอดขายออนไลน์ ทำให้คนเจอแล้วตัดสินใจได้ง่าย</h2>
           <p>
             การเพิ่มยอดขายออนไลน์มีสองช่วงที่ต้องทำงานต่อกัน ช่วงแรกคือทำให้ธุรกิจปรากฏตอนลูกค้ากำลังค้นหา
             ช่วงที่สองคือช่วยให้คนที่เข้ามาแล้วตัดสินใจได้ หากขาดช่วงใดช่วงหนึ่ง งบและเวลาที่ใช้ไปจะรั่ว
