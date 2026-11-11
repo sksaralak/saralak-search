@@ -480,6 +480,11 @@ export const localSeoCustomerIntentFaqs: FAQItem[] = [
     question: 'Google รับประกันอันดับ Local SEO ได้หรือไม่?',
     answer: 'ไม่มีวิธีจ่ายเงินหรือขอให้ Google ปรับอันดับท้องถิ่นให้สูงขึ้น การปรับข้อมูลและเว็บไซต์ช่วยให้ธุรกิจสื่อสารกับผู้ค้นหาได้ชัดเจน แต่ไม่รับประกันตำแหน่งในผลค้นหา',
   },
+  {
+    question: 'ร้านค้าเล็ก ๆ ทำ Local SEO เองได้ไหม?',
+    answer:
+      'ได้ เริ่มจากสร้างหรืออ้างสิทธิ์ Google Business Profile ของร้าน ใส่ชื่อ ที่อยู่ เบอร์โทร เวลาเปิด และรูปหน้าร้านให้ตรงกับความจริง แล้วขอรีวิวจากลูกค้าที่ซื้อจริงอย่างสม่ำเสมอ ถ้าร้านมีเว็บไซต์ ให้ใส่ข้อมูลร้านชุดเดียวกันไว้บนเว็บด้วย งานส่วนนี้ใช้เวลาไม่มากและไม่ต้องจ่ายเงิน',
+  },
 ]
 export const restaurantSalesFaqs: FAQItem[] = [
   {
@@ -700,6 +705,11 @@ export const increaseSeoTrafficFaqs: FAQItem[] = [
     question: 'ซื้อลิงก์จากเว็บอื่นช่วยเพิ่มคนเข้าเว็บจาก Google ได้ไหม?',
     answer:
       'การซื้อหรือแลกลิงก์เพื่อเพิ่มอันดับเข้าข่ายแนวปฏิบัติที่ Google จัดเป็นสแปม ควรสร้างเนื้อหาหรือข้อมูลที่มีเหตุผลให้แหล่งอื่นอ้างถึง และทำเครื่องหมายลิงก์โฆษณาหรือผู้สนับสนุนให้เหมาะสม',
+  },
+  {
+    question: 'เพิ่มทราฟฟิคให้เว็บแบบไม่เสียค่าโฆษณาทำได้ไหม?',
+    answer:
+      'ทำได้ คนที่เข้าเว็บจากผลค้นหาปกติของ Google ไม่มีค่าโฆษณาต่อคลิก งานที่ต้องลงคือเวลาและแรง ได้แก่ ปรับหน้าเดิมให้ตรงกับคำที่คนค้น แก้หัวข้อผลค้นหาที่คนเห็นแต่ไม่คลิก และเชื่อมลิงก์ภายในไปยังหน้าสำคัญ วิธีนี้เห็นผลช้ากว่าโฆษณา แต่คนที่เข้ามาไม่หยุดทันทีเมื่อเลิกจ่ายเงิน',
   },
 ]
 
@@ -993,7 +1003,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Local SEO ช่วยให้ลูกค้าในพื้นที่ค้นพบธุรกิจผ่าน Google Maps และเว็บไซต์ เหมาะกับกิจการแบบไหน เริ่มปรับข้อมูลและหน้าเว็บอย่างไร พร้อมแนวทางวัดผลการติดต่อ',
     readingTime: '10 min read',
     publishedDate: '2026-06-22',
-    lastModifiedDate: '2026-11-02',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1026,7 +1036,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'แนวทางเพิ่มยอดขายร้านอาหาร เริ่มจากหาคอขวด ปรับ Google Maps และเมนู เพิ่มยอดต่อบิล ทำโปรโมชันอย่างคุมต้นทุน และวัดผลจากออร์เดอร์กับกำไรจริง',
     readingTime: '8 min read',
     publishedDate: '2026-06-22',
-    lastModifiedDate: '2026-11-02',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1626,7 +1636,7 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'เพิ่ม SEO Traffic อย่างไร? วิธีเพิ่มคนเข้าเว็บจาก Google แบบวัดผลได้',
+    title: 'เพิ่ม Traffic ให้เว็บยังไง? วิธีเพิ่มคนเข้าเว็บจาก Google แบบวัดผลได้',
     slug: 'increase-seo-traffic',
     heroImageDesktop: '/image/blog/covers/increase-seo-traffic.webp',
     heroImageAlt: 'วิธีเพิ่ม SEO Traffic ด้วยการตรวจข้อมูลและปรับเว็บไซต์เป็นลำดับ',
@@ -1637,11 +1647,11 @@ export const blogPosts: BlogPost[] = [
     readingTime: '10 min read',
     publishedDate: '2026-07-20',
     heroImageMobile: '/image/blog/covers/increase-seo-traffic.webp',
-    lastModifiedDate: '2026-11-05',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'เพิ่ม SEO Traffic อย่างไร? วิธีเพิ่มคนเข้าเว็บจาก Google | Saralak Search',
+    metaTitle: 'เพิ่ม Traffic ให้เว็บยังไง? วิธีเพิ่มคนเข้าเว็บจาก Google | Saralak Search',
     metaDescription:
       'รวมวิธีเพิ่ม SEO Traffic ตั้งแต่ตรวจจำนวนคลิกและการแสดงผลใน Search Console ปรับหน้าเดิม เลือกคำค้น แก้ปัญหาการเก็บหน้า และวัดผลต่อถึงการติดต่อหรือยอดขาย',
     aiSummary: [

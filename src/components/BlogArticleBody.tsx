@@ -4006,7 +4006,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
 
       <TableOfContents items={[
         { id: 'local-seo-definition', label: 'Local SEO คืออะไร และต่างจาก SEO ทั่วไปอย่างไร' },
-        { id: 'local-seo-fit', label: 'ธุรกิจแบบไหนเหมาะกับ Local SEO' },
+        { id: 'local-seo-fit', label: 'ธุรกิจแบบไหนควรทำ Local SEO' },
         { id: 'local-seo-surfaces', label: 'Local SEO บน Google Maps และเว็บไซต์' },
         { id: 'local-seo-start', label: 'เริ่มทำ Local SEO อย่างไร' },
         { id: 'local-seo-multi-location', label: 'หลายสาขาและธุรกิจที่ให้บริการนอกสถานที่' },
@@ -4021,7 +4021,7 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
         <P>คำค้นที่มีชื่อย่านหรือคำว่า “ใกล้ฉัน” อาจบอกตำแหน่งหรือความต้องการของผู้ค้นหาได้ แต่ไม่ได้ยืนยันว่าทุกคนพร้อมซื้อทันที ธุรกิจควรทำข้อมูลให้ตอบคำถามต่อไป เช่น ให้บริการอะไร อยู่ที่ไหน รับนัดอย่างไร และมีเงื่อนไขใดบ้าง</P>
       </ArticleSection>
 
-      <ArticleSection id="local-seo-fit" title="ธุรกิจแบบไหนเหมาะกับ Local SEO">
+      <ArticleSection id="local-seo-fit" title="ธุรกิจแบบไหนควรทำ Local SEO">
         <P>Local SEO เหมาะเมื่อสถานที่หรือเขตให้บริการมีผลต่อการเลือกธุรกิจ หากลูกค้าต้องเดินทางไปหน้าร้าน หรือต้องการให้ทีมเข้าบริการในพื้นที่ ข้อมูลท้องถิ่นจะช่วยให้ลูกค้าประเมินได้ว่าธุรกิจตรงกับความต้องการหรือไม่</P>
         <ResponsiveTable
           label="ตัวอย่างธุรกิจและจุดเริ่มต้นของ Local SEO"
@@ -4900,7 +4900,7 @@ function IncreaseSeoTrafficArticle({ post }: { post: BlogPost }) {
     <article>
       <BlogProse>
         <p>
-          <strong>เพิ่ม SEO Traffic ให้เริ่มจากดูว่าคนค้นหาอะไร เห็นหน้าไหน และติดตรงจุดใด</strong>
+          <strong>เพิ่ม Traffic ให้เว็บจาก Google ให้เริ่มจากดูว่าคนค้นหาอะไร เห็นหน้าไหน และติดตรงจุดใด</strong>
           {' '}จากนั้นค่อยปรับหน้าเดิมหรือสร้างหน้าใหม่ให้ตอบสิ่งที่คนค้น หากหน้าไม่ถูกเก็บไว้ใน Google ให้แก้การเข้าถึงก่อน
           ถ้าคนเห็นหน้าแต่ไม่คลิก ให้ตรวจหัวข้อผลค้นหา ส่วนคนเข้าเว็บแล้วไม่ติดต่อให้ตรวจเนื้อหาและขั้นตอนซื้อ
         </p>
@@ -6037,7 +6037,7 @@ function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
 
         <ReadMoreLinks items={[
           { to: '/blog/sales-techniques', label: '15 เทคนิคการเพิ่มยอดขายที่ธุรกิจออนไลน์ใช้ได้จริง' },
-          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่มคนเข้าเว็บไซต์จาก SEO' },
+          { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic ให้เว็บจาก Google' },
           { to: '/blog/local-seo-customer-intent', label: 'Local SEO กับจังหวะที่ลูกค้าพร้อมซื้อ' },
           { to: '/services', label: 'บริการ SEO การทำเนื้อหา Google Maps และ AI Search' },
         ]} />
