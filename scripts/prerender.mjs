@@ -113,15 +113,11 @@ function extractHeadContent(appHtml) {
     .replace(/<meta /g, '<meta data-rh="true" ')
     .replace(/<link /g, '<link data-rh="true" ')
 
-  // Pull ld+json scripts from body, stamp data-rh, move to head
+  // ld+json scripts stay where React rendered them (inside #root). Moving them
+  // to <head> made the server HTML differ from the client tree, which broke
+  // hydrateRoot (React error #418) and forced a full client re-render.
+  // Google reads JSON-LD anywhere in the document.
   const ldScripts = []
-  bodyContent = bodyContent.replace(
-    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
-    (_, content) => {
-      ldScripts.push(`<script data-rh="true" type="application/ld+json">${content}</script>`)
-      return ''
-    },
-  )
 
   return {
     headTags: hoisted + (ldScripts.length ? '\n    ' + ldScripts.join('\n    ') : ''),
