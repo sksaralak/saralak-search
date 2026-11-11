@@ -32,6 +32,11 @@ export type BlogPost = {
 
 export const geoIntroFaqs: FAQItem[] = [
   {
+    question: 'GEO ย่อมาจากอะไร และในงาน SEO หมายถึงอะไร?',
+    answer:
+      'ในงาน SEO คำว่า GEO ย่อมาจาก Generative Engine Optimization บางคนเรียกว่า GEO Optimization หมายถึงการทำให้ข้อมูลของธุรกิจถูกระบบ AI อย่าง ChatGPT, Gemini และ AI Overviews ของ Google หยิบไปใช้หรืออ้างถึงในคำตอบ คนละความหมายกับ geo ที่มาจาก geography ซึ่งแปลว่าภูมิศาสตร์หรือตำแหน่งที่ตั้ง',
+  },
+  {
     question: 'GEO เป็น Ranking Factor ของ Google หรือไม่?',
     answer:
       'ไม่ใช่ Google ไม่ได้ประกาศ Ranking Factor ชื่อ GEO สำหรับ AI Overviews หรือ AI Mode โดย Google ระบุว่า SEO best practices, Search index, crawlability, indexability และเนื้อหาที่มีคุณค่ายังเป็นพื้นฐานของ Generative AI Search',
@@ -70,12 +75,12 @@ export const seoGeoAeoFaqs: FAQItem[] = [
       'SEO, AEO และ GEO เป็นกรอบงานที่มีพื้นที่ทับซ้อนกันแต่เน้นคนละปัญหา SEO ครอบคลุมการค้นพบ Crawl, Index, Ranking และ Organic Visibility, AEO เน้นความชัดของคำตอบในระดับหน้าและ Section ส่วน GEO มองกว้างไปถึง Entity, Evidence, Brand Mention และ AI Search Visibility โดยทั้งสามควรทำบนพื้นฐานข้อมูลและ Search Intent เดียวกัน',
   },
   {
-    question: 'SEO กับ AEO ต่างกันอย่างไร',
+    question: 'AEO กับ SEO ต่างกันอย่างไร',
     answer:
       'SEO เน้นให้หน้าเว็บถูกค้นพบและจัดอันดับได้ ส่วน AEO เน้นให้คำตอบบนหน้าเว็บชัด กระชับ และแยกเป็น passage ที่เข้าใจได้เอง เช่น ย่อหน้า answer-first ตารางเปรียบเทียบ หรือคำถามเฉพาะ AEO จึงควรต่อยอดจาก SEO ไม่ใช่ทำแยกจากฐานการ index และ content quality',
   },
   {
-    question: 'SEO กับ GEO ต่างกันอย่างไร',
+    question: 'GEO ต่างจาก SEO ยังไง',
     answer:
       'SEO วัดผลหลักจากการมองเห็นและ traffic ใน Search Engine ส่วน GEO มองภาพกว้างกว่า คือแบรนด์ถูกเข้าใจและกล่าวถึงใน AI Search หรือ Generative AI ได้หรือไม่ งาน GEO จึงดูทั้งเว็บไซต์ บทความ case study ข้อมูลแบรนด์ citation และความสอดคล้องของ entity นอกเว็บไซต์',
   },
@@ -1481,7 +1486,7 @@ export const blogPosts: BlogPost[] = [
       'GEO คือแนวทางเพิ่มความพร้อมของเว็บไซต์ เนื้อหา และข้อมูลแบรนด์สำหรับ Generative AI และ AI Search โดยต่อยอดจาก SEO พร้อม Framework, เคสจริง, วิธีวัดผล และข้อจำกัดที่ควรรู้',
     readingTime: '18 min read',
     publishedDate: '2026-05-30',
-    lastModifiedDate: '2026-10-06',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1518,7 +1523,7 @@ export const blogPosts: BlogPost[] = [
       'SEO, AEO และ GEO ต่างกันที่จุดโฟกัส แต่ทำงานต่อกัน SEO ช่วยให้เว็บไซต์ถูกค้นพบ AEO ช่วยให้คำตอบชัดขึ้น และ GEO ช่วยให้แบรนด์กับข้อมูลของเว็บไซต์พร้อมสำหรับ AI Search บทความนี้สรุปความต่างและวิธีเลือกว่าควรเริ่มจากอะไรก่อน',
     readingTime: '16 min read',
     publishedDate: '2026-05-31',
-    lastModifiedDate: '2026-10-06',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
@@ -1867,7 +1872,7 @@ export const blogPosts: BlogPost[] = [
       'AI Overview คือคำตอบสรุปจาก AI บน Google Search ดูวิธีทำงาน ความต่างจาก AI Mode ผลต่อ SEO และเคสจริงของ Saralak Search',
     readingTime: '15 min read',
     publishedDate: '2026-09-15',
-    lastModifiedDate: '2026-10-27',
+    lastModifiedDate: '2026-11-11',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',

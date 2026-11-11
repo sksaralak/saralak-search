@@ -529,7 +529,7 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 const seoGeoAeoContents = [
   { id: 'seo-aeo-geo-difference', label: 'SEO, AEO และ GEO ต่างกันอย่างไร' },
   { id: 'seo-geo-aeo-meaning', label: 'SEO, AEO และ GEO คืออะไร' },
-  { id: 'seo-aeo-geo-comparison', label: 'ตารางเปรียบเทียบ' },
+  { id: 'seo-aeo-geo-comparison', label: 'SEO vs AEO vs GEO ตารางเปรียบเทียบ' },
   { id: 'google-official-vs-methodology', label: 'เอกสาร Google vs Methodology' },
   { id: 'start-priority', label: 'ควรเริ่มจากอะไรก่อน' },
   { id: 'workflow', label: 'Workflow ทำงานร่วมกัน' },
@@ -624,7 +624,7 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
-      <ArticleSection id="seo-aeo-geo-comparison" title="SEO GEO AEO ต่างกันอย่างไร">
+      <ArticleSection id="seo-aeo-geo-comparison" title="SEO vs AEO vs GEO เทียบกันแบบตาราง">
         <P>
           วิธีแยกให้ง่ายที่สุดคือดูว่าแต่ละแนวทางตอบคำถามอะไร SEO ตอบว่า “เว็บไซต์ถูกค้นพบและจัดอันดับได้ไหม”
           AEO ตอบว่า “คำตอบของหน้านี้ชัดพอไหม” ส่วน GEO ตอบว่า “แบรนด์ถูกเข้าใจและถูกกล่าวถึงในบริบทที่เกี่ยวข้องไหม”
@@ -6855,7 +6855,7 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
   return (
     <article className="grid gap-10">
       <P>
-        AI Overview คือคำตอบสรุปที่สร้างด้วย Generative AI บนหน้าค้นหา Google พร้อมลิงก์ไปยังเว็บไซต์ต้นทาง
+        AI Overview (ชื่อทางการของ Google คือ AI Overviews) คือคำตอบสรุปที่สร้างด้วย Generative AI บนหน้าค้นหา Google พร้อมลิงก์ไปยังเว็บไซต์ต้นทาง
         ผู้ค้นจึงเห็นภาพรวมได้ก่อนเปิดอ่านรายละเอียด แต่ AI Overview ไม่ได้แสดงทุกคำค้น
         และการที่เว็บไซต์ถูกอ้างอิงไม่ได้แปลว่าจะได้ยอดคลิกหรือยอดขายเสมอไป
       </P>
