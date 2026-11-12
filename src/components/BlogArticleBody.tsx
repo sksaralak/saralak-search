@@ -11,6 +11,7 @@ import ClaudeWebsiteArticle from './blog/ClaudeWebsiteArticle'
 import GoogleMapsSalesArticle from './blog/GoogleMapsSalesArticle'
 import RestaurantSalesArticle from './blog/RestaurantSalesArticle'
 import GoogleSearchConsoleArticle from './blog/GoogleSearchConsoleArticle'
+import FindNewCustomersArticle from './blog/FindNewCustomersArticle'
 import {
   BulletList as CheckList,
   BlogProse,
@@ -6044,6 +6045,7 @@ function IncreaseOnlineSalesArticle({ post }: { post: BlogPost }) {
         />
 
         <ReadMoreLinks items={[
+          { to: '/blog/find-new-customers', label: 'วิธีหาลูกค้าใหม่ แยกตามประเภทธุรกิจ' },
           { to: '/blog/sales-techniques', label: '15 เทคนิคการเพิ่มยอดขายที่ธุรกิจออนไลน์ใช้ได้จริง' },
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic ให้เว็บจาก Google' },
           { to: '/blog/local-seo-customer-intent', label: 'Local SEO กับจังหวะที่ลูกค้าพร้อมซื้อ' },
@@ -6352,6 +6354,7 @@ function SalesTechniquesArticle({ post }: { post: BlogPost }) {
           </p>
           <ReadMoreLinks items={[
             { to: '/blog/increase-online-sales', label: 'เพิ่มยอดขายอย่างไรให้กำไรโต พร้อมวิธีหาจุดรั่ว' },
+            { to: '/blog/find-new-customers', label: 'วิธีหาลูกค้าใหม่ แยกตามประเภทธุรกิจ' },
             { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่มผู้เข้าชมเว็บไซต์จาก SEO' },
             { to: '/blog/increase-sale-google-maps', label: 'วิธีเพิ่มยอดขายจาก Google Maps' },
             { to: '/blog/what-is-aeo', label: 'AEO คืออะไร และช่วยให้คำตอบค้นพบได้อย่างไร' },
@@ -7198,6 +7201,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'protein-seo') {
     return <ProteinSeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'find-new-customers') {
+    return <FindNewCustomersArticle post={post} />
   }
   if (post.bodyVariant === 'google-search-console') {
     return <GoogleSearchConsoleArticle post={post} />

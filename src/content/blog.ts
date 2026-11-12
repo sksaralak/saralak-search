@@ -20,7 +20,7 @@ export type BlogPost = {
   aiSummary?: string[]
   faqs?: FAQItem[]
   includeFaqSchema?: boolean
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'do-seo-yourself' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview' | 'google-search-console'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'do-seo-yourself' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview' | 'google-search-console' | 'find-new-customers'
   cta?: {
     headline: string
     description: string
@@ -960,7 +960,67 @@ export const googleSearchConsoleFaqs: FAQItem[] = [
   },
 ]
 
+export const findNewCustomersFaqs: FAQItem[] = [
+  {
+    question: 'หาลูกค้าออนไลน์ฟรีได้ไหม?',
+    answer:
+      'ได้ ช่องทางฟรีที่ได้ผลคือ Google Business Profile สำหรับร้านที่มีหน้าร้าน, เนื้อหาบนเว็บที่ตอบคำถามก่อนซื้อ, การโพสต์ในกลุ่มที่ลูกค้าอยู่ และการให้ลูกค้าเก่าแนะนำต่อ แต่ต้องใช้เวลาและทำต่อเนื่อง ถ้าต้องการลูกค้าเร็วภายในเดือนนี้ โฆษณายังเป็นทางเลือกที่เร็วกว่า',
+  },
+  {
+    question: 'ควรยิงแอดหรือทำ SEO ก่อน?',
+    answer:
+      'ถ้าต้องการลูกค้าทันทีและรู้ว่าลูกค้าหนึ่งคนจ่ายค่าโฆษณาได้เท่าไรโดยยังมีกำไร ให้เริ่มจากโฆษณา ถ้าต้องการลูกค้าต่อเนื่องโดยไม่จ่ายทุกเดือน ให้ทำ SEO และ Google Maps คู่กันไป หลายธุรกิจใช้โฆษณาช่วงแรก แล้วค่อยลดงบเมื่อช่องทางฟรีเริ่มมีลูกค้า',
+  },
+  {
+    question: 'ทำ SEO กี่เดือนถึงจะมีลูกค้าจาก Google?',
+    answer:
+      'Google ระบุว่าโดยทั่วไปใช้เวลา 4 เดือนถึง 1 ปี กว่าการปรับเว็บจะเริ่มเห็นผล ขึ้นกับคู่แข่งและสภาพเว็บเดิม ส่วน Google Maps สำหรับธุรกิจในพื้นที่มักเห็นการติดต่อเร็วกว่า ถ้าโปรไฟล์ครบและมีรีวิวต่อเนื่อง',
+  },
+  {
+    question: 'หาลูกค้ากลุ่มเป้าหมายยังไง?',
+    answer:
+      'เริ่มจากลูกค้าเก่าที่ซื้อบ่อยและมีกำไรดี ดูว่าเขาเป็นใคร อยู่ที่ไหน รู้จักร้านจากช่องทางไหน แล้วหาคนลักษณะเดียวกันในช่องทางนั้น ถ้าใช้โฆษณา ให้อัปโหลดรายชื่อลูกค้าเดิมเพื่อให้ระบบหากลุ่มคนที่คล้ายกัน',
+  },
+  {
+    question: 'ควรเน้นหาลูกค้าใหม่หรือดูแลลูกค้าเก่า?',
+    answer:
+      'ทำทั้งสองอย่าง แต่ถ้าลูกค้าเก่าไม่กลับมาซื้อซ้ำ ให้แก้เรื่องนั้นก่อน เพราะลูกค้าใหม่ที่หามาได้ก็จะหลุดไปแบบเดียวกัน ลูกค้าเก่าที่พอใจยังเป็นช่องทางหาลูกค้าใหม่ผ่านการบอกต่อและรีวิวด้วย',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'วิธีหาลูกค้าใหม่ เลือกช่องทางตามประเภทธุรกิจ พร้อมตารางต้นทุนและเวลาเห็นผล',
+    slug: 'find-new-customers',
+    category: 'SEO',
+    excerpt:
+      'วิธีหาลูกค้าใหม่แยกตามประเภทธุรกิจ ทั้งร้านที่มีหน้าร้าน ร้านค้าออนไลน์ และธุรกิจบริการหรือ B2B พร้อมตารางเทียบช่องทาง ค่าใช้จ่าย เวลาเห็นผล วิธีหาลูกค้ากลุ่มแรกแบบไม่มีงบ และวิธีวัดว่าลูกค้ามาจากไหน',
+    readingTime: '11 min read',
+    publishedDate: '2026-11-12',
+    lastModifiedDate: '2026-11-12',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'วิธีหาลูกค้าใหม่ หาลูกค้ายังไงให้ได้ผล แยกตามประเภทธุรกิจ',
+    metaDescription:
+      'วิธีหาลูกค้าใหม่สำหรับร้านหน้าร้าน ร้านออนไลน์ และธุรกิจบริการ พร้อมตารางเทียบช่องทาง ค่าใช้จ่าย เวลาเห็นผล วิธีหาลูกค้าเข้าร้าน หาลูกค้ากลุ่มแรกแบบไม่มีงบ และวิธีวัดผล',
+    aiSummary: [
+      'เริ่มหาลูกค้าใหม่จากช่องทางที่ลูกค้าเก่ามาอยู่แล้ว และช่องทางที่คนกำลังค้นหาสินค้าแบบเรา เช่น Google และ Google Maps',
+      'ร้านที่มีหน้าร้าน: ทำ Google Maps ให้ครบ ขอรีวิวทุกวัน และจับมือร้านข้างเคียง',
+      'ร้านค้าออนไลน์: เขียนเนื้อหาตอบคำถามก่อนซื้อ และยิงโฆษณาเจาะกลุ่มคนที่คล้ายลูกค้าเดิม',
+      'ธุรกิจบริการและ B2B: ใช้คนรู้จัก พาร์ตเนอร์ การทักตรงแบบมีเหตุผล และหน้าเว็บที่มีผลงานจริง',
+      'ถามลูกค้าทุกคนว่ารู้จักจากที่ไหน เพื่อรู้ว่าควรเพิ่มเงินและเวลาให้ช่องทางไหน',
+    ],
+    faqs: findNewCustomersFaqs,
+    bodyVariant: 'find-new-customers',
+    cta: {
+      headline: 'อยากให้ลูกค้าเจอธุรกิจบน Google และ Google Maps?',
+      description:
+        'ดูบริการ SEO, Google Maps และ AI Search สำหรับธุรกิจที่อยากได้ลูกค้าใหม่ต่อเนื่องโดยไม่ต้องจ่ายค่าโฆษณาทุกเดือน',
+      buttonText: 'ดูบริการทั้งหมด',
+      href: '/services',
+    },
+  },
   {
     title: 'Google Search Console คืออะไร? วิธีติดตั้ง ใช้งาน และอ่านค่า Impression, Click, CTR, Position',
     slug: 'google-search-console',

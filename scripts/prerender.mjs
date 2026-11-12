@@ -35,6 +35,7 @@ const blogSlugs = [
   'spa-marketing-plan',
   'what-is-ai-overview',
   'google-search-console',
+  'find-new-customers',
 ]
 
 const routes = [
