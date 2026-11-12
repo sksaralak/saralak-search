@@ -3,6 +3,7 @@ import type { BlogPost } from '../../content/blog'
 import {
   BlogProse,
   CaseStudyBox,
+  CTABox,
   FAQSection as ArticleFAQ,
   FigureImage,
   RelatedLinks as ReadMoreLinks,
@@ -96,6 +97,21 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             หลักเลือกง่าย ๆ: ถ้าต้องการลูกค้าเดือนนี้ ใช้โฆษณาและการบอกต่อ ถ้าต้องการลูกค้าต่อเนื่องโดยไม่จ่ายค่าโฆษณาทุกเดือน
             ทำ Google Maps และ SEO คู่กันไป แล้วค่อยลดงบโฆษณาลงเมื่อช่องทางฟรีเริ่มมีลูกค้า
           </p></BlogProse>
+          <BlogProse><p>
+            <strong>ช่องทางที่ Saralak Search ช่วยได้</strong> คือช่องทางที่ลูกค้ากำลังค้นหาอยู่แล้ว ได้แก่ Google, Google Maps และ AI
+            ซึ่งเป็นช่องทางที่ทำครั้งเดียวแล้วพาลูกค้ามาต่อเนื่อง ไม่ต้องจ่ายค่าโฆษณาทุกครั้งที่มีคนคลิก
+          </p></BlogProse>
+          <ResponsiveTable
+            label="บริการหาลูกค้าใหม่จาก Saralak Search"
+            headers={['ถ้าธุรกิจเป็นแบบนี้', 'บริการที่เหมาะ', 'ราคาเริ่มต้น']}
+            rows={[
+              [<>ร้านที่มีหน้าร้าน 1 สาขาขึ้นไป อยากให้คนแถวนั้นโทรหาหรือเดินเข้าร้าน</>, <Link to="/services/google-maps">บริการเพิ่มลูกค้าจาก Google Maps</Link>, '6,000 บาท/สาขา/เดือน'],
+              [<>ร้านที่มีหน้าร้านและมีเว็บไซต์ อยากได้ลูกค้าทั้งจาก Maps และ Google</>, <Link to="/services/local-seo">บริการ Local SEO</Link>, '15,000 บาท/เดือน'],
+              [<>ขายออนไลน์ หรือธุรกิจบริการที่ลูกค้าค้นข้อมูลก่อนจ้าง</>, <Link to="/services/seo">บริการ SEO รายเดือน</Link>, '5,000 บาท/เดือน'],
+              [<>อยากให้ ChatGPT, Gemini และ AI Overview แนะนำแบรนด์</>, <Link to="/services/geo">รับทำ GEO และ AEO</Link>, 'Add-on 3,000 บาท/เดือน'],
+              [<>อยากทำเองแต่ไม่รู้จะเริ่มตรงไหน</>, <Link to="/services/seo-training">คอร์สสอน SEO เรียนสด</Link>, '9,900 บาท/คน'],
+            ]}
+          />
         </div>
       </section>
 
@@ -125,6 +141,16 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             อ่านต่อที่ <Link to="/blog/what-is-geo">GEO คืออะไร</Link>
           </p>
         </BlogProse></div>
+        <div className="mt-6">
+          <CTABox
+            headingTag="p"
+            eyebrow="ให้ลูกค้าเจอก่อนคู่แข่ง"
+            headline="ลูกค้าค้นหาธุรกิจแบบเราทุกวัน แต่เจอร้านอื่นก่อน?"
+            description="Saralak Search ดูให้ว่าลูกค้าค้นคำไหน คู่แข่งขึ้นตรงไหน แล้ววางงานให้ธุรกิจขึ้นทั้งบน Google, Google Maps และคำตอบของ AI วัดผลจากสายโทร การติดต่อ และยอดขาย ไม่ใช่แค่อันดับ"
+            href="/contact"
+            buttonText="ทักคุยงานทาง LINE"
+          />
+        </div>
       </section>
 
       <section id="nc-shop" className="scroll-mt-24">
@@ -143,6 +169,16 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             <Link to="/blog/increase-sale-pet-shop">ร้านขายสัตว์เลี้ยง</Link>
           </p>
         </BlogProse></div>
+        <div className="mt-6">
+          <CTABox
+            headingTag="p"
+            eyebrow="สำหรับร้านที่มีหน้าร้าน"
+            headline="อยากให้คนแถวร้านโทรหาและเดินเข้าร้านมากขึ้น?"
+            description="บริการเพิ่มลูกค้าจาก Google Maps ดูแลโปรไฟล์ รูป โพสต์ รีวิว และรายงานรายเดือน วัดผลจากจำนวนโทร ขอเส้นทาง และคลิกเข้าเว็บ เริ่มต้น 6,000 บาท/สาขา/เดือน"
+            href="/services/google-maps"
+            buttonText="ดูบริการเพิ่มลูกค้าจาก Google Maps"
+          />
+        </div>
       </section>
 
       <section id="nc-online" className="scroll-mt-24">
@@ -155,6 +191,16 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             <li><strong>ใช้รีวิวและภาพจากลูกค้าจริง</strong> คนซื้อออนไลน์จับสินค้าไม่ได้ ภาพและคำพูดจากคนที่ซื้อแล้วช่วยให้ตัดสินใจได้เร็วขึ้น</li>
           </ol>
         </BlogProse></div>
+        <div className="mt-6">
+          <CTABox
+            headingTag="p"
+            eyebrow="สำหรับร้านค้าออนไลน์"
+            headline="จ่ายค่าโฆษณาทุกเดือน แต่หยุดยิงเมื่อไร ยอดหายทันที?"
+            description="บริการ SEO รายเดือนช่วยให้หน้าสินค้าและบทความขึ้นในคำที่คนค้นก่อนซื้อ ได้ลูกค้าใหม่ต่อเนื่องโดยไม่ต้องจ่ายต่อคลิก เริ่มต้น 5,000 บาท/เดือน"
+            href="/services/seo"
+            buttonText="ดูแพ็กเกจ SEO"
+          />
+        </div>
       </section>
 
       <section id="nc-b2b" className="scroll-mt-24">
@@ -182,6 +228,10 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             <li>ให้ลูกค้ากลุ่มแรกลองใช้ในราคาพิเศษ แลกกับรีวิวจริงและรูปผลงาน แล้วเอารีวิวนั้นไปใช้ในทุกช่องทาง</li>
             <li>ถามลูกค้าทุกคนว่ารู้จักจากที่ไหน แล้วทุ่มเวลาให้ช่องทางที่ได้ลูกค้ามากกว่า</li>
           </ol>
+          <p>
+            งบน้อยแต่มีเวลา ทำ SEO และ Google Maps เองได้ ถ้าอยากได้คนสอนโดยใช้เว็บและโปรไฟล์ร้านของตัวเองเป็นโจทย์
+            ดู <Link to="/services/seo-training">คอร์สสอน SEO แบบเรียนสด</Link> เริ่มต้น 9,900 บาท จบคอร์สแล้วทำต่อเองได้ ไม่ต้องจ้างรายเดือน
+          </p>
         </BlogProse></div>
       </section>
 
@@ -258,11 +308,19 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             <li><strong>ไม่มีงบ:</strong> บอกคนรู้จัก ทำ Google Business Profile และแลกรีวิวกับลูกค้ากลุ่มแรก</li>
             <li><strong>วัดผล:</strong> ถามลูกค้าทุกคนว่ารู้จักจากไหน แล้วเพิ่มเวลาและเงินให้ช่องทางที่ได้ลูกค้าจริง</li>
           </ul>
-          <p>
-            ถ้าอยากให้ลูกค้าเจอธุรกิจบน Google, Google Maps และ AI โดยไม่ต้องจ่ายค่าโฆษณาทุกเดือน
-            ดูขอบเขตงานได้ที่ <Link to="/services">บริการของ Saralak Search</Link>
-          </p>
         </BlogProse></div>
+        <div className="mt-6">
+          <CTABox
+            headingTag="p"
+            eyebrow="เริ่มหาลูกค้าใหม่จาก Google"
+            headline="ไม่แน่ใจว่าธุรกิจควรเริ่มจากช่องทางไหน?"
+            description="ส่งชื่อร้าน ลิงก์เว็บ หรือลิงก์ Google Maps มาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจากช่องทางไหน และบริการไหนเหมาะกับงบ"
+            href="/contact"
+            buttonText="ทักคุยงานทาง LINE"
+          >
+            <Link to="/services" className="font-medium underline underline-offset-2">ดูบริการทั้งหมด</Link>
+          </CTABox>
+        </div>
       </section>
 
       <ReadMoreLinks items={[

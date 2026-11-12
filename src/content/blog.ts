@@ -1014,11 +1014,11 @@ export const blogPosts: BlogPost[] = [
     faqs: findNewCustomersFaqs,
     bodyVariant: 'find-new-customers',
     cta: {
-      headline: 'อยากให้ลูกค้าเจอธุรกิจบน Google และ Google Maps?',
+      headline: 'อยากได้ลูกค้าใหม่จาก Google และ Google Maps ทุกเดือน?',
       description:
-        'ดูบริการ SEO, Google Maps และ AI Search สำหรับธุรกิจที่อยากได้ลูกค้าใหม่ต่อเนื่องโดยไม่ต้องจ่ายค่าโฆษณาทุกเดือน',
-      buttonText: 'ดูบริการทั้งหมด',
-      href: '/services',
+        'บอกประเภทธุรกิจและลูกค้าที่อยากได้ Saralak Search จะแนะนำว่าเริ่มจาก Google Maps, SEO หรือ AI Search แบบไหนคุ้มกับงบ',
+      buttonText: 'ทักคุยงานทาง LINE',
+      href: '/contact',
     },
   },
   {
