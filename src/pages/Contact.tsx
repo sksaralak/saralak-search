@@ -15,8 +15,8 @@ export default function Contact() {
   return (
     <main>
       <SEO
-        title="ติดต่อ Saralak Search | SEO, GEO และ Search Consulting"
-        description="ติดต่อ Saralak Search ผ่าน LINE สำหรับบริการ SEO, GEO, Local SEO, Google Maps, Content Marketing หรือ Monthly SEO Advisor"
+        title="ติดต่อ Saralak Search | ทัก LINE คุยฟรีเรื่อง SEO, Google Maps และ AI Search"
+        description="ทัก LINE คุยฟรี ไม่มีค่าใช้จ่าย สำหรับบริการ SEO, GEO, Local SEO, Google Maps, Content Marketing หรือ Monthly SEO Advisor"
         path="/contact"
         image="/image/og/saralak-search-homepage-og.png"
         jsonLd={{
@@ -54,17 +54,17 @@ export default function Contact() {
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-semibold uppercase text-teal-800">Contact</p>
           <h1 className="break-words text-4xl font-semibold leading-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-            คุยเรื่อง Search Visibility ของเว็บไซต์คุณ
+            ทัก LINE คุยฟรี อยากได้ลูกค้าเพิ่มจาก Google เริ่มตรงไหนดี
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-700">
-            ยังไม่รู้ว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search? ส่ง URL เว็บไซต์มาและเล่าให้ฟังว่า
-            ธุรกิจทำอะไรและอยากได้อะไรจาก Search แล้วเราจะช่วยแนะนำบริการที่เหมาะ
+            คุยฟรี ไม่มีค่าใช้จ่าย และยังไม่ต้องตัดสินใจจ้าง ส่งลิงก์เว็บหรือชื่อร้านมา เล่าว่าธุรกิจทำอะไร
+            และอยากได้ลูกค้าแบบไหน แล้วจะแนะนำว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ
           </p>
         </div>
       </section>
 
       <AnswerBlock>
-        ส่ง URL เว็บไซต์หรือปัญหาที่เจอมาทาง LINE ได้เลย ตอบกลับภายใน 1–2 วันทำการ
+        ทัก LINE มาคุยได้ฟรี ส่งลิงก์เว็บหรือปัญหาที่เจอมาได้เลย ตอบกลับภายใน 1–2 วันทำการ
       </AnswerBlock>
 
       {/* What to send */}
@@ -95,7 +95,7 @@ export default function Contact() {
           <p className="text-xs font-semibold uppercase tracking-widest text-teal-700">ช่องทางหลัก</p>
           <p className="mt-4 text-5xl font-bold tracking-tight text-neutral-950">{brand.line}</p>
           <p className="thai-readable mt-3 text-base text-neutral-600">
-            ส่ง URL เว็บไซต์ + ปัญหาที่เจอมาได้เลย ไม่ต้องรอนัด
+            คุยฟรี ไม่มีค่าใช้จ่าย ส่งลิงก์เว็บ + ปัญหาที่เจอมาได้เลย ไม่ต้องรอนัด
           </p>
           <a
             href={brand.lineUrl}
@@ -104,7 +104,7 @@ export default function Contact() {
             onClick={() => trackLineClick('contact_line_primary')}
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-[#06C755] px-8 py-3 text-base font-semibold text-white shadow-md shadow-green-900/20 transition hover:bg-[#05b34c]"
           >
-            เพิ่มเพื่อน LINE
+            เพิ่มเพื่อน LINE คุยฟรี
           </a>
           <p className="mt-4 text-sm text-neutral-400">ตอบกลับภายใน 1–2 วันทำการ</p>
         </div>
