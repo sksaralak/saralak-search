@@ -1017,7 +1017,7 @@ export const blogPosts: BlogPost[] = [
       headline: 'อยากได้ลูกค้าใหม่จาก Google และ Google Maps ทุกเดือน?',
       description:
         'บอกประเภทธุรกิจและลูกค้าที่อยากได้ Saralak Search จะแนะนำว่าเริ่มจาก Google Maps, SEO หรือ AI Search แบบไหนคุ้มกับงบ',
-      buttonText: 'ทักคุยงานทาง LINE',
+      buttonText: 'ทัก LINE คุยฟรี',
       href: '/contact',
     },
   },

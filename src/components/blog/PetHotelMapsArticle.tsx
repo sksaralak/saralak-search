@@ -139,6 +139,15 @@ export default function PetHotelMapsArticle({ post }: { post: BlogPost }) {
           buttonText="ดูบริการ Google Maps"
         />
 
+        <CTABox
+          headingTag="p"
+          eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+          headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+          description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+          href="/contact"
+          buttonText="ทัก LINE คุยฟรี"
+        />
+
         <section>
           <h2 id="boarding-reviews">ใช้รีวิวและโพสต์เตรียมรับจองช่วงวันหยุด</h2>
           <p>

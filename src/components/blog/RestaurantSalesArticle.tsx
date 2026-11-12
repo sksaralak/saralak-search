@@ -152,11 +152,11 @@ export default function RestaurantSalesArticle({ post }: { post: BlogPost }) {
 
       <CTABox
         headingTag="p"
-        eyebrow="คุยก่อนตัดสินใจ"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
         headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
-        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        description="ทัก LINE มาคุยได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
         href="/contact"
-        buttonText="ทักคุยงานทาง LINE"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <section>

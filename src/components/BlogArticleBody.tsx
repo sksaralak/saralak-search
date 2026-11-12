@@ -424,11 +424,11 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headingTag="p"
-        eyebrow="คุยก่อนตัดสินใจ"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
         headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
-        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        description="ทัก LINE มาคุยได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
         href="/contact"
-        buttonText="ทักคุยงานทาง LINE"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <ArticleSection id="geo-not-geo" title="อะไรไม่ใช่ GEO">
@@ -749,6 +749,15 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
         description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
         href="/services/seo"
         buttonText="ดูแพ็กเกจ SEO"
+      />
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <ArticleSection id="workflow" title="Workflow ทำ SEO, AEO และ GEO ให้ทำงานร่วมกัน">
@@ -1179,6 +1188,15 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
       </ArticleSection>
 
       <GeoAgencyComparisonTable />
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
+      />
 
       <ArticleSection id="geo-agency-case" title="ตัวอย่างจากงานจริงของ Saralak Search: ทำไม Answer-first อย่างเดียวไม่พอ">
         <P>เคสเว็บไซต์ E-commerce เจ้าหนึ่งเป็นตัวอย่างของหน้า Informational ที่เชื่อม Search Intent กับ Commercial Context โดยไม่เปลี่ยนบทความให้กลายเป็นหน้าขายสินค้า คำค้นหลักเป็น Non-brand query “ขายอะไรดีตลาดนัด” และหน้าเดียวกันครอบคลุมหลาย Sub-intent เช่น ไอเดียสินค้า ต้นทุน ราคา และตัวอย่างการเลือกบรรจุภัณฑ์ตามเมนู</P>
@@ -1704,11 +1722,11 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headingTag="p"
-        eyebrow="คุยก่อนตัดสินใจ"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
         headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
-        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        description="ทัก LINE มาคุยได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
         href="/contact"
-        buttonText="ทักคุยงานทาง LINE"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <ArticleSection id="aeo-measurement" title="วิธีวัดผล AEO">
@@ -2283,11 +2301,11 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
 
       <ArticleCTA
         headingTag="p"
-        eyebrow="คุยก่อนตัดสินใจ"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
         headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
-        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        description="ทัก LINE มาคุยได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
         href="/contact"
-        buttonText="ทักคุยงานทาง LINE"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <ArticleSection title="ข้อจำกัดของ SEO ที่ควรรู้" id="seo-limitations">
@@ -3375,6 +3393,15 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
         <CheckList items={entityItems} />
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
+
       <ArticleSection id="geo-checklist-content" title="หมวดที่ 2: Content — แต่ละหน้าตอบ Intent ชัดและมีข้อมูลที่ควรถูกใช้ต่อหรือไม่ (10 ข้อ)">
         <P>
           Content ที่พร้อมสำหรับ GEO ควรตอบคำถามของคนให้ครบก่อน แล้วจึงพิจารณาว่าระบบ Search หรือ AI สามารถเข้าใจแต่ละ Passage ได้หรือไม่
@@ -3425,6 +3452,15 @@ function GeoChecklistArticle({ post }: { post: BlogPost }) {
           และระบุข้อจำกัดด้าน Attribution ทุกครั้ง
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
+      />
 
       <ArticleSection id="geo-checklist-priority" title="GEO Checklist ควรเริ่มจากข้อไหนก่อนถ้าทำพร้อมกันไม่ได้">
         <P>
@@ -3829,6 +3865,15 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+        headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+        description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+        href="/services/seo"
+        buttonText="ดูแพ็กเกจ SEO"
+      />
+
       <ArticleSection title="ถ้า Organic Traffic ไม่โต ให้หา Bottleneck จาก 4 ชั้นนี้ก่อน">
         <P>
           Saralak Search ใช้ลำดับนี้เพื่อลดการแก้แบบสุ่ม
@@ -3894,6 +3939,15 @@ function SeoNotWorkingArticle({ post }: { post: BlogPost }) {
           จุดประสงค์คือแยกอาการออกจากสาเหตุ เพื่อเลือกงานที่ควรทำต่อได้แม่นขึ้น
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
+      />
 
       <ArticleSection title="SEO ต้องใช้กี่เดือนถึง Organic Traffic จะเพิ่ม?">
         <P>
@@ -4060,6 +4114,15 @@ function SeoNotWorkingRankingArticle({ post }: { post: BlogPost }) {
         />
 
       <BlogProse>
+        <ArticleCTA
+          headingTag="p"
+          eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+          headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+          description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+          href="/contact"
+          buttonText="ทัก LINE คุยฟรี"
+        />
+
         <ArticleSection id="seo-ranking-actions" title="เริ่มแก้จากสัญญาณใน Search Console อย่างไร">
           <P>แก้ตามสัญญาณที่เห็น และเปลี่ยนทีละกลุ่มเพื่อประเมินผลได้ชัดขึ้น</P>
           <ResponsiveTable label="แนวทางแก้เว็บไซต์ไม่ติดอันดับตามสัญญาณ Search Console" headers={['สัญญาณ', 'ตรวจต่อ', 'งานถัดไป']} rows={[
@@ -4160,6 +4223,15 @@ function LocalSeoCustomerIntentArticle({ post }: { post: BlogPost }) {
           { title: 'เชื่อมการค้นหากับผลทางธุรกิจ', description: 'บันทึกแหล่งที่มาของสายโทร การจอง หรือแบบฟอร์ม เพื่อดูว่าการค้นหาช่วยให้เกิดลูกค้าเป้าหมายหรือไม่' },
         ]} />
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="สำหรับธุรกิจที่มีหน้าร้าน"
+        headline="อยากให้คนแถวร้านเจอร้านบน Google Maps ก่อนร้านอื่น?"
+        description="บริการเพิ่มลูกค้าจาก Google Maps ดูแลโปรไฟล์ รูป โพสต์ รีวิว และรายงานรายเดือน วัดผลจากจำนวนโทร ขอเส้นทาง และคลิกเข้าเว็บ เริ่มต้น 6,000 บาท/สาขา/เดือน"
+        href="/services/google-maps"
+        buttonText="ดูบริการเพิ่มลูกค้าจาก Google Maps"
+      />
 
       <ArticleSection id="local-seo-multi-location" title="หลายสาขาและธุรกิจที่ให้บริการนอกสถานที่ควรวางแผนอย่างไร">
         <P>ถ้ามีหลายสาขา ให้แต่ละหน้าระบุข้อมูลของสาขานั้นโดยเฉพาะ เช่น ที่อยู่ เวลาเปิด บริการที่มี และวิธีเดินทาง ภาพและรายละเอียดควรตรงกับสถานที่จริง การรวมทุกสาขาไว้ในหน้าเดียวอาจทำให้ลูกค้าหาข้อมูลที่ต้องการยาก</P>
@@ -4390,6 +4462,15 @@ function PetGroomingArticle({ post }: { post: BlogPost }) {
           </div>
         </div>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
+      />
 
       <ArticleSection title="ทำให้ลูกค้ากลับมาซ้ำ — ส่วนที่ทำเงินจริงของธุรกิจนี้">
         <P>Google Maps พาลูกค้าใหม่มาให้ แต่กำไรของธุรกิจกรูมมิ่งอยู่ที่รอบที่ 2, 3 และ 4 นี่คือสิ่งที่ควรทำทันทีหลังลูกค้าใหม่มาครั้งแรก</P>
@@ -4771,6 +4852,15 @@ function PetShopArticle({ post }: { post: BlogPost }) {
         description="บริการ Google Maps ช่วยให้ร้านขายสัตว์เลี้ยงพร้อมปรากฏในคำค้นหาใกล้ฉัน และพาลูกค้าไปสู่การโทร ขอเส้นทาง หรือเข้าร้าน"
         href="/services/google-maps"
         buttonText="ดูบริการ Google Maps"
+      />
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+        headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+        description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทัก LINE คุยฟรี"
       />
 
       <ArticleSection title="ข้อควรระวังเฉพาะของร้านที่ขายสัตว์มีชีวิต">
@@ -5755,6 +5845,15 @@ function ProteinSeoArticle({ post }: { post: BlogPost }) {
           </p>
         </section>
 
+        <ArticleCTA
+          headingTag="p"
+          eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+          headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+          description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+          href="/services/seo"
+          buttonText="ดูแพ็กเกจ SEO"
+        />
+
         <section>
           <h2 id="protein-sales-methods">9 วิธีเพิ่มยอดขายเวย์โปรตีนที่วัดผลได้</h2>
           <p>
@@ -6430,6 +6529,15 @@ function SalesTechniquesArticle({ post }: { post: BlogPost }) {
           </CaseStudyBox>
         </section>
 
+        <ArticleCTA
+          headingTag="p"
+          eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
+          headline="อยากได้ลูกค้าเพิ่มจาก Google แต่ไม่รู้จะเริ่มตรงไหน?"
+          description="ทัก LINE มาคุยกับ Saralak Search ได้ฟรี ส่งลิงก์เว็บหรือชื่อธุรกิจมา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และแบบไหนเหมาะกับงบ"
+          href="/contact"
+          buttonText="ทัก LINE คุยฟรี"
+        />
+
         <section>
           <h2 id="sales-techniques-scenarios">เลือก 3 เทคนิคให้เหมาะกับสถานการณ์</h2>
           <p>
@@ -6590,6 +6698,15 @@ function AeoChecklistArticle({ post }: { post: BlogPost }) {
         href="/services/geo"
         buttonText="ดูบริการ GEO และ AI Search"
         headingTag="p"
+      />
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
       />
 
       <section>
@@ -6825,6 +6942,15 @@ function SpaMarketingPlanArticle({ post }: { post: BlogPost }) {
         </div>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="สำหรับธุรกิจที่มีหน้าร้าน"
+        headline="อยากให้คนแถวร้านเจอร้านบน Google Maps ก่อนร้านอื่น?"
+        description="บริการเพิ่มลูกค้าจาก Google Maps ดูแลโปรไฟล์ รูป โพสต์ รีวิว และรายงานรายเดือน วัดผลจากจำนวนโทร ขอเส้นทาง และคลิกเข้าเว็บ เริ่มต้น 6,000 บาท/สาขา/เดือน"
+        href="/services/google-maps"
+        buttonText="ดูบริการเพิ่มลูกค้าจาก Google Maps"
+      />
+
       <ArticleSection title="ตัวอย่างแผนการตลาด 3 เดือนแรก">
         <P>ถ้ายังไม่เคยมีแผนการตลาดมาก่อน ตารางนี้เป็นจุดเริ่มต้นที่ทำได้จริงโดยไม่ต้องใช้งบสูง</P>
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
@@ -7059,6 +7185,15 @@ function WhatIsAiOverviewArticle({ post }: { post: BlogPost }) {
           {' '}AI Overview ซึ่งเป็นฟีเจอร์หลักของ Search ปิดโดยตรงไม่ได้ หากต้องการดูเฉพาะลิงก์เว็บไซต์ ให้เลือกตัวกรอง “เว็บ” หลังค้นหา
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
 
       <ArticleSection id="ai-overview-benefits-limitations" title="AI Overview มีประโยชน์และข้อจำกัดอะไรบ้าง">
         <P>

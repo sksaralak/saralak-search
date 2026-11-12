@@ -148,7 +148,7 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
             headline="ลูกค้าค้นหาธุรกิจแบบเราทุกวัน แต่เจอร้านอื่นก่อน?"
             description="Saralak Search ดูให้ว่าลูกค้าค้นคำไหน คู่แข่งขึ้นตรงไหน แล้ววางงานให้ธุรกิจขึ้นทั้งบน Google, Google Maps และคำตอบของ AI วัดผลจากสายโทร การติดต่อ และยอดขาย ไม่ใช่แค่อันดับ"
             href="/contact"
-            buttonText="ทักคุยงานทาง LINE"
+            buttonText="ทัก LINE คุยฟรี"
           />
         </div>
       </section>
@@ -312,11 +312,11 @@ export default function FindNewCustomersArticle({ post }: { post: BlogPost }) {
         <div className="mt-6">
           <CTABox
             headingTag="p"
-            eyebrow="เริ่มหาลูกค้าใหม่จาก Google"
+            eyebrow="คุยฟรี ไม่มีค่าใช้จ่าย"
             headline="ไม่แน่ใจว่าธุรกิจควรเริ่มจากช่องทางไหน?"
-            description="ส่งชื่อร้าน ลิงก์เว็บ หรือลิงก์ Google Maps มาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจากช่องทางไหน และบริการไหนเหมาะกับงบ"
+            description="ทัก LINE มาคุยได้ฟรี ส่งชื่อร้าน ลิงก์เว็บ หรือลิงก์ Google Maps มา แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจากช่องทางไหน และบริการไหนเหมาะกับงบ"
             href="/contact"
-            buttonText="ทักคุยงานทาง LINE"
+            buttonText="ทัก LINE คุยฟรี"
           >
             <Link to="/services" className="font-medium underline underline-offset-2">ดูบริการทั้งหมด</Link>
           </CTABox>

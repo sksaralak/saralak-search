@@ -147,6 +147,15 @@ export default function ClaudeWebsiteArticle({ post }: { post: BlogPost }) {
         />
       </section>
 
+      <CTABox
+        headingTag="p"
+        eyebrow="อยากทำเอง แต่ไม่อยากเดา"
+        headline="ทำ SEO เองแล้วไม่รู้ว่าแก้ถูกจุดไหม?"
+        description="คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้ววางแผนแก้ไปด้วยกัน จบแล้วทำต่อเองได้ เริ่มต้น 9,900 บาท"
+        href="/services/seo-training"
+        buttonText="ดูคอร์สสอน SEO"
+      />
+
       <section>
         <h2 id="claude-website-prompt">ตัวอย่าง Prompt ทำเว็บธุรกิจด้วย Claude</h2>
         <p>ใช้ข้อความนี้เป็นจุดเริ่มต้น แล้วแทนข้อมูลในวงเล็บด้วยข้อมูลจริง</p>
