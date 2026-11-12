@@ -1733,7 +1733,7 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           SEO Foundation และ Measurement เข้าด้วยกัน สามารถดู
           {' '}<Link to="/services/content-marketing" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">บริการ SEO Content</Link>
           {' '}หรือ
-          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">GEO & AI Search</Link>
+          {' '}<Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ AEO และ GEO</Link>
           {' '}ตาม Scope ที่ต้องการ
         </P>
       </ArticleSection>
@@ -1994,6 +1994,10 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           {' '}หรือดูขอบเขต <Link to="/services/seo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ SEO</Link>
           {' '}ของ Saralak Search
         </P>
+        <P>
+          ถ้าจะลงมือเองตั้งแต่วันนี้ ดูลำดับงานทีละขั้นได้ที่
+          {' '}<Link to="/blog/do-seo-yourself" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">ทำ SEO ยังไง: วิธีทำ SEO ด้วยตัวเอง 8 ขั้นตอน</Link>
+        </P>
       </ArticleSection>
 
       <ArticleSection title="SEO สำคัญต่อธุรกิจอย่างไร?" id="seo-business-value">
@@ -2246,6 +2250,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           {' '}โดยใช้การตรวจข้อมูลจริงเพื่อจัดลำดับงานก่อนเริ่มทำรายเดือน แทนการเริ่มจากจำนวนบทความหรือจำนวนคีย์เวิร์ดเพียงอย่างเดียว
         </P>
         <ReadMoreLinks items={[
+          { to: '/blog/do-seo-yourself', label: 'ทำ SEO ยังไง: วิธีทำ SEO ด้วยตัวเอง' },
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์' },
           { to: '/blog/google-search-console', label: 'Google Search Console คืออะไร วิธีใช้และอ่านตัวเลข' },
           { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร' },

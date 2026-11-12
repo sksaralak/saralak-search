@@ -185,8 +185,8 @@ export default function ServiceGEO() {
   return (
     <main>
       <SEO
-        title="บริการ GEO — AI Search Visibility สำหรับธุรกิจไทย | Saralak Search"
-        description="บริการ GEO สำหรับเพิ่มความพร้อมและติดตาม Brand Visibility บน ChatGPT, Gemini, Perplexity และ Google AI Search — Add-on 3,000 บาท/เดือน"
+        title="รับทำ GEO และ AEO — ให้แบรนด์ถูกพูดถึงใน AI Search | Saralak Search"
+        description="รับทำ GEO และ AEO สำหรับเพิ่มความพร้อมและติดตาม Brand Visibility บน ChatGPT, Gemini, Perplexity และ Google AI Search — Add-on 3,000 บาท/เดือน"
         path="/services/geo"
         image="/image/og/saralak-search-service-og.png"
         jsonLd={{
@@ -505,6 +505,14 @@ export default function ServiceGEO() {
               Package Pro รวม GEO ไว้แล้ว — หรือเพิ่ม GEO Add-on 3,000 บาทกับทุก Package
             </p>
           </div>
+          <div className="mt-5 rounded-xl border border-neutral-200 bg-white px-5 py-4">
+            <h3 className="font-semibold text-neutral-950">รับทำ AEO ด้วยไหม?</h3>
+            <p className="thai-readable mt-2 text-sm leading-7 text-neutral-700">
+              ทำร่วมกับงาน GEO: เลือกคำถามที่ลูกค้าค้นจริง จัดหน้าให้ตอบคำถามตั้งแต่ย่อหน้าแรก เพิ่ม FAQ และ Schema ที่ตรงกับเนื้อหา
+              แล้วเชื่อมลิงก์ไปหน้าขาย เพื่อให้ Google และ AI หยิบคำตอบจากเว็บไปใช้ได้ง่าย อ่านพื้นฐานก่อนได้ที่{' '}
+              <Link to="/blog/what-is-aeo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">AEO คืออะไร</Link>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -533,7 +541,7 @@ export default function ServiceGEO() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-semibold">อยากรู้ว่าแบรนด์ปรากฏบน AI Search อย่างไร?</h2>
           <p className="thai-readable mx-auto mt-4 max-w-lg text-lg leading-8 text-neutral-400">
-            คุยกับทีมเพื่อวางแผนให้แบรนด์มีโอกาสถูกกล่าวถึงหรืออ้างอิงใน ChatGPT, Gemini และ AI Overview
+            คุยกันเพื่อวางแผนให้แบรนด์มีโอกาสถูกกล่าวถึงหรืออ้างอิงใน ChatGPT, Gemini และ AI Overview
           </p>
           <ul className="mx-auto mt-5 max-w-sm space-y-2 text-left text-neutral-300">
             {[

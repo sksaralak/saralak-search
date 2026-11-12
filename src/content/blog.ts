@@ -1517,18 +1517,18 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    title: 'วิธีทำ SEO ด้วยตัวเอง: 8 ขั้นตอนเริ่มต้นสำหรับเจ้าของธุรกิจ',
+    title: 'ทำ SEO ยังไง? วิธีทำ SEO ด้วยตัวเอง 8 ขั้นตอนสำหรับเจ้าของธุรกิจ',
     slug: 'do-seo-yourself',
     category: 'SEO',
     excerpt:
       'วิธีทำ SEO ด้วยตัวเองเริ่มจากตรวจ Search Console เลือกหน้าสำคัญ ปรับเนื้อหา และวัดผล พร้อมเกณฑ์แบ่งงานที่ทำเองได้กับงานที่ควรขอผู้เชี่ยวชาญช่วย',
     readingTime: '12 min read',
     publishedDate: '2026-11-05',
-    lastModifiedDate: '2026-11-05',
+    lastModifiedDate: '2026-11-12',
     authorName: 'Saralak Kaewkum',
     authorRole: 'SEO, AEO & GEO Consultant',
     authorUrl: '/about',
-    metaTitle: 'วิธีทำ SEO ด้วยตัวเอง: 8 ขั้นตอนและเครื่องมือฟรี | Saralak Search',
+    metaTitle: 'ทำ SEO ยังไง? วิธีทำ SEO ด้วยตัวเอง 8 ขั้นตอน + เครื่องมือฟรี',
     metaDescription:
       'วิธีทำ SEO ด้วยตัวเอง เริ่มจาก Search Console เลือกหน้าสำคัญ ปรับเนื้อหาและวัดผล พร้อมเกณฑ์ดูว่างานไหนทำเองได้และเมื่อไรควรขอผู้เชี่ยวชาญช่วย',
     heroImageDesktop: '/image/blog/covers/do-seo-yourself.webp',

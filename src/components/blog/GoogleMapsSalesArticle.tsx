@@ -141,7 +141,7 @@ export default function GoogleMapsSalesArticle({ post }: { post: BlogPost }) {
         headline="ลูกค้าหาโปรไฟล์เจอแล้ว แต่ยังไม่ติดต่อหรือจอง?"
         description="ส่งลิงก์ Google Maps มาให้ Saralak Search ช่วยตรวจข้อมูลธุรกิจและเส้นทางติดต่อ ว่าชัดพอให้ลูกค้าทำขั้นตอนต่อไปหรือยัง"
         href="/services/google-maps"
-        buttonText="ดูบริการ Google Maps"
+        buttonText="ดูบริการเพิ่มลูกค้าจาก Google Maps"
       />
 
       <section>
@@ -200,7 +200,7 @@ export default function GoogleMapsSalesArticle({ post }: { post: BlogPost }) {
         <p>
           โปรไฟล์ที่ดีควรพาลูกค้าไปถึงขั้นตอนถัดไปได้ ถ้ายังไม่แน่ใจว่าร้านควรแก้ข้อมูลตรงไหนก่อน
           ส่งลิงก์ Google Maps มาให้ Saralak Search ช่วยตรวจความครบถ้วนของข้อมูลและช่องทางติดต่อได้ที่{' '}
-          <a href="/services/google-maps">บริการ Google Maps</a>
+          <a href="/services/google-maps">บริการเพิ่มลูกค้าจาก Google Maps</a>
         </p>
       </section>
 
@@ -209,7 +209,7 @@ export default function GoogleMapsSalesArticle({ post }: { post: BlogPost }) {
         items={[
           { to: '/blog/local-seo-customer-intent', label: 'Local SEO เหมาะกับธุรกิจแบบไหน' },
           { to: '/blog/increase-sale-restaurant', label: 'เพิ่มยอดขายร้านอาหารด้วย Google Maps' },
-          { to: '/services/google-maps', label: 'บริการ Google Maps สำหรับธุรกิจในพื้นที่' },
+          { to: '/services/google-maps', label: 'บริการเพิ่มลูกค้าจาก Google Maps' },
           { to: '/services/local-seo', label: 'บริการ Local SEO ของ Saralak Search' },
         ]}
       />

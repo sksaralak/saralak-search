@@ -196,8 +196,8 @@ export default function ServiceGoogleMaps() {
   return (
     <main>
       <SEO
-        title="บริการ Google Maps Optimization สำหรับธุรกิจไทย | Saralak Search"
-        description="เพิ่ม Call, Direction และ Website Clicks จาก Google Maps เริ่มต้น 6,000 บาท/สาขา/เดือน สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้าน"
+        title="บริการเพิ่มลูกค้าจาก Google Maps สำหรับธุรกิจไทย | Saralak Search"
+        description="บริการเพิ่มลูกค้าจาก Google Maps (Google Maps Optimization) เพิ่มสายโทร การขอเส้นทาง และคลิกเข้าเว็บ เริ่มต้น 6,000 บาท/สาขา/เดือน สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้าน"
         path="/services/google-maps"
         image="/image/og/saralak-search-service-og.png"
         jsonLd={{
@@ -206,7 +206,7 @@ export default function ServiceGoogleMaps() {
             {
               '@type': 'Service',
               '@id': 'https://saralak-search.com/services/google-maps#service',
-              name: 'บริการ Google Maps Optimization',
+              name: 'บริการเพิ่มลูกค้าจาก Google Maps (Google Maps Optimization)',
               description: 'เพิ่ม Call, Direction และ Website Clicks จาก Google Maps สำหรับร้านอาหาร คลินิก โรงแรม และธุรกิจที่มีหน้าร้านในไทย',
               provider: { '@id': 'https://saralak-search.com/#organization' },
               areaServed: 'Thailand',
@@ -237,7 +237,7 @@ export default function ServiceGoogleMaps() {
           </p>
           <div className="max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              บริการ Google Maps Optimization
+              บริการเพิ่มลูกค้าจาก Google Maps
               <br className="hidden sm:block" />
               <span className="animate-gradient-text">ให้ลูกค้าในย่านโทรหาคุณก่อนคู่แข่ง</span>
             </h1>
