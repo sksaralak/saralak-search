@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import type { BlogPost } from '../../content/blog'
 import {
+  CTABox,
   BlogProse,
   CaseStudyBox,
   FAQSection as ArticleFAQ,
@@ -196,6 +197,15 @@ export default function GoogleSearchConsoleArticle({ post }: { post: BlogPost })
         </div>
       </section>
 
+      <CTABox
+        headingTag="p"
+        eyebrow="อยากทำเอง แต่ไม่อยากเดา"
+        headline="ทำ SEO เองแล้วไม่รู้ว่าแก้ถูกจุดไหม?"
+        description="คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้ววางแผนแก้ไปด้วยกัน จบแล้วทำต่อเองได้ เริ่มต้น 9,900 บาท"
+        href="/services/seo-training"
+        buttonText="ดูคอร์สสอน SEO"
+      />
+
       <section id="gsc-case" className="scroll-mt-24">
         <h2 className={h2}>ตัวอย่างจากงานลูกค้า: จากคลิกจากชื่อแบรนด์ สู่ 2,157 คลิกต่อเดือน</h2>
         <div className="mt-4 grid gap-5">
@@ -215,6 +225,15 @@ export default function GoogleSearchConsoleArticle({ post }: { post: BlogPost })
           </CaseStudyBox>
         </div>
       </section>
+
+      <CTABox
+        headingTag="p"
+        eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+        headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+        description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+        href="/services/seo"
+        buttonText="ดูแพ็กเกจ SEO"
+      />
 
       <section id="gsc-ai-report" className="scroll-mt-24">
         <h2 className={h2}>รายงาน AI ใน Search Console ดูอะไรได้บ้าง</h2>

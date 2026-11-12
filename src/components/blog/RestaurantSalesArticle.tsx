@@ -1,5 +1,6 @@
 import type { BlogPost } from '../../content/blog'
 import {
+  CTABox,
   BlogProse,
   CaseStudyBox,
   FAQSection as ArticleFAQ,
@@ -74,6 +75,15 @@ export default function RestaurantSalesArticle({ post }: { post: BlogPost }) {
         </BlogProse></div>
       </section>
 
+      <CTABox
+        headingTag="p"
+        eyebrow="สำหรับร้านอาหาร"
+        headline="อยากให้คนแถวร้านเจอร้านบน Google Maps ก่อนร้านอื่น?"
+        description="บริการเพิ่มลูกค้าจาก Google Maps ดูแลโปรไฟล์ รูป โพสต์ รีวิว และรายงานรายเดือน วัดผลจากจำนวนโทร ขอเส้นทาง และคลิกเข้าเว็บ เริ่มต้น 6,000 บาท/สาขา/เดือน"
+        href="/services/google-maps"
+        buttonText="ดูบริการเพิ่มลูกค้าจาก Google Maps"
+      />
+
       <section id="clear-menu" className="scroll-mt-24">
         <h2 className="text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">2. ทำเมนูให้อ่านง่ายและช่วยให้ลูกค้าตัดสินใจ</h2>
         <div className="mt-4 grid gap-5"><BlogProse>
@@ -139,6 +149,15 @@ export default function RestaurantSalesArticle({ post }: { post: BlogPost }) {
           <BlogProse><p>กรณีศึกษานี้แสดงผลงานด้านการค้นหาท้องถิ่นเท่านั้น ไม่ใช่ผลงานร้านอาหารหรือยอดขายหน้าร้าน ร้านควรวัดผลด้วยข้อมูลออร์เดอร์และต้นทุนของตัวเอง</p></BlogProse>
         </div>
       </section>
+
+      <CTABox
+        headingTag="p"
+        eyebrow="คุยก่อนตัดสินใจ"
+        headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
+        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทักคุยงานทาง LINE"
+      />
 
       <section>
         <h2 className="text-2xl font-semibold leading-tight text-neutral-950 sm:text-3xl">สรุป: เพิ่มยอดขายร้านอาหารด้วยการแก้ให้ตรงจุด</h2>

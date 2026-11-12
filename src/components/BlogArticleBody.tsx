@@ -299,6 +299,15 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
 
       <ComparisonTable />
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
+
       <ArticleSection id="geo-how-to" title="วิธีทำ GEO ควรเริ่มจากอะไร">
         <P>
           วิธีทำ GEO ควรเริ่มจากแก้ฐาน Search ก่อน แล้วจึงจัด Topic Ownership, Entity, Evidence และ Internal Link
@@ -412,6 +421,15 @@ function GeoIntroArticle({ post }: { post: BlogPost }) {
           {' '}เพื่อดูหลักฐานและรูปแบบผลลัพธ์อื่นโดยไม่ตีความว่าทุกผลลัพธ์เกิดจาก GEO เพียงปัจจัยเดียว
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยก่อนตัดสินใจ"
+        headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
+        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทักคุยงานทาง LINE"
+      />
 
       <ArticleSection id="geo-not-geo" title="อะไรไม่ใช่ GEO">
         <P>
@@ -723,6 +741,15 @@ function SeoGeoAeoArticle({ post }: { post: BlogPost }) {
           </P>
         </ArticleSubSection>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+        headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+        description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+        href="/services/seo"
+        buttonText="ดูแพ็กเกจ SEO"
+      />
 
       <ArticleSection id="workflow" title="Workflow ทำ SEO, AEO และ GEO ให้ทำงานร่วมกัน">
         <P>
@@ -1114,6 +1141,15 @@ function GeoAgencyArticle({ post }: { post: BlogPost }) {
         />
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
+
       <ArticleSection id="geo-agency-providers" title="ทำ GEO ที่ไหนดี? ก่อนขอ Proposal ควรเตรียมอะไร">
         <P>
           การถามเพียง “ทำ GEO ราคาเท่าไร” ทำให้เทียบข้อเสนอได้ยาก เพราะแต่ละทีมอาจตีความ Scope ไม่เหมือนกัน
@@ -1492,6 +1528,15 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
+
       <ArticleSection id="aeo-vs-seo-geo" title="AEO ต่างจาก SEO และ GEO อย่างไร">
         <P>
           SEO, AEO และ GEO มีพื้นที่ทับซ้อนกันมากกว่าที่ตาราง Marketing ทั่วไปมักอธิบาย
@@ -1656,6 +1701,15 @@ function WhatIsAeoArticle({ post }: { post: BlogPost }) {
           {' '}<Link to="/blog/what-is-ai-overview#ai-overview-case-study" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">Case Study AI Overview ของ Saralak Search</Link>
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยก่อนตัดสินใจ"
+        headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
+        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทักคุยงานทาง LINE"
+      />
 
       <ArticleSection id="aeo-measurement" title="วิธีวัดผล AEO">
         <P>
@@ -2001,6 +2055,15 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="อยากทำเอง แต่ไม่อยากเดา"
+        headline="ทำ SEO เองแล้วไม่รู้ว่าแก้ถูกจุดไหม?"
+        description="คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้ววางแผนแก้ไปด้วยกัน จบแล้วทำต่อเองได้ เริ่มต้น 9,900 บาท"
+        href="/services/seo-training"
+        buttonText="ดูคอร์สสอน SEO"
+      />
+
       <ArticleSection title="SEO สำคัญต่อธุรกิจอย่างไร?" id="seo-business-value">
         <P>
           คุณค่าของ SEO ไม่ได้อยู่ที่ “อันดับ” เพียงตัวเดียว แต่อยู่ที่การทำให้ธุรกิจปรากฏในช่วงที่ตลาดมี Demand อยู่แล้ว
@@ -2086,6 +2149,15 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           ))}
         </div>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+        headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+        description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+        href="/services/seo"
+        buttonText="ดูแพ็กเกจ SEO"
+      />
 
       <ArticleSection title="เริ่มทำ SEO ควรเริ่มจากอะไร?" id="seo-start">
         <P>
@@ -2208,6 +2280,15 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
           {' '}<Link to="/case-studies" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">SEO Case Studies</Link>
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="คุยก่อนตัดสินใจ"
+        headline="อยากได้ผลแบบเคสนี้กับธุรกิจของตัวเอง?"
+        description="ส่งลิงก์เว็บหรือชื่อธุรกิจมาทาง LINE แล้วเล่าว่าอยากได้ลูกค้าแบบไหน Saralak Search จะบอกว่าควรเริ่มจาก SEO, Google Maps หรือ AI Search และบริการไหนเหมาะกับงบ"
+        href="/contact"
+        buttonText="ทักคุยงานทาง LINE"
+      />
 
       <ArticleSection title="ข้อจำกัดของ SEO ที่ควรรู้" id="seo-limitations">
         <P>
@@ -2749,6 +2830,15 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ให้ AI แนะนำแบรนด์"
+        headline="ลูกค้าถาม ChatGPT แล้ว AI แนะนำคู่แข่งแทน?"
+        description="รับทำ GEO และ AEO เช็กว่า AI พูดถึงแบรนด์ในคำถามสำคัญไหม แล้วปรับเนื้อหา ข้อมูลแบรนด์ และหลักฐานบนเว็บให้ AI หยิบไปตอบ เพิ่มจากแพ็กเกจ SEO เพียง 3,000 บาท/เดือน"
+        href="/services/geo"
+        buttonText="ดูบริการ GEO และ AEO"
+      />
+
       <ArticleSection id="geo-avoid" title="วิธีทำ GEO แบบไหนที่ไม่ควรทำ">
         <P>
           GEO ไม่ควรถูกทำเป็นชุดเทคนิคแยกจาก SEO และเนื้อหาหลักของเว็บไซต์
@@ -2776,6 +2866,15 @@ function HowToDoGeoArticle({ post }: { post: BlogPost }) {
           {' '}และ <Link to="/services/geo" className="font-medium text-teal-800 underline underline-offset-2 hover:text-teal-700">รับทำ GEO</Link> เพื่อแยกว่างานส่วนไหนควรเริ่มก่อน
         </P>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="อยากทำเอง แต่ไม่อยากเดา"
+        headline="ทำ SEO เองแล้วไม่รู้ว่าแก้ถูกจุดไหม?"
+        description="คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้ววางแผนแก้ไปด้วยกัน จบแล้วทำต่อเองได้ เริ่มต้น 9,900 บาท"
+        href="/services/seo-training"
+        buttonText="ดูคอร์สสอน SEO"
+      />
 
       <ArticleSection id="geo-30-day-plan" title="วิธีทำ GEO ใน 30 วัน ควรแบ่งงานอย่างไร">
         <P>
@@ -5370,6 +5469,15 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         </P>
       </ArticleSection>
 
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="อยากทำเอง แต่ไม่อยากเดา"
+        headline="ทำ SEO เองแล้วไม่รู้ว่าแก้ถูกจุดไหม?"
+        description="คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้ววางแผนแก้ไปด้วยกัน จบแล้วทำต่อเองได้ เริ่มต้น 9,900 บาท"
+        href="/services/seo-training"
+        buttonText="ดูคอร์สสอน SEO"
+      />
+
       <ArticleSection title="Workflow หลังเช็ค Traffic Website ฟรี: รู้แล้วควรทำอะไรต่อ">
         <P>
           การเช็ค Traffic ที่มีประโยชน์ควรจบด้วยการตัดสินใจ
@@ -5409,6 +5517,15 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
           </div>
         </div>
       </ArticleSection>
+
+      <ArticleCTA
+        headingTag="p"
+        eyebrow="ได้ลูกค้าโดยไม่ต้องจ่ายต่อคลิก"
+        headline="อยากให้เว็บขึ้นหน้าแรกในคำที่ลูกค้าค้นก่อนซื้อ?"
+        description="บริการ SEO รายเดือนสำหรับธุรกิจไทย เลือกคำที่มีคนพร้อมซื้อ ปรับหน้าเว็บ แก้ปัญหาเทคนิค และรายงานผลทุกเดือน เริ่มต้น 5,000 บาท/เดือน"
+        href="/services/seo"
+        buttonText="ดูแพ็กเกจ SEO"
+      />
 
       <ArticleSection title="ถ้าเช็คแล้ว Traffic ลด ควรไล่ดูอะไรตามลำดับ">
         <div className="grid gap-3">
