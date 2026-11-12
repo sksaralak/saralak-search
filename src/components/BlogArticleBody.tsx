@@ -10,6 +10,7 @@ import SpaSalesArticle from './blog/SpaSalesArticle'
 import ClaudeWebsiteArticle from './blog/ClaudeWebsiteArticle'
 import GoogleMapsSalesArticle from './blog/GoogleMapsSalesArticle'
 import RestaurantSalesArticle from './blog/RestaurantSalesArticle'
+import GoogleSearchConsoleArticle from './blog/GoogleSearchConsoleArticle'
 import {
   BulletList as CheckList,
   BlogProse,
@@ -2246,6 +2247,7 @@ function WhatIsSeoArticle({ post }: { post: BlogPost }) {
         </P>
         <ReadMoreLinks items={[
           { to: '/blog/increase-seo-traffic', label: 'วิธีเพิ่ม Traffic SEO ให้เว็บไซต์' },
+          { to: '/blog/google-search-console', label: 'Google Search Console คืออะไร วิธีใช้และอ่านตัวเลข' },
           { to: '/blog/seo-not-working', label: 'ทำ SEO แล้วไม่เห็นผล เกิดจากอะไร' },
           { to: '/blog/seo-geo-aeo', label: 'SEO GEO AEO ต่างกันอย่างไร' },
           { to: '/case-studies', label: 'SEO Case Studies — Saralak Search' },
@@ -5464,6 +5466,7 @@ function CheckWebsiteTrafficFreeArticle({ post }: { post: BlogPost }) {
         <ReadMoreLinks items={[
           { to: '/services/seo', label: 'บริการ SEO สำหรับวิเคราะห์และเพิ่ม Organic Visibility' },
           { to: '/blog/increase-seo-traffic', label: 'เพิ่ม Traffic เว็บอย่างไร? ดูแผน SEO แบบเป็นระบบ' },
+          { to: '/blog/google-search-console', label: 'Google Search Console คืออะไร และอ่านตัวเลขไปใช้ต่อยังไง' },
           { to: '/case-studies', label: 'ดู SEO Case Studies ของ Saralak Search' },
         ]} />
       </ArticleSection>
@@ -7190,6 +7193,9 @@ export default function BlogArticleBody({ post }: BlogArticleBodyProps) {
   }
   if (post.bodyVariant === 'protein-seo') {
     return <ProteinSeoArticle post={post} />
+  }
+  if (post.bodyVariant === 'google-search-console') {
+    return <GoogleSearchConsoleArticle post={post} />
   }
   if (post.bodyVariant === 'increase-online-sales') {
     return <IncreaseOnlineSalesArticle post={post} />

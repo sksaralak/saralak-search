@@ -34,6 +34,7 @@ const blogSlugs = [
   'aeo-checklist',
   'spa-marketing-plan',
   'what-is-ai-overview',
+  'google-search-console',
 ]
 
 const routes = [

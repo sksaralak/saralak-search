@@ -21,6 +21,7 @@
 - [Claude ทำ SEO ให้ได้จริงไหม](https://saralak-search.com/blog/ai-website-seo): Analysis of whether Claude can replace an SEO specialist, with real case evidence.
 - [เพิ่ม SEO Traffic อย่างไร](https://saralak-search.com/blog/increase-seo-traffic): How to grow organic traffic from Google by auditing data and fixing the site in priority order.
 - [เช็ค Traffic Website ฟรี](https://saralak-search.com/blog/check-website-traffic-free): How to check website traffic for free with Google Search Console and GA4.
+- [Google Search Console คืออะไร](https://saralak-search.com/blog/google-search-console): How to set up Google Search Console, read Impression/Click/CTR/Position, and 8 ways to act on the data.
 
 ## GEO & AEO Guides
 - [GEO คืออะไร](https://saralak-search.com/blog/what-is-geo): Definition of Generative Engine Optimisation for Thai businesses.

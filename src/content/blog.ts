@@ -20,7 +20,7 @@ export type BlogPost = {
   aiSummary?: string[]
   faqs?: FAQItem[]
   includeFaqSchema?: boolean
-  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'do-seo-yourself' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview'
+  bodyVariant?: 'geo-intro' | 'seo-geo-aeo' | 'geo-agency' | 'how-to-do-geo' | 'what-is-seo' | 'do-seo-yourself' | 'what-is-aeo' | 'geo-checklist' | 'llms-txt' | 'ai-website-seo' | 'seo-not-working' | 'seo-not-working-ranking' | 'increase-sale-google-maps' | 'local-seo-customer-intent' | 'increase-sale-restaurant' | 'increase-sale-massage-spa' | 'increase-sale-pet-grooming' | 'increase-sale-pet-grooming-seo' | 'increase-sale-pet-shop' | 'increase-sale-pet-shop-marketing' | 'increase-sale-pet-hospital' | 'increase-sale-pet-hotel' | 'tham-web-claude' | 'increase-seo-traffic' | 'check-website-traffic-free' | 'protein-seo' | 'increase-online-sales' | 'sales-techniques' | 'aeo-checklist' | 'spa-marketing-plan' | 'what-is-ai-overview' | 'google-search-console'
   cta?: {
     headline: string
     description: string
@@ -927,7 +927,72 @@ export const aiOverviewFaqs: FAQItem[] = [
     answer: 'ไม่ต้อง Google ระบุว่าไม่มี Schema หรือไฟล์ AI พิเศษสำหรับการปรากฏใน AI Overview ควรใช้ Structured Data ประเภทที่รองรับและให้ตรงกับเนื้อหาที่แสดงจริง',
   },
 ]
+export const googleSearchConsoleFaqs: FAQItem[] = [
+  {
+    question: 'Google Search Console ใช้ฟรีไหม?',
+    answer:
+      'ฟรีทั้งหมด ไม่มีแพ็กเกจเสียเงิน ใช้ได้ทุกเว็บที่ยืนยันความเป็นเจ้าของได้',
+  },
+  {
+    question: 'Search Console เก็บข้อมูลย้อนหลังได้กี่เดือน?',
+    answer:
+      '16 เดือน ถ้าอยากเก็บนานกว่านั้น ให้ส่งออกข้อมูลเป็นไฟล์ หรือเชื่อมต่อกับ Looker Studio หรือ BigQuery',
+  },
+  {
+    question: 'ทำไมตัวเลขใน Search Console ไม่ตรงกับ Google Analytics?',
+    answer:
+      'นับคนละอย่าง Search Console นับคลิกจากผลค้นหาของ Google เท่านั้น ส่วน Analytics นับการเข้าเว็บ ซึ่งอาจตกหล่นถ้าผู้ใช้ไม่ยอมรับคุกกี้ ใช้ตัวบล็อกโฆษณา หรือปิดหน้าก่อนระบบวัดผลโหลดเสร็จ นอกจากนี้ Search Console ใช้เวลาตามเขตเวลาแปซิฟิก วันที่จึงเหลื่อมกับเวลาไทยได้',
+  },
+  {
+    question: 'Impression ลดลงกะทันหันเพราะอะไร?',
+    answer:
+      'เทียบช่วงเวลาก่อนหน้าเพื่อหาว่าหน้าไหนหรือคำไหนลด สาเหตุที่พบบ่อยคือ อันดับตกหลังการอัปเดตของ Google หน้าถูกถอดออกจาก index ฤดูกาลของคำค้น หรือ Google เปลี่ยนรูปแบบหน้าผลค้นหา ถ้าทุกหน้าตกพร้อมกันในวันเดียว ให้เช็กเมนูหน้าเว็บและการดำเนินการด้วยตนเองก่อน',
+  },
+  {
+    question: 'ใช้ Search Console กับ WordPress ยังไง?',
+    answer:
+      'ติดตั้งปลั๊กอิน Site Kit ของ Google แล้วทำตามขั้นตอน หรือคัดลอกรหัสยืนยันจาก Search Console ไปวางในปลั๊กอิน SEO ที่ใช้อยู่ จากนั้นส่ง Sitemap ที่ปลั๊กอินสร้างให้',
+  },
+  {
+    question: 'ต้องเปิดดู Search Console บ่อยแค่ไหน?',
+    answer:
+      'ดูภาพรวมสัปดาห์ละครั้ง และไล่หาคำอันดับ 11–20 หน้าที่ CTR ต่ำ และหน้าที่คลิกลดลงเดือนละครั้ง ถ้ามีอีเมลแจ้งเตือนปัญหาจาก Search Console ให้เปิดดูทันที',
+  },
+]
+
 export const blogPosts: BlogPost[] = [
+  {
+    title: 'Google Search Console คืออะไร? วิธีติดตั้ง ใช้งาน และอ่านค่า Impression, Click, CTR, Position',
+    slug: 'google-search-console',
+    category: 'SEO',
+    excerpt:
+      'Google Search Console คือเครื่องมือฟรีจาก Google สำหรับดูว่าเว็บติดคำค้นอะไร ได้คลิกเท่าไร และหน้าไหนมีปัญหา บทความนี้สอนติดตั้ง อ่านค่า Impression, Click, CTR, Position และ 8 เคล็ดลับเอาตัวเลขไปแก้เว็บต่อ',
+    readingTime: '12 min read',
+    publishedDate: '2026-11-12',
+    lastModifiedDate: '2026-11-12',
+    authorName: 'Saralak Kaewkum',
+    authorRole: 'SEO, AEO & GEO Consultant',
+    authorUrl: '/about',
+    metaTitle: 'Google Search Console คืออะไร? วิธีใช้ + 8 เคล็ดลับอ่านตัวเลขไปใช้ต่อ',
+    metaDescription:
+      'Google Search Console คือเครื่องมือฟรีจาก Google ดูว่าเว็บติดคำค้นอะไร ได้คลิกเท่าไร หน้าไหนมีปัญหา พร้อมวิธีติดตั้ง ความหมายของ Impression, CTR, Position และ 8 เคล็ดลับเอาตัวเลขไปแก้เว็บ',
+    aiSummary: [
+      'Google Search Console คือเครื่องมือฟรีของ Google ที่บอกว่าเว็บไซต์ติดคำค้นอะไร มีคนเห็นกี่ครั้ง และคลิกกี่ครั้ง',
+      'ต่างจาก Google Analytics ตรงที่ Search Console ดูช่วงก่อนคนคลิกเข้าเว็บ ส่วน Analytics ดูหลังคนเข้ามาแล้ว',
+      'ตัวเลขหลักมี 4 ตัว: Impression (เห็น), Click (คลิก), CTR (สัดส่วนคนคลิก) และ Position (อันดับเฉลี่ย)',
+      'คุณค่าจริงอยู่ที่การอ่านตัวเลขแล้วตัดสินใจ เช่น หน้าที่อยู่อันดับ 11–20 คือหน้าที่ใกล้หน้าแรกแล้ว ควรแก้ก่อน',
+      'ข้อมูลเก็บย้อนหลังได้ 16 เดือน และใช้ฟรีทั้งหมด',
+    ],
+    faqs: googleSearchConsoleFaqs,
+    bodyVariant: 'google-search-console',
+    cta: {
+      headline: 'อยากอ่าน Search Console ของเว็บตัวเองเป็น?',
+      description:
+        'คอร์สสอน SEO แบบเรียนสด ใช้เว็บของผู้เรียนเป็นโจทย์ เปิด Search Console ของจริงแล้วฝึกอ่านตัวเลขและวางแผนแก้ไปพร้อมกัน',
+      buttonText: 'ดูคอร์สสอน SEO',
+      href: '/services/seo-training',
+    },
+  },
   {
     title: 'ทำเว็บด้วย Claude เริ่มยังไง? เลือกเครื่องมือ ทำหน้าเว็บ และเตรียมให้คนค้นเจอ',
     slug: 'build-website-with-claude',
